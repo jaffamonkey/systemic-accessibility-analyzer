@@ -1,0 +1,102 @@
+# ==========================================
+# Node.js / JavaScript / TypeScript
+# ==========================================
+# Dependencies
+node_modules/
+jspm_packages/
+
+# Build and Log Artifacts
+dist/
+build/
+out/
+.next/
+.nuxt/
+.cache/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Frameworks / Tools
+.turbo/
+.eslintcache
+.stylelintcache
+.prettiercache
+
+
+# ==========================================
+# Python
+# ==========================================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+pip-wheel-metadata/
+
+# Distribution / Packaging
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Testing and Coverage
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+
+# ==========================================
+# Environment Variables & Secrets (Crucial)
+# ==========================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
+*.secret
+
+
+# ==========================================
+# Operating System & IDEs
+# ==========================================
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs (VS Code, JetBrains/PyCharm)
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
