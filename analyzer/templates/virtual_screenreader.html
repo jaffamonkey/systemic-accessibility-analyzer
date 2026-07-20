@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Virtual Screenreader Output</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --panel: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+      --accent: #2563eb;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .shell {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 28px 20px 40px;
+    }
+
+    .hero {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: 2rem;
+    }
+
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 20px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .panel-head {
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border);
+      font-weight: 700;
+    }
+
+    .panel-body {
+      padding: 16px 18px;
+    }
+
+    .search {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      margin-bottom: 14px;
+    }
+
+    .page-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-height: 70vh;
+      overflow: auto;
+    }
+
+    .page-item {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    .page-item.active {
+      border-color: #93c5fd;
+      background: #eff6ff;
+    }
+
+    .page-item-title {
+      font-weight: 700;
+      margin-bottom: 4px;
+      line-height: 1.35;
+    }
+
+    .page-item-meta {
+      font-size: 0.86rem;
+      color: var(--muted);
+      line-height: 1.4;
+      word-break: break-word;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .toolbar button {
+      border: 1px solid var(--border);
+      background: #fff;
+      padding: 10px 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .transcript {
+      background: #0f172a;
+      color: #e5e7eb;
+      border-radius: 14px;
+      padding: 16px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.92rem;
+      line-height: 1.55;
+      white-space: pre-wrap;
+      min-height: 420px;
+      overflow: auto;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .empty {
+      padding: 30px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    @media (max-width: 960px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .page-list {
+        max-height: 320px;
+      }
+    }
+
+    .top-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .doc-link-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      line-height: 1;
+      border: 1px solid #dbe7f5;
+      background: #f6f0ff;
+      color: #4b5563;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+      transition: 0.18s ease;
+    }
+
+    .doc-link-button:hover {
+      background: #efe4ff;
+      border-color: #cbb7f6;
+      color: #1f2937;
+      transform: translateY(-1px);
+    }
+
+    .doc-link-button.is-current {
+      background: #e8f0ff;
+      border-color: #bfd3fb;
+      color: #1d4ed8;
+    }
+
+    .doc-link-button.is-disabled {
+      opacity: 0.55;
+      pointer-events: none;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <section class="hero">
+      <h1>Virtual Screenreader Output</h1>
+      <p>
+        Linearized page output showing the sequence of elements and text that the virtual screenreader reports.
+      </p>
+
+      <div class="top-links" id="topLinks">
+        <a class="doc-link-button" id="dashboardLink" href="#">Dashboard</a>
+        <a class="doc-link-button" id="virtualScreenreaderLink" href="#">Virtual Screenreader</a>
+        <a class="doc-link-button" id="tabMapLink" href="#">Tab Map</a>
+        <a class="doc-link-button" id="contrastReportLink" href="#">Contrast Report</a>
+      </div>
+
+    </section>
+
+    <section class="layout">
+      <aside class="panel">
+        <div class="panel-head">Pages</div>
+        <div class="panel-body">
+          <input id="searchInput" class="search" type="text" placeholder="Filter pages..." />
+          <div id="pageList" class="page-list"></div>
+        </div>
+      </aside>
+
+      <main class="panel">
+        <div class="panel-head" id="detailTitle">Output</div>
+        <div class="panel-body">
+          <div class="toolbar">
+            <button id="copyBtn" type="button">Copy transcript</button>
+          </div>
+          <div id="detailMeta" class="muted" style="margin-bottom:12px;"></div>
+          <div id="transcript" class="transcript">Select a page to view transcript.</div>
+        </div>
+      </main>
+    </section>
+  </div>
+
+  <script>
+    function getJobId() {
+      const match = window.location.pathname.match(/\/jobs\/([^/]+)\/virtual_screenreader\.html$/);
+      return match ? decodeURIComponent(match[1]) : null;
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? '')
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+    }
+
+    async function loadJson(url) {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return await res.json();
+    }
+
+    async function init() {
+      const pageList = document.getElementById('pageList');
+      const transcript = document.getElementById('transcript');
+      const detailTitle = document.getElementById('detailTitle');
+      const detailMeta = document.getElementById('detailMeta');
+      const searchInput = document.getElementById('searchInput');
+      const copyBtn = document.getElementById('copyBtn');
+
+      const jobId = getJobId();
+      if (!jobId) {
+        transcript.textContent = 'Could not determine job ID from URL.';
+        return;
+      }
+
+      const manifestUrl = `/jobs/${jobId}/virtual-screenreader/manifest.json`;
+      let manifest = await loadJson(manifestUrl);
+      let filtered = [...manifest];
+      let currentLines = [];
+
+      function renderList() {
+        pageList.innerHTML = '';
+        if (!filtered.length) {
+          pageList.innerHTML = '<div class="empty">No matching pages</div>';
+          return;
+        }
+
+        filtered.forEach((item, index) => {
+          const el = document.createElement('div');
+          el.className = 'page-item';
+          el.innerHTML = `
+            <div class="page-item-title">${escapeHtml(item.title || item.page || 'Untitled')}</div>
+            <div class="page-item-meta">${escapeHtml(item.url || '')}</div>
+            <div class="page-item-meta">${item.line_count || 0} lines</div>
+          `;
+          el.addEventListener('click', async () => {
+            document.querySelectorAll('.page-item').forEach(x => x.classList.remove('active'));
+            el.classList.add('active');
+
+            const reportUrl = `/jobs/${jobId}/virtual-screenreader/${encodeURIComponent(item.report)}`;
+            const report = await loadJson(reportUrl);
+
+            currentLines = Array.isArray(report.lines) ? report.lines : [];
+            detailTitle.textContent = report.title || report.page || 'Output';
+            detailMeta.textContent = report.url || '';
+            transcript.textContent = currentLines.join('\n');
+          });
+
+          pageList.appendChild(el);
+
+          if (index === 0) {
+            setTimeout(() => el.click(), 0);
+          }
+        });
+      }
+
+      searchInput.addEventListener('input', () => {
+        const term = searchInput.value.trim().toLowerCase();
+        filtered = manifest.filter(item => {
+          const haystack = `${item.title || ''} ${item.url || ''}`.toLowerCase();
+          return haystack.includes(term);
+        });
+        renderList();
+      });
+
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(currentLines.join('\n'));
+          copyBtn.textContent = 'Copied';
+          setTimeout(() => { copyBtn.textContent = 'Copy transcript'; }, 1200);
+        } catch {
+          copyBtn.textContent = 'Copy failed';
+          setTimeout(() => { copyBtn.textContent = 'Copy transcript'; }, 1200);
+        }
+      });
+
+      renderList();
+    }
+
+
+    function getCurrentJobIdForNav() {
+      const params = new URLSearchParams(window.location.search);
+      const queryJobId = params.get('job_id');
+      if (queryJobId) return queryJobId;
+
+      const jobMatch = window.location.pathname.match(/\/jobs\/([^/]+)\//);
+      return jobMatch ? decodeURIComponent(jobMatch[1]) : null;
+    }
+
+    function buildTopNav() {
+      const jobId = getCurrentJobIdForNav();
+      const path = window.location.pathname;
+      const baseJobPath = jobId ? `/jobs/${jobId}` : null;
+
+      const links = {
+        dashboardLink: baseJobPath ? `${baseJobPath}/dashboard` : '#',
+        projectGuideLink: baseJobPath ? `${baseJobPath}/readme_overview.html` : '#',
+        workbookGuideLink: baseJobPath ? `${baseJobPath}/workbook_guide.html` : '#',
+        dashboardGuideLink: baseJobPath ? `${baseJobPath}/dashboard_guide.html` : '#',
+        // sitePreviewLink: baseJobPath ? `${baseJobPath}/site_preview.html` : '#',
+        virtualScreenreaderLink: baseJobPath ? `${baseJobPath}/virtual_screenreader.html` : '#',
+        tabMapLink: baseJobPath ? `${baseJobPath}/tab_map.html` : '#',
+        contrastReportLink: baseJobPath ? `${baseJobPath}/contrast_report.html` : '#',
+      };
+
+      Object.entries(links).forEach(([id, href]) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.href = href;
+        if (href === '#') {
+          el.classList.add('is-disabled');
+          el.setAttribute('aria-disabled', 'true');
+        }
+      });
+
+      const currentMap = [
+        ['dashboardLink', /\/jobs\/[^/]+\/dashboard$/],
+        ['projectGuideLink', /\/jobs\/[^/]+\/readme_overview\.html$/],
+        ['workbookGuideLink', /\/jobs\/[^/]+\/workbook_guide\.html$/],
+        ['dashboardGuideLink', /\/jobs\/[^/]+\/dashboard_guide\.html$/],
+        ['sitePreviewLink', /\/jobs\/[^/]+\/site_preview\.html$/],
+        ['virtualScreenreaderLink', /\/jobs\/[^/]+\/virtual_screenreader\.html$/],
+        ['tabMapLink', /\/jobs\/[^/]+\/tab_map\.html$/],
+        ['contrastReportLink', /\/jobs\/[^/]+\/contrast_report\.html$/],
+      ];
+
+      currentMap.forEach(([id, regex]) => {
+        const el = document.getElementById(id);
+        if (el && regex.test(path)) {
+          el.classList.add('is-current');
+          el.setAttribute('aria-current', 'page');
+        }
+      });
+    }
+
+    buildTopNav();
+
+
+    init().catch((err) => {
+      const transcript = document.getElementById('transcript');
+      if (transcript) {
+        transcript.textContent = `Could not load virtual screenreader output: ${err.message}`;
+      }
+    });
+  </script>
+</body>
+</html>

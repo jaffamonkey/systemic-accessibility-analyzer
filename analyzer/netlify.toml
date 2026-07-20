@@ -1,0 +1,6 @@
+[build]
+  command = "python build_static_netlify.py"
+  publish = "dist"
+
+[build.environment]
+  PYTHON_VERSION = "3.11"
