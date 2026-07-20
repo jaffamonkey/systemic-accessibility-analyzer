@@ -1,7 +1,0 @@
-An end-to-end accessibility testing platform that runs multi-engine scans and clusters the findings to identify systemic, component-level root causes.
-
-Stop triaging the same accessibility bug 100 times. This platform orchestrates multi-tool a11y scans and groups the results by component, generating interactive dashboards and BI-ready reports to help teams fix systemic issues at the source.
-
-A systemic accessibility analyzer and orchestrator. It runs Playwright-based tools (Axe, IBM, HTMLCS, Lighthouse) against authenticated estates, normalizes the findings, and clusters them to highlight shared component defects rather than isolated page errors.
-
-accessibility, a11y, wcag, axe-core, playwright, automated-testing, powerbi, fastapi, python

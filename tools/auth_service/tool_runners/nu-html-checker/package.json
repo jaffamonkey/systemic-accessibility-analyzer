@@ -1,0 +1,13 @@
+{
+  "name": "nu-html-checker-runner",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "audit": "node run_nu_html_checker.js ."
+  },
+  "dependencies": {
+    "playwright": "^1.54.0",
+    "vnu-jar": "*"
+  }
+}

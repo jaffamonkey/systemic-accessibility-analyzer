@@ -1,0 +1,17 @@
+{
+  "name": "speca11y-runner",
+  "version": "1.0.0",
+  "description": "Run SpecA11y accessibility audits against a list of URLs.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "audit": "node run-speca11y.mjs urls.txt reports",
+    "audit:custom": "node run-speca11y.mjs",
+    "install:browsers": "playwright install chromium"
+  },
+  "dependencies": {
+    "@speca11y/core": "latest",
+    "playwright": "latest"
+  },
+  "devDependencies": {}
+}

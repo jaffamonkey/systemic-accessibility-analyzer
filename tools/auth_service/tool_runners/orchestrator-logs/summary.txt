@@ -1,0 +1,9 @@
+\n=== axe-scan ===
+PASS axe-scan
+\n=== htmlsniffer ===
+PASS htmlsniffer
+\n=== oobee ===
+PASS oobee
+\n=== pa11y-ci ===
+FAIL pa11y-ci (exit 1)
+\n=== playwright-achecker ===

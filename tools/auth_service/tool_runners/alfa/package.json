@@ -1,0 +1,14 @@
+{
+  "name": "alfa-runner",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "audit": "node run_alfa.js ."
+  },
+  "dependencies": {
+    "@siteimprove/alfa-playwright": "^0.84.0",
+    "@siteimprove/alfa-test-utils": "^0.84.0",
+    "playwright": "^1.54.0"
+  }
+}
