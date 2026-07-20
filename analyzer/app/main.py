@@ -28,7 +28,7 @@ STATIC_DIR = BASE_DIR / "static"
 templates = Jinja2Templates(directory=str(TEMPLATES_DIR))
 
 DEFAULT_LOCAL_JOBS_DIR = Path(
-    "/Users/user/code/github/wcag-tools-test-frameworks/auth_service/jobs"
+    "/Users/user/code/systemic-accessibility-analyzer/tools/auth_service/jobs"
 )
 JOBS_BASE_DIR = Path(
     os.getenv("ANALYSIS_JOBS_BASE_DIR", str(DEFAULT_LOCAL_JOBS_DIR))
