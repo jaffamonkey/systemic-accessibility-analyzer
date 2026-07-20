@@ -81,16 +81,31 @@ Once both servers are running, follow this happy-path workflow:
 
 The platform automatically detects report formats, normalizes them into a canonical violation model, and maps them to WCAG 2.2 Success Criteria.
 
-| Tool Framework | WCAG 2.0 (A/AA/AAA) | WCAG 2.1 (A/AA/AAA) | WCAG 2.2 (A/AA/AAA) |
-| :--- | :--- | :--- | :--- |
-| **Playwright/Axe-core** | A / AA (Partial AAA) | A / AA (Partial AAA) | A / AA |
-| **Axe-scan** | A / AA (Partial AAA) | A / AA (Partial AAA) | A / AA |
-| **UUV** | A / AA | A / AA | A / AA |
-| **Lighthouse** | A / AA | A / AA | A / AA |
-| **IBM Accessibility Checker** | A / AA | A / AA | A / AA |
-| **Oobee** | A / AA / AAA | A / AA / AAA | Limited |
-| **Pa11y-CI** | A / AA / AAA | A / AA / AAA | A / AA (via axe) |
-| **Html-sniffer** | A / AA / AAA | A / AA / AAA | No |
+| Tool Framework | WCAG 2.0 (A/AA/AAA) | WCAG 2.1 (A/AA/AAA) | WCAG 2.2 (A/AA/AAA) | WCAG 3 Draft |
+| :--- | :--- | :--- | :--- | :--- |
+| **Playwright/Axe-core** | A / AA (Partial AAA) | A / AA (Partial AAA) | A / AA | - |
+| **Axe-scan** | A / AA (Partial AAA) | A / AA (Partial AAA) | A / AA | - |
+| **UUV** | A / AA | A / AA | A / AA | - |
+| **Lighthouse** | A / AA | A / AA | A / AA | - |
+| **IBM Accessibility Checker** | A / AA | A / AA | A / AA | - |
+| **Oobee** | A / AA / AAA | A / AA / AAA | Limited | - |
+| **Pa11y-CI** | A / AA / AAA | A / AA / AAA | A / AA (via axe) | - |
+| **Html-sniffer** | A / AA / AAA | A / AA / AAA | No | - |
+| **Siteimprove Alfa** | A / AA / AAA | A / AA / AAA | No | - |
+| **Nu HTML Checker** | Markup / ARIA | Markup / ARIA | No | - |
+| **SpecA11y** | A / AA / AAA | A / AA / AAA | No | Draft outcomes |
+🧩
+Alfa
+
+A/AA/AAA*	A/AA/AAA*	No	—
+⚖️
+Validator
+
+Markup / ARIA	Markup / ARIA	No	—
+⚖️
+Validator
+
+A/AA/AAA	A/AA/AAA	A/AA/AAA	🧪 Draft outcomes
 
 ---
 
