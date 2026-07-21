@@ -1,3 +1,12 @@
+"""
+Analyzer API & Web Server
+
+This is the primary FastAPI application that powers the Systemic Accessibility Analyzer.
+It serves a dual purpose:
+1. An API for kicking off analysis jobs and extracting BI metrics.
+2. A web server for hosting the interactive HTML dashboard and its static assets.
+"""
+
 from __future__ import annotations
 
 import json
@@ -21,12 +30,17 @@ from services.metrics_engine import calculate_metrics, get_suggested_components
 from services.processing_engine import process_rows
 from services.report_loader import load_reports, inspect_report_inventory
 
+# -------------------------
+# ⚙️ CONFIGURATION & SETUP
+# -------------------------
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = BASE_DIR / "templates"
 STATIC_DIR = BASE_DIR / "static"
 
 templates = Jinja2Templates(directory=str(TEMPLATES_DIR))
 
+# Fallback directory if the environment variable is not set
 DEFAULT_LOCAL_JOBS_DIR = Path(
     "/Users/user/code/systemic-accessibility-analyzer/tools/jobs"
 )
@@ -34,6 +48,7 @@ JOBS_BASE_DIR = Path(
     os.getenv("ANALYSIS_JOBS_BASE_DIR", str(DEFAULT_LOCAL_JOBS_DIR))
 ).resolve()
 
+# Load all tool-specific JSON parsers
 load_adapters()
 
 from adapters.registry import ADAPTERS
@@ -42,22 +57,25 @@ print("REGISTERED ADAPTERS:", [a.__name__ for _, a in ADAPTERS])
 print("REGISTERED DETECTORS:", [d.__name__ for d, _ in ADAPTERS])
 
 app = FastAPI()
+
+# Mount global static assets (CSS, JS) for the dashboard
 app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
 
+
+# -------------------------
+# 📦 PYDANTIC MODELS
+# -------------------------
 
 class LearnComponentRequest(BaseModel):
     pattern: str
     component: str
 
-
 class AnalyzeRequest(BaseModel):
     folder: str
-
 
 class BuildAnalysisRequest(BaseModel):
     reports_dir: str
     output_dir: str
-
 
 class JobRunAnalysisRequest(BaseModel):
     jobs_base_dir: str | None = None
@@ -65,9 +83,12 @@ class JobRunAnalysisRequest(BaseModel):
     output_dir: str | None = None
 
 
+# -------------------------
+# 🗂️ PATH RESOLUTION HELPERS
+# -------------------------
+
 def _resolve_base_dir(jobs_base_dir: str | None = None) -> Path:
     return Path(jobs_base_dir).resolve() if jobs_base_dir else JOBS_BASE_DIR
-
 
 def _resolve_job_dirs(
     job_id: str,
@@ -81,7 +102,6 @@ def _resolve_job_dirs(
     resolved_output = Path(output_dir).resolve() if output_dir else job_dir / "analysis"
     return job_dir, resolved_reports, resolved_output
 
-
 def _resolve_analysis_dir(
     job_id: str,
     jobs_base_dir: str | None = None,
@@ -90,19 +110,23 @@ def _resolve_analysis_dir(
     base = _resolve_base_dir(jobs_base_dir)
     return Path(analysis_dir).resolve() if analysis_dir else (base / job_id / "analysis")
 
-
 def _json_file(path: Path, not_found_message: str):
     if not path.exists() or not path.is_file():
         raise HTTPException(status_code=404, detail=not_found_message)
     return json.loads(path.read_text(encoding="utf-8"))
-
 
 def _file_response(path: Path, not_found_message: str, filename: str | None = None):
     if not path.exists() or not path.is_file():
         raise HTTPException(status_code=404, detail=not_found_message)
     return FileResponse(path, filename=filename)
 
+
+# -------------------------
+# 🧠 CORE ANALYSIS ENDPOINTS
+# -------------------------
+
 def _build_api_payload(folder: str) -> tuple[dict, list, list, dict]:
+    """Runs the core ETL pipeline and generates the dashboard JSON payload."""
     inventory_check = inspect_report_inventory(folder)
     rows = process_rows(load_reports(folder))
 
@@ -114,8 +138,8 @@ def _build_api_payload(folder: str) -> tuple[dict, list, list, dict]:
 
     payload = {
         "violations": len(rows),
-        "pages_list": metrics["pages"],       # Passes the list
-        "pages": metrics["pages_count"],      # Passes the count to the "Pages Affected" card
+        "pages_list": metrics["pages"],
+        "pages": metrics["pages_count"],
         "shared_pattern_impact": metrics["shared_pattern_impact"],
         "design_system_impact": metrics["design_system_impact"],
         "accessibility_debt_index": metrics["accessibility_debt_index"],
@@ -195,31 +219,31 @@ def _build_api_payload(folder: str) -> tuple[dict, list, list, dict]:
     }
     return payload, rows, clusters, metrics
 
-
 @app.post("/analyze")
 def analyze(request: AnalyzeRequest):
+    """Generates the raw JSON analysis payload in memory without saving to disk."""
     payload, _, _, _ = _build_api_payload(request.folder)
     return payload
 
-
 @app.post("/export-xlsx")
 def export_xlsx_report(request: AnalyzeRequest):
+    """Generates and returns the Excel workbook."""
     _, rows, clusters, metrics = _build_api_payload(request.folder)
     output = Path("accessibility_analysis.xlsx")
     export_xlsx(rows, clusters, metrics, output)
     return FileResponse(output, filename="accessibility_analysis.xlsx")
 
-
 @app.post("/build-analysis")
 def build_analysis(request: BuildAnalysisRequest):
+    """Triggers the full pipeline, saving all artifacts (JSON, HTML, XLSX) to the output dir."""
     try:
         return build_analysis_outputs(Path(request.reports_dir), Path(request.output_dir))
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc))
 
-
 @app.post("/jobs/{job_id}/run-analysis")
 def run_analysis_for_job(job_id: str, request: JobRunAnalysisRequest):
+    """Runs the pipeline for a specific Job ID, managed by the Auth Service."""
     try:
         job_dir, reports_dir, output_dir = _resolve_job_dirs(
             job_id=job_id,
@@ -245,34 +269,24 @@ def run_analysis_for_job(job_id: str, request: JobRunAnalysisRequest):
         raise HTTPException(status_code=400, detail=str(exc))
 
 
+# -------------------------
+# 📊 JOB DASHBOARD ENDPOINTS
+# -------------------------
+
 @app.get("/jobs/{job_id}/analysis-status")
-def analysis_status(
-    job_id: str,
-    jobs_base_dir: str | None = None,
-    analysis_dir: str | None = None,
-):
+def analysis_status(job_id: str, jobs_base_dir: str | None = None, analysis_dir: str | None = None):
     resolved_analysis_dir = _resolve_analysis_dir(job_id, jobs_base_dir, analysis_dir)
     status_path = resolved_analysis_dir / "analysis_status.json"
     return _json_file(status_path, f"No analysis_status.json found for job {job_id}")
 
-
 @app.get("/jobs/{job_id}/dashboard")
-def dashboard_for_job(
-    job_id: str,
-    jobs_base_dir: str | None = None,
-    analysis_dir: str | None = None,
-):
+def dashboard_for_job(job_id: str, jobs_base_dir: str | None = None, analysis_dir: str | None = None):
     resolved_analysis_dir = _resolve_analysis_dir(job_id, jobs_base_dir, analysis_dir)
     dashboard_path = resolved_analysis_dir / "dashboard.html"
     return _file_response(dashboard_path, f"No dashboard found for job {job_id}")
 
-
 @app.get("/jobs/{job_id}/workbook")
-def workbook_for_job(
-    job_id: str,
-    jobs_base_dir: str | None = None,
-    analysis_dir: str | None = None,
-):
+def workbook_for_job(job_id: str, jobs_base_dir: str | None = None, analysis_dir: str | None = None):
     resolved_analysis_dir = _resolve_analysis_dir(job_id, jobs_base_dir, analysis_dir)
     workbook_path = resolved_analysis_dir / "accessibility_analysis.xlsx"
     return _file_response(
@@ -281,86 +295,94 @@ def workbook_for_job(
         filename=f"{job_id}-accessibility_analysis.xlsx",
     )
 
-
 @app.get("/jobs/{job_id}/analysis-data")
-def analysis_data_for_job(
-    job_id: str,
-    jobs_base_dir: str | None = None,
-    analysis_dir: str | None = None,
-):
+def analysis_data_for_job(job_id: str, jobs_base_dir: str | None = None, analysis_dir: str | None = None):
     resolved_analysis_dir = _resolve_analysis_dir(job_id, jobs_base_dir, analysis_dir)
     data_path = resolved_analysis_dir / "data" / "analysis.json"
     return _json_file(data_path, f"No analysis data found for job {job_id}")
 
-
 @app.get("/jobs/{job_id}/site_preview.html")
-def site_preview_for_job(
-    job_id: str,
-    jobs_base_dir: str | None = None,
-    analysis_dir: str | None = None,
-):
+def site_preview_for_job(job_id: str, jobs_base_dir: str | None = None, analysis_dir: str | None = None):
     resolved_analysis_dir = _resolve_analysis_dir(job_id, jobs_base_dir, analysis_dir)
     preview_path = resolved_analysis_dir / "site_preview.html"
     return _file_response(preview_path, f"No site preview found for job {job_id}")
 
-
-@app.get("/jobs/{job_id}/static/{asset_path:path}")
-def job_dashboard_static(
-    job_id: str,
-    asset_path: str,
-    jobs_base_dir: str | None = None,
-    analysis_dir: str | None = None,
-):
+@app.get("/jobs/{job_id}/virtual_screenreader.html")
+def virtual_screenreader_for_job(job_id: str, jobs_base_dir: str | None = None, analysis_dir: str | None = None):
     resolved_analysis_dir = _resolve_analysis_dir(job_id, jobs_base_dir, analysis_dir)
-    asset_file = resolved_analysis_dir / "static" / asset_path
-    return _file_response(asset_file, f"Static asset not found for job {job_id}: {asset_path}")
+    preview_path = resolved_analysis_dir / "virtual_screenreader.html"
+    return _file_response(preview_path, f"No virtual screenreader page found for job {job_id}")
 
-
-@app.get("/jobs/{job_id}/data/{data_path:path}")
-def job_dashboard_data(
-    job_id: str,
-    data_path: str,
-    jobs_base_dir: str | None = None,
-    analysis_dir: str | None = None,
-):
+@app.get("/jobs/{job_id}/tab_map.html")
+def tab_map_for_job(job_id: str, jobs_base_dir: str | None = None, analysis_dir: str | None = None):
     resolved_analysis_dir = _resolve_analysis_dir(job_id, jobs_base_dir, analysis_dir)
-    data_file = resolved_analysis_dir / "data" / data_path
-    return _file_response(data_file, f"Data file not found for job {job_id}: {data_path}")
+    preview_path = resolved_analysis_dir / "tab_map.html"
+    return _file_response(preview_path, f"No tab map page found for job {job_id}")
 
-
-# @app.get("/jobs/{job_id}/reports/visual-preview/{asset_path:path}")
-# def job_screenshots(
-#     job_id: str,
-#     asset_path: str,
-#     jobs_base_dir: str | None = None,
-#     analysis_dir: str | None = None,
-# ):
-#     resolved_analysis_dir = _resolve_analysis_dir(job_id, jobs_base_dir, analysis_dir)
-#     asset_file = resolved_analysis_dir / "screenshots" / asset_path
-#     return _file_response(asset_file, f"Screenshot asset not found for job {job_id}: {asset_path}")
-
-@app.get("/jobs/{job_id}/reports/visual-preview/{asset_path:path}")
-def job_visual_preview_assets(
-    job_id: str,
-    asset_path: str,
-    jobs_base_dir: str | None = None,
-    analysis_dir: str | None = None,
-):
-    base = _resolve_base_dir(jobs_base_dir)
-    asset_file = base / job_id / "reports" / "visual-preview" / asset_path
-    return _file_response(asset_file, f"Visual preview asset not found for job {job_id}: {asset_path}")
+@app.get("/jobs/{job_id}/contrast_report.html")
+def contrast_report_for_job(job_id: str, jobs_base_dir: str | None = None, analysis_dir: str | None = None):
+    resolved_analysis_dir = _resolve_analysis_dir(job_id, jobs_base_dir, analysis_dir)
+    preview_path = resolved_analysis_dir / "contrast_report.html"
+    return _file_response(preview_path, f"No virtual screenreader page found for job {job_id}")
 
 @app.get("/dashboard", response_class=HTMLResponse)
 def dashboard(request: Request):
+    """Serves the generic live dashboard template."""
     return templates.TemplateResponse(
         request=request,
-        name="dashbaord.html",
+        name="dashboard.html",
         context={"request": request},
     )
 
 
+# -------------------------
+# 🖼️ STATIC ASSET ENDPOINTS
+# -------------------------
+
+@app.get("/jobs/{job_id}/static/{asset_path:path}")
+def job_dashboard_static(job_id: str, asset_path: str, jobs_base_dir: str | None = None, analysis_dir: str | None = None):
+    resolved_analysis_dir = _resolve_analysis_dir(job_id, jobs_base_dir, analysis_dir)
+    asset_file = resolved_analysis_dir / "static" / asset_path
+    return _file_response(asset_file, f"Static asset not found for job {job_id}: {asset_path}")
+
+@app.get("/jobs/{job_id}/data/{data_path:path}")
+def job_dashboard_data(job_id: str, data_path: str, jobs_base_dir: str | None = None, analysis_dir: str | None = None):
+    resolved_analysis_dir = _resolve_analysis_dir(job_id, jobs_base_dir, analysis_dir)
+    data_file = resolved_analysis_dir / "data" / data_path
+    return _file_response(data_file, f"Data file not found for job {job_id}: {data_path}")
+
+@app.get("/jobs/{job_id}/reports/visual-preview/{asset_path:path}")
+def job_visual_preview_assets(job_id: str, asset_path: str, jobs_base_dir: str | None = None, analysis_dir: str | None = None):
+    base = _resolve_base_dir(jobs_base_dir)
+    asset_file = base / job_id / "reports" / "visual-preview" / asset_path
+    return _file_response(asset_file, f"Visual preview asset not found for job {job_id}: {asset_path}")
+
+@app.get("/jobs/{job_id}/virtual-screenreader/{asset_path:path}")
+def job_virtual_screenreader_assets(job_id: str, asset_path: str, jobs_base_dir: str | None = None, analysis_dir: str | None = None):
+    resolved_analysis_dir = _resolve_analysis_dir(job_id, jobs_base_dir, analysis_dir)
+    asset_file = resolved_analysis_dir / "virtual-screenreader" / asset_path
+    return _file_response(asset_file, f"Virtual screenreader asset not found for job {job_id}: {asset_path}")
+
+@app.get("/jobs/{job_id}/tab-map/{asset_path:path}")
+def job_tab_map_assets(job_id: str, asset_path: str, jobs_base_dir: str | None = None, analysis_dir: str | None = None):
+    resolved_analysis_dir = _resolve_analysis_dir(job_id, jobs_base_dir, analysis_dir)
+    asset_file = resolved_analysis_dir / "tab-map" / asset_path
+    return _file_response(asset_file, f"Tab map asset not found for job {job_id}: {asset_path}")
+
+@app.get("/jobs/{job_id}/contrast/{asset_path:path}")
+def job_contrast_assets(job_id: str, asset_path: str, jobs_base_dir: str | None = None, analysis_dir: str | None = None):
+    resolved_analysis_dir = _resolve_analysis_dir(job_id, jobs_base_dir, analysis_dir)
+    asset_file = resolved_analysis_dir / "contrast" / asset_path
+    return _file_response(asset_file, f"Contrast asset not found for job {job_id}: {asset_path}")
+
+
+# -------------------------
+# 🤖 COMPONENT LEARNING API
+# -------------------------
+
 @app.post("/learn-component")
 def learn_component(request: LearnComponentRequest):
+    """Allows the UI to manually categorize unrecognized DOM patterns."""
     pattern = request.pattern
     component = request.component
 
@@ -374,11 +396,9 @@ def learn_component(request: LearnComponentRequest):
     LEARNING.update(load_learning())
     return {"status": "ok"}
 
-
 @app.get("/suggested-components")
 def suggested_components():
     return get_suggested_components()
-
 
 @app.get("/learned-components")
 def get_learned_components():
@@ -390,80 +410,18 @@ def get_learned_components():
     return sorted(components)
 
 
+# -------------------------
+# 📘 DOCUMENTATION ENDPOINTS
+# -------------------------
+
 @app.get("/workbook_guide.html")
 def workbook_guide():
     return FileResponse(TEMPLATES_DIR / "workbook_guide.html")
-
 
 @app.get("/readme_overview.html")
 def readme_overview():
     return FileResponse(TEMPLATES_DIR / "readme_overview.html")
 
-
 @app.get("/dashboard_guide.html")
 def dashboard_charts_and_metrics_guide():
     return FileResponse(TEMPLATES_DIR / "dashboard_guide.html")
-
-@app.get("/jobs/{job_id}/virtual_screenreader.html")
-def virtual_screenreader_for_job(
-    job_id: str,
-    jobs_base_dir: str | None = None,
-    analysis_dir: str | None = None,
-):
-    resolved_analysis_dir = _resolve_analysis_dir(job_id, jobs_base_dir, analysis_dir)
-    preview_path = resolved_analysis_dir / "virtual_screenreader.html"
-    return _file_response(preview_path, f"No virtual screenreader page found for job {job_id}")
-
-@app.get("/jobs/{job_id}/virtual-screenreader/{asset_path:path}")
-def job_virtual_screenreader_assets(
-    job_id: str,
-    asset_path: str,
-    jobs_base_dir: str | None = None,
-    analysis_dir: str | None = None,
-):
-    resolved_analysis_dir = _resolve_analysis_dir(job_id, jobs_base_dir, analysis_dir)
-    asset_file = resolved_analysis_dir / "virtual-screenreader" / asset_path
-    return _file_response(asset_file, f"Virtual screenreader asset not found for job {job_id}: {asset_path}")
-
-@app.get("/jobs/{job_id}/tab_map.html")
-def tab_map_for_job(
-    job_id: str,
-    jobs_base_dir: str | None = None,
-    analysis_dir: str | None = None,
-):
-    resolved_analysis_dir = _resolve_analysis_dir(job_id, jobs_base_dir, analysis_dir)
-    preview_path = resolved_analysis_dir / "tab_map.html"
-    return _file_response(preview_path, f"No tab map page found for job {job_id}")
-
-@app.get("/jobs/{job_id}/tab-map/{asset_path:path}")
-def job_tab_map_assets(
-    job_id: str,
-    asset_path: str,
-    jobs_base_dir: str | None = None,
-    analysis_dir: str | None = None,
-):
-    resolved_analysis_dir = _resolve_analysis_dir(job_id, jobs_base_dir, analysis_dir)
-    asset_file = resolved_analysis_dir / "tab-map" / asset_path
-    return _file_response(asset_file, f"Tab map asset not found for job {job_id}: {asset_path}")
-
-
-@app.get("/jobs/{job_id}/contrast_report.html")
-def contrast_report_for_job(
-    job_id: str,
-    jobs_base_dir: str | None = None,
-    analysis_dir: str | None = None,
-):
-    resolved_analysis_dir = _resolve_analysis_dir(job_id, jobs_base_dir, analysis_dir)
-    preview_path = resolved_analysis_dir / "contrast_report.html"
-    return _file_response(preview_path, f"No virtual screenreader page found for job {job_id}")
-
-@app.get("/jobs/{job_id}/contrast/{asset_path:path}")
-def job_tab_map_assets(
-    job_id: str,
-    asset_path: str,
-    jobs_base_dir: str | None = None,
-    analysis_dir: str | None = None,
-):
-    resolved_analysis_dir = _resolve_analysis_dir(job_id, jobs_base_dir, analysis_dir)
-    asset_file = resolved_analysis_dir / "contrast" / asset_path
-    return _file_response(asset_file, f"Conrast asset not found for job {job_id}: {asset_path}")
