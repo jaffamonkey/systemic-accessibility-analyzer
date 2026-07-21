@@ -94,18 +94,6 @@ The platform automatically detects report formats, normalizes them into a canoni
 | **Siteimprove Alfa** | A / AA / AAA | A / AA / AAA | No | - |
 | **Nu HTML Checker** | Markup / ARIA | Markup / ARIA | No | - |
 | **SpecA11y** | A / AA / AAA | A / AA / AAA | No | Draft outcomes |
-🧩
-Alfa
-
-A/AA/AAA*	A/AA/AAA*	No	—
-⚖️
-Validator
-
-Markup / ARIA	Markup / ARIA	No	—
-⚖️
-Validator
-
-A/AA/AAA	A/AA/AAA	A/AA/AAA	🧪 Draft outcomes
 
 ---
 
