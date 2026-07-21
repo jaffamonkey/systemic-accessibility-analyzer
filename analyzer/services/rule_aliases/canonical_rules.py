@@ -1,6 +1,11 @@
-# ==========================================
-# FILE: canonical_rules.py
-# ==========================================
+"""
+Canonical Rules Dictionary
+
+This module acts as the "Encyclopedia" of normalized accessibility rules.
+Instead of surfacing 50 different tool-specific descriptions for the same issue, 
+this dictionary provides a single, rich, canonical object containing a clear 
+name, description, category, and related WCAG 2.x criteria.
+"""
 
 CANONICAL_RULES = {
     # --- INTERACTIVE & WIDGETS ---
@@ -108,5 +113,6 @@ CANONICAL_RULES = {
     }
 }
 
-def is_canonical_rule(rule_id):
+def is_canonical_rule(rule_id: str) -> bool:
+    """Checks if a given string matches a recognized, high-level canonical rule."""
     return rule_id in CANONICAL_RULES

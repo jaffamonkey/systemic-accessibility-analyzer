@@ -1,8 +1,16 @@
-import re
+"""
+WCAG Reference Taxonomy
 
+The master lookup table for official WCAG 2.2 Success Criteria. 
+It contains the exact titles, levels (A/AA/AAA), and W3C documentation URLs.
+It also provides helper functions to hydrate proprietary rule strings with 
+official WCAG metadata.
+"""
+
+import re
 from services.wcag_techniques import WCAG_TECHNIQUES
 
-
+# The master taxonomy of WCAG Success Criteria
 WCAG_SUCCESS_CRITERIA = {
   "1.1.1": {"title": "Non-text Content", "level": "A", "url": "https://www.w3.org"},
   "1.2.1": {"title": "Audio-only and Video-only (Prerecorded)", "level": "A", "url": "https://www.w3.org"},
@@ -93,6 +101,7 @@ WCAG_SUCCESS_CRITERIA = {
   "4.1.3": {"title": "Status Messages", "level": "AA", "url": "https://www.w3.org"},
 }
 
+# Strict dictionary mapping common proprietary tool rules directly to a WCAG ID
 RULE_WCAG_MAP = {
     "aria-command-name": "4.1.2",
     "aria_command_name": "4.1.2",
@@ -180,14 +189,18 @@ RULE_WCAG_MAP = {
     "style_color_misuse": "1.4.1"
 }
 
-def extract_wcag_technique(rule_text):
+
+def extract_wcag_technique(rule_text: str | None) -> str | None:
+    """Extracts technique tags (e.g., [G18]) from embedded HTMLCS rule strings."""
     if not rule_text:
         return None
 
     match = re.search(r"\[(.*?)\]", str(rule_text))
     return match.group(1) if match else None
 
-def enrich_wcag_rule(rule):
+
+def enrich_wcag_rule(rule: str | None) -> str | None:
+    """Combines a base WCAG rule with its official W3C title and technique description."""
     if not rule:
         return rule
 
@@ -207,18 +220,22 @@ def enrich_wcag_rule(rule):
         return f"{wcag_id} – {title}"
     return rule
 
-def resolve_rule_wcag(rule_id: str):
+
+def resolve_rule_wcag(rule_id: str) -> str | None:
     if not rule_id:
         return None
     return RULE_WCAG_MAP.get(str(rule_id).strip().lower())
 
-def resolve_wcag_level(wcag_id: str):
+
+def resolve_wcag_level(wcag_id: str) -> str | None:
     if not wcag_id:
         return None
     ref = WCAG_SUCCESS_CRITERIA.get(str(wcag_id).strip())
     return ref.get("level") if ref else None
 
+
 def slugify_title(title: str) -> str:
+    """Cleans a string for use as an ID or CSS class name."""
     if not title:
         return ""
 

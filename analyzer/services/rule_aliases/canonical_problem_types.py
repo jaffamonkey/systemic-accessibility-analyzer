@@ -1,5 +1,16 @@
+"""
+Problem Type Taxonomy
+
+This module maps highly specific, technical rule IDs into broad, human-readable 
+"Problem Types" (e.g., 'accessible-name', 'keyboard', 'contrast'). 
+
+This is primarily used to power the high-level analytical charts on the 
+dashboard, allowing stakeholders to see macro-trends like "40% of our 
+accessibility debt is related to Keyboard navigation."
+"""
+
 PROBLEM_TYPE_MAP = {
-    # Accessible names / labels / purpose
+    # --- Accessible Names & Labels ---
     "button-name": "accessible-name",
     "link-name": "accessible-name",
     "label": "accessible-name",
@@ -9,13 +20,13 @@ PROBLEM_TYPE_MAP = {
     "aria-input-field-name": "accessible-name",
     "label-content-name-mismatch": "accessible-name",
 
-    # Images / media
+    # --- Images & Media ---
     "image-alt": "missing-alt",
     "decorative-image": "image",
     "redundant-alt": "image",
     "frame-title": "frame-title",
 
-    # Contrast / visual presentation
+    # --- Contrast & Visual Presentation ---
     "color-contrast": "contrast",
     "color-contrast-enhanced": "contrast",
     "color-contrast-review": "contrast",
@@ -25,7 +36,7 @@ PROBLEM_TYPE_MAP = {
     "target-spacing": "target-size",
     "focus-appearance": "focus-visible",
 
-    # Page structure / navigation
+    # --- Page Structure & Navigation ---
     "region": "landmark",
     "landmark": "landmark",
     "landmark-one-main": "landmark",
@@ -45,7 +56,7 @@ PROBLEM_TYPE_MAP = {
     "meaningful-sequence": "reading-order",
     "consistent-navigation": "navigation",
 
-    # Keyboard / focus
+    # --- Keyboard & Focus ---
     "keyboard": "keyboard",
     "scrollable-region-focusable": "keyboard",
     "element-tabbable-unobscured": "keyboard",
@@ -57,13 +68,13 @@ PROBLEM_TYPE_MAP = {
     "focus-visible": "focus-visible",
     "style-focus-visible": "focus-visible",
 
-    # Forms
+    # --- Forms ---
     "form-submit": "form",
     "form-structure": "form",
     "fieldset-legend": "form",
     "error-suggestion": "form",
 
-    # ARIA / parsing
+    # --- ARIA & Parsing ---
     "aria-role": "aria-role",
     "aria-allowed-role": "aria-role",
     "aria-allowed-attr": "aria-role",
@@ -78,23 +89,23 @@ PROBLEM_TYPE_MAP = {
 
     "duplicate-id": "duplicate-id",
 
-    # Structure
+    # --- Document Structure ---
     "list-structure": "structure",
     "nested-interactive": "structure",
 
-    # Visibility / interaction
+    # --- Visibility & Interaction ---
     "hidden-content": "hidden-content",
     "css-content-visibility": "hidden-content",
     "hidden-attribute-override": "hidden-content",
     "content-on-hover-focus": "content-on-hover",
 
-    # Miscellaneous
+    # --- Miscellaneous ---
     "orientation": "orientation",
     "css-orientation-lock": "orientation",
     "sensory-instructions": "sensory-instructions",
     "text-sensory-misuse": "sensory-instructions",
 
-    # Technical
+    # --- Technical / Scraper Artifacts ---
     "axe-violations-summary": "summary",
     "network-failure": "technical",
     "console-noise": "technical",

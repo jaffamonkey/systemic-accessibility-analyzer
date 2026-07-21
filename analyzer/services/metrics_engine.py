@@ -746,6 +746,13 @@ def _build_next_best_fixes(clusters):
 
 
 def calculate_metrics(rows, clusters):
+    """
+    Calculates dashboard metrics and prioritizes accessibility issues.
+
+    Takes the raw violation rows and the deduplicated clusters to generate
+    scoring, heatmaps, and tool-consensus profiles. Highlights systemic 
+    patterns across pages to prioritize "Fix Once, Benefit Many" remediations.
+    """
     print("\n" + "="*50)
     print("💥 HELLO FROM THE NEW METRICS ENGINE! 💥")
     print("="*50 + "\n")

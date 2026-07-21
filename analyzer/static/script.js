@@ -1,9 +1,27 @@
-let fixChart, sourceChart, componentChart, designChart, riskChart, wcagRuleChart, pageChart, toolAgreementChart;
+/**
+ * Systemic Accessibility Analyzer - Dashboard Client
+ * 
+ * This file powers the interactive frontend of the analysis dashboard.
+ * It is responsible for fetching the exported JSON data payload, 
+ * rendering the Business Intelligence (BI) charts using Chart.js, 
+ * and handling the dynamic drill-down tables when a user clicks 
+ * on a specific chart segment.
+ */
+
+let fixChart, sourceChart, componentChart, designChart, riskChart, wcagRuleChart, pageChart, toolAgreementChart, problemTypeChart;
 let GLOBAL_CLUSTERS = [];
 let GLOBAL_ROWS = [];
-let problemTypeChart;
+
 const palette = ["#4e79a7", "#f28e2b", "#e15759", "#76b7b2", "#59a14f"];
 
+// -------------------------
+// 🗺️ ROUTING & STATIC MODE
+// -------------------------
+
+/**
+ * Determines if the dashboard is being served as a static HTML file 
+ * (e.g., via Netlify or GitHub Pages) or from a live local FastAPI server.
+ */
 function getJobBasePath() {
     const match = window.location.pathname.match(/^\/jobs\/([^/]+)/);
     return match ? `/jobs/${match[1]}` : "";
@@ -13,6 +31,10 @@ const JOB_BASE_PATH = getJobBasePath();
 const STATIC_ANALYSIS_PATH = JOB_BASE_PATH ? `${JOB_BASE_PATH}/data/analysis.json` : "data/analysis.json";
 const STATIC_XLSX_PATH = "accessibility_analysis.xlsx";
 let STATIC_MODE = !!JOB_BASE_PATH;
+
+// -------------------------
+// 🛠️ TOOL METADATA MAPS
+// -------------------------
 
 const TOOL_LEVELS = {
     "alfa": "AAA",
@@ -28,37 +50,33 @@ const TOOL_LEVELS = {
     "speca11y": "AAA"
 };
 
-
 const ENGINE_META = {
     "axe-core": { label: "Axe", badge: "🪓", className: "engine-axe" },
     "axe-scan": { label: "Axe", badge: "🪓", className: "engine-axe" },
     "pa11y-axe": { label: "Axe", badge: "🪓", className: "engine-axe" },
-
     "html-sniffer": { label: "HTMLCS", badge: "🔍", className: "engine-htmlcs" },
     "htmlcs": { label: "HTMLCS", badge: "🔍", className: "engine-htmlcs" },
     "pa11y-htmlcs": { label: "HTMLCS", badge: "🔍", className: "engine-htmlcs" },
     "html codesniffer": { label: "HTMLCS", badge: "🔍", className: "engine-htmlcs" },
-
     "ibm": { label: "IBM", badge: "🏢", className: "engine-ibm" },
     "ibm-equal-access": { label: "IBM", badge: "🏢", className: "engine-ibm" },
     "ibm accessibility checker": { label: "IBM", badge: "🏢", className: "engine-ibm" },
-
     "lighthouse": { label: "Browser", badge: "💡", className: "engine-browser" },
     "uuv": { label: "UUV", badge: "🧪", className: "engine-uuv" },
     "oobee": { label: "Oobee", badge: "🧩", className: "engine-oobee" },
     "speca11y": { label: "Validator", badge: "⚖️", className: "engine-speca11y" },
     "nu html checker": { label: "Validator", badge: "⚖️", className: "engine-validator" },
-
     "alfa": { label: "Alfa", badge: "🧩", className: "engine-alfa" },
     "siteimprove alfa": { label: "Alfa", badge: "🧩", className: "engine-alfa" },
-
     "nu-html-checker": { label: "Validator", badge: "⚖️", className: "engine-validator" },
-    "nu html checker": { label: "Validator", badge: "⚖️", className: "engine-validator" },
-
     "contrast-checker": { label: "Visual", badge: "👁️", className: "engine-visual" },
     "tab-map": { label: "Keyboard", badge: "⌨️", className: "engine-keyboard" },
     "virtual-screenreader": { label: "AT", badge: "🗣️", className: "engine-at" }
 };
+
+// -------------------------
+// 🎨 UI HELPERS & FORMATTERS
+// -------------------------
 
 function normalizeToolKey(source) {
     return String(source || "")
@@ -96,24 +114,62 @@ function renderToolNameWithEngine(toolName, sourceKey = toolName) {
     `;
 }
 
-let DRILLDOWN_ITEMS = [];
-let DRILLDOWN_FILTERED_ITEMS = [];
-let DRILLDOWN_TITLE = "";
-let DRILLDOWN_PAGE = 1;
-let DRILLDOWN_PAGE_SIZE = 25;
-
-function isValidWcagCode(value) {
-    if (value === null || value === undefined) return false;
-    return /^\d+\.\d+\.\d+$/.test(String(value).trim());
+function escapeHtml(value) {
+    return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
 }
 
-function normalizeWcagCode(value) {
-    if (!value && value !== 0) return null;
-    const raw = String(value).trim();
-    if (isValidWcagCode(raw)) return raw;
-    const match = raw.match(/\b\d+\.\d+\.\d+\b/);
-    return match ? match[0] : null;
+function severityBadgeClass(severity) {
+    const key = String(severity || "unknown").toLowerCase();
+    if (["critical", "serious", "moderate", "minor"].includes(key)) {
+        return `badge-${key}`;
+    }
+    return "badge-unknown";
 }
+
+// -------------------------
+// 🔗 NAVIGATION UPDATERS
+// -------------------------
+
+function updateSitePreviewLink(jobId) {
+    const link = document.getElementById("sitePreviewLink");
+    if (!link) return;
+    link.href = jobId
+        ? `http://127.0.0.1:8000/jobs/${encodeURIComponent(jobId)}/tab_map.html`
+        : "#";
+}
+
+function updateVirtualScreenreaderLink(jobId) {
+    const link = document.getElementById("virtualScreenreaderLink");
+    if (!link) return;
+    link.href = jobId
+        ? `http://127.0.0.1:8000/jobs/${encodeURIComponent(jobId)}/virtual_screenreader.html`
+        : "#";
+}
+
+function updateContrastReportLink(jobId) {
+    const link = document.getElementById("contrastReportLink");
+    if (!link) return;
+    link.href = jobId
+        ? `http://127.0.0.1:8000/jobs/${encodeURIComponent(jobId)}/contrast_report.html`
+        : "#";
+}
+
+function updateTabbingOrderLink(jobId) {
+    const link = document.getElementById("tabbingOrderLink");
+    if (!link) return;
+    link.href = jobId
+        ? `http://127.0.0.1:8000/jobs/${encodeURIComponent(jobId)}/tab_map.html`
+        : "#";
+}
+
+// -------------------------
+// 🚀 INITIALIZATION & DATA LOADING
+// -------------------------
 
 function setStaticMode(enabled) {
     STATIC_MODE = !!enabled;
@@ -141,53 +197,31 @@ function setStaticMode(enabled) {
     }
 }
 
-function markChartInteractive(id, interactive, hintText = "") {
-    const canvas = document.getElementById(id);
-    if (!canvas) return;
-    canvas.style.cursor = interactive ? "pointer" : "default";
-    canvas.title = interactive ? (hintText || "Click to inspect findings") : "";
-}
-
-function updateSitePreviewLink(jobId) {
-    const link = document.getElementById("sitePreviewLink");
-    if (!link) return;
-
-    // Screenshots and tab maps now live together in the Visual Explorer.
-    link.href = jobId
-        ? `http://127.0.0.1:8000/jobs/${encodeURIComponent(jobId)}/tab_map.html`
-        : "#";
-}
-
-function updateVirtualScreenreaderLink(jobId) {
-    const link = document.getElementById("virtualScreenreaderLink");
-    if (!link) return;
-
-    link.href = jobId
-        ? `http://127.0.0.1:8000/jobs/${encodeURIComponent(jobId)}/virtual_screenreader.html`
-        : "#";
-}
-
-function updateContrastReportLink(jobId) {
-    const link = document.getElementById("contrastReportLink");
-    if (!link) return;
-
-    link.href = jobId
-        ? `http://127.0.0.1:8000/jobs/${encodeURIComponent(jobId)}/contrast_report.html`
-        : "#";
-}
-
-function updateTabbingOrderLink(jobId) {
-    const link = document.getElementById("tabbingOrderLink");
-    if (!link) return;
-
-    link.href = jobId
-        ? `http://127.0.0.1:8000/jobs/${encodeURIComponent(jobId)}/tab_map.html`
-        : "#";
-}
-
 async function loadStaticAnalysis() {
     const res = await fetch(STATIC_ANALYSIS_PATH, { cache: "no-store" });
     if (!res.ok) throw new Error(`Static analysis load failed: ${res.status}`);
+    const data = await res.json();
+    applyAnalysisData(data);
+    updateSitePreviewLink(data.job_id);
+    updateVirtualScreenreaderLink(data.job_id);
+    updateTabbingOrderLink(data.job_id);
+    updateContrastReportLink(data.job_id);
+}
+
+async function runAnalysis() {
+    if (STATIC_MODE) {
+        await loadStaticAnalysis();
+        return;
+    }
+
+    const folder = document.getElementById("folder").value;
+
+    const res = await fetch("/analyze", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ folder })
+    });
+
     const data = await res.json();
     applyAnalysisData(data);
     updateSitePreviewLink(data.job_id);
@@ -216,6 +250,7 @@ function applyAnalysisData(data) {
     renderPageInventoryCheck(data.page_inventory_check || {});
     updateWCAGLevels(data.wcag_levels || {});
 
+    // Hook up interactivity for the charts that support drill-down
     markChartInteractive("problemTypeChart", true, "Click a bar to inspect matching findings");
     markChartInteractive("componentChart", true, "Click a bar to inspect matching findings");
     markChartInteractive("wcagRuleChart", true, "Click a bar to inspect matching findings");
@@ -224,70 +259,9 @@ function applyAnalysisData(data) {
     markChartInteractive("designChart", false);
 }
 
-async function runAnalysis() {
-    if (STATIC_MODE) {
-        await loadStaticAnalysis();
-        return;
-    }
-
-    const folder = document.getElementById("folder").value;
-
-    const res = await fetch("/analyze", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ folder })
-    });
-
-    const data = await res.json();
-    applyAnalysisData(data);
-    updateSitePreviewLink(data.job_id);
-    updateVirtualScreenreaderLink(data.job_id);
-    updateTabbingOrderLink(data.job_id);
-    updateContrastReportLink(data.job_id);
-}
-
-
-// The Safe Setter: Protects the dashboard from crashing if a widget was deleted!
-function setInnerTextSafe(id, value) {
-    const el = document.getElementById(id);
-    if (el) el.innerText = value;
-}
-
-function updateCards(data) {
-    setInnerTextSafe("violations", data.violations || 0);
-    setInnerTextSafe("pages", data.pages || 0);
-    setInnerTextSafe("wcag_criteria_affected", data.distinct_wcag_criteria || 0);
-
-    // 🚀 Wire up our shiny new metric! (Falls back to design_system_impact if needed)
-    const impactVal = data.shared_pattern_impact !== undefined ? data.shared_pattern_impact : (data.design_system_impact || 0);
-    setInnerTextSafe("impact", impactVal + "%");
-
-    setInnerTextSafe("adi", data.accessibility_debt_index || 0);
-    setInnerTextSafe("opportunity", (data.accessibility_opportunity_score || 0) + "%");
-
-    setInnerTextSafe("frame_issues", (data.frame_issues || 0) + " frames");
-    setInnerTextSafe("frame_pages", (data.frame_pages || 0) + " affected pages");
-    setInnerTextSafe("frame_pages_list", data.frame_pages_list || "-");
-
-    setInnerTextSafe("shared_source_rate", (data.shared_source_rate || 0) + "%");
-    setInnerTextSafe("top5_page_concentration", (data.top5_page_concentration || 0) + "%");
-
-    const top5 = (data.top5_pages_list && data.top5_pages_list.length)
-        ? data.top5_pages_list.join(", ")
-        : "-";
-    setInnerTextSafe("top5_pages_list", top5);
-
-    // Because of the Safe Setter, these won't crash the page even if you deleted them from the HTML!
-    const conf = data.confidence_counts || {};
-    setInnerTextSafe("conf_high", conf.high || 0);
-    setInnerTextSafe("conf_medium", conf.medium || 0);
-    setInnerTextSafe("conf_low", conf.low || 0);
-
-    const cons = data.consensus_counts || {};
-    setInnerTextSafe("cons_verified", cons.verified || 0);
-    setInnerTextSafe("cons_likely", cons.likely || 0);
-    setInnerTextSafe("cons_single", cons.single || 0);
-}
+// -------------------------
+// 📊 CHART FACTORY
+// -------------------------
 
 function buildChart(id, labels, values, existing, title = "", onClickHandler = null) {
     const canvas = document.getElementById(id);
@@ -348,11 +322,65 @@ function buildChart(id, labels, values, existing, title = "", onClickHandler = n
     });
 }
 
+function markChartInteractive(id, interactive, hintText = "") {
+    const canvas = document.getElementById(id);
+    if (!canvas) return;
+    canvas.style.cursor = interactive ? "pointer" : "default";
+    canvas.title = interactive ? (hintText || "Click to inspect findings") : "";
+}
+
+// -------------------------
+// 📈 DASHBOARD CARD UPDATERS
+// -------------------------
+
+function setInnerTextSafe(id, value) {
+    const el = document.getElementById(id);
+    if (el) el.innerText = value;
+}
+
+function updateCards(data) {
+    setInnerTextSafe("violations", data.violations || 0);
+    setInnerTextSafe("pages", data.pages || 0);
+    setInnerTextSafe("wcag_criteria_affected", data.distinct_wcag_criteria || 0);
+
+    const impactVal = data.shared_pattern_impact !== undefined ? data.shared_pattern_impact : (data.design_system_impact || 0);
+    setInnerTextSafe("impact", impactVal + "%");
+
+    setInnerTextSafe("adi", data.accessibility_debt_index || 0);
+    setInnerTextSafe("opportunity", (data.accessibility_opportunity_score || 0) + "%");
+
+    setInnerTextSafe("frame_issues", (data.frame_issues || 0) + " frames");
+    setInnerTextSafe("frame_pages", (data.frame_pages || 0) + " affected pages");
+    setInnerTextSafe("frame_pages_list", data.frame_pages_list || "-");
+
+    setInnerTextSafe("shared_source_rate", (data.shared_source_rate || 0) + "%");
+    setInnerTextSafe("top5_page_concentration", (data.top5_page_concentration || 0) + "%");
+
+    const top5 = (data.top5_pages_list && data.top5_pages_list.length)
+        ? data.top5_pages_list.join(", ")
+        : "-";
+    setInnerTextSafe("top5_pages_list", top5);
+
+    const conf = data.confidence_counts || {};
+    setInnerTextSafe("conf_high", conf.high || 0);
+    setInnerTextSafe("conf_medium", conf.medium || 0);
+    setInnerTextSafe("conf_low", conf.low || 0);
+
+    const cons = data.consensus_counts || {};
+    setInnerTextSafe("cons_verified", cons.verified || 0);
+    setInnerTextSafe("cons_likely", cons.likely || 0);
+    setInnerTextSafe("cons_single", cons.single || 0);
+}
+
 function updateWCAGLevels(levels) {
     document.getElementById("wcag_a").innerText = levels.A ?? 0;
     document.getElementById("wcag_aa").innerText = levels.AA ?? 0;
     document.getElementById("wcag_aaa").innerText = levels.AAA ?? 0;
 }
+
+// -------------------------
+// 📊 CHART RENDERERS
+// -------------------------
 
 function renderWcagSupportPanel() {
     const container = document.getElementById("wcagSupportPanel");
@@ -441,7 +469,6 @@ function renderProblemTypeChart(data) {
         problemTypeChart,
         "Top Problem Types",
         (label) => {
-            // Map your UI labels to the component keys found in your data
             const map = {
                 "Forms": ["form", "form_field", "file_upload"],
                 "Interactive": ["button", "modal", "dialog", "accordion"],
@@ -462,7 +489,6 @@ function renderProblemTypeChart(data) {
 }
 
 function renderToolAgreementChart(data) {
-    console.log("TOOL AGREEMENT DATA", data);
     const profile = data || {};
     const entries = Object.entries(profile);
 
@@ -472,32 +498,27 @@ function renderToolAgreementChart(data) {
     const sameFamily = entries.map(([, stats]) => stats.same_family_only || 0);
     const unique = entries.map(([, stats]) => stats.unique || 0);
 
-    const finalLabels = displayLabels;
-    const finalCrossFamily = crossFamily;
-    const finalSameFamily = sameFamily;
-    const finalUnique = unique;
-
     const canvas = document.getElementById("toolAgreementChart");
     if (!canvas) return;
 
     const ctx = canvas.getContext("2d");
 
     const chartData = {
-        labels: finalLabels,
+        labels: displayLabels,
         datasets: [
             {
                 label: "Cross-family agreement",
-                data: finalCrossFamily,
+                data: crossFamily,
                 backgroundColor: palette[0]
             },
             {
                 label: "Same-family only",
-                data: finalSameFamily,
+                data: sameFamily,
                 backgroundColor: palette[1]
             },
             {
                 label: "Unique",
-                data: finalUnique,
+                data: unique,
                 backgroundColor: palette[2]
             }
         ]
@@ -560,17 +581,10 @@ function renderPageChart(data) {
         pageChart,
         "Issues per page",
         (label) => {
-            console.log("DEBUG: Label clicked:", label);
-            // Let's inspect the first row to see what fields it actually has
-            console.log("DEBUG: Row structure example:", GLOBAL_ROWS[0]);
-
             const matches = GLOBAL_ROWS.filter(r => {
-                // Check 'files' OR the 'page' string
                 const pageFiles = Array.isArray(r.files) ? r.files : [r.page];
                 return pageFiles.includes(label);
             });
-
-            console.log("DEBUG: Found matches:", matches.length);
             showDrilldown(`Page: ${label}`, matches);
         }
     );
@@ -586,10 +600,22 @@ function renderDesignChart(data) {
     );
 }
 
+function isValidWcagCode(value) {
+    if (value === null || value === undefined) return false;
+    return /^\d+\.\d+\.\d+$/.test(String(value).trim());
+}
+
+function normalizeWcagCode(value) {
+    if (!value && value !== 0) return null;
+    const raw = String(value).trim();
+    if (isValidWcagCode(raw)) return raw;
+    const match = raw.match(/\b\d+\.\d+\.\d+\b/);
+    return match ? match[0] : null;
+}
+
 function renderWCAGRuleChart(clusters) {
     const counts = {};
 
-    // 1. Build the chart data (Display logic)
     clusters.forEach(c => {
         const wcag = normalizeWcagCode(c.wcag);
         if (!wcag) return;
@@ -599,7 +625,6 @@ function renderWCAGRuleChart(clusters) {
     const labels = Object.keys(counts);
     const values = Object.values(counts);
 
-    // 2. Build the chart (Render logic)
     wcagRuleChart = buildChart(
         "wcagRuleChart",
         labels,
@@ -607,28 +632,25 @@ function renderWCAGRuleChart(clusters) {
         wcagRuleChart,
         "WCAG Rule Breakdown",
         (label) => {
-            // 1. Get the label exactly as it appears on the chart
             const targetLabel = String(label).trim();
-
-            // const matches = GLOBAL_ROWS.filter(r => {
-            //     // 2. Check if the raw data WCAG field contains the label
-            //     // We use String() to be safe and .includes() to be flexible
-            //     const rowWcag = String(r.wcag || "");
-
-            //     // This is a "forgiving" match:
-            //     return rowWcag.includes(targetLabel);
-            // });
             const matches = GLOBAL_ROWS.filter(r => {
-                // Check 'wcag' OR fallback to 'ruleId'
                 const rowCode = normalizeWcagCode(r.wcag || r.ruleId);
                 return rowCode === label;
             });
-
-            console.log(`DEBUG: Filtered ${matches.length} rows for WCAG label: "${targetLabel}"`);
             showDrilldown("WCAG: " + targetLabel, matches);
         }
     );
 }
+
+// -------------------------
+// 🔎 DRILL-DOWN TABLES
+// -------------------------
+
+let DRILLDOWN_ITEMS = [];
+let DRILLDOWN_FILTERED_ITEMS = [];
+let DRILLDOWN_TITLE = "";
+let DRILLDOWN_PAGE = 1;
+let DRILLDOWN_PAGE_SIZE = 25;
 
 function showDrilldown(title, items) {
     DRILLDOWN_TITLE = title || "Details";
@@ -638,9 +660,7 @@ function showDrilldown(title, items) {
     const searchInput = document.getElementById("drilldown-search");
     const pageSizeSelect = document.getElementById("drilldown-page-size");
 
-    if (searchInput) {
-        searchInput.value = "";
-    }
+    if (searchInput) searchInput.value = "";
     if (pageSizeSelect && pageSizeSelect.value) {
         DRILLDOWN_PAGE_SIZE = parseInt(pageSizeSelect.value, 10) || 25;
     }
@@ -661,34 +681,14 @@ function applyDrilldownFilters() {
     } else {
         DRILLDOWN_FILTERED_ITEMS = DRILLDOWN_ITEMS.filter(i => {
             const haystack = [
-                i.rule_label,
-                i.rule_name,
-                i.ruleId,
-                i.rule_id,
-                i.wcag_title,
-                i.wcag,
-                i.component_display,
-                i.component,
-                i.issue_scope,
-                i.display_pattern,
-                i.pattern,
-                i.page_display,
-                i.page,
-                i.page_name,
-                i.source,
+                i.rule_label, i.rule_name, i.ruleId, i.rule_id,
+                i.wcag_title, i.wcag, i.component_display, i.component,
+                i.issue_scope, i.display_pattern, i.pattern,
+                i.page_display, i.page, i.page_name, i.source,
                 Array.isArray(i.sources) ? i.sources.join(" ") : i.sources,
-                i.message,
-                i.description,
-                i.dom_path,
-                i.selector,
-                i.xpath,
-                i.path,
-                i.dom,
-                i.fingerprint
-            ]
-                .filter(Boolean)
-                .join(" ")
-                .toLowerCase();
+                i.message, i.description, i.dom_path, i.selector,
+                i.xpath, i.path, i.dom, i.fingerprint
+            ].filter(Boolean).join(" ").toLowerCase();
 
             return haystack.includes(query);
         });
@@ -754,15 +754,10 @@ function renderDrilldownPage() {
         </div>
     `;
 
-    console.log("DEBUG: Inspecting first drilldown item:", pageItems[0]);
     pageItems.forEach(i => {
-        // Use these definitions:
-        // Inside renderDrilldownPage in script.js
         const ruleLabel = escapeHtml(i.rule_label || i.ruleId || "Unknown");
         const componentLabel = escapeHtml(i.component || "Other");
-        const issueScope = escapeHtml(i.issue_scope || "Unknown");
         const sourceRaw = i.source || "-";
-
         const pageLabel = escapeHtml(
             i.page_display ||
             (i.page !== "Unknown" ? i.page : null) ||
@@ -772,7 +767,7 @@ function renderDrilldownPage() {
         const domPathLabel = escapeHtml(i.dom_path || "");
         const patternLabel = escapeHtml(i.display_pattern || i.pattern || "");
         const sourceLabel = escapeHtml(sourceRaw);
-
+        
         const sourceHtml = sourceRaw && sourceRaw !== "-"
             ? `${renderEnginePill(sourceRaw)} ${sourceLabel}`
             : sourceLabel;
@@ -816,6 +811,252 @@ function renderDrilldownPage() {
     container.style.display = "block";
 }
 
+// -------------------------
+// 🚀 NEXT BEST FIXES (PRIORITIZATION)
+// -------------------------
+
+function renderNextBestFixes(items, summary) {
+    const container = document.getElementById("nextBestFixes");
+    if (!container) return;
+
+    document.getElementById("systemicFixes").innerText = summary.systemic_fixes ?? 0;
+    document.getElementById("top5Pages").innerText = summary.pages_impacted_top5 ?? 0;
+    document.getElementById("topOwnerTeam").innerText = summary.top_owner_team || "-";
+
+    if (!items || !items.length) {
+        container.innerHTML = "<p>No prioritized fixes yet.</p>";
+        return;
+    }
+
+    const maxPriority = Math.max(...items.map(i => i.priority_score || 0), 1);
+
+    const rowsHtml = items.map((item) => {
+        const priorityPct = Math.max(8, Math.round(((item.priority_score || 0) / maxPriority) * 100));
+        const pagesLabel = item.affected_pages_count === 1 ? "page" : "pages";
+        const findingsLabel = item.findings_count === 1 ? "finding" : "findings";
+        
+        return `
+            <tr onclick="showNextBestFixDrilldown('${encodeURIComponent(item.pattern || '')}', '${encodeURIComponent(item.display_pattern || item.pattern || 'Unknown pattern')}')">
+                <td><span class="rank-pill">#${item.top_fix_rank || ''}</span></td>
+                <td>
+                    <div><strong>${escapeHtml(item.display_pattern || item.pattern || "Unknown pattern")}</strong></div>
+                    <div class="muted-text">${escapeHtml(item.root_cause || "Cross-page remediation candidate")}</div>
+                </td>
+                <td>${escapeHtml(item.component_display || item.component || "Other")}</td>
+                <td>${escapeHtml(item.issue_scope || "Unknown")}</td>
+                <td><span class="badge ${severityBadgeClass(item.severity)}">${escapeHtml(item.severity_display || item.severity || "Unknown")}</span></td>
+                <td>${item.findings_count || 0} <span class="muted-text">${findingsLabel}</span></td>
+                <td>${item.affected_pages_count || 0} <span class="muted-text">${pagesLabel}</span></td>
+                <td><span class="badge ${item.is_systemic ? "badge-systemic" : "badge-local"}">${item.is_systemic ? "Yes" : "No"}</span></td>
+                <td>${escapeHtml(item.owner_team || "-")}</td>
+                <td class="priority-cell">
+                    <strong>${item.priority_score || 0}</strong>
+                    <div class="priority-bar"><div class="priority-fill" style="width:${priorityPct}%"></div></div>
+                </td>
+            </tr>
+        `;
+    }).join("");
+
+    container.innerHTML = `
+        <div class="fix-table-wrap">
+            <table class="fix-table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Issue Pattern</th>
+                        <th>Affected Component</th>
+                        <th>Shared Source</th>
+                        <th>Severity</th>
+                        <th>Findings</th>
+                        <th>Pages Impacted</th>
+                        <th>Systemic</th>
+                        <th>Owner</th>
+                        <th>Priority</th>
+                    </tr>
+                </thead>
+                <tbody>${rowsHtml}</tbody>
+            </table>
+        </div>
+    `;
+}
+
+function showNextBestFixDrilldown(patternEncoded, labelEncoded) {
+    const pattern = decodeURIComponent(patternEncoded || "");
+    const label = decodeURIComponent(labelEncoded || "") || pattern;
+
+    let matches = GLOBAL_ROWS.filter(r => r.pattern === pattern);
+
+    if (matches.length === 0) {
+        const cluster = GLOBAL_CLUSTERS.find(c => c.pattern === pattern);
+        if (cluster) {
+            matches = GLOBAL_ROWS.filter(r => r.fingerprint === cluster.fingerprint);
+        }
+    }
+
+    if (matches.length === 0) {
+        const cluster = GLOBAL_CLUSTERS.find(c => c.pattern === pattern);
+        if (cluster && cluster.instances) {
+            matches = cluster.instances;
+        }
+    }
+
+    const healedMatches = matches.map(item => ({
+        ...item,
+        sources: Array.isArray(item.sources) ? item.sources : [item.source || "Unknown"],
+        page_display: (item.page && item.page !== "Unknown") ? item.page :
+            (Array.isArray(item.files) && item.files.length > 0 ? item.files[0] : "Unknown page")
+    }));
+
+    showDrilldown(`Fix Candidate: ${label}`, healedMatches);
+}
+
+// -------------------------
+// 🩺 INVENTORY & DIAGNOSTICS
+// -------------------------
+
+function renderInventoryStatusBadge(status) {
+    const raw = String(status || "").trim();
+    const lower = raw.toLowerCase();
+
+    let label = raw || "Unknown";
+    let cls = "badge-local";
+
+    if (
+        lower === "partial" ||
+        lower === "warning" ||
+        lower.includes("review") ||
+        lower.includes("mismatch") ||
+        lower.includes("missing") ||
+        lower.includes("extra")
+    ) {
+        label = "Needs review";
+        cls = "badge-serious";
+    } else if (lower === "complete" || lower === "ok") {
+        label = "Complete";
+        cls = "badge-systemic";
+    }
+
+    return `<span class="badge ${cls}">${escapeHtml(label)}</span>`;
+}
+
+function renderPageInventoryCheck(inventory) {
+    const container = document.getElementById("pageInventoryCheck");
+    if (!container) return;
+
+    const rawRows = inventory?.rows ?? inventory?.pages ?? inventory?.items ?? inventory?.page_rows ?? inventory?.details ?? [];
+    const allRows = Array.isArray(rawRows) ? rawRows : [];
+    const rawTools = inventory?.tool_folders ?? inventory?.toolFolders ?? inventory?.tools ?? [];
+    const toolList = Array.isArray(rawTools) ? rawTools : String(rawTools || "").split(",").map(s => s.trim()).filter(Boolean);
+    const toolFolderCount = toolList.length || "—";
+
+    const reviewRows = allRows.filter(row => {
+        const status = String(row.status || "").trim().toLowerCase();
+        return !["complete", "ok"].includes(status);
+    });
+
+    const completeRows = allRows.filter(row => {
+        const status = String(row.status || "").trim().toLowerCase();
+        return ["complete", "ok"].includes(status);
+    });
+
+    const computedMismatchPages = reviewRows.length;
+    const computedCompletePages = completeRows.length;
+    const computedMissingReports = reviewRows.reduce((sum, row) => {
+        const missing = row.missing_from ?? row.missingFrom ?? row.tools_missing ?? [];
+        return sum + (Array.isArray(missing) ? missing.length : 0);
+    }, 0);
+
+    const completePages = inventory?.pages_complete ?? inventory?.complete_pages ?? inventory?.completePages ?? inventory?.complete_count ?? inventory?.counts?.complete ?? computedCompletePages ?? "—";
+    const mismatchPages = inventory?.pages_with_mismatch ?? inventory?.mismatch_pages ?? inventory?.mismatchPages ?? inventory?.needs_review ?? inventory?.review_count ?? inventory?.counts?.review ?? computedMismatchPages ?? "—";
+    const missingReports = inventory?.missing_reports ?? inventory?.missingReports ?? inventory?.missing_count ?? inventory?.counts?.missing ?? computedMissingReports ?? "—";
+    const rawStatus = inventory?.status ?? inventory?.inventory_status ?? "";
+
+    let friendlyStatus = "—";
+    const lowerStatus = String(rawStatus).trim().toLowerCase();
+
+    if (lowerStatus === "warning" || lowerStatus === "partial" || lowerStatus.includes("review")) {
+        friendlyStatus = "Needs review";
+    } else if (lowerStatus === "ok" || lowerStatus === "complete" || lowerStatus === "good") {
+        friendlyStatus = "Complete";
+    } else if (reviewRows.length > 0) {
+        friendlyStatus = "Needs review";
+    } else if (allRows.length > 0) {
+        friendlyStatus = "Complete";
+    }
+
+    document.getElementById("inventoryStatus").textContent = friendlyStatus;
+    document.getElementById("inventoryTools").textContent = toolFolderCount;
+    document.getElementById("inventoryCompletePages").textContent = completePages;
+    document.getElementById("inventoryMismatchPages").textContent = mismatchPages;
+    document.getElementById("inventoryMissingReports").textContent = missingReports;
+
+    if (!allRows.length) {
+        container.innerHTML = `
+            <div class="inventory-summary-note inventory-warn">
+                Inventory data unavailable.
+            </div>
+        `;
+        return;
+    }
+
+    if (!reviewRows.length) {
+        container.innerHTML = `
+            <div class="inventory-summary-note inventory-ok">
+                No pages need review. Cross-tool inventory looks complete.
+            </div>
+        `;
+        return;
+    }
+
+    const summaryNote = inventory?.summary_note || inventory?.summaryNote || `${reviewRows.length} page${reviewRows.length === 1 ? "" : "s"} need review.`;
+
+    const tableRows = reviewRows.map(row => {
+        const presentIn = row.present_in ?? row.presentIn ?? row.tools_present ?? [];
+        const missingFrom = row.missing_from ?? row.missingFrom ?? row.tools_missing ?? [];
+
+        const presentList = Array.isArray(presentIn) ? presentIn : String(presentIn || "").split(",").map(s => s.trim()).filter(Boolean);
+        const missingList = Array.isArray(missingFrom) ? missingFrom : String(missingFrom || "").split(",").map(s => s.trim()).filter(Boolean);
+
+        const coverage = row.coverage ?? row.coverage_text ?? row.coverageText ?? `${presentList.length}/${toolList.length || "?"}`;
+
+        return `
+            <tr>
+                <td>${escapeHtml(row.page || row.page_key || row.pageKey || "")}</td>
+                <td>${renderInventoryStatusBadge(row.status)}</td>
+                <td>${escapeHtml(String(coverage))}</td>
+                <td>${escapeHtml(presentList.join(", "))}</td>
+                <td>${escapeHtml(missingList.length ? missingList.join(", ") : "None")}</td>
+            </tr>
+        `;
+    }).join("");
+
+    container.innerHTML = `
+        <div class="inventory-summary-note inventory-warn">
+            ${escapeHtml(summaryNote)}
+        </div>
+        <div class="fix-table-wrap">
+            <table class="fix-table">
+                <thead>
+                    <tr>
+                        <th>Page</th>
+                        <th>Status</th>
+                        <th>Coverage</th>
+                        <th>Present In</th>
+                        <th>Missing From</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${tableRows}
+                </tbody>
+            </table>
+        </div>
+    `;
+}
+
+// -------------------------
+// 📤 EXPORTS & STYLING
+// -------------------------
+
 async function exportXlsx() {
     if (STATIC_MODE) {
         window.location.href = STATIC_XLSX_PATH;
@@ -838,8 +1079,6 @@ async function exportXlsx() {
     a.download = "accessibility_analysis.xlsx";
     a.click();
 }
-
-
 
 function ensureEngineBadgeStyles() {
     if (document.getElementById("engineBadgeStyles")) return;
@@ -896,6 +1135,10 @@ function ensureEngineBadgeStyles() {
     document.head.appendChild(style);
 }
 
+// -------------------------
+// 🚀 BOOTSTRAP
+// -------------------------
+
 document.addEventListener("DOMContentLoaded", async () => {
     ensureEngineBadgeStyles();
 
@@ -917,325 +1160,3 @@ document.addEventListener("DOMContentLoaded", async () => {
         setStaticMode(false);
     }
 });
-
-function escapeHtml(value) {
-    return String(value ?? "")
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#39;");
-}
-
-function severityBadgeClass(severity) {
-    const key = String(severity || "unknown").toLowerCase();
-    if (["critical", "serious", "moderate", "minor"].includes(key)) {
-        return `badge-${key}`;
-    }
-    return "badge-unknown";
-}
-
-function renderNextBestFixes(items, summary) {
-    const container = document.getElementById("nextBestFixes");
-    if (!container) return;
-
-    document.getElementById("systemicFixes").innerText = summary.systemic_fixes ?? 0;
-    document.getElementById("top5Pages").innerText = summary.pages_impacted_top5 ?? 0;
-    document.getElementById("topOwnerTeam").innerText = summary.top_owner_team || "-";
-
-    if (!items || !items.length) {
-        container.innerHTML = "<p>No prioritized fixes yet.</p>";
-        return;
-    }
-
-    const maxPriority = Math.max(...items.map(i => i.priority_score || 0), 1);
-
-    const rowsHtml = items.map((item) => {
-        const priorityPct = Math.max(8, Math.round(((item.priority_score || 0) / maxPriority) * 100));
-        const pagesLabel = item.affected_pages_count === 1 ? "page" : "pages";
-        const findingsLabel = item.findings_count === 1 ? "finding" : "findings";
-        return `
-            <tr onclick="showNextBestFixDrilldown('${encodeURIComponent(item.pattern || '')}', '${encodeURIComponent(item.display_pattern || item.pattern || 'Unknown pattern')}')">
-                <td><span class="rank-pill">#${item.top_fix_rank || ''}</span></td>
-                <td>
-                    <div><strong>${escapeHtml(item.display_pattern || item.pattern || "Unknown pattern")}</strong></div>
-                    <div class="muted-text">${escapeHtml(item.root_cause || "Cross-page remediation candidate")}</div>
-                </td>
-                <td>${escapeHtml(item.component_display || item.component || "Other")}</td>
-                <td>${escapeHtml(item.issue_scope || "Unknown")}</td>
-                <td><span class="badge ${severityBadgeClass(item.severity)}">${escapeHtml(item.severity_display || item.severity || "Unknown")}</span></td>
-                <td>${item.findings_count || 0} <span class="muted-text">${findingsLabel}</span></td>
-                <td>${item.affected_pages_count || 0} <span class="muted-text">${pagesLabel}</span></td>
-                <td><span class="badge ${item.is_systemic ? "badge-systemic" : "badge-local"}">${item.is_systemic ? "Yes" : "No"}</span></td>
-                <td>${escapeHtml(item.owner_team || "-")}</td>
-                <td class="priority-cell">
-                    <strong>${item.priority_score || 0}</strong>
-                    <div class="priority-bar"><div class="priority-fill" style="width:${priorityPct}%"></div></div>
-                </td>
-            </tr>
-        `;
-    }).join("");
-
-    container.innerHTML = `
-        <div class="fix-table-wrap">
-            <table class="fix-table">
-                <thead>
-                    <tr>
-                        <th>Rank</th>
-                        <th>Issue Pattern</th>
-                        <th>Affected Component</th>
-                        <th>Shared Source</th>
-                        <th>Severity</th>
-                        <th>Findings</th>
-                        <th>Pages Impacted</th>
-                        <th>Systemic</th>
-                        <th>Owner</th>
-                        <th>Priority</th>
-                    </tr>
-                </thead>
-                <tbody>${rowsHtml}</tbody>
-            </table>
-        </div>
-    `;
-}
-
-function showNextBestFixDrilldown(patternEncoded, labelEncoded) {
-    const pattern = decodeURIComponent(patternEncoded || "");
-    const label = decodeURIComponent(labelEncoded || "") || pattern;
-
-    // 1. First, try to match by pattern
-    let matches = GLOBAL_ROWS.filter(r => r.pattern === pattern);
-
-    // 2. Fallback: If no matches, try to match by fingerprint (which is often more stable)
-    if (matches.length === 0) {
-        const cluster = GLOBAL_CLUSTERS.find(c => c.pattern === pattern);
-        if (cluster) {
-            // Find rows that share the same fingerprint as the cluster
-            matches = GLOBAL_ROWS.filter(r => r.fingerprint === cluster.fingerprint);
-        }
-    }
-
-    // 3. Fallback to cluster instances if we still have nothing
-    if (matches.length === 0) {
-        const cluster = GLOBAL_CLUSTERS.find(c => c.pattern === pattern);
-        if (cluster && cluster.instances) {
-            matches = cluster.instances;
-        }
-    }
-
-    // 4. "Heal" the data (Ensure 'files' and 'page_displays' exist)
-    const healedMatches = matches.map(item => ({
-        ...item,
-        sources: Array.isArray(item.sources) ? item.sources : [item.source || "Unknown"],
-        page_display: (item.page && item.page !== "Unknown") ? item.page :
-            (Array.isArray(item.files) && item.files.length > 0 ? item.files[0] : "Unknown page")
-    }));
-
-    showDrilldown(`Fix Candidate: ${label}`, healedMatches);
-}
-
-function renderInventoryStatusBadge(status) {
-    const raw = String(status || "").trim();
-    const lower = raw.toLowerCase();
-
-    let label = raw || "Unknown";
-    let cls = "badge-local";
-
-    if (
-        lower === "partial" ||
-        lower === "warning" ||
-        lower.includes("review") ||
-        lower.includes("mismatch") ||
-        lower.includes("missing") ||
-        lower.includes("extra")
-    ) {
-        label = "Needs review";
-        cls = "badge-serious";
-    } else if (lower === "complete" || lower === "ok") {
-        label = "Complete";
-        cls = "badge-systemic";
-    }
-
-    return `<span class="badge ${cls}">${escapeHtml(label)}</span>`;
-}
-
-function renderPageInventoryCheck(inventory) {
-    const container = document.getElementById("pageInventoryCheck");
-    if (!container) return;
-
-    const rawRows =
-        inventory?.rows ??
-        inventory?.pages ??
-        inventory?.items ??
-        inventory?.page_rows ??
-        inventory?.details ??
-        [];
-
-    const allRows = Array.isArray(rawRows) ? rawRows : [];
-
-    const rawTools =
-        inventory?.tool_folders ??
-        inventory?.toolFolders ??
-        inventory?.tools ??
-        [];
-
-    const toolList = Array.isArray(rawTools)
-        ? rawTools
-        : String(rawTools || "")
-            .split(",")
-            .map(s => s.trim())
-            .filter(Boolean);
-
-    const toolFolderCount = toolList.length || "—";
-
-    const reviewRows = allRows.filter(row => {
-        const status = String(row.status || "").trim().toLowerCase();
-        return !["complete", "ok"].includes(status);
-    });
-
-    const completeRows = allRows.filter(row => {
-        const status = String(row.status || "").trim().toLowerCase();
-        return ["complete", "ok"].includes(status);
-    });
-
-    const computedMismatchPages = reviewRows.length;
-    const computedCompletePages = completeRows.length;
-
-    const computedMissingReports = reviewRows.reduce((sum, row) => {
-        const missing =
-            row.missing_from ??
-            row.missingFrom ??
-            row.tools_missing ??
-            [];
-        return sum + (Array.isArray(missing) ? missing.length : 0);
-    }, 0);
-
-    const completePages =
-        inventory?.pages_complete ??
-        inventory?.complete_pages ??
-        inventory?.completePages ??
-        inventory?.complete_count ??
-        inventory?.counts?.complete ??
-        computedCompletePages ??
-        "—";
-
-    const mismatchPages =
-        inventory?.pages_with_mismatch ??
-        inventory?.mismatch_pages ??
-        inventory?.mismatchPages ??
-        inventory?.needs_review ??
-        inventory?.review_count ??
-        inventory?.counts?.review ??
-        computedMismatchPages ??
-        "—";
-
-    const missingReports =
-        inventory?.missing_reports ??
-        inventory?.missingReports ??
-        inventory?.missing_count ??
-        inventory?.counts?.missing ??
-        computedMissingReports ??
-        "—";
-
-    const rawStatus =
-        inventory?.status ??
-        inventory?.inventory_status ??
-        "";
-
-    let friendlyStatus = "—";
-    const lowerStatus = String(rawStatus).trim().toLowerCase();
-
-    if (lowerStatus === "warning" || lowerStatus === "partial" || lowerStatus.includes("review")) {
-        friendlyStatus = "Needs review";
-    } else if (lowerStatus === "ok" || lowerStatus === "complete" || lowerStatus === "good") {
-        friendlyStatus = "Complete";
-    } else if (reviewRows.length > 0) {
-        friendlyStatus = "Needs review";
-    } else if (allRows.length > 0) {
-        friendlyStatus = "Complete";
-    }
-
-    document.getElementById("inventoryStatus").textContent = friendlyStatus;
-    document.getElementById("inventoryTools").textContent = toolFolderCount;
-    document.getElementById("inventoryCompletePages").textContent = completePages;
-    document.getElementById("inventoryMismatchPages").textContent = mismatchPages;
-    document.getElementById("inventoryMissingReports").textContent = missingReports;
-
-    if (!allRows.length) {
-        container.innerHTML = `
-            <div class="inventory-summary-note inventory-warn">
-                Inventory data unavailable.
-            </div>
-        `;
-        return;
-    }
-
-    if (!reviewRows.length) {
-        container.innerHTML = `
-            <div class="inventory-summary-note inventory-ok">
-                No pages need review. Cross-tool inventory looks complete.
-            </div>
-        `;
-        return;
-    }
-
-    const summaryNote =
-        inventory?.summary_note ||
-        inventory?.summaryNote ||
-        `${reviewRows.length} page${reviewRows.length === 1 ? "" : "s"} need review.`;
-
-    const tableRows = reviewRows.map(row => {
-        const presentIn =
-            row.present_in ??
-            row.presentIn ??
-            row.tools_present ??
-            [];
-
-        const missingFrom =
-            row.missing_from ??
-            row.missingFrom ??
-            row.tools_missing ??
-            [];
-
-        const presentList = Array.isArray(presentIn) ? presentIn : String(presentIn || "").split(",").map(s => s.trim()).filter(Boolean);
-        const missingList = Array.isArray(missingFrom) ? missingFrom : String(missingFrom || "").split(",").map(s => s.trim()).filter(Boolean);
-
-        const coverage =
-            row.coverage ??
-            row.coverage_text ??
-            row.coverageText ??
-            `${presentList.length}/${toolList.length || "?"}`;
-
-        return `
-            <tr>
-                <td>${escapeHtml(row.page || row.page_key || row.pageKey || "")}</td>
-                <td>${renderInventoryStatusBadge(row.status)}</td>
-                <td>${escapeHtml(String(coverage))}</td>
-                <td>${escapeHtml(presentList.join(", "))}</td>
-                <td>${escapeHtml(missingList.length ? missingList.join(", ") : "None")}</td>
-            </tr>
-        `;
-    }).join("");
-
-    container.innerHTML = `
-        <div class="inventory-summary-note inventory-warn">
-            ${escapeHtml(summaryNote)}
-        </div>
-        <div class="fix-table-wrap">
-            <table class="fix-table">
-                <thead>
-                    <tr>
-                        <th>Page</th>
-                        <th>Status</th>
-                        <th>Coverage</th>
-                        <th>Present In</th>
-                        <th>Missing From</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    ${tableRows}
-                </tbody>
-            </table>
-        </div>
-    `;
-}

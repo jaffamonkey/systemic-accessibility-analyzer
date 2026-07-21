@@ -1,3 +1,13 @@
+"""
+Processing Engine
+
+This module serves as the primary ETL (Extract, Transform, Load) pipeline for 
+raw accessibility violations. It normalizes data from disparate testing tools, 
+cleans noisy DOM selectors, maps rules to a canonical taxonomy, and enriches 
+the data with Business Intelligence (BI) fields for dashboard reporting.
+"""
+
+import re
 from pathlib import Path
 
 from analyzer.component_config import COMPONENT_GROUPS
@@ -6,10 +16,7 @@ from services.rule_aliases import (
     PROBLEM_TYPE_MAP,
     CANONICAL_RULES,
 )
-from analyzer.component_detector import (
-    detect_design_system
-)
-
+from analyzer.component_detector import detect_design_system
 from analyzer.component_learning import update_learning
 from analyzer.utils import simplify_pattern
 from analyzer.fingerprint import build_fingerprint
@@ -32,12 +39,11 @@ from services.bi_fields import (
     get_tool_engine,
 )
 
-import re
 
-from services.rule_aliases import RULE_ALIAS_MAP, PROBLEM_TYPE_MAP
-
-
-def _slugify_rule_text(value):
+def _slugify_rule_text(value: str) -> str | None:
+    """
+    Converts arbitrary text into a safe, kebab-case slug for use as a canonical ID.
+    """
     if not value:
         return None
     value = str(value).strip().lower()
@@ -46,32 +52,16 @@ def _slugify_rule_text(value):
     return value or None
 
 
-# def _canonicalize_htmlsniffer_rule(raw_rule_id):
-#     raw = str(raw_rule_id or "").strip().lower()
-
-#     if any(token in raw for token in ["1_4_6", "1.4.6"]):
-#         return "color-contrast-enhanced"
-
-#     if any(token in raw for token in ["1_4_3", "1.4.3"]):
-#         return "color-contrast"
-
-#     if any(token in raw for token in ["4_1_2", "4.1.2"]):
-#         return "button-name"
-
-#     if "region" in raw or "landmark" in raw:
-#         return "region"
-
-#     return _slugify_rule_text(raw) or "unknown-rule"
-
-import re
-
 def _canonicalize_htmlsniffer_rule(raw: str) -> str:
+    """
+    Extracts the core WCAG criteria and technique from noisy HTMLCS strings.
+    Example: 'WCAG2AA.Principle1.Guideline1_4.1_4_3.G18' -> 'htmlcs-1_4_3-g18'
+    """
     text = str(raw or "").strip()
     if not text:
         return ""
 
     upper = text.upper()
-
     wcag_match = re.search(r"(\d)_(\d)_(\d)", upper)
     technique_match = re.search(r"\b([A-Z]+\d+)\b", upper)
 
@@ -91,10 +81,15 @@ def _canonicalize_htmlsniffer_rule(raw: str) -> str:
     return upper.lower()
 
 
-def _canonicalize_rule_id(source, raw_rule_id=None, rule_label=None, message=None):
+def _canonicalize_rule_id(source: str, raw_rule_id: str = None, rule_label: str = None, message: str = None) -> str:
+    """
+    Maps tool-specific rule IDs to our universal taxonomy. If a direct alias
+    doesn't exist, it falls back to a slugified version of the rule label or message.
+    """
     source = str(source or "").strip().lower()
     raw = str(raw_rule_id or "").strip()
 
+    # Handle HTMLCS idiosyncrasies first
     if source in {"html-sniffer", "htmlcs", "html_codesniffer", "pa11y-htmlcs"} and raw:
         canonical = _canonicalize_htmlsniffer_rule(raw)
         return RULE_ALIAS_MAP.get(canonical, canonical)
@@ -105,12 +100,14 @@ def _canonicalize_rule_id(source, raw_rule_id=None, rule_label=None, message=Non
             return RULE_ALIAS_MAP[raw_lower]
         return raw_lower
 
+    # Fallback 1: Use the rule's human-readable label
     label_slug = _slugify_rule_text(rule_label)
     if label_slug:
         if label_slug in RULE_ALIAS_MAP:
             return RULE_ALIAS_MAP[label_slug]
         return label_slug
 
+    # Fallback 2: Use the error message itself
     message_slug = _slugify_rule_text(message)
     if message_slug:
         if message_slug in RULE_ALIAS_MAP:
@@ -120,21 +117,24 @@ def _canonicalize_rule_id(source, raw_rule_id=None, rule_label=None, message=Non
     return "unknown-rule"
 
 
-# def _canonicalize_problem_type(canonical_rule_id):
-#     return PROBLEM_TYPE_MAP.get(canonical_rule_id, "other")
-
-def _canonicalize_problem_type(canonical_rule_id):
+def _canonicalize_problem_type(canonical_rule_id: str) -> str:
+    """
+    Maps a canonical rule ID to a broader problem category (e.g., 'contrast', 'keyboard').
+    """
     canonical = CANONICAL_RULES.get(canonical_rule_id)
-
     if canonical:
         return canonical.get("problem_type", "other")
 
     return PROBLEM_TYPE_MAP.get(canonical_rule_id, "other")
 
-def _coerce_selector_value(value):
+
+def _coerce_selector_value(value) -> str:
+    """
+    Safely extracts a string representation of a DOM selector, regardless of 
+    whether the tool provided it as a string, list, tuple, or dict.
+    """
     if value is None:
         return ""
-
     if isinstance(value, str):
         return value
 
@@ -143,7 +143,6 @@ def _coerce_selector_value(value):
         for item in value:
             if item is None:
                 continue
-
             if isinstance(item, dict):
                 extracted = ""
                 for key in ("xpath", "selector", "target", "css", "path", "html", "dom"):
@@ -155,7 +154,6 @@ def _coerce_selector_value(value):
                 parts.append(extracted)
             else:
                 parts.append(str(item))
-
         return " ".join(p for p in parts if p).strip()
 
     if isinstance(value, dict):
@@ -167,7 +165,7 @@ def _coerce_selector_value(value):
     return str(value).strip()
 
 
-def _extract_href_token(text):
+def _extract_href_token(text: str) -> str | None:
     if not text:
         return None
     match = re.search(r'href\s*=\s*["\']([^"\']+)["\']', str(text), re.IGNORECASE)
@@ -176,16 +174,17 @@ def _extract_href_token(text):
     return None
 
 
-def _extract_id_token(text):
+def _extract_id_token(text: str) -> str | None:
     if not text:
         return None
-
     text = str(text).strip()
 
+    # Match CSS id (#my-id)
     match = re.search(r'#([a-zA-Z][\w\-:.]*)', text)
     if match:
         return f"id={match.group(1).lower()}"
 
+    # Match HTML id attribute (id="my-id")
     match = re.search(r'id\s*=\s*["\']([^"\']+)["\']', text, re.IGNORECASE)
     if match:
         return f"id={match.group(1).strip().lower()}"
@@ -193,41 +192,44 @@ def _extract_id_token(text):
     return None
 
 
-def _strip_positional_noise(text):
+def _strip_positional_noise(text: str) -> str:
+    """
+    Removes fragile pseudo-selectors (like nth-child) to prevent dynamic 
+    content shifts from breaking our systemic issue clustering.
+    """
     if not text:
         return ""
-
     text = str(text).strip().lower()
-
     text = re.sub(r":nth-child\(\d+\)", "", text)
     text = re.sub(r":nth-of-type\(\d+\)", "", text)
     text = re.sub(r"\[\d+\]", "", text)
     text = re.sub(r"\s*>\s*", " > ", text)
     text = re.sub(r"\s+", " ", text)
-
     return text.strip()
 
 
-def _extract_tag_token(text):
+def _extract_tag_token(text: str) -> str | None:
     if not text:
         return None
-
     text = str(text).strip().lower()
-
     for tag in ("button", "a", "input", "select", "textarea", "img", "li", "td", "th"):
         if text == tag or text.startswith(tag) or f"<{tag}" in text or f" {tag}" in text:
             return f"tag={tag}"
-
     return None
+
 
 HTMLCS_SOURCES = {"html-sniffer", "pa11y-htmlcs", "htmlcs", "html_codesniffer"}
 
 
 def _normalize_htmlcs_context(value: str | None) -> str:
+    """
+    HTMLCS often returns massive blocks of raw HTML/CSS as the context.
+    This strips out inline styles, data attributes, and massive class lists to
+    prevent clustering failures caused by irrelevant DOM differences.
+    """
     text = str(value or "").strip()
     if not text:
         return ""
-
     text = re.sub(r"\s+", " ", text)
     text = re.sub(r'\sstyle="[^"]*"', "", text, flags=re.I)
     text = re.sub(r"\sstyle='[^']*'", "", text, flags=re.I)
@@ -242,67 +244,24 @@ def _normalize_htmlcs_selector(value: str | None) -> str:
     text = str(value or "").strip().lower()
     if not text:
         return ""
-
     text = re.sub(r":nth-child\(\d+\)", "", text)
     text = re.sub(r":nth-of-type\(\d+\)", "", text)
-
     parts = [p.strip() for p in re.split(r"\s*>\s*|\s+", text) if p.strip()]
     if not parts:
         return ""
-
     last = parts[-1]
     return last or text[:120]
 
-# def _build_normalized_target_key(row, raw_selector, pattern):
-#     candidates = [
-#         raw_selector,
-#         row.get("selector"),
-#         row.get("target"),
-#         row.get("xpath"),
-#         row.get("dom_path"),
-#         row.get("dom"),
-#         pattern,
-#     ]
 
-#     # 1. Strongest match: explicit id
-#     for value in candidates:
-#         token = _extract_id_token(value)
-#         if token:
-#             return token
-
-#     cleaned_candidates = []
-#     for value in candidates:
-#         cleaned = _strip_positional_noise(value)
-#         if cleaned and cleaned not in {"html", "body", "document"}:
-#             cleaned_candidates.append(cleaned)
-
-#     # 2. Prefer a meaningful cleaned selector/path
-#     for cleaned in cleaned_candidates:
-#         if any(marker in cleaned for marker in ["#", ".", "[", ">", "/", "href=", "id="]):
-#             return cleaned
-
-#     # 3. Href can help, but should not stand alone if we can avoid it
-#     for value in candidates:
-#         href_token = _extract_href_token(value)
-#         if href_token:
-#             tag_token = _extract_tag_token(value) or _extract_tag_token(pattern)
-#             if pattern and pattern not in {"a", "link", "button", "input", "unknown-target"}:
-#                 return f"{tag_token or 'tag=unknown'}|{href_token}|pattern={pattern}"
-#             return f"{tag_token or 'tag=unknown'}|{href_token}"
-
-#     # 4. Only then fall back to tag
-#     tag_token = _extract_tag_token(raw_selector) or _extract_tag_token(pattern)
-#     if tag_token:
-#         if pattern and pattern not in {"a", "link", "button", "input", "unknown-target"}:
-#             return f"{tag_token}|pattern={pattern}"
-#         return tag_token
-
-#     return pattern or "unknown-target"
-
-def _build_normalized_target_key(row, raw_selector, pattern):
+def _build_normalized_target_key(row: dict, raw_selector: str, pattern: str) -> str:
+    """
+    Constructs a highly stable fingerprint for a DOM element.
+    Evaluates candidates in order of reliability: ID > Cleaned Selector > Href > Tag.
+    """
     source = str(row.get("source") or "").strip().lower()
     context = row.get("html") or row.get("context") or row.get("dom")
 
+    # Handle HTMLCS specifically due to its noisy output
     if source in HTMLCS_SOURCES:
         norm_context = _normalize_htmlcs_context(context)
         norm_selector = _normalize_htmlcs_selector(
@@ -314,15 +273,14 @@ def _build_normalized_target_key(row, raw_selector, pattern):
 
         if norm_context and norm_selector:
             return f"{norm_selector}|{norm_context}"
-
         if norm_context:
             return norm_context
-
         if norm_selector:
             if pattern and pattern not in {"unknown-target", norm_selector}:
                 return f"{norm_selector}|pattern={pattern}"
             return norm_selector
 
+    # Gather all possible location hints
     candidates = [
         raw_selector,
         row.get("selector"),
@@ -333,11 +291,13 @@ def _build_normalized_target_key(row, raw_selector, pattern):
         pattern,
     ]
 
+    # 1. Strongest match: explicit ID
     for value in candidates:
         token = _extract_id_token(value)
         if token:
             return token
 
+    # 2. Prefer a meaningful, noise-stripped selector/path
     cleaned_candidates = []
     for value in candidates:
         cleaned = _strip_positional_noise(value)
@@ -348,6 +308,7 @@ def _build_normalized_target_key(row, raw_selector, pattern):
         if any(marker in cleaned for marker in ["#", ".", "[", ">", "/", "href=", "id="]):
             return cleaned
 
+    # 3. Href can help, but shouldn't stand alone if we can avoid it
     for value in candidates:
         href_token = _extract_href_token(value)
         if href_token:
@@ -356,6 +317,7 @@ def _build_normalized_target_key(row, raw_selector, pattern):
                 return f"{tag_token or 'tag=unknown'}|{href_token}|pattern={pattern}"
             return f"{tag_token or 'tag=unknown'}|{href_token}"
 
+    # 4. Final fallback: HTML Tag
     tag_token = _extract_tag_token(raw_selector) or _extract_tag_token(pattern)
     if tag_token:
         if pattern and pattern not in {"a", "link", "button", "input", "unknown-target"}:
@@ -364,26 +326,27 @@ def _build_normalized_target_key(row, raw_selector, pattern):
 
     return pattern or "unknown-target"
 
-def process_rows(rows):
+
+def process_rows(rows: list) -> list:
+    """
+    Main processing loop. Iterates through raw violation rows to clean, 
+    normalize, and enrich the dataset before generating BI dashboards.
+    """
     cleaned_rows = []
+    
     for r in rows:
-        # --- PATCH: Capture page identifier from known file paths if missing ---
+        # --- 1. PAGE IDENTIFICATION ---
+        # Capture page identifier from known file paths if explicit page name is missing
         if not r.get("page") or r.get("page") == "Unknown":
-            # If your report_loader attaches a 'source_file' or 'path' to the row:
             source_path = r.get("source_file") or r.get("path")
             if source_path:
                 r["page"] = Path(source_path).stem
 
-        # -------------------------
-        # 1. NORMALIZE SEVERITY
-        # -------------------------
+        # --- 2. SEVERITY & TOOL IDENTIFICATION ---
         severity = normalize_severity(r.get("severity"))
-
         if severity is None:
             continue
-
         r["severity"] = severity
-
 
         source = r.get("source")
         r["tool_family"] = r.get("tool_family") or get_tool_family(source)
@@ -392,6 +355,7 @@ def process_rows(rows):
         if not r.get("sources"):
             r["sources"] = [source] if source else []
 
+        # Deduplicate tool families and engines
         existing_families = r.get("tool_families")
         if existing_families:
             r["tool_families"] = sorted({str(v) for v in existing_families if v})
@@ -408,9 +372,7 @@ def process_rows(rows):
         r["tool_engine_count"] = max(1, len(r["tool_engines"])) if r["tool_engines"] else 1
         r["tool_count"] = max(1, int(r.get("tool_count") or len(r["sources"]) or 1))
 
-        # -------------------------
-        # 2. EXTRACT SELECTOR
-        # -------------------------
+        # --- 3. DOM SELECTOR EXTRACTION ---
         raw_selector = (
             r.get("selector")
             or r.get("dom")
@@ -430,8 +392,7 @@ def process_rows(rows):
         except Exception:
             pattern = ""
 
-        # SpecA11y often has stable rule IDs, including page-level findings with no DOM selector.
-        # For those, use the rule ID as the pattern so findings are not dropped or clustered by message text.
+        # Edge Case: SpecA11y often has stable rule IDs for page-level findings with no DOM selector.
         source_key = str(r.get("source") or "").strip().lower()
         if source_key == "speca11y":
             speca11y_rule_key = (
@@ -444,26 +405,14 @@ def process_rows(rows):
             if speca11y_pattern:
                 pattern = speca11y_pattern
 
-        if not pattern:
+        if not pattern or pattern in ["html", "body", "document"]:
             continue
 
-        # -------------------------
-        # 2.1 CLEAN NOISE
-        # -------------------------
-        if pattern in ["html", "body", "document"]:
-            continue
-
-        # -------------------------
-        # 🔥 2.2 PATTERN CONTEXT
-        # -------------------------
         parts = pattern.split("_") if pattern else []
-
         r["pattern"] = pattern
         r["pattern_parts"] = parts
 
-        # -------------------------
-        # 2.3 CANONICAL RULE NORMALIZATION
-        # -------------------------
+        # --- 4. CANONICAL RULE NORMALIZATION ---
         raw_rule_id = r.get("ruleId") or r.get("rule_id")
         if str(r.get("source") or "").strip().lower() == "speca11y":
             raw_rule_id = r.get("rule_id") or r.get("ruleId")
@@ -475,19 +424,12 @@ def process_rows(rows):
             message=r.get("message"),
         )
 
-        canonical_problem_type = _canonicalize_problem_type(canonical_rule_id)
-
         r["canonical_rule_id"] = canonical_rule_id
-        r["canonical_problem_type"] = canonical_problem_type
+        r["canonical_problem_type"] = _canonicalize_problem_type(canonical_rule_id)
+        r["normalized_target_key"] = _build_normalized_target_key(r, raw_selector, pattern)
 
-        normalized_target_key = _build_normalized_target_key(r, raw_selector, pattern)
-        r["normalized_target_key"] = normalized_target_key
-
-        # -------------------------
-        # 3. COMPONENT
-        # -------------------------
+        # --- 5. COMPONENT & DESIGN SYSTEM DETECTION ---
         component = suggest_component(pattern)
-
         if not component:
             component = suggest_component_from_context(
                 rule_id=r.get("ruleId"),
@@ -496,26 +438,16 @@ def process_rows(rows):
                 pattern=pattern,
             )
 
-        # -------------------------
-        # 4. DESIGN SYSTEM
-        # -------------------------
         design_system = detect_design_system(pattern)
 
-        # -------------------------
-        # 5. LEARNING
-        # -------------------------
+        # Log unrecognized patterns to the learning engine
         if not component:
             update_learning(pattern)
             component = "other"
 
-        # -------------------------
-        # 6. GROUPING
-        # -------------------------
         group = COMPONENT_GROUPS.get(component, component)
 
-        # -------------------------
-        # 7. ASSIGN BACK
-        # -------------------------
+        # --- 6. BI FIELD ENRICHMENT ---
         page_key = canonical_page_key(
             r.get("page"),
             r.get("url"),
@@ -551,7 +483,7 @@ def process_rows(rows):
         )
         r["fingerprint"] = build_fingerprint(
             r.get("dom"),
-            normalized_target_key or raw_selector or pattern
+            r["normalized_target_key"] or raw_selector or pattern
         )
         r["owner_team"] = infer_owner_team(group, component)
         r["design_system_issue"] = (design_system or "custom") != "custom"
@@ -576,7 +508,5 @@ def process_rows(rows):
 
         cleaned_rows.append(r)
 
-    # -------------------------
-    # DEDUPLICATE
-    # -------------------------
+    # --- 7. FINAL DEDUPLICATION ---
     return deduplicate_rows(cleaned_rows)

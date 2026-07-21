@@ -1,3 +1,15 @@
+"""
+Cluster Engine
+
+This module is responsible for aggregating individual accessibility violations 
+into "Systemic Clusters". While the deduplicate engine handles fuzzy matching 
+of the same issue across different tools on a single page, this engine groups 
+issues globally across the entire digital estate. 
+
+It identifies patterns like "This exact contrast issue on the primary button 
+appears on 50 different pages" and enriches them with prioritization scoring.
+"""
+
 from analyzer.fingerprint import build_fingerprint
 from analyzer.component_detector import detect_component
 from services.design_system import detect_design_system_issue
@@ -16,25 +28,37 @@ from services.bi_fields import (
 )
 
 
-def build_clusters(rows):
+def build_clusters(rows: list) -> list:
+    """
+    Takes a list of normalized violation rows and groups them by Rule, 
+    Component, and Fingerprint. Calculates the systemic impact (how many 
+    pages are affected) and applies a business-value priority score.
+    """
     clusters = {}
 
     for r in rows:
+        # --- 1. EXTRACT CORE IDENTIFIERS ---
         dom = r.get("dom", "")
         selector = r.get("selector") or r.get("pattern") or ""
         component = normalize_component(r.get("component") or detect_component(dom, selector))
+        
+        # Use the pre-calculated fingerprint, or generate a strict one if missing.
+        # The inclusion of ruleId ensures we don't accidentally merge a contrast 
+        # issue and a keyboard-focus issue on the exact same button.
         fingerprint = (
             r.get("fingerprint")
             or build_fingerprint(
                 dom, 
                 r.get("normalized_target_key") or selector,
-                r.get("ruleId") or r.get("rule_id")  # 🔥 Added the rule ID here!
+                r.get("ruleId") or r.get("rule_id")  
             )
         )
 
+        # --- 2. BUILD THE CLUSTER KEY ---
         rule_key = r.get("canonical_rule_id") or r.get("ruleId") or r.get("wcag") or "unknown-rule"
         fp = f"{rule_key}|{component}|{fingerprint}"
 
+        # --- 3. INITIALIZE CLUSTER SCHEMA ---
         if fp not in clusters:
             clusters[fp] = {
                 "ruleId": r.get("ruleId"),
@@ -66,11 +90,12 @@ def build_clusters(rows):
                 "canonical_problem_type": r.get("canonical_problem_type"),
             }
 
+        # --- 4. AGGREGATE INSTANCES ---
         clusters[fp]["count"] += 1
         clusters[fp]["sources"].add(r.get("source") or "unknown")
+        
         # Prefer the normalized page identifier so the same page found by
-        # different tools does not get counted twice (for example `login.json`
-        # and `https://.../login`).
+        # different tools does not get counted twice (e.g. `login.json` vs `login`)
         page = r.get("page") or r.get("url") or r.get("document") or r.get("file")
         if page:
             clusters[fp]["files"].add(page)
@@ -78,7 +103,9 @@ def build_clusters(rows):
             if page_display:
                 clusters[fp]["page_displays"].add(page_display)
 
+    # --- 5. ENRICH AND SCORE CLUSTERS ---
     for c in clusters.values():
+        # Finalize counts and convert sets to sorted lists
         c["files"] = sorted(c["files"])
         c["page_displays"] = sorted(c.get("page_displays", []))
         c["page_names"] = ", ".join(c["page_displays"])
@@ -87,16 +114,24 @@ def build_clusters(rows):
         c["tool_families"] = sorted({get_tool_family(source) for source in c["sources"] if source})
         c["tool_family_count"] = len(c["tool_families"])
         c["pages"] = len(c["files"])
+        
+        # Detect Design System Root Causes
         c["root_cause"] = detect_design_system_issue(c)
+        
+        # Define "Systemic": Issue must appear on at least 3 distinct pages 
+        # AND have at least 2 distinct instances total.
         c["systemic"] = c["pages"] >= 3 and c["count"] >= 2
 
         c["rule_label"] = format_rule_label(c)
 
+        # Generate Business Intelligence (BI) sorting and display fields
         c["severity_sort"] = severity_sort_value(c.get("severity"))
         c["wcag_level_sort"] = wcag_level_sort_value(c.get("wcag_level"))
         c["component_display"] = humanize_slug(c.get("component"))
         c["component_group_display"] = humanize_slug(c.get("component_group"))
         c["display_pattern"] = humanize_slug(c.get("pattern") or c.get("component"))
+        
+        # Assign ownership and scope
         c["owner_team"] = infer_owner_team(c.get("component_group"), c.get("component"))
         c["design_system_issue"] = bool(c.get("root_cause") or c.get("systemic"))
         c["issue_scope"] = infer_issue_scope(
@@ -108,6 +143,8 @@ def build_clusters(rows):
         )
         c["issue_scope_sort"] = issue_scope_sort_value(c["issue_scope"])
         c["affected_pages_count"] = c.get("pages", 0)
+        
+        # Calculate final prioritization score
         c["issue_rank_score"] = estimate_issue_rank_score(
             severity=c.get("severity"),
             pages=c.get("pages", 1),
@@ -116,4 +153,5 @@ def build_clusters(rows):
             tool_count=c.get("tool_count", 1),
         )
 
+    # Return clusters sorted by Priority Score -> Instance Count -> Affected Pages
     return sorted(clusters.values(), key=lambda c: (c.get("issue_rank_score", 0), c["count"], c["pages"]), reverse=True)

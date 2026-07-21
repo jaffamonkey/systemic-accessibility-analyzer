@@ -1,5 +1,18 @@
-DESIGN_SYSTEM_MAP = {
+"""
+Component Mapper
 
+Normalizes raw UI identifiers (like HTML tags, CSS classes, or custom IDs) 
+into a strict, canonical taxonomy. This prevents reporting fragmentation, 
+ensuring that variations like "btn", "cta", and "button" are all aggregated 
+under a single "button" component in the BI dashboards.
+"""
+
+# -------------------------
+# 🗂️ TAXONOMY MAPS
+# -------------------------
+
+# Maps loose, raw DOM strings to our standardized component names
+DESIGN_SYSTEM_MAP = {
     # Navigation
     "nav": "navigation",
     "menu": "navigation",
@@ -10,7 +23,7 @@ DESIGN_SYSTEM_MAP = {
     # Frames
     "frame": "frame",
 
-    # Buttons / actions
+    # Buttons / Actions
     "button": "button",
     "btn": "button",
     "cta": "button",
@@ -34,7 +47,7 @@ DESIGN_SYSTEM_MAP = {
     "sidebar": "layout",
     "container": "layout",
 
-    # UI patterns
+    # UI Patterns
     "modal": "modal",
     "dialog": "modal",
     "card": "card",
@@ -42,6 +55,7 @@ DESIGN_SYSTEM_MAP = {
     "tab": "tabs",
 }
 
+# The definitive list of top-level component categories allowed in the system
 COMPONENT_SLUGS = {
     "button",
     "link",
@@ -57,13 +71,17 @@ COMPONENT_SLUGS = {
     "third_party",
 }
 
-def normalize_component(component):
-
+def normalize_component(component: str | None) -> str:
+    """
+    Takes an arbitrary component string and maps it to the official taxonomy.
+    If no match is found, it falls back to the original string or 'other'.
+    """
     if not component:
         return "other"
 
     component = component.lower()
 
+    # Search for known taxonomy keywords inside the raw string
     for key, mapped in DESIGN_SYSTEM_MAP.items():
         if key in component:
             return mapped

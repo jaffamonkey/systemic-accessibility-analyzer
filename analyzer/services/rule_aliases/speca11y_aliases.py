@@ -16,17 +16,6 @@ SPECA11Y_ALIASES = {
     "no-keyboard-trap": "keyboard",
     "tabindex-removes-focusability": "keyboard",
 
-    # Accessible names
-    # "button-name": "accessible-name",
-    # "link-name": "accessible-name",
-    # "aria-input-field-name": "accessible-name",
-    # "label-content-name-mismatch": "accessible-name",
-    # "no-empty-links": "accessible-name",
-
-    # Images
-    # "img-alt": "missing-alt",
-    # "svg-img-alt": "missing-alt",
-
     # Contrast
     "color-contrast": "color-contrast",
     "non-text-contrast": "non-text-contrast",
@@ -36,8 +25,6 @@ SPECA11Y_ALIASES = {
     "focus-visible": "focus-visible",
     "focus-visible-contrast": "focus-visible",
     "focus-appearance": "focus-visible",
-    # "tabindex-removes-focusability": "keyboard",
-    # "no-keyboard-trap": "keyboard",
 
     # Structure
     "nested-interactive": "structure",
@@ -48,10 +35,6 @@ SPECA11Y_ALIASES = {
     "skip-link": "bypass-repeated-blocks",
     "bypass-blocks": "bypass-repeated-blocks",
     "page-must-provide-a-mechanism-to-bypass-repeated-blocks-of-content": "bypass-repeated-blocks",
-
-    # "landmark-unique": "landmark",
-    # "landmark-banner-top-level": "landmark",
-    # "landmark-complementary-top-level": "landmark",
 
     # ARIA
     "aria-required-children": "aria-role",

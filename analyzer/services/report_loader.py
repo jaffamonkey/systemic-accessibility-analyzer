@@ -1,3 +1,14 @@
+"""
+Report Loader & Diagnostics
+
+This module is the entry point for all raw accessibility data. It scans a target 
+directory for JSON reports, dynamically determines which tool generated them, 
+and routes them through the appropriate adapter to extract a normalized list of violations.
+
+It also includes an inventory diagnostic tool to ensure that every page was successfully 
+scanned by every requested tool, flagging silent failures before analysis begins.
+"""
+
 from pathlib import Path
 import json
 import re
@@ -14,22 +25,29 @@ from services.bi_fields import (
     get_engine_family_meta,
 )
 
-
+# Directories and files to skip during the report discovery phase
 IGNORED_REPORT_FOLDERS = {"virtual-screenreader", "screenshots", "tab-map", "contrast-checker"}
 IGNORED_REPORT_FILES = {"summary.json", "manifest.json", "index.json"}
 
 # -------------------------
-# RULE NORMALIZATION
+# 📏 RULE NORMALIZATION
 # -------------------------
-def normalize_rule(rule):
+
+def normalize_rule(rule: str | None) -> str:
+    """
+    Cleans up noisy or proprietary rule IDs into standard WCAG references where possible.
+    For example, extracts '1.4.3' from 'ColorContrast' or '1_4_3.G18'.
+    """
     if not rule:
         return ""
 
     rule = str(rule)
 
+    # Extract standard WCAG mapping (e.g., 1_4_3 -> 1.4.3)
     match = re.search(r"(\d)_(\d)_(\d)", rule)
     if match:
         wcag = f"{match.group(1)}.{match.group(2)}.{match.group(3)}"
+        # Append specific technique if present (e.g., [G18])
         tech_match = re.search(r"\.(G\d+|H\d+|ARIA\d+)", rule)
         return f"{wcag} [{tech_match.group(1)}]" if tech_match else wcag
 
@@ -40,8 +58,10 @@ def normalize_rule(rule):
 
 
 # -------------------------
-# KNOWN RULE -> WCAG ENRICHMENT
+# 📚 KNOWN RULE -> WCAG ENRICHMENT
 # -------------------------
+
+# Fallback mapping for tools that output proprietary rule IDs without WCAG references
 KNOWN_RULE_WCAG_MAP = {
     "aria-allowed-role": ("4.1.2", "A"),
     "aria_descendant_valid": ("1.3.1", "A"),
@@ -56,6 +76,7 @@ KNOWN_RULE_WCAG_MAP = {
     "widget-tabbable-single": ("2.1.1", "A"),
 }
 
+# Rules that are considered best practices but do not map strictly to a WCAG failure
 SKIP_STRICT_WCAG_ENRICHMENT = {
     "element_tabbable_unobscured",
     "element-tabbable-unobscured",
@@ -64,6 +85,7 @@ SKIP_STRICT_WCAG_ENRICHMENT = {
 
 
 def _enrich_known_wcag_rules(row: dict) -> dict:
+    """Applies fallback WCAG mappings for specific, known proprietary rule IDs."""
     rule_id = str(row.get("ruleId") or row.get("rule_id") or "").strip().lower()
 
     if not rule_id or rule_id in SKIP_STRICT_WCAG_ENRICHMENT:
@@ -78,6 +100,10 @@ def _enrich_known_wcag_rules(row: dict) -> dict:
 
 
 def _hydrate_wcag_fields(row: dict) -> dict:
+    """
+    Ensures every violation has complete WCAG metadata (Title, Level, URL) 
+    by looking up the criteria code in our master reference table.
+    """
     row = _enrich_known_wcag_rules(row)
 
     if not row.get("wcag"):
@@ -94,8 +120,11 @@ def _hydrate_wcag_fields(row: dict) -> dict:
     return row
 
 
-def _resolve_reports_root(folder):
-    """Find the actual reports root containing tool subfolders."""
+def _resolve_reports_root(folder: str) -> tuple[Path, list[Path]]:
+    """
+    Locates the actual directory containing the tool subfolders. 
+    Handles cases where the user passes the project root instead of the reports directory.
+    """
     base_path = Path(folder)
     if not base_path.exists():
         raise FileNotFoundError(f"Report folder not found: {folder}")
@@ -109,7 +138,7 @@ def _resolve_reports_root(folder):
     if json_tool_dirs:
         return base_path, json_tool_dirs
 
-    # Common case: user points at project root and reports/ is one level below
+    # Common fallback: user points at project root and reports/ is one level below
     for child in subdirs:
         child_subdirs, child_json_tool_dirs = valid_tool_dirs(child)
         if child_json_tool_dirs:
@@ -119,15 +148,22 @@ def _resolve_reports_root(folder):
 
 
 # -------------------------
-# MAIN LOADER
+# 🚀 MAIN LOADER
 # -------------------------
-def load_reports(folder):
+
+def load_reports(folder: str) -> list[dict]:
+    """
+    The core data ingestion function. Scans the directory, matches JSON files 
+    to the correct tool adapter, normalizes the output, and hydrates metadata.
+    """
     load_adapters()
 
     rows = []
     base_path, subfolders = _resolve_reports_root(folder)
 
     json_files = []
+    
+    # 1. Discover all valid JSON report files
     if subfolders:
         for tool_folder in subfolders:
             if tool_folder.name in IGNORED_REPORT_FOLDERS:
@@ -147,6 +183,7 @@ def load_reports(folder):
     for dbg_tool_name, dbg_file in json_files:
         print(f"  {dbg_tool_name}: {dbg_file}")
 
+    # 2. Process each file through its respective adapter
     for tool_name, file in json_files:
         print(f"REPORT FILE: {file}")
         print(f"TOOL FOLDER: {tool_name}")
@@ -154,6 +191,7 @@ def load_reports(folder):
         with open(file, encoding="utf-8") as f:
             data = json.load(f)
 
+        # Verbose debugging output for CLI tracking
         print("DATA TYPE:", type(data).__name__)
         if isinstance(data, list):
             print("LIST LEN:", len(data))
@@ -165,31 +203,34 @@ def load_reports(folder):
         elif isinstance(data, dict):
             print("DICT KEYS:", list(data.keys())[:20])
 
+        # Dynamically determine which adapter can parse this specific JSON shape
         adapter = get_adapter(data)
         print("ADAPTER:", adapter.__name__ if adapter else None)
 
         if not adapter:
-            print("NO ADAPTER MATCHED")
-            print()
+            print("NO ADAPTER MATCHED\n")
             continue
 
         file_page = canonical_page_key(file.stem)
         results = adapter(str(file), data)
-        print("ROW COUNT:", len(results))
-        print()
+        print("ROW COUNT:", len(results), "\n")
 
+        # 3. Enrich the extracted rows with universal BI metadata
         for result in results:
             if tool_name == "html-sniffer":
                 result["source_detail"] = result.get("source")
                 result["source"] = "html-sniffer"
             else:
                 result["source"] = result.get("source") or tool_name
+                
             result["tool_family"] = result.get("tool_family") or get_tool_family(result["source"])
             result["tool_engine"] = result.get("tool_engine") or get_tool_engine(result["source"])
+            
             engine_meta = get_engine_family_meta(result["source"])
             result["engine_family"] = engine_meta["label"]
             result["engine_badge"] = engine_meta["badge"]
             result["engine_class"] = engine_meta["class"]
+            
             page_key = canonical_page_key(
                 file.stem,
                 result.get("page"),
@@ -198,20 +239,30 @@ def load_reports(folder):
             )
             result["page"] = page_key or file_page
             result["page_id"] = result["page"]
+            
             result["ruleId"] = normalize_rule(result.get("ruleId"))
             if not result.get("rule_name"):
                 result["rule_name"] = result.get("rule") or result.get("title") or result.get("ruleId")
+                
             result["component"] = detect_component(
                 dom=result.get("dom"),
                 selector=result.get("selector") or result.get("target"),
             )
+            
             rows.append(_hydrate_wcag_fields(result))
 
     return rows
 
 
+# -------------------------
+# 🩺 INVENTORY DIAGNOSTICS
+# -------------------------
+
 def _extract_page_candidate_from_data(data):
-    """Best-effort extraction of a page/url-like identifier from raw report JSON."""
+    """
+    A recursive, best-effort fallback to extract a URL or page identifier 
+    from deeply nested, unknown JSON shapes when the filename is ambiguous.
+    """
     seen = set()
 
     def walk(obj, depth=0):
@@ -244,8 +295,12 @@ def _extract_page_candidate_from_data(data):
     return walk(data)
 
 
-def inspect_report_inventory(folder):
-    """Build a page-inventory diagnostic from raw report files per tool folder."""
+def inspect_report_inventory(folder: str) -> dict:
+    """
+    Cross-references generated reports across all tool folders to identify 
+    silent failures. If Axe-core scanned 5 pages but HTMLCS only scanned 4, 
+    this diagnostic catches the mismatch and alerts the dashboard.
+    """
     load_adapters()
 
     base_path, subfolders = _resolve_reports_root(folder)
@@ -316,6 +371,7 @@ def inspect_report_inventory(folder):
 
         tool_pages[tool_folder.name] = pages
 
+    # Calculate overlaps and mismatches
     all_tools = sorted(tool_pages.keys())
     all_pages = sorted(set().union(*tool_pages.values()) if tool_pages else set())
 
@@ -345,6 +401,7 @@ def inspect_report_inventory(folder):
     pages_present_in_all_tools = sum(1 for row in page_rows if not row["missing_from"])
     mismatched_pages = sum(1 for row in page_rows if row["missing_from"])
     missing_reports_count = sum(len(row["missing_from"]) for row in page_rows)
+    
     possible_coverage = max(1, len(all_pages) * max(1, len(all_tools)))
     actual_coverage = sum(len(row["present_in"]) for row in page_rows)
     coverage_pct = round((actual_coverage / possible_coverage) * 100)

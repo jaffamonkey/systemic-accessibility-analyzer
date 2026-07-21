@@ -1,3 +1,11 @@
+"""
+WCAG Techniques Reference
+
+A lookup table for official W3C accessibility techniques and failures 
+(e.g., G18, H37). Used primarily to decode tools like HTML CodeSniffer 
+which embed technique codes directly into their error strings.
+"""
+
 WCAG_TECHNIQUES = {
     "G14": {
         "title": "Color not sole means",

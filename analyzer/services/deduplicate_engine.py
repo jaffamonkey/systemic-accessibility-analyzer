@@ -1,6 +1,21 @@
+"""
+Deduplicate Engine
+
+This module is responsible for taking a flat list of normalized accessibility 
+violations and grouping them into "Systemic Clusters". 
+
+Because different accessibility tools report the exact same issue using slightly 
+different DOM selectors (e.g., Tool A reports `nav > ul > li > a` while Tool B 
+reports `.menu-item`), this engine uses a two-tier approach:
+1. Strict Bucketing: Group issues by their canonical Rule ID and UI Component.
+2. Proximity Matching: Fuzzy-match the DOM snippets and selectors within that 
+   bucket to determine if they point to the exact same physical node.
+"""
+
 import re
 from analyzer.fingerprint import build_fingerprint
 from analyzer.component_detector import detect_component
+from analyzer.services.wcag_refs import WCAG_SUCCESS_CRITERIA
 from services.design_system import detect_design_system_issue
 from services.rule_formatter import format_rule_label
 from services.component_mapper import normalize_component
@@ -17,17 +32,20 @@ from services.bi_fields import (
 )
 
 # -------------------------
-# 🔥 TIER 2: PROXIMITY LOGIC
+# 🧩 TIER 2: PROXIMITY LOGIC
 # -------------------------
-def is_proximity_match(row, cluster):
-    """Fuzzy matching to detect if two issues point to the exact same DOM node."""
+def is_proximity_match(row: dict, cluster: dict) -> bool:
+    """
+    Fuzzy matching to detect if two issues point to the exact same DOM node, 
+    even if different tools generated slightly different selectors.
+    """
     
     # 1. The Easy Win: Exact Fingerprint Match
     if row.get("fingerprint") and cluster.get("fingerprint"):
         if row["fingerprint"] == cluster["fingerprint"]:
             return True
 
-    # Helper: Safely extract CSS IDs (#my-element)
+    # Helper: Safely extract CSS IDs (e.g., #my-element) for strict anchoring
     def extract_id(text):
         if not text: return None
         match = re.search(r'#([a-zA-Z0-9_-]+)', str(text))
@@ -37,18 +55,20 @@ def is_proximity_match(row, cluster):
     c_sel = str(cluster.get("pattern") or "").lower()
 
     # 2. Shared Exact ID (The Anchor)
+    # If both tools flagged elements with the exact same CSS ID, they are the same issue.
     r_id = extract_id(r_sel) or extract_id(str(row.get("dom") or "").lower())
     c_id = extract_id(c_sel) or extract_id(str(cluster.get("dom") or "").lower())
     if r_id and c_id and r_id == c_id:
         return True
 
     # 3. Robust Substring Match (Selectors)
-    # We require length > 8 to prevent a generic "a" from matching "nav > a"
+    # We require length > 8 to prevent a generic "a" from falsely matching "nav > a"
     if r_sel and c_sel and len(r_sel) > 8 and len(c_sel) > 8:
         if r_sel in c_sel or c_sel in r_sel:
             return True
 
     # 4. Robust Substring Match (Raw DOM Snippets)
+    # If the raw HTML string provided by the tools overlaps significantly, merge them.
     r_dom = str(row.get("dom") or "").lower()
     c_dom = str(cluster.get("dom") or "").lower()
     if r_dom and c_dom and len(r_dom) > 15 and len(c_dom) > 15:
@@ -57,7 +77,13 @@ def is_proximity_match(row, cluster):
 
     return False
 
-def normalize_page(r):
+
+# -------------------------
+# 🛠️ HELPER FUNCTIONS
+# -------------------------
+
+def normalize_page(r: dict) -> str:
+    """Strips file extensions and tool-specific suffixes from page URLs/names."""
     raw = (
         r.get("page")
         or r.get("url")
@@ -65,27 +91,15 @@ def normalize_page(r):
         or r.get("document")
         or "unknown"
     )
-
     p = str(raw).lower().strip()
     p = re.sub(r"\.json$", "", p)
     p = re.sub(r"_(axe|lighthouse|htmlcs|ibm|wave|pa11y)$", "", p)
     return p
 
-
-def _infer_wcag_level(wcag: str | None) -> str | None:
-    if not wcag:
-        return None
-
-    ref = WCAG_SUCCESS_CRITERIA.get(str(wcag).split()[0])
-    if ref:
-        return ref.get("level")
-    return None
-
-
-def _coerce_selector_value(value):
+def _coerce_selector_value(value) -> str:
+    """Safely extracts a flat string representation of a DOM selector from mixed types."""
     if value is None:
         return ""
-
     if isinstance(value, str):
         return value.strip()
 
@@ -94,7 +108,6 @@ def _coerce_selector_value(value):
         for item in value:
             if item is None:
                 continue
-
             if isinstance(item, dict):
                 extracted = ""
                 for key in ("xpath", "selector", "target", "css", "path", "html", "dom"):
@@ -107,7 +120,6 @@ def _coerce_selector_value(value):
                 parts.append(extracted)
             else:
                 parts.append(str(item))
-
         return " ".join(p for p in parts if p).strip()
 
     if isinstance(value, dict):
@@ -120,12 +132,11 @@ def _coerce_selector_value(value):
     return str(value).strip()
 
 
-def normalize_selector(selector):
+def normalize_selector(selector: str) -> str:
+    """Strips highly fragile positional pseudo-classes from selectors."""
     selector = _coerce_selector_value(selector)
-
     if not selector:
         return ""
-
     s = selector.lower()
     s = re.sub(r":nth-child\(\d+\)", "", s)
     s = re.sub(r":nth-of-type\(\d+\)", "", s)
@@ -133,72 +144,27 @@ def normalize_selector(selector):
     s = " ".join(s.split())
     return s
 
-
-def _primary_selector_value(r):
-    return _coerce_selector_value(
-        r.get("selector")
-        or r.get("dom")
-        or r.get("target")
-        or r.get("xpath")
-        or r.get("path")
-    )
-
-
-def _row_wcags(r) -> list[str]:
-    vals = r.get("wcag_criteria") or r.get("wcag") or []
-    if isinstance(vals, str):
-        return [vals.strip()]
-    return [str(x).strip() for x in vals if str(x).strip()]
-
-
-def _dedupe_key(r):
-    page = normalize_page(r)
-    canonical_rule_id = (
-        r.get("canonical_rule_id")
-        or r.get("rule_id")
-        or r.get("ruleId")
-        or r.get("wcag")
-        or "unknown-rule"
-    )
-
-    source = str(r.get("source") or "").strip().lower()
-    is_page_level = source == "speca11y" and r.get("issue_scope") == "page"
-
-    if is_page_level:
-        return f"{page}|{canonical_rule_id}|page-level"
-
-    target_key = (
-        r.get("normalized_target_key")
-        or normalize_selector(
-            r.get("selector")
-            or r.get("dom_path")
-            or r.get("dom")
-            or r.get("target")
-            or r.get("xpath")
-            or r.get("path")
-            or r.get("pattern")
-            or ""
-        )
-        or r.get("fingerprint")
-        or "unknown-target"
-    )
-
-    return f"{page}|{canonical_rule_id}|{target_key}"
-
-
-def deduplicate_rows(rows):
+# -------------------------
+# 🚀 CORE CLUSTERING ENGINE
+# -------------------------
+def deduplicate_rows(rows: list) -> list:
+    """
+    The main deduplication entrypoint. Converts a flat list of normalized rows 
+    into consolidated issue clusters, then enriches them with BI scoring fields.
+    """
     buckets = {}
 
     for r in rows:
         dom = r.get("dom", "")
         selector = r.get("selector") or r.get("pattern") or ""
         component = normalize_component(r.get("component") or detect_component(dom, selector))
+        
         fingerprint = (
             r.get("fingerprint")
             or build_fingerprint(
                 dom, 
                 r.get("normalized_target_key") or selector,
-                r.get("ruleId") or r.get("rule_id")  # 🔥 Added the rule ID here!
+                r.get("ruleId") or r.get("rule_id")
             )
         )
 
@@ -207,20 +173,20 @@ def deduplicate_rows(rows):
         r["component"] = component
         r["fingerprint"] = fingerprint
 
-        # 🔥 TIER 1 BUCKET: Isolate by Rule and Component type
+        # 🪣 TIER 1 BUCKET: Isolate by Rule and Component type to limit the search space
         bucket_key = f"{rule_key}|{component}"
 
         if bucket_key not in buckets:
             buckets[bucket_key] = []
 
-        # 🔥 TIER 2: Scan the bucket for a proximity match
+        # 🧲 TIER 2: Scan the bucket for a proximity match
         merged = False
         for cluster in buckets[bucket_key]:
             if is_proximity_match(r, cluster):
                 cluster["count"] += 1
                 cluster["sources"].add(r.get("source") or "unknown")
                 
-                # Optional: Capture multiple error messages!
+                # Capture multiple error messages from different tools
                 if r.get("message") and r["message"] not in cluster.get("message", ""):
                     cluster["message"] = f"{cluster.get('message', '')} | {r['message']}".strip(" | ")
 
@@ -231,6 +197,7 @@ def deduplicate_rows(rows):
                     if page_display:
                         cluster["page_displays"].add(page_display)
 
+                # Keep the longest (most descriptive) pattern/dom available
                 if len(selector) > len(cluster.get("pattern") or ""):
                     cluster["pattern"] = selector
                 if len(dom) > len(cluster.get("dom") or ""):
@@ -239,6 +206,7 @@ def deduplicate_rows(rows):
                 merged = True
                 break
 
+        # If no proximity match was found, establish a new cluster
         if not merged:
             new_cluster = {
                 "ruleId": r.get("ruleId"),
@@ -280,12 +248,13 @@ def deduplicate_rows(rows):
             buckets[bucket_key].append(new_cluster)
 
     # -------------------------
-    # FLATTEN AND ENRICH
+    # 📊 FLATTEN AND ENRICH
     # -------------------------
     final_clusters = []
     for cluster_list in buckets.values():
         final_clusters.extend(cluster_list)
 
+    # Attach finalized BI and scoring fields to the generated clusters
     for c in final_clusters:
         c["files"] = sorted(c["files"])
         c["page_displays"] = sorted(c.get("page_displays", []))
@@ -324,4 +293,5 @@ def deduplicate_rows(rows):
             tool_count=c.get("tool_count", 1),
         )
 
+    # Return clusters sorted by priority: Highest Rank Score -> Most Instances -> Most Pages Affected
     return sorted(final_clusters, key=lambda c: (c.get("issue_rank_score", 0), c["count"], c["pages"]), reverse=True)
