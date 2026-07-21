@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accessibility Analyzer Roadmap</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --panel: #ffffff;
+      --panel-soft: #f7f9fc;
+      --text: #333;
+      --muted: #6b7280;
+      --border: #e6ebf2;
+      --shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { max-width: 100%; overflow-x: hidden; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .doc-shell { max-width: 1400px; margin: 0 auto; }
+
+    .doc-header,
+    .doc-body {
+      background: var(--panel);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    .doc-header { padding: 18px; margin-bottom: 20px; }
+    .doc-body { padding: 28px; }
+    .doc-meta { color: var(--muted); font-size: 14px; margin-top: 8px; }
+    .prose { max-width: 1000px; margin: 0 auto; }
+
+    .prose h1, .prose h2, .prose h3, .prose h4 {
+      margin-top: 1.5em;
+      margin-bottom: 0.55em;
+      line-height: 1.2;
+    }
+
+    .prose h1 { font-size: clamp(2rem, 4vw, 2.6rem); margin-top: 0; }
+    .prose h2 { font-size: 1.6rem; }
+    .prose h3 { font-size: 1.25rem; }
+    .prose h4 { font-size: 1.05rem; }
+    .prose p, .prose li { line-height: 1.65; color: var(--text); }
+    .prose ul, .prose ol { padding-left: 1.4rem; margin: 0.6rem 0 1rem; }
+    .prose hr { border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+
+    .prose code {
+      background: var(--panel-soft);
+      padding: 0.15rem 0.4rem;
+      border-radius: 6px;
+      font-size: 0.95em;
+    }
+
+    .prose blockquote {
+      margin: 1rem 0;
+      padding: 0.75rem 1rem;
+      border-left: 4px solid #4e79a7;
+      background: var(--panel-soft);
+      color: var(--text);
+      border-radius: 0 10px 10px 0;
+    }
+
+    .prose table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.25rem;
+      font-size: 14px;
+    }
+
+    .prose th, .prose td {
+      text-align: left;
+      padding: 10px 12px;
+      border-top: 1px solid #edf1f6;
+      vertical-align: top;
+    }
+
+    .prose th {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      border-top: none;
+      background: var(--panel-soft);
+    }
+
+    .note, .warn {
+      padding: 12px 14px;
+      border-radius: 10px;
+      margin: 1rem 0;
+    }
+
+    .note { background: #eef8f2; border: 1px solid #dcefe2; }
+    .warn { background: #fff4ea; border: 1px solid #f0dcc5; }
+
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 1.25rem 0;
+    }
+
+    .status-card {
+      background: var(--panel-soft);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .status-card h3 { margin-top: 0; }
+
+    .status-pill {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      background: #e8f0ff;
+      color: #1d4ed8;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 860px) { .status-grid { grid-template-columns: 1fr; } }
+
+    @media (max-width: 640px) {
+      body { padding: 14px; }
+      .doc-header, .doc-body { padding: 18px; border-radius: 12px; }
+    }
+
+    .top-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .doc-link-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      line-height: 1;
+      border: 1px solid #dbe7f5;
+      background: #f6f0ff;
+      color: #4b5563;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+      transition: 0.18s ease;
+    }
+
+    .doc-link-button:hover {
+      background: #efe4ff;
+      border-color: #cbb7f6;
+      color: #1f2937;
+      transform: translateY(-1px);
+    }
+
+    .doc-link-button.is-current {
+      background: #e8f0ff;
+      border-color: #bfd3fb;
+      color: #1d4ed8;
+    }
+
+    .doc-link-button.is-disabled {
+      opacity: 0.55;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="doc-shell">
+    <div class="doc-header">
+      <h1>Accessibility Analyzer Roadmap</h1>
+      <div class="doc-meta">From multi-tool accessibility evidence to component intelligence, root causes, and meaningful repairs.</div>
+      <div class="top-links" id="topLinks">
+        <a class="doc-link-button" href="/">← Back to jobs dashboard</a>
+        <a class="doc-link-button" id="projectGuideLink" href="/readme_overview.html">Project Guide</a>
+        <a class="doc-link-button" id="dashboardGuideLink" href="/dashboard_guide.html">Dashboard Guide</a>
+        <a class="doc-link-button" id="workbookGuideLink" href="/workbook_guide.html">Workbook Guide</a>
+        <a class="doc-link-button" id="roadmapGuideLink" href="/roadmap_guide.html">Roadmap</a>
+      </div>
+    </div>
+
+    <div class="doc-body prose">
+      <h1>Roadmap</h1>
+      <p>The <strong>Systemic Accessibility Analyzer</strong> is evolving from a multi-tool reporting platform into an accessibility intelligence engine.</p>
+      <p>Rather than simply aggregating reports, the project is focused on turning accessibility evidence into actionable insight.</p>
+
+      <blockquote><p><strong>Don't count findings. Find consensus.</strong></p></blockquote>
+
+      <div class="note">
+        <strong>Current focus:</strong> Phase 1 has built the evidence layer. Phase 2 will focus on component intelligence, confidence scoring, root-cause analysis, and richer visual exploration.
+      </div>
+
+      <hr>
+
+      <div class="status-grid">
+        <div class="status-card">
+          <span class="status-pill">Current</span>
+          <h3>Phase 1 — Evidence Engine</h3>
+          <p>Collects, normalises, compares, and visualises accessibility evidence from multiple engines.</p>
+        </div>
+        <div class="status-card">
+          <span class="status-pill">Next</span>
+          <h3>Phase 2 — Accessibility Intelligence</h3>
+          <p>Moves from individual findings towards components, confidence, repeated patterns, and root causes.</p>
+        </div>
+        <div class="status-card">
+          <span class="status-pill">Future</span>
+          <h3>Phase 3 — Guidance</h3>
+          <p>Explores suggested repairs, trends, design-system insights, and prioritised remediation guidance.</p>
+        </div>
+      </div>
+
+      <hr>
+
+      <h2>Phase 1 — Accessibility Evidence Engine</h2>
+      <p>Phase 1 focuses on gathering accessibility evidence from multiple independent sources and presenting it in a unified, meaningful way.</p>
+      <p>Instead of manually comparing reports from numerous accessibility tools, the analyzer normalises findings, removes duplication where possible, and highlights where tools independently agree.</p>
+      <blockquote><p><strong>Phase 1 asks:</strong> What did the tools find, and where do they agree?</p></blockquote>
+
+      <h3>Current capabilities</h3>
+      <ul>
+        <li>Support for multiple accessibility engines and companion evidence tools.</li>
+        <li>Public and authenticated website scanning.</li>
+        <li>Adapter-based report ingestion.</li>
+        <li>WCAG mapping and enrichment.</li>
+        <li>Rule canonicalisation across tool families.</li>
+        <li>Cross-tool deduplication.</li>
+        <li>Consensus analysis.</li>
+        <li>Interactive dashboard views.</li>
+        <li>Static report generation for published job runs.</li>
+        <li>JSON and workbook exports.</li>
+        <li>Visual Explorer with page previews and keyboard Tab Map views.</li>
+        <li>Virtual Screen Reader simulation.</li>
+        <li>Visual Contrast Checker.</li>
+        <li>HTML validation.</li>
+        <li>Benchmark website suite.</li>
+      </ul>
+
+      <h3>Supported evidence sources</h3>
+      <table>
+        <thead><tr><th>Tool / view</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td><strong>axe-core</strong></td><td>Automated WCAG testing and widely used accessibility rule coverage.</td></tr>
+          <tr><td><strong>axe-scan</strong></td><td>Axe-derived reporting through an additional scan pathway.</td></tr>
+          <tr><td><strong>IBM Accessibility Checker</strong></td><td>Confirmed, potential, and advisory accessibility findings.</td></tr>
+          <tr><td><strong>HTML CodeSniffer / HTMLCS</strong></td><td>WCAG technique-style rule evidence and review-oriented findings.</td></tr>
+          <tr><td><strong>Lighthouse</strong></td><td>Browser-based accessibility audit metadata and failures.</td></tr>
+          <tr><td><strong>Oobee</strong></td><td>Crawl-style accessibility evidence and axe-family results.</td></tr>
+          <tr><td><strong>UUV</strong></td><td>Flow-based and heuristic accessibility evidence.</td></tr>
+          <tr><td><strong>Alfa</strong></td><td>ACT-style outcomes including failed and needs-review results.</td></tr>
+          <tr><td><strong>Nu HTML Checker</strong></td><td>Markup, validation, and standards-level evidence.</td></tr>
+          <tr><td><strong>Pa11y Axe / Pa11y HTMLCS</strong></td><td>Additional axe and HTMLCS evidence through Pa11y runners.</td></tr>
+          <tr><td><strong>Visual Explorer</strong></td><td>Clean page previews and keyboard tab-order maps from the same capture flow.</td></tr>
+          <tr><td><strong>Virtual Screen Reader</strong></td><td>Structured reading-order and semantic output.</td></tr>
+          <tr><td><strong>Contrast Checker</strong></td><td>Visual contrast evidence and colour-pair analysis.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Benchmark suite</h3>
+      <p>The analyzer is continually tested against a growing benchmark suite representing different kinds of real-world accessibility evidence.</p>
+      <table>
+        <thead><tr><th>Benchmark type</th><th>Why it matters</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Government / reference-quality sites</strong></td><td>Useful baseline where stronger accessibility implementation is expected.</td></tr>
+          <tr><td><strong>Retail / ecommerce</strong></td><td>Tests product pages, navigation, imagery, forms, and transactional patterns.</td></tr>
+          <tr><td><strong>Modern SPA / Next.js</strong></td><td>Exercises component-heavy, JavaScript-rendered, creative and animation-rich websites.</td></tr>
+          <tr><td><strong>Legacy / malformed HTML</strong></td><td>Tests old markup patterns, validation failures, frames, and structural oddities.</td></tr>
+          <tr><td><strong>Deliberately poor UX</strong></td><td>Useful for hostile interaction design, keyboard problems, confusing forms, and regression testing.</td></tr>
+          <tr><td><strong>Authenticated flows</strong></td><td>Validates login, storage state, protected-page analysis, and real application journeys.</td></tr>
+        </tbody>
+      </table>
+
+      <hr>
+
+      <h2>Phase 2 — Accessibility Intelligence</h2>
+      <p>Phase 2 shifts the focus away from individual findings and towards understanding accessibility at a higher level.</p>
+      <p>Instead of answering:</p>
+      <blockquote><p><strong>How many issues were found?</strong></p></blockquote>
+      <p>the analyzer will begin answering:</p>
+      <blockquote><p><strong>What needs fixing?</strong></p></blockquote>
+
+      <h3>Component analysis</h3>
+      <p>Findings will be associated with likely interface components rather than grouped only by page or WCAG rule.</p>
+      <ul>
+        <li>Navigation</li><li>Forms</li><li>Buttons</li><li>Links</li><li>Images</li><li>Cards</li><li>Tables</li><li>Dialogs</li><li>Carousels</li><li>Headers and footers</li>
+      </ul>
+      <p>The goal is to identify repeated design-system issues rather than isolated page defects.</p>
+
+      <h3>Root cause analysis</h3>
+      <p>Many accessibility reports contain hundreds of repeated findings. Phase 2 aims to identify the underlying repair.</p>
+      <table>
+        <thead><tr><th>Instead of</th><th>The analyzer identifies</th></tr></thead>
+        <tbody>
+          <tr><td>63 button findings</td><td>A shared Button component pattern.</td></tr>
+          <tr><td>41 contrast failures</td><td>A shared colour token or visual treatment.</td></tr>
+          <tr><td>82 missing label findings</td><td>A repeated Form component issue.</td></tr>
+          <tr><td>Many image-alt issues</td><td>A repeated Image or Gallery component problem.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Confidence scoring</h3>
+      <p>Not every accessibility finding carries the same weight. Future scoring can consider:</p>
+      <ul>
+        <li>Agreement between tools.</li>
+        <li>Agreement between independent engine families.</li>
+        <li>WCAG consistency.</li>
+        <li>Component similarity.</li>
+        <li>Shared DOM targets.</li>
+        <li>Confirmed versus advisory or needs-review findings.</li>
+      </ul>
+
+      <h3>Accessibility heatmaps and visual layers</h3>
+      <p>Future visualisations may include:</p>
+      <ul>
+        <li>Landmark overlays.</li>
+        <li>Heading hierarchy views.</li>
+        <li>Form analysis overlays.</li>
+        <li>Image analysis overlays.</li>
+        <li>Component boundaries.</li>
+        <li>Accessibility heatmaps.</li>
+      </ul>
+      <p>These visual layers build naturally on the current Visual Explorer, Virtual Screen Reader, and Contrast Checker outputs.</p>
+
+      <hr>
+
+      <h2>Phase 3 — Accessibility Guidance</h2>
+      <p>Phase 3 is intentionally more exploratory. The broad idea is to help teams move from understanding evidence to planning repairs.</p>
+      <p>Potential ideas include:</p>
+      <ul>
+        <li>Suggested repair descriptions.</li>
+        <li>Design-system ownership hints.</li>
+        <li>Component-level remediation summaries.</li>
+        <li>Trend analysis between benchmark runs.</li>
+        <li>Organisation-wide accessibility intelligence.</li>
+        <li>Exportable prioritised repair plans.</li>
+      </ul>
+
+      <div class="warn"><strong>Scope reminder:</strong> The analyzer is not intended to replace manual accessibility expertise. It organises automated and companion-tool evidence so that human review and remediation decisions can be better targeted.</div>
+
+      <hr>
+
+      <h2>Long-term vision</h2>
+      <p>Accessibility tools already identify problems. The Systemic Accessibility Analyzer is focused on understanding those problems.</p>
+      <p>Ultimately the goal is to help answer questions such as:</p>
+      <ul>
+        <li>Which issues have the strongest evidence?</li>
+        <li>Which findings are repeated across components?</li>
+        <li>Which repairs remove the greatest amount of accessibility debt?</li>
+        <li>Which issues genuinely require manual review?</li>
+        <li>Which components should be prioritised first?</li>
+      </ul>
+      <blockquote><p><strong>From findings to evidence. From evidence to consensus. From consensus to meaningful repairs.</strong></p></blockquote>
+    </div>
+  </div>
+
+  <script>
+    function buildTopNav() {
+      const path = window.location.pathname;
+      const currentMap = [
+        ['projectGuideLink', /readme_overview\.html$/],
+        ['dashboardGuideLink', /dashboard_guide\.html$/],
+        ['workbookGuideLink', /workbook_guide\.html$/],
+        ['roadmapGuideLink', /roadmap_guide\.html$/]
+      ];
+
+      currentMap.forEach(([id, regex]) => {
+        const el = document.getElementById(id);
+        if (el && regex.test(path)) {
+          el.classList.add('is-current');
+          el.setAttribute('aria-current', 'page');
+        }
+      });
+    }
+    buildTopNav();
+  </script>
+</body>
+
+</html>
