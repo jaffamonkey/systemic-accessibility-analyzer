@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the base directory containing all the job folders
-JOBS_DIR="/Users/user/code/tools/auth_service/jobs"
+JOBS_DIR="/Users/user/code/tools/jobs"
 
 # Loop through every item in the jobs directory that is a folder
 for JOB_PATH in "$JOBS_DIR"/*/; do

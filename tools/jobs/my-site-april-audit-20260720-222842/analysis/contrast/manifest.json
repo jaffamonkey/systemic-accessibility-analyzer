@@ -1,0 +1,18 @@
+[
+  {
+    "page": "practicalaccessibility.co.uk",
+    "title": "Practical Accessibility",
+    "url": "https://practicalaccessibility.co.uk",
+    "file": "practicalaccessibility.co.uk.json",
+    "status": "partial",
+    "source": "stdout"
+  },
+  {
+    "page": "practicalaccessibility.co.uk-analyzer",
+    "title": "Systemic Accessibility Analyzer · Practical Accessibility",
+    "url": "https://practicalaccessibility.co.uk/analyzer/",
+    "file": "practicalaccessibility.co.uk-analyzer.json",
+    "status": "partial",
+    "source": "stdout"
+  }
+]

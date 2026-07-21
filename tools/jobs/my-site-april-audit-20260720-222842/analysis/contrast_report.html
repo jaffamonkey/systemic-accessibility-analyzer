@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Color Contrast Report</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --panel: #ffffff;
+      --panel-soft: #f9fbff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+      --accent: #2563eb;
+      --accent-dark: #1d4ed8;
+      --danger: #d9534f;
+      --warn: #f0ad4e;
+      --ok: #5cb85c;
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .shell {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 28px 20px 40px;
+    }
+
+    .hero {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: 2rem;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 20px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .panel-head {
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .panel-body {
+      padding: 16px 18px;
+    }
+
+    /* Sidebar Styles */
+    .search {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      margin-bottom: 14px;
+      font-family: inherit;
+    }
+
+    .search:focus {
+      outline: 2px solid rgba(37,99,235,0.2);
+      border-color: #adc4ff;
+    }
+
+    .page-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-height: 70vh;
+      overflow: auto;
+    }
+
+    .page-item {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      background: #fff;
+      cursor: pointer;
+      transition: background 150ms ease, border-color 150ms ease;
+    }
+
+    .page-item:hover {
+      background: #f9fbff;
+      border-color: #c7d7ff;
+    }
+
+    .page-item.active {
+      border-color: #93c5fd;
+      background: #eff6ff;
+    }
+
+    .page-item-title {
+      font-weight: 700;
+      margin-bottom: 4px;
+      line-height: 1.35;
+      font-size: 0.95rem;
+    }
+
+    .page-item-meta {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.4;
+      word-break: break-word;
+    }
+
+    /* Controls Grid */
+    .controls-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .control-group label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+      font-weight: 650;
+    }
+
+    .control-group input,
+    .control-group select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 0.9rem;
+      background: #fff;
+      font-family: inherit;
+    }
+
+    .control-group input:focus,
+    .control-group select:focus {
+      outline: 2px solid rgba(37,99,235,0.2);
+      border-color: #adc4ff;
+    }
+
+    .checks {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .checks label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: #374151;
+      cursor: pointer;
+    }
+
+    /* Summary Metrics */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(120px, 1fr));
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .metric-card {
+      background: var(--panel-soft);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .metric-title {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .metric-value {
+      font-size: 1.8rem;
+      font-weight: 750;
+      letter-spacing: -0.04em;
+      color: #111827;
+    }
+
+    .report-meta {
+      margin-bottom: 20px;
+      padding: 14px 18px;
+      background: var(--panel-soft);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    .report-meta p {
+      margin: 4px 0;
+      color: var(--text);
+    }
+
+    .report-meta strong {
+      color: var(--muted);
+      min-width: 50px;
+      display: inline-block;
+    }
+
+    /* Results */
+    .results-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .result-card {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 18px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03);
+    }
+
+    .thumb {
+      background: var(--panel-soft);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .thumb img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .result-main {
+      min-width: 0;
+    }
+
+    .result-text {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      word-break: break-word;
+      line-height: 1.3;
+    }
+
+    .badge-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+
+    .badge-critical { background: #fde8e7; color: #9f2f2b; border-color: #f6c7c4; }
+    .badge-warning { background: #fff3df; color: #8c5a00; border-color: #f3d8a8; }
+    .badge-ok { background: #e8f7ea; color: #2e6b36; border-color: #bfe4c5; }
+    .badge-muted { background: var(--bg); color: #4b5563; border-color: var(--border); }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(220px, 1fr));
+      gap: 8px 18px;
+      margin-bottom: 12px;
+    }
+
+    .detail-item {
+      font-size: 0.88rem;
+    }
+
+    .detail-item strong {
+      display: inline-block;
+      min-width: 110px;
+      color: var(--muted);
+    }
+
+    .swatches {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      margin: 12px 0;
+      flex-wrap: wrap;
+    }
+
+    .swatch {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      background: var(--panel-soft);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    .chip {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      display: inline-block;
+    }
+
+    .code-block {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.82rem;
+      background: #0f172a;
+      color: #e2e8f0;
+      border-radius: 8px;
+      padding: 10px 12px;
+      overflow-wrap: anywhere;
+      margin-top: 8px;
+    }
+
+    .empty-state {
+      color: var(--muted);
+      padding: 40px 20px;
+      text-align: center;
+      background: var(--panel-soft);
+      border: 1px dashed var(--border);
+      border-radius: 14px;
+    }
+
+    .top-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .doc-link-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      line-height: 1;
+      border: 1px solid #dbe7f5;
+      background: #f6f0ff;
+      color: #4b5563;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+      transition: 0.18s ease;
+    }
+
+    .doc-link-button:hover {
+      background: #efe4ff;
+      border-color: #cbb7f6;
+      color: #1f2937;
+      transform: translateY(-1px);
+    }
+
+    .doc-link-button.is-current {
+      background: #e8f0ff;
+      border-color: #bfd3fb;
+      color: #1d4ed8;
+    }
+
+    .doc-link-button.is-disabled {
+      opacity: 0.55;
+      pointer-events: none;
+    }
+
+    @media (max-width: 960px) {
+      .layout { grid-template-columns: 1fr; }
+      .page-list { max-height: 320px; }
+      .controls-grid { grid-template-columns: 1fr; }
+      .result-card { grid-template-columns: 1fr; }
+      .detail-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <section class="hero">
+      <h1>Color Contrast Report</h1>
+      <p>Per-page visual contrast evaluation rendering raw text and background color pairs flagged as invalid by the contrast engine.</p>
+
+      <div class="top-links" id="topLinks">
+        <a class="doc-link-button" id="dashboardLink" href="#">Dashboard</a>
+        <a class="doc-link-button" id="virtualScreenreaderLink" href="#">Virtual Screenreader</a>
+        <a class="doc-link-button" id="tabMapLink" href="#">Tab Map</a>
+        <a class="doc-link-button" id="contrastReportLink" href="#">Contrast Report</a>
+      </div>
+    </section>
+
+    <section class="layout">
+      <!-- Sidebar -->
+      <aside class="panel">
+        <div class="panel-head">Pages</div>
+        <div class="panel-body">
+          <input id="pageSearchInput" class="search" type="text" placeholder="Filter pages..." />
+          <div id="pageList" class="page-list"></div>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="panel">
+        <div class="panel-head" id="detailTitle">Report Details</div>
+        <div class="panel-body">
+          
+          <!-- Filters & Controls -->
+          <div class="controls-grid">
+            <div class="control-group">
+              <label for="searchInput">Search text or selector</label>
+              <input id="searchInput" type="text" placeholder="e.g. #header, 'Read more'">
+            </div>
+            <div class="control-group">
+              <label for="sortSelect">Sort by</label>
+              <select id="sortSelect">
+                <option value="worst">Worst contrast first</option>
+                <option value="severity">Severity</option>
+                <option value="text">Text</option>
+              </select>
+            </div>
+            <div class="control-group">
+              <label for="issueTypeSelect">Issue type</label>
+              <select id="issueTypeSelect">
+                <option value="all">All text</option>
+                <option value="normal">Normal text</option>
+                <option value="large">Large text</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="checks">
+            <label><input type="checkbox" id="failedOnly" checked> Failed only</label>
+            <label><input type="checkbox" id="visibleOnly" checked> Visible only</label>
+            <label><input type="checkbox" id="showHidden"> Include hidden items</label>
+          </div>
+
+          <!-- Summary Metrics -->
+          <div class="summary-grid">
+            <div class="metric-card">
+              <div class="metric-title">Total pairs</div>
+              <div class="metric-value" id="totalPairs">0</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-title">Visible failures</div>
+              <div class="metric-value" id="visibleFailures">0</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-title">Hidden failures</div>
+              <div class="metric-value" id="hiddenFailures">0</div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-title">Worst ratio</div>
+              <div class="metric-value" id="worstRatio">-</div>
+            </div>
+          </div>
+
+          <!-- Meta -->
+          <div class="report-meta">
+            <p><strong>Title:</strong> <span id="pageTitle">-</span></p>
+            <p><strong>URL:</strong> <span id="pageUrl">-</span></p>
+          </div>
+
+          <!-- Results -->
+          <div class="results-grid" id="results">
+            <div class="empty-state">Select a page to view contrast results.</div>
+          </div>
+
+        </div>
+      </main>
+    </section>
+  </div>
+
+  <script>
+    const MANIFEST_PATH = "contrast/manifest.json";
+
+    let manifest = [];
+    let filteredManifest = [];
+    let currentPageData = null;
+
+    const pageList = document.getElementById("pageList");
+    const pageSearchInput = document.getElementById("pageSearchInput");
+    
+    const searchInput = document.getElementById("searchInput");
+    const sortSelect = document.getElementById("sortSelect");
+    const issueTypeSelect = document.getElementById("issueTypeSelect");
+    const failedOnly = document.getElementById("failedOnly");
+    const visibleOnly = document.getElementById("visibleOnly");
+    const showHidden = document.getElementById("showHidden");
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function severityClass(severity) {
+      const s = String(severity || "").toLowerCase();
+      if (s === "critical" || s === "serious") return "badge-critical";
+      if (s === "moderate" || s === "warning") return "badge-warning";
+      if (s === "pass" || s === "ok") return "badge-ok";
+      return "badge-muted";
+    }
+
+    function boolBadge(label, ok) {
+      return `<span class="badge ${ok ? "badge-ok" : "badge-muted"}">${escapeHtml(label)}</span>`;
+    }
+
+    function getPairs(raw) {
+      if (Array.isArray(raw?.pairs)) return raw.pairs;
+      if (Array.isArray(raw)) {
+        const first = raw[0];
+        if (first && Array.isArray(first.pairs)) return first.pairs;
+      }
+      return [];
+    }
+
+    function getPageMeta(raw) {
+      if (Array.isArray(raw) && raw[0]) {
+        return { url: raw[0].url || "", title: raw[0].title || "" };
+      }
+      return { url: raw?.url || "", title: raw?.title || "" };
+    }
+
+    function updateSummary(pairs) {
+      const total = pairs.length;
+      const visibleFails = pairs.filter(p => p.isVisible && (!p.aa || !p.aaa)).length;
+      const hiddenFails = pairs.filter(p => !p.isVisible && (!p.aa || !p.aaa)).length;
+      const worst = pairs.length ? Math.min(...pairs.map(p => Number(p.contrastRatio || 999))) : null;
+
+      document.getElementById("totalPairs").textContent = total;
+      document.getElementById("visibleFailures").textContent = visibleFails;
+      document.getElementById("hiddenFailures").textContent = hiddenFails;
+      document.getElementById("worstRatio").textContent = worst !== null ? worst.toFixed(2) : "-";
+    }
+
+    function filterPairs(pairs) {
+      const q = searchInput.value.trim().toLowerCase();
+      const failed = failedOnly.checked;
+      const visible = visibleOnly.checked;
+      const includeHidden = showHidden.checked;
+      const issueType = issueTypeSelect.value;
+
+      return pairs.filter(p => {
+        if (failed && p.aa && (p.isLargeText ? p.aaLarge : true)) return false;
+        if (visible && !p.isVisible) return false;
+        if (!includeHidden && !visible && !p.isVisible) return false;
+        if (issueType !== "all" && String(p.issueType || "") !== issueType) return false;
+
+        if (!q) return true;
+
+        const haystack = [
+          p.text, p.selector, p.xpath, p.tag, p.color, p.background, p.suggestedFix?.hex
+        ].filter(Boolean).join(" ").toLowerCase();
+
+        return haystack.includes(q);
+      });
+    }
+
+    function sortPairs(pairs) {
+      const mode = sortSelect.value;
+      return [...pairs].sort((a, b) => {
+        if (mode === "severity") {
+          const order = { critical: 1, serious: 2, moderate: 3, warning: 4, minor: 5 };
+          return (order[a.severity] || 99) - (order[b.severity] || 99);
+        }
+        if (mode === "text") {
+          return String(a.text || "").localeCompare(String(b.text || ""));
+        }
+        return Number(a.contrastRatio || 999) - Number(b.contrastRatio || 999);
+      });
+    }
+
+    function renderResults(raw) {
+      const pairs = getPairs(raw);
+      const meta = getPageMeta(raw);
+
+      document.getElementById("detailTitle").textContent = meta.title || "Report Details";
+      document.getElementById("pageTitle").textContent = meta.title || "-";
+      document.getElementById("pageUrl").textContent = meta.url || "-";
+
+      updateSummary(pairs);
+
+      const filtered = sortPairs(filterPairs(pairs));
+      const container = document.getElementById("results");
+
+      if (!filtered.length) {
+        container.innerHTML = `<div class="empty-state">No results match the current filters.</div>`;
+        return;
+      }
+
+      container.innerHTML = filtered.map(pair => {
+        const ratio = Number(pair.contrastRatio || 0).toFixed(2);
+        const aaPass = !!pair.aa;
+        const aaaPass = !!pair.aaa;
+        const aaLargePass = !!pair.aaLarge;
+        const visible = !!pair.isVisible;
+        const fixHex = pair.suggestedFix?.hex || "-";
+        const fixRatio = pair.suggestedFix?.ratio != null ? Number(pair.suggestedFix.ratio).toFixed(2) : "-";
+        const screenshot = pair.screenshot || "";
+        const fg = pair.color || "";
+        const bg = pair.background || "";
+
+        return `
+          <div class="result-card">
+            <div class="thumb">
+              ${screenshot ? `<img src="${screenshot}" alt="Contrast sample">` : `<span style="color:var(--muted);font-size:0.85rem;">No preview</span>`}
+            </div>
+            <div class="result-main">
+              <div class="result-text">${escapeHtml(pair.text || "(No text)")}</div>
+
+              <div class="badge-row">
+                <span class="badge ${severityClass(pair.severity)}">${escapeHtml(pair.severity || "unknown")}</span>
+                ${boolBadge("Visible", visible)}
+                ${boolBadge("AA", aaPass)}
+                ${boolBadge("AAA", aaaPass)}
+                ${boolBadge("AA Large", aaLargePass)}
+                <span class="badge badge-muted">${escapeHtml(pair.issueType || "unknown")}</span>
+              </div>
+
+              <div class="detail-grid">
+                <div class="detail-item"><strong>Contrast:</strong> ${ratio}</div>
+                <div class="detail-item"><strong>Tag:</strong> ${escapeHtml(pair.tag || "-")}</div>
+                <div class="detail-item"><strong>Font size:</strong> ${escapeHtml(pair.fontSize || "-")}</div>
+                <div class="detail-item"><strong>Font weight:</strong> ${escapeHtml(pair.fontWeight || "-")}</div>
+                <div class="detail-item"><strong>Large text:</strong> ${pair.isLargeText ? "Yes" : "No"}</div>
+                <div class="detail-item"><strong>Suggested fix:</strong> ${escapeHtml(fixHex)} (${fixRatio})</div>
+              </div>
+
+              <div class="swatches">
+                <div class="swatch">
+                  <span class="chip" style="background:${escapeHtml(fg)}"></span>
+                  <span>FG: ${escapeHtml(fg || "-")}</span>
+                </div>
+                <div class="swatch">
+                  <span class="chip" style="background:${escapeHtml(bg)}"></span>
+                  <span>BG: ${escapeHtml(bg || "-")}</span>
+                </div>
+              </div>
+
+              <div class="code-block"><strong>Selector:</strong> ${escapeHtml(pair.selector || "-")}</div>
+              ${pair.xpath ? `<div class="code-block"><strong>XPath:</strong> ${escapeHtml(pair.xpath)}</div>` : ''}
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    async function loadPageJson(file) {
+      const res = await fetch(`contrast/${file}`, { cache: "no-store" });
+      if (!res.ok) throw new Error(`Could not load page data: ${res.status}`);
+      return await res.json();
+    }
+
+    function renderPageList() {
+      pageList.innerHTML = '';
+      if (!filteredManifest.length) {
+        pageList.innerHTML = '<div class="empty-state" style="padding: 20px;">No matching pages</div>';
+        return;
+      }
+
+      filteredManifest.forEach((item, index) => {
+        const el = document.createElement('div');
+        el.className = 'page-item';
+        el.innerHTML = `
+          <div class="page-item-title">${escapeHtml(item.title || item.page || 'Untitled')}</div>
+          <div class="page-item-meta">${escapeHtml(item.url || '')}</div>
+        `;
+        
+        el.addEventListener('click', async () => {
+          document.querySelectorAll('.page-item').forEach(x => x.classList.remove('active'));
+          el.classList.add('active');
+
+          const file = item.file || item.json || item.filename;
+          try {
+            currentPageData = await loadPageJson(file);
+            renderResults(currentPageData);
+          } catch (err) {
+            document.getElementById("results").innerHTML = `<div class="empty-state">Failed to load data: ${escapeHtml(err.message)}</div>`;
+          }
+        });
+
+        pageList.appendChild(el);
+
+        // Auto-select the first item on initial load
+        if (index === 0 && !currentPageData) {
+          setTimeout(() => el.click(), 0);
+        }
+      });
+    }
+
+    pageSearchInput.addEventListener('input', () => {
+      const term = pageSearchInput.value.trim().toLowerCase();
+      filteredManifest = manifest.filter(item => {
+        const haystack = `${item.title || ''} ${item.url || ''}`.toLowerCase();
+        return haystack.includes(term);
+      });
+      renderPageList();
+    });
+
+    async function loadManifest() {
+      const res = await fetch(MANIFEST_PATH, { cache: "no-store" });
+      if (!res.ok) throw new Error(`Could not load manifest: ${res.status}`);
+      manifest = await res.json();
+      filteredManifest = [...manifest];
+      renderPageList();
+    }
+
+    async function init() {
+      try {
+        await loadManifest();
+      } catch (err) {
+        document.getElementById("results").innerHTML =
+          `<div class="empty-state">Failed to load contrast report: ${escapeHtml(err.message)}</div>`;
+      }
+    }
+
+    // Attach filters for the main content area
+    searchInput.addEventListener("input", () => currentPageData && renderResults(currentPageData));
+    sortSelect.addEventListener("change", () => currentPageData && renderResults(currentPageData));
+    failedOnly.addEventListener("change", () => currentPageData && renderResults(currentPageData));
+    visibleOnly.addEventListener("change", () => currentPageData && renderResults(currentPageData));
+    showHidden.addEventListener("change", () => currentPageData && renderResults(currentPageData));
+    issueTypeSelect.addEventListener("change", () => currentPageData && renderResults(currentPageData));
+
+    init();
+
+    // Navigation logic matching other tools
+    function getCurrentJobIdForNav() {
+      const params = new URLSearchParams(window.location.search);
+      const queryJobId = params.get('job_id');
+      if (queryJobId) return queryJobId;
+      const jobMatch = window.location.pathname.match(/\/jobs\/([^/]+)\//);
+      return jobMatch ? decodeURIComponent(jobMatch[1]) : null;
+    }
+
+    function buildTopNav() {
+      const jobId = getCurrentJobIdForNav();
+      const path = window.location.pathname;
+      const baseJobPath = jobId ? `/jobs/${jobId}` : null;
+
+      const links = {
+        dashboardLink: baseJobPath ? `${baseJobPath}/dashboard` : '#',
+        virtualScreenreaderLink: baseJobPath ? `${baseJobPath}/virtual_screenreader.html` : '#',
+        tabMapLink: baseJobPath ? `${baseJobPath}/tab_map.html` : '#',
+        contrastReportLink: baseJobPath ? `${baseJobPath}/contrast_report.html` : '#',
+      };
+
+      Object.entries(links).forEach(([id, href]) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.href = href;
+        if (href === '#') {
+          el.classList.add('is-disabled');
+          el.setAttribute('aria-disabled', 'true');
+        }
+      });
+
+      const currentMap = [
+        ['dashboardLink', /\/jobs\/[^/]+\/dashboard$/],
+        ['virtualScreenreaderLink', /\/jobs\/[^/]+\/virtual_screenreader\.html$/],
+        ['tabMapLink', /\/jobs\/[^/]+\/tab_map\.html$/],
+        ['contrastReportLink', /\/jobs\/[^/]+\/contrast_report\.html$/],
+      ];
+
+      currentMap.forEach(([id, regex]) => {
+        const el = document.getElementById(id);
+        if (el && regex.test(path)) {
+          el.classList.add('is-current');
+          el.setAttribute('aria-current', 'page');
+        }
+      });
+    }
+
+    buildTopNav();
+  </script>
+</body>
+</html>

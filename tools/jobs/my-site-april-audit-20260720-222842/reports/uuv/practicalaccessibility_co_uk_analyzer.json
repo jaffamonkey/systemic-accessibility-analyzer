@@ -1,0 +1,1356 @@
+{
+  "scenarioName": "Full page check for https://practicalaccessibility.co.uk/analyzer/",
+  "requestedUrl": "https://practicalaccessibility.co.uk/analyzer/",
+  "finalUrl": "https://practicalaccessibility.co.uk/analyzer/",
+  "startedAt": "2026-07-20T22:31:34.244Z",
+  "endedAt": "2026-07-20T22:31:37.047Z",
+  "status": "failed",
+  "generatedBy": "@uuv/playwright + cucumber-js + playwright",
+  "summary": {
+    "httpStatus": 200,
+    "finalUrl": "https://practicalaccessibility.co.uk/analyzer/",
+    "title": "Systemic Accessibility Analyzer · Practical Accessibility",
+    "bodyPresent": true,
+    "titlePresent": true,
+    "headingCount": 19,
+    "linkCount": 73,
+    "buttonCount": 2,
+    "inputCount": 1,
+    "imageCount": 1,
+    "formCount": 0,
+    "frameCount": 0,
+    "firstHeading": "Systemic Accessibility Analyzer",
+    "pageErrorCount": 0,
+    "consoleIssueCount": 0,
+    "failedRequestCount": 0,
+    "axeViolationCount": 3,
+    "axeIncompleteCount": 4,
+    "manualReviewNeeded": true,
+    "contrastViolationCount": 3,
+    "contrastIncompleteCount": 1
+  },
+  "landmarks": {
+    "hasMain": true,
+    "hasHeader": true,
+    "hasFooter": true,
+    "hasNav": true
+  },
+  "findings": [
+    {
+      "severity": "medium",
+      "code": "blank-links",
+      "message": "2 link(s) appear to have no accessible text."
+    },
+    {
+      "severity": "high",
+      "code": "axe-violations",
+      "message": "3 axe accessibility violation(s) detected.",
+      "ruleIds": [
+        "landmark-unique",
+        "region",
+        "link-name"
+      ],
+      "wcag": [
+        "wcag2a",
+        "wcag244",
+        "wcag412"
+      ]
+    }
+  ],
+  "pageErrors": [],
+  "consoleMessages": [],
+  "failedRequests": [],
+  "details": {
+    "linksWithoutText": [
+      {
+        "href": "",
+        "outerHTML": "<a href=\"\" class=\"flex items-center bf-icon-color-hover\" title=\"\"></a>"
+      },
+      {
+        "href": "",
+        "outerHTML": "<a href=\"\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"\" class=\"text-2xl font-bold tracking-tight\"></span></a>"
+      }
+    ],
+    "buttonsWithoutText": [],
+    "imagesMissingAlt": [],
+    "missingLabelInputs": []
+  },
+  "axe": {
+    "violationCount": 3,
+    "violations": [
+      {
+        "id": "landmark-unique",
+        "impact": "moderate",
+        "description": "Ensure landmarks are unique",
+        "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/landmark-unique?application=playwright",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ],
+        "wcag": [],
+        "nodeCount": 1,
+        "nodes": [
+          {
+            "target": [
+              ".gap-x-5"
+            ],
+            "html": "<nav class=\"flex items-center gap-x-5 h-12\">",
+            "impact": "moderate",
+            "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable",
+            "any": [
+              {
+                "id": "landmark-is-unique",
+                "message": "The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable",
+                "data": {
+                  "role": "navigation",
+                  "accessibleText": null
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          }
+        ]
+      },
+      {
+        "id": "region",
+        "impact": "moderate",
+        "description": "Ensure all page content is contained by landmarks",
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=playwright",
+        "tags": [
+          "cat.keyboard",
+          "best-practice",
+          "RGAAv4",
+          "RGAA-9.2.1"
+        ],
+        "wcag": [],
+        "nodeCount": 2,
+        "nodes": [
+          {
+            "target": [
+              ".main-menu > div:nth-child(1)"
+            ],
+            "html": "<div><a href=\"/\" class=\"flex\"><span class=\"sr-only\">Practical Accessibility</span>\n<img src=\"/images/logo-dark.png\" width=\"250\" height=\"250\" class=\"logo max-h-20 max-w-20 object-scale-down object-left nozoom\" alt=\"\"></a></div>",
+            "impact": "moderate",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks",
+            "any": [
+              {
+                "id": "region",
+                "message": "Some page content is not contained by landmarks",
+                "data": {
+                  "isIframe": false
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".truncate"
+            ],
+            "html": "<a href=\"/\" class=\"text-base font-medium truncate min-w-0 shrink\">Practical Accessibility</a>",
+            "impact": "moderate",
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks",
+            "any": [
+              {
+                "id": "region",
+                "message": "Some page content is not contained by landmarks",
+                "data": {
+                  "isIframe": false
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          }
+        ]
+      },
+      {
+        "id": "link-name",
+        "impact": "serious",
+        "description": "Ensure links have discernible text",
+        "help": "Links must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/link-name?application=playwright",
+        "tags": [
+          "cat.name-role-value",
+          "wcag2a",
+          "wcag244",
+          "wcag412",
+          "section508",
+          "section508.22.a",
+          "TTv5",
+          "TT6.a",
+          "EN-301-549",
+          "EN-9.2.4.4",
+          "EN-9.4.1.2",
+          "ACT",
+          "RGAAv4",
+          "RGAA-6.2.1"
+        ],
+        "wcag": [
+          "wcag2a",
+          "wcag244",
+          "wcag412"
+        ],
+        "nodeCount": 1,
+        "nodes": [
+          {
+            "target": [
+              ".bf-icon-color-hover[href=\"\"][title=\"\"]"
+            ],
+            "html": "<a href=\"\" class=\"flex items-center bf-icon-color-hover\" title=\"\"></a>",
+            "impact": "serious",
+            "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has an empty title attribute",
+            "any": [
+              {
+                "id": "has-visible-text",
+                "message": "Element does not have text that is visible to screen readers",
+                "data": null
+              },
+              {
+                "id": "aria-label",
+                "message": "aria-label attribute does not exist or is empty",
+                "data": null
+              },
+              {
+                "id": "aria-labelledby",
+                "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty",
+                "data": null
+              },
+              {
+                "id": "non-empty-title",
+                "message": "Element has an empty title attribute",
+                "data": {
+                  "messageKey": "emptyAttr"
+                }
+              }
+            ],
+            "all": [],
+            "none": [
+              {
+                "id": "focusable-no-name",
+                "message": "Element is in tab order and does not have accessible text",
+                "data": null
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "incompleteCount": 4,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "wcag": [
+          "wcag2aa",
+          "wcag143"
+        ],
+        "nodeCount": 2,
+        "nodes": [
+          {
+            "target": [
+              "p:nth-child(4)"
+            ],
+            "html": "<p>The <strong>Systemic Accessibility Analyzer</strong> is a multi-tool analysis and reporting layer for accessibility scan output. It is built for teams whose websites, applications, or digital estates have more findings than can sensibly be triaged one page at a time.</p>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element's background color could not be determined because it's partially obscured by another element",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "13.0pt (17.3333px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured",
+                  "expectedContrastRatio": "4.5:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".pointer-events-auto"
+            ],
+            "html": "<a href=\"#the-top\" class=\"pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400\" aria-label=\"Scroll to top\" title=\"Scroll to top\">↑</a>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element content contains only non-text characters",
+                "data": {
+                  "messageKey": "nonBmp"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          }
+        ]
+      },
+      {
+        "id": "hidden-content",
+        "impact": "minor",
+        "description": "Inform users about hidden content.",
+        "help": "Hidden content on the page should be analyzed",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/hidden-content?application=playwright",
+        "tags": [
+          "cat.structure",
+          "best-practice",
+          "experimental",
+          "review-item"
+        ],
+        "wcag": [],
+        "nodeCount": 10,
+        "nodes": [
+          {
+            "target": [
+              ".dark\\:hidden.justify-center.items-center"
+            ],
+            "html": "<div class=\"flex items-center justify-center dark:hidden\">",
+            "impact": "minor",
+            "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+            "any": [
+              {
+                "id": "hidden-content",
+                "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "data": null
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".md\\:hidden"
+            ],
+            "html": "<div class=\"flex md:hidden\">",
+            "impact": "minor",
+            "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+            "any": [
+              {
+                "id": "hidden-content",
+                "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "data": null
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              "#appearance-switcher-mobile > .dark\\:hidden"
+            ],
+            "html": "<div class=\"dark:hidden\">",
+            "impact": "minor",
+            "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+            "any": [
+              {
+                "id": "hidden-content",
+                "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "data": null
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              "#mobile-menu-toggle"
+            ],
+            "html": "<input type=\"checkbox\" id=\"mobile-menu-toggle\" autocomplete=\"off\" class=\"hidden peer\">",
+            "impact": "minor",
+            "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+            "any": [
+              {
+                "id": "hidden-content",
+                "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "data": null
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".inset-0"
+            ],
+            "html": "<div role=\"dialog\" aria-modal=\"true\" style=\"scrollbar-gutter:stable\" class=\"fixed inset-0 z-50 invisible overflow-y-auto px-6 py-20 opacity-0 transition-[opacity,visibility] duration-300 peer-checked:visible peer-checked:opacity-100 bg-neutral-50/97 dark:bg-neutral-900/99\nbf-scrollbar\">",
+            "impact": "minor",
+            "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+            "any": [
+              {
+                "id": "hidden-content",
+                "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "data": null
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              "ol > .hidden:nth-child(1)"
+            ],
+            "html": "<li class=\"hidden\"><a class=\"hover:underline decoration-neutral-300 dark:underline-neutral-600\" href=\"/\">Accessibility Specialist &amp; Audit Services</a><span class=\"px-1 text-primary-500\">/</span></li>",
+            "impact": "minor",
+            "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+            "any": [
+              {
+                "id": "hidden-content",
+                "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "data": null
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              "ol > .hidden:nth-child(2)"
+            ],
+            "html": "<li class=\"hidden\"><a class=\"hover:underline decoration-neutral-300 dark:underline-neutral-600\" href=\"/analyzer/\">Systemic Accessibility Analyzer</a><span class=\"px-1 text-primary-500\">/</span></li>",
+            "impact": "minor",
+            "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+            "any": [
+              {
+                "id": "hidden-content",
+                "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "data": null
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              "#TOCView > summary"
+            ],
+            "html": "<summary class=\"block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden\">Table of Contents</summary>",
+            "impact": "minor",
+            "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+            "any": [
+              {
+                "id": "hidden-content",
+                "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "data": null
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".toc-inside"
+            ],
+            "html": "<details class=\"toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden\" open=\"\">",
+            "impact": "minor",
+            "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+            "any": [
+              {
+                "id": "hidden-content",
+                "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "data": null
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".toc-inside > summary"
+            ],
+            "html": "<summary class=\"py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden\">Table of Contents</summary>",
+            "impact": "minor",
+            "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+            "any": [
+              {
+                "id": "hidden-content",
+                "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "data": null
+              }
+            ],
+            "all": [],
+            "none": []
+          }
+        ]
+      },
+      {
+        "id": "label-content-name-mismatch",
+        "impact": "serious",
+        "description": "Ensure that elements labelled through their content must have their visible text as part of their accessible name",
+        "help": "Elements must have their visible text as part of their accessible name",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/label-content-name-mismatch?application=playwright",
+        "tags": [
+          "cat.semantics",
+          "wcag21a",
+          "wcag253",
+          "EN-301-549",
+          "EN-9.2.5.3",
+          "RGAAv4",
+          "RGAA-6.1.5",
+          "experimental"
+        ],
+        "wcag": [
+          "wcag21a",
+          "wcag253"
+        ],
+        "nodeCount": 1,
+        "nodes": [
+          {
+            "target": [
+              ".pointer-events-auto"
+            ],
+            "html": "<a href=\"#the-top\" class=\"pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400\" aria-label=\"Scroll to top\" title=\"Scroll to top\">↑</a>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  ",
+            "any": [
+              {
+                "id": "label-content-name-mismatch",
+                "data": null
+              }
+            ],
+            "all": [],
+            "none": []
+          }
+        ]
+      },
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "wcag": [
+          "wcag2aa",
+          "wcag143"
+        ],
+        "nodeCount": 4,
+        "nodes": [
+          {
+            "target": [
+              ".min-w-\\[220px\\] > nav > ul > li:nth-child(8) > a[href$=\"#a-practical-workflow\"]"
+            ],
+            "html": "<a href=\"#a-practical-workflow\">A practical workflow</a>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element's background color could not be determined because it's partially obscured by another element",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "13.0pt (17.3333px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured",
+                  "expectedContrastRatio": "4.5:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".min-w-\\[220px\\] > nav > ul > li:nth-child(9) > a[href$=\"#-important-limitation\"]"
+            ],
+            "html": "<a href=\"#-important-limitation\">⚠️ Important Limitation</a>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element's background color could not be determined because it's partially obscured by another element",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "13.0pt (17.3333px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured",
+                  "expectedContrastRatio": "4.5:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".min-w-\\[220px\\] > nav > ul > li:nth-child(10) > a[href$=\"#explore-the-analyzer\"]"
+            ],
+            "html": "<a href=\"#explore-the-analyzer\">Explore the analyzer</a>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element's background color could not be determined because it's partially obscured by another element",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "13.0pt (17.3333px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured",
+                  "expectedContrastRatio": "4.5:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              "p:nth-child(4)"
+            ],
+            "html": "<p>The <strong>Systemic Accessibility Analyzer</strong> is a multi-tool analysis and reporting layer for accessibility scan output. It is built for teams whose websites, applications, or digital estates have more findings than can sensibly be triaged one page at a time.</p>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element's background color could not be determined because it's partially obscured by another element",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "13.0pt (17.3333px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscured",
+                  "expectedContrastRatio": "4.5:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          }
+        ]
+      }
+    ],
+    "passes": {
+      "broad": 34,
+      "contrast": 40
+    },
+    "inapplicable": {
+      "broad": 25,
+      "contrast": 49
+    },
+    "scans": {
+      "broad": {
+        "label": "broad",
+        "violationCount": 2,
+        "violations": [
+          {
+            "id": "landmark-unique",
+            "impact": "moderate",
+            "description": "Ensure landmarks are unique",
+            "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/landmark-unique?application=playwright",
+            "tags": [
+              "cat.semantics",
+              "best-practice"
+            ],
+            "wcag": [],
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "target": [
+                  ".gap-x-5"
+                ],
+                "html": "<nav class=\"flex items-center gap-x-5 h-12\">",
+                "impact": "moderate",
+                "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable",
+                "any": [
+                  {
+                    "id": "landmark-is-unique",
+                    "message": "The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable",
+                    "data": {
+                      "role": "navigation",
+                      "accessibleText": null
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              }
+            ]
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "description": "Ensure all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=playwright",
+            "tags": [
+              "cat.keyboard",
+              "best-practice",
+              "RGAAv4",
+              "RGAA-9.2.1"
+            ],
+            "wcag": [],
+            "nodeCount": 2,
+            "nodes": [
+              {
+                "target": [
+                  ".main-menu > div:nth-child(1)"
+                ],
+                "html": "<div><a href=\"/\" class=\"flex\"><span class=\"sr-only\">Practical Accessibility</span>\n<img src=\"/images/logo-dark.png\" width=\"250\" height=\"250\" class=\"logo max-h-20 max-w-20 object-scale-down object-left nozoom\" alt=\"\"></a></div>",
+                "impact": "moderate",
+                "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks",
+                "any": [
+                  {
+                    "id": "region",
+                    "message": "Some page content is not contained by landmarks",
+                    "data": {
+                      "isIframe": false
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".truncate"
+                ],
+                "html": "<a href=\"/\" class=\"text-base font-medium truncate min-w-0 shrink\">Practical Accessibility</a>",
+                "impact": "moderate",
+                "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks",
+                "any": [
+                  {
+                    "id": "region",
+                    "message": "Some page content is not contained by landmarks",
+                    "data": {
+                      "isIframe": false
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              }
+            ]
+          }
+        ],
+        "incompleteCount": 3,
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+            "tags": [
+              "cat.color",
+              "wcag2aa",
+              "wcag143",
+              "TTv5",
+              "TT13.c",
+              "EN-301-549",
+              "EN-9.1.4.3",
+              "ACT",
+              "RGAAv4",
+              "RGAA-3.2.1"
+            ],
+            "wcag": [
+              "wcag2aa",
+              "wcag143"
+            ],
+            "nodeCount": 2,
+            "nodes": [
+              {
+                "target": [
+                  "p:nth-child(4)"
+                ],
+                "html": "<p>The <strong>Systemic Accessibility Analyzer</strong> is a multi-tool analysis and reporting layer for accessibility scan output. It is built for teams whose websites, applications, or digital estates have more findings than can sensibly be triaged one page at a time.</p>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined because it's partially obscured by another element",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "13.0pt (17.3333px)",
+                      "fontWeight": "normal",
+                      "messageKey": "elmPartiallyObscured",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".pointer-events-auto"
+                ],
+                "html": "<a href=\"#the-top\" class=\"pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400\" aria-label=\"Scroll to top\" title=\"Scroll to top\">↑</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element content contains only non-text characters",
+                    "data": {
+                      "messageKey": "nonBmp"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              }
+            ]
+          },
+          {
+            "id": "hidden-content",
+            "impact": "minor",
+            "description": "Inform users about hidden content.",
+            "help": "Hidden content on the page should be analyzed",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/hidden-content?application=playwright",
+            "tags": [
+              "cat.structure",
+              "best-practice",
+              "experimental",
+              "review-item"
+            ],
+            "wcag": [],
+            "nodeCount": 10,
+            "nodes": [
+              {
+                "target": [
+                  ".dark\\:hidden.justify-center.items-center"
+                ],
+                "html": "<div class=\"flex items-center justify-center dark:hidden\">",
+                "impact": "minor",
+                "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "any": [
+                  {
+                    "id": "hidden-content",
+                    "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                    "data": null
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".md\\:hidden"
+                ],
+                "html": "<div class=\"flex md:hidden\">",
+                "impact": "minor",
+                "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "any": [
+                  {
+                    "id": "hidden-content",
+                    "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                    "data": null
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  "#appearance-switcher-mobile > .dark\\:hidden"
+                ],
+                "html": "<div class=\"dark:hidden\">",
+                "impact": "minor",
+                "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "any": [
+                  {
+                    "id": "hidden-content",
+                    "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                    "data": null
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  "#mobile-menu-toggle"
+                ],
+                "html": "<input type=\"checkbox\" id=\"mobile-menu-toggle\" autocomplete=\"off\" class=\"hidden peer\">",
+                "impact": "minor",
+                "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "any": [
+                  {
+                    "id": "hidden-content",
+                    "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                    "data": null
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".inset-0"
+                ],
+                "html": "<div role=\"dialog\" aria-modal=\"true\" style=\"scrollbar-gutter:stable\" class=\"fixed inset-0 z-50 invisible overflow-y-auto px-6 py-20 opacity-0 transition-[opacity,visibility] duration-300 peer-checked:visible peer-checked:opacity-100 bg-neutral-50/97 dark:bg-neutral-900/99\nbf-scrollbar\">",
+                "impact": "minor",
+                "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "any": [
+                  {
+                    "id": "hidden-content",
+                    "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                    "data": null
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  "ol > .hidden:nth-child(1)"
+                ],
+                "html": "<li class=\"hidden\"><a class=\"hover:underline decoration-neutral-300 dark:underline-neutral-600\" href=\"/\">Accessibility Specialist &amp; Audit Services</a><span class=\"px-1 text-primary-500\">/</span></li>",
+                "impact": "minor",
+                "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "any": [
+                  {
+                    "id": "hidden-content",
+                    "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                    "data": null
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  "ol > .hidden:nth-child(2)"
+                ],
+                "html": "<li class=\"hidden\"><a class=\"hover:underline decoration-neutral-300 dark:underline-neutral-600\" href=\"/analyzer/\">Systemic Accessibility Analyzer</a><span class=\"px-1 text-primary-500\">/</span></li>",
+                "impact": "minor",
+                "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "any": [
+                  {
+                    "id": "hidden-content",
+                    "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                    "data": null
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  "#TOCView > summary"
+                ],
+                "html": "<summary class=\"block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden\">Table of Contents</summary>",
+                "impact": "minor",
+                "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "any": [
+                  {
+                    "id": "hidden-content",
+                    "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                    "data": null
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".toc-inside"
+                ],
+                "html": "<details class=\"toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden\" open=\"\">",
+                "impact": "minor",
+                "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "any": [
+                  {
+                    "id": "hidden-content",
+                    "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                    "data": null
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".toc-inside > summary"
+                ],
+                "html": "<summary class=\"py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden\">Table of Contents</summary>",
+                "impact": "minor",
+                "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "any": [
+                  {
+                    "id": "hidden-content",
+                    "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                    "data": null
+                  }
+                ],
+                "all": [],
+                "none": []
+              }
+            ]
+          },
+          {
+            "id": "label-content-name-mismatch",
+            "impact": "serious",
+            "description": "Ensure that elements labelled through their content must have their visible text as part of their accessible name",
+            "help": "Elements must have their visible text as part of their accessible name",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/label-content-name-mismatch?application=playwright",
+            "tags": [
+              "cat.semantics",
+              "wcag21a",
+              "wcag253",
+              "EN-301-549",
+              "EN-9.2.5.3",
+              "RGAAv4",
+              "RGAA-6.1.5",
+              "experimental"
+            ],
+            "wcag": [
+              "wcag21a",
+              "wcag253"
+            ],
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "target": [
+                  ".pointer-events-auto"
+                ],
+                "html": "<a href=\"#the-top\" class=\"pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400\" aria-label=\"Scroll to top\" title=\"Scroll to top\">↑</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  ",
+                "any": [
+                  {
+                    "id": "label-content-name-mismatch",
+                    "data": null
+                  }
+                ],
+                "all": [],
+                "none": []
+              }
+            ]
+          }
+        ],
+        "passCount": 34,
+        "inapplicableCount": 25
+      },
+      "contrast": {
+        "label": "contrast",
+        "violationCount": 3,
+        "violations": [
+          {
+            "id": "landmark-unique",
+            "impact": "moderate",
+            "description": "Ensure landmarks are unique",
+            "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/landmark-unique?application=playwright",
+            "tags": [
+              "cat.semantics",
+              "best-practice"
+            ],
+            "wcag": [],
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "target": [
+                  ".gap-x-5"
+                ],
+                "html": "<nav class=\"flex items-center gap-x-5 h-12\">",
+                "impact": "moderate",
+                "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable",
+                "any": [
+                  {
+                    "id": "landmark-is-unique",
+                    "message": "The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable",
+                    "data": {
+                      "role": "navigation",
+                      "accessibleText": null
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              }
+            ]
+          },
+          {
+            "id": "link-name",
+            "impact": "serious",
+            "description": "Ensure links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/link-name?application=playwright",
+            "tags": [
+              "cat.name-role-value",
+              "wcag2a",
+              "wcag244",
+              "wcag412",
+              "section508",
+              "section508.22.a",
+              "TTv5",
+              "TT6.a",
+              "EN-301-549",
+              "EN-9.2.4.4",
+              "EN-9.4.1.2",
+              "ACT",
+              "RGAAv4",
+              "RGAA-6.2.1"
+            ],
+            "wcag": [
+              "wcag2a",
+              "wcag244",
+              "wcag412"
+            ],
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "target": [
+                  ".bf-icon-color-hover[href=\"\"][title=\"\"]"
+                ],
+                "html": "<a href=\"\" class=\"flex items-center bf-icon-color-hover\" title=\"\"></a>",
+                "impact": "serious",
+                "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has an empty title attribute",
+                "any": [
+                  {
+                    "id": "has-visible-text",
+                    "message": "Element does not have text that is visible to screen readers",
+                    "data": null
+                  },
+                  {
+                    "id": "aria-label",
+                    "message": "aria-label attribute does not exist or is empty",
+                    "data": null
+                  },
+                  {
+                    "id": "aria-labelledby",
+                    "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty",
+                    "data": null
+                  },
+                  {
+                    "id": "non-empty-title",
+                    "message": "Element has an empty title attribute",
+                    "data": {
+                      "messageKey": "emptyAttr"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": [
+                  {
+                    "id": "focusable-no-name",
+                    "message": "Element is in tab order and does not have accessible text",
+                    "data": null
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "region",
+            "impact": "moderate",
+            "description": "Ensure all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=playwright",
+            "tags": [
+              "cat.keyboard",
+              "best-practice",
+              "RGAAv4",
+              "RGAA-9.2.1"
+            ],
+            "wcag": [],
+            "nodeCount": 2,
+            "nodes": [
+              {
+                "target": [
+                  ".main-menu > div:nth-child(1)"
+                ],
+                "html": "<div><a href=\"/\" class=\"flex\"><span class=\"sr-only\">Practical Accessibility</span>\n<img src=\"/images/logo-dark.png\" width=\"250\" height=\"250\" class=\"logo max-h-20 max-w-20 object-scale-down object-left nozoom\" alt=\"\"></a></div>",
+                "impact": "moderate",
+                "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks",
+                "any": [
+                  {
+                    "id": "region",
+                    "message": "Some page content is not contained by landmarks",
+                    "data": {
+                      "isIframe": false
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".truncate"
+                ],
+                "html": "<a href=\"/\" class=\"text-base font-medium truncate min-w-0 shrink\">Practical Accessibility</a>",
+                "impact": "moderate",
+                "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks",
+                "any": [
+                  {
+                    "id": "region",
+                    "message": "Some page content is not contained by landmarks",
+                    "data": {
+                      "isIframe": false
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              }
+            ]
+          }
+        ],
+        "incompleteCount": 1,
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+            "tags": [
+              "cat.color",
+              "wcag2aa",
+              "wcag143",
+              "TTv5",
+              "TT13.c",
+              "EN-301-549",
+              "EN-9.1.4.3",
+              "ACT",
+              "RGAAv4",
+              "RGAA-3.2.1"
+            ],
+            "wcag": [
+              "wcag2aa",
+              "wcag143"
+            ],
+            "nodeCount": 4,
+            "nodes": [
+              {
+                "target": [
+                  ".min-w-\\[220px\\] > nav > ul > li:nth-child(8) > a[href$=\"#a-practical-workflow\"]"
+                ],
+                "html": "<a href=\"#a-practical-workflow\">A practical workflow</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined because it's partially obscured by another element",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "13.0pt (17.3333px)",
+                      "fontWeight": "normal",
+                      "messageKey": "elmPartiallyObscured",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".min-w-\\[220px\\] > nav > ul > li:nth-child(9) > a[href$=\"#-important-limitation\"]"
+                ],
+                "html": "<a href=\"#-important-limitation\">⚠️ Important Limitation</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined because it's partially obscured by another element",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "13.0pt (17.3333px)",
+                      "fontWeight": "normal",
+                      "messageKey": "elmPartiallyObscured",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".min-w-\\[220px\\] > nav > ul > li:nth-child(10) > a[href$=\"#explore-the-analyzer\"]"
+                ],
+                "html": "<a href=\"#explore-the-analyzer\">Explore the analyzer</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined because it's partially obscured by another element",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "13.0pt (17.3333px)",
+                      "fontWeight": "normal",
+                      "messageKey": "elmPartiallyObscured",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  "p:nth-child(4)"
+                ],
+                "html": "<p>The <strong>Systemic Accessibility Analyzer</strong> is a multi-tool analysis and reporting layer for accessibility scan output. It is built for teams whose websites, applications, or digital estates have more findings than can sensibly be triaged one page at a time.</p>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined because it's partially obscured by another element",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "13.0pt (17.3333px)",
+                      "fontWeight": "normal",
+                      "messageKey": "elmPartiallyObscured",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              }
+            ]
+          }
+        ],
+        "passCount": 40,
+        "inapplicableCount": 49
+      }
+    }
+  }
+}

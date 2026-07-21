@@ -1,0 +1,1400 @@
+{
+  "report": {
+    "results": [
+      {
+        "ruleId": "aria_content_in_landmark",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/a[1]",
+          "aria": "/document[1]/link[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Fail_1",
+        "message": "Content is not within a landmark element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 8,
+          "height": 18,
+          "width": 145
+        },
+        "snippet": "<a href=\"#main-content\" class=\"px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/aria_content_in_landmark.html#%7B%22message%22%3A%22Content%20is%20not%20within%20a%20landmark%20element%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%23main-content%5C%22%20class%3D%5C%22px-3%20py-1%20text-sm%20-translate-y-8%20rounded-b-lg%20bg-primary-200%20focus%3Atranslate-y-0%20dark%3Abg-neutral-600%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22aria_content_in_landmark%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "aria_content_in_landmark",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[3]/div[2]/div[1]/div[1]/a[1]",
+          "aria": "/document[1]/link[2]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Fail_1",
+        "message": "Content is not within a landmark element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 262,
+          "height": 18,
+          "width": 397
+        },
+        "snippet": "<a class=\"flex\" href=\"/\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/aria_content_in_landmark.html#%7B%22message%22%3A%22Content%20is%20not%20within%20a%20landmark%20element%22%2C%22snippet%22%3A%22%3Ca%20class%3D%5C%22flex%5C%22%20href%3D%5C%22%2F%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22aria_content_in_landmark%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "aria_content_in_landmark",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[3]/div[2]/div[1]/a[1]",
+          "aria": "/document[1]/link[3]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Fail_1",
+        "message": "Content is not within a landmark element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 281,
+          "height": 18,
+          "width": 143
+        },
+        "snippet": "<a class=\"text-base font-medium truncate min-w-0 shrink\" href=\"/\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/aria_content_in_landmark.html#%7B%22message%22%3A%22Content%20is%20not%20within%20a%20landmark%20element%22%2C%22snippet%22%3A%22%3Ca%20class%3D%5C%22text-base%20font-medium%20truncate%20min-w-0%20shrink%5C%22%20href%3D%5C%22%2F%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22aria_content_in_landmark%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "aria_navigation_label_unique",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[3]/div[2]/div[1]/div[2]/div[1]/nav[1]",
+          "aria": "/document[1]/navigation[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_label_not_unique",
+        "message": "Multiple elements with \"navigation\" role do not have unique labels",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 299,
+          "height": 56,
+          "width": 784
+        },
+        "snippet": "<nav class=\"flex items-center gap-x-5 h-12\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/aria_navigation_label_unique.html#%7B%22message%22%3A%22Multiple%20elements%20with%20%5C%22navigation%5C%22%20role%20do%20not%20have%20unique%20labels%22%2C%22snippet%22%3A%22%3Cnav%20class%3D%5C%22flex%20items-center%20gap-x-5%20h-12%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_label_not_unique%22%2C%22ruleId%22%3A%22aria_navigation_label_unique%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "element_tabbable_visible",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[3]/div[2]/div[1]/div[2]/div[1]/nav[1]/a[6]",
+          "aria": "/document[1]/navigation[1]/link[6]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_visible",
+        "message": "Confirm the element should be tabbable and if so, it becomes visible when it has keyboard focus",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 471,
+          "top": 299,
+          "height": 18,
+          "width": 0
+        },
+        "snippet": "<a title=\"\" class=\"flex items-center bf-icon-color-hover\" href=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/element_tabbable_visible.html#%7B%22message%22%3A%22Confirm%20the%20element%20should%20be%20tabbable%20and%20if%20so%2C%20it%20becomes%20visible%20when%20it%20has%20keyboard%20focus%22%2C%22snippet%22%3A%22%3Ca%20title%3D%5C%22%5C%22%20class%3D%5C%22flex%20items-center%20bf-icon-color-hover%5C%22%20href%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_visible%22%2C%22ruleId%22%3A%22element_tabbable_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "a_text_purpose",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[3]/div[2]/div[1]/div[2]/div[1]/nav[1]/a[6]",
+          "aria": "/document[1]/navigation[1]/link[6]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_acc_name",
+        "message": "Hyperlink has no link text, label or image with a text alternative",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 471,
+          "top": 299,
+          "height": 18,
+          "width": 0
+        },
+        "snippet": "<a title=\"\" class=\"flex items-center bf-icon-color-hover\" href=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/a_text_purpose.html#%7B%22message%22%3A%22Hyperlink%20has%20no%20link%20text%2C%20label%20or%20image%20with%20a%20text%20alternative%22%2C%22snippet%22%3A%22%3Ca%20title%3D%5C%22%5C%22%20class%3D%5C%22flex%20items-center%20bf-icon-color-hover%5C%22%20href%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_acc_name%22%2C%22ruleId%22%3A%22a_text_purpose%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "input_label_visible",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[3]/div[2]/div[1]/div[2]/div[1]/nav[1]/div[1]/button[1]",
+          "aria": "/document[1]/navigation[1]/button[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_no_label",
+        "message": "The input element does not have an associated visible label",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 318,
+          "height": 37,
+          "width": 16
+        },
+        "snippet": "<button title=\"Switch to light appearance\" class=\"text-base bf-icon-color-hover\" type=\"button\" aria-label=\"Switch to light appearance\" id=\"appearance-switcher\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/input_label_visible.html#%7B%22message%22%3A%22The%20input%20element%20does%20not%20have%20an%20associated%20visible%20label%22%2C%22snippet%22%3A%22%3Cbutton%20title%3D%5C%22Switch%20to%20light%20appearance%5C%22%20class%3D%5C%22text-base%20bf-icon-color-hover%5C%22%20type%3D%5C%22button%5C%22%20aria-label%3D%5C%22Switch%20to%20light%20appearance%5C%22%20id%3D%5C%22appearance-switcher%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_no_label%22%2C%22ruleId%22%3A%22input_label_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "svg_graphics_labelled",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[3]/div[2]/div[1]/div[2]/div[1]/nav[1]/div[1]/button[1]/div[1]/span[1]/svg[1]",
+          "aria": "/document[1]/navigation[1]/button[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_acc_name",
+        "message": "The SVG element has no accessible name",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 16,
+          "top": 333,
+          "height": 0,
+          "width": 0
+        },
+        "snippet": "<svg viewBox=\"0 0 512 512\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/svg_graphics_labelled.html#%7B%22message%22%3A%22The%20SVG%20element%20has%20no%20accessible%20name%22%2C%22snippet%22%3A%22%3Csvg%20viewBox%3D%5C%220%200%20512%20512%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_acc_name%22%2C%22ruleId%22%3A%22svg_graphics_labelled%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "svg_graphics_labelled",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[3]/div[2]/div[1]/div[2]/div[1]/nav[1]/div[1]/button[1]/div[2]/span[1]/svg[1]",
+          "aria": "/document[1]/navigation[1]/button[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_acc_name",
+        "message": "The SVG element has no accessible name",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 16,
+          "top": 348,
+          "height": 0,
+          "width": 0
+        },
+        "snippet": "<svg viewBox=\"0 0 512 512\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/svg_graphics_labelled.html#%7B%22message%22%3A%22The%20SVG%20element%20has%20no%20accessible%20name%22%2C%22snippet%22%3A%22%3Csvg%20viewBox%3D%5C%220%200%20512%20512%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_acc_name%22%2C%22ruleId%22%3A%22svg_graphics_labelled%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "aria_content_in_landmark",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[3]/div[2]/div[1]/div[2]/div[2]/div[1]/button[1]",
+          "aria": "/document[1]/button[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Fail_1",
+        "message": "Content is not within a landmark element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 355,
+          "height": 37,
+          "width": 16
+        },
+        "snippet": "<button class=\"flex items-center justify-center text-neutral-900 hover:text-primary-600 dark:text-neutral-200 dark:hover:text-primary-400\" title=\"Switch to light appearance\" aria-label=\"Switch to light appearance\" type=\"button\" id=\"appearance-switcher-mobile\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/aria_content_in_landmark.html#%7B%22message%22%3A%22Content%20is%20not%20within%20a%20landmark%20element%22%2C%22snippet%22%3A%22%3Cbutton%20class%3D%5C%22flex%20items-center%20justify-center%20text-neutral-900%20hover%3Atext-primary-600%20dark%3Atext-neutral-200%20dark%3Ahover%3Atext-primary-400%5C%22%20title%3D%5C%22Switch%20to%20light%20appearance%5C%22%20aria-label%3D%5C%22Switch%20to%20light%20appearance%5C%22%20type%3D%5C%22button%5C%22%20id%3D%5C%22appearance-switcher-mobile%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22aria_content_in_landmark%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "input_label_visible",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[3]/div[2]/div[1]/div[2]/div[2]/div[1]/button[1]",
+          "aria": "/document[1]/button[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_no_label",
+        "message": "The input element does not have an associated visible label",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 355,
+          "height": 37,
+          "width": 16
+        },
+        "snippet": "<button class=\"flex items-center justify-center text-neutral-900 hover:text-primary-600 dark:text-neutral-200 dark:hover:text-primary-400\" title=\"Switch to light appearance\" aria-label=\"Switch to light appearance\" type=\"button\" id=\"appearance-switcher-mobile\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/input_label_visible.html#%7B%22message%22%3A%22The%20input%20element%20does%20not%20have%20an%20associated%20visible%20label%22%2C%22snippet%22%3A%22%3Cbutton%20class%3D%5C%22flex%20items-center%20justify-center%20text-neutral-900%20hover%3Atext-primary-600%20dark%3Atext-neutral-200%20dark%3Ahover%3Atext-primary-400%5C%22%20title%3D%5C%22Switch%20to%20light%20appearance%5C%22%20aria-label%3D%5C%22Switch%20to%20light%20appearance%5C%22%20type%3D%5C%22button%5C%22%20id%3D%5C%22appearance-switcher-mobile%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_no_label%22%2C%22ruleId%22%3A%22input_label_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "svg_graphics_labelled",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[3]/div[2]/div[1]/div[2]/div[2]/div[1]/button[1]/div[1]/span[1]/svg[1]",
+          "aria": "/document[1]/button[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_acc_name",
+        "message": "The SVG element has no accessible name",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 16,
+          "top": 370,
+          "height": 0,
+          "width": 0
+        },
+        "snippet": "<svg viewBox=\"0 0 512 512\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/svg_graphics_labelled.html#%7B%22message%22%3A%22The%20SVG%20element%20has%20no%20accessible%20name%22%2C%22snippet%22%3A%22%3Csvg%20viewBox%3D%5C%220%200%20512%20512%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_acc_name%22%2C%22ruleId%22%3A%22svg_graphics_labelled%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "svg_graphics_labelled",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[3]/div[2]/div[1]/div[2]/div[2]/div[1]/button[1]/div[2]/span[1]/svg[1]",
+          "aria": "/document[1]/button[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_acc_name",
+        "message": "The SVG element has no accessible name",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 16,
+          "top": 385,
+          "height": 0,
+          "width": 0
+        },
+        "snippet": "<svg viewBox=\"0 0 512 512\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/svg_graphics_labelled.html#%7B%22message%22%3A%22The%20SVG%20element%20has%20no%20accessible%20name%22%2C%22snippet%22%3A%22%3Csvg%20viewBox%3D%5C%220%200%20512%20512%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_acc_name%22%2C%22ruleId%22%3A%22svg_graphics_labelled%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "input_label_exists",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[3]/div[2]/div[1]/div[2]/div[2]/div[1]/input[1]",
+          "aria": "/document[1]/checkbox[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Fail_1",
+        "message": "Form control element <input> has no associated label",
+        "messageArgs": [
+          "input"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": 32,
+          "top": 372,
+          "height": 13,
+          "width": 13
+        },
+        "snippet": "<input class=\"hidden peer\" autocomplete=\"off\" id=\"mobile-menu-toggle\" type=\"checkbox\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/input_label_exists.html#%7B%22message%22%3A%22Form%20control%20element%20%3Cinput%3E%20has%20no%20associated%20label%22%2C%22snippet%22%3A%22%3Cinput%20class%3D%5C%22hidden%20peer%5C%22%20autocomplete%3D%5C%22off%5C%22%20id%3D%5C%22mobile-menu-toggle%5C%22%20type%3D%5C%22checkbox%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22input_label_exists%22%2C%22msgArgs%22%3A%5B%22input%22%5D%7D"
+      },
+      {
+        "ruleId": "label_content_exists",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[3]/div[2]/div[1]/div[2]/div[2]/div[1]/label[1]",
+          "aria": "/document[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Fail_1",
+        "message": "The <label> element does not have descriptive text that identifies the expected input",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 1273,
+          "height": 18,
+          "width": 784
+        },
+        "snippet": "<label class=\"flex items-center justify-center cursor-pointer bf-icon-color-hover\" for=\"mobile-menu-toggle\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/label_content_exists.html#%7B%22message%22%3A%22The%20%3Clabel%3E%20element%20does%20not%20have%20descriptive%20text%20that%20identifies%20the%20expected%20input%22%2C%22snippet%22%3A%22%3Clabel%20class%3D%5C%22flex%20items-center%20justify-center%20cursor-pointer%20bf-icon-color-hover%5C%22%20for%3D%5C%22mobile-menu-toggle%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22label_content_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "svg_graphics_labelled",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[3]/div[2]/div[1]/div[2]/div[2]/div[1]/label[1]/span[1]/svg[1]",
+          "aria": "/document[1]/graphics-document[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_acc_name",
+        "message": "The SVG element has no accessible name",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 392,
+          "height": 896,
+          "width": 784
+        },
+        "snippet": "<svg viewBox=\"0 0 448 512\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/svg_graphics_labelled.html#%7B%22message%22%3A%22The%20SVG%20element%20has%20no%20accessible%20name%22%2C%22snippet%22%3A%22%3Csvg%20viewBox%3D%5C%220%200%20448%20512%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_acc_name%22%2C%22ruleId%22%3A%22svg_graphics_labelled%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "form_label_unique",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[3]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/label[1]",
+          "aria": "/document[1]/dialog[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Fail_1",
+        "message": "Form control has more than one label",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 2532,
+          "height": 18,
+          "width": 784
+        },
+        "snippet": "<label class=\"fixed end-8 top-5 flex items-center justify-center z-50 h-12 w-12 cursor-pointer select-none rounded-full bf-icon-color-hover border bf-border-color bf-border-color-hover bg-neutral-50 dark:bg-neutral-900\" for=\"mobile-menu-toggle\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/form_label_unique.html#%7B%22message%22%3A%22Form%20control%20has%20more%20than%20one%20label%22%2C%22snippet%22%3A%22%3Clabel%20class%3D%5C%22fixed%20end-8%20top-5%20flex%20items-center%20justify-center%20z-50%20h-12%20w-12%20cursor-pointer%20select-none%20rounded-full%20bf-icon-color-hover%20border%20bf-border-color%20bf-border-color-hover%20bg-neutral-50%20dark%3Abg-neutral-900%5C%22%20for%3D%5C%22mobile-menu-toggle%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22form_label_unique%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "label_content_exists",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[3]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/label[1]",
+          "aria": "/document[1]/dialog[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Fail_1",
+        "message": "The <label> element does not have descriptive text that identifies the expected input",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 2532,
+          "height": 18,
+          "width": 784
+        },
+        "snippet": "<label class=\"fixed end-8 top-5 flex items-center justify-center z-50 h-12 w-12 cursor-pointer select-none rounded-full bf-icon-color-hover border bf-border-color bf-border-color-hover bg-neutral-50 dark:bg-neutral-900\" for=\"mobile-menu-toggle\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/label_content_exists.html#%7B%22message%22%3A%22The%20%3Clabel%3E%20element%20does%20not%20have%20descriptive%20text%20that%20identifies%20the%20expected%20input%22%2C%22snippet%22%3A%22%3Clabel%20class%3D%5C%22fixed%20end-8%20top-5%20flex%20items-center%20justify-center%20z-50%20h-12%20w-12%20cursor-pointer%20select-none%20rounded-full%20bf-icon-color-hover%20border%20bf-border-color%20bf-border-color-hover%20bg-neutral-50%20dark%3Abg-neutral-900%5C%22%20for%3D%5C%22mobile-menu-toggle%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22label_content_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "svg_graphics_labelled",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[3]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/label[1]/span[1]/svg[1]",
+          "aria": "/document[1]/dialog[1]/graphics-document[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_acc_name",
+        "message": "The SVG element has no accessible name",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 1292,
+          "height": 1255,
+          "width": 784
+        },
+        "snippet": "<svg viewBox=\"0 0 320 512\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/svg_graphics_labelled.html#%7B%22message%22%3A%22The%20SVG%20element%20has%20no%20accessible%20name%22%2C%22snippet%22%3A%22%3Csvg%20viewBox%3D%5C%220%200%20320%20512%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_acc_name%22%2C%22ruleId%22%3A%22svg_graphics_labelled%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "element_tabbable_visible",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[3]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/nav[1]/div[6]/a[1]",
+          "aria": "/document[1]/dialog[1]/navigation[1]/link[6]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_visible",
+        "message": "Confirm the element should be tabbable and if so, it becomes visible when it has keyboard focus",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 2643,
+          "height": 0,
+          "width": 0
+        },
+        "snippet": "<a class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\" href=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/element_tabbable_visible.html#%7B%22message%22%3A%22Confirm%20the%20element%20should%20be%20tabbable%20and%20if%20so%2C%20it%20becomes%20visible%20when%20it%20has%20keyboard%20focus%22%2C%22snippet%22%3A%22%3Ca%20class%3D%5C%22flex%20items-center%20gap-4%20group%20bf-icon-color-hover%20text-neutral-700%20dark%3Atext-neutral-200%5C%22%20href%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_visible%22%2C%22ruleId%22%3A%22element_tabbable_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "a_text_purpose",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[3]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/nav[1]/div[6]/a[1]",
+          "aria": "/document[1]/dialog[1]/navigation[1]/link[6]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_acc_name",
+        "message": "Hyperlink has no link text, label or image with a text alternative",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 2643,
+          "height": 0,
+          "width": 0
+        },
+        "snippet": "<a class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\" href=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/a_text_purpose.html#%7B%22message%22%3A%22Hyperlink%20has%20no%20link%20text%2C%20label%20or%20image%20with%20a%20text%20alternative%22%2C%22snippet%22%3A%22%3Ca%20class%3D%5C%22flex%20items-center%20gap-4%20group%20bf-icon-color-hover%20text-neutral-700%20dark%3Atext-neutral-200%5C%22%20href%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_acc_name%22%2C%22ruleId%22%3A%22a_text_purpose%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "aria_landmark_name_unique",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[4]/main[1]/section[1]/div[1]/div[1]/details[1]/div[1]/nav[1]",
+          "aria": "/document[1]/main[1]/group[1]/navigation[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_label_not_unique",
+        "message": "Multiple elements with \"navigation\" landmarks within the same parent region are not distinguished from one another because they have the same \"\" label",
+        "messageArgs": [
+          "navigation",
+          ""
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 2810,
+          "height": 262,
+          "width": 784
+        },
+        "snippet": "<nav id=\"TableOfContents\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/aria_landmark_name_unique.html#%7B%22message%22%3A%22Multiple%20elements%20with%20%5C%22navigation%5C%22%20landmarks%20within%20the%20same%20parent%20region%20are%20not%20distinguished%20from%20one%20another%20because%20they%20have%20the%20same%20%5C%22%5C%22%20label%22%2C%22snippet%22%3A%22%3Cnav%20id%3D%5C%22TableOfContents%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_label_not_unique%22%2C%22ruleId%22%3A%22aria_landmark_name_unique%22%2C%22msgArgs%22%3A%5B%22navigation%22%2C%22%22%5D%7D"
+      },
+      {
+        "ruleId": "aria_navigation_label_unique",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[4]/main[1]/section[1]/div[1]/div[1]/details[1]/div[1]/nav[1]",
+          "aria": "/document[1]/main[1]/group[1]/navigation[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_label_not_unique",
+        "message": "Multiple elements with \"navigation\" role do not have unique labels",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 2810,
+          "height": 262,
+          "width": 784
+        },
+        "snippet": "<nav id=\"TableOfContents\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/aria_navigation_label_unique.html#%7B%22message%22%3A%22Multiple%20elements%20with%20%5C%22navigation%5C%22%20role%20do%20not%20have%20unique%20labels%22%2C%22snippet%22%3A%22%3Cnav%20id%3D%5C%22TableOfContents%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_label_not_unique%22%2C%22ruleId%22%3A%22aria_navigation_label_unique%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "element_id_unique",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[4]/main[1]/section[1]/div[1]/div[1]/details[2]/div[1]/nav[1]",
+          "aria": "/document[1]/main[1]/group[2]/navigation[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_in_use",
+        "message": "The <nav> element has the id \"TableOfContents\" that is already in use",
+        "messageArgs": [
+          "nav",
+          "TableOfContents"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 3122,
+          "height": 262,
+          "width": 784
+        },
+        "snippet": "<nav id=\"TableOfContents\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/element_id_unique.html#%7B%22message%22%3A%22The%20%3Cnav%3E%20element%20has%20the%20id%20%5C%22TableOfContents%5C%22%20that%20is%20already%20in%20use%22%2C%22snippet%22%3A%22%3Cnav%20id%3D%5C%22TableOfContents%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_in_use%22%2C%22ruleId%22%3A%22element_id_unique%22%2C%22msgArgs%22%3A%5B%22nav%22%2C%22TableOfContents%22%5D%7D"
+      },
+      {
+        "ruleId": "aria_landmark_name_unique",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[4]/main[1]/section[1]/div[1]/div[1]/details[2]/div[1]/nav[1]",
+          "aria": "/document[1]/main[1]/group[2]/navigation[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_label_not_unique",
+        "message": "Multiple elements with \"navigation\" landmarks within the same parent region are not distinguished from one another because they have the same \"\" label",
+        "messageArgs": [
+          "navigation",
+          ""
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 3122,
+          "height": 262,
+          "width": 784
+        },
+        "snippet": "<nav id=\"TableOfContents\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/aria_landmark_name_unique.html#%7B%22message%22%3A%22Multiple%20elements%20with%20%5C%22navigation%5C%22%20landmarks%20within%20the%20same%20parent%20region%20are%20not%20distinguished%20from%20one%20another%20because%20they%20have%20the%20same%20%5C%22%5C%22%20label%22%2C%22snippet%22%3A%22%3Cnav%20id%3D%5C%22TableOfContents%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_label_not_unique%22%2C%22ruleId%22%3A%22aria_landmark_name_unique%22%2C%22msgArgs%22%3A%5B%22navigation%22%2C%22%22%5D%7D"
+      },
+      {
+        "ruleId": "aria_navigation_label_unique",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[4]/main[1]/section[1]/div[1]/div[1]/details[2]/div[1]/nav[1]",
+          "aria": "/document[1]/main[1]/group[2]/navigation[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_label_not_unique",
+        "message": "Multiple elements with \"navigation\" role do not have unique labels",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 3122,
+          "height": 262,
+          "width": 784
+        },
+        "snippet": "<nav id=\"TableOfContents\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/aria_navigation_label_unique.html#%7B%22message%22%3A%22Multiple%20elements%20with%20%5C%22navigation%5C%22%20role%20do%20not%20have%20unique%20labels%22%2C%22snippet%22%3A%22%3Cnav%20id%3D%5C%22TableOfContents%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_label_not_unique%22%2C%22ruleId%22%3A%22aria_navigation_label_unique%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "element_tabbable_unobscured",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[4]/main[1]/section[1]/div[1]/div[1]/details[2]/div[1]/nav[1]/ul[1]/li[1]/a[1]",
+          "aria": "/document[1]/main[1]/group[2]/navigation[1]/list[1]/listitem[1]/link[1]"
+        },
+        "ruleTime": 1,
+        "reasonId": "potential_obscured",
+        "message": "Confirm that when the element receives focus, it is not covered or, if covered by user action, can be uncovered without moving focus",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 48,
+          "top": 3122,
+          "height": 18,
+          "width": 244
+        },
+        "snippet": "<a href=\"#dont-count-findings-find-consensus\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/element_tabbable_unobscured.html#%7B%22message%22%3A%22Confirm%20that%20when%20the%20element%20receives%20focus%2C%20it%20is%20not%20covered%20or%2C%20if%20covered%20by%20user%20action%2C%20can%20be%20uncovered%20without%20moving%20focus%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%23dont-count-findings-find-consensus%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_obscured%22%2C%22ruleId%22%3A%22element_tabbable_unobscured%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "element_tabbable_unobscured",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[4]/main[1]/section[1]/div[1]/div[1]/details[2]/div[1]/nav[1]/ul[1]/li[2]/a[1]",
+          "aria": "/document[1]/main[1]/group[2]/navigation[1]/list[1]/listitem[2]/link[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_obscured",
+        "message": "Confirm that when the element receives focus, it is not covered or, if covered by user action, can be uncovered without moving focus",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 48,
+          "top": 3141,
+          "height": 18,
+          "width": 244
+        },
+        "snippet": "<a href=\"#from-issue-volume-to-useful-priorities\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/element_tabbable_unobscured.html#%7B%22message%22%3A%22Confirm%20that%20when%20the%20element%20receives%20focus%2C%20it%20is%20not%20covered%20or%2C%20if%20covered%20by%20user%20action%2C%20can%20be%20uncovered%20without%20moving%20focus%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%23from-issue-volume-to-useful-priorities%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_obscured%22%2C%22ruleId%22%3A%22element_tabbable_unobscured%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "element_tabbable_unobscured",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[4]/main[1]/section[1]/div[1]/div[1]/details[2]/div[1]/nav[1]/ul[1]/li[3]/a[1]",
+          "aria": "/document[1]/main[1]/group[2]/navigation[1]/list[1]/listitem[3]/link[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_obscured",
+        "message": "Confirm that when the element receives focus, it is not covered or, if covered by user action, can be uncovered without moving focus",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 48,
+          "top": 3159,
+          "height": 18,
+          "width": 112
+        },
+        "snippet": "<a href=\"#core-capabilities\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/element_tabbable_unobscured.html#%7B%22message%22%3A%22Confirm%20that%20when%20the%20element%20receives%20focus%2C%20it%20is%20not%20covered%20or%2C%20if%20covered%20by%20user%20action%2C%20can%20be%20uncovered%20without%20moving%20focus%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%23core-capabilities%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_obscured%22%2C%22ruleId%22%3A%22element_tabbable_unobscured%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "element_tabbable_unobscured",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[4]/main[1]/section[1]/div[1]/div[1]/details[2]/div[1]/nav[1]/ul[1]/li[3]/ul[1]/li[1]/a[1]",
+          "aria": "/document[1]/main[1]/group[2]/navigation[1]/list[1]/listitem[3]/list[1]/listitem[1]/link[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_obscured",
+        "message": "Confirm that when the element receives focus, it is not covered or, if covered by user action, can be uncovered without moving focus",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 88,
+          "top": 3178,
+          "height": 18,
+          "width": 173
+        },
+        "snippet": "<a href=\"#data-processing--cleanup\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/element_tabbable_unobscured.html#%7B%22message%22%3A%22Confirm%20that%20when%20the%20element%20receives%20focus%2C%20it%20is%20not%20covered%20or%2C%20if%20covered%20by%20user%20action%2C%20can%20be%20uncovered%20without%20moving%20focus%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%23data-processing--cleanup%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_obscured%22%2C%22ruleId%22%3A%22element_tabbable_unobscured%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "element_tabbable_unobscured",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[4]/main[1]/section[1]/div[1]/div[1]/details[2]/div[1]/nav[1]/ul[1]/li[3]/ul[1]/li[2]/a[1]",
+          "aria": "/document[1]/main[1]/group[2]/navigation[1]/list[1]/listitem[3]/list[1]/listitem[2]/link[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_obscured",
+        "message": "Confirm that when the element receives focus, it is not covered or, if covered by user action, can be uncovered without moving focus",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 88,
+          "top": 3196,
+          "height": 18,
+          "width": 115
+        },
+        "snippet": "<a href=\"#systemic-analysis\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/element_tabbable_unobscured.html#%7B%22message%22%3A%22Confirm%20that%20when%20the%20element%20receives%20focus%2C%20it%20is%20not%20covered%20or%2C%20if%20covered%20by%20user%20action%2C%20can%20be%20uncovered%20without%20moving%20focus%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%23systemic-analysis%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_obscured%22%2C%22ruleId%22%3A%22element_tabbable_unobscured%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "element_tabbable_unobscured",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[4]/main[1]/section[1]/div[1]/div[1]/details[2]/div[1]/nav[1]/ul[1]/li[4]/a[1]",
+          "aria": "/document[1]/main[1]/group[2]/navigation[1]/list[1]/listitem[4]/link[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_obscured",
+        "message": "Confirm that when the element receives focus, it is not covered or, if covered by user action, can be uncovered without moving focus",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 48,
+          "top": 3215,
+          "height": 18,
+          "width": 188
+        },
+        "snippet": "<a href=\"#why-use-more-than-one-tool\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/element_tabbable_unobscured.html#%7B%22message%22%3A%22Confirm%20that%20when%20the%20element%20receives%20focus%2C%20it%20is%20not%20covered%20or%2C%20if%20covered%20by%20user%20action%2C%20can%20be%20uncovered%20without%20moving%20focus%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%23why-use-more-than-one-tool%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_obscured%22%2C%22ruleId%22%3A%22element_tabbable_unobscured%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "element_tabbable_unobscured",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[4]/main[1]/section[1]/div[1]/div[1]/details[2]/div[1]/nav[1]/ul[1]/li[5]/a[1]",
+          "aria": "/document[1]/main[1]/group[2]/navigation[1]/list[1]/listitem[5]/link[1]"
+        },
+        "ruleTime": 1,
+        "reasonId": "potential_obscured",
+        "message": "Confirm that when the element receives focus, it is not covered or, if covered by user action, can be uncovered without moving focus",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 48,
+          "top": 3233,
+          "height": 18,
+          "width": 163
+        },
+        "snippet": "<a href=\"#output-1-the-dashboard\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/element_tabbable_unobscured.html#%7B%22message%22%3A%22Confirm%20that%20when%20the%20element%20receives%20focus%2C%20it%20is%20not%20covered%20or%2C%20if%20covered%20by%20user%20action%2C%20can%20be%20uncovered%20without%20moving%20focus%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%23output-1-the-dashboard%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_obscured%22%2C%22ruleId%22%3A%22element_tabbable_unobscured%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "element_tabbable_unobscured",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[4]/main[1]/section[1]/div[1]/div[1]/details[2]/div[1]/nav[1]/ul[1]/li[5]/ul[1]/li[1]/a[1]",
+          "aria": "/document[1]/main[1]/group[2]/navigation[1]/list[1]/listitem[5]/list[1]/listitem[1]/link[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_obscured",
+        "message": "Confirm that when the element receives focus, it is not covered or, if covered by user action, can be uncovered without moving focus",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 88,
+          "top": 3252,
+          "height": 18,
+          "width": 143
+        },
+        "snippet": "<a href=\"#key-dashboard-views\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/element_tabbable_unobscured.html#%7B%22message%22%3A%22Confirm%20that%20when%20the%20element%20receives%20focus%2C%20it%20is%20not%20covered%20or%2C%20if%20covered%20by%20user%20action%2C%20can%20be%20uncovered%20without%20moving%20focus%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%23key-dashboard-views%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_obscured%22%2C%22ruleId%22%3A%22element_tabbable_unobscured%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "element_tabbable_unobscured",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[4]/main[1]/section[1]/div[1]/div[1]/details[2]/div[1]/nav[1]/ul[1]/li[6]/a[1]",
+          "aria": "/document[1]/main[1]/group[2]/navigation[1]/list[1]/listitem[6]/link[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_obscured",
+        "message": "Confirm that when the element receives focus, it is not covered or, if covered by user action, can be uncovered without moving focus",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 48,
+          "top": 3270,
+          "height": 18,
+          "width": 161
+        },
+        "snippet": "<a href=\"#output-2-the-workbook\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/element_tabbable_unobscured.html#%7B%22message%22%3A%22Confirm%20that%20when%20the%20element%20receives%20focus%2C%20it%20is%20not%20covered%20or%2C%20if%20covered%20by%20user%20action%2C%20can%20be%20uncovered%20without%20moving%20focus%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%23output-2-the-workbook%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_obscured%22%2C%22ruleId%22%3A%22element_tabbable_unobscured%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "element_tabbable_unobscured",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[4]/main[1]/section[1]/div[1]/div[1]/details[2]/div[1]/nav[1]/ul[1]/li[6]/ul[1]/li[1]/a[1]",
+          "aria": "/document[1]/main[1]/group[2]/navigation[1]/list[1]/listitem[6]/list[1]/listitem[1]/link[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_obscured",
+        "message": "Confirm that when the element receives focus, it is not covered or, if covered by user action, can be uncovered without moving focus",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 88,
+          "top": 3289,
+          "height": 18,
+          "width": 92
+        },
+        "snippet": "<a href=\"#whats-inside\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/element_tabbable_unobscured.html#%7B%22message%22%3A%22Confirm%20that%20when%20the%20element%20receives%20focus%2C%20it%20is%20not%20covered%20or%2C%20if%20covered%20by%20user%20action%2C%20can%20be%20uncovered%20without%20moving%20focus%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%23whats-inside%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_obscured%22%2C%22ruleId%22%3A%22element_tabbable_unobscured%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "element_tabbable_unobscured",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[4]/main[1]/section[1]/div[1]/div[1]/details[2]/div[1]/nav[1]/ul[1]/li[7]/a[1]",
+          "aria": "/document[1]/main[1]/group[2]/navigation[1]/list[1]/listitem[7]/link[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_obscured",
+        "message": "Confirm that when the element receives focus, it is not covered or, if covered by user action, can be uncovered without moving focus",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 48,
+          "top": 3307,
+          "height": 18,
+          "width": 186
+        },
+        "snippet": "<a href=\"#what-systemic-means-here\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/element_tabbable_unobscured.html#%7B%22message%22%3A%22Confirm%20that%20when%20the%20element%20receives%20focus%2C%20it%20is%20not%20covered%20or%2C%20if%20covered%20by%20user%20action%2C%20can%20be%20uncovered%20without%20moving%20focus%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%23what-systemic-means-here%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_obscured%22%2C%22ruleId%22%3A%22element_tabbable_unobscured%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "element_tabbable_unobscured",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[4]/main[1]/section[1]/div[1]/div[1]/details[2]/div[1]/nav[1]/ul[1]/li[8]/a[1]",
+          "aria": "/document[1]/main[1]/group[2]/navigation[1]/list[1]/listitem[8]/link[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_obscured",
+        "message": "Confirm that when the element receives focus, it is not covered or, if covered by user action, can be uncovered without moving focus",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 48,
+          "top": 3326,
+          "height": 18,
+          "width": 136
+        },
+        "snippet": "<a href=\"#a-practical-workflow\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/element_tabbable_unobscured.html#%7B%22message%22%3A%22Confirm%20that%20when%20the%20element%20receives%20focus%2C%20it%20is%20not%20covered%20or%2C%20if%20covered%20by%20user%20action%2C%20can%20be%20uncovered%20without%20moving%20focus%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%23a-practical-workflow%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_obscured%22%2C%22ruleId%22%3A%22element_tabbable_unobscured%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "element_tabbable_unobscured",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[4]/main[1]/section[1]/div[1]/div[1]/details[2]/div[1]/nav[1]/ul[1]/li[9]/a[1]",
+          "aria": "/document[1]/main[1]/group[2]/navigation[1]/list[1]/listitem[9]/link[1]"
+        },
+        "ruleTime": 1,
+        "reasonId": "potential_obscured",
+        "message": "Confirm that when the element receives focus, it is not covered or, if covered by user action, can be uncovered without moving focus",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 48,
+          "top": 3346,
+          "height": 18,
+          "width": 155
+        },
+        "snippet": "<a href=\"#-important-limitation\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/element_tabbable_unobscured.html#%7B%22message%22%3A%22Confirm%20that%20when%20the%20element%20receives%20focus%2C%20it%20is%20not%20covered%20or%2C%20if%20covered%20by%20user%20action%2C%20can%20be%20uncovered%20without%20moving%20focus%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%23-important-limitation%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_obscured%22%2C%22ruleId%22%3A%22element_tabbable_unobscured%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "element_tabbable_unobscured",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[4]/main[1]/section[1]/div[1]/div[1]/details[2]/div[1]/nav[1]/ul[1]/li[10]/a[1]",
+          "aria": "/document[1]/main[1]/group[2]/navigation[1]/list[1]/listitem[10]/link[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_obscured",
+        "message": "Confirm that when the element receives focus, it is not covered or, if covered by user action, can be uncovered without moving focus",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 48,
+          "top": 3365,
+          "height": 18,
+          "width": 133
+        },
+        "snippet": "<a href=\"#explore-the-analyzer\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/element_tabbable_unobscured.html#%7B%22message%22%3A%22Confirm%20that%20when%20the%20element%20receives%20focus%2C%20it%20is%20not%20covered%20or%2C%20if%20covered%20by%20user%20action%2C%20can%20be%20uncovered%20without%20moving%20focus%22%2C%22snippet%22%3A%22%3Ca%20href%3D%5C%22%23explore-the-analyzer%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_obscured%22%2C%22ruleId%22%3A%22element_tabbable_unobscured%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "svg_graphics_labelled",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[4]/main[1]/section[1]/div[2]/div[1]/div[1]/div[1]/span[1]/svg[1]",
+          "aria": "/document[1]/main[1]/graphics-document[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_acc_name",
+        "message": "The SVG element has no accessible name",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 3106,
+          "height": 784,
+          "width": 784
+        },
+        "snippet": "<svg viewBox=\"0 0 512 512\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/svg_graphics_labelled.html#%7B%22message%22%3A%22The%20SVG%20element%20has%20no%20accessible%20name%22%2C%22snippet%22%3A%22%3Csvg%20viewBox%3D%5C%220%200%20512%20512%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_acc_name%22%2C%22ruleId%22%3A%22svg_graphics_labelled%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "blockquote_cite_exists",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[4]/main[1]/section[1]/div[2]/blockquote[1]",
+          "aria": "/document[1]/main[1]/blockquote[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Potential_1",
+        "message": "Verify that <blockquote> should have a 'cite' attribute and not be used for indentation only",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 48,
+          "top": 4079,
+          "height": 19,
+          "width": 704
+        },
+        "snippet": "<blockquote>",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/blockquote_cite_exists.html#%7B%22message%22%3A%22Verify%20that%20%3Cblockquote%3E%20should%20have%20a%20'cite'%20attribute%20and%20not%20be%20used%20for%20indentation%20only%22%2C%22snippet%22%3A%22%3Cblockquote%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22blockquote_cite_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "blockquote_cite_exists",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[4]/main[1]/section[1]/div[2]/blockquote[2]",
+          "aria": "/document[1]/main[1]/blockquote[2]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Potential_1",
+        "message": "Verify that <blockquote> should have a 'cite' attribute and not be used for indentation only",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 48,
+          "top": 4257,
+          "height": 40,
+          "width": 704
+        },
+        "snippet": "<blockquote>",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/blockquote_cite_exists.html#%7B%22message%22%3A%22Verify%20that%20%3Cblockquote%3E%20should%20have%20a%20'cite'%20attribute%20and%20not%20be%20used%20for%20indentation%20only%22%2C%22snippet%22%3A%22%3Cblockquote%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22blockquote_cite_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "text_sensory_misuse",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[4]/main[1]/section[1]/div[2]/blockquote[2]/p[1]",
+          "aria": "/document[1]/main[1]/blockquote[2]/paragraph[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_other",
+        "message": "Confirm the user instruction is still understandable without the word(s) 'larger'",
+        "messageArgs": [
+          "larger"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": 48,
+          "top": 4257,
+          "height": 40,
+          "width": 704
+        },
+        "snippet": "<p>",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/text_sensory_misuse.html#%7B%22message%22%3A%22Confirm%20the%20user%20instruction%20is%20still%20understandable%20without%20the%20word(s)%20'larger'%22%2C%22snippet%22%3A%22%3Cp%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_other%22%2C%22ruleId%22%3A%22text_sensory_misuse%22%2C%22msgArgs%22%3A%5B%22larger%22%5D%7D"
+      },
+      {
+        "ruleId": "blockquote_cite_exists",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[4]/main[1]/section[1]/div[2]/blockquote[3]",
+          "aria": "/document[1]/main[1]/blockquote[3]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Potential_1",
+        "message": "Verify that <blockquote> should have a 'cite' attribute and not be used for indentation only",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 48,
+          "top": 6725,
+          "height": 90,
+          "width": 704
+        },
+        "snippet": "<blockquote>",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/blockquote_cite_exists.html#%7B%22message%22%3A%22Verify%20that%20%3Cblockquote%3E%20should%20have%20a%20'cite'%20attribute%20and%20not%20be%20used%20for%20indentation%20only%22%2C%22snippet%22%3A%22%3Cblockquote%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22blockquote_cite_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "aria_navigation_label_unique",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[4]/footer[1]/nav[1]",
+          "aria": "/document[1]/contentinfo[1]/navigation[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_label_not_unique",
+        "message": "Multiple elements with \"navigation\" role do not have unique labels",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 7381,
+          "height": 93,
+          "width": 784
+        },
+        "snippet": "<nav class=\"flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.05.19/doc/en-US/aria_navigation_label_unique.html#%7B%22message%22%3A%22Multiple%20elements%20with%20%5C%22navigation%5C%22%20role%20do%20not%20have%20unique%20labels%22%2C%22snippet%22%3A%22%3Cnav%20class%3D%5C%22flex%20flex-row%20pb-4%20text-base%20font-medium%20text-neutral-500%20dark%3Atext-neutral-400%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_label_not_unique%22%2C%22ruleId%22%3A%22aria_navigation_label_unique%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      }
+    ],
+    "numExecuted": 2555,
+    "ruleTime": 41,
+    "nls": {
+      "aria_content_in_landmark": {
+        "0": "All content must reside within an element with a landmark role",
+        "Fail_1": "Content is not within a landmark element"
+      },
+      "element_id_unique": {
+        "0": "Element 'id' attribute values must be unique within a document",
+        "potential_in_use": "The <{0}> element has the id \"{1}\" that is already in use"
+      },
+      "element_tabbable_unobscured": {
+        "0": "When an element receives focus, it is not entirely covered by other content",
+        "potential_obscured": "Confirm that when the element receives focus, it is not covered or, if covered by user action, can be uncovered without moving focus"
+      },
+      "element_tabbable_visible": {
+        "0": "A tabbable element should be visible on the screen when it has keyboard focus",
+        "potential_visible": "Confirm the element should be tabbable and if so, it becomes visible when it has keyboard focus"
+      },
+      "a_text_purpose": {
+        "0": "Hyperlinks must have an accessible name for their purpose",
+        "fail_acc_name": "Hyperlink has no link text, label or image with a text alternative"
+      },
+      "aria_navigation_label_unique": {
+        "0": "Each element with \"navigation\" role must have a unique label that describes its purpose",
+        "fail_label_not_unique": "Multiple elements with \"navigation\" role do not have unique labels"
+      },
+      "input_label_exists": {
+        "0": "Each form control must have an associated label",
+        "Fail_1": "Form control element <{0}> has no associated label"
+      },
+      "input_label_visible": {
+        "0": "An input element must have an associated visible label",
+        "potential_no_label": "The input element does not have an associated visible label"
+      },
+      "svg_graphics_labelled": {
+        "0": "A non-decorative SVG element must have an accessible name",
+        "fail_acc_name": "The SVG element has no accessible name"
+      },
+      "form_label_unique": {
+        "0": "Form controls should have exactly one label",
+        "Fail_1": "Form control has more than one label"
+      },
+      "label_content_exists": {
+        "0": "A <label> element must have non-empty descriptive text that identifies the purpose of the interactive component",
+        "Fail_1": "The <label> element does not have descriptive text that identifies the expected input"
+      },
+      "aria_landmark_name_unique": {
+        "0": "Each landmark should have a unique 'aria-labelledby' or 'aria-label' or be nested in a different parent region",
+        "fail_label_not_unique": "Multiple elements with \"{0}\" landmarks within the same parent region are not distinguished from one another because they have the same \"{1}\" label"
+      },
+      "blockquote_cite_exists": {
+        "0": "Use <blockquote> only for quotations, not indentation",
+        "Potential_1": "Verify that <blockquote> should have a 'cite' attribute and not be used for indentation only"
+      },
+      "text_sensory_misuse": {
+        "0": "Instructions should be meaningful without relying solely on shape, size, or location words",
+        "potential_other": "Confirm the user instruction is still understandable without the word(s) '{0}'"
+      }
+    },
+    "summary": {
+      "counts": {
+        "ignored": 0,
+        "elements": 44,
+        "elementsViolation": 20,
+        "elementsViolationReview": 40,
+        "violation": 23,
+        "potentialviolation": 23,
+        "recommendation": 0,
+        "potentialrecommendation": 4,
+        "manual": 1,
+        "pass": 2504
+      },
+      "scanTime": 111,
+      "ruleArchive": "Latest Deployment (latest)",
+      "policies": [
+        "IBM_Accessibility"
+      ],
+      "reportLevels": [
+        "violation",
+        "potentialviolation"
+      ],
+      "startScan": 1784586570238,
+      "URL": "data:text/html;charset=utf-8,%3C!doctype%20html%3E%0A%3Chtml%20lang%3D%22en-gb%22%3E%0A%3Chead%3E%0A%20%20%3Cmeta%20charset%3D%22utf-8%22%3E%0A%20%20%3Ctitle%3ESystemic%20Accessibility%20Analyzer%20%C2%B7%20Practical%20Accessibility%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%3Cbody%20class%3D%22flex%20flex-col%20h-screen%20m-auto%20leading-7%20max-w-7xl%20px-6%20sm%3Apx-14%20md%3Apx-24%20lg%3Apx-32%20text-lg%20bg-neutral%20text-neutral-900%20dark%3Abg-neutral-800%20dark%3Atext-neutral%20bf-scrollbar%22%3E%3Cdiv%20id%3D%22the-top%22%20class%3D%22absolute%20flex%20self-center%22%3E%3Ca%20class%3D%22px-3%20py-1%20text-sm%20-translate-y-8%20rounded-b-lg%20bg-primary-200%20focus%3Atranslate-y-0%20dark%3Abg-neutral-600%22%20href%3D%22%23main-content%22%3E%3Cspan%20class%3D%22font-bold%20text-primary-600%20pe-2%20dark%3Atext-primary-400%22%3E%E2%86%93%3C%2Fspan%3E%0ASkip%20to%20main%20content%3C%2Fa%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22min-h-%5B148px%5D%22%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22fixed%20inset-x-0%20z-100%22%3E%3Cdiv%20id%3D%22menu-blur%22%20class%3D%22absolute%20opacity-0%20inset-x-0%20top-0%20h-full%20single_hero_background%20nozoom%20backdrop-blur-2xl%20shadow-2xl%20bg-neutral%2F25%20dark%3Abg-neutral-800%2F25%22%20role%3D%22presentation%22%20tabindex%3D%22-1%22%20style%3D%22opacity%3A%200%3B%22%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22relative%20m-auto%20leading-7%20max-w-7xl%20px-6%20sm%3Apx-14%20md%3Apx-24%20lg%3Apx-32%22%3E%3Cdiv%20class%3D%22main-menu%20flex%20items-center%20w-full%20gap-2%20p-1%20pl-0%22%3E%3Cdiv%3E%3Ca%20href%3D%22%2F%22%20class%3D%22flex%22%3E%3Cspan%20class%3D%22sr-only%22%3EPractical%20Accessibility%3C%2Fspan%3E%0A%3Cimg%20width%3D%22250%22%20height%3D%22250%22%20class%3D%22logo%20max-h-20%20max-w-20%20object-scale-down%20object-left%20nozoom%22%20alt%3D%22%22%3E%3C%2Fa%3E%3C%2Fdiv%3E%3Ca%20href%3D%22%2F%22%20class%3D%22text-base%20font-medium%20truncate%20min-w-0%20shrink%22%3EPractical%20Accessibility%3C%2Fa%3E%3Cdiv%20class%3D%22flex%20items-center%20ms-auto%22%3E%3Cdiv%20class%3D%22hidden%20md%3Aflex%22%3E%3Cnav%20class%3D%22flex%20items-center%20gap-x-5%20h-12%22%3E%3Ca%20href%3D%22%2Fbio%2F%22%20class%3D%22flex%20items-center%20bf-icon-color-hover%22%20aria-label%3D%22Bio%22%20title%3D%22Bio%22%3E%3Cspan%20class%3D%22text-base%20font-medium%20break-normal%22%3EBio%0A%3C%2Fspan%3E%3C%2Fa%3E%3Ca%20href%3D%22%2Faccessibility-specialist%2F%22%20class%3D%22flex%20items-center%20bf-icon-color-hover%22%20aria-label%3D%22Specialist%20support%22%20title%3D%22Specialist%20support%22%3E%3Cspan%20class%3D%22text-base%20font-medium%20break-normal%22%3ESpecialist%20support%0A%3C%2Fspan%3E%3C%2Fa%3E%3Ca%20href%3D%22%2Faudit-services%2F%22%20class%3D%22flex%20items-center%20bf-icon-color-hover%22%20aria-label%3D%22Accessibility%20audit%22%20title%3D%22Accessibility%20audit%22%3E%3Cspan%20class%3D%22text-base%20font-medium%20break-normal%22%3EAccessibility%20audit%0A%3C%2Fspan%3E%3C%2Fa%3E%3Ca%20href%3D%22%2Fanalyzer%2F%22%20class%3D%22flex%20items-center%20bf-icon-color-hover%22%20aria-label%3D%22Accessibility%20analyzer%22%20title%3D%22Systemic%20Accessibility%20Analyzer%22%3E%3Cspan%20class%3D%22text-base%20font-medium%20break-normal%22%3EAccessibility%20analyzer%0A%3C%2Fspan%3E%3C%2Fa%3E%3Ca%20href%3D%22%2Fcontact%2F%22%20class%3D%22flex%20items-center%20bf-icon-color-hover%22%20aria-label%3D%22Contact%22%20title%3D%22Contact%22%3E%3Cspan%20class%3D%22text-base%20font-medium%20break-normal%22%3EContact%0A%3C%2Fspan%3E%3C%2Fa%3E%3Ca%20href%3D%22%22%20class%3D%22flex%20items-center%20bf-icon-color-hover%22%20title%3D%22%22%3E%3C%2Fa%3E%3Cdiv%20class%3D%22flex%20items-center%22%3E%3Cbutton%20id%3D%22appearance-switcher%22%20aria-label%3D%22Switch%20to%20light%20appearance%22%20type%3D%22button%22%20class%3D%22text-base%20bf-icon-color-hover%22%20title%3D%22Switch%20to%20light%20appearance%22%3E%3Cdiv%20class%3D%22flex%20items-center%20justify-center%20dark%3Ahidden%22%3E%3Cspan%20class%3D%22relative%20block%20icon%22%3E%3Csvg%20viewBox%3D%220%200%20512%20512%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M32%20256C32%20132.2%20132.3%2032%20255.8%2032c11.36.0%2029.7%201.668%2040.9%203.746%209.616%201.777%2011.75%2014.63%203.279%2019.44C245%2086.5%20211.2%20144.6%20211.2%20207.8c0%20109.7%2099.71%20193%20208.3%20172.3%209.561-1.805%2016.28%209.324%2010.11%2016.95C387.9%20448.6%20324.8%20480%20255.8%20480%20132.1%20480%2032%20379.6%2032%20256z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%3C%2Fspan%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22items-center%20justify-center%20hidden%20dark%3Aflex%22%3E%3Cspan%20class%3D%22relative%20block%20icon%22%3E%3Csvg%20viewBox%3D%220%200%20512%20512%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M256%20159.1c-53.02.0-95.1%2042.98-95.1%2095.1s41.2%2096.9%2095.1%2096.9%2095.1-42.98%2095.1-95.1S309%20159.1%20256%20159.1zM509.3%20347l-63.2-91.9%2063.15-91.01c6.332-9.125%201.104-21.74-9.826-23.72l-109-19.7-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256%2065.89%20164.1%202.736c-9.125-6.332-21.74-1.107-23.72%209.824L121.6%20121.6%2012.56%20141.3C1.633%20143.2-3.596%20155.9%202.736%20164.1L65.89%20256%202.74%20347.01c-6.332%209.125-1.105%2021.74%209.824%2023.72l109%2019.7%2019.7%20109c1.975%2010.93%2014.59%2016.16%2023.72%209.824L256%20446.1l91.01%2063.15c9.127%206.334%2021.75%201.107%2023.72-9.822l19.7-109%20109-19.7C510.4%20368.8%20515.6%20356.1%20509.3%20347zM256%20383.1c-70.69.0-127.1-57.31-127.1-127.1.0-70.69%2057.31-127.1%20127.1-127.1S383.1%20186.2%20383.1%20256c0%2070.7-56.4%20127.1-127.1%20127.1z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%3C%2Fspan%3E%3C%2Fdiv%3E%3C%2Fbutton%3E%3C%2Fdiv%3E%3C%2Fnav%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22flex%20md%3Ahidden%22%3E%3Cdiv%20class%3D%22flex%20items-center%20h-14%20gap-4%22%3E%3Cbutton%20id%3D%22appearance-switcher-mobile%22%20type%3D%22button%22%20aria-label%3D%22Switch%20to%20light%20appearance%22%20title%3D%22Switch%20to%20light%20appearance%22%20class%3D%22flex%20items-center%20justify-center%20text-neutral-900%20hover%3Atext-primary-600%20dark%3Atext-neutral-200%20dark%3Ahover%3Atext-primary-400%22%3E%3Cdiv%20class%3D%22dark%3Ahidden%22%3E%3Cspan%20class%3D%22relative%20block%20icon%22%3E%3Csvg%20viewBox%3D%220%200%20512%20512%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M32%20256C32%20132.2%20132.3%2032%20255.8%2032c11.36.0%2029.7%201.668%2040.9%203.746%209.616%201.777%2011.75%2014.63%203.279%2019.44C245%2086.5%20211.2%20144.6%20211.2%20207.8c0%20109.7%2099.71%20193%20208.3%20172.3%209.561-1.805%2016.28%209.324%2010.11%2016.95C387.9%20448.6%20324.8%20480%20255.8%20480%20132.1%20480%2032%20379.6%2032%20256z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%3C%2Fspan%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22hidden%20dark%3Ablock%22%3E%3Cspan%20class%3D%22relative%20block%20icon%22%3E%3Csvg%20viewBox%3D%220%200%20512%20512%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M256%20159.1c-53.02.0-95.1%2042.98-95.1%2095.1s41.2%2096.9%2095.1%2096.9%2095.1-42.98%2095.1-95.1S309%20159.1%20256%20159.1zM509.3%20347l-63.2-91.9%2063.15-91.01c6.332-9.125%201.104-21.74-9.826-23.72l-109-19.7-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256%2065.89%20164.1%202.736c-9.125-6.332-21.74-1.107-23.72%209.824L121.6%20121.6%2012.56%20141.3C1.633%20143.2-3.596%20155.9%202.736%20164.1L65.89%20256%202.74%20347.01c-6.332%209.125-1.105%2021.74%209.824%2023.72l109%2019.7%2019.7%20109c1.975%2010.93%2014.59%2016.16%2023.72%209.824L256%20446.1l91.01%2063.15c9.127%206.334%2021.75%201.107%2023.72-9.822l19.7-109%20109-19.7C510.4%20368.8%20515.6%20356.1%20509.3%20347zM256%20383.1c-70.69.0-127.1-57.31-127.1-127.1.0-70.69%2057.31-127.1%20127.1-127.1S383.1%20186.2%20383.1%20256c0%2070.7-56.4%20127.1-127.1%20127.1z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%3C%2Fspan%3E%3C%2Fdiv%3E%3C%2Fbutton%3E%0A%3Cinput%20type%3D%22checkbox%22%20id%3D%22mobile-menu-toggle%22%20autocomplete%3D%22off%22%20class%3D%22hidden%20peer%22%3E%0A%3Clabel%20for%3D%22mobile-menu-toggle%22%20class%3D%22flex%20items-center%20justify-center%20cursor-pointer%20bf-icon-color-hover%22%3E%3Cspan%20class%3D%22relative%20block%20icon%22%3E%3Csvg%20viewBox%3D%220%200%20448%20512%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M0%2096C0%2078.33%2014.33%2064%2032%2064H416c17.7.0%2032%2014.33%2032%2032%200%2017.7-14.3%2032-32%2032H32C14.33%20128%200%20113.7.0%2096zM0%20256c0-17.7%2014.33-32%2032-32H416c17.7.0%2032%2014.3%2032%2032s-14.3%2032-32%2032H32c-17.67.0-32-14.3-32-32zM416%20448H32c-17.67.0-32-14.3-32-32s14.33-32%2032-32H416c17.7.0%2032%2014.3%2032%2032s-14.3%2032-32%2032z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%3C%2Fspan%3E%3C%2Flabel%3E%3Cdiv%20role%3D%22dialog%22%20aria-modal%3D%22true%22%20style%3D%22scrollbar-gutter%3Astable%22%20class%3D%22fixed%20inset-0%20z-50%20invisible%20overflow-y-auto%20px-6%20py-20%20opacity-0%20transition-%5Bopacity%2Cvisibility%5D%20duration-300%20peer-checked%3Avisible%20peer-checked%3Aopacity-100%20bg-neutral-50%2F97%20dark%3Abg-neutral-900%2F99%0Abf-scrollbar%22%3E%3Clabel%20for%3D%22mobile-menu-toggle%22%20class%3D%22fixed%20end-8%20top-5%20flex%20items-center%20justify-center%20z-50%20h-12%20w-12%20cursor-pointer%20select-none%20rounded-full%20bf-icon-color-hover%20border%20bf-border-color%20bf-border-color-hover%20bg-neutral-50%20dark%3Abg-neutral-900%22%3E%3Cspan%20class%3D%22relative%20block%20icon%22%3E%3Csvg%20viewBox%3D%220%200%20320%20512%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M310.6%20361.4c12.5%2012.5%2012.5%2032.75.0%2045.25C304.4%20412.9%20296.2%20416%20288%20416s-16.38-3.125-22.62-9.375L160%20301.3%2054.63%20406.6C48.38%20412.9%2040.19%20416%2032%20416S15.63%20412.9%209.375%20406.6c-12.5-12.5-12.5-32.75.0-45.25l105.4-105.4L9.375%20150.6c-12.5-12.5-12.5-32.75.0-45.25s32.75-12.5%2045.25.0L160%20210.8l105.4-105.4c12.5-12.5%2032.75-12.5%2045.25.0s12.5%2032.75.0%2045.25l-105.4%20105.4L310.6%20361.4z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%3C%2Fspan%3E%3C%2Flabel%3E%3Cnav%20class%3D%22mx-auto%20max-w-md%20space-y-6%22%3E%3Cdiv%20class%3D%22px-2%22%3E%3Ca%20href%3D%22%2Fbio%2F%22%20aria-label%3D%22Bio%22%20class%3D%22flex%20items-center%20gap-4%20group%20bf-icon-color-hover%20text-neutral-700%20dark%3Atext-neutral-200%22%3E%3Cspan%20title%3D%22Bio%22%20class%3D%22text-2xl%20font-bold%20tracking-tight%22%3EBio%3C%2Fspan%3E%3C%2Fa%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22px-2%22%3E%3Ca%20href%3D%22%2Faccessibility-specialist%2F%22%20aria-label%3D%22Specialist%20support%22%20class%3D%22flex%20items-center%20gap-4%20group%20bf-icon-color-hover%20text-neutral-700%20dark%3Atext-neutral-200%22%3E%3Cspan%20title%3D%22Specialist%20support%22%20class%3D%22text-2xl%20font-bold%20tracking-tight%22%3ESpecialist%20support%3C%2Fspan%3E%3C%2Fa%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22px-2%22%3E%3Ca%20href%3D%22%2Faudit-services%2F%22%20aria-label%3D%22Accessibility%20audit%22%20class%3D%22flex%20items-center%20gap-4%20group%20bf-icon-color-hover%20text-neutral-700%20dark%3Atext-neutral-200%22%3E%3Cspan%20title%3D%22Accessibility%20audit%22%20class%3D%22text-2xl%20font-bold%20tracking-tight%22%3EAccessibility%20audit%3C%2Fspan%3E%3C%2Fa%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22px-2%22%3E%3Ca%20href%3D%22%2Fanalyzer%2F%22%20aria-label%3D%22Accessibility%20analyzer%22%20class%3D%22flex%20items-center%20gap-4%20group%20bf-icon-color-hover%20text-neutral-700%20dark%3Atext-neutral-200%22%3E%3Cspan%20title%3D%22Systemic%20Accessibility%20Analyzer%22%20class%3D%22text-2xl%20font-bold%20tracking-tight%22%3EAccessibility%20analyzer%3C%2Fspan%3E%3C%2Fa%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22px-2%22%3E%3Ca%20href%3D%22%2Fcontact%2F%22%20aria-label%3D%22Contact%22%20class%3D%22flex%20items-center%20gap-4%20group%20bf-icon-color-hover%20text-neutral-700%20dark%3Atext-neutral-200%22%3E%3Cspan%20title%3D%22Contact%22%20class%3D%22text-2xl%20font-bold%20tracking-tight%22%3EContact%3C%2Fspan%3E%3C%2Fa%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22px-2%22%3E%3Ca%20href%3D%22%22%20class%3D%22flex%20items-center%20gap-4%20group%20bf-icon-color-hover%20text-neutral-700%20dark%3Atext-neutral-200%22%3E%3Cspan%20title%3D%22%22%20class%3D%22text-2xl%20font-bold%20tracking-tight%22%3E%3C%2Fspan%3E%3C%2Fa%3E%3C%2Fdiv%3E%3C%2Fnav%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22relative%20flex%20flex-col%20grow%22%3E%3Cmain%20id%3D%22main-content%22%20class%3D%22grow%22%3E%3Cheader%3E%3Col%20class%3D%22text-sm%20text-neutral-500%20dark%3Atext-neutral-400%20print%3Ahidden%22%3E%3Cli%20class%3D%22hidden%22%3E%3Ca%20class%3D%22hover%3Aunderline%20decoration-neutral-300%20dark%3Aunderline-neutral-600%22%20href%3D%22%2F%22%3EAccessibility%20Specialist%20%26amp%3B%20Audit%20Services%3C%2Fa%3E%3Cspan%20class%3D%22px-1%20text-primary-500%22%3E%2F%3C%2Fspan%3E%3C%2Fli%3E%3Cli%20class%3D%22hidden%22%3E%3Ca%20class%3D%22hover%3Aunderline%20decoration-neutral-300%20dark%3Aunderline-neutral-600%22%20href%3D%22%2Fanalyzer%2F%22%3ESystemic%20Accessibility%20Analyzer%3C%2Fa%3E%3Cspan%20class%3D%22px-1%20text-primary-500%22%3E%2F%3C%2Fspan%3E%3C%2Fli%3E%3C%2Fol%3E%3Ch1%20class%3D%22mt-5%20text-4xl%20font-extrabold%20text-neutral-900%20dark%3Atext-neutral%22%3ESystemic%20Accessibility%20Analyzer%3C%2Fh1%3E%3Cdiv%20class%3D%22mt-1%20mb-2%20text-base%20text-neutral-500%20dark%3Atext-neutral-400%20print%3Ahidden%22%3E%3Cdiv%20class%3D%22flex%20flex-row%20flex-wrap%20items-center%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fheader%3E%3Csection%20class%3D%22mt-12%20prose%20flex%20max-w-full%20flex-col%20dark%3Aprose-invert%20lg%3Aflex-row%20mb-10%22%3E%3Cdiv%20class%3D%22order-first%20lg%3Ams-auto%20px-0%20lg%3Aorder-last%20lg%3Aps-8%20lg%3Amax-w-2xs%22%3E%3Cdiv%20class%3D%22toc%20ps-5%20print%3Ahidden%20lg%3Asticky%20lg%3Atop-%5B140px%5D%22%3E%3Cdetails%20open%3D%22%22%20id%3D%22TOCView%22%20class%3D%22toc-right%20mt-0%20overflow-y-auto%20overscroll-contain%20bf-scrollbar%20rounded-lg%20-ms-5%20ps-5%20pe-2%20hidden%20lg%3Ablock%22%3E%3Csummary%20class%3D%22block%20py-1%20text-lg%20font-semibold%20cursor-pointer%20bg-neutral-100%20text-neutral-800%20-ms-5%20ps-5%20dark%3Abg-neutral-700%20dark%3Atext-neutral-100%20lg%3Ahidden%22%3ETable%20of%20Contents%3C%2Fsummary%3E%3Cdiv%20class%3D%22min-w-%5B220px%5D%20py-2%20border-dotted%20border-s-1%20-ms-5%20ps-5%20dark%3Aborder-neutral-600%22%3E%3Cnav%20id%3D%22TableOfContents%22%3E%3Cul%3E%3Cli%3E%3Ca%20href%3D%22%23dont-count-findings-find-consensus%22%3EDon%E2%80%99t%20count%20findings.%20Find%20consensus.%3C%2Fa%3E%3C%2Fli%3E%3Cli%3E%3Ca%20href%3D%22%23from-issue-volume-to-useful-priorities%22%3EFrom%20issue%20volume%20to%20useful%20priorities%3C%2Fa%3E%3C%2Fli%3E%3Cli%3E%3Ca%20href%3D%22%23core-capabilities%22%3ECore%20Capabilities%3C%2Fa%3E%3Cul%3E%3Cli%3E%3Ca%20href%3D%22%23data-processing--cleanup%22%3EData%20processing%20%26amp%3B%20cleanup%3C%2Fa%3E%3C%2Fli%3E%3Cli%3E%3Ca%20href%3D%22%23systemic-analysis%22%3ESystemic%20analysis%3C%2Fa%3E%3C%2Fli%3E%3C%2Ful%3E%3C%2Fli%3E%3Cli%3E%3Ca%20href%3D%22%23why-use-more-than-one-tool%22%3EWhy%20use%20more%20than%20one%20tool%3F%3C%2Fa%3E%3C%2Fli%3E%3Cli%3E%3Ca%20href%3D%22%23output-1-the-dashboard%22%3EOutput%201%3A%20The%20Dashboard%3C%2Fa%3E%3Cul%3E%3Cli%3E%3Ca%20href%3D%22%23key-dashboard-views%22%3EKey%20dashboard%20views%3A%3C%2Fa%3E%3C%2Fli%3E%3C%2Ful%3E%3C%2Fli%3E%3Cli%3E%3Ca%20href%3D%22%23output-2-the-workbook%22%3EOutput%202%3A%20The%20Workbook%3C%2Fa%3E%3Cul%3E%3Cli%3E%3Ca%20href%3D%22%23whats-inside%22%3EWhat%E2%80%99s%20inside%3A%3C%2Fa%3E%3C%2Fli%3E%3C%2Ful%3E%3C%2Fli%3E%3Cli%3E%3Ca%20href%3D%22%23what-systemic-means-here%22%3EWhat%20%E2%80%9Csystemic%E2%80%9D%20means%20here%3C%2Fa%3E%3C%2Fli%3E%3Cli%3E%3Ca%20href%3D%22%23a-practical-workflow%22%3EA%20practical%20workflow%3C%2Fa%3E%3C%2Fli%3E%3Cli%3E%3Ca%20href%3D%22%23-important-limitation%22%3E%E2%9A%A0%EF%B8%8F%20Important%20Limitation%3C%2Fa%3E%3C%2Fli%3E%3Cli%3E%3Ca%20href%3D%22%23explore-the-analyzer%22%3EExplore%20the%20analyzer%3C%2Fa%3E%3C%2Fli%3E%3C%2Ful%3E%3C%2Fnav%3E%3C%2Fdiv%3E%3C%2Fdetails%3E%3Cdetails%20class%3D%22toc-inside%20mt-0%20overflow-hidden%20rounded-lg%20-ms-5%20ps-5%20lg%3Ahidden%22%3E%3Csummary%20class%3D%22py-1%20text-lg%20font-semibold%20cursor-pointer%20bg-neutral-100%20text-neutral-800%20-ms-5%20ps-5%20dark%3Abg-neutral-700%20dark%3Atext-neutral-100%20lg%3Ahidden%22%3ETable%20of%20Contents%3C%2Fsummary%3E%3Cdiv%20class%3D%22py-2%20border-dotted%20border-neutral-300%20border-s-1%20-ms-5%20ps-5%20dark%3Aborder-neutral-600%22%3E%3Cnav%20id%3D%22TableOfContents%22%3E%3Cul%3E%3Cli%3E%3Ca%20href%3D%22%23dont-count-findings-find-consensus%22%3EDon%E2%80%99t%20count%20findings.%20Find%20consensus.%3C%2Fa%3E%3C%2Fli%3E%3Cli%3E%3Ca%20href%3D%22%23from-issue-volume-to-useful-priorities%22%3EFrom%20issue%20volume%20to%20useful%20priorities%3C%2Fa%3E%3C%2Fli%3E%3Cli%3E%3Ca%20href%3D%22%23core-capabilities%22%3ECore%20Capabilities%3C%2Fa%3E%3Cul%3E%3Cli%3E%3Ca%20href%3D%22%23data-processing--cleanup%22%3EData%20processing%20%26amp%3B%20cleanup%3C%2Fa%3E%3C%2Fli%3E%3Cli%3E%3Ca%20href%3D%22%23systemic-analysis%22%3ESystemic%20analysis%3C%2Fa%3E%3C%2Fli%3E%3C%2Ful%3E%3C%2Fli%3E%3Cli%3E%3Ca%20href%3D%22%23why-use-more-than-one-tool%22%3EWhy%20use%20more%20than%20one%20tool%3F%3C%2Fa%3E%3C%2Fli%3E%3Cli%3E%3Ca%20href%3D%22%23output-1-the-dashboard%22%3EOutput%201%3A%20The%20Dashboard%3C%2Fa%3E%3Cul%3E%3Cli%3E%3Ca%20href%3D%22%23key-dashboard-views%22%3EKey%20dashboard%20views%3A%3C%2Fa%3E%3C%2Fli%3E%3C%2Ful%3E%3C%2Fli%3E%3Cli%3E%3Ca%20href%3D%22%23output-2-the-workbook%22%3EOutput%202%3A%20The%20Workbook%3C%2Fa%3E%3Cul%3E%3Cli%3E%3Ca%20href%3D%22%23whats-inside%22%3EWhat%E2%80%99s%20inside%3A%3C%2Fa%3E%3C%2Fli%3E%3C%2Ful%3E%3C%2Fli%3E%3Cli%3E%3Ca%20href%3D%22%23what-systemic-means-here%22%3EWhat%20%E2%80%9Csystemic%E2%80%9D%20means%20here%3C%2Fa%3E%3C%2Fli%3E%3Cli%3E%3Ca%20href%3D%22%23a-practical-workflow%22%3EA%20practical%20workflow%3C%2Fa%3E%3C%2Fli%3E%3Cli%3E%3Ca%20href%3D%22%23-important-limitation%22%3E%E2%9A%A0%EF%B8%8F%20Important%20Limitation%3C%2Fa%3E%3C%2Fli%3E%3Cli%3E%3Ca%20href%3D%22%23explore-the-analyzer%22%3EExplore%20the%20analyzer%3C%2Fa%3E%3C%2Fli%3E%3C%2Ful%3E%3C%2Fnav%3E%3C%2Fdiv%3E%3C%2Fdetails%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22min-w-0%20min-h-0%20max-w-prose%20w-full%22%3E%3Cdiv%20class%3D%22admonition%20relative%20overflow-hidden%20rounded-lg%20border-l-4%20my-3%20px-4%20py-3%20shadow-sm%22%20data-type%3D%22note%22%3E%3Cdiv%20class%3D%22flex%20items-center%20gap-2%20font-semibold%20text-inherit%22%3E%3Cdiv%20class%3D%22flex%20shrink-0%20h-5%20w-5%20items-center%20justify-center%20text-lg%22%3E%3Cspan%20class%3D%22relative%20block%20icon%22%3E%3Csvg%20viewBox%3D%220%200%20512%20512%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M0%20256a256%20256%200%2011512%200A256%20256%200%20110%20256zm161.5-86.1c-12.2-5.2-26.3.4-31.5%2012.6s.4%2026.3%2012.6%2031.5l11.9%205.1c17.3%207.4%2035.2%2012.9%2053.6%2016.3v50.1c0%204.3-.7%208.6-2.1%2012.6l-28.7%2086.1c-4.2%2012.6%202.6%2026.2%2015.2%2030.4s26.2-2.6%2030.4-15.2l24.4-73.2c1.3-3.8%204.8-6.4%208.8-6.4s7.6%202.6%208.8%206.4l24.4%2073.2c4.2%2012.6%2017.8%2019.4%2030.4%2015.2s19.4-17.8%2015.2-30.4l-28.7-86.1c-1.4-4.1-2.1-8.3-2.1-12.6v-50.1c18.4-3.5%2036.3-8.9%2053.6-16.3l11.9-5.1c12.2-5.2%2017.8-19.3%2012.6-31.5s-19.3-17.8-31.5-12.6L338.7%20175c-26.1%2011.2-54.2%2017-82.7%2017s-56.5-5.8-82.7-17l-11.9-5.1zM256%20160a40%2040%200%20100-80%2040%2040%200%20100%2080z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E%3C%2Fspan%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22grow%22%3EComing%20soon!%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22admonition-content%20mt-3%20text-base%20leading-relaxed%20text-inherit%22%3E%3Cp%3EThe%20systemic%20analyzer%20is%20still%20being%20polished%20for%20public%20use%2C%20but%20the%20test%20jobs%20board%20is%20open%20for%20a%20preview%20of%20how%20it%20surfaces%20patterns%2C%20priorities%2C%20and%20fix-once%20opportunities.%20Meanwhile%2C%20feel%20free%20to%20browse%20the%20progress%20on%20the%20%3Ca%20href%3D%22https%3A%2F%2Fa11yanalyzer.sbs%22%20target%3D%22_blank%22%20rel%3D%22noreferrer%22%3Esystemic%20accessibility%20analyzer%20jobs%20board%3C%2Fa%3E%3C%2Fp%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Ch2%20class%3D%22relative%20group%22%3EDon%E2%80%99t%20count%20findings.%20Find%20consensus.%3Cdiv%20id%3D%22dont-count-findings-find-consensus%22%20class%3D%22anchor%22%3E%3C%2Fdiv%3E%3Cspan%20class%3D%22absolute%20top-0%20w-6%20transition-opacity%20opacity-0%20-start-6%20not-prose%20group-hover%3Aopacity-100%20select-none%22%3E%3Ca%20class%3D%22text-primary-300%20dark%3Atext-neutral-700%20!no-underline%22%20href%3D%22%23dont-count-findings-find-consensus%22%20aria-label%3D%22Anchor%22%3E%23%3C%2Fa%3E%3C%2Fspan%3E%3C%2Fh2%3E%3Cblockquote%3E%3Cp%3EFrom%20thousands%20of%20findings%20to%20the%20handful%20of%20problems%20that%20matter.%3C%2Fp%3E%3C%2Fblockquote%3E%3Cp%3EThe%20%3Cstrong%3ESystemic%20Accessibility%20Analyzer%3C%2Fstrong%3E%20is%20a%20multi-tool%20analysis%20and%20reporting%20layer%20for%20accessibility%20scan%20output.%20It%20is%20built%20for%20teams%20whose%20websites%2C%20applications%2C%20or%20digital%20estates%20have%20more%20findings%20than%20can%20sensibly%20be%20triaged%20one%20page%20at%20a%20time.%3C%2Fp%3E%3Cp%3ERather%20than%20treating%20every%20scanner%20result%20as%20an%20isolated%20defect%2C%20the%20analyzer%20brings%20reports%20together%2C%20normalises%20the%20data%2C%20identifies%20likely%20overlaps%2C%20groups%20repeated%20patterns%2C%20and%20highlights%20the%20fixes%20most%20likely%20to%20improve%20many%20pages%20or%20components%20at%20once.%3C%2Fp%3E%3Cblockquote%3E%3Cp%3E%F0%9F%8E%AF%20%3Cstrong%3EThe%20Goal%3A%3C%2Fstrong%3E%20To%20make%20findings%20easier%20to%20understand%2C%20prioritise%2C%20and%20act%20on%E2%80%94not%20to%20produce%20a%20larger%20pile%20of%20data.%3C%2Fp%3E%3C%2Fblockquote%3E%3Chr%3E%3Ch2%20class%3D%22relative%20group%22%3EFrom%20issue%20volume%20to%20useful%20priorities%3Cdiv%20id%3D%22from-issue-volume-to-useful-priorities%22%20class%3D%22anchor%22%3E%3C%2Fdiv%3E%3Cspan%20class%3D%22absolute%20top-0%20w-6%20transition-opacity%20opacity-0%20-start-6%20not-prose%20group-hover%3Aopacity-100%20select-none%22%3E%3Ca%20class%3D%22text-primary-300%20dark%3Atext-neutral-700%20!no-underline%22%20href%3D%22%23from-issue-volume-to-useful-priorities%22%20aria-label%3D%22Anchor%22%3E%23%3C%2Fa%3E%3C%2Fspan%3E%3C%2Fh2%3E%3Cp%3EAutomated%20tools%20are%20good%20at%20finding%20individual%20instances.%20They%20are%20less%20helpful%20when%20the%20same%20underlying%20problem%20appears%20dozens%20or%20hundreds%20of%20times%20across%20a%20site.%3C%2Fp%3E%3Cp%3EFor%20example%2C%20a%20contrast%20failure%20on%20the%20home%20page%2C%20product%20page%2C%20basket%2C%20and%20checkout%20may%20not%20be%20four%20unrelated%20defects.%20It%20may%20be%20%3Cstrong%3Eone%20shared%20button%20style%3C%2Fstrong%3E%20that%20needs%20to%20be%20fixed%20just%20once.%3C%2Fp%3E%3Cp%3EThe%20analyzer%20surfaces%20these%20distinctions%2C%20helping%20you%20quickly%20answer%3A%3C%2Fp%3E%3Cul%3E%3Cli%3E%3Cstrong%3EPattern%20tracking%3A%3C%2Fstrong%3E%20Which%20issues%20are%20repeated%20across%20multiple%20pages%3F%3C%2Fli%3E%3Cli%3E%3Cstrong%3EShared%20sources%3A%3C%2Fstrong%3E%20Which%20findings%20come%20from%20a%20shared%20component%2C%20template%2C%20or%20pattern%3F%3C%2Fli%3E%3Cli%3E%3Cstrong%3ECross-tool%20verification%3A%3C%2Fstrong%3E%20Which%20problems%20are%20corroborated%20by%20more%20than%20one%20tool%3F%3C%2Fli%3E%3Cli%3E%3Cstrong%3EDebt%20concentration%3A%3C%2Fstrong%3E%20Which%20pages%20or%20components%20carry%20the%20greatest%20concentration%20of%20accessibility%20debt%3F%3C%2Fli%3E%3Cli%3E%3Cstrong%3EHigh-impact%20fixes%3A%3C%2Fstrong%3E%20Which%20fixes%20will%20remove%20the%20broadest%20class%20of%20issues%20first%3F%3C%2Fli%3E%3C%2Ful%3E%3Chr%3E%3Ch2%20class%3D%22relative%20group%22%3ECore%20Capabilities%3Cdiv%20id%3D%22core-capabilities%22%20class%3D%22anchor%22%3E%3C%2Fdiv%3E%3Cspan%20class%3D%22absolute%20top-0%20w-6%20transition-opacity%20opacity-0%20-start-6%20not-prose%20group-hover%3Aopacity-100%20select-none%22%3E%3Ca%20class%3D%22text-primary-300%20dark%3Atext-neutral-700%20!no-underline%22%20href%3D%22%23core-capabilities%22%20aria-label%3D%22Anchor%22%3E%23%3C%2Fa%3E%3C%2Fspan%3E%3C%2Fh2%3E%3Cp%3EThe%20analyzer%20processes%20reports%20from%20multiple%20accessibility%20tools%20and%20turns%20them%20into%20a%20shared%2C%20unified%20analysis%20model.%3C%2Fp%3E%3Ch3%20class%3D%22relative%20group%22%3EData%20processing%20%26amp%3B%20cleanup%3Cdiv%20id%3D%22data-processing--cleanup%22%20class%3D%22anchor%22%3E%3C%2Fdiv%3E%3Cspan%20class%3D%22absolute%20top-0%20w-6%20transition-opacity%20opacity-0%20-start-6%20not-prose%20group-hover%3Aopacity-100%20select-none%22%3E%3Ca%20class%3D%22text-primary-300%20dark%3Atext-neutral-700%20!no-underline%22%20href%3D%22%23data-processing--cleanup%22%20aria-label%3D%22Anchor%22%3E%23%3C%2Fa%3E%3C%2Fspan%3E%3C%2Fh3%3E%3Cul%3E%3Cli%3E%3Cstrong%3EFormat%20support%3A%3C%2Fstrong%3E%20Automatically%20detects%20and%20loads%20supported%20report%20formats.%3C%2Fli%3E%3Cli%3E%3Cstrong%3EData%20normalisation%3A%3C%2Fstrong%3E%20Organises%20findings%20into%20a%20consistent%2C%20predictable%20structure.%3C%2Fli%3E%3Cli%3E%3Cstrong%3EWCAG%20mapping%3A%3C%2Fstrong%3E%20Maps%20scanner%20rules%20to%20WCAG%20criteria%2C%20levels%2C%20and%20human-readable%20titles.%3C%2Fli%3E%3Cli%3E%3Cstrong%3ESmart%20deduplication%3A%3C%2Fstrong%3E%20Removes%20likely%20overlapping%20results%20from%20different%20tools%20on%20the%20same%20page.%3C%2Fli%3E%3Cli%3E%3Cstrong%3EReview%20preservation%3A%3C%2Fstrong%3E%20Keeps%20helpful%20%E2%80%9Cneeds-review%E2%80%9D%20findings%20separate%20from%20confirmed%20violations.%3C%2Fli%3E%3C%2Ful%3E%3Ch3%20class%3D%22relative%20group%22%3ESystemic%20analysis%3Cdiv%20id%3D%22systemic-analysis%22%20class%3D%22anchor%22%3E%3C%2Fdiv%3E%3Cspan%20class%3D%22absolute%20top-0%20w-6%20transition-opacity%20opacity-0%20-start-6%20not-prose%20group-hover%3Aopacity-100%20select-none%22%3E%3Ca%20class%3D%22text-primary-300%20dark%3Atext-neutral-700%20!no-underline%22%20href%3D%22%23systemic-analysis%22%20aria-label%3D%22Anchor%22%3E%23%3C%2Fa%3E%3C%2Fspan%3E%3C%2Fh3%3E%3Cul%3E%3Cli%3E%3Cstrong%3EPattern%20inference%3A%3C%2Fstrong%3E%20Identifies%20likely%20components%2C%20component%20groups%2C%20templates%2C%20and%20shared%20patterns.%3C%2Fli%3E%3Cli%3E%3Cstrong%3ESystemic%20clustering%3A%3C%2Fstrong%3E%20Groups%20repeated%20findings%20into%20actionable%20clusters.%3C%2Fli%3E%3Cli%3E%3Cstrong%3ESmart%20metrics%3A%3C%2Fstrong%3E%20Calculates%20overlap%2C%20confidence%2C%20spread%2C%20and%20prioritisation%20metrics.%3C%2Fli%3E%3Cli%3E%3Cstrong%3EDual%20outputs%3A%3C%2Fstrong%3E%20Generates%20both%20a%20static%20visual%20dashboard%20and%20an%20analyst-friendly%20spreadsheet%20workbook.%3C%2Fli%3E%3C%2Ful%3E%3Chr%3E%3Ch2%20class%3D%22relative%20group%22%3EWhy%20use%20more%20than%20one%20tool%3F%3Cdiv%20id%3D%22why-use-more-than-one-tool%22%20class%3D%22anchor%22%3E%3C%2Fdiv%3E%3Cspan%20class%3D%22absolute%20top-0%20w-6%20transition-opacity%20opacity-0%20-start-6%20not-prose%20group-hover%3Aopacity-100%20select-none%22%3E%3Ca%20class%3D%22text-primary-300%20dark%3Atext-neutral-700%20!no-underline%22%20href%3D%22%23why-use-more-than-one-tool%22%20aria-label%3D%22Anchor%22%3E%23%3C%2Fa%3E%3C%2Fspan%3E%3C%2Fh2%3E%3Cp%3EDifferent%20accessibility%20tools%20have%20different%20strengths%2C%20rule%20sets%2C%20and%20ways%20of%20representing%20results.%20Running%20several%20tools%20improves%20coverage%2C%20but%20it%20can%20create%20noise%3A%20duplicated%20findings%2C%20inconsistent%20labels%2C%20and%20messy%20comparisons.%3C%2Fp%3E%3Cp%3EThe%20analyzer%20makes%20wider%20evidence%20usable.%20It%20currently%20supports%20report%20families%20including%20%3Cstrong%3Eaxe-core%3C%2Fstrong%3E%2C%20%3Cstrong%3Eaxe-scan%3C%2Fstrong%3E%2C%20%3Cstrong%3EIBM%20Accessibility%20Checker%3C%2Fstrong%3E%2C%20%3Cstrong%3ELighthouse%3C%2Fstrong%3E%2C%20%3Cstrong%3EOobee%3C%2Fstrong%3E%2C%20%3Cstrong%3EUUV%3C%2Fstrong%3E%2C%20%3Cstrong%3EPa11y%3C%2Fstrong%3E%2C%20and%20%3Cstrong%3EHTMLCS%20%2F%20html-sniffer%3C%2Fstrong%3E.%3C%2Fp%3E%3Cul%3E%3Cli%3E%3Cstrong%3EWhere%20tools%20overlap%3A%3C%2Fstrong%3E%20The%20analyzer%20blends%20the%20findings%20together%20into%20one%20clear%20issue.%3C%2Fli%3E%3Cli%3E%3Cstrong%3EWhere%20tools%20are%20uncertain%3A%3C%2Fstrong%3E%20Potential%20or%20manual-review%20results%20retain%20their%20distinction%20rather%20than%20being%20falsely%20flagged%20as%20confirmed%20failures.%3C%2Fli%3E%3C%2Ful%3E%3Chr%3E%3Ch2%20class%3D%22relative%20group%22%3EOutput%201%3A%20The%20Dashboard%3Cdiv%20id%3D%22output-1-the-dashboard%22%20class%3D%22anchor%22%3E%3C%2Fdiv%3E%3Cspan%20class%3D%22absolute%20top-0%20w-6%20transition-opacity%20opacity-0%20-start-6%20not-prose%20group-hover%3Aopacity-100%20select-none%22%3E%3Ca%20class%3D%22text-primary-300%20dark%3Atext-neutral-700%20!no-underline%22%20href%3D%22%23output-1-the-dashboard%22%20aria-label%3D%22Anchor%22%3E%23%3C%2Fa%3E%3C%2Fspan%3E%3C%2Fh2%3E%3Cp%3EThe%20dashboard%20provides%20a%20high-level%20view%20of%20your%20analyzed%20estate.%20It%20helps%20teams%20move%20quickly%20from%20raw%20data%20volume%20to%20the%20areas%20most%20worth%20investigating.%3C%2Fp%3E%3Ch3%20class%3D%22relative%20group%22%3EKey%20dashboard%20views%3A%3Cdiv%20id%3D%22key-dashboard-views%22%20class%3D%22anchor%22%3E%3C%2Fdiv%3E%3Cspan%20class%3D%22absolute%20top-0%20w-6%20transition-opacity%20opacity-0%20-start-6%20not-prose%20group-hover%3Aopacity-100%20select-none%22%3E%3Ca%20class%3D%22text-primary-300%20dark%3Atext-neutral-700%20!no-underline%22%20href%3D%22%23key-dashboard-views%22%20aria-label%3D%22Anchor%22%3E%23%3C%2Fa%3E%3C%2Fspan%3E%3C%2Fh3%3E%3Cul%3E%3Cli%3E%3Cstrong%3ESummaries%3A%3C%2Fstrong%3E%20Issue%20volume%20and%20affected-page%20breakdowns.%3C%2Fli%3E%3Cli%3E%3Cstrong%3ECompliance%20metrics%3A%3C%2Fstrong%3E%20WCAG%20criteria%20and%20conformance-level%20breakdowns.%3C%2Fli%3E%3Cli%3E%3Cstrong%3EConfidence%20scores%3A%3C%2Fstrong%3E%20Cross-tool%20overlap%20metrics%20to%20show%20where%20tools%20agree.%3C%2Fli%3E%3Cli%3E%3Cstrong%3EHotspots%3A%3C%2Fstrong%3E%20Component%20heatmaps%2C%20top%20problem%20types%2C%20and%20issues-per-page.%3C%2Fli%3E%3Cli%3E%3Cstrong%3EThe%20Priority%20Panel%3A%3C%2Fstrong%3E%20A%20dedicated%20%3Cstrong%3EFix%20Once%2C%20Benefit%20Many%3C%2Fstrong%3E%20prioritisation%20grid.%3C%2Fli%3E%3Cli%3E%3Cstrong%3EPage%20Inventory%20Check%3A%3C%2Fstrong%3E%20A%20vital%20validation%20step%20to%20verify%20the%20coverage%20of%20your%20collected%20reports%20before%20interpreting%20the%20wider%20data.%3C%2Fli%3E%3Cli%3E%3Cstrong%3EDrilldowns%3A%3C%2Fstrong%3E%20Searchable%2C%20paginated%20views%20for%20inspecting%20the%20raw%20findings%20behind%20each%20chart.%3C%2Fli%3E%3C%2Ful%3E%3Chr%3E%3Ch2%20class%3D%22relative%20group%22%3EOutput%202%3A%20The%20Workbook%3Cdiv%20id%3D%22output-2-the-workbook%22%20class%3D%22anchor%22%3E%3C%2Fdiv%3E%3Cspan%20class%3D%22absolute%20top-0%20w-6%20transition-opacity%20opacity-0%20-start-6%20not-prose%20group-hover%3Aopacity-100%20select-none%22%3E%3Ca%20class%3D%22text-primary-300%20dark%3Atext-neutral-700%20!no-underline%22%20href%3D%22%23output-2-the-workbook%22%20aria-label%3D%22Anchor%22%3E%23%3C%2Fa%3E%3C%2Fspan%3E%3C%2Fh2%3E%3Cp%3EThe%20exported%20spreadsheet%20workbook%20provides%20the%20detailed%20data%20layer%20behind%20the%20dashboard.%20It%20is%20built%20for%20hands-on%20accessibility%20reviews%2C%20technical%20handoffs%2C%20and%20downstream%20reporting%20workflows.%3C%2Fp%3E%3Ch3%20class%3D%22relative%20group%22%3EWhat%E2%80%99s%20inside%3A%3Cdiv%20id%3D%22whats-inside%22%20class%3D%22anchor%22%3E%3C%2Fdiv%3E%3Cspan%20class%3D%22absolute%20top-0%20w-6%20transition-opacity%20opacity-0%20-start-6%20not-prose%20group-hover%3Aopacity-100%20select-none%22%3E%3Ca%20class%3D%22text-primary-300%20dark%3Atext-neutral-700%20!no-underline%22%20href%3D%22%23whats-inside%22%20aria-label%3D%22Anchor%22%3E%23%3C%2Fa%3E%3C%2Fspan%3E%3C%2Fh3%3E%3Cul%3E%3Cli%3E%3Cstrong%3EManagement%20views%3A%3C%2Fstrong%3E%20Clean%2C%20high-level%20summary%20sheets.%3C%2Fli%3E%3Cli%3E%3Cstrong%3EEnriched%20data%3A%3C%2Fstrong%3E%20Detailed%20issue%20rows%20with%20enriched%20rule%20and%20WCAG%20fields.%3C%2Fli%3E%3Cli%3E%3Cstrong%3EActionable%20shortlists%3A%3C%2Fstrong%3E%20Systemic%20cluster%20analysis%20and%20%3Cstrong%3EFix%20Once%2C%20Benefit%20Many%3C%2Fstrong%3E%20priority%20lists.%3C%2Fli%3E%3Cli%3E%3Cstrong%3EBI-ready%20data%3A%3C%2Fstrong%3E%20Flat%2C%20Power%20BI-friendly%20tables%20with%20fact%20and%20dimension%20sheets%20for%20relational%20reporting.%3C%2Fli%3E%3C%2Ful%3E%3Cp%3EThis%20makes%20it%20easy%20to%20move%20seamlessly%20from%20an%20executive%20overview%20into%20filtered%20developer%20triage%20without%20losing%20the%20technical%20evidence%20behind%20the%20headline%20numbers.%3C%2Fp%3E%3Chr%3E%3Ch2%20class%3D%22relative%20group%22%3EWhat%20%E2%80%9Csystemic%E2%80%9D%20means%20here%3Cdiv%20id%3D%22what-systemic-means-here%22%20class%3D%22anchor%22%3E%3C%2Fdiv%3E%3Cspan%20class%3D%22absolute%20top-0%20w-6%20transition-opacity%20opacity-0%20-start-6%20not-prose%20group-hover%3Aopacity-100%20select-none%22%3E%3Ca%20class%3D%22text-primary-300%20dark%3Atext-neutral-700%20!no-underline%22%20href%3D%22%23what-systemic-means-here%22%20aria-label%3D%22Anchor%22%3E%23%3C%2Fa%3E%3C%2Fspan%3E%3C%2Fh2%3E%3Cp%3EA%20%3Cstrong%3Esystemic%20issue%3C%2Fstrong%3E%20is%20a%20repeated%20finding%20pattern%20where%20one%20remediation%20change%20improves%20many%20instances%20across%20a%20site.%20This%20includes%3A%3C%2Fp%3E%3Cul%3E%3Cli%3EDesign-system%20component%20bugs%3C%2Fli%3E%3Cli%3ERepeated%20page%20template%20issues%3C%2Fli%3E%3Cli%3ERecurring%20content%20structure%20problems%3C%2Fli%3E%3C%2Ful%3E%3Cp%3EThe%20analyzer%20does%20not%20assume%20every%20repeated%20issue%20has%20the%20exact%20same%20root%20cause.%20Instead%2C%20it%20highlights%20reusable%20remediation%20targets%20so%20your%20team%20can%20investigate%20them%20efficiently.%3C%2Fp%3E%3Chr%3E%3Ch2%20class%3D%22relative%20group%22%3EA%20practical%20workflow%3Cdiv%20id%3D%22a-practical-workflow%22%20class%3D%22anchor%22%3E%3C%2Fdiv%3E%3Cspan%20class%3D%22absolute%20top-0%20w-6%20transition-opacity%20opacity-0%20-start-6%20not-prose%20group-hover%3Aopacity-100%20select-none%22%3E%3Ca%20class%3D%22text-primary-300%20dark%3Atext-neutral-700%20!no-underline%22%20href%3D%22%23a-practical-workflow%22%20aria-label%3D%22Anchor%22%3E%23%3C%2Fa%3E%3C%2Fspan%3E%3C%2Fh2%3E%3Col%3E%3Cli%3E%3Cstrong%3EScan%3A%3C%2Fstrong%3E%20Run%20your%20accessibility%20scanners%20and%20collect%20their%20report%20files.%3C%2Fli%3E%3Cli%3E%3Cstrong%3EBuild%3A%3C%2Fstrong%3E%20Generate%20the%20normalised%20dashboard%20and%20workbook%20output%20using%20the%20analyzer.%3C%2Fli%3E%3Cli%3E%3Cstrong%3EVerify%3A%3C%2Fstrong%3E%20Check%20the%20page%20inventory%20to%20confirm%20your%20expected%20scan%20coverage.%3C%2Fli%3E%3Cli%3E%3Cstrong%3EReview%3A%3C%2Fstrong%3E%20Inspect%20the%20dashboard%20for%20concentrated%20problem%20areas%20and%20high-value%20fixes.%3C%2Fli%3E%3Cli%3E%3Cstrong%3ETriage%20%26amp%3B%20Handoff%3A%3C%2Fstrong%3E%20Use%20the%20workbook%20for%20deeper%20technical%20triage%20and%20developer%20handoffs.%3C%2Fli%3E%3Cli%3E%3Cstrong%3ETrack%3A%3C%2Fstrong%3E%20Re-run%20the%20tool%20after%20remediation%20to%20measure%20changes%20in%20volume%20and%20systemic%20impact.%3C%2Fli%3E%3C%2Fol%3E%3Chr%3E%3Ch2%20class%3D%22relative%20group%22%3E%E2%9A%A0%EF%B8%8F%20Important%20Limitation%3Cdiv%20id%3D%22-important-limitation%22%20class%3D%22anchor%22%3E%3C%2Fdiv%3E%3Cspan%20class%3D%22absolute%20top-0%20w-6%20transition-opacity%20opacity-0%20-start-6%20not-prose%20group-hover%3Aopacity-100%20select-none%22%3E%3Ca%20class%3D%22text-primary-300%20dark%3Atext-neutral-700%20!no-underline%22%20href%3D%22%23-important-limitation%22%20aria-label%3D%22Anchor%22%3E%23%3C%2Fa%3E%3C%2Fspan%3E%3C%2Fh2%3E%3Cblockquote%3E%3Cp%3E%3Cstrong%3EAutomated%20coverage%20remains%20partial.%3C%2Fstrong%3E%20A%20broader%20tool%20stack%20improves%20coverage%20and%20confidence%2C%20but%20it%20%3Cstrong%3Edoes%20not%20replace%20manual%20testing%3C%2Fstrong%3E%20or%20human%20judgement.%3C%2Fp%3E%3Cp%3ECritical%20areas%20like%20alt-text%20quality%2C%20meaningful%20link%20wording%2C%20logical%20focus%20order%2C%20error%20recovery%2C%20semantic%20clarity%2C%20and%20cognitive%20accessibility%20still%20require%20human%20review.%3C%2Fp%3E%3C%2Fblockquote%3E%3Ch2%20class%3D%22relative%20group%22%3EExplore%20the%20analyzer%3Cdiv%20id%3D%22explore-the-analyzer%22%20class%3D%22anchor%22%3E%3C%2Fdiv%3E%3Cspan%20class%3D%22absolute%20top-0%20w-6%20transition-opacity%20opacity-0%20-start-6%20not-prose%20group-hover%3Aopacity-100%20select-none%22%3E%3Ca%20class%3D%22text-primary-300%20dark%3Atext-neutral-700%20!no-underline%22%20href%3D%22%23explore-the-analyzer%22%20aria-label%3D%22Anchor%22%3E%23%3C%2Fa%3E%3C%2Fspan%3E%3C%2Fh2%3E%3Cul%3E%3Cli%3E%3Ca%20href%3D%22https%3A%2F%2Fa11yanalyzer.sbs%22%20target%3D%22_blank%22%20rel%3D%22noreferrer%22%3EView%20systemic%20analyzer%20dashboard%3C%2Fa%3E%3C%2Fli%3E%3C%2Ful%3E%3C%2Fdiv%3E%3C%2Fsection%3E%3Csection%20class%3D%22w-full%20grid%20gap-4%20sm%3Agrid-cols-2%20md%3Agrid-cols-3%22%3E%3Carticle%20class%3D%22article-link--card%20relative%20min-h-full%20min-w-full%20overflow-hidden%20rounded-lg%20border%20border-neutral-300%20dark%3Aborder-neutral-600%22%3E%3Cdiv%20class%3D%22p-4%22%3E%3Cheader%3E%3Ca%20href%3D%22%2Fanalyzer%2Froadmap%2F%22%20class%3D%22not-prose%20before%3Aabsolute%20before%3Ainset-0%20decoration-primary-500%20dark%3Atext-neutral%20text-xl%20font-bold%20text-neutral-800%20hover%3Aunderline%20hover%3Aunderline-offset-2%22%3E%3Ch2%3ERoadmap%3C%2Fh2%3E%3C%2Fa%3E%3C%2Fheader%3E%3Cdiv%20class%3D%22text-sm%20text-neutral-500%20dark%3Atext-neutral-400%22%3E%3Cdiv%20class%3D%22flex%20flex-row%20flex-wrap%20items-center%22%3E%3Cspan%20title%3D%22Reading%20time%22%3E4%20mins%3C%2Fspan%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22article-link__summary%20prose%20dark%3Aprose-invert%20mt-1%20line-clamp-5%22%3EThe%20journey%20from%20accessibility%20reports%20to%20accessibility%20intelligence.%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22px-6%20pt-4%20pb-2%22%3E%3C%2Fdiv%3E%3C%2Farticle%3E%3Carticle%20class%3D%22article-link--card%20relative%20min-h-full%20min-w-full%20overflow-hidden%20rounded-lg%20border%20border-neutral-300%20dark%3Aborder-neutral-600%22%3E%3Cdiv%20class%3D%22p-4%22%3E%3Cheader%3E%3Ca%20href%3D%22%2Fanalyzer%2Fworkbook-guide%2F%22%20class%3D%22not-prose%20before%3Aabsolute%20before%3Ainset-0%20decoration-primary-500%20dark%3Atext-neutral%20text-xl%20font-bold%20text-neutral-800%20hover%3Aunderline%20hover%3Aunderline-offset-2%22%3E%3Ch2%3ESpreadsheet%20Workbook%20Guide%3C%2Fh2%3E%3C%2Fa%3E%3C%2Fheader%3E%3Cdiv%20class%3D%22text-sm%20text-neutral-500%20dark%3Atext-neutral-400%22%3E%3Cdiv%20class%3D%22flex%20flex-row%20flex-wrap%20items-center%22%3E%3Cspan%20title%3D%22Reading%20time%22%3E4%20mins%3C%2Fspan%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22article-link__summary%20prose%20dark%3Aprose-invert%20mt-1%20line-clamp-5%22%3EReference%20guide%20for%20the%20exported%20spreadsheet%20tabs%2C%20columns%2C%20and%20analysis%20model.%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22px-6%20pt-4%20pb-2%22%3E%3C%2Fdiv%3E%3C%2Farticle%3E%3Carticle%20class%3D%22article-link--card%20relative%20min-h-full%20min-w-full%20overflow-hidden%20rounded-lg%20border%20border-neutral-300%20dark%3Aborder-neutral-600%22%3E%3Cdiv%20class%3D%22p-4%22%3E%3Cheader%3E%3Ca%20href%3D%22%2Fanalyzer%2Fdashboard-charts-and-metrics-guide%2F%22%20class%3D%22not-prose%20before%3Aabsolute%20before%3Ainset-0%20decoration-primary-500%20dark%3Atext-neutral%20text-xl%20font-bold%20text-neutral-800%20hover%3Aunderline%20hover%3Aunderline-offset-2%22%3E%3Ch2%3EDashboard%20Charts%20and%20Metrics%20Guide%3C%2Fh2%3E%3C%2Fa%3E%3C%2Fheader%3E%3Cdiv%20class%3D%22text-sm%20text-neutral-500%20dark%3Atext-neutral-400%22%3E%3Cdiv%20class%3D%22flex%20flex-row%20flex-wrap%20items-center%22%3E%3Cspan%20title%3D%22Reading%20time%22%3E5%20mins%3C%2Fspan%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22article-link__summary%20prose%20dark%3Aprose-invert%20mt-1%20line-clamp-5%22%3EGuide%20to%20the%20current%20dashboard%20cards%2C%20charts%2C%20panels%2C%20and%20drilldown%20behavior.%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22px-6%20pt-4%20pb-2%22%3E%3C%2Fdiv%3E%3C%2Farticle%3E%3Carticle%20class%3D%22article-link--card%20relative%20min-h-full%20min-w-full%20overflow-hidden%20rounded-lg%20border%20border-neutral-300%20dark%3Aborder-neutral-600%22%3E%3Cdiv%20class%3D%22p-4%22%3E%3Cheader%3E%3Ca%20href%3D%22%2Fanalyzer%2Faccessibility-systemic-analyzer%2F%22%20class%3D%22not-prose%20before%3Aabsolute%20before%3Ainset-0%20decoration-primary-500%20dark%3Atext-neutral%20text-xl%20font-bold%20text-neutral-800%20hover%3Aunderline%20hover%3Aunderline-offset-2%22%3E%3Ch2%3ESystemic%20Analyzer%3C%2Fh2%3E%3C%2Fa%3E%3C%2Fheader%3E%3Cdiv%20class%3D%22text-sm%20text-neutral-500%20dark%3Atext-neutral-400%22%3E%3Cdiv%20class%3D%22flex%20flex-row%20flex-wrap%20items-center%22%3E%3Cspan%20title%3D%22Reading%20time%22%3E3%20mins%3C%2Fspan%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22article-link__summary%20prose%20dark%3Aprose-invert%20mt-1%20line-clamp-5%22%3EProject%20overview%20covering%20the%20architecture%2C%20supported%20tools%2C%20workflow%2C%20workbook%2C%20and%20dashboard%20notes.%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22px-6%20pt-4%20pb-2%22%3E%3C%2Fdiv%3E%3C%2Farticle%3E%3C%2Fsection%3E%3Cdiv%20id%3D%22scroll-to-top%22%20class%3D%22fixed%20bottom-6%20end-6%20z-50%20transform%20translate-y-4%20opacity-0%20duration-200%22%3E%3Ca%20href%3D%22%23the-top%22%20class%3D%22pointer-events-auto%20flex%20h-12%20w-12%20items-center%20justify-center%20rounded-full%20bg-neutral%2F50%20text-xl%20text-neutral-700%20hover%3Atext-primary-600%20dark%3Abg-neutral-800%2F50%20dark%3Atext-neutral%20dark%3Ahover%3Atext-primary-400%22%20aria-label%3D%22Scroll%20to%20top%22%20title%3D%22Scroll%20to%20top%22%3E%E2%86%91%3C%2Fa%3E%3C%2Fdiv%3E%3C%2Fmain%3E%3Cfooter%20id%3D%22site-footer%22%20class%3D%22py-10%20print%3Ahidden%22%3E%3Cnav%20class%3D%22flex%20flex-row%20pb-4%20text-base%20font-medium%20text-neutral-500%20dark%3Atext-neutral-400%22%3E%3Cul%20class%3D%22flex%20list-none%20flex-col%20sm%3Aflex-row%22%3E%3Cli%20class%3D%22flex%20mb-1%20text-end%20sm%3Amb-0%20sm%3Ame-7%20sm%3Alast%3Ame-0%22%3E%3Ca%20class%3D%22decoration-primary-500%20hover%3Aunderline%20hover%3Adecoration-2%20hover%3Aunderline-offset-2%20flex%20items-center%22%20href%3D%22%2Fbio%2F%22%20title%3D%22Bio%22%3EBio%3C%2Fa%3E%3C%2Fli%3E%3Cli%20class%3D%22flex%20mb-1%20text-end%20sm%3Amb-0%20sm%3Ame-7%20sm%3Alast%3Ame-0%22%3E%3Ca%20class%3D%22decoration-primary-500%20hover%3Aunderline%20hover%3Adecoration-2%20hover%3Aunderline-offset-2%20flex%20items-center%22%20href%3D%22%2Faccessibility-specialist%2F%22%20title%3D%22Specialist%20support%22%3ESpecialist%20support%3C%2Fa%3E%3C%2Fli%3E%3Cli%20class%3D%22flex%20mb-1%20text-end%20sm%3Amb-0%20sm%3Ame-7%20sm%3Alast%3Ame-0%22%3E%3Ca%20class%3D%22decoration-primary-500%20hover%3Aunderline%20hover%3Adecoration-2%20hover%3Aunderline-offset-2%20flex%20items-center%22%20href%3D%22%2Faudit-services%2F%22%20title%3D%22Accessibility%20audit%22%3EAccessibility%20audit%3C%2Fa%3E%3C%2Fli%3E%3Cli%20class%3D%22flex%20mb-1%20text-end%20sm%3Amb-0%20sm%3Ame-7%20sm%3Alast%3Ame-0%22%3E%3Ca%20class%3D%22decoration-primary-500%20hover%3Aunderline%20hover%3Adecoration-2%20hover%3Aunderline-offset-2%20flex%20items-center%22%20href%3D%22%2Fanalyzer%2F%22%20title%3D%22Systemic%20Accessibility%20Analyzer%22%3EAccessibility%20analyzer%3C%2Fa%3E%3C%2Fli%3E%3Cli%20class%3D%22flex%20mb-1%20text-end%20sm%3Amb-0%20sm%3Ame-7%20sm%3Alast%3Ame-0%22%3E%3Ca%20class%3D%22decoration-primary-500%20hover%3Aunderline%20hover%3Adecoration-2%20hover%3Aunderline-offset-2%20flex%20items-center%22%20href%3D%22%2Fcontact%2F%22%20title%3D%22Contact%22%3EContact%3C%2Fa%3E%3C%2Fli%3E%3C%2Ful%3E%3C%2Fnav%3E%3Cdiv%20class%3D%22flex%20items-center%20justify-between%22%3E%3Cp%20class%3D%22text-sm%20text-neutral-500%20dark%3Atext-neutral-400%22%3E%C2%A9%0A2026%0APractical%20Accessibility%3C%2Fp%3E%3Cp%20class%3D%22text-xs%20text-neutral-500%20dark%3Atext-neutral-400%22%3EPowered%20by%20%3Ca%20class%3D%22hover%3Aunderline%20hover%3Adecoration-primary-400%20hover%3Atext-primary-500%22%20href%3D%22https%3A%2F%2Fgohugo.io%2F%22%20target%3D%22_blank%22%20rel%3D%22noopener%20noreferrer%22%3EHugo%3C%2Fa%3E%20%26amp%3B%20%3Ca%20class%3D%22hover%3Aunderline%20hover%3Adecoration-primary-400%20hover%3Atext-primary-500%22%20href%3D%22https%3A%2F%2Fblowfish.page%2F%22%20target%3D%22_blank%22%20rel%3D%22noopener%20noreferrer%22%3EBlowfish%3C%2Fa%3E%3C%2Fp%3E%3C%2Fdiv%3E%3C%2Ffooter%3E%3C%2Fdiv%3E%3C%2Fbody%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E"
+    },
+    "scanID": "4aaa6121-45e7-418f-ab18-63f317957ef2",
+    "toolID": "accessibility-checker-v4.0.10",
+    "label": "practicalaccessibility.co.uk-analyzer"
+  },
+  "puppeteer": {
+    "_isDragging": false,
+    "_timeoutSettings": {},
+    "aceBusy": false
+  }
+}

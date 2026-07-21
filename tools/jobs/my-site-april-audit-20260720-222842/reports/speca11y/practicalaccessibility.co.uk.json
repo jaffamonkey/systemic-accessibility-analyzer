@@ -1,0 +1,1260 @@
+{
+  "summary": {
+    "url": "https://practicalaccessibility.co.uk/",
+    "timestamp": "2026-07-20T22:31:58.535Z",
+    "duration": 4670,
+    "counts": {
+      "violations": 35,
+      "warnings": 25,
+      "incomplete": 0,
+      "passes": 147,
+      "incompletes": null
+    },
+    "byPrinciple": {
+      "perceivable": 20,
+      "operable": 39,
+      "understandable": 4,
+      "robust": 0
+    },
+    "byLevel": {
+      "A": 22,
+      "AA": 40,
+      "AAA": 1
+    },
+    "bySeverity": {
+      "critical": 5,
+      "serious": 43,
+      "moderate": 12,
+      "minor": 0
+    }
+  },
+  "entries": [
+    {
+      "rule": {
+        "id": "color-contrast",
+        "name": "Elements must have sufficient color contrast",
+        "description": "Ensures text elements have at least a 4.5:1 contrast ratio (3:1 for large text).",
+        "wcagCriteria": [
+          "1.4.3"
+        ],
+        "severity": "serious",
+        "confidence": "likely",
+        "type": "dom"
+      },
+      "results": [
+        {
+          "ruleId": "color-contrast",
+          "type": "violation",
+          "message": "Contrast ratio 2.98:1 is below the 4.5:1 requirement for normal text.",
+          "element": {
+            "selector": "p, span, a, li, td, th, label, h1, h2, h3, h4, h5, h6, button, div, strong, em, b, i >> nth=2",
+            "cssSelector": "div#the-top > a.px-3.py-1 > span.font-bold.text-primary-600",
+            "accessibleName": "↓",
+            "role": "",
+            "html": "<span class=\"font-bold text-primary-600 pe-2 dark:text-primary-400\">↓</span>",
+            "boundingBox": {
+              "x": 599.625,
+              "y": -29.338542938232422,
+              "width": 20.78125,
+              "height": 18
+            }
+          }
+        },
+        {
+          "ruleId": "color-contrast",
+          "type": "violation",
+          "message": "Text has effective opacity of 0.00, making it nearly invisible regardless of color contrast.",
+          "element": {
+            "selector": "p, span, a, li, td, th, label, h1, h2, h3, h4, h5, h6, button, div, strong, em, b, i >> nth=88",
+            "cssSelector": "div#scroll-to-top",
+            "accessibleName": "↑",
+            "role": "",
+            "html": "<div id=\"scroll-to-top\" class=\"fixed bottom-6 end-6 z-50 transform duration-200 translate-y-4 opacity-0\"><a href=\"#the-top\" class=\"pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400\" aria-label=\"Scroll to top\" title=\"Scroll to top\">↑</a></div>",
+            "boundingBox": {
+              "x": 1288,
+              "y": 839.3333129882812,
+              "width": 52,
+              "height": 52
+            }
+          }
+        },
+        {
+          "ruleId": "color-contrast",
+          "type": "violation",
+          "message": "Text has effective opacity of 0.00, making it nearly invisible regardless of color contrast.",
+          "element": {
+            "selector": "p, span, a, li, td, th, label, h1, h2, h3, h4, h5, h6, button, div, strong, em, b, i >> nth=89",
+            "cssSelector": "div#scroll-to-top > a.pointer-events-auto.flex",
+            "accessibleName": "Scroll to top",
+            "role": "link",
+            "html": "<a href=\"#the-top\" class=\"pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400\" aria-label=\"Scroll to top\" title=\"Scroll to top\">↑</a>",
+            "boundingBox": {
+              "x": 1288,
+              "y": 839.3333129882812,
+              "width": 52,
+              "height": 52
+            }
+          }
+        }
+      ]
+    },
+    {
+      "rule": {
+        "id": "images-of-text",
+        "name": "Images should not be used to present text",
+        "description": "Heuristic check for <img> elements that may contain text (very long alt text or CSS text-replacement patterns), suggesting real text should be used instead.",
+        "wcagCriteria": [
+          "1.4.5"
+        ],
+        "severity": "moderate",
+        "confidence": "possible",
+        "type": "dom"
+      },
+      "results": [
+        {
+          "ruleId": "images-of-text",
+          "type": "warning",
+          "message": "Alt text is 73 characters long, which suggests this image may contain text that should be presented as real text.",
+          "element": {
+            "selector": "img >> nth=3",
+            "cssSelector": "article.hct-feature-row.hct-feature-row-specialist:nth-of-type(1) > figure.hct-feature-image > img.medium-zoom-image",
+            "accessibleName": "Illustration or screenshot representing accessibil",
+            "role": "img",
+            "html": "<img src=\"/images/accessibility-support.png\" alt=\"Illustration or screenshot representing accessibility specialist support.\" loading=\"lazy\" decoding=\"async\" class=\"medium-zoom-image\">",
+            "boundingBox": {
+              "x": 679.375,
+              "y": 519.890625,
+              "width": 554.671875,
+              "height": 416
+            }
+          }
+        },
+        {
+          "ruleId": "images-of-text",
+          "type": "warning",
+          "message": "Alt text is 60 characters long, which suggests this image may contain text that should be presented as real text.",
+          "element": {
+            "selector": "img >> nth=4",
+            "cssSelector": "article.hct-feature-row.hct-feature-row-audit:nth-of-type(2) > figure.hct-feature-image > img.medium-zoom-image",
+            "accessibleName": "Illustration or screenshot representing accessibil",
+            "role": "img",
+            "html": "<img src=\"/images/accessibility-audit.png\" alt=\"Illustration or screenshot representing accessibility audit.\" loading=\"lazy\" decoding=\"async\" class=\"medium-zoom-image\">",
+            "boundingBox": {
+              "x": 131.9375,
+              "y": 1037.53125,
+              "width": 499.515625,
+              "height": 374.625
+            }
+          }
+        },
+        {
+          "ruleId": "images-of-text",
+          "type": "warning",
+          "message": "Alt text is 150 characters long, which suggests this image may contain text that should be presented as real text.",
+          "element": {
+            "selector": "img >> nth=5",
+            "cssSelector": "article.hct-feature-row.hct-feature-row-analyzer > figure.hct-feature-image.hct-feature-image-analyzer > img.medium-zoom-image",
+            "accessibleName": "COMING SOON. Collage of Systemic Accessibility Ana",
+            "role": "img",
+            "html": "<img src=\"/images/accessibility-systemic-analyzer-collage.png\" alt=\"COMING SOON. Collage of Systemic Accessibility Analyzer dashboard, contrast report, tab order map, virtual screenreader output and screenshot gallery.\" loading=\"lazy\" decoding=\"async\" class=\"medium-zoom-image\">",
+            "boundingBox": {
+              "x": 679.375,
+              "y": 1460.078125,
+              "width": 554.671875,
+              "height": 322.515625
+            }
+          }
+        }
+      ]
+    },
+    {
+      "rule": {
+        "id": "landmark-unique",
+        "name": "Landmarks must have a unique accessible name when multiple of the same role exist",
+        "description": "When multiple landmarks share the same role, each must have a unique accessible name via aria-label or aria-labelledby.",
+        "wcagCriteria": [
+          "1.3.1"
+        ],
+        "severity": "moderate",
+        "confidence": "likely",
+        "type": "dom"
+      },
+      "results": [
+        {
+          "ruleId": "landmark-unique",
+          "type": "violation",
+          "message": "Multiple \"navigation\" landmarks exist but this one has no accessible name. Add a unique aria-label or aria-labelledby.",
+          "element": {
+            "selector": "html > body > div:nth-of-type(3) > div:nth-of-type(2) > div > div:nth-of-type(2) > div:nth-of-type(1) > nav",
+            "html": "<nav class=\"flex items-center gap-x-5 h-12\"><a href=\"/bio/\" class=\"flex items-center bf-icon-color-hover\" aria-label=\"Bio\" title=\"Bio\"><span class=\"text-base font-medium break-normal\">Bio\n</span></a><"
+          }
+        },
+        {
+          "ruleId": "landmark-unique",
+          "type": "violation",
+          "message": "Multiple \"navigation\" landmarks exist but this one has no accessible name. Add a unique aria-label or aria-labelledby.",
+          "element": {
+            "selector": "html > body > div:nth-of-type(3) > div:nth-of-type(2) > div > div:nth-of-type(2) > div:nth-of-type(2) > div > div > nav",
+            "html": "<nav class=\"mx-auto max-w-md space-y-6\"><div class=\"px-2\"><a href=\"/bio/\" aria-label=\"Bio\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title="
+          }
+        },
+        {
+          "ruleId": "landmark-unique",
+          "type": "violation",
+          "message": "Multiple \"navigation\" landmarks exist but this one has no accessible name. Add a unique aria-label or aria-labelledby.",
+          "element": {
+            "selector": "#site-footer > nav",
+            "html": "<nav class=\"flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400\"><ul class=\"flex list-none flex-col sm:flex-row\"><li class=\"flex mb-1 text-end sm:mb-0 sm:me-7 sm:last:me-0\""
+          }
+        }
+      ]
+    },
+    {
+      "rule": {
+        "id": "css-content-visibility",
+        "name": "Content must not be made invisible via CSS tricks",
+        "description": "Detects CSS properties that make content invisible while keeping it in the DOM: filter opacity below threshold, font-size below 4px, transform scale(0), or clip-path hiding.",
+        "wcagCriteria": [
+          "1.4.3",
+          "1.4.4"
+        ],
+        "severity": "critical",
+        "confidence": "certain",
+        "type": "dom"
+      },
+      "results": [
+        {
+          "ruleId": "css-content-visibility",
+          "type": "violation",
+          "message": "Content is made invisible via CSS: clip-path: inset(50%). This hides content from sighted users while it may still appear in the DOM.",
+          "element": {
+            "selector": "p, span, a, li, td, th, label, h1, h2, h3, h4, h5, h6, button, div, main, section, article >> nth=10",
+            "cssSelector": "div:nth-of-type(1) > a.flex > span.sr-only",
+            "accessibleName": "Practical Accessibility",
+            "role": "",
+            "html": "<span class=\"sr-only\">Practical Accessibility</span>",
+            "boundingBox": {
+              "x": 137.65625,
+              "y": 3.328125,
+              "width": 1,
+              "height": 1
+            }
+          }
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "type": "violation",
+          "message": "Content is made invisible via CSS: opacity: 0 on div. This hides content from sighted users while it may still appear in the DOM.",
+          "element": {
+            "selector": "p, span, a, li, td, th, label, h1, h2, h3, h4, h5, h6, button, div, main, section, article >> nth=96",
+            "cssSelector": "div#scroll-to-top",
+            "accessibleName": "↑",
+            "role": "",
+            "html": "<div id=\"scroll-to-top\" class=\"fixed bottom-6 end-6 z-50 transform duration-200 translate-y-4 opacity-0\"><a href=\"#the-top\" class=\"pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400\" aria-label=\"Scroll to top\" title=\"Scroll to top\">↑</a></div>",
+            "boundingBox": {
+              "x": 1288,
+              "y": 839.3333129882812,
+              "width": 52,
+              "height": 52
+            }
+          }
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "type": "violation",
+          "message": "Content is made invisible via CSS: opacity: 0 on div. This hides content from sighted users while it may still appear in the DOM.",
+          "element": {
+            "selector": "p, span, a, li, td, th, label, h1, h2, h3, h4, h5, h6, button, div, main, section, article >> nth=97",
+            "cssSelector": "div#scroll-to-top > a.pointer-events-auto.flex",
+            "accessibleName": "Scroll to top",
+            "role": "link",
+            "html": "<a href=\"#the-top\" class=\"pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400\" aria-label=\"Scroll to top\" title=\"Scroll to top\">↑</a>",
+            "boundingBox": {
+              "x": 1288,
+              "y": 839.3333129882812,
+              "width": 52,
+              "height": 52
+            }
+          }
+        }
+      ]
+    },
+    {
+      "rule": {
+        "id": "transparent-content",
+        "name": "Text must not be made invisible via transparent color, low opacity, or extreme spacing",
+        "description": "Detects text elements with color: transparent, rgba with alpha 0, low effective opacity (CSS opacity or filter: opacity()), or extremely negative letter-spacing/word-spacing that makes text unreadable.",
+        "wcagCriteria": [
+          "1.4.3"
+        ],
+        "severity": "critical",
+        "confidence": "certain",
+        "type": "dom"
+      },
+      "results": [
+        {
+          "ruleId": "transparent-content",
+          "type": "violation",
+          "message": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM.",
+          "element": {
+            "selector": "p, span, a, li, td, th, label, h1, h2, h3, h4, h5, h6, button, div, main, section, article >> nth=96",
+            "cssSelector": "div#scroll-to-top",
+            "accessibleName": "↑",
+            "role": "",
+            "html": "<div id=\"scroll-to-top\" class=\"fixed bottom-6 end-6 z-50 transform duration-200 translate-y-4 opacity-0\"><a href=\"#the-top\" class=\"pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400\" aria-label=\"Scroll to top\" title=\"Scroll to top\">↑</a></div>",
+            "boundingBox": {
+              "x": 1288,
+              "y": 839.3333129882812,
+              "width": 52,
+              "height": 52
+            }
+          }
+        },
+        {
+          "ruleId": "transparent-content",
+          "type": "violation",
+          "message": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM.",
+          "element": {
+            "selector": "p, span, a, li, td, th, label, h1, h2, h3, h4, h5, h6, button, div, main, section, article >> nth=97",
+            "cssSelector": "div#scroll-to-top > a.pointer-events-auto.flex",
+            "accessibleName": "Scroll to top",
+            "role": "link",
+            "html": "<a href=\"#the-top\" class=\"pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400\" aria-label=\"Scroll to top\" title=\"Scroll to top\">↑</a>",
+            "boundingBox": {
+              "x": 1288,
+              "y": 839.3333129882812,
+              "width": 52,
+              "height": 52
+            }
+          }
+        }
+      ]
+    },
+    {
+      "rule": {
+        "id": "link-name",
+        "name": "Links must have discernible text",
+        "description": "Ensures every <a> element has accessible text that describes its purpose.",
+        "wcagCriteria": [
+          "2.4.4"
+        ],
+        "severity": "serious",
+        "confidence": "certain",
+        "type": "dom"
+      },
+      "results": [
+        {
+          "ruleId": "link-name",
+          "type": "violation",
+          "message": "Link has no discernible text. Add text content, aria-label, or aria-labelledby.",
+          "element": {
+            "selector": "a[href] >> nth=8",
+            "cssSelector": "div.hidden.md:flex:nth-of-type(1) > nav.flex.items-center > a.flex.items-center:nth-of-type(6)",
+            "accessibleName": "",
+            "role": "link",
+            "html": "<a href=\"\" class=\"flex items-center bf-icon-color-hover\" title=\"\"></a>",
+            "boundingBox": {
+              "x": 1184.03125,
+              "y": 47.65625,
+              "width": 0,
+              "height": 0
+            }
+          }
+        },
+        {
+          "ruleId": "link-name",
+          "type": "violation",
+          "message": "Link has no discernible text. Add text content, aria-label, or aria-labelledby.",
+          "element": {
+            "selector": "a[href] >> nth=9",
+            "cssSelector": "nav.mx-auto.max-w-md > div.px-2:nth-of-type(1) > a.flex.items-center",
+            "accessibleName": "Bio",
+            "role": "link",
+            "html": "<a href=\"/bio/\" aria-label=\"Bio\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"Bio\" class=\"text-2xl font-bold tracking-tight\">Bio</span></a>",
+            "boundingBox": null
+          }
+        },
+        {
+          "ruleId": "link-name",
+          "type": "violation",
+          "message": "Link has no discernible text. Add text content, aria-label, or aria-labelledby.",
+          "element": {
+            "selector": "a[href] >> nth=10",
+            "cssSelector": "nav.mx-auto.max-w-md > div.px-2:nth-of-type(2) > a.flex.items-center",
+            "accessibleName": "Specialist support",
+            "role": "link",
+            "html": "<a href=\"/accessibility-specialist/\" aria-label=\"Specialist support\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"Specialist support\" class=\"text-2xl font-bold tracking-tight\">Specialist support</span></a>",
+            "boundingBox": null
+          }
+        },
+        {
+          "ruleId": "link-name",
+          "type": "violation",
+          "message": "Link has no discernible text. Add text content, aria-label, or aria-labelledby.",
+          "element": {
+            "selector": "a[href] >> nth=11",
+            "cssSelector": "nav.mx-auto.max-w-md > div.px-2:nth-of-type(3) > a.flex.items-center",
+            "accessibleName": "Accessibility audit",
+            "role": "link",
+            "html": "<a href=\"/audit-services/\" aria-label=\"Accessibility audit\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"Accessibility audit\" class=\"text-2xl font-bold tracking-tight\">Accessibility audit</span></a>",
+            "boundingBox": null
+          }
+        },
+        {
+          "ruleId": "link-name",
+          "type": "violation",
+          "message": "Link has no discernible text. Add text content, aria-label, or aria-labelledby.",
+          "element": {
+            "selector": "a[href] >> nth=12",
+            "cssSelector": "nav.mx-auto.max-w-md > div.px-2:nth-of-type(4) > a.flex.items-center",
+            "accessibleName": "Accessibility analyzer",
+            "role": "link",
+            "html": "<a href=\"/analyzer/\" aria-label=\"Accessibility analyzer\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"Systemic Accessibility Analyzer\" class=\"text-2xl font-bold tracking-tight\">Accessibility analyzer</span></a>",
+            "boundingBox": null
+          }
+        },
+        {
+          "ruleId": "link-name",
+          "type": "violation",
+          "message": "Link has no discernible text. Add text content, aria-label, or aria-labelledby.",
+          "element": {
+            "selector": "a[href] >> nth=13",
+            "cssSelector": "nav.mx-auto.max-w-md > div.px-2:nth-of-type(5) > a.flex.items-center",
+            "accessibleName": "Contact",
+            "role": "link",
+            "html": "<a href=\"/contact/\" aria-label=\"Contact\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"Contact\" class=\"text-2xl font-bold tracking-tight\">Contact</span></a>",
+            "boundingBox": null
+          }
+        },
+        {
+          "ruleId": "link-name",
+          "type": "violation",
+          "message": "Link has no discernible text. Add text content, aria-label, or aria-labelledby.",
+          "element": {
+            "selector": "a[href] >> nth=14",
+            "cssSelector": "nav.mx-auto.max-w-md > div.px-2:nth-of-type(6) > a.flex.items-center",
+            "accessibleName": "",
+            "role": "link",
+            "html": "<a href=\"\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"\" class=\"text-2xl font-bold tracking-tight\"></span></a>",
+            "boundingBox": null
+          }
+        }
+      ]
+    },
+    {
+      "rule": {
+        "id": "target-size",
+        "name": "Interactive targets must have a minimum size",
+        "description": "Ensures interactive targets have a minimum size of 24x24 CSS pixels or sufficient spacing (WCAG 2.2 Success Criterion 2.5.8 Target Size (Minimum)).",
+        "wcagCriteria": [
+          "2.5.8"
+        ],
+        "severity": "moderate",
+        "confidence": "likely",
+        "type": "dom"
+      },
+      "results": [
+        {
+          "ruleId": "target-size",
+          "type": "warning",
+          "message": "Interactive target is too small (17x17px) and does not meet the spacing exception. Target size must be at least 24x24 CSS pixels.",
+          "element": {
+            "selector": "button#appearance-switcher",
+            "cssSelector": "button#appearance-switcher",
+            "accessibleName": "Switch to light appearance",
+            "role": "button",
+            "html": "<button id=\"appearance-switcher\" aria-label=\"Switch to light appearance\" type=\"button\" class=\"text-base bf-icon-color-hover\" title=\"Switch to light appearance\"><div class=\"flex items-center justify-ce",
+            "boundingBox": {
+              "x": 1205.6875,
+              "y": 38.984375,
+              "width": 17.328125,
+              "height": 17.328125
+            }
+          }
+        }
+      ]
+    },
+    {
+      "rule": {
+        "id": "no-empty-links",
+        "name": "Links must have discernible text",
+        "description": "Ensures that all links (<a href>) have discernible text via text content, aria-label, aria-labelledby, or child img alt text.",
+        "wcagCriteria": [
+          "2.4.4"
+        ],
+        "severity": "serious",
+        "confidence": "certain",
+        "type": "dom",
+        "tags": [
+          "best-practice"
+        ]
+      },
+      "results": [
+        {
+          "ruleId": "no-empty-links",
+          "type": "violation",
+          "message": "Link has no discernible text. Add text content, aria-label, aria-labelledby, or alt text to child images.",
+          "element": {
+            "selector": "a[href] >> nth=8",
+            "cssSelector": "div.hidden.md:flex:nth-of-type(1) > nav.flex.items-center > a.flex.items-center:nth-of-type(6)",
+            "accessibleName": "",
+            "role": "link",
+            "html": "<a href=\"\" class=\"flex items-center bf-icon-color-hover\" title=\"\"></a>",
+            "boundingBox": {
+              "x": 1184.03125,
+              "y": 47.65625,
+              "width": 0,
+              "height": 0
+            }
+          }
+        },
+        {
+          "ruleId": "no-empty-links",
+          "type": "violation",
+          "message": "Link has no discernible text. Add text content, aria-label, aria-labelledby, or alt text to child images.",
+          "element": {
+            "selector": "a[href] >> nth=9",
+            "cssSelector": "nav.mx-auto.max-w-md > div.px-2:nth-of-type(1) > a.flex.items-center",
+            "accessibleName": "Bio",
+            "role": "link",
+            "html": "<a href=\"/bio/\" aria-label=\"Bio\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"Bio\" class=\"text-2xl font-bold tracking-tight\">Bio</span></a>",
+            "boundingBox": null
+          }
+        },
+        {
+          "ruleId": "no-empty-links",
+          "type": "violation",
+          "message": "Link has no discernible text. Add text content, aria-label, aria-labelledby, or alt text to child images.",
+          "element": {
+            "selector": "a[href] >> nth=10",
+            "cssSelector": "nav.mx-auto.max-w-md > div.px-2:nth-of-type(2) > a.flex.items-center",
+            "accessibleName": "Specialist support",
+            "role": "link",
+            "html": "<a href=\"/accessibility-specialist/\" aria-label=\"Specialist support\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"Specialist support\" class=\"text-2xl font-bold tracking-tight\">Specialist support</span></a>",
+            "boundingBox": null
+          }
+        },
+        {
+          "ruleId": "no-empty-links",
+          "type": "violation",
+          "message": "Link has no discernible text. Add text content, aria-label, aria-labelledby, or alt text to child images.",
+          "element": {
+            "selector": "a[href] >> nth=11",
+            "cssSelector": "nav.mx-auto.max-w-md > div.px-2:nth-of-type(3) > a.flex.items-center",
+            "accessibleName": "Accessibility audit",
+            "role": "link",
+            "html": "<a href=\"/audit-services/\" aria-label=\"Accessibility audit\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"Accessibility audit\" class=\"text-2xl font-bold tracking-tight\">Accessibility audit</span></a>",
+            "boundingBox": null
+          }
+        },
+        {
+          "ruleId": "no-empty-links",
+          "type": "violation",
+          "message": "Link has no discernible text. Add text content, aria-label, aria-labelledby, or alt text to child images.",
+          "element": {
+            "selector": "a[href] >> nth=12",
+            "cssSelector": "nav.mx-auto.max-w-md > div.px-2:nth-of-type(4) > a.flex.items-center",
+            "accessibleName": "Accessibility analyzer",
+            "role": "link",
+            "html": "<a href=\"/analyzer/\" aria-label=\"Accessibility analyzer\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"Systemic Accessibility Analyzer\" class=\"text-2xl font-bold tracking-tight\">Accessibility analyzer</span></a>",
+            "boundingBox": null
+          }
+        },
+        {
+          "ruleId": "no-empty-links",
+          "type": "violation",
+          "message": "Link has no discernible text. Add text content, aria-label, aria-labelledby, or alt text to child images.",
+          "element": {
+            "selector": "a[href] >> nth=13",
+            "cssSelector": "nav.mx-auto.max-w-md > div.px-2:nth-of-type(5) > a.flex.items-center",
+            "accessibleName": "Contact",
+            "role": "link",
+            "html": "<a href=\"/contact/\" aria-label=\"Contact\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"Contact\" class=\"text-2xl font-bold tracking-tight\">Contact</span></a>",
+            "boundingBox": null
+          }
+        },
+        {
+          "ruleId": "no-empty-links",
+          "type": "violation",
+          "message": "Link has no discernible text. Add text content, aria-label, aria-labelledby, or alt text to child images.",
+          "element": {
+            "selector": "a[href] >> nth=14",
+            "cssSelector": "nav.mx-auto.max-w-md > div.px-2:nth-of-type(6) > a.flex.items-center",
+            "accessibleName": "",
+            "role": "link",
+            "html": "<a href=\"\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"\" class=\"text-2xl font-bold tracking-tight\"></span></a>",
+            "boundingBox": null
+          }
+        }
+      ]
+    },
+    {
+      "rule": {
+        "id": "form-field-multiple-labels",
+        "name": "Form fields should not have multiple labels",
+        "description": "Ensures form fields do not have multiple <label> elements pointing to the same ID, which can cause confusion for assistive technologies.",
+        "wcagCriteria": [
+          "3.3.2"
+        ],
+        "severity": "moderate",
+        "confidence": "certain",
+        "type": "dom"
+      },
+      "results": [
+        {
+          "ruleId": "form-field-multiple-labels",
+          "type": "violation",
+          "message": "Form field has 2 labels pointing to it. Each form field should have only one associated <label>.",
+          "element": {
+            "selector": "#mobile-menu-toggle",
+            "html": "<input type=\"checkbox\" id=\"mobile-menu-toggle\" autocomplete=\"off\" class=\"hidden peer\">"
+          }
+        }
+      ]
+    },
+    {
+      "rule": {
+        "id": "consistent-navigation",
+        "name": "Navigation elements should have consistent structure",
+        "description": "Checks that nav elements use a consistent list-based structure with links, which supports predictable navigation for assistive technology users.",
+        "wcagCriteria": [
+          "3.2.3"
+        ],
+        "severity": "moderate",
+        "confidence": "possible",
+        "type": "dom"
+      },
+      "results": [
+        {
+          "ruleId": "consistent-navigation",
+          "type": "warning",
+          "message": "Navigation element contains links but does not use a list structure (ul/ol with li > a). Using lists provides better structure for assistive technologies.",
+          "element": {
+            "selector": "nav, [role=\"navigation\"] >> nth=0",
+            "cssSelector": "div.flex.items-center:nth-of-type(2) > div.hidden.md:flex:nth-of-type(1) > nav.flex.items-center",
+            "accessibleName": "Bio Specialist support Accessibility audit Acce...",
+            "role": "navigation",
+            "html": "<nav class=\"flex items-center gap-x-5 h-12\"><a href=\"/bio/\" class=\"flex items-center bf-icon-color-hover\" aria-label=\"Bio\" title=\"Bio\"><span class=\"text-base font-medium break-normal\">Bio\n</span></a><a href=\"/accessibility-specialist/\" class=\"flex items-center bf-icon-color-hover\" aria-label=\"Specialist support\" title=\"Specialist support\"><span class=\"text-base font-medium break-normal\">Specialist support\n</span></a><a href=\"/audit-services/\" class=\"flex items-center bf-icon-color-hover\" aria-label=\"Accessibility audit\" title=\"Accessibility audit\"><span class=\"text-base font-medium break-normal\">Accessibility audit\n</span></a><a href=\"/analyzer/\" class=\"flex items-center bf-icon-color-hover\" aria-label=\"Accessibility analyzer\" title=\"Systemic Accessibility Analyzer\"><span class=\"text-base font-medium break-normal\">Accessibility analyzer\n</span></a><a href=\"/contact/\" class=\"flex items-center bf-icon-color-hover\" aria-label=\"Contact\" title=\"Contact\"><span class=\"text-base font-medium break-normal\">Contact\n</span></a><a href=\"\" class=\"flex items-center bf-icon-color-hover\" title=\"\"></a><div class=\"flex items-center\"><button id=\"appearance-switcher\" aria-label=\"Switch to light appearance\" type=\"button\" class=\"text-base bf-icon-color-hover\" title=\"Switch to light appearance\"><div class=\"flex items-center justify-center dark:hidden\"><span class=\"relative block icon\"><svg viewBox=\"0 0 512 512\"><path fill=\"currentColor\" d=\"M32 256C32 132.2 132.3 32 255.8 32c11.36.0 29.7 1.668 40.9 3.746 9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3 9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480 132.1 480 32 379.6 32 256z\"></path></svg></span></div><div class=\"items-center justify-center hidden dark:flex\"><span class=\"relative block icon\"><svg viewBox=\"0 0 512 512\"><path fill=\"currentColor\" d=\"M256 159.1c-53.02.0-95.1 42.98-95.1 95.1s41.2 96.9 95.1 96.9 95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347l-63.2-91.9 63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89 164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6 12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256 2.74 347.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7 19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109 109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69.0-127.1-57.31-127.1-127.1.0-70.69 57.31-127.1 127.1-127.1S383.1 186.2 383.1 256c0 70.7-56.4 127.1-127.1 127.1z\"></path></svg></span></div></button></div></nav>"
+          }
+        },
+        {
+          "ruleId": "consistent-navigation",
+          "type": "warning",
+          "message": "Navigation element contains links but does not use a list structure (ul/ol with li > a). Using lists provides better structure for assistive technologies.",
+          "element": {
+            "selector": "nav, [role=\"navigation\"] >> nth=1",
+            "cssSelector": "div.flex.items-center > div.fixed.inset-0 > nav.mx-auto.max-w-md",
+            "accessibleName": "BioSpecialist supportAccessibility auditAccessi...",
+            "role": "navigation",
+            "html": "<nav class=\"mx-auto max-w-md space-y-6\"><div class=\"px-2\"><a href=\"/bio/\" aria-label=\"Bio\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"Bio\" class=\"text-2xl font-bold tracking-tight\">Bio</span></a></div><div class=\"px-2\"><a href=\"/accessibility-specialist/\" aria-label=\"Specialist support\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"Specialist support\" class=\"text-2xl font-bold tracking-tight\">Specialist support</span></a></div><div class=\"px-2\"><a href=\"/audit-services/\" aria-label=\"Accessibility audit\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"Accessibility audit\" class=\"text-2xl font-bold tracking-tight\">Accessibility audit</span></a></div><div class=\"px-2\"><a href=\"/analyzer/\" aria-label=\"Accessibility analyzer\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"Systemic Accessibility Analyzer\" class=\"text-2xl font-bold tracking-tight\">Accessibility analyzer</span></a></div><div class=\"px-2\"><a href=\"/contact/\" aria-label=\"Contact\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"Contact\" class=\"text-2xl font-bold tracking-tight\">Contact</span></a></div><div class=\"px-2\"><a href=\"\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"\" class=\"text-2xl font-bold tracking-tight\"></span></a></div></nav>"
+          }
+        },
+        {
+          "ruleId": "consistent-navigation",
+          "type": "warning",
+          "message": "Navigation element contains links but does not use a list structure (ul/ol with li > a). Using lists provides better structure for assistive technologies.",
+          "element": {
+            "selector": "nav, [role=\"navigation\"] >> nth=2",
+            "cssSelector": "article.hct-feature-row.hct-feature-row-analyzer > div.hct-feature-copy > nav.hct-feature-links",
+            "accessibleName": "Analyzer guide links",
+            "role": "navigation",
+            "html": "<nav class=\"hct-feature-links\" aria-label=\"Analyzer guide links\"><a class=\"hct-core-button hct-core-button-secondary\" href=\"/analyzer/\">Systemic Accessibility Analyzer</a></nav>"
+          }
+        }
+      ]
+    },
+    {
+      "rule": {
+        "id": "label-content-name-mismatch",
+        "name": "Visible text must be part of the accessible name",
+        "description": "Elements with both visible text and an accessible name (via aria-label) must include the visible text as part of the accessible name, per WCAG 2.5.3 Label in Name.",
+        "wcagCriteria": [
+          "2.5.3"
+        ],
+        "severity": "serious",
+        "confidence": "likely",
+        "type": "dom",
+        "tags": [
+          "experimental"
+        ]
+      },
+      "results": [
+        {
+          "ruleId": "label-content-name-mismatch",
+          "type": "violation",
+          "message": "Visible text \"Specialist supportPractical accessibility support for teams building web productsWCAG-informed support across design, development and testing, with a focus on real user journeys, keyboard behaviour, semantics, forms, errors and clear next steps. This can include early design input, support during delivery, and help turning accessibility findings into practical improvements.Specialist supportsAccessibility auditClear accessibility reviews without the theatreFocused accessibility reviews that combine automated checks, manual investigation and practical remediation guidance for developers, designers, testers and product teams. The aim is to identify meaningful barriers, explain their impact clearly, and help teams understand what to fix first.Accessibility audit\" is not part of the accessible name \"Accessibility service summary\". The accessible name must contain the visible text for speech input users.",
+          "element": {
+            "selector": "[aria-label] >> nth=13",
+            "cssSelector": "section.mt-8.w-full > div.hct-core-home.hct-accessibility-only-home > section.hct-feature-stack.hct-service-feature-stack:nth-of-type(2)",
+            "accessibleName": "Accessibility service summary",
+            "role": "region",
+            "html": "<section class=\"hct-feature-stack hct-service-feature-stack\" aria-label=\"Accessibility service summary\"><article class=\"hct-feature-row hct-feature-row-specialist\"><div class=\"hct-feature-copy\"><p class=\"hct-core-kicker\">Specialist support</p><h2>Practical accessibility support for teams building web products</h2><p>WCAG-informed support across design, development and testing, with a focus on real user journeys, keyboard behaviour, semantics, forms, errors and clear next steps. This can include early design input, support during delivery, and help turning accessibility findings into practical improvements.</p><a class=\"hct-core-button hct-core-button-secondary\" href=\"/accessibility-specialist/\">Specialist support</a></div><figure class=\"hct-feature-image\"><img src=\"/images/accessibility-support.png\" alt=\"Illustration or screenshot representing accessibility specialist support.\" loading=\"lazy\" decoding=\"async\" class=\"medium-zoom-image\"></figure>s</article><article class=\"hct-feature-row hct-feature-row-audit\"><div class=\"hct-feature-copy\"><p class=\"hct-core-kicker\">Accessibility audit</p><h2>Clear accessibility reviews without the theatre</h2><p>Focused accessibility reviews that combine automated checks, manual investigation and practical remediation guidance for developers, designers, testers and product teams. The aim is to identify meaningful barriers, explain their impact clearly, and help teams understand what to fix first.</p><a class=\"hct-core-button hct-core-button-secondary\" href=\"/audit-services/\">Accessibility audit</a></div><figure class=\"hct-feature-image\"><img src=\"/images/accessibility-audit.png\" alt=\"Illustration or screenshot representing accessibility audit.\" loading=\"lazy\" decoding=\"async\" class=\"medium-zoom-image\"></figure></article></section>",
+            "boundingBox": {
+              "x": 119.671875,
+              "y": 507.625,
+              "width": 1126.65625,
+              "height": 916.796875
+            }
+          }
+        },
+        {
+          "ruleId": "label-content-name-mismatch",
+          "type": "violation",
+          "message": "Visible text \"Systemic Accessibility AnalyzerFor when accessibility reports get too big to triage page by page.The analyzer groups multi-tool output into repeated patterns, cross-tool evidence and fix-once benefit-many views, helping teams focus on shared causes instead of drowning in page-level findings.Systemic Accessibility Analyzer\" is not part of the accessible name \"Systemic Accessibility Analyzer\". The accessible name must contain the visible text for speech input users.",
+          "element": {
+            "selector": "[aria-label] >> nth=14",
+            "cssSelector": "section.mt-8.w-full > div.hct-core-home.hct-accessibility-only-home > section.hct-feature-stack.hct-analyzer-feature-stack:nth-of-type(3)",
+            "accessibleName": "Systemic Accessibility Analyzer",
+            "role": "region",
+            "html": "<section class=\"hct-feature-stack hct-analyzer-feature-stack\" aria-label=\"Systemic Accessibility Analyzer\"><article class=\"hct-feature-row hct-feature-row-analyzer\"><div class=\"hct-feature-copy\"><p class=\"hct-core-kicker\">Systemic Accessibility Analyzer</p><h2>For when accessibility reports get too big to triage page by page.</h2><p>The analyzer groups multi-tool output into repeated patterns, cross-tool evidence and fix-once benefit-many views, helping teams focus on shared causes instead of drowning in page-level findings.</p><nav class=\"hct-feature-links\" aria-label=\"Analyzer guide links\"><a class=\"hct-core-button hct-core-button-secondary\" href=\"/analyzer/\">Systemic Accessibility Analyzer</a></nav></div><figure class=\"hct-feature-image hct-feature-image-analyzer\"><img src=\"/images/accessibility-systemic-analyzer-collage.png\" alt=\"COMING SOON. Collage of Systemic Accessibility Analyzer dashboard, contrast report, tab order map, virtual screenreader output and screenshot gallery.\" loading=\"lazy\" decoding=\"async\" class=\"medium-zoom-image\"></figure></article></section>",
+            "boundingBox": {
+              "x": 119.671875,
+              "y": 1447.8125,
+              "width": 1126.65625,
+              "height": 347.046875
+            }
+          }
+        },
+        {
+          "ruleId": "label-content-name-mismatch",
+          "type": "violation",
+          "message": "Visible text \"Systemic Accessibility Analyzer\" is not part of the accessible name \"Analyzer guide links\". The accessible name must contain the visible text for speech input users.",
+          "element": {
+            "selector": "[aria-label] >> nth=15",
+            "cssSelector": "article.hct-feature-row.hct-feature-row-analyzer > div.hct-feature-copy > nav.hct-feature-links",
+            "accessibleName": "Analyzer guide links",
+            "role": "navigation",
+            "html": "<nav class=\"hct-feature-links\" aria-label=\"Analyzer guide links\"><a class=\"hct-core-button hct-core-button-secondary\" href=\"/analyzer/\">Systemic Accessibility Analyzer</a></nav>",
+            "boundingBox": {
+              "x": 151.40625,
+              "y": 1718.9375,
+              "width": 460.578125,
+              "height": 44.1875
+            }
+          }
+        },
+        {
+          "ruleId": "label-content-name-mismatch",
+          "type": "violation",
+          "message": "Visible text \"↑\" is not part of the accessible name \"Scroll to top\". The accessible name must contain the visible text for speech input users.",
+          "element": {
+            "selector": "[aria-label] >> nth=16",
+            "cssSelector": "div#scroll-to-top > a.pointer-events-auto.flex",
+            "accessibleName": "Scroll to top",
+            "role": "link",
+            "html": "<a href=\"#the-top\" class=\"pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400\" aria-label=\"Scroll to top\" title=\"Scroll to top\">↑</a>",
+            "boundingBox": {
+              "x": 1288,
+              "y": 839.3333129882812,
+              "width": 52,
+              "height": 52
+            }
+          }
+        }
+      ]
+    },
+    {
+      "rule": {
+        "id": "non-text-contrast",
+        "name": "UI components must have sufficient non-text contrast",
+        "description": "Ensures visual boundaries of UI components (inputs, buttons, checkboxes) have at least 3:1 contrast ratio against adjacent colors.",
+        "wcagCriteria": [
+          "1.4.11"
+        ],
+        "severity": "serious",
+        "confidence": "likely",
+        "type": "interactive"
+      },
+      "results": [
+        {
+          "ruleId": "non-text-contrast",
+          "type": "violation",
+          "message": "UI component border contrast is 1.15:1, below the 3:1 requirement.",
+          "element": {
+            "selector": "input:not([type=\"hidden\"]), select, textarea, button, [role=\"checkbox\"], [role=\"radio\"], [role=\"slider\"], [role=\"switch\"], [role=\"tab\"] >> nth=0",
+            "cssSelector": "button#appearance-switcher",
+            "accessibleName": "Switch to light appearance",
+            "role": "button",
+            "html": "<button id=\"appearance-switcher\" aria-label=\"Switch to light appearance\" type=\"button\" class=\"text-base bf-icon-color-hover\" title=\"Switch to light appearance\"><div class=\"flex items-center justify-center dark:hidden\"><span class=\"relative block icon\"><svg viewBox=\"0 0 512 512\"><path fill=\"currentColor\" d=\"M32 256C32 132.2 132.3 32 255.8 32c11.36.0 29.7 1.668 40.9 3.746 9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3 9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480 132.1 480 32 379.6 32 256z\"></path></svg></span></div><div class=\"items-center justify-center hidden dark:flex\"><span class=\"relative block icon\"><svg viewBox=\"0 0 512 512\"><path fill=\"currentColor\" d=\"M256 159.1c-53.02.0-95.1 42.98-95.1 95.1s41.2 96.9 95.1 96.9 95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347l-63.2-91.9 63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89 164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6 12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256 2.74 347.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7 19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109 109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69.0-127.1-57.31-127.1-127.1.0-70.69 57.31-127.1 127.1-127.1S383.1 186.2 383.1 256c0 70.7-56.4 127.1-127.1 127.1z\"></path></svg></span></div></button>",
+            "boundingBox": {
+              "x": 1205.6875,
+              "y": 38.984375,
+              "width": 17.328125,
+              "height": 17.328125
+            }
+          }
+        }
+      ]
+    },
+    {
+      "rule": {
+        "id": "text-spacing",
+        "name": "Content must not be clipped when text spacing is increased",
+        "description": "Injects WCAG 1.4.12 text spacing overrides and checks for text overflow or clipping.",
+        "wcagCriteria": [
+          "1.4.12"
+        ],
+        "severity": "serious",
+        "confidence": "likely",
+        "type": "interactive"
+      },
+      "results": [
+        {
+          "ruleId": "text-spacing",
+          "type": "violation",
+          "message": "Text is clipped when WCAG text spacing is applied. Horizontal overflow clipped (scrollWidth 243px > clientWidth 1px). Ensure containers can accommodate increased text spacing.",
+          "element": {
+            "selector": "span.sr-only",
+            "html": "<span class=\"sr-only\">Practical Accessibility</span>"
+          }
+        },
+        {
+          "ruleId": "text-spacing",
+          "type": "violation",
+          "message": "Text is clipped when WCAG text spacing is applied. Horizontal overflow clipped (scrollWidth 223px > clientWidth 205px). Ensure containers can accommodate increased text spacing.",
+          "element": {
+            "selector": "a.text-base.font-medium.truncate.min-w-0.shrink",
+            "html": "<a href=\"/\" class=\"text-base font-medium truncate min-w-0 shrink\">Practical Accessibility</a>"
+          }
+        }
+      ]
+    },
+    {
+      "rule": {
+        "id": "focus-visible",
+        "name": "Focusable elements should have visible focus indicators",
+        "description": "Takes before/after focus screenshots to verify that focusable elements have a visible focus indicator, not just a CSS outline check.",
+        "wcagCriteria": [
+          "2.4.7"
+        ],
+        "severity": "serious",
+        "confidence": "likely",
+        "type": "interactive"
+      },
+      "results": [
+        {
+          "ruleId": "focus-visible",
+          "type": "incomplete",
+          "message": "Could not perform screenshot comparison: page.screenshot: Clipped area is either empty or outside the resulting image\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n",
+          "element": {
+            "selector": "a[href], button, input:not([type=\"hidden\"]), select, textarea, [tabindex]:not([tabindex=\"-1\"]) >> nth=21",
+            "html": "<a class=\"hct-core-button hct-core-button-secondary\" href=\"/audit-services/\">Accessibility audit</a>"
+          }
+        },
+        {
+          "ruleId": "focus-visible",
+          "type": "incomplete",
+          "message": "Could not perform screenshot comparison: page.screenshot: Clipped area is either empty or outside the resulting image\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n",
+          "element": {
+            "selector": "a[href], button, input:not([type=\"hidden\"]), select, textarea, [tabindex]:not([tabindex=\"-1\"]) >> nth=22",
+            "html": "<a class=\"hct-core-button hct-core-button-secondary\" href=\"/analyzer/\">Systemic Accessibility Analyzer</a>"
+          }
+        },
+        {
+          "ruleId": "focus-visible",
+          "type": "violation",
+          "message": "No visible focus indicator detected. Outline is suppressed and no alternative focus style was found (0 pixels changed on focus).",
+          "element": {
+            "selector": "a[href], button, input:not([type=\"hidden\"]), select, textarea, [tabindex]:not([tabindex=\"-1\"]) >> nth=23",
+            "cssSelector": "div#scroll-to-top > a.pointer-events-auto.flex",
+            "accessibleName": "Scroll to top",
+            "role": "link",
+            "html": "<a href=\"#the-top\" class=\"pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400\" aria-label=\"Scroll to top\" title=\"Scroll to top\">↑</a>",
+            "boundingBox": {
+              "x": 1288,
+              "y": 839.3333129882812,
+              "width": 52,
+              "height": 52
+            }
+          }
+        },
+        {
+          "ruleId": "focus-visible",
+          "type": "incomplete",
+          "message": "Could not perform screenshot comparison: page.screenshot: Clipped area is either empty or outside the resulting image\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n",
+          "element": {
+            "selector": "a[href], button, input:not([type=\"hidden\"]), select, textarea, [tabindex]:not([tabindex=\"-1\"]) >> nth=24",
+            "html": "<a class=\"decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center\" href=\"/bio/\" title=\"Bio\">Bio</a>"
+          }
+        },
+        {
+          "ruleId": "focus-visible",
+          "type": "incomplete",
+          "message": "Could not perform screenshot comparison: page.screenshot: Clipped area is either empty or outside the resulting image\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n",
+          "element": {
+            "selector": "a[href], button, input:not([type=\"hidden\"]), select, textarea, [tabindex]:not([tabindex=\"-1\"]) >> nth=25",
+            "html": "<a class=\"decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center\" href=\"/accessibility-specialist/\" title=\"Specialist support\">Specialist support</a>"
+          }
+        },
+        {
+          "ruleId": "focus-visible",
+          "type": "incomplete",
+          "message": "Could not perform screenshot comparison: page.screenshot: Clipped area is either empty or outside the resulting image\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n",
+          "element": {
+            "selector": "a[href], button, input:not([type=\"hidden\"]), select, textarea, [tabindex]:not([tabindex=\"-1\"]) >> nth=26",
+            "html": "<a class=\"decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center\" href=\"/audit-services/\" title=\"Accessibility audit\">Accessibility audit</a>"
+          }
+        },
+        {
+          "ruleId": "focus-visible",
+          "type": "incomplete",
+          "message": "Could not perform screenshot comparison: page.screenshot: Clipped area is either empty or outside the resulting image\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n",
+          "element": {
+            "selector": "a[href], button, input:not([type=\"hidden\"]), select, textarea, [tabindex]:not([tabindex=\"-1\"]) >> nth=27",
+            "html": "<a class=\"decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center\" href=\"/analyzer/\" title=\"Systemic Accessibility Analyzer\">Accessibility analyzer</a>"
+          }
+        },
+        {
+          "ruleId": "focus-visible",
+          "type": "incomplete",
+          "message": "Could not perform screenshot comparison: page.screenshot: Clipped area is either empty or outside the resulting image\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n",
+          "element": {
+            "selector": "a[href], button, input:not([type=\"hidden\"]), select, textarea, [tabindex]:not([tabindex=\"-1\"]) >> nth=28",
+            "html": "<a class=\"decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center\" href=\"/contact/\" title=\"Contact\">Contact</a>"
+          }
+        },
+        {
+          "ruleId": "focus-visible",
+          "type": "incomplete",
+          "message": "Could not perform screenshot comparison: page.screenshot: Clipped area is either empty or outside the resulting image\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n",
+          "element": {
+            "selector": "a[href], button, input:not([type=\"hidden\"]), select, textarea, [tabindex]:not([tabindex=\"-1\"]) >> nth=29",
+            "html": "<a class=\"hover:underline hover:decoration-primary-400 hover:text-primary-500\" href=\"https://gohugo.io/\" target=\"_blank\" rel=\"noopener noreferrer\">Hugo</a>"
+          }
+        },
+        {
+          "ruleId": "focus-visible",
+          "type": "incomplete",
+          "message": "Could not perform screenshot comparison: page.screenshot: Clipped area is either empty or outside the resulting image\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n",
+          "element": {
+            "selector": "a[href], button, input:not([type=\"hidden\"]), select, textarea, [tabindex]:not([tabindex=\"-1\"]) >> nth=30",
+            "html": "<a class=\"hover:underline hover:decoration-primary-400 hover:text-primary-500\" href=\"https://blowfish.page/\" target=\"_blank\" rel=\"noopener noreferrer\">Blowfish</a>"
+          }
+        },
+        {
+          "ruleId": "focus-visible",
+          "type": "incomplete",
+          "message": "Page has 31 focusable elements. Only 30 were checked; 1 require manual review."
+        }
+      ]
+    },
+    {
+      "rule": {
+        "id": "focus-not-obscured",
+        "name": "Focused elements must not be fully obscured",
+        "description": "Checks that focused interactive elements are not hidden behind fixed/sticky positioned elements.",
+        "wcagCriteria": [
+          "2.4.11"
+        ],
+        "severity": "serious",
+        "confidence": "likely",
+        "type": "interactive"
+      },
+      "results": [
+        {
+          "ruleId": "focus-not-obscured",
+          "type": "warning",
+          "message": "Focused element is more than 50% obscured by a fixed/sticky positioned element.",
+          "element": {
+            "selector": "a",
+            "html": "<a class=\"px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600\" href=\"#main-content\"><span class=\"font-bold text-primary-600 pe-2 dark:text-primary-400\"",
+            "boundingBox": {
+              "x": 586.625,
+              "y": -2,
+              "width": 192.75,
+              "height": 30.328125
+            }
+          }
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "type": "warning",
+          "message": "Focused element is more than 50% obscured by a fixed/sticky positioned element.",
+          "element": {
+            "selector": "a",
+            "html": "<a href=\"/\" class=\"flex\"><span class=\"sr-only\">Practical Accessibility</span>\n<img src=\"/images/logo-dark.png\" width=\"250\" height=\"250\" class=\"logo max-h-20 max-w-20 object-scale-down object-left nozo",
+            "boundingBox": {
+              "x": 138.65625,
+              "y": 4.328125,
+              "width": 86.65625,
+              "height": 86.65625
+            }
+          }
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "type": "warning",
+          "message": "Focused element is more than 50% obscured by a fixed/sticky positioned element.",
+          "element": {
+            "selector": "a",
+            "html": "<a href=\"/\" class=\"text-base font-medium truncate min-w-0 shrink\">Practical Accessibility</a>",
+            "boundingBox": {
+              "x": 233.96875,
+              "y": 34.65625,
+              "width": 172.75,
+              "height": 25.984375
+            }
+          }
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "type": "warning",
+          "message": "Focused element is more than 50% obscured by a fixed/sticky positioned element.",
+          "element": {
+            "selector": "a",
+            "html": "<a href=\"/bio/\" class=\"flex items-center bf-icon-color-hover\" aria-label=\"Bio\" title=\"Bio\"><span class=\"text-base font-medium break-normal\">Bio\n</span></a>",
+            "boundingBox": {
+              "x": 530.265625,
+              "y": 34.65625,
+              "width": 25.1875,
+              "height": 25.984375
+            }
+          }
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "type": "warning",
+          "message": "Focused element is more than 50% obscured by a fixed/sticky positioned element.",
+          "element": {
+            "selector": "a",
+            "html": "<a href=\"/accessibility-specialist/\" class=\"flex items-center bf-icon-color-hover\" aria-label=\"Specialist support\" title=\"Specialist support\"><span class=\"text-base font-medium break-normal\">Specialis",
+            "boundingBox": {
+              "x": 577.109375,
+              "y": 34.65625,
+              "width": 143.25,
+              "height": 25.984375
+            }
+          }
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "type": "warning",
+          "message": "Focused element is more than 50% obscured by a fixed/sticky positioned element.",
+          "element": {
+            "selector": "a",
+            "html": "<a href=\"/audit-services/\" class=\"flex items-center bf-icon-color-hover\" aria-label=\"Accessibility audit\" title=\"Accessibility audit\"><span class=\"text-base font-medium break-normal\">Accessibility aud",
+            "boundingBox": {
+              "x": 742.015625,
+              "y": 34.65625,
+              "width": 143.4375,
+              "height": 25.984375
+            }
+          }
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "type": "warning",
+          "message": "Focused element is more than 50% obscured by a fixed/sticky positioned element.",
+          "element": {
+            "selector": "a",
+            "html": "<a href=\"/analyzer/\" class=\"flex items-center bf-icon-color-hover\" aria-label=\"Accessibility analyzer\" title=\"Systemic Accessibility Analyzer\"><span class=\"text-base font-medium break-normal\">Accessib",
+            "boundingBox": {
+              "x": 907.109375,
+              "y": 34.65625,
+              "width": 170.484375,
+              "height": 25.984375
+            }
+          }
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "type": "warning",
+          "message": "Focused element is more than 50% obscured by a fixed/sticky positioned element.",
+          "element": {
+            "selector": "a",
+            "html": "<a href=\"/contact/\" class=\"flex items-center bf-icon-color-hover\" aria-label=\"Contact\" title=\"Contact\"><span class=\"text-base font-medium break-normal\">Contact\n</span></a>",
+            "boundingBox": {
+              "x": 1099.25,
+              "y": 34.65625,
+              "width": 63.125,
+              "height": 25.984375
+            }
+          }
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "type": "warning",
+          "message": "Focused element is more than 50% obscured by a fixed/sticky positioned element.",
+          "element": {
+            "selector": "button#appearance-switcher",
+            "html": "<button id=\"appearance-switcher\" aria-label=\"Switch to light appearance\" type=\"button\" class=\"text-base bf-icon-color-hover\" title=\"Switch to light appearance\"><div class=\"flex items-center justify-ce",
+            "boundingBox": {
+              "x": 1205.6875,
+              "y": 38.984375,
+              "width": 17.328125,
+              "height": 17.328125
+            }
+          }
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "type": "warning",
+          "message": "Focused element is more than 50% obscured by a fixed/sticky positioned element.",
+          "element": {
+            "selector": "a",
+            "html": "<a href=\"#the-top\" class=\"pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neu",
+            "boundingBox": {
+              "x": 1288,
+              "y": 839.3333129882812,
+              "width": 52,
+              "height": 52
+            }
+          }
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "type": "warning",
+          "message": "Focused element is more than 50% obscured by a fixed/sticky positioned element.",
+          "element": {
+            "selector": "a",
+            "html": "<a class=\"px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600\" href=\"#main-content\"><span class=\"font-bold text-primary-600 pe-2 dark:text-primary-400\"",
+            "boundingBox": {
+              "x": 586.625,
+              "y": -5,
+              "width": 192.75,
+              "height": 30.328125
+            }
+          }
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "type": "warning",
+          "message": "Focused element is more than 50% obscured by a fixed/sticky positioned element.",
+          "element": {
+            "selector": "a",
+            "html": "<a href=\"/\" class=\"flex\"><span class=\"sr-only\">Practical Accessibility</span>\n<img src=\"/images/logo-dark.png\" width=\"250\" height=\"250\" class=\"logo max-h-20 max-w-20 object-scale-down object-left nozo",
+            "boundingBox": {
+              "x": 138.65625,
+              "y": 4.328125,
+              "width": 86.65625,
+              "height": 86.65625
+            }
+          }
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "type": "warning",
+          "message": "Focused element is more than 50% obscured by a fixed/sticky positioned element.",
+          "element": {
+            "selector": "a",
+            "html": "<a href=\"/\" class=\"text-base font-medium truncate min-w-0 shrink\">Practical Accessibility</a>",
+            "boundingBox": {
+              "x": 233.96875,
+              "y": 34.65625,
+              "width": 172.75,
+              "height": 25.984375
+            }
+          }
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "type": "warning",
+          "message": "Focused element is more than 50% obscured by a fixed/sticky positioned element.",
+          "element": {
+            "selector": "a",
+            "html": "<a href=\"/bio/\" class=\"flex items-center bf-icon-color-hover\" aria-label=\"Bio\" title=\"Bio\"><span class=\"text-base font-medium break-normal\">Bio\n</span></a>",
+            "boundingBox": {
+              "x": 530.265625,
+              "y": 34.65625,
+              "width": 25.1875,
+              "height": 25.984375
+            }
+          }
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "type": "warning",
+          "message": "Focused element is more than 50% obscured by a fixed/sticky positioned element.",
+          "element": {
+            "selector": "a",
+            "html": "<a href=\"/accessibility-specialist/\" class=\"flex items-center bf-icon-color-hover\" aria-label=\"Specialist support\" title=\"Specialist support\"><span class=\"text-base font-medium break-normal\">Specialis",
+            "boundingBox": {
+              "x": 577.109375,
+              "y": 34.65625,
+              "width": 143.25,
+              "height": 25.984375
+            }
+          }
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "type": "warning",
+          "message": "Focused element is more than 50% obscured by a fixed/sticky positioned element.",
+          "element": {
+            "selector": "a",
+            "html": "<a href=\"/audit-services/\" class=\"flex items-center bf-icon-color-hover\" aria-label=\"Accessibility audit\" title=\"Accessibility audit\"><span class=\"text-base font-medium break-normal\">Accessibility aud",
+            "boundingBox": {
+              "x": 742.015625,
+              "y": 34.65625,
+              "width": 143.4375,
+              "height": 25.984375
+            }
+          }
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "type": "warning",
+          "message": "Focused element is more than 50% obscured by a fixed/sticky positioned element.",
+          "element": {
+            "selector": "a",
+            "html": "<a href=\"/analyzer/\" class=\"flex items-center bf-icon-color-hover\" aria-label=\"Accessibility analyzer\" title=\"Systemic Accessibility Analyzer\"><span class=\"text-base font-medium break-normal\">Accessib",
+            "boundingBox": {
+              "x": 907.109375,
+              "y": 34.65625,
+              "width": 170.484375,
+              "height": 25.984375
+            }
+          }
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "type": "warning",
+          "message": "Focused element is more than 50% obscured by a fixed/sticky positioned element.",
+          "element": {
+            "selector": "a",
+            "html": "<a href=\"/contact/\" class=\"flex items-center bf-icon-color-hover\" aria-label=\"Contact\" title=\"Contact\"><span class=\"text-base font-medium break-normal\">Contact\n</span></a>",
+            "boundingBox": {
+              "x": 1099.25,
+              "y": 34.65625,
+              "width": 63.125,
+              "height": 25.984375
+            }
+          }
+        }
+      ]
+    },
+    {
+      "rule": {
+        "id": "focus-appearance",
+        "name": "Focus indicators must be clearly visible",
+        "description": "Takes before/after focus screenshots and verifies focus indicators change enough pixels to meet WCAG 2.4.13 area requirements.",
+        "wcagCriteria": [
+          "2.4.13"
+        ],
+        "severity": "moderate",
+        "confidence": "likely",
+        "type": "interactive"
+      },
+      "results": [
+        {
+          "ruleId": "focus-appearance",
+          "type": "violation",
+          "message": "Element has no visible focus indicator. No visual change was detected on focus.",
+          "element": {
+            "selector": "a[href], button, input:not([type=\"hidden\"]), select, textarea, [tabindex]:not([tabindex=\"-1\"]) >> nth=23",
+            "cssSelector": "div#scroll-to-top > a.pointer-events-auto.flex",
+            "accessibleName": "Scroll to top",
+            "role": "link",
+            "html": "<a href=\"#the-top\" class=\"pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400\" aria-label=\"Scroll to top\" title=\"Scroll to top\">↑</a>",
+            "boundingBox": {
+              "x": 1288,
+              "y": 839.3333129882812,
+              "width": 52,
+              "height": 52
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "job_id": "my-site-april-audit-20260720-222842",
+  "job_name": "my-site-april-audit",
+  "login_entry_url": null,
+  "target_urls": [
+    "https://practicalaccessibility.co.uk",
+    "https://practicalaccessibility.co.uk/analyzer/"
+  ],
+  "credentials": null,
+  "tools": [
+    "axe-core",
+    "html-sniffer",
+    "oobee",
+    "lighthouse",
+    "ibm",
+    "uuv",
+    "nu-html-checker",
+    "alfa",
+    "speca11y",
+    "pa11y",
+    "axe-scan"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+    "counts": {
+        "ignored": 0,
+        "violation": 42,
+        "recommendation": 3,
+        "pass": 3446,
+        "potentialviolation": 28,
+        "potentialrecommendation": 6,
+        "manual": 2,
+        "elements": 70,
+        "elementsViolation": 38,
+        "elementsViolationReview": 61
+    },
+    "startReport": 1784586568400,
+    "endReport": 1784586571344,
+    "toolID": "accessibility-checker-v4.0.10",
+    "policies": [
+        "IBM_Accessibility"
+    ],
+    "reportLevels": [
+        "violation",
+        "potentialviolation"
+    ],
+    "failLevels": [
+        "violation",
+        "potentialviolation"
+    ],
+    "scanID": "4aaa6121-45e7-418f-ab18-63f317957ef2",
+    "pageScanSummary": [
+        {
+            "label": "practicalaccessibility.co.uk",
+            "counts": {
+                "ignored": 0,
+                "elements": 26,
+                "elementsViolation": 18,
+                "elementsViolationReview": 21,
+                "violation": 19,
+                "potentialviolation": 5,
+                "recommendation": 3,
+                "potentialrecommendation": 2,
+                "manual": 1,
+                "pass": 942
+            }
+        },
+        {
+            "label": "practicalaccessibility.co.uk-analyzer",
+            "counts": {
+                "ignored": 0,
+                "elements": 44,
+                "elementsViolation": 20,
+                "elementsViolationReview": 40,
+                "violation": 23,
+                "potentialviolation": 23,
+                "recommendation": 0,
+                "potentialrecommendation": 4,
+                "manual": 1,
+                "pass": 2504
+            }
+        }
+    ]
+}

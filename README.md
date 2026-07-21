@@ -53,7 +53,7 @@ To keep the application traffic separated, run the two services on different por
 
 **Terminal 1 — Start the Auth & Scan Service (Port 8001)**
 ```bash
-cd tools/auth_service
+cd tools
 python3 -m uvicorn main:app --reload --port 8001
 ```
 

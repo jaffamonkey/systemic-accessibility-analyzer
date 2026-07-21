@@ -1,0 +1,13 @@
+{
+  "job_id": "my-site-april-audit-20260720-222842",
+  "reports_dir": "/Users/user/code/systemic-accessibility-analyzer/tools/auth_service/jobs/my-site-april-audit-20260720-222842/reports",
+  "output_dir": "/Users/user/code/systemic-accessibility-analyzer/tools/auth_service/jobs/my-site-april-audit-20260720-222842/analysis",
+  "analysis_json": "/Users/user/code/systemic-accessibility-analyzer/tools/auth_service/jobs/my-site-april-audit-20260720-222842/analysis/data/analysis.json",
+  "workbook": "/Users/user/code/systemic-accessibility-analyzer/tools/auth_service/jobs/my-site-april-audit-20260720-222842/analysis/accessibility_analysis.xlsx",
+  "violations": 268,
+  "pages": 2,
+  "screenshots": {
+    "job_id": "my-site-april-audit-20260720-222842",
+    "message": "Artifacts processed"
+  }
+}

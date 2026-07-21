@@ -1,0 +1,3331 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/main/sarif-2.1/schema/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "SpecA11y",
+          "version": "0.5.2",
+          "informationUri": "https://github.com/OKlueck/SpecA11y",
+          "rules": [
+            {
+              "id": "color-contrast",
+              "name": "Elements must have sufficient color contrast",
+              "shortDescription": {
+                "text": "Ensures text elements have at least a 4.5:1 contrast ratio (3:1 for large text)."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "1.4.3",
+                    "name": "Contrast (Minimum)",
+                    "level": "AA",
+                    "version": "2.0",
+                    "principle": "perceivable"
+                  }
+                ],
+                "severity": "serious",
+                "confidence": "likely"
+              }
+            },
+            {
+              "id": "content-on-hover-focus",
+              "name": "Hover/focus triggered content must be dismissible and persistent",
+              "shortDescription": {
+                "text": "Heuristic check for content that appears on hover only, such as title attributes on non-interactive elements which create native tooltips that cannot be dismissed or hovered over."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "1.4.13",
+                    "name": "Content on Hover or Focus",
+                    "level": "AA",
+                    "version": "2.1",
+                    "principle": "perceivable"
+                  }
+                ],
+                "severity": "moderate",
+                "confidence": "possible"
+              }
+            },
+            {
+              "id": "landmark-banner-top-level",
+              "name": "Banner landmark must be top level",
+              "shortDescription": {
+                "text": "Ensures <header> (acting as banner) and [role=\"banner\"] elements are not nested inside sectioning landmarks."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "1.3.1",
+                    "name": "Info and Relationships",
+                    "level": "A",
+                    "version": "2.0",
+                    "principle": "perceivable"
+                  }
+                ],
+                "severity": "moderate",
+                "confidence": "certain"
+              }
+            },
+            {
+              "id": "landmark-unique",
+              "name": "Landmarks must have a unique accessible name when multiple of the same role exist",
+              "shortDescription": {
+                "text": "When multiple landmarks share the same role, each must have a unique accessible name via aria-label or aria-labelledby."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "1.3.1",
+                    "name": "Info and Relationships",
+                    "level": "A",
+                    "version": "2.0",
+                    "principle": "perceivable"
+                  }
+                ],
+                "severity": "moderate",
+                "confidence": "likely"
+              }
+            },
+            {
+              "id": "css-content-visibility",
+              "name": "Content must not be made invisible via CSS tricks",
+              "shortDescription": {
+                "text": "Detects CSS properties that make content invisible while keeping it in the DOM: filter opacity below threshold, font-size below 4px, transform scale(0), or clip-path hiding."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "1.4.3",
+                    "name": "Contrast (Minimum)",
+                    "level": "AA",
+                    "version": "2.0",
+                    "principle": "perceivable"
+                  },
+                  {
+                    "id": "1.4.4",
+                    "name": "Resize Text",
+                    "level": "AA",
+                    "version": "2.0",
+                    "principle": "perceivable"
+                  }
+                ],
+                "severity": "critical",
+                "confidence": "certain"
+              }
+            },
+            {
+              "id": "transparent-content",
+              "name": "Text must not be made invisible via transparent color, low opacity, or extreme spacing",
+              "shortDescription": {
+                "text": "Detects text elements with color: transparent, rgba with alpha 0, low effective opacity (CSS opacity or filter: opacity()), or extremely negative letter-spacing/word-spacing that makes text unreadable."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "1.4.3",
+                    "name": "Contrast (Minimum)",
+                    "level": "AA",
+                    "version": "2.0",
+                    "principle": "perceivable"
+                  }
+                ],
+                "severity": "critical",
+                "confidence": "certain"
+              }
+            },
+            {
+              "id": "link-name",
+              "name": "Links must have discernible text",
+              "shortDescription": {
+                "text": "Ensures every <a> element has accessible text that describes its purpose."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "2.4.4",
+                    "name": "Link Purpose (In Context)",
+                    "level": "A",
+                    "version": "2.0",
+                    "principle": "operable"
+                  }
+                ],
+                "severity": "serious",
+                "confidence": "certain"
+              }
+            },
+            {
+              "id": "target-size",
+              "name": "Interactive targets must have a minimum size",
+              "shortDescription": {
+                "text": "Ensures interactive targets have a minimum size of 24x24 CSS pixels or sufficient spacing (WCAG 2.2 Success Criterion 2.5.8 Target Size (Minimum))."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "2.5.8",
+                    "name": "Target Size (Minimum)",
+                    "level": "AA",
+                    "version": "2.2",
+                    "principle": "operable"
+                  }
+                ],
+                "severity": "moderate",
+                "confidence": "likely"
+              }
+            },
+            {
+              "id": "nested-interactive",
+              "name": "Interactive elements must not be nested",
+              "shortDescription": {
+                "text": "Ensures interactive elements (links, buttons, inputs, etc.) are not nested inside other interactive elements."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "4.1.2",
+                    "name": "Name, Role, Value",
+                    "level": "A",
+                    "version": "2.0",
+                    "principle": "robust"
+                  }
+                ],
+                "severity": "serious",
+                "confidence": "certain"
+              }
+            },
+            {
+              "id": "no-empty-links",
+              "name": "Links must have discernible text",
+              "shortDescription": {
+                "text": "Ensures that all links (<a href>) have discernible text via text content, aria-label, aria-labelledby, or child img alt text."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "2.4.4",
+                    "name": "Link Purpose (In Context)",
+                    "level": "A",
+                    "version": "2.0",
+                    "principle": "operable"
+                  }
+                ],
+                "tags": [
+                  "best-practice"
+                ],
+                "severity": "serious",
+                "confidence": "certain"
+              }
+            },
+            {
+              "id": "form-field-multiple-labels",
+              "name": "Form fields should not have multiple labels",
+              "shortDescription": {
+                "text": "Ensures form fields do not have multiple <label> elements pointing to the same ID, which can cause confusion for assistive technologies."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "3.3.2",
+                    "name": "Labels or Instructions",
+                    "level": "A",
+                    "version": "2.0",
+                    "principle": "understandable"
+                  }
+                ],
+                "severity": "moderate",
+                "confidence": "certain"
+              }
+            },
+            {
+              "id": "consistent-navigation",
+              "name": "Navigation elements should have consistent structure",
+              "shortDescription": {
+                "text": "Checks that nav elements use a consistent list-based structure with links, which supports predictable navigation for assistive technology users."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "3.2.3",
+                    "name": "Consistent Navigation",
+                    "level": "AA",
+                    "version": "2.0",
+                    "principle": "understandable"
+                  }
+                ],
+                "severity": "moderate",
+                "confidence": "possible"
+              }
+            },
+            {
+              "id": "label-content-name-mismatch",
+              "name": "Visible text must be part of the accessible name",
+              "shortDescription": {
+                "text": "Elements with both visible text and an accessible name (via aria-label) must include the visible text as part of the accessible name, per WCAG 2.5.3 Label in Name."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "2.5.3",
+                    "name": "Label in Name",
+                    "level": "A",
+                    "version": "2.1",
+                    "principle": "operable"
+                  }
+                ],
+                "tags": [
+                  "experimental"
+                ],
+                "severity": "serious",
+                "confidence": "likely"
+              }
+            },
+            {
+              "id": "duplicate-id",
+              "name": "ID attributes must be unique",
+              "shortDescription": {
+                "text": "Ensures every id attribute value on the page is unique."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "4.1.1",
+                    "name": "Parsing",
+                    "level": "A",
+                    "version": "2.0",
+                    "principle": "robust"
+                  }
+                ],
+                "severity": "serious",
+                "confidence": "certain"
+              }
+            },
+            {
+              "id": "non-text-contrast",
+              "name": "UI components must have sufficient non-text contrast",
+              "shortDescription": {
+                "text": "Ensures visual boundaries of UI components (inputs, buttons, checkboxes) have at least 3:1 contrast ratio against adjacent colors."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "1.4.11",
+                    "name": "Non-text Contrast",
+                    "level": "AA",
+                    "version": "2.1",
+                    "principle": "perceivable"
+                  }
+                ],
+                "severity": "serious",
+                "confidence": "likely"
+              }
+            },
+            {
+              "id": "text-spacing",
+              "name": "Content must not be clipped when text spacing is increased",
+              "shortDescription": {
+                "text": "Injects WCAG 1.4.12 text spacing overrides and checks for text overflow or clipping."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "1.4.12",
+                    "name": "Text Spacing",
+                    "level": "AA",
+                    "version": "2.1",
+                    "principle": "perceivable"
+                  }
+                ],
+                "severity": "serious",
+                "confidence": "likely"
+              }
+            },
+            {
+              "id": "focus-visible",
+              "name": "Focusable elements should have visible focus indicators",
+              "shortDescription": {
+                "text": "Takes before/after focus screenshots to verify that focusable elements have a visible focus indicator, not just a CSS outline check."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "2.4.7",
+                    "name": "Focus Visible",
+                    "level": "AA",
+                    "version": "2.0",
+                    "principle": "operable"
+                  }
+                ],
+                "severity": "serious",
+                "confidence": "likely"
+              }
+            },
+            {
+              "id": "focus-order",
+              "name": "Focus order should follow visual layout",
+              "shortDescription": {
+                "text": "Tabs through focusable elements and verifies that the focus order follows a logical top-to-bottom, left-to-right visual sequence."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "2.4.3",
+                    "name": "Focus Order",
+                    "level": "A",
+                    "version": "2.0",
+                    "principle": "operable"
+                  }
+                ],
+                "severity": "serious",
+                "confidence": "likely"
+              }
+            },
+            {
+              "id": "focus-not-obscured",
+              "name": "Focused elements must not be fully obscured",
+              "shortDescription": {
+                "text": "Checks that focused interactive elements are not hidden behind fixed/sticky positioned elements."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "2.4.11",
+                    "name": "Focus Not Obscured (Minimum)",
+                    "level": "AA",
+                    "version": "2.2",
+                    "principle": "operable"
+                  }
+                ],
+                "severity": "serious",
+                "confidence": "likely"
+              }
+            },
+            {
+              "id": "focus-appearance",
+              "name": "Focus indicators must be clearly visible",
+              "shortDescription": {
+                "text": "Takes before/after focus screenshots and verifies focus indicators change enough pixels to meet WCAG 2.4.13 area requirements."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "2.4.13",
+                    "name": "Focus Appearance",
+                    "level": "AAA",
+                    "version": "2.2",
+                    "principle": "operable"
+                  }
+                ],
+                "severity": "moderate",
+                "confidence": "likely"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Rule \"color-contrast\" timed out after 10000ms"
+          }
+        },
+        {
+          "ruleId": "content-on-hover-focus",
+          "ruleIndex": 1,
+          "level": "warning",
+          "message": {
+            "text": "Non-interactive <span> element has a title attribute (\"Reading time\"). Native tooltips appear on hover only, cannot be dismissed by the user, and disappear when the pointer moves away. Consider using a more accessible pattern."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.text-sm.text-neutral-500:nth-of-type(1) > div.flex.flex-row > span"
+                }
+              ],
+              "message": {
+                "text": "<span title=\"Reading time\">4 mins</span> | Accessible name: \"Reading time\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "content-on-hover-focus",
+          "ruleIndex": 1,
+          "level": "warning",
+          "message": {
+            "text": "Non-interactive <span> element has a title attribute (\"Reading time\"). Native tooltips appear on hover only, cannot be dismissed by the user, and disappear when the pointer moves away. Consider using a more accessible pattern."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.text-sm.text-neutral-500:nth-of-type(1) > div.flex.flex-row > span"
+                }
+              ],
+              "message": {
+                "text": "<span title=\"Reading time\">4 mins</span> | Accessible name: \"Reading time\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "content-on-hover-focus",
+          "ruleIndex": 1,
+          "level": "warning",
+          "message": {
+            "text": "Non-interactive <span> element has a title attribute (\"Reading time\"). Native tooltips appear on hover only, cannot be dismissed by the user, and disappear when the pointer moves away. Consider using a more accessible pattern."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.text-sm.text-neutral-500:nth-of-type(1) > div.flex.flex-row > span"
+                }
+              ],
+              "message": {
+                "text": "<span title=\"Reading time\">5 mins</span> | Accessible name: \"Reading time\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "content-on-hover-focus",
+          "ruleIndex": 1,
+          "level": "warning",
+          "message": {
+            "text": "Non-interactive <span> element has a title attribute (\"Reading time\"). Native tooltips appear on hover only, cannot be dismissed by the user, and disappear when the pointer moves away. Consider using a more accessible pattern."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.text-sm.text-neutral-500:nth-of-type(1) > div.flex.flex-row > span"
+                }
+              ],
+              "message": {
+                "text": "<span title=\"Reading time\">3 mins</span> | Accessible name: \"Reading time\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "landmark-banner-top-level",
+          "ruleIndex": 2,
+          "level": "error",
+          "message": {
+            "text": "Banner landmark is nested inside another landmark. <header> or [role=\"banner\"] must be a top-level landmark."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "main#main-content > header"
+                }
+              ],
+              "message": {
+                "text": "<header><ol class=\"text-sm text-neutral-500 dark:text-neutral-400 print:hidden\"><li class=\"hidden\"><a class=\"hover:underline decoration-neutral-300 dark:underline-neutral-600\" href=\"/\">Accessibility Specialist &amp; Audit Services</a><span class=\"px-1 text-primary-500\">/</span></li><li class=\"hidden\"><a class=\"hover:underline decoration-neutral-300 dark:underline-neutral-600\" href=\"/analyzer/\">Systemic Accessibility Analyzer</a><span class=\"px-1 text-primary-500\">/</span></li></ol><h1 class=\"mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral\">Systemic Accessibility Analyzer</h1><div class=\"mt-1 mb-2 text-base text-neutral-500 dark:text-neutral-400 print:hidden\"><div class=\"flex flex-row flex-wrap items-center\"></div></div></header> | Accessible name: \"Accessibility Specialist & Audit Services/Syste...\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "landmark-banner-top-level",
+          "ruleIndex": 2,
+          "level": "error",
+          "message": {
+            "text": "Banner landmark is nested inside another landmark. <header> or [role=\"banner\"] must be a top-level landmark."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "article.article-link--card.relative:nth-of-type(1) > div.p-4:nth-of-type(1) > header"
+                }
+              ],
+              "message": {
+                "text": "<header><a href=\"/analyzer/roadmap/\" class=\"not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2\"><h2>Roadmap</h2></a></header> | Accessible name: \"Roadmap\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "landmark-banner-top-level",
+          "ruleIndex": 2,
+          "level": "error",
+          "message": {
+            "text": "Banner landmark is nested inside another landmark. <header> or [role=\"banner\"] must be a top-level landmark."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "article.article-link--card.relative:nth-of-type(2) > div.p-4:nth-of-type(1) > header"
+                }
+              ],
+              "message": {
+                "text": "<header><a href=\"/analyzer/workbook-guide/\" class=\"not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2\"><h2>Spreadsheet Workbook Guide</h2></a></header> | Accessible name: \"Spreadsheet Workbook Guide\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "landmark-banner-top-level",
+          "ruleIndex": 2,
+          "level": "error",
+          "message": {
+            "text": "Banner landmark is nested inside another landmark. <header> or [role=\"banner\"] must be a top-level landmark."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "article.article-link--card.relative:nth-of-type(3) > div.p-4:nth-of-type(1) > header"
+                }
+              ],
+              "message": {
+                "text": "<header><a href=\"/analyzer/dashboard-charts-and-metrics-guide/\" class=\"not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2\"><h2>Dashboard Charts and Metrics Guide</h2></a></header> | Accessible name: \"Dashboard Charts and Metrics Guide\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "landmark-banner-top-level",
+          "ruleIndex": 2,
+          "level": "error",
+          "message": {
+            "text": "Banner landmark is nested inside another landmark. <header> or [role=\"banner\"] must be a top-level landmark."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "article.article-link--card.relative:nth-of-type(4) > div.p-4:nth-of-type(1) > header"
+                }
+              ],
+              "message": {
+                "text": "<header><a href=\"/analyzer/accessibility-systemic-analyzer/\" class=\"not-prose before:absolute before:inset-0 decoration-primary-500 dark:text-neutral text-xl font-bold text-neutral-800 hover:underline hover:underline-offset-2\"><h2>Systemic Analyzer</h2></a></header> | Accessible name: \"Systemic Analyzer\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "landmark-unique",
+          "ruleIndex": 3,
+          "level": "error",
+          "message": {
+            "text": "Multiple \"navigation\" landmarks exist but this one has no accessible name. Add a unique aria-label or aria-labelledby."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "html > body > div:nth-of-type(3) > div:nth-of-type(2) > div > div:nth-of-type(2) > div:nth-of-type(1) > nav"
+                }
+              ],
+              "message": {
+                "text": "<nav class=\"flex items-center gap-x-5 h-12\"><a href=\"/bio/\" class=\"flex items-center bf-icon-color-hover\" aria-label=\"Bio\" title=\"Bio\"><span class=\"text-base font-medium break-normal\">Bio\n</span></a><"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "landmark-unique",
+          "ruleIndex": 3,
+          "level": "error",
+          "message": {
+            "text": "Multiple \"navigation\" landmarks exist but this one has no accessible name. Add a unique aria-label or aria-labelledby."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "html > body > div:nth-of-type(3) > div:nth-of-type(2) > div > div:nth-of-type(2) > div:nth-of-type(2) > div > div > nav"
+                }
+              ],
+              "message": {
+                "text": "<nav class=\"mx-auto max-w-md space-y-6\"><div class=\"px-2\"><a href=\"/bio/\" aria-label=\"Bio\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title="
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "landmark-unique",
+          "ruleIndex": 3,
+          "level": "error",
+          "message": {
+            "text": "Multiple \"navigation\" landmarks exist but this one has no accessible name. Add a unique aria-label or aria-labelledby."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "#TableOfContents"
+                }
+              ],
+              "message": {
+                "text": "<nav id=\"TableOfContents\"><ul><li><a href=\"#dont-count-findings-find-consensus\">Don’t count findings. Find consensus.</a></li><li><a href=\"#from-issue-volume-to-useful-priorities\">From issue volume to"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "landmark-unique",
+          "ruleIndex": 3,
+          "level": "error",
+          "message": {
+            "text": "Multiple \"navigation\" landmarks exist but this one has no accessible name. Add a unique aria-label or aria-labelledby."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "#TableOfContents"
+                }
+              ],
+              "message": {
+                "text": "<nav id=\"TableOfContents\"><ul><li><a href=\"#dont-count-findings-find-consensus\">Don’t count findings. Find consensus.</a></li><li><a href=\"#from-issue-volume-to-useful-priorities\">From issue volume to"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "landmark-unique",
+          "ruleIndex": 3,
+          "level": "error",
+          "message": {
+            "text": "Multiple \"navigation\" landmarks exist but this one has no accessible name. Add a unique aria-label or aria-labelledby."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "#site-footer > nav"
+                }
+              ],
+              "message": {
+                "text": "<nav class=\"flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400\"><ul class=\"flex list-none flex-col sm:flex-row\"><li class=\"flex mb-1 text-end sm:mb-0 sm:me-7 sm:last:me-0\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: clip-path: inset(50%). This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div:nth-of-type(1) > a.flex > span.sr-only"
+                }
+              ],
+              "message": {
+                "text": "<span class=\"sr-only\">Practical Accessibility</span> | Accessible name: \"Practical Accessibility\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: opacity: 0 on span. This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.min-w-0.min-h-0:nth-of-type(2) > h2.relative.group:nth-of-type(1) > span.absolute.top-0"
+                }
+              ],
+              "message": {
+                "text": "<span class=\"absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\"><a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#dont-count-findings-find-consensus\" aria-label=\"Anchor\">#</a></span> | Accessible name: \"#\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: opacity: 0 on span. This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(1) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#dont-count-findings-find-consensus\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: opacity: 0 on span. This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.min-w-0.min-h-0:nth-of-type(2) > h2.relative.group:nth-of-type(2) > span.absolute.top-0"
+                }
+              ],
+              "message": {
+                "text": "<span class=\"absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\"><a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#from-issue-volume-to-useful-priorities\" aria-label=\"Anchor\">#</a></span> | Accessible name: \"#\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: opacity: 0 on span. This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(2) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#from-issue-volume-to-useful-priorities\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: opacity: 0 on span. This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.min-w-0.min-h-0:nth-of-type(2) > h2.relative.group:nth-of-type(3) > span.absolute.top-0"
+                }
+              ],
+              "message": {
+                "text": "<span class=\"absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\"><a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#core-capabilities\" aria-label=\"Anchor\">#</a></span> | Accessible name: \"#\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: opacity: 0 on span. This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(3) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#core-capabilities\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: opacity: 0 on span. This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.min-w-0.min-h-0:nth-of-type(2) > h3.relative.group:nth-of-type(1) > span.absolute.top-0"
+                }
+              ],
+              "message": {
+                "text": "<span class=\"absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\"><a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#data-processing--cleanup\" aria-label=\"Anchor\">#</a></span> | Accessible name: \"#\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: opacity: 0 on span. This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h3.relative.group:nth-of-type(1) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#data-processing--cleanup\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: opacity: 0 on span. This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.min-w-0.min-h-0:nth-of-type(2) > h3.relative.group:nth-of-type(2) > span.absolute.top-0"
+                }
+              ],
+              "message": {
+                "text": "<span class=\"absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\"><a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#systemic-analysis\" aria-label=\"Anchor\">#</a></span> | Accessible name: \"#\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: opacity: 0 on span. This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h3.relative.group:nth-of-type(2) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#systemic-analysis\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: opacity: 0 on span. This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.min-w-0.min-h-0:nth-of-type(2) > h2.relative.group:nth-of-type(4) > span.absolute.top-0"
+                }
+              ],
+              "message": {
+                "text": "<span class=\"absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\"><a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#why-use-more-than-one-tool\" aria-label=\"Anchor\">#</a></span> | Accessible name: \"#\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: opacity: 0 on span. This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(4) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#why-use-more-than-one-tool\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: opacity: 0 on span. This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.min-w-0.min-h-0:nth-of-type(2) > h2.relative.group:nth-of-type(5) > span.absolute.top-0"
+                }
+              ],
+              "message": {
+                "text": "<span class=\"absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\"><a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#output-1-the-dashboard\" aria-label=\"Anchor\">#</a></span> | Accessible name: \"#\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: opacity: 0 on span. This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(5) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#output-1-the-dashboard\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: opacity: 0 on span. This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.min-w-0.min-h-0:nth-of-type(2) > h3.relative.group:nth-of-type(3) > span.absolute.top-0"
+                }
+              ],
+              "message": {
+                "text": "<span class=\"absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\"><a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#key-dashboard-views\" aria-label=\"Anchor\">#</a></span> | Accessible name: \"#\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: opacity: 0 on span. This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h3.relative.group:nth-of-type(3) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#key-dashboard-views\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: opacity: 0 on span. This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.min-w-0.min-h-0:nth-of-type(2) > h2.relative.group:nth-of-type(6) > span.absolute.top-0"
+                }
+              ],
+              "message": {
+                "text": "<span class=\"absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\"><a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#output-2-the-workbook\" aria-label=\"Anchor\">#</a></span> | Accessible name: \"#\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: opacity: 0 on span. This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(6) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#output-2-the-workbook\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: opacity: 0 on span. This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.min-w-0.min-h-0:nth-of-type(2) > h3.relative.group:nth-of-type(4) > span.absolute.top-0"
+                }
+              ],
+              "message": {
+                "text": "<span class=\"absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\"><a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#whats-inside\" aria-label=\"Anchor\">#</a></span> | Accessible name: \"#\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: opacity: 0 on span. This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h3.relative.group:nth-of-type(4) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#whats-inside\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: opacity: 0 on span. This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.min-w-0.min-h-0:nth-of-type(2) > h2.relative.group:nth-of-type(7) > span.absolute.top-0"
+                }
+              ],
+              "message": {
+                "text": "<span class=\"absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\"><a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#what-systemic-means-here\" aria-label=\"Anchor\">#</a></span> | Accessible name: \"#\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: opacity: 0 on span. This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(7) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#what-systemic-means-here\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: opacity: 0 on span. This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.min-w-0.min-h-0:nth-of-type(2) > h2.relative.group:nth-of-type(8) > span.absolute.top-0"
+                }
+              ],
+              "message": {
+                "text": "<span class=\"absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\"><a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#a-practical-workflow\" aria-label=\"Anchor\">#</a></span> | Accessible name: \"#\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: opacity: 0 on span. This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(8) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#a-practical-workflow\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: opacity: 0 on span. This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.min-w-0.min-h-0:nth-of-type(2) > h2.relative.group:nth-of-type(9) > span.absolute.top-0"
+                }
+              ],
+              "message": {
+                "text": "<span class=\"absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\"><a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#-important-limitation\" aria-label=\"Anchor\">#</a></span> | Accessible name: \"#\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: opacity: 0 on span. This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(9) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#-important-limitation\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: opacity: 0 on span. This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.min-w-0.min-h-0:nth-of-type(2) > h2.relative.group:nth-of-type(10) > span.absolute.top-0"
+                }
+              ],
+              "message": {
+                "text": "<span class=\"absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\"><a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#explore-the-analyzer\" aria-label=\"Anchor\">#</a></span> | Accessible name: \"#\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: opacity: 0 on span. This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(10) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#explore-the-analyzer\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: opacity: 0 on div. This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div#scroll-to-top"
+                }
+              ],
+              "message": {
+                "text": "<div id=\"scroll-to-top\" class=\"fixed bottom-6 end-6 z-50 transform duration-200 translate-y-4 opacity-0\"><a href=\"#the-top\" class=\"pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400\" aria-label=\"Scroll to top\" title=\"Scroll to top\">↑</a></div> | Accessible name: \"↑\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "css-content-visibility",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Content is made invisible via CSS: opacity: 0 on div. This hides content from sighted users while it may still appear in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div#scroll-to-top > a.pointer-events-auto.flex"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"#the-top\" class=\"pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400\" aria-label=\"Scroll to top\" title=\"Scroll to top\">↑</a> | Accessible name: \"Scroll to top\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "transparent-content",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.min-w-0.min-h-0:nth-of-type(2) > h2.relative.group:nth-of-type(1) > span.absolute.top-0"
+                }
+              ],
+              "message": {
+                "text": "<span class=\"absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\"><a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#dont-count-findings-find-consensus\" aria-label=\"Anchor\">#</a></span> | Accessible name: \"#\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "transparent-content",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(1) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#dont-count-findings-find-consensus\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "transparent-content",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.min-w-0.min-h-0:nth-of-type(2) > h2.relative.group:nth-of-type(2) > span.absolute.top-0"
+                }
+              ],
+              "message": {
+                "text": "<span class=\"absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\"><a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#from-issue-volume-to-useful-priorities\" aria-label=\"Anchor\">#</a></span> | Accessible name: \"#\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "transparent-content",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(2) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#from-issue-volume-to-useful-priorities\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "transparent-content",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.min-w-0.min-h-0:nth-of-type(2) > h2.relative.group:nth-of-type(3) > span.absolute.top-0"
+                }
+              ],
+              "message": {
+                "text": "<span class=\"absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\"><a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#core-capabilities\" aria-label=\"Anchor\">#</a></span> | Accessible name: \"#\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "transparent-content",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(3) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#core-capabilities\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "transparent-content",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.min-w-0.min-h-0:nth-of-type(2) > h3.relative.group:nth-of-type(1) > span.absolute.top-0"
+                }
+              ],
+              "message": {
+                "text": "<span class=\"absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\"><a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#data-processing--cleanup\" aria-label=\"Anchor\">#</a></span> | Accessible name: \"#\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "transparent-content",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h3.relative.group:nth-of-type(1) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#data-processing--cleanup\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "transparent-content",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.min-w-0.min-h-0:nth-of-type(2) > h3.relative.group:nth-of-type(2) > span.absolute.top-0"
+                }
+              ],
+              "message": {
+                "text": "<span class=\"absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\"><a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#systemic-analysis\" aria-label=\"Anchor\">#</a></span> | Accessible name: \"#\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "transparent-content",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h3.relative.group:nth-of-type(2) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#systemic-analysis\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "transparent-content",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.min-w-0.min-h-0:nth-of-type(2) > h2.relative.group:nth-of-type(4) > span.absolute.top-0"
+                }
+              ],
+              "message": {
+                "text": "<span class=\"absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\"><a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#why-use-more-than-one-tool\" aria-label=\"Anchor\">#</a></span> | Accessible name: \"#\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "transparent-content",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(4) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#why-use-more-than-one-tool\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "transparent-content",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.min-w-0.min-h-0:nth-of-type(2) > h2.relative.group:nth-of-type(5) > span.absolute.top-0"
+                }
+              ],
+              "message": {
+                "text": "<span class=\"absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\"><a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#output-1-the-dashboard\" aria-label=\"Anchor\">#</a></span> | Accessible name: \"#\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "transparent-content",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(5) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#output-1-the-dashboard\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "transparent-content",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.min-w-0.min-h-0:nth-of-type(2) > h3.relative.group:nth-of-type(3) > span.absolute.top-0"
+                }
+              ],
+              "message": {
+                "text": "<span class=\"absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\"><a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#key-dashboard-views\" aria-label=\"Anchor\">#</a></span> | Accessible name: \"#\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "transparent-content",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h3.relative.group:nth-of-type(3) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#key-dashboard-views\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "transparent-content",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.min-w-0.min-h-0:nth-of-type(2) > h2.relative.group:nth-of-type(6) > span.absolute.top-0"
+                }
+              ],
+              "message": {
+                "text": "<span class=\"absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\"><a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#output-2-the-workbook\" aria-label=\"Anchor\">#</a></span> | Accessible name: \"#\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "transparent-content",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(6) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#output-2-the-workbook\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "transparent-content",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.min-w-0.min-h-0:nth-of-type(2) > h3.relative.group:nth-of-type(4) > span.absolute.top-0"
+                }
+              ],
+              "message": {
+                "text": "<span class=\"absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\"><a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#whats-inside\" aria-label=\"Anchor\">#</a></span> | Accessible name: \"#\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "transparent-content",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h3.relative.group:nth-of-type(4) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#whats-inside\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "transparent-content",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.min-w-0.min-h-0:nth-of-type(2) > h2.relative.group:nth-of-type(7) > span.absolute.top-0"
+                }
+              ],
+              "message": {
+                "text": "<span class=\"absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\"><a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#what-systemic-means-here\" aria-label=\"Anchor\">#</a></span> | Accessible name: \"#\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "transparent-content",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(7) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#what-systemic-means-here\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "transparent-content",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.min-w-0.min-h-0:nth-of-type(2) > h2.relative.group:nth-of-type(8) > span.absolute.top-0"
+                }
+              ],
+              "message": {
+                "text": "<span class=\"absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\"><a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#a-practical-workflow\" aria-label=\"Anchor\">#</a></span> | Accessible name: \"#\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "transparent-content",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(8) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#a-practical-workflow\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "transparent-content",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.min-w-0.min-h-0:nth-of-type(2) > h2.relative.group:nth-of-type(9) > span.absolute.top-0"
+                }
+              ],
+              "message": {
+                "text": "<span class=\"absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\"><a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#-important-limitation\" aria-label=\"Anchor\">#</a></span> | Accessible name: \"#\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "transparent-content",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(9) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#-important-limitation\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "transparent-content",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.min-w-0.min-h-0:nth-of-type(2) > h2.relative.group:nth-of-type(10) > span.absolute.top-0"
+                }
+              ],
+              "message": {
+                "text": "<span class=\"absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\"><a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#explore-the-analyzer\" aria-label=\"Anchor\">#</a></span> | Accessible name: \"#\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "transparent-content",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(10) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#explore-the-analyzer\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "transparent-content",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div#scroll-to-top"
+                }
+              ],
+              "message": {
+                "text": "<div id=\"scroll-to-top\" class=\"fixed bottom-6 end-6 z-50 transform duration-200 translate-y-4 opacity-0\"><a href=\"#the-top\" class=\"pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400\" aria-label=\"Scroll to top\" title=\"Scroll to top\">↑</a></div> | Accessible name: \"↑\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "transparent-content",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Text is made invisible or unreadable via CSS: effective opacity: 0.000 (content nearly invisible). This hides content from sighted users while it may still be in the DOM."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div#scroll-to-top > a.pointer-events-auto.flex"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"#the-top\" class=\"pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400\" aria-label=\"Scroll to top\" title=\"Scroll to top\">↑</a> | Accessible name: \"Scroll to top\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "link-name",
+          "ruleIndex": 6,
+          "level": "error",
+          "message": {
+            "text": "Link has no discernible text. Add text content, aria-label, or aria-labelledby."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.hidden.md:flex:nth-of-type(1) > nav.flex.items-center > a.flex.items-center:nth-of-type(6)"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"\" class=\"flex items-center bf-icon-color-hover\" title=\"\"></a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "link-name",
+          "ruleIndex": 6,
+          "level": "error",
+          "message": {
+            "text": "Link has no discernible text. Add text content, aria-label, or aria-labelledby."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "nav.mx-auto.max-w-md > div.px-2:nth-of-type(1) > a.flex.items-center"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/bio/\" aria-label=\"Bio\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"Bio\" class=\"text-2xl font-bold tracking-tight\">Bio</span></a> | Accessible name: \"Bio\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "link-name",
+          "ruleIndex": 6,
+          "level": "error",
+          "message": {
+            "text": "Link has no discernible text. Add text content, aria-label, or aria-labelledby."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "nav.mx-auto.max-w-md > div.px-2:nth-of-type(2) > a.flex.items-center"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/accessibility-specialist/\" aria-label=\"Specialist support\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"Specialist support\" class=\"text-2xl font-bold tracking-tight\">Specialist support</span></a> | Accessible name: \"Specialist support\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "link-name",
+          "ruleIndex": 6,
+          "level": "error",
+          "message": {
+            "text": "Link has no discernible text. Add text content, aria-label, or aria-labelledby."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "nav.mx-auto.max-w-md > div.px-2:nth-of-type(3) > a.flex.items-center"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/audit-services/\" aria-label=\"Accessibility audit\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"Accessibility audit\" class=\"text-2xl font-bold tracking-tight\">Accessibility audit</span></a> | Accessible name: \"Accessibility audit\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "link-name",
+          "ruleIndex": 6,
+          "level": "error",
+          "message": {
+            "text": "Link has no discernible text. Add text content, aria-label, or aria-labelledby."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "nav.mx-auto.max-w-md > div.px-2:nth-of-type(4) > a.flex.items-center"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/analyzer/\" aria-label=\"Accessibility analyzer\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"Systemic Accessibility Analyzer\" class=\"text-2xl font-bold tracking-tight\">Accessibility analyzer</span></a> | Accessible name: \"Accessibility analyzer\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "link-name",
+          "ruleIndex": 6,
+          "level": "error",
+          "message": {
+            "text": "Link has no discernible text. Add text content, aria-label, or aria-labelledby."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "nav.mx-auto.max-w-md > div.px-2:nth-of-type(5) > a.flex.items-center"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/contact/\" aria-label=\"Contact\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"Contact\" class=\"text-2xl font-bold tracking-tight\">Contact</span></a> | Accessible name: \"Contact\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "link-name",
+          "ruleIndex": 6,
+          "level": "error",
+          "message": {
+            "text": "Link has no discernible text. Add text content, aria-label, or aria-labelledby."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "nav.mx-auto.max-w-md > div.px-2:nth-of-type(6) > a.flex.items-center"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"\" class=\"text-2xl font-bold tracking-tight\"></span></a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "target-size",
+          "ruleIndex": 7,
+          "level": "warning",
+          "message": {
+            "text": "Interactive target is too small (17x17px) and does not meet the spacing exception. Target size must be at least 24x24 CSS pixels."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "button#appearance-switcher"
+                }
+              ],
+              "message": {
+                "text": "<button id=\"appearance-switcher\" aria-label=\"Switch to light appearance\" type=\"button\" class=\"text-base bf-icon-color-hover\" title=\"Switch to light appearance\"><div class=\"flex items-center justify-ce | Accessible name: \"Switch to light appearance\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "nested-interactive",
+          "ruleIndex": 8,
+          "level": "error",
+          "message": {
+            "text": "Interactive element contains a nested interactive child. Nested interactive elements cause unpredictable behavior for assistive technologies."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "#TOCView"
+                }
+              ],
+              "message": {
+                "text": "<details open=\"\" id=\"TOCView\" class=\"toc-right mt-0 overflow-y-auto overscroll-contain bf-scrollbar rounded-lg -ms-5 ps-5 pe-2 hidden lg:block\"><summary class=\"block py-1 text-lg font-semibold cursor-"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "nested-interactive",
+          "ruleIndex": 8,
+          "level": "error",
+          "message": {
+            "text": "Interactive element contains a nested interactive child. Nested interactive elements cause unpredictable behavior for assistive technologies."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "#main-content > section:nth-of-type(1) > div:nth-of-type(1) > div > details:nth-of-type(2)"
+                }
+              ],
+              "message": {
+                "text": "<details class=\"toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden\"><summary class=\"py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-70"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "no-empty-links",
+          "ruleIndex": 9,
+          "level": "error",
+          "message": {
+            "text": "Link has no discernible text. Add text content, aria-label, aria-labelledby, or alt text to child images."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.hidden.md:flex:nth-of-type(1) > nav.flex.items-center > a.flex.items-center:nth-of-type(6)"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"\" class=\"flex items-center bf-icon-color-hover\" title=\"\"></a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "no-empty-links",
+          "ruleIndex": 9,
+          "level": "error",
+          "message": {
+            "text": "Link has no discernible text. Add text content, aria-label, aria-labelledby, or alt text to child images."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "nav.mx-auto.max-w-md > div.px-2:nth-of-type(1) > a.flex.items-center"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/bio/\" aria-label=\"Bio\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"Bio\" class=\"text-2xl font-bold tracking-tight\">Bio</span></a> | Accessible name: \"Bio\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "no-empty-links",
+          "ruleIndex": 9,
+          "level": "error",
+          "message": {
+            "text": "Link has no discernible text. Add text content, aria-label, aria-labelledby, or alt text to child images."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "nav.mx-auto.max-w-md > div.px-2:nth-of-type(2) > a.flex.items-center"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/accessibility-specialist/\" aria-label=\"Specialist support\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"Specialist support\" class=\"text-2xl font-bold tracking-tight\">Specialist support</span></a> | Accessible name: \"Specialist support\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "no-empty-links",
+          "ruleIndex": 9,
+          "level": "error",
+          "message": {
+            "text": "Link has no discernible text. Add text content, aria-label, aria-labelledby, or alt text to child images."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "nav.mx-auto.max-w-md > div.px-2:nth-of-type(3) > a.flex.items-center"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/audit-services/\" aria-label=\"Accessibility audit\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"Accessibility audit\" class=\"text-2xl font-bold tracking-tight\">Accessibility audit</span></a> | Accessible name: \"Accessibility audit\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "no-empty-links",
+          "ruleIndex": 9,
+          "level": "error",
+          "message": {
+            "text": "Link has no discernible text. Add text content, aria-label, aria-labelledby, or alt text to child images."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "nav.mx-auto.max-w-md > div.px-2:nth-of-type(4) > a.flex.items-center"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/analyzer/\" aria-label=\"Accessibility analyzer\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"Systemic Accessibility Analyzer\" class=\"text-2xl font-bold tracking-tight\">Accessibility analyzer</span></a> | Accessible name: \"Accessibility analyzer\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "no-empty-links",
+          "ruleIndex": 9,
+          "level": "error",
+          "message": {
+            "text": "Link has no discernible text. Add text content, aria-label, aria-labelledby, or alt text to child images."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "nav.mx-auto.max-w-md > div.px-2:nth-of-type(5) > a.flex.items-center"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/contact/\" aria-label=\"Contact\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"Contact\" class=\"text-2xl font-bold tracking-tight\">Contact</span></a> | Accessible name: \"Contact\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "no-empty-links",
+          "ruleIndex": 9,
+          "level": "error",
+          "message": {
+            "text": "Link has no discernible text. Add text content, aria-label, aria-labelledby, or alt text to child images."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "nav.mx-auto.max-w-md > div.px-2:nth-of-type(6) > a.flex.items-center"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"\" class=\"text-2xl font-bold tracking-tight\"></span></a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "form-field-multiple-labels",
+          "ruleIndex": 10,
+          "level": "error",
+          "message": {
+            "text": "Form field has 2 labels pointing to it. Each form field should have only one associated <label>."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "#mobile-menu-toggle"
+                }
+              ],
+              "message": {
+                "text": "<input type=\"checkbox\" id=\"mobile-menu-toggle\" autocomplete=\"off\" class=\"hidden peer\">"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "consistent-navigation",
+          "ruleIndex": 11,
+          "level": "warning",
+          "message": {
+            "text": "Navigation element contains links but does not use a list structure (ul/ol with li > a). Using lists provides better structure for assistive technologies."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.flex.items-center:nth-of-type(2) > div.hidden.md:flex:nth-of-type(1) > nav.flex.items-center"
+                }
+              ],
+              "message": {
+                "text": "<nav class=\"flex items-center gap-x-5 h-12\"><a href=\"/bio/\" class=\"flex items-center bf-icon-color-hover\" aria-label=\"Bio\" title=\"Bio\"><span class=\"text-base font-medium break-normal\">Bio\n</span></a><a href=\"/accessibility-specialist/\" class=\"flex items-center bf-icon-color-hover\" aria-label=\"Specialist support\" title=\"Specialist support\"><span class=\"text-base font-medium break-normal\">Specialist support\n</span></a><a href=\"/audit-services/\" class=\"flex items-center bf-icon-color-hover\" aria-label=\"Accessibility audit\" title=\"Accessibility audit\"><span class=\"text-base font-medium break-normal\">Accessibility audit\n</span></a><a href=\"/analyzer/\" class=\"flex items-center bf-icon-color-hover\" aria-label=\"Accessibility analyzer\" title=\"Systemic Accessibility Analyzer\"><span class=\"text-base font-medium break-normal\">Accessibility analyzer\n</span></a><a href=\"/contact/\" class=\"flex items-center bf-icon-color-hover\" aria-label=\"Contact\" title=\"Contact\"><span class=\"text-base font-medium break-normal\">Contact\n</span></a><a href=\"\" class=\"flex items-center bf-icon-color-hover\" title=\"\"></a><div class=\"flex items-center\"><button id=\"appearance-switcher\" aria-label=\"Switch to light appearance\" type=\"button\" class=\"text-base bf-icon-color-hover\" title=\"Switch to light appearance\"><div class=\"flex items-center justify-center dark:hidden\"><span class=\"relative block icon\"><svg viewBox=\"0 0 512 512\"><path fill=\"currentColor\" d=\"M32 256C32 132.2 132.3 32 255.8 32c11.36.0 29.7 1.668 40.9 3.746 9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3 9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480 132.1 480 32 379.6 32 256z\"></path></svg></span></div><div class=\"items-center justify-center hidden dark:flex\"><span class=\"relative block icon\"><svg viewBox=\"0 0 512 512\"><path fill=\"currentColor\" d=\"M256 159.1c-53.02.0-95.1 42.98-95.1 95.1s41.2 96.9 95.1 96.9 95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347l-63.2-91.9 63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89 164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6 12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256 2.74 347.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7 19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109 109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69.0-127.1-57.31-127.1-127.1.0-70.69 57.31-127.1 127.1-127.1S383.1 186.2 383.1 256c0 70.7-56.4 127.1-127.1 127.1z\"></path></svg></span></div></button></div></nav> | Accessible name: \"Bio Specialist support Accessibility audit Acce...\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "consistent-navigation",
+          "ruleIndex": 11,
+          "level": "warning",
+          "message": {
+            "text": "Navigation element contains links but does not use a list structure (ul/ol with li > a). Using lists provides better structure for assistive technologies."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.flex.items-center > div.fixed.inset-0 > nav.mx-auto.max-w-md"
+                }
+              ],
+              "message": {
+                "text": "<nav class=\"mx-auto max-w-md space-y-6\"><div class=\"px-2\"><a href=\"/bio/\" aria-label=\"Bio\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"Bio\" class=\"text-2xl font-bold tracking-tight\">Bio</span></a></div><div class=\"px-2\"><a href=\"/accessibility-specialist/\" aria-label=\"Specialist support\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"Specialist support\" class=\"text-2xl font-bold tracking-tight\">Specialist support</span></a></div><div class=\"px-2\"><a href=\"/audit-services/\" aria-label=\"Accessibility audit\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"Accessibility audit\" class=\"text-2xl font-bold tracking-tight\">Accessibility audit</span></a></div><div class=\"px-2\"><a href=\"/analyzer/\" aria-label=\"Accessibility analyzer\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"Systemic Accessibility Analyzer\" class=\"text-2xl font-bold tracking-tight\">Accessibility analyzer</span></a></div><div class=\"px-2\"><a href=\"/contact/\" aria-label=\"Contact\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"Contact\" class=\"text-2xl font-bold tracking-tight\">Contact</span></a></div><div class=\"px-2\"><a href=\"\" class=\"flex items-center gap-4 group bf-icon-color-hover text-neutral-700 dark:text-neutral-200\"><span title=\"\" class=\"text-2xl font-bold tracking-tight\"></span></a></div></nav> | Accessible name: \"BioSpecialist supportAccessibility auditAccessi...\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "label-content-name-mismatch",
+          "ruleIndex": 12,
+          "level": "error",
+          "message": {
+            "text": "Visible text \"#\" is not part of the accessible name \"Anchor\". The accessible name must contain the visible text for speech input users."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(1) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#dont-count-findings-find-consensus\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "label-content-name-mismatch",
+          "ruleIndex": 12,
+          "level": "error",
+          "message": {
+            "text": "Visible text \"#\" is not part of the accessible name \"Anchor\". The accessible name must contain the visible text for speech input users."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(2) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#from-issue-volume-to-useful-priorities\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "label-content-name-mismatch",
+          "ruleIndex": 12,
+          "level": "error",
+          "message": {
+            "text": "Visible text \"#\" is not part of the accessible name \"Anchor\". The accessible name must contain the visible text for speech input users."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(3) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#core-capabilities\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "label-content-name-mismatch",
+          "ruleIndex": 12,
+          "level": "error",
+          "message": {
+            "text": "Visible text \"#\" is not part of the accessible name \"Anchor\". The accessible name must contain the visible text for speech input users."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h3.relative.group:nth-of-type(1) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#data-processing--cleanup\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "label-content-name-mismatch",
+          "ruleIndex": 12,
+          "level": "error",
+          "message": {
+            "text": "Visible text \"#\" is not part of the accessible name \"Anchor\". The accessible name must contain the visible text for speech input users."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h3.relative.group:nth-of-type(2) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#systemic-analysis\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "label-content-name-mismatch",
+          "ruleIndex": 12,
+          "level": "error",
+          "message": {
+            "text": "Visible text \"#\" is not part of the accessible name \"Anchor\". The accessible name must contain the visible text for speech input users."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(4) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#why-use-more-than-one-tool\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "label-content-name-mismatch",
+          "ruleIndex": 12,
+          "level": "error",
+          "message": {
+            "text": "Visible text \"#\" is not part of the accessible name \"Anchor\". The accessible name must contain the visible text for speech input users."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(5) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#output-1-the-dashboard\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "label-content-name-mismatch",
+          "ruleIndex": 12,
+          "level": "error",
+          "message": {
+            "text": "Visible text \"#\" is not part of the accessible name \"Anchor\". The accessible name must contain the visible text for speech input users."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h3.relative.group:nth-of-type(3) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#key-dashboard-views\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "label-content-name-mismatch",
+          "ruleIndex": 12,
+          "level": "error",
+          "message": {
+            "text": "Visible text \"#\" is not part of the accessible name \"Anchor\". The accessible name must contain the visible text for speech input users."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(6) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#output-2-the-workbook\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "label-content-name-mismatch",
+          "ruleIndex": 12,
+          "level": "error",
+          "message": {
+            "text": "Visible text \"#\" is not part of the accessible name \"Anchor\". The accessible name must contain the visible text for speech input users."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h3.relative.group:nth-of-type(4) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#whats-inside\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "label-content-name-mismatch",
+          "ruleIndex": 12,
+          "level": "error",
+          "message": {
+            "text": "Visible text \"#\" is not part of the accessible name \"Anchor\". The accessible name must contain the visible text for speech input users."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(7) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#what-systemic-means-here\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "label-content-name-mismatch",
+          "ruleIndex": 12,
+          "level": "error",
+          "message": {
+            "text": "Visible text \"#\" is not part of the accessible name \"Anchor\". The accessible name must contain the visible text for speech input users."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(8) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#a-practical-workflow\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "label-content-name-mismatch",
+          "ruleIndex": 12,
+          "level": "error",
+          "message": {
+            "text": "Visible text \"#\" is not part of the accessible name \"Anchor\". The accessible name must contain the visible text for speech input users."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(9) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#-important-limitation\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "label-content-name-mismatch",
+          "ruleIndex": 12,
+          "level": "error",
+          "message": {
+            "text": "Visible text \"#\" is not part of the accessible name \"Anchor\". The accessible name must contain the visible text for speech input users."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(10) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#explore-the-analyzer\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "label-content-name-mismatch",
+          "ruleIndex": 12,
+          "level": "error",
+          "message": {
+            "text": "Visible text \"↑\" is not part of the accessible name \"Scroll to top\". The accessible name must contain the visible text for speech input users."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div#scroll-to-top > a.pointer-events-auto.flex"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"#the-top\" class=\"pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400\" aria-label=\"Scroll to top\" title=\"Scroll to top\">↑</a> | Accessible name: \"Scroll to top\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "duplicate-id",
+          "ruleIndex": 13,
+          "level": "error",
+          "message": {
+            "text": "Duplicate ID \"TableOfContents\" found (2 elements share this ID). IDs must be unique on the page."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "#TableOfContents"
+                }
+              ],
+              "message": {
+                "text": "<nav id=\"TableOfContents\"><ul><li><a href=\"#dont-count-findings-find-consensus\">Don’t count findings. Find consensus.</a></li><li><a href=\"#from-issue-volume-to-useful-priorities\">From issue volume to"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "duplicate-id",
+          "ruleIndex": 13,
+          "level": "error",
+          "message": {
+            "text": "Duplicate ID \"TableOfContents\" found (2 elements share this ID). IDs must be unique on the page."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "nav#TableOfContents"
+                }
+              ],
+              "message": {
+                "text": "<nav id=\"TableOfContents\"><ul><li><a href=\"#dont-count-findings-find-consensus\">Don’t count findings. Find consensus.</a></li><li><a href=\"#from-issue-volume-to-useful-priorities\">From issue volume to"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "non-text-contrast",
+          "ruleIndex": 14,
+          "level": "error",
+          "message": {
+            "text": "UI component border contrast is 1.15:1, below the 3:1 requirement."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "button#appearance-switcher"
+                }
+              ],
+              "message": {
+                "text": "<button id=\"appearance-switcher\" aria-label=\"Switch to light appearance\" type=\"button\" class=\"text-base bf-icon-color-hover\" title=\"Switch to light appearance\"><div class=\"flex items-center justify-center dark:hidden\"><span class=\"relative block icon\"><svg viewBox=\"0 0 512 512\"><path fill=\"currentColor\" d=\"M32 256C32 132.2 132.3 32 255.8 32c11.36.0 29.7 1.668 40.9 3.746 9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3 9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480 132.1 480 32 379.6 32 256z\"></path></svg></span></div><div class=\"items-center justify-center hidden dark:flex\"><span class=\"relative block icon\"><svg viewBox=\"0 0 512 512\"><path fill=\"currentColor\" d=\"M256 159.1c-53.02.0-95.1 42.98-95.1 95.1s41.2 96.9 95.1 96.9 95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347l-63.2-91.9 63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89 164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6 12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256 2.74 347.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7 19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109 109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69.0-127.1-57.31-127.1-127.1.0-70.69 57.31-127.1 127.1-127.1S383.1 186.2 383.1 256c0 70.7-56.4 127.1-127.1 127.1z\"></path></svg></span></div></button> | Accessible name: \"Switch to light appearance\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "text-spacing",
+          "ruleIndex": 15,
+          "level": "error",
+          "message": {
+            "text": "Text is clipped when WCAG text spacing is applied. Horizontal overflow clipped (scrollWidth 243px > clientWidth 1px). Ensure containers can accommodate increased text spacing."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "span.sr-only"
+                }
+              ],
+              "message": {
+                "text": "<span class=\"sr-only\">Practical Accessibility</span>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "text-spacing",
+          "ruleIndex": 15,
+          "level": "error",
+          "message": {
+            "text": "Text is clipped when WCAG text spacing is applied. Horizontal overflow clipped (scrollWidth 223px > clientWidth 205px). Ensure containers can accommodate increased text spacing."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a.text-base.font-medium.truncate.min-w-0.shrink"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/\" class=\"text-base font-medium truncate min-w-0 shrink\">Practical Accessibility</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-visible",
+          "ruleIndex": 16,
+          "level": "error",
+          "message": {
+            "text": "No visible focus indicator detected. Outline is suppressed and no alternative focus style was found (0 pixels changed on focus)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(1) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#dont-count-findings-find-consensus\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-visible",
+          "ruleIndex": 16,
+          "level": "note",
+          "message": {
+            "text": "Could not perform screenshot comparison: page.screenshot: Clipped area is either empty or outside the resulting image\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n"
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a[href], button, input:not([type=\"hidden\"]), select, textarea, [tabindex]:not([tabindex=\"-1\"]) >> nth=50"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#from-issue-volume-to-useful-priorities\" aria-label=\"Anchor\">#</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-visible",
+          "ruleIndex": 16,
+          "level": "note",
+          "message": {
+            "text": "Could not perform screenshot comparison: page.screenshot: Clipped area is either empty or outside the resulting image\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n"
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a[href], button, input:not([type=\"hidden\"]), select, textarea, [tabindex]:not([tabindex=\"-1\"]) >> nth=51"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#core-capabilities\" aria-label=\"Anchor\">#</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-visible",
+          "ruleIndex": 16,
+          "level": "note",
+          "message": {
+            "text": "Could not perform screenshot comparison: page.screenshot: Clipped area is either empty or outside the resulting image\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n"
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a[href], button, input:not([type=\"hidden\"]), select, textarea, [tabindex]:not([tabindex=\"-1\"]) >> nth=52"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#data-processing--cleanup\" aria-label=\"Anchor\">#</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-visible",
+          "ruleIndex": 16,
+          "level": "note",
+          "message": {
+            "text": "Could not perform screenshot comparison: page.screenshot: Clipped area is either empty or outside the resulting image\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n"
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a[href], button, input:not([type=\"hidden\"]), select, textarea, [tabindex]:not([tabindex=\"-1\"]) >> nth=53"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#systemic-analysis\" aria-label=\"Anchor\">#</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-visible",
+          "ruleIndex": 16,
+          "level": "note",
+          "message": {
+            "text": "Could not perform screenshot comparison: page.screenshot: Clipped area is either empty or outside the resulting image\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n"
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a[href], button, input:not([type=\"hidden\"]), select, textarea, [tabindex]:not([tabindex=\"-1\"]) >> nth=54"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#why-use-more-than-one-tool\" aria-label=\"Anchor\">#</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-visible",
+          "ruleIndex": 16,
+          "level": "note",
+          "message": {
+            "text": "Page has 76 focusable elements. Only 30 were checked; 46 require manual review."
+          }
+        },
+        {
+          "ruleId": "focus-order",
+          "ruleIndex": 17,
+          "level": "warning",
+          "message": {
+            "text": "Focus order may not follow visual layout: element 19 (at y:865, x:1314) appears before element 18 (at y:5885, x:314) visually but receives focus after it."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div#scroll-to-top > a.pointer-events-auto.flex"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"#the-top\" class=\"pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neu | Accessible name: \"Scroll to top\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 18,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/\" class=\"flex\"><span class=\"sr-only\">Practical Accessibility</span>\n<img src=\"/images/logo-dark.png\" width=\"250\" height=\"250\" class=\"logo max-h-20 max-w-20 object-scale-down object-left nozo"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 18,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/\" class=\"text-base font-medium truncate min-w-0 shrink\">Practical Accessibility</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 18,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/bio/\" class=\"flex items-center bf-icon-color-hover\" aria-label=\"Bio\" title=\"Bio\"><span class=\"text-base font-medium break-normal\">Bio\n</span></a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 18,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/accessibility-specialist/\" class=\"flex items-center bf-icon-color-hover\" aria-label=\"Specialist support\" title=\"Specialist support\"><span class=\"text-base font-medium break-normal\">Specialis"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 18,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/audit-services/\" class=\"flex items-center bf-icon-color-hover\" aria-label=\"Accessibility audit\" title=\"Accessibility audit\"><span class=\"text-base font-medium break-normal\">Accessibility aud"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 18,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/analyzer/\" class=\"flex items-center bf-icon-color-hover\" aria-label=\"Accessibility analyzer\" title=\"Systemic Accessibility Analyzer\"><span class=\"text-base font-medium break-normal\">Accessib"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 18,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/contact/\" class=\"flex items-center bf-icon-color-hover\" aria-label=\"Contact\" title=\"Contact\"><span class=\"text-base font-medium break-normal\">Contact\n</span></a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 18,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "button#appearance-switcher"
+                }
+              ],
+              "message": {
+                "text": "<button id=\"appearance-switcher\" aria-label=\"Switch to light appearance\" type=\"button\" class=\"text-base bf-icon-color-hover\" title=\"Switch to light appearance\"><div class=\"flex items-center justify-ce"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 18,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"#dont-count-findings-find-consensus\">Don’t count findings. Find consensus.</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 18,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"#from-issue-volume-to-useful-priorities\">From issue volume to useful priorities</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 18,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"#core-capabilities\">Core Capabilities</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 18,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"#data-processing--cleanup\">Data processing &amp; cleanup</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 18,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"#systemic-analysis\">Systemic analysis</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 18,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"#why-use-more-than-one-tool\">Why use more than one tool?</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 18,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"#output-1-the-dashboard\">Output 1: The Dashboard</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 18,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"#key-dashboard-views\">Key dashboard views:</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 18,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"#output-2-the-workbook\">Output 2: The Workbook</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 18,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"#whats-inside\">What’s inside:</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 18,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"#what-systemic-means-here\">What “systemic” means here</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 18,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"#a-practical-workflow\">A practical workflow</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 18,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"#-important-limitation\">⚠️ Important Limitation</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-appearance",
+          "ruleIndex": 19,
+          "level": "error",
+          "message": {
+            "text": "Element has no visible focus indicator. No visual change was detected on focus."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "h2.relative.group:nth-of-type(1) > span.absolute.top-0 > a.text-primary-300.dark:text-neutral-700"
+                }
+              ],
+              "message": {
+                "text": "<a class=\"text-primary-300 dark:text-neutral-700 !no-underline\" href=\"#dont-count-findings-find-consensus\" aria-label=\"Anchor\">#</a> | Accessible name: \"Anchor\""
+              }
+            }
+          ]
+        }
+      ],
+      "automationDetails": {
+        "id": "speca11y/https://practicalaccessibility.co.uk/analyzer//2026-07-20T22:32:16.443Z"
+      }
+    }
+  ]
+}

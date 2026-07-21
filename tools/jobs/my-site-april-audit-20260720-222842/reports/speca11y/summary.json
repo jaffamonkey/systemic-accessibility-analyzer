@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://practicalaccessibility.co.uk",
+    "ok": true,
+    "violations": 35,
+    "warnings": 25,
+    "json": "/Users/user/code/systemic-accessibility-analyzer/tools/auth_service/jobs/my-site-april-audit-20260720-222842/reports/speca11y/practicalaccessibility.co.uk.json",
+    "sarif": "/Users/user/code/systemic-accessibility-analyzer/tools/auth_service/jobs/my-site-april-audit-20260720-222842/reports/speca11y/practicalaccessibility.co.uk.sarif"
+  },
+  {
+    "url": "https://practicalaccessibility.co.uk/analyzer/",
+    "ok": true,
+    "violations": 110,
+    "warnings": 29,
+    "json": "/Users/user/code/systemic-accessibility-analyzer/tools/auth_service/jobs/my-site-april-audit-20260720-222842/reports/speca11y/practicalaccessibility.co.uk-analyzer.json",
+    "sarif": "/Users/user/code/systemic-accessibility-analyzer/tools/auth_service/jobs/my-site-april-audit-20260720-222842/reports/speca11y/practicalaccessibility.co.uk-analyzer.sarif"
+  }
+]

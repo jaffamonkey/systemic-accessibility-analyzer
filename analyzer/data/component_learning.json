@@ -3347,7 +3347,7 @@
   ".hct-core-hero": {
     "component": null,
     "confidence": 0.0,
-    "count": 2
+    "count": 3
   },
   ".hidden.w-embed": {
     "component": null,
@@ -3387,7 +3387,7 @@
   ".inset-0": {
     "component": null,
     "confidence": 0.0,
-    "count": 10
+    "count": 12
   },
   ".inset-x-4": {
     "component": null,
@@ -3485,9 +3485,9 @@
     "count": 7
   },
   ".md\\:hidden": {
-    "component": null,
-    "confidence": 0.0,
-    "count": 18
+    "component": "other",
+    "confidence": 0.7,
+    "count": 20
   },
   ".md\\:pt-0": {
     "component": null,
@@ -3822,7 +3822,7 @@
   ".toc-inside": {
     "component": null,
     "confidence": 0.0,
-    "count": 8
+    "count": 9
   },
   ".todayis": {
     "component": "other",
