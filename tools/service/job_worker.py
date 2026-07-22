@@ -1,3 +1,11 @@
+"""
+Background Job Task
+
+A wrapper function designed to be executed as an asynchronous or background 
+task by the web server. It manages the database state (running, completed, failed) 
+while `run_full_job` does the heavy lifting.
+"""
+
 from __future__ import annotations
 
 import json
@@ -9,6 +17,7 @@ from service.job_db import update_job
 
 
 def utc_now() -> str:
+    """Returns a standard ISO-8601 UTC timestamp."""
     return datetime.now(UTC).isoformat()
 
 
@@ -20,6 +29,7 @@ def run_job_in_background(
     job_config_path: Path,
     tools: list[str] | None = None,
 ) -> None:
+    """Executes the analysis pipeline and updates the database with the outcome."""
     update_job(job_id, status="running", updated_at=utc_now())
 
     try:
@@ -33,11 +43,13 @@ def run_job_in_background(
         )
 
         summary_path = auth_service_dir / "jobs" / job_id / "full_job_summary.json"
+        
+        # Dashboard hosting URLs
         ANALYSIS_BASE_URL = "http://127.0.0.1:8000"
-
         dashboard_url = f"{ANALYSIS_BASE_URL}/jobs/{job_id}/dashboard"
         workbook_url = f"{ANALYSIS_BASE_URL}/jobs/{job_id}/workbook"
 
+        # Determine if any stage of the pipeline failed
         has_error = (
             summary.get("auth", {}).get("status") == "error"
             or summary.get("analysis", {}).get("status") == "error"

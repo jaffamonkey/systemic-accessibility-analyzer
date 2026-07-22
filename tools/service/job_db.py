@@ -1,3 +1,11 @@
+"""
+Job Database Manager
+
+Provides a lightweight SQLite wrapper to persist job configurations, 
+track execution statuses, and store links to the generated artifacts 
+(dashboards and workbooks).
+"""
+
 from __future__ import annotations
 
 import json
@@ -10,6 +18,7 @@ DB_PATH = BASE_DIR / "data" / "jobs.db"
 
 
 def get_conn() -> sqlite3.Connection:
+    """Establishes a connection to the local SQLite jobs database."""
     DB_PATH.parent.mkdir(parents=True, exist_ok=True)
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
@@ -17,6 +26,7 @@ def get_conn() -> sqlite3.Connection:
 
 
 def init_db() -> None:
+    """Initializes the schema if it does not already exist."""
     with get_conn() as conn:
         conn.execute(
             """
@@ -41,6 +51,7 @@ def init_db() -> None:
 
 
 def create_job(record: dict[str, Any]) -> None:
+    """Inserts a new job record into the database."""
     with get_conn() as conn:
         conn.execute(
             """
@@ -71,6 +82,7 @@ def create_job(record: dict[str, Any]) -> None:
 
 
 def update_job(job_id: str, **fields: Any) -> None:
+    """Dynamically updates specific fields for an existing job."""
     if not fields:
         return
     columns = ", ".join(f"{k} = ?" for k in fields.keys())
@@ -79,7 +91,9 @@ def update_job(job_id: str, **fields: Any) -> None:
         conn.execute(f"UPDATE jobs SET {columns} WHERE id = ?", values)
         conn.commit()
 
+
 def list_jobs(limit: int = 100) -> list[dict]:
+    """Retrieves the most recent jobs, ordered by creation date."""
     with get_conn() as conn:
         rows = conn.execute(
             """
@@ -92,13 +106,16 @@ def list_jobs(limit: int = 100) -> list[dict]:
         ).fetchall()
         return [dict(r) for r in rows]
 
+
 def get_job(job_id: str) -> dict[str, Any] | None:
+    """Retrieves a specific job by its internal ID."""
     with get_conn() as conn:
         row = conn.execute("SELECT * FROM jobs WHERE id = ?", (job_id,)).fetchone()
         return dict(row) if row else None
 
 
 def get_job_by_slug(slug: str) -> dict[str, Any] | None:
+    """Retrieves a specific job by its public-facing slug."""
     with get_conn() as conn:
         row = conn.execute("SELECT * FROM jobs WHERE public_slug = ?", (slug,)).fetchone()
         return dict(row) if row else None

@@ -1,3 +1,10 @@
+"""
+Authentication Models
+
+Defines the core data structures and configurations used by the 
+authentication runner to execute jobs and track state.
+"""
+
 from __future__ import annotations
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -12,6 +19,7 @@ class Credentials:
 
 @dataclass
 class SelectorHints:
+    """Optional manual overrides to bypass heuristics on difficult sites."""
     login_trigger: str | None = None
     username: str | None = None
     password: str | None = None

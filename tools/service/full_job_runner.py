@@ -1,3 +1,12 @@
+"""
+Full Job Runner
+
+The master orchestration script for the tooling pipeline. It evaluates the job 
+configuration to determine if authentication is required, selects the appropriate 
+tool modules (authenticated vs. public), and spawns subprocesses to execute 
+each requested accessibility scanner.
+"""
+
 from __future__ import annotations
 
 import json
@@ -6,7 +15,6 @@ import sys
 from pathlib import Path
 
 from service.prepare_public_job import prepare_public_job
-
 
 DEFAULT_TOOLS = [
     "axe-core",
@@ -47,7 +55,6 @@ AUTH_TOOL_MODULES = {
     "virtual-screenreader": "service.run_virtual_screenreader",
     "tab-map": "service.run_tab_map",
     "contrast-checker": "service.run_contrast_checker",
-    "speca11y": "service.run_authenticated_speca11y",
 }
 
 PUBLIC_TOOL_MODULES = {
@@ -73,6 +80,7 @@ PUBLIC_TOOL_MODULES = {
 
 
 def _run_command(cmd: list[str], *, cwd: Path | None = None) -> subprocess.CompletedProcess:
+    """Helper to safely execute external shell commands."""
     return subprocess.run(cmd, cwd=str(cwd) if cwd else None, check=False)
 
 
@@ -91,9 +99,15 @@ def run_full_job(
     tools: list[str] | None = None,
     skip_analysis: bool = False,
 ) -> dict:
-    print("run_full_job raw incoming tools:", tools, flush=True)
+    """
+    Executes the complete analysis lifecycle:
+    1. Triggers authentication (if required).
+    2. Runs all requested scraping/scanning tools.
+    3. Triggers the final analysis/dashboard generation.
+    """
     tools = list(tools or DEFAULT_TOOLS)
 
+    # Automatically expand grouped tools into their specific runner variants
     TOOL_EXPANSIONS = {
         "pa11y": ["pa11y-axe", "pa11y-htmlcs"],
     }
@@ -102,18 +116,13 @@ def run_full_job(
     for tool in tools:
         expanded_tools.extend(TOOL_EXPANSIONS.get(tool, [tool]))
 
+    # Deduplicate while preserving order
     tools = list(dict.fromkeys(expanded_tools))
 
-    if "virtual-screenreader" not in tools:
-        tools.append("virtual-screenreader")
-
-    if "tab-map" not in tools:
-        tools.append("tab-map")
-
-    if "contrast-checker" not in tools:
-        tools.append("contrast-checker")
-
-    print("run_full_job effective tools:", tools, flush=True)
+    # Always ensure core visual/UX diagnostic tools are included
+    if "virtual-screenreader" not in tools: tools.append("virtual-screenreader")
+    if "tab-map" not in tools: tools.append("tab-map")
+    if "contrast-checker" not in tools: tools.append("contrast-checker")
 
     auth_service_dir = auth_service_dir.resolve()
     analysis_repo_dir = analysis_repo_dir.resolve()
@@ -130,7 +139,6 @@ def run_full_job(
     password = str(credentials.get("password") or "").strip()
 
     requires_auth = bool(login_entry_url or username or password)
-
     tool_modules = AUTH_TOOL_MODULES if requires_auth else PUBLIC_TOOL_MODULES
 
     summary = {
@@ -146,6 +154,7 @@ def run_full_job(
 
     status_path = job_dir / "status.json"
 
+    # --- 1. AUTHENTICATION PHASE ---
     if requires_auth:
         prepare_cmd = [
             sys.executable,
@@ -186,9 +195,9 @@ def run_full_job(
             "message": job_status.get("message", "Authentication not required"),
         }
 
+    # --- 2. TOOL EXECUTION PHASE ---
     for tool in tools:
         module = tool_modules.get(tool)
-        print(f"START TOOL: {tool} -> {module}", flush=True)
         tool_reports_dir = reports_dir / tool
         skip_marker = tool_reports_dir / "SKIPPED"
 
@@ -203,7 +212,6 @@ def run_full_job(
             [sys.executable, "-m", module, f"jobs/{job_id}"],
             cwd=auth_service_dir,
         )
-        print(f"END TOOL: {tool} returncode={result.returncode}", flush=True)
 
         if skip_marker.exists():
             summary["tools"][tool] = {
@@ -237,6 +245,7 @@ def run_full_job(
                 "reports_dir": str(tool_reports_dir),
             }
 
+    # --- 3. ANALYSIS PHASE ---
     if not skip_analysis:
         analysis_cmd = [
             sys.executable,

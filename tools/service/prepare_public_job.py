@@ -1,10 +1,22 @@
+"""
+Public Job Preparer
+
+A streamlined variant of `prepare_job.py`. Used when the target URLs 
+are publicly accessible and do not require authentication logic. It safely 
+stubs out the auth manifest so the downstream tools know they can proceed 
+immediately.
+"""
+
 from __future__ import annotations
 
 import json
 from pathlib import Path
 
-
 def prepare_public_job(job_dir: Path, config_path: Path) -> dict:
+    """
+    Initializes the required directory structure and generates a mock 
+    successful authentication status to satisfy the tool runners.
+    """
     job_dir.mkdir(parents=True, exist_ok=True)
 
     input_dir = job_dir / "input"
