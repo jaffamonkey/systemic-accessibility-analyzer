@@ -1,17 +1,18 @@
+"""
+Problem Type Taxonomy (Updated)
+
+Maps specific accessibility rule IDs or components into high-level, 
+human-readable UI categories for macro-level dashboard reporting.
+"""
+
 PROBLEM_TYPE_MAP = {
-
-    # SPECIAL & FALLBACKS
-    "aria": "ARIA",
-    "third_party": "Third-Party Noise",
-    "other": "Other",
-
-    # FORMS
+    # --- FORMS ---
     "form": "Forms",
     "form_field": "Forms",
     "search": "Forms",
     "file_upload": "Forms",
 
-    # INTERACTIVE
+    # --- INTERACTIVE ---
     "button": "Interactive",
     "pseudo_button": "Interactive",
     "theme_toggle": "Interactive",
@@ -21,7 +22,7 @@ PROBLEM_TYPE_MAP = {
     "carousel": "Interactive",
     "tooltip": "Interactive",
 
-    # NAVIGATION
+    # --- NAVIGATION ---
     "link": "Navigation",
     "navigation": "Navigation",
     "navbar": "Navigation",
@@ -29,8 +30,9 @@ PROBLEM_TYPE_MAP = {
     "breadcrumb": "Navigation",
     "tabs": "Navigation",
     "pagination": "Navigation",
+    "skip-link": "bypass-blocks",
 
-    # CONTENT
+    # --- CONTENT ---
     "heading": "Content",
     "text": "Content",
     "list": "Content",
@@ -38,12 +40,14 @@ PROBLEM_TYPE_MAP = {
     "product_card": "Content",
     "alert": "Content",
     "selectable_list": "Content",
+    "region": "landmark",
 
-    # MEDIA
+    # --- MEDIA ---
     "image": "Media",
     "icon": "Media",
+    "image-alt": "missing-alt",
 
-    # STRUCTURE
+    # --- STRUCTURE ---
     "layout": "Structure",
     "grid": "Structure",
     "frame": "Structure",
@@ -51,23 +55,20 @@ PROBLEM_TYPE_MAP = {
     "table": "Structure",
     "data_table": "Structure",
     "document_metadata": "Structure",
-
-    # SPECIAL
-    "aria": "ARIA",
-
-    # FALLBACK
-    "other": "Other",
-
-    "color-contrast-review": "contrast",
-    "use-of-color": "use-of-color",
-    "skip-link": "bypass-blocks",
-    "heading": "heading",
-    "region": "landmark",
-    "image-alt": "missing-alt",
     "frame-title": "frame-title",
+    "reflow": "reflow",
+
+    # --- KEYBOARD & FOCUS ---
     "scrollable-region-focusable": "keyboard",
     "keyboard": "keyboard",
-    "aria-prohibited-attr": "aria-role",
+
+    # --- VISUALS & CONTRAST ---
     "color-contrast-review": "contrast",
-    "reflow": "reflow",
+    "use-of-color": "use-of-color",
+
+    # --- SPECIAL & FALLBACKS ---
+    "aria": "ARIA",
+    "aria-prohibited-attr": "aria-role",
+    "third_party": "Third-Party Noise",
+    "other": "Other",
 }

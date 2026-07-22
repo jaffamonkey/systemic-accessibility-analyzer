@@ -1,7 +1,14 @@
+"""
+Excel & Power BI Exporter
+
+This module generates a rich, multi-sheet Excel workbook. It goes beyond a simple 
+flat CSV dump by constructing a fully relational Star Schema (Fact and Dimension tables) 
+optimized for direct import into Power BI. It also generates native Excel charts 
+and conditional formatting for immediate, out-of-the-box reporting.
+"""
+
 import re
 from collections import defaultdict
-import json
-from datetime import date, datetime
 from openpyxl import Workbook
 from openpyxl.utils import get_column_letter
 from openpyxl.styles import Font, PatternFill, Alignment
@@ -9,52 +16,60 @@ from openpyxl.chart import BarChart, LineChart, Reference
 from openpyxl.chart.label import DataLabelList
 from openpyxl.formatting.rule import ColorScaleRule
 
-from services.bi_fields import clean_page_name, humanize_slug, humanize_page_key, severity_sort_value, issue_scope_sort_value
+from services.bi_fields import (
+    clean_page_name, 
+    humanize_slug, 
+    humanize_page_key, 
+    severity_sort_value, 
+    issue_scope_sort_value
+)
 from services.severity import normalize_severity
 from services.wcag_refs import enrich_wcag_rule, WCAG_SUCCESS_CRITERIA
 
-def _looks_like_wcag_code(value):
-    if not value:
-        return False
+# -------------------------
+# 🧹 DATA SANITIZATION
+# -------------------------
 
-    text = str(value).strip()
-
-    # Plain WCAG code, optionally with technique tag like [G17]
-    if re.fullmatch(r"\d+\.\d+\.\d+(?:\s*\[[A-Z0-9]+\])?", text):
-        return True
-
-    # HTML_CodeSniffer style rule ids
-    if text.startswith("WCAG2"):
-        return True
-
-    return False
-
-
-def _humanize_rule_id(rule_id):
-    if not rule_id:
-        return ""
-    text = str(rule_id).strip().replace("_", " ").replace("-", " ")
-    text = re.sub(r"\s+", " ", text)
-    return text.title()
-
-
+# Regex to strip illegal characters that cause Excel XML corruption
 ILLEGAL_EXCEL_RE = re.compile(r"[\x00-\x08\x0B-\x0C\x0E-\x1F]")
 
 def _excel_safe(value):
+    """
+    Sanitizes values before inserting them into Excel cells.
+    Strips illegal XML characters and enforces Excel's hard 32,767 character limit.
+    """
     if value is None:
         return ""
 
     text = str(value)
     text = ILLEGAL_EXCEL_RE.sub("", text)
 
-    # Excel cell limit
+    # Hard Excel cell limit. Truncate and add ellipsis if exceeded.
     if len(text) > 32767:
         text = text[:32764] + "..."
 
     return text
 
+def _looks_like_wcag_code(value):
+    if not value: return False
+    text = str(value).strip()
+    if re.fullmatch(r"\d+\.\d+\.\d+(?:\s*\[[A-Z0-9]+\])?", text): return True
+    if text.startswith("WCAG2"): return True
+    return False
+
+def _humanize_rule_id(rule_id):
+    if not rule_id: return ""
+    text = str(rule_id).strip().replace("_", " ").replace("-", " ")
+    text = re.sub(r"\s+", " ", text)
+    return text.title()
+
+
+# -------------------------
+# 🎨 EXCEL FORMATTING
+# -------------------------
 
 def auto_width(ws):
+    """Automatically adjusts column widths based on cell content length."""
     for i, col in enumerate(ws.columns, 1):
         max_length = 0
         for cell in col:
@@ -64,6 +79,7 @@ def auto_width(ws):
 
 
 def style_sheet(ws):
+    """Applies standard corporate styling: blue headers, alternating row stripes, and frozen panes."""
     header_fill = PatternFill(start_color="4F81BD", end_color="4F81BD", fill_type="solid")
     header_font = Font(bold=True, color="FFFFFF")
 
@@ -85,11 +101,12 @@ def style_sheet(ws):
 
 
 def apply_severity_colors(ws, col_letter):
+    """Applies traffic-light background colors to cells containing severity ratings."""
     severity_colors = {
-        "critical": "E15759",
-        "serious": "F28E2B",
-        "moderate": "EDC949",
-        "minor": "59A14F",
+        "critical": "E15759", # Red
+        "serious": "F28E2B",  # Orange
+        "moderate": "EDC949", # Yellow
+        "minor": "59A14F",    # Green
         "warning": "E9D66B",
         "unknown": "C9CED6",
     }
@@ -103,6 +120,7 @@ def apply_severity_colors(ws, col_letter):
 
 
 def apply_wcag_colors(ws, col_letter):
+    """Applies progressive shading to cells based on WCAG A/AA/AAA levels."""
     wcag_colors = {"A": "C6E0B4", "AA": "FFD966", "AAA": "F4B183"}
     for row in ws.iter_rows(min_row=2):
         cell = row[ord(col_letter) - 65]
@@ -113,24 +131,26 @@ def apply_wcag_colors(ws, col_letter):
 
 
 def _write_sheet(ws, headers, rows, severity_col=None, wcag_level_col=None):
+    """Master helper to append data, style the sheet, and apply conditional formatting."""
     ws.append([_excel_safe(v) for v in headers])
     for row in rows:
         ws.append([_excel_safe(v) for v in row])
+        
     style_sheet(ws)
     auto_width(ws)
+    
     if severity_col:
         apply_severity_colors(ws, severity_col)
     if wcag_level_col:
         apply_wcag_colors(ws, wcag_level_col)
 
 
-
+# -------------------------
+# 🏗️ DATA RESOLUTION & MODELING
+# -------------------------
 
 def _resolve_rule_display(row):
-    """
-    Prefer descriptive rule labels. Avoid showing a bare WCAG code in the Rule column
-    when WCAG already has its own column.
-    """
+    """Prefers descriptive rule labels over bare technical WCAG codes."""
     for key in ("rule_name", "rule_label", "title"):
         value = row.get(key)
         if value and not _looks_like_wcag_code(value):
@@ -161,31 +181,24 @@ def _resolve_rule_display(row):
 
     return ""
 
+
 def _resolve_wcag_name(row):
     wcag = row.get("wcag")
-    if not wcag:
-        return ""
+    if not wcag: return ""
     meta = WCAG_SUCCESS_CRITERIA.get(str(wcag).strip(), {})
     return meta.get("title", "")
 
 
 def _build_powerbi_rows(rows, clusters):
+    """Flattens the data structure to prepare it for Star Schema modeling."""
     cluster_map = {}
     for c in clusters:
-        key = (
-            c.get("wcag"),
-            c.get("component"),
-            normalize_severity(c.get("severity")),
-        )
+        key = (c.get("wcag"), c.get("component"), normalize_severity(c.get("severity")))
         cluster_map.setdefault(key, c)
 
     dataset = []
     for idx, r in enumerate(rows, start=1):
-        key = (
-            r.get("wcag"),
-            r.get("component"),
-            normalize_severity(r.get("severity")),
-        )
+        key = (r.get("wcag"), r.get("component"), normalize_severity(r.get("severity")))
         cluster = cluster_map.get(key, {})
         dataset.append({
             "finding_key": idx,
@@ -234,6 +247,11 @@ def _build_powerbi_rows(rows, clusters):
 
 
 def _build_star_schema(powerbi_rows):
+    """
+    Transforms the flat dataset into a relational Star Schema.
+    Generates a central Fact table (Fact Findings) linked to Dimension tables 
+    (Page, Rule, Component, Pattern) to vastly improve query performance in Power BI.
+    """
     def ordered_unique(rows, key_field):
         seen = set()
         items = []
@@ -248,8 +266,8 @@ def _build_star_schema(powerbi_rows):
     pattern_stats = {}
     for row in powerbi_rows:
         pattern = row.get("pattern")
-        if not pattern:
-            continue
+        if not pattern: continue
+        
         stats = pattern_stats.setdefault(pattern, {
             "display_pattern": row.get("display_pattern"),
             "design_system": row.get("design_system"),
@@ -269,23 +287,29 @@ def _build_star_schema(powerbi_rows):
             "findings_count": 0,
             "page_keys": set(),
         })
+        
         stats["findings_count"] += 1
         stats["design_system_issue"] = stats["design_system_issue"] or bool(row.get("design_system_issue"))
         stats["is_systemic"] = stats["is_systemic"] or bool(row.get("is_systemic"))
+        
         if (row.get("issue_scope_sort") or 99) < (stats.get("issue_scope_sort") or 99):
             stats["issue_scope"] = row.get("issue_scope") or stats.get("issue_scope")
             stats["issue_scope_sort"] = row.get("issue_scope_sort") or stats.get("issue_scope_sort")
+            
         stats["affected_pages_count"] = max(stats["affected_pages_count"], row.get("affected_pages_count") or 0)
         stats["issue_rank_score"] = max(stats["issue_rank_score"], row.get("issue_rank_score") or 0)
+        
         page = row.get("page")
         if page:
             stats["page_keys"].add(page)
+            
         current_sort = row.get("severity_sort") or severity_sort_value(row.get("severity"))
         if current_sort < stats["severity_sort"]:
             stats["severity_sort"] = current_sort
             stats["severity"] = row.get("severity")
             stats["severity_display"] = row.get("severity_label") or humanize_slug(row.get("severity"))
 
+    # Rank the patterns to generate the "Next Best Fix" priority panel
     ranked_patterns = sorted(
         pattern_stats.items(),
         key=lambda item: (
@@ -302,6 +326,7 @@ def _build_star_schema(powerbi_rows):
         if not stats["affected_pages_count"]:
             stats["affected_pages_count"] = len(stats["page_keys"])
 
+    # Build Dimensions
     page_dim = []
     page_key_map = {}
     for idx, row in enumerate(ordered_unique(powerbi_rows, "page"), start=1):
@@ -367,6 +392,7 @@ def _build_star_schema(powerbi_rows):
             "top_fix_candidate": stats.get("top_fix_candidate"),
         })
 
+    # Build Central Fact Table
     fact_findings = []
     for row in powerbi_rows:
         rule_code = row.get("rule_id") or row.get("wcag") or row.get("rule")
@@ -431,8 +457,9 @@ def _build_star_schema(powerbi_rows):
         "fix_panel": fix_panel,
     }
 
-
-
+# -------------------------
+# 📈 NATIVE EXCEL CHARTS
+# -------------------------
 
 def _add_fix_impact_chart(ws, data_sheet_name):
     chart = BarChart()
@@ -444,6 +471,7 @@ def _add_fix_impact_chart(ws, data_sheet_name):
     chart.height = 8
     chart.width = 18
 
+    # Note: Column references correspond to the output format of the Fix Once panel
     data = Reference(ws.parent[data_sheet_name], min_col=9, min_row=1, max_row=min(11, ws.parent[data_sheet_name].max_row))
     cats = Reference(ws.parent[data_sheet_name], min_col=4, min_row=2, max_row=min(11, ws.parent[data_sheet_name].max_row))
     chart.add_data(data, titles_from_data=True)
@@ -566,7 +594,6 @@ def _add_component_severity_heatmap(wb, powerbi_data):
     return ws
 
 
-
 def _add_component_wcag_matrix(wb, powerbi_data):
     matrix = defaultdict(lambda: defaultdict(int))
 
@@ -604,6 +631,7 @@ def _add_component_wcag_matrix(wb, powerbi_data):
         )
     return ws
 
+
 def _add_workbook_charts_sheet(wb, fix_panel_rows, powerbi_data):
     if "Workbook Charts" in wb.sheetnames:
         del wb["Workbook Charts"]
@@ -619,7 +647,16 @@ def _add_workbook_charts_sheet(wb, fix_panel_rows, powerbi_data):
     return ws
 
 
+# -------------------------
+# 🚀 MAIN EXPORTER ENTRYPOINT
+# -------------------------
+
 def export_xlsx(rows, clusters, metrics, output_path):
+    """
+    Orchestrates the generation of the entire Excel Workbook.
+    Creates Summary tabs, flattens clusters, builds the Star Schema, 
+    and saves the file to disk.
+    """
     wb = Workbook()
     ws_summary = wb.active
     ws_summary.title = "Summary"
@@ -628,12 +665,13 @@ def export_xlsx(rows, clusters, metrics, output_path):
         ["Metric", "Value"],
         ["Violations", metrics.get("violations", 0)],
         ["Pages Affected", metrics.get("pages", 0)],
-        # ... your other metrics ...
+        ["Distinct WCAG Criteria", metrics.get("distinct_wcag_criteria", 0)],
+        ["Shared Source Impact (%)", metrics.get("shared_pattern_impact", 0)],
+        ["Accessibility Debt Index", metrics.get("accessibility_debt_index", 0)],
     ]
 
-    # Move the loop HERE so 'row' is defined
     for row in summary_rows:
-        # Sanitize 'row' right here, inside the loop
+        # Sanitize data to prevent list/dict objects from crashing OpenPyXL
         sanitized_row = []
         for item in row:
             if item is None:
@@ -643,12 +681,12 @@ def export_xlsx(rows, clusters, metrics, output_path):
             else:
                 sanitized_row.append(item)
         
-        # Append the now-sanitized row
         ws_summary.append(sanitized_row)
 
     style_sheet(ws_summary)
     auto_width(ws_summary)
 
+    # --- Systemic Clusters Sheet ---
     cluster_headers = [
         "Rule", "WCAG", "Level", "Level Sort", "Severity", "Severity Sort",
         "Component", "Component Group", "Display Pattern", "Systemic",
@@ -658,7 +696,7 @@ def export_xlsx(rows, clusters, metrics, output_path):
     
     cluster_rows = []
     for c in clusters:
-        # 🔥 THE EXPORT BOUNCER: Drop third-party noise before it becomes a row
+        # THE EXPORT BOUNCER: Drop third-party tracking noise before it enters the report
         if c.get("component") == "third_party":
             continue
 
@@ -667,7 +705,7 @@ def export_xlsx(rows, clusters, metrics, output_path):
             c.get("wcag"),
             c.get("wcag_level"),
             c.get("wcag_level_sort"),
-            normalize_severity(c.get("severity")), # (Assuming this is what your truncated code said!)
+            normalize_severity(c.get("severity")),
             c.get("severity_sort"),
             c.get("component_display") or humanize_slug(c.get("component")),
             c.get("component_group_display") or humanize_slug(c.get("component_group")),
@@ -689,6 +727,7 @@ def export_xlsx(rows, clusters, metrics, output_path):
     ws_clusters = wb.create_sheet("Systemic Clusters")
     _write_sheet(ws_clusters, cluster_headers, cluster_rows, severity_col="E", wcag_level_col="C")
 
+    # --- Issue Details Sheet ---
     powerbi_data = _build_powerbi_rows(rows, clusters)
 
     details_headers = [
@@ -734,6 +773,7 @@ def export_xlsx(rows, clusters, metrics, output_path):
     ws_details = wb.create_sheet("Issue Details")
     _write_sheet(ws_details, details_headers, detail_rows, severity_col="J", wcag_level_col="H")
 
+    # --- PowerBI Flattened Sheet ---
     powerbi_headers = [
         "finding_key", "page", "page_display", "page_group", "rule", "rule_id", "wcag", "wcag_name", "wcag_level",
         "wcag_level_sort", "severity", "severity_sort", "severity_label", "component",
@@ -749,6 +789,7 @@ def export_xlsx(rows, clusters, metrics, output_path):
     ws_powerbi = wb.create_sheet("Power BI Findings")
     _write_sheet(ws_powerbi, powerbi_headers, powerbi_rows, severity_col="J", wcag_level_col="H")
 
+    # --- PowerBI Pattern Rollup ---
     pattern_rollup = defaultdict(lambda: {
         "findings": 0,
         "affected_pages_count": 0,
@@ -790,7 +831,7 @@ def export_xlsx(rows, clusters, metrics, output_path):
             component_display,
             wcag,
             severity,
-            {"critical": 1, "serious": 2, "moderate": 3, "minor": 4, "warning": 5}.get(str(severity).lower(), 6),
+            severity_sort_value(severity),
             data["findings"],
             data["affected_pages_count"],
             data["systemic"],
@@ -803,6 +844,7 @@ def export_xlsx(rows, clusters, metrics, output_path):
     ws_patterns = wb.create_sheet("Power BI Patterns")
     _write_sheet(ws_patterns, pattern_headers, pattern_rows, severity_col="D")
 
+    # --- Star Schema Generation ---
     schema = _build_star_schema(powerbi_data)
 
     fact_headers = [
@@ -841,7 +883,7 @@ def export_xlsx(rows, clusters, metrics, output_path):
     ws_dim_pattern = wb.create_sheet("Dim Pattern")
     _write_sheet(ws_dim_pattern, dim_pattern_headers, dim_pattern_rows)
 
-
+    # --- Dashboard Supporting Sheets ---
     fix_panel_headers = [
         "top_fix_rank", "pattern_key", "component_key", "display_pattern", "component_display",
         "severity_display", "severity_sort", "findings_count", "affected_pages_count",
@@ -856,6 +898,7 @@ def export_xlsx(rows, clusters, metrics, output_path):
     fix_rows = [[fix, data["violations"], data["pages"]] for fix, data in metrics.get("top_fixes", {}).items()]
     _write_sheet(ws_fixes, fix_headers, fix_rows)
 
+    # --- Documentation & Metadata ---
     glossary_headers = ["Column", "Description"]
     glossary_rows = [
         ["severity_sort", "Numeric sort key for Power BI severity visuals"],
@@ -903,5 +946,6 @@ def export_xlsx(rows, clusters, metrics, output_path):
 
     _add_component_severity_heatmap(wb, powerbi_data)
     _add_component_wcag_matrix(wb, powerbi_data)
+    _add_workbook_charts_sheet(wb, fix_panel_rows, powerbi_data)
 
     wb.save(output_path)
