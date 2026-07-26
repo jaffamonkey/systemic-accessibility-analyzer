@@ -15,7 +15,7 @@ reports `.menu-item`), this engine uses a two-tier approach:
 import re
 from analyzer.fingerprint import build_fingerprint
 from analyzer.component_detector import detect_component
-from analyzer.services.wcag_refs import WCAG_SUCCESS_CRITERIA
+from services.wcag_refs import WCAG_SUCCESS_CRITERIA
 from services.design_system import detect_design_system_issue
 from services.rule_formatter import format_rule_label
 from services.component_mapper import normalize_component

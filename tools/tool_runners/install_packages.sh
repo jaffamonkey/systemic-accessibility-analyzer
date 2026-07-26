@@ -35,7 +35,7 @@ for dir in */; do
             ;;
             
         *)
-            echo "⚙️  Action: npm install && playwright install chromium"
+            echo "⚙️  Action: npm install && npx playwright install chromium"
             npm install
             # Using npx ensures it uses the locally installed playwright package
             npx playwright install chromium

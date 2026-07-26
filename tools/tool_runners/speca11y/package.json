@@ -7,7 +7,7 @@
   "scripts": {
     "audit": "node run-speca11y.mjs urls.txt reports",
     "audit:custom": "node run-speca11y.mjs",
-    "install:browsers": "playwright install chromium"
+    "install:browsers": "npx playwright install chromium"
   },
   "dependencies": {
     "@speca11y/core": "latest",

@@ -840,7 +840,13 @@ def run_shared_login(config: JobConfig, job_dir: Path) -> AuthResult:
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=config.headless)
-        context = browser.new_context()
+        # context = browser.new_context()
+        context = browser.new_context(
+            timezone_id="Europe/London",
+            locale="en-GB",
+            # Emulating a standard viewport also helps reduce bot scoring
+            viewport={"width": 1280, "height": 720} 
+        )
         page = context.new_page()
         page.set_default_timeout(config.timeout_ms)
 

@@ -1,3 +1,11 @@
+"""
+Axe-Scan Runner
+
+Executes the Axe-Scan CLI tool. Evaluates target URLs, executes the scan 
+using the local node_modules installation, and converts the resulting 
+CSV output into standard JSON reports for the analysis engine.
+"""
+
 from __future__ import annotations
 
 import json
@@ -45,6 +53,7 @@ def _check_slug_collisions(urls: list[str]) -> dict[str, list[str]]:
 
     return collisions
 
+
 def _load_job_config(job_dir: Path) -> dict:
     candidates = [
         job_dir / "incoming_job_config.json",
@@ -83,7 +92,17 @@ def _resolve_runner_dir() -> Path:
     return default.resolve()
 
 
-def _find_axe_scan_command() -> list[str]:
+def _find_axe_scan_command(runner_dir: Path) -> list[str]:
+    """
+    Locates the axe-scan executable. 
+    Prefers the local node_modules installation in the runner directory 
+    to ensure version stability, falling back to a global install if necessary.
+    """
+    local_bin = runner_dir / "node_modules" / ".bin" / "axe-scan"
+    if local_bin.exists():
+        return [str(local_bin), "run"]
+
+    # Fallback to global installations
     exe = shutil.which("axe-scan")
     if exe:
         return [exe, "run"]
@@ -93,7 +112,8 @@ def _find_axe_scan_command() -> list[str]:
         return [npx, "axe-scan", "run"]
 
     raise FileNotFoundError(
-        "Could not find 'axe-scan' or 'npx'. Install axe-scan or make it available on PATH."
+        "Could not find local 'axe-scan' in node_modules, nor globally via 'npx'. "
+        "Ensure you have run 'npm install' inside the tool_runners/axe-scan directory."
     )
 
 
@@ -118,6 +138,8 @@ def run_axe_scan(job_dir: Path) -> None:
     skipped_marker = reports_dir / "SKIPPED"
 
     job_cfg = _load_job_config(job_dir)
+    
+    # Axe-scan does not support complex playwright authentication
     if _job_requires_auth(job_cfg):
         skipped_marker.write_text(
             "axe-scan skipped because this job requires authentication.\n",
@@ -165,10 +187,11 @@ def run_axe_scan(job_dir: Path) -> None:
     for old_json in work_dir.rglob("*.json"):
         if old_json.name != "axe-scan.config.json":
             old_json.unlink(missing_ok=True)
+            
     csv_path = work_dir / "axe-results.csv"
     csv_path.unlink(missing_ok=True)
 
-    axe_scan_cmd = _find_axe_scan_command()
+    axe_scan_cmd = _find_axe_scan_command(runner_dir)
 
     with log_path.open("a", encoding="utf-8") as fh:
         fh.write(f"Running axe-scan in {work_dir}\n")
