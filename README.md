@@ -28,6 +28,10 @@ pip install -r requirements.txt
 python3 -m playwright install chromium
 ```
 
+**4. Install SQLite3 database (default `jobs`):**
+```bash
+sqlite3 tools/data/jobs.db
+```
 ---
 
 ## ⚙️ Configuration Setup
