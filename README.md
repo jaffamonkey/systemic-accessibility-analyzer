@@ -41,7 +41,7 @@ import os
 from pathlib import Path
 
 # Get the absolute path to the tools/auth_service/jobs directory relative to the analyzer
-BASE_DIR = Path(os.path.abspath(__file__)).parent.parent.parent
+BASE_DIR = Path(__file__).resolve().parents[2]
 DEFAULT_LOCAL_JOBS_DIR = BASE_DIR / "tools" / "auth_service" / "jobs"
 ```
 
