@@ -1,7 +1,6 @@
 import pytest
 from unittest.mock import patch
 
-# IMPORTANT: Change "metrics_engine" to the actual module name where your code lives.
 from analyzer.services.metrics_engine import (
     is_dynamic_id,
     _is_strict_agreement_candidate,

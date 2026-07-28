@@ -5,7 +5,6 @@ from unittest.mock import patch, MagicMock
 import pytest
 from fastapi.testclient import TestClient
 
-# IMPORTANT: Change "main" to the actual name of your Python file if it isn't main.py
 from analyzer.app.main import app
 
 client = TestClient(app)
