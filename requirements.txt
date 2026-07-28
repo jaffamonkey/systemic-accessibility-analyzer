@@ -10,3 +10,4 @@ openpyxl
 pydantic
 pytest>=8.0.0
 jinja2
+psycopg2-binary

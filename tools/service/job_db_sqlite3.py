@@ -1,7 +1,7 @@
 """
 Job Database Manager
 
-Provides a lightweight PostgreSQL wrapper to persist job configurations, 
+Provides a lightweight SQLite wrapper to persist job configurations, 
 track execution statuses, and store links to the generated artifacts 
 (dashboards and workbooks).
 """
@@ -9,52 +9,37 @@ track execution statuses, and store links to the generated artifacts
 from __future__ import annotations
 
 import json
-import os
-from contextlib import contextmanager
+import sqlite3
+from pathlib import Path
 from typing import Any
 
-import psycopg2
-from psycopg2.extras import RealDictCursor
-
-# Pull the connection string from your environment, or default to local dev
-DATABASE_URL = os.environ.get(
-    "DATABASE_URL", 
-    "postgresql://localhost/jobs_db"
-)
+BASE_DIR = Path(__file__).resolve().parent.parent
+DB_PATH = BASE_DIR / "data" / "jobs.db"
 
 
-@contextmanager
-def get_cursor():
-    """
-    Establishes a PostgreSQL connection, yields a dictionary-like cursor, 
-    and safely manages commits, rollbacks, and connection closures.
-    """
-    conn = psycopg2.connect(DATABASE_URL, cursor_factory=RealDictCursor)
-    try:
-        yield conn.cursor()
-        conn.commit()
-    except Exception:
-        conn.rollback()
-        raise
-    finally:
-        conn.close()
+def get_conn() -> sqlite3.Connection:
+    """Establishes a connection to the local SQLite jobs database."""
+    DB_PATH.parent.mkdir(parents=True, exist_ok=True)
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    return conn
 
 
 def init_db() -> None:
     """Initializes the schema if it does not already exist."""
-    with get_cursor() as cur:
-        cur.execute(
+    with get_conn() as conn:
+        conn.execute(
             """
             CREATE TABLE IF NOT EXISTS jobs (
                 id TEXT PRIMARY KEY,
                 public_slug TEXT NOT NULL UNIQUE,
-                created_at TIMESTAMPTZ NOT NULL,
-                updated_at TIMESTAMPTZ NOT NULL,
+                created_at TEXT NOT NULL,
+                updated_at TEXT NOT NULL,
                 status TEXT NOT NULL,
                 job_config_path TEXT,
                 login_url TEXT,
-                urls_json JSONB NOT NULL,
-                tools_json JSONB NOT NULL,
+                urls_json TEXT NOT NULL,
+                tools_json TEXT NOT NULL,
                 dashboard_url TEXT,
                 workbook_url TEXT,
                 summary_path TEXT,
@@ -62,19 +47,20 @@ def init_db() -> None:
             )
             """
         )
+        conn.commit()
 
 
 def create_job(record: dict[str, Any]) -> None:
     """Inserts a new job record into the database."""
-    with get_cursor() as cur:
-        cur.execute(
+    with get_conn() as conn:
+        conn.execute(
             """
             INSERT INTO jobs (
                 id, public_slug, created_at, updated_at, status,
                 job_config_path, login_url, urls_json, tools_json,
                 dashboard_url, workbook_url, summary_path, error_message
             )
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
             """,
             (
                 record["id"],
@@ -92,47 +78,44 @@ def create_job(record: dict[str, Any]) -> None:
                 record.get("error_message"),
             ),
         )
+        conn.commit()
 
 
 def update_job(job_id: str, **fields: Any) -> None:
     """Dynamically updates specific fields for an existing job."""
     if not fields:
         return
-    
-    # In psycopg2, placeholders use %s instead of ?
-    columns = ", ".join(f"{k} = %s" for k in fields.keys())
+    columns = ", ".join(f"{k} = ?" for k in fields.keys())
     values = list(fields.values()) + [job_id]
-    
-    with get_cursor() as cur:
-        cur.execute(f"UPDATE jobs SET {columns} WHERE id = %s", values)
+    with get_conn() as conn:
+        conn.execute(f"UPDATE jobs SET {columns} WHERE id = ?", values)
+        conn.commit()
 
 
 def list_jobs(limit: int = 100) -> list[dict]:
     """Retrieves the most recent jobs, ordered by creation date."""
-    with get_cursor() as cur:
-        cur.execute(
+    with get_conn() as conn:
+        rows = conn.execute(
             """
             SELECT *
             FROM jobs
             ORDER BY created_at DESC
-            LIMIT %s
+            LIMIT ?
             """,
             (limit,),
-        )
-        return [dict(r) for r in cur.fetchall()]
+        ).fetchall()
+        return [dict(r) for r in rows]
 
 
 def get_job(job_id: str) -> dict[str, Any] | None:
     """Retrieves a specific job by its internal ID."""
-    with get_cursor() as cur:
-        cur.execute("SELECT * FROM jobs WHERE id = %s", (job_id,))
-        row = cur.fetchone()
+    with get_conn() as conn:
+        row = conn.execute("SELECT * FROM jobs WHERE id = ?", (job_id,)).fetchone()
         return dict(row) if row else None
 
 
 def get_job_by_slug(slug: str) -> dict[str, Any] | None:
     """Retrieves a specific job by its public-facing slug."""
-    with get_cursor() as cur:
-        cur.execute("SELECT * FROM jobs WHERE public_slug = %s", (slug,))
-        row = cur.fetchone()
+    with get_conn() as conn:
+        row = conn.execute("SELECT * FROM jobs WHERE public_slug = ?", (slug,)).fetchone()
         return dict(row) if row else None
