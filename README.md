@@ -28,14 +28,7 @@ pip install -r requirements.txt
 python3 -m playwright install chromium
 ```
 
-**4a. Install SQLite3 database (default `jobs.db`):**
-```bash
-sqlite3 tools/data/jobs.db
-```
-
-OR 
-
-**4b. Install Postgres database (default `jobs_db`):**
+**4. Install Postgres database (default `jobs_db`):**
 ```bash
 brew install postgresql
 brew services start postgresql
