@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Systemic Accessibility Analyzer</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="static/styles.css" type="text/css">
+    <script type="text/javascript" src="static/script.js"></script>
+    <style>
+        .panel-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 6px;
+            flex-wrap: wrap;
+        }
+
+        .panel-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .panel-badge {
+            display: inline-block;
+            border-radius: 999px;
+            padding: 4px 10px;
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        .panel-badge-interactive {
+            background: #eaf2ff;
+            color: #355c9a;
+            border: 1px solid #cfe0ff;
+        }
+
+        .panel-badge-summary {
+            background: #f1f3f5;
+            color: #5c6773;
+            border: 1px solid #dde3ea;
+        }
+
+        .panel-hint {
+            font-size: 12px;
+            color: #6b7280;
+        }
+
+        .panel.is-interactive canvas,
+        .panel.is-interactive .fix-table tbody tr,
+        .panel.is-interactive #pageInventoryCheck table tbody tr {
+            cursor: pointer;
+        }
+
+        .panel.is-interactive:hover {
+            outline: 2px solid rgba(78, 121, 167, 0.12);
+            outline-offset: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page-topbar">
+        <h1>Systemic Accessibility Analyzer</h1>
+        <div class="top-links">
+            <a class="doc-link-button" href="https://a11yanalyzer.sbs">Projects Dashboard</a>
+            <a class="doc-link-button" id="virtualScreenreaderLink" href="#">Virtual Screenreader</a>
+            <a class="doc-link-button" id="tabbingOrderLink" href="#">Tab Map</a>
+            <a class="doc-link-button" id="contrastReportLink" href="#">Contrast Report</a>
+            <a class="doc-link-button" id="exportButton" onclick="exportXlsx()">Export XLSX</a>
+        </div>
+    </div>
+
+    <div class="controls">
+        <input id="folder" placeholder="Reports folder">
+        <button id="analyzeButton" onclick="runAnalysis()">Run Analysis</button>
+        <!-- <button id="exportButton" onclick="exportXlsx()">Export XLSX</button> -->
+    </div>
+    <div class="controls-hint" id="modeHint">Enter a reports folder and run a live analysis.</div>
+
+    <div class="cards">
+
+        <div class="metric-card">
+            <div class="metric-title">Violations</div>
+            <div class="metric-value" id="violations">0</div>
+            <div class="card-desc">Total accessibility issues detected across all pages.</div>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-title">Pages Affected</div>
+            <div class="metric-value" id="pages">0</div>
+            <div class="card-desc">Number of unique pages containing accessibility issues.</div>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-title">WCAG Criteria Affected</div>
+            <div class="metric-value" id="wcag_criteria_affected">0</div>
+            <div class="card-desc">Distinct WCAG success criteria represented in the current findings.</div>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-title">Shared Pattern Impact</div>
+            <div class="metric-value" id="impact">0%</div>
+            <div class="card-desc">Percentage of issues likely tied to shared components or templates.</div>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-title">Opportunity Score</div>
+            <div class="metric-value" id="opportunity">0%</div>
+            <div class="card-desc">Potential reduction in issues from fixing systemic patterns.</div>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-title">Accessibility Debt Index</div>
+            <div class="metric-value" id="adi">0</div>
+            <div class="card-desc">Estimated effort required to fix issues based on severity and spread.</div>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-title">Cross-Tool Overlap</div>
+            <div>
+                Strong: <b id="cons_verified">0</b><br>
+                Some: <b id="cons_likely">0</b><br>
+                Single-tool: <b id="cons_single">0</b>
+            </div>
+            <div class="card-desc">How often different tools reported the same issue pattern. Single-tool findings can
+                still be valid.</div>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-title">Evidence Confidence</div>
+            <div>
+                High: <b id="conf_high">0</b><br>
+                Established: <b id="conf_medium">0</b><br>
+                Emerging: <b id="conf_low">0</b>
+            </div>
+            <div class="card-desc">Evidence strength based on overlap, repeated instances, and rule/WCAG clarity.</div>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-title">WCAG Levels</div>
+            <div>
+                A: <b id="wcag_a">0</b><br>
+                AA: <b id="wcag_aa">0</b><br>
+                AAA: <b id="wcag_aaa">0</b>
+            </div>
+            <div class="card-desc">Distribution of issues by WCAG conformance level.</div>
+        </div>
+
+
+        <div class="metric-card legacy-frames-card">
+            <div class="metric-title">Legacy Frames</div>
+            <div class="metric-value metric-value-compact" id="frame_issues">0</div>
+            <div class="metric-value metric-value-compact" id="frame_pages">0</div>
+            <div class="legacy-frame-pages-list" id="frame_pages_list">0</div>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-title">Shared Source Rate</div>
+            <div class="metric-value" id="shared_source_rate">0%</div>
+            <div class="card-desc">Percentage of findings likely tied to reusable components, templates, or shared
+                patterns.</div>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-title">Top 5 Page Concentration</div>
+            <div class="metric-value" id="top5_page_concentration">0%</div>
+            <div class="card-desc">Percentage of all findings concentrated in the five most affected pages.</div>
+            <div class="card-desc" id="top5_pages_list">-</div>
+        </div>
+
+    </div>
+
+    <div class="grid">
+
+        <div class="panel">
+            <div class="panel-head">
+                <h3>Tool Family Agreement Profile</h3>
+                <div class="panel-meta">
+                    <span class="panel-badge panel-badge-summary">Summary only</span>
+                </div>
+            </div>
+            <div class="chart-legend-note">
+                Tool Family Agreement Profile shows how often a finding was reported by one tool alone, by multiple
+                tools using
+                the same underlying engine, or by tools using different too families. This helps distinguish single-tool
+                findings
+                from findings supported by related or genuinely different tool families.
+            </div>
+            <div class="chart-wrap-tall"><canvas id="toolAgreementChart"></canvas></div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-head">
+                <h3>Accessibility Standards Coverage</h3>
+                <div class="panel-meta">
+                    <span class="panel-badge panel-badge-summary">Summary only</span>
+                </div>
+            </div>
+            <div id="wcagSupportPanel"></div>
+            <div class="card-desc">Section 508: Some automated support through WCAG 2.0-based checks, particularly A/AA.
+
+                EAA: Substantial automated support through WCAG 2.1-based checks aligned with EN 301 549.
+
+                🧪 WCAG 3 Draft: Experimental support for selected draft outcomes via SpecA11y. These checks reflect the evolving WCAG 3 (Silver) draft and are provided for exploratory analysis rather than conformance
+                testing.
+            </div>
+        </div>
+
+        <div class="panel is-interactive">
+            <div class="panel-head">
+                <h3>Top Problem Types</h3>
+                <div class="panel-meta">
+                    <span class="panel-badge panel-badge-interactive">Interactive</span>
+                    <span class="panel-hint">Click a bar to inspect findings</span>
+                </div>
+            </div>
+            <div class="card-desc">High-level grouping of recurring accessibility issue areas.</div>
+            <div class="chart-wrap-tall"><canvas id="problemTypeChart"></canvas></div>
+        </div>
+
+        <div class="panel is-interactive">
+            <div class="panel-head">
+                <h3>Component Heatmap</h3>
+                <div class="panel-meta">
+                    <span class="panel-badge panel-badge-interactive">Interactive</span>
+                    <span class="panel-hint">Click a bar to inspect findings</span>
+                </div>
+            </div>
+            <div class="card-desc">Which UI components generate the most accessibility issues.</div>
+            <div class="chart-wrap-tall"><canvas id="componentChart"></canvas></div>
+        </div>
+
+        <!-- <div class="panel">
+            <div class="panel-head">
+                <h3>Shared Source Issues</h3>
+                <div class="panel-meta">
+                    <span class="panel-badge panel-badge-summary">Summary only</span>
+                </div>
+            </div>
+            <div class="card-desc">Breakdown of issues that look shared across components or templates.</div>
+            <canvas id="designChart"></canvas>
+        </div> -->
+
+        <div class="panel is-interactive">
+            <div class="panel-head">
+                <h3>WCAG Rule Breakdown</h3>
+                <div class="panel-meta">
+                    <span class="panel-badge panel-badge-interactive">Interactive</span>
+                    <span class="panel-hint">Click a bar to inspect findings</span>
+                </div>
+            </div>
+            <div class="card-desc">Most common WCAG rules violated across the site.</div>
+            <div class="chart-wrap-tall"><canvas id="wcagRuleChart"></canvas></div>
+        </div>
+
+        <div class="panel is-interactive">
+            <div class="panel-head">
+                <h3>Issues per Page</h3>
+                <div class="panel-meta">
+                    <span class="panel-badge panel-badge-interactive">Interactive</span>
+                    <span class="panel-hint">Click a bar to inspect findings</span>
+                </div>
+            </div>
+            <div class="card-desc">Pages with the highest number of accessibility issues.</div>
+            <div class="chart-wrap-tall"><canvas id="pageChart"></canvas></div>
+        </div>
+
+        <div class="panel panel-wide">
+            <div class="panel-head">
+                <h3>Page Inventory Check</h3>
+                <div class="panel-meta">
+                    <span class="panel-badge panel-badge-summary">Summary table</span>
+                </div>
+            </div>
+            <div class="card-desc">Cross-tool coverage check to spot stale, missing, or extra page reports before
+                trusting the summary metrics. A dash means the inventory data did not load.</div>
+            <div class="inventory-metrics" id="inventorySummary">
+                <div class="summary-mini-card inventory-metric-card">
+                    <div class="metric-title">Status</div>
+                    <div class="mini-value mini-label" id="inventoryStatus">—</div>
+                </div>
+                <div class="summary-mini-card inventory-metric-card">
+                    <div class="metric-title">Tool folders</div>
+                    <div class="mini-value" id="inventoryTools">—</div>
+                </div>
+                <div class="summary-mini-card inventory-metric-card">
+                    <div class="metric-title">Pages complete</div>
+                    <div class="mini-value" id="inventoryCompletePages">—</div>
+                </div>
+                <div class="summary-mini-card inventory-metric-card">
+                    <div class="metric-title">Pages with mismatch</div>
+                    <div class="mini-value" id="inventoryMismatchPages">—</div>
+                </div>
+                <div class="summary-mini-card inventory-metric-card">
+                    <div class="metric-title">Missing reports</div>
+                    <div class="mini-value" id="inventoryMissingReports">—</div>
+                </div>
+            </div>
+            <div id="pageInventoryCheck"></div>
+        </div>
+
+        <div class="panel panel-wide is-interactive">
+            <div class="panel-header-row">
+                <div>
+                    <div class="panel-head" style="margin-bottom:0;">
+                        <h3>Fix Once, Benefit Many</h3>
+                        <div class="panel-meta">
+                            <span class="panel-badge panel-badge-interactive">Interactive</span>
+                            <span class="panel-hint">Click a row to inspect findings</span>
+                        </div>
+                    </div>
+                    <div class="card-desc">Prioritized fixes with the widest impact across pages and components.</div>
+                </div>
+                <div class="summary-mini-cards" id="nextBestSummary">
+                    <div class="summary-mini-card">
+                        <div class="metric-title">Systemic fixes</div>
+                        <div class="mini-value" id="systemicFixes">0</div>
+                    </div>
+                    <div class="summary-mini-card">
+                        <div class="metric-title">Pages hit by top 5</div>
+                        <div class="mini-value" id="top5Pages">0</div>
+                    </div>
+                    <div class="summary-mini-card">
+                        <div class="metric-title">Top owner team</div>
+                        <div class="mini-value mini-label" id="topOwnerTeam">-</div>
+                    </div>
+                </div>
+            </div>
+            <div id="nextBestFixes"></div>
+        </div>
+
+    </div>
+
+    <div id="drilldown" class="panel" style="margin-top:30px; display:none;">
+        <div class="panel-head">
+            <h3 id="drilldown-title">Details</h3>
+            <div class="panel-meta">
+                <span class="panel-badge panel-badge-interactive">Drilldown</span>
+            </div>
+        </div>
+        <div id="drilldown-content"></div>
+    </div>
+
+</body>
+
+</html>

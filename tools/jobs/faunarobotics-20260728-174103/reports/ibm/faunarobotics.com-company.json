@@ -1,0 +1,891 @@
+{
+  "report": {
+    "results": [
+      {
+        "ruleId": "input_label_exists",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]",
+          "aria": "/document[1]/banner[1]/list[1]/listitem[1]/button[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Fail_1",
+        "message": "Form control element <button> has no associated label",
+        "messageArgs": [
+          "button"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 102,
+          "height": 6,
+          "width": 16
+        },
+        "snippet": "<button class=\"popup-trigger\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_label_exists.html#%7B%22message%22%3A%22Form%20control%20element%20%3Cbutton%3E%20has%20no%20associated%20label%22%2C%22snippet%22%3A%22%3Cbutton%20class%3D%5C%22popup-trigger%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22input_label_exists%22%2C%22msgArgs%22%3A%5B%22button%22%5D%7D"
+      },
+      {
+        "ruleId": "svg_graphics_labelled",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/svg[1]",
+          "aria": "/document[1]/banner[1]/list[1]/listitem[1]/graphics-document[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_acc_name",
+        "message": "The SVG element has no accessible name",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 109,
+          "height": 20,
+          "width": 20
+        },
+        "snippet": "<svg fill=\"none\" viewBox=\"0 0 20 20\" height=\"20\" width=\"20\" xmlns=\"http://www.w3.org/2000/svg\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/svg_graphics_labelled.html#%7B%22message%22%3A%22The%20SVG%20element%20has%20no%20accessible%20name%22%2C%22snippet%22%3A%22%3Csvg%20fill%3D%5C%22none%5C%22%20viewBox%3D%5C%220%200%2020%2020%5C%22%20height%3D%5C%2220%5C%22%20width%3D%5C%2220%5C%22%20xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_acc_name%22%2C%22ruleId%22%3A%22svg_graphics_labelled%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "label_name_visible",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]",
+          "aria": "/document[1]/banner[1]/button[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Fail_1",
+        "message": "Accessible name does not match or contain the visible label text",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 170,
+          "height": 43,
+          "width": 784
+        },
+        "snippet": "<div aria-expanded=\"false\" aria-haspopup=\"menu\" aria-controls=\"w-nav-overlay-0\" tabindex=\"0\" role=\"button\" aria-label=\"menu\" style=\"-webkit-user-select: text;\" class=\"navbar-menu__button morph-btn w-nav-button\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/label_name_visible.html#%7B%22message%22%3A%22Accessible%20name%20does%20not%20match%20or%20contain%20the%20visible%20label%20text%22%2C%22snippet%22%3A%22%3Cdiv%20aria-expanded%3D%5C%22false%5C%22%20aria-haspopup%3D%5C%22menu%5C%22%20aria-controls%3D%5C%22w-nav-overlay-0%5C%22%20tabindex%3D%5C%220%5C%22%20role%3D%5C%22button%5C%22%20aria-label%3D%5C%22menu%5C%22%20style%3D%5C%22-webkit-user-select%3A%20text%3B%5C%22%20class%3D%5C%22navbar-menu__button%20morph-btn%20w-nav-button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22label_name_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "svg_graphics_labelled",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/svg[1]",
+          "aria": "/document[1]/banner[1]/button[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_acc_name",
+        "message": "The SVG element has no accessible name",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 189,
+          "height": 20,
+          "width": 20
+        },
+        "snippet": "<svg fill=\"none\" viewBox=\"0 0 20 20\" height=\"20\" width=\"20\" xmlns=\"http://www.w3.org/2000/svg\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/svg_graphics_labelled.html#%7B%22message%22%3A%22The%20SVG%20element%20has%20no%20accessible%20name%22%2C%22snippet%22%3A%22%3Csvg%20fill%3D%5C%22none%5C%22%20viewBox%3D%5C%220%200%2020%2020%5C%22%20height%3D%5C%2220%5C%22%20width%3D%5C%2220%5C%22%20xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_acc_name%22%2C%22ruleId%22%3A%22svg_graphics_labelled%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "svg_graphics_labelled",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]/svg[1]",
+          "aria": "/document[1]/main[1]/list[1]/listitem[1]/button[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_acc_name",
+        "message": "The SVG element has no accessible name",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 390,
+          "top": 281,
+          "height": 20,
+          "width": 20
+        },
+        "snippet": "<svg fill=\"none\" viewBox=\"0 0 20 20\" height=\"20\" width=\"20\" xmlns=\"http://www.w3.org/2000/svg\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/svg_graphics_labelled.html#%7B%22message%22%3A%22The%20SVG%20element%20has%20no%20accessible%20name%22%2C%22snippet%22%3A%22%3Csvg%20fill%3D%5C%22none%5C%22%20viewBox%3D%5C%220%200%2020%2020%5C%22%20height%3D%5C%2220%5C%22%20width%3D%5C%2220%5C%22%20xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_acc_name%22%2C%22ruleId%22%3A%22svg_graphics_labelled%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "svg_graphics_labelled",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[1]/div[1]/div[1]/div[3]/div[1]/svg[1]",
+          "aria": "/document[1]/main[1]/graphics-document[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_acc_name",
+        "message": "The SVG element has no accessible name",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 878,
+          "height": 790,
+          "width": 784
+        },
+        "snippet": "<svg fill=\"none\" viewBox=\"0 0 142 143\" height=\"100%\" width=\"100%\" xmlns=\"http://www.w3.org/2000/svg\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/svg_graphics_labelled.html#%7B%22message%22%3A%22The%20SVG%20element%20has%20no%20accessible%20name%22%2C%22snippet%22%3A%22%3Csvg%20fill%3D%5C%22none%5C%22%20viewBox%3D%5C%220%200%20142%20143%5C%22%20height%3D%5C%22100%25%5C%22%20width%3D%5C%22100%25%5C%22%20xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_acc_name%22%2C%22ruleId%22%3A%22svg_graphics_labelled%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "svg_graphics_labelled",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[1]/div[1]/div[1]/div[3]/div[2]/svg[1]",
+          "aria": "/document[1]/main[1]/graphics-document[2]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_acc_name",
+        "message": "The SVG element has no accessible name",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 1671,
+          "height": 784,
+          "width": 784
+        },
+        "snippet": "<svg fill=\"none\" viewBox=\"0 0 143 143\" height=\"100%\" width=\"100%\" xmlns=\"http://www.w3.org/2000/svg\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/svg_graphics_labelled.html#%7B%22message%22%3A%22The%20SVG%20element%20has%20no%20accessible%20name%22%2C%22snippet%22%3A%22%3Csvg%20fill%3D%5C%22none%5C%22%20viewBox%3D%5C%220%200%20143%20143%5C%22%20height%3D%5C%22100%25%5C%22%20width%3D%5C%22100%25%5C%22%20xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_acc_name%22%2C%22ruleId%22%3A%22svg_graphics_labelled%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "svg_graphics_labelled",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[1]/div[1]/div[1]/div[3]/div[3]/svg[1]",
+          "aria": "/document[1]/main[1]/graphics-document[3]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_acc_name",
+        "message": "The SVG element has no accessible name",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 2459,
+          "height": 784,
+          "width": 784
+        },
+        "snippet": "<svg fill=\"none\" viewBox=\"0 0 143 143\" height=\"100%\" width=\"100%\" xmlns=\"http://www.w3.org/2000/svg\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/svg_graphics_labelled.html#%7B%22message%22%3A%22The%20SVG%20element%20has%20no%20accessible%20name%22%2C%22snippet%22%3A%22%3Csvg%20fill%3D%5C%22none%5C%22%20viewBox%3D%5C%220%200%20143%20143%5C%22%20height%3D%5C%22100%25%5C%22%20width%3D%5C%22100%25%5C%22%20xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_acc_name%22%2C%22ruleId%22%3A%22svg_graphics_labelled%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "svg_graphics_labelled",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[1]/div[1]/div[3]/div[3]/div[1]/svg[1]",
+          "aria": "/document[1]/main[1]/graphics-document[4]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_acc_name",
+        "message": "The SVG element has no accessible name",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 3367,
+          "height": 784,
+          "width": 784
+        },
+        "snippet": "<svg fill=\"none\" viewBox=\"0 0 143 143\" height=\"100%\" width=\"100%\" xmlns=\"http://www.w3.org/2000/svg\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/svg_graphics_labelled.html#%7B%22message%22%3A%22The%20SVG%20element%20has%20no%20accessible%20name%22%2C%22snippet%22%3A%22%3Csvg%20fill%3D%5C%22none%5C%22%20viewBox%3D%5C%220%200%20143%20143%5C%22%20height%3D%5C%22100%25%5C%22%20width%3D%5C%22100%25%5C%22%20xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_acc_name%22%2C%22ruleId%22%3A%22svg_graphics_labelled%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "svg_graphics_labelled",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[1]/div[1]/div[3]/div[3]/div[2]/svg[1]",
+          "aria": "/document[1]/main[1]/graphics-document[5]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_acc_name",
+        "message": "The SVG element has no accessible name",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 4155,
+          "height": 784,
+          "width": 784
+        },
+        "snippet": "<svg fill=\"none\" viewBox=\"0 0 143 143\" height=\"100%\" width=\"100%\" xmlns=\"http://www.w3.org/2000/svg\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/svg_graphics_labelled.html#%7B%22message%22%3A%22The%20SVG%20element%20has%20no%20accessible%20name%22%2C%22snippet%22%3A%22%3Csvg%20fill%3D%5C%22none%5C%22%20viewBox%3D%5C%220%200%20143%20143%5C%22%20height%3D%5C%22100%25%5C%22%20width%3D%5C%22100%25%5C%22%20xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_acc_name%22%2C%22ruleId%22%3A%22svg_graphics_labelled%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "svg_graphics_labelled",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[1]/div[1]/div[3]/div[3]/div[3]/svg[1]",
+          "aria": "/document[1]/main[1]/graphics-document[6]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_acc_name",
+        "message": "The SVG element has no accessible name",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 4943,
+          "height": 784,
+          "width": 784
+        },
+        "snippet": "<svg fill=\"none\" viewBox=\"0 0 143 143\" height=\"100%\" width=\"100%\" xmlns=\"http://www.w3.org/2000/svg\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/svg_graphics_labelled.html#%7B%22message%22%3A%22The%20SVG%20element%20has%20no%20accessible%20name%22%2C%22snippet%22%3A%22%3Csvg%20fill%3D%5C%22none%5C%22%20viewBox%3D%5C%220%200%20143%20143%5C%22%20height%3D%5C%22100%25%5C%22%20width%3D%5C%22100%25%5C%22%20xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_acc_name%22%2C%22ruleId%22%3A%22svg_graphics_labelled%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "text_block_heading",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[1]",
+          "aria": "/document[1]/main[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_heading",
+        "message": "Confirm this text 'Backed by leading' is used as a heading and if so, modify to use a heading element or role",
+        "messageArgs": [
+          "Backed by leading"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 5804,
+          "height": 538,
+          "width": 784
+        },
+        "snippet": "<div class=\"about-partners\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'Backed%20by%20leading'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cdiv%20class%3D%5C%22about-partners%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22Backed%20by%20leading%22%5D%7D"
+      },
+      {
+        "ruleId": "text_block_heading",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[1]/h2[1]/br[1]",
+          "aria": "/document[1]/main[1]/heading[2]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_heading",
+        "message": "Confirm this text 'investors' is used as a heading and if so, modify to use a heading element or role",
+        "messageArgs": [
+          "investors"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": 197,
+          "top": 5804,
+          "height": 27,
+          "width": 0
+        },
+        "snippet": "<br>",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'investors'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cbr%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22investors%22%5D%7D"
+      },
+      {
+        "ruleId": "aria_region_labelled",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[1]/div[1]/div[1]",
+          "aria": "/document[1]/main[1]/region[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Fail_1",
+        "message": "Element with \"region\" role does not have a label",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 5879,
+          "height": 463,
+          "width": 784
+        },
+        "snippet": "<div aria-roledescription=\"carousel\" role=\"region\" id=\"splide01\" class=\"splide is--loop-autoscroll splide--loop splide--ltr splide--draggable is-active is-overflow is-initialized\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/aria_region_labelled.html#%7B%22message%22%3A%22Element%20with%20%5C%22region%5C%22%20role%20does%20not%20have%20a%20label%22%2C%22snippet%22%3A%22%3Cdiv%20aria-roledescription%3D%5C%22carousel%5C%22%20role%3D%5C%22region%5C%22%20id%3D%5C%22splide01%5C%22%20class%3D%5C%22splide%20is--loop-autoscroll%20splide--loop%20splide--ltr%20splide--draggable%20is-active%20is-overflow%20is-initialized%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22aria_region_labelled%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "element_id_unique",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[6]",
+          "aria": "/document[1]/main[1]/region[1]/generic[1]/group[6]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_in_use",
+        "message": "The <div> element has the id \"splide01-clone01\" that is already in use",
+        "messageArgs": [
+          "div",
+          "splide01-clone01"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": -3048,
+          "top": 5971,
+          "height": 19,
+          "width": 768
+        },
+        "snippet": "<div aria-hidden=\"true\" style=\"margin-right: 1rem;\" aria-label=\"1 of 5\" aria-roledescription=\"slide\" id=\"splide01-clone01\" class=\"splide__slide is--partners w-dyn-item splide__slide--clone\" role=\"group\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/element_id_unique.html#%7B%22message%22%3A%22The%20%3Cdiv%3E%20element%20has%20the%20id%20%5C%22splide01-clone01%5C%22%20that%20is%20already%20in%20use%22%2C%22snippet%22%3A%22%3Cdiv%20aria-hidden%3D%5C%22true%5C%22%20style%3D%5C%22margin-right%3A%201rem%3B%5C%22%20aria-label%3D%5C%221%20of%205%5C%22%20aria-roledescription%3D%5C%22slide%5C%22%20id%3D%5C%22splide01-clone01%5C%22%20class%3D%5C%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%5C%22%20role%3D%5C%22group%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_in_use%22%2C%22ruleId%22%3A%22element_id_unique%22%2C%22msgArgs%22%3A%5B%22div%22%2C%22splide01-clone01%22%5D%7D"
+      },
+      {
+        "ruleId": "element_id_unique",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[7]",
+          "aria": "/document[1]/main[1]/region[1]/generic[1]/group[7]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_in_use",
+        "message": "The <div> element has the id \"splide01-clone02\" that is already in use",
+        "messageArgs": [
+          "div",
+          "splide01-clone02"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": -3048,
+          "top": 5990,
+          "height": 19,
+          "width": 768
+        },
+        "snippet": "<div aria-hidden=\"true\" style=\"margin-right: 1rem;\" aria-label=\"2 of 5\" aria-roledescription=\"slide\" id=\"splide01-clone02\" class=\"splide__slide is--partners w-dyn-item splide__slide--clone is-active\" role=\"group\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/element_id_unique.html#%7B%22message%22%3A%22The%20%3Cdiv%3E%20element%20has%20the%20id%20%5C%22splide01-clone02%5C%22%20that%20is%20already%20in%20use%22%2C%22snippet%22%3A%22%3Cdiv%20aria-hidden%3D%5C%22true%5C%22%20style%3D%5C%22margin-right%3A%201rem%3B%5C%22%20aria-label%3D%5C%222%20of%205%5C%22%20aria-roledescription%3D%5C%22slide%5C%22%20id%3D%5C%22splide01-clone02%5C%22%20class%3D%5C%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%20is-active%5C%22%20role%3D%5C%22group%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_in_use%22%2C%22ruleId%22%3A%22element_id_unique%22%2C%22msgArgs%22%3A%5B%22div%22%2C%22splide01-clone02%22%5D%7D"
+      },
+      {
+        "ruleId": "element_id_unique",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[8]",
+          "aria": "/document[1]/main[1]/region[1]/generic[1]/group[8]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_in_use",
+        "message": "The <div> element has the id \"splide01-clone03\" that is already in use",
+        "messageArgs": [
+          "div",
+          "splide01-clone03"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": -3048,
+          "top": 6008,
+          "height": 19,
+          "width": 768
+        },
+        "snippet": "<div aria-hidden=\"true\" style=\"margin-right: 1rem;\" aria-label=\"3 of 5\" aria-roledescription=\"slide\" id=\"splide01-clone03\" class=\"splide__slide is--partners w-dyn-item splide__slide--clone\" role=\"group\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/element_id_unique.html#%7B%22message%22%3A%22The%20%3Cdiv%3E%20element%20has%20the%20id%20%5C%22splide01-clone03%5C%22%20that%20is%20already%20in%20use%22%2C%22snippet%22%3A%22%3Cdiv%20aria-hidden%3D%5C%22true%5C%22%20style%3D%5C%22margin-right%3A%201rem%3B%5C%22%20aria-label%3D%5C%223%20of%205%5C%22%20aria-roledescription%3D%5C%22slide%5C%22%20id%3D%5C%22splide01-clone03%5C%22%20class%3D%5C%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%5C%22%20role%3D%5C%22group%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_in_use%22%2C%22ruleId%22%3A%22element_id_unique%22%2C%22msgArgs%22%3A%5B%22div%22%2C%22splide01-clone03%22%5D%7D"
+      },
+      {
+        "ruleId": "element_id_unique",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[9]",
+          "aria": "/document[1]/main[1]/region[1]/generic[1]/group[9]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_in_use",
+        "message": "The <div> element has the id \"splide01-clone04\" that is already in use",
+        "messageArgs": [
+          "div",
+          "splide01-clone04"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": -3048,
+          "top": 6027,
+          "height": 19,
+          "width": 768
+        },
+        "snippet": "<div aria-hidden=\"true\" style=\"margin-right: 1rem;\" aria-label=\"4 of 5\" aria-roledescription=\"slide\" id=\"splide01-clone04\" class=\"splide__slide is--partners w-dyn-item splide__slide--clone\" role=\"group\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/element_id_unique.html#%7B%22message%22%3A%22The%20%3Cdiv%3E%20element%20has%20the%20id%20%5C%22splide01-clone04%5C%22%20that%20is%20already%20in%20use%22%2C%22snippet%22%3A%22%3Cdiv%20aria-hidden%3D%5C%22true%5C%22%20style%3D%5C%22margin-right%3A%201rem%3B%5C%22%20aria-label%3D%5C%224%20of%205%5C%22%20aria-roledescription%3D%5C%22slide%5C%22%20id%3D%5C%22splide01-clone04%5C%22%20class%3D%5C%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%5C%22%20role%3D%5C%22group%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_in_use%22%2C%22ruleId%22%3A%22element_id_unique%22%2C%22msgArgs%22%3A%5B%22div%22%2C%22splide01-clone04%22%5D%7D"
+      },
+      {
+        "ruleId": "element_id_unique",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[10]",
+          "aria": "/document[1]/main[1]/region[1]/generic[1]/group[10]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_in_use",
+        "message": "The <div> element has the id \"splide01-clone05\" that is already in use",
+        "messageArgs": [
+          "div",
+          "splide01-clone05"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": -3048,
+          "top": 6045,
+          "height": 19,
+          "width": 768
+        },
+        "snippet": "<div style=\"margin-right: 1rem;\" aria-label=\"5 of 5\" aria-roledescription=\"slide\" id=\"splide01-clone05\" class=\"splide__slide is--partners w-dyn-item splide__slide--clone is-visible\" role=\"group\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/element_id_unique.html#%7B%22message%22%3A%22The%20%3Cdiv%3E%20element%20has%20the%20id%20%5C%22splide01-clone05%5C%22%20that%20is%20already%20in%20use%22%2C%22snippet%22%3A%22%3Cdiv%20style%3D%5C%22margin-right%3A%201rem%3B%5C%22%20aria-label%3D%5C%225%20of%205%5C%22%20aria-roledescription%3D%5C%22slide%5C%22%20id%3D%5C%22splide01-clone05%5C%22%20class%3D%5C%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%20is-visible%5C%22%20role%3D%5C%22group%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_in_use%22%2C%22ruleId%22%3A%22element_id_unique%22%2C%22msgArgs%22%3A%5B%22div%22%2C%22splide01-clone05%22%5D%7D"
+      },
+      {
+        "ruleId": "element_id_unique",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[21]",
+          "aria": "/document[1]/main[1]/region[1]/generic[1]/group[21]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_in_use",
+        "message": "The <div> element has the id \"splide01-clone06\" that is already in use",
+        "messageArgs": [
+          "div",
+          "splide01-clone06"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": -3048,
+          "top": 6249,
+          "height": 19,
+          "width": 768
+        },
+        "snippet": "<div aria-hidden=\"true\" style=\"margin-right: 1rem;\" aria-label=\"1 of 5\" aria-roledescription=\"slide\" id=\"splide01-clone06\" class=\"splide__slide is--partners w-dyn-item splide__slide--clone\" role=\"group\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/element_id_unique.html#%7B%22message%22%3A%22The%20%3Cdiv%3E%20element%20has%20the%20id%20%5C%22splide01-clone06%5C%22%20that%20is%20already%20in%20use%22%2C%22snippet%22%3A%22%3Cdiv%20aria-hidden%3D%5C%22true%5C%22%20style%3D%5C%22margin-right%3A%201rem%3B%5C%22%20aria-label%3D%5C%221%20of%205%5C%22%20aria-roledescription%3D%5C%22slide%5C%22%20id%3D%5C%22splide01-clone06%5C%22%20class%3D%5C%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%5C%22%20role%3D%5C%22group%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_in_use%22%2C%22ruleId%22%3A%22element_id_unique%22%2C%22msgArgs%22%3A%5B%22div%22%2C%22splide01-clone06%22%5D%7D"
+      },
+      {
+        "ruleId": "element_id_unique",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[22]",
+          "aria": "/document[1]/main[1]/region[1]/generic[1]/group[22]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_in_use",
+        "message": "The <div> element has the id \"splide01-clone07\" that is already in use",
+        "messageArgs": [
+          "div",
+          "splide01-clone07"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": -3048,
+          "top": 6267,
+          "height": 19,
+          "width": 768
+        },
+        "snippet": "<div aria-hidden=\"true\" style=\"margin-right: 1rem;\" aria-label=\"2 of 5\" aria-roledescription=\"slide\" id=\"splide01-clone07\" class=\"splide__slide is--partners w-dyn-item splide__slide--clone is-active\" role=\"group\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/element_id_unique.html#%7B%22message%22%3A%22The%20%3Cdiv%3E%20element%20has%20the%20id%20%5C%22splide01-clone07%5C%22%20that%20is%20already%20in%20use%22%2C%22snippet%22%3A%22%3Cdiv%20aria-hidden%3D%5C%22true%5C%22%20style%3D%5C%22margin-right%3A%201rem%3B%5C%22%20aria-label%3D%5C%222%20of%205%5C%22%20aria-roledescription%3D%5C%22slide%5C%22%20id%3D%5C%22splide01-clone07%5C%22%20class%3D%5C%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%20is-active%5C%22%20role%3D%5C%22group%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_in_use%22%2C%22ruleId%22%3A%22element_id_unique%22%2C%22msgArgs%22%3A%5B%22div%22%2C%22splide01-clone07%22%5D%7D"
+      },
+      {
+        "ruleId": "element_id_unique",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[23]",
+          "aria": "/document[1]/main[1]/region[1]/generic[1]/group[23]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_in_use",
+        "message": "The <div> element has the id \"splide01-clone08\" that is already in use",
+        "messageArgs": [
+          "div",
+          "splide01-clone08"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": -3048,
+          "top": 6286,
+          "height": 19,
+          "width": 768
+        },
+        "snippet": "<div aria-hidden=\"true\" style=\"margin-right: 1rem;\" aria-label=\"3 of 5\" aria-roledescription=\"slide\" id=\"splide01-clone08\" class=\"splide__slide is--partners w-dyn-item splide__slide--clone\" role=\"group\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/element_id_unique.html#%7B%22message%22%3A%22The%20%3Cdiv%3E%20element%20has%20the%20id%20%5C%22splide01-clone08%5C%22%20that%20is%20already%20in%20use%22%2C%22snippet%22%3A%22%3Cdiv%20aria-hidden%3D%5C%22true%5C%22%20style%3D%5C%22margin-right%3A%201rem%3B%5C%22%20aria-label%3D%5C%223%20of%205%5C%22%20aria-roledescription%3D%5C%22slide%5C%22%20id%3D%5C%22splide01-clone08%5C%22%20class%3D%5C%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%5C%22%20role%3D%5C%22group%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_in_use%22%2C%22ruleId%22%3A%22element_id_unique%22%2C%22msgArgs%22%3A%5B%22div%22%2C%22splide01-clone08%22%5D%7D"
+      },
+      {
+        "ruleId": "element_id_unique",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[24]",
+          "aria": "/document[1]/main[1]/region[1]/generic[1]/group[24]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_in_use",
+        "message": "The <div> element has the id \"splide01-clone09\" that is already in use",
+        "messageArgs": [
+          "div",
+          "splide01-clone09"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": -3048,
+          "top": 6304,
+          "height": 19,
+          "width": 768
+        },
+        "snippet": "<div aria-hidden=\"true\" style=\"margin-right: 1rem;\" aria-label=\"4 of 5\" aria-roledescription=\"slide\" id=\"splide01-clone09\" class=\"splide__slide is--partners w-dyn-item splide__slide--clone\" role=\"group\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/element_id_unique.html#%7B%22message%22%3A%22The%20%3Cdiv%3E%20element%20has%20the%20id%20%5C%22splide01-clone09%5C%22%20that%20is%20already%20in%20use%22%2C%22snippet%22%3A%22%3Cdiv%20aria-hidden%3D%5C%22true%5C%22%20style%3D%5C%22margin-right%3A%201rem%3B%5C%22%20aria-label%3D%5C%224%20of%205%5C%22%20aria-roledescription%3D%5C%22slide%5C%22%20id%3D%5C%22splide01-clone09%5C%22%20class%3D%5C%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%5C%22%20role%3D%5C%22group%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_in_use%22%2C%22ruleId%22%3A%22element_id_unique%22%2C%22msgArgs%22%3A%5B%22div%22%2C%22splide01-clone09%22%5D%7D"
+      },
+      {
+        "ruleId": "element_id_unique",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[25]",
+          "aria": "/document[1]/main[1]/region[1]/generic[1]/group[25]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_in_use",
+        "message": "The <div> element has the id \"splide01-clone10\" that is already in use",
+        "messageArgs": [
+          "div",
+          "splide01-clone10"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": -3048,
+          "top": 6323,
+          "height": 19,
+          "width": 768
+        },
+        "snippet": "<div aria-hidden=\"true\" style=\"margin-right: 1rem;\" aria-label=\"5 of 5\" aria-roledescription=\"slide\" id=\"splide01-clone10\" class=\"splide__slide is--partners w-dyn-item splide__slide--clone\" role=\"group\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/element_id_unique.html#%7B%22message%22%3A%22The%20%3Cdiv%3E%20element%20has%20the%20id%20%5C%22splide01-clone10%5C%22%20that%20is%20already%20in%20use%22%2C%22snippet%22%3A%22%3Cdiv%20aria-hidden%3D%5C%22true%5C%22%20style%3D%5C%22margin-right%3A%201rem%3B%5C%22%20aria-label%3D%5C%225%20of%205%5C%22%20aria-roledescription%3D%5C%22slide%5C%22%20id%3D%5C%22splide01-clone10%5C%22%20class%3D%5C%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%5C%22%20role%3D%5C%22group%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_in_use%22%2C%22ruleId%22%3A%22element_id_unique%22%2C%22msgArgs%22%3A%5B%22div%22%2C%22splide01-clone10%22%5D%7D"
+      },
+      {
+        "ruleId": "svg_graphics_labelled",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/div[3]/div[3]/svg[1]",
+          "aria": "/document[1]/graphics-document[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_acc_name",
+        "message": "The SVG element has no accessible name",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 6341,
+          "height": 24,
+          "width": 24
+        },
+        "snippet": "<svg fill=\"none\" viewBox=\"0 0 24 24\" height=\"24\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/svg_graphics_labelled.html#%7B%22message%22%3A%22The%20SVG%20element%20has%20no%20accessible%20name%22%2C%22snippet%22%3A%22%3Csvg%20fill%3D%5C%22none%5C%22%20viewBox%3D%5C%220%200%2024%2024%5C%22%20height%3D%5C%2224%5C%22%20width%3D%5C%2224%5C%22%20xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_acc_name%22%2C%22ruleId%22%3A%22svg_graphics_labelled%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "aria_content_in_landmark",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/div[3]/div[4]/div[1]",
+          "aria": "/document[1]/list[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Fail_1",
+        "message": "Content is not within a landmark element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 6369,
+          "height": 19,
+          "width": 784
+        },
+        "snippet": "<div class=\"demo-popup__list w-dyn-items\" role=\"list\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/aria_content_in_landmark.html#%7B%22message%22%3A%22Content%20is%20not%20within%20a%20landmark%20element%22%2C%22snippet%22%3A%22%3Cdiv%20class%3D%5C%22demo-popup__list%20w-dyn-items%5C%22%20role%3D%5C%22list%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22aria_content_in_landmark%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "svg_graphics_labelled",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/footer[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]/div[1]/svg[1]",
+          "aria": "/document[1]/contentinfo[1]/list[1]/listitem[3]/link[1]/graphics-document[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_acc_name",
+        "message": "The SVG element has no accessible name",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 48,
+          "top": 6657,
+          "height": 20,
+          "width": 20
+        },
+        "snippet": "<svg fill=\"none\" viewBox=\"0 0 20 20\" height=\"20\" width=\"20\" xmlns=\"http://www.w3.org/2000/svg\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/svg_graphics_labelled.html#%7B%22message%22%3A%22The%20SVG%20element%20has%20no%20accessible%20name%22%2C%22snippet%22%3A%22%3Csvg%20fill%3D%5C%22none%5C%22%20viewBox%3D%5C%220%200%2020%2020%5C%22%20height%3D%5C%2220%5C%22%20width%3D%5C%2220%5C%22%20xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_acc_name%22%2C%22ruleId%22%3A%22svg_graphics_labelled%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "svg_graphics_labelled",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/footer[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]/div[1]/svg[1]",
+          "aria": "/document[1]/contentinfo[1]/list[1]/listitem[4]/link[1]/graphics-document[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_acc_name",
+        "message": "The SVG element has no accessible name",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 48,
+          "top": 6732,
+          "height": 20,
+          "width": 20
+        },
+        "snippet": "<svg fill=\"none\" viewBox=\"0 0 20 20\" height=\"20\" width=\"20\" xmlns=\"http://www.w3.org/2000/svg\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/svg_graphics_labelled.html#%7B%22message%22%3A%22The%20SVG%20element%20has%20no%20accessible%20name%22%2C%22snippet%22%3A%22%3Csvg%20fill%3D%5C%22none%5C%22%20viewBox%3D%5C%220%200%2020%2020%5C%22%20height%3D%5C%2220%5C%22%20width%3D%5C%2220%5C%22%20xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_acc_name%22%2C%22ruleId%22%3A%22svg_graphics_labelled%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      }
+    ],
+    "numExecuted": 1782,
+    "ruleTime": 22,
+    "nls": {
+      "aria_content_in_landmark": {
+        "0": "All content must reside within an element with a landmark role",
+        "Fail_1": "Content is not within a landmark element"
+      },
+      "label_name_visible": {
+        "0": "Accessible name must match or contain the visible label text",
+        "Fail_1": "Accessible name does not match or contain the visible label text"
+      },
+      "element_id_unique": {
+        "0": "Element 'id' attribute values must be unique within a document",
+        "potential_in_use": "The <{0}> element has the id \"{1}\" that is already in use"
+      },
+      "input_label_exists": {
+        "0": "Each form control must have an associated label",
+        "Fail_1": "Form control element <{0}> has no associated label"
+      },
+      "svg_graphics_labelled": {
+        "0": "A non-decorative SVG element must have an accessible name",
+        "fail_acc_name": "The SVG element has no accessible name"
+      },
+      "text_block_heading": {
+        "0": "Heading text should use a heading element or role",
+        "potential_heading": "Confirm this text '{0}' is used as a heading and if so, modify to use a heading element or role"
+      },
+      "aria_region_labelled": {
+        "0": "Each element with \"region\" role must have a label that describes its purpose",
+        "Fail_1": "Element with \"region\" role does not have a label"
+      }
+    },
+    "summary": {
+      "counts": {
+        "ignored": 0,
+        "elements": 42,
+        "elementsViolation": 16,
+        "elementsViolationReview": 29,
+        "violation": 16,
+        "potentialviolation": 12,
+        "recommendation": 4,
+        "potentialrecommendation": 9,
+        "manual": 2,
+        "pass": 1739
+      },
+      "scanTime": 78,
+      "ruleArchive": "Latest Deployment (latest)",
+      "policies": [
+        "IBM_Accessibility"
+      ],
+      "reportLevels": [
+        "violation",
+        "potentialviolation"
+      ],
+      "startScan": 1785260658788,
+      "URL": "data:text/html;charset=utf-8,%3C!doctype%20html%3E%0A%3Chtml%20lang%3D%22en%22%3E%0A%3Chead%3E%0A%20%20%3Cmeta%20charset%3D%22utf-8%22%3E%0A%20%20%3Ctitle%3ECompany%20%7C%20Fauna%20Robotics%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%3Cbody%3E%3Cdiv%20class%3D%22page-wrapper%22%3E%3Cdiv%20class%3D%22style-guide-utilities%22%3E%3Cdiv%20class%3D%22style-guide__global-styles%20w-embed%22%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22style-guide__pm-reseters%20w-embed%22%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22style-guide__buttons%20w-embed%22%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22style-guide__links%20w-embed%22%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22style-guide__text-styles%20w-embed%22%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22style-guide__typography%20w-embed%22%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22style-guide__margins%20w-embed%22%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22style-guide__tabs%20w-embed%22%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22style-guide__footer%20w-embed%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20data-animation%3D%22default%22%20data-collapse%3D%22all%22%20data-duration%3D%22400%22%20data-easing%3D%22ease%22%20data-easing2%3D%22ease%22%20role%3D%22banner%22%20class%3D%22navbar%20w-nav%22%3E%3Cdiv%20class%3D%22container%20is--navbar%22%3E%3Ca%20href%3D%22%2F%22%20class%3D%22navbar-logo__wrapper%20w-nav-brand%22%20aria-label%3D%22home%22%3E%3Cdiv%20class%3D%22logo-wrapper%20w-embed%22%3E%3Ccanvas%20id%3D%22logo%22%20width%3D%22200%22%20height%3D%2260%22%3E%3C%2Fcanvas%3E%3C%2Fdiv%3E%3C%2Fa%3E%3Cdiv%20class%3D%22navbar-menu%22%3E%3Cdiv%20class%3D%22navbar-menu__content%22%3E%3Cdiv%20class%3D%22navbar-menu__list%22%3E%3Ca%20href%3D%22%2F%22%20class%3D%22navbar-link%22%3EHome%3C%2Fa%3E%3Ca%20href%3D%22%2Fproduct%22%20class%3D%22navbar-link%22%3EProduct%3C%2Fa%3E%3Ca%20href%3D%22%2Fcompany%22%20aria-current%3D%22page%22%20class%3D%22navbar-link%20w--current%22%3ECompany%3C%2Fa%3E%3Ca%20href%3D%22https%3A%2F%2Fwww.amazon.jobs%2Fen%2Fsearch%3Fbase_query%3Dfauna%22%20target%3D%22_blank%22%20class%3D%22navbar-link%22%3ECareers%3C%2Fa%3E%3Ca%20href%3D%22%2Fnews%22%20class%3D%22navbar-link%22%3ENews%3C%2Fa%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22navbar-menu__popup-trigger%22%3E%3Cdiv%20class%3D%22w-dyn-list%22%3E%3Cdiv%20role%3D%22list%22%20class%3D%22w-dyn-items%22%3E%3Cdiv%20role%3D%22listitem%22%20class%3D%22w-dyn-item%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20sizes%3D%22100vw%22%20class%3D%22absolute-cover%20is--cover%22%3E%3C!--%24--%3E%3Cbutton%20class%3D%22popup-trigger%22%3E%3C%2Fbutton%3E%3C!--%2F%24--%3E%3Cdiv%20class%3D%22button-secondary%20button-large%20button-icon%20is--trigger%20is--navbar%22%3E%3Cdiv%20class%3D%22w-embed%22%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%3E%0A%20%20%3Cpath%20d%3D%22M16.589%208.37749C18.0631%209.11454%2018.0631%2011.2181%2016.589%2011.9552L6.39443%2017.0525C5.06462%2017.7174%203.5%2016.7504%203.5%2015.2636L3.5%205.06908C3.5%203.58231%205.06463%202.61532%206.39443%203.28022L16.589%208.37749Z%22%20fill%3D%22currentColor%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22p-m%22%3EPlay%20video%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22navbar-menu__content-buttons%22%3E%3Ca%20href%3D%22https%3A%2F%2Fform.typeform.com%2Fto%2FHsZsaqmn%22%20target%3D%22_blank%22%20class%3D%22button-large%20button-primary%20w-inline-block%22%3E%3Cdiv%3ERequest%20Robot%3C%2Fdiv%3E%3C%2Fa%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22navbar-buttons%22%3E%3Cdiv%20class%3D%22navbar-buttons__toggle%22%3E%3Cdiv%20class%3D%22navbar-menu__button%20morph-btn%20w-nav-button%22%20style%3D%22-webkit-user-select%3A%20text%3B%22%20aria-label%3D%22menu%22%20role%3D%22button%22%20tabindex%3D%220%22%20aria-controls%3D%22w-nav-overlay-0%22%20aria-haspopup%3D%22menu%22%20aria-expanded%3D%22false%22%3E%3Cdiv%20class%3D%22navbar-menu__button-overlay%20btn-icon%22%3E%3Cdiv%20class%3D%22navbar-menu__button-line%20is--top%22%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22navbar-menu__button-line%20is--bottom%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22navbar-menu__button-fake%22%3E%3Cdiv%3EWhite%20papers%3C%2Fdiv%3E%3Cdiv%20class%3D%22embed-icon%20w-embed%22%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%3E%0A%20%20%3Cpath%20d%3D%22M4.14575%209.95801L14.9791%209.95801%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%3E%3C%2Fpath%3E%0A%20%20%3Cpath%20d%3D%22M9.979%204.125L15.8123%209.95833L9.979%2015.7917%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22navbar-buttons__cta%22%3E%3Ca%20href%3D%22https%3A%2F%2Fform.typeform.com%2Fto%2FHsZsaqmn%22%20target%3D%22_blank%22%20class%3D%22button-large%20button-primary%20w-inline-block%22%3E%3Cdiv%3ERequest%20Robot%3C%2Fdiv%3E%3C%2Fa%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22w-nav-overlay%22%20data-wf-ignore%3D%22%22%20id%3D%22w-nav-overlay-0%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cmain%20class%3D%22main-wrapper%22%3E%3Csection%20class%3D%22section%22%3E%3Cdiv%20class%3D%22container%20is--80%20is--demo%22%20style%3D%22transition%3A%20max-width%200.5s%20ease-in-out%3B%22%3E%3Cdiv%20class%3D%22about-hero%22%3E%3Cdiv%20class%3D%22about-hero__title%22%3E%3Ch1%20class%3D%22h5%22%3EBuilding%20a%20world%20where%20robots%20operate%20everywhere%20people%20do%3C%2Fh1%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22home-demo__video%20is--about%22%3E%3Cdiv%20class%3D%22w-dyn-list%22%3E%3Cdiv%20role%3D%22list%22%20class%3D%22w-dyn-items%22%3E%3Cdiv%20role%3D%22listitem%22%20class%3D%22w-dyn-item%22%3E%3Cdiv%20class%3D%22product-hero__video-embed%20w-embed%20w-iframe%22%3E%3Cdiv%20style%3D%22padding-top%3A%2056.25%25%3B%20width%3A%20100%25%3B%20position%3A%20relative%3B%22%3E%0A%20%20%0A%3C%2Fdiv%3E%3C%2Fdiv%3E%3C!--%24--%3E%3Cbutton%20class%3D%22button-secondary%20is--icon%20button-play__video%22%20style%3D%22position%3A%20absolute%3B%20left%3A%2050%25%3B%20top%3A%2050%25%3B%20transform%3A%20translate(-50%25%2C%20-50%25)%3B%20z-index%3A%2010%3B%20transition%3A%20opacity%200.3s%3B%22%3E%3Cdiv%20class%3D%22w-embed%22%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%3E%0A%20%20%3Cpath%20d%3D%22M16.589%208.37749C18.0631%209.11454%2018.0631%2011.2181%2016.589%2011.9552L6.39443%2017.0525C5.06462%2017.7174%203.5%2016.7504%203.5%2015.2636L3.5%205.06908C3.5%203.58231%205.06463%202.61532%206.39443%203.28022L16.589%208.37749Z%22%20fill%3D%22currentColor%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22p-m%22%3EOur%20story%3C%2Fdiv%3E%3C%2Fbutton%3E%3C!--%2F%24--%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22home-demo__overlay%20is--company%22%20style%3D%22z-index%3A%205%3B%20transition%3A%20opacity%200.3s%3B%20cursor%3A%20pointer%3B%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fsection%3E%3Csection%20class%3D%22section%22%3E%3Cdiv%20class%3D%22container%20is--80%22%3E%3Cdiv%20class%3D%22about-bento-content%22%3E%3Cdiv%20class%3D%22about-bento%22%3E%3Cdiv%20id%3D%22w-node-f6e75b85-4d3e-bae5-7839-741a9fb9f47d-cd9b83b6%22%20class%3D%22about-bento__card%20color-brown%22%3E%3Cp%20class%3D%22h4%22%3EWe%20are%20an%20American%20robotics%20company%20that%20designs%20and%20assembles%20our%20products%20in%20the%20United%20States%3C%2Fp%3E%3C%2Fdiv%3E%3Cdiv%20id%3D%22w-node-cf37c585-e955-35bf-0702-a11dcefd9c90-cd9b83b6%22%20class%3D%22about-bento__card%20color-yellow%22%3E%3Cdiv%20class%3D%22about-bento__card-p-wr%22%3E%3Cp%20class%3D%22h2%22%3EWe%20believe%20the%20future%20of%20robotics%20has%20to%20be%20useful%20and%20delightful%3A%20in%20homes%2C%20classrooms%2C%20and%20everyday%20human%20spaces%3C%2Fp%3E%3Cdiv%20class%3D%22about-bento__card-text%22%3E%3Cp%20class%3D%22h4%22%3EBut%20that%20future%20won%E2%80%99t%20arrive%20until%20far%20more%20developers%20can%20build%20for%20robotics%20quickly%2C%20safely%2C%20and%20in%20the%20real%20world%20without%20needing%20to%20reinvent%20the%20fundamentals%20each%20time%3C%2Fp%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22about-bento__assets%22%3E%3Cdiv%20class%3D%22about-bento__card-icon%20w-embed%22%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%20142%20143%22%20fill%3D%22none%22%3E%0A%20%20%3Cpath%20d%3D%22M103.46%2071.4997L135.278%2039.4583C144.241%2030.4327%20144.241%2015.7967%20135.278%206.77102C126.315%20-2.25462%20111.781%20-2.25462%20102.818%206.77102L71%2038.8124L39.1817%206.77102C30.2166%20-2.25701%2015.6849%20-2.25701%206.72209%206.77102C-2.2407%2015.7967%20-2.2407%2030.4327%206.72209%2039.4583L38.5404%2071.4997L6.72209%20103.543C-2.2407%20112.569%20-2.2407%20127.205%206.72209%20136.231C15.6849%20145.256%2030.219%20145.256%2039.1817%20136.231L71%20104.189L102.818%20136.231C111.781%20145.256%20126.315%20145.256%20135.278%20136.231C144.241%20127.205%20144.241%20112.569%20135.278%20103.543L103.46%2071.5021V71.4997Z%22%20fill%3D%22%2363A4BC%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22about-bento__card-icon%20w-embed%22%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%20143%20143%22%20fill%3D%22none%22%3E%0A%20%20%3Cpath%20d%3D%22M0%200V143H143V0H0ZM71.5%2098.3125C56.6923%2098.3125%2044.6875%2086.3076%2044.6875%2071.5C44.6875%2056.6923%2056.6923%2044.6875%2071.5%2044.6875C86.3076%2044.6875%2098.3125%2056.6923%2098.3125%2071.5C98.3125%2086.3076%2086.3076%2098.3125%2071.5%2098.3125Z%22%20fill%3D%22%23F26B47%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22about-bento__card-icon%20w-embed%22%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%20143%20143%22%20fill%3D%22none%22%3E%0A%20%20%3Cpath%20d%3D%22M133.517%2035.4521C127.191%2024.5317%20118.583%2015.8921%20107.689%209.53333C96.7919%203.17937%2084.8252%200%2071.7932%200H71.2092C58.1724%200%2046.2081%203.17937%2035.3139%209.53333C24.4149%2015.8921%2015.8063%2024.5317%209.48566%2035.4521C3.1603%2046.3773%200%2058.3917%200%2071.5C0%2084.6083%203.1603%2096.6275%209.48566%20107.548C15.8063%20118.473%2024.4149%20127.113%2035.3139%20133.467C46.2081%20139.825%2058.1724%20143%2071.2092%20143H71.7932C84.8252%20143%2096.7919%20139.825%20107.689%20133.467C118.583%20127.113%20127.191%20118.473%20133.517%20107.548C139.837%2096.6275%20143%2084.6083%20143%2071.5C143%2058.3917%20139.835%2046.3773%20133.517%2035.4521Z%22%20fill%3D%22%233DAC91%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22about-bento__card%20color-pink%22%3E%3Cp%20class%3D%22lead%20is--second%20is--about%22%3EOur%20mission%20is%20to%20build%20capable%2C%20safe%2C%20and%20fun%20robots%20for%20everyone%3C%2Fp%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22about-bento2%22%3E%3Cdiv%20id%3D%22w-node-_9e6975f4-a07c-b9bf-0ffd-af6f920aa880-cd9b83b6%22%20class%3D%22about-bento__card%20color-grey%22%3E%3Cimg%20loading%3D%22lazy%22%20width%3D%22696%22%20sizes%3D%22(max-width%3A%20767px)%20100vw%2C%20696px%22%20alt%3D%22%22%20class%3D%22about-bento__card-img%22%3E%3C%2Fdiv%3E%3Cdiv%20id%3D%22w-node-_4566542a-26d5-bcb6-ff56-23c2e0cb73d4-cd9b83b6%22%20class%3D%22about-bento__card%20color-orange%22%3E%3Cp%20class%3D%22h2%22%3EThat%E2%80%99s%20why%20we%20built%20Sprout%3A%20the%20development%20platform%20we%20always%20wished%20existed%3C%2Fp%3E%3C%2Fdiv%3E%3Cdiv%20id%3D%22w-node-ad60c2de-c7d2-d85d-5f59-935302670410-cd9b83b6%22%20class%3D%22about-bento__assets%22%3E%3Cdiv%20class%3D%22about-bento__card-icon%20w-embed%22%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%20143%20143%22%20fill%3D%22none%22%3E%0A%20%20%3Cpath%20d%3D%22M71.5%200H68.4565C55.4792%200%2043.7652%203.0602%2033.3142%209.17107C22.8705%2015.2867%2014.7075%2023.7833%208.82072%2034.6632C2.94342%2045.5431%200%2057.822%200%2071.5V143H45.6385V73.676C45.6385%2068.4994%2046.7562%2063.8829%2048.9847%2059.8431C51.2178%2055.801%2054.309%2052.5906%2058.2654%2050.2049C62.2217%2047.824%2066.6332%2046.6299%2071.5%2046.6299C76.3668%2046.6299%2080.7807%2047.824%2084.7346%2050.2049C88.6886%2052.5906%2091.7798%2055.801%2094.0154%2059.8431C96.2438%2063.8852%2097.3615%2068.4994%2097.3615%2073.676V143H143V71.5C143%2057.822%20140.057%2045.5431%20134.177%2034.6632C128.292%2023.7833%20120.13%2015.2867%20109.683%209.17107C99.2348%203.0602%2087.5208%200%2074.5435%200H71.5Z%22%20fill%3D%22%23DAB154%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22about-bento__card-icon%20w-embed%22%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%20143%20143%22%20fill%3D%22none%22%3E%0A%20%20%3Cpath%20d%3D%22M133.517%2035.4521C127.191%2024.5317%20118.583%2015.8921%20107.689%209.53333C96.7919%203.17937%2084.8252%200%2071.7931%200H71.2092C58.1724%200%2046.2057%203.17937%2035.3138%209.53333C24.4149%2015.8921%2015.8063%2024.5317%209.48566%2035.4521C3.1603%2046.3773%200%2058.3917%200%2071.5C0%2084.6083%203.1603%2096.6275%209.48566%20107.548C15.8063%20118.473%2024.4149%20127.113%2035.3138%20133.467C46.2081%20139.825%2058.1724%20143%2071.2092%20143H71.7931C84.8252%20143%2096.7919%20139.825%20107.689%20133.467C118.583%20127.113%20127.191%20118.473%20133.517%20107.548C139.837%2096.6275%20143%2084.6083%20143%2071.5C143%2058.3917%20139.835%2046.3773%20133.517%2035.4521ZM79.0695%2097.2114C77.0675%2097.8358%2074.994%2098.1909%2072.8442%2098.2791C72.8347%2098.2791%2072.8275%2098.2791%2072.818%2098.2791C72.4772%2098.2934%2072.1364%2098.3125%2071.7908%2098.3125H71.2069C70.8994%2098.3125%2070.5943%2098.2934%2070.2893%2098.2839C70.2082%2098.2815%2070.1272%2098.2791%2070.0462%2098.2767C67.3792%2098.1624%2064.8267%2097.6476%2062.3885%2096.7371C52.0449%2093.0191%2044.647%2083.1259%2044.647%2071.5024C44.647%2059.8789%2052.0425%2049.988%2062.3814%2046.27C64.8219%2045.3572%2067.3768%2044.8424%2070.0462%2044.728C70.1248%2044.7232%2070.2059%2044.7232%2070.2845%2044.7209C70.592%2044.7113%2070.897%2044.6923%2071.2069%2044.6923H71.7908C75.6685%2044.6923%2079.3078%2045.5264%2082.716%2047.1709C82.8923%2047.252%2083.0687%2047.333%2083.2427%2047.4188C83.2594%2047.4259%2083.2737%2047.4355%2083.2904%2047.4426C92.1635%2051.8137%2098.272%2060.9442%2098.272%2071.5048C98.272%2083.6693%2090.1686%2093.9343%2079.0695%2097.2162V97.2114Z%22%20fill%3D%22%23A7625A%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22about-bento__card-icon%20w-embed%22%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%20143%20143%22%20fill%3D%22none%22%3E%0A%20%20%3Cpath%20d%3D%22M-2.75733e-06%202.75733e-06L-8.87221e-06%2069.9461C-1.00503e-05%2083.4214%203.21511%2095.748%209.63581%20106.94C16.0613%20118.132%2024.7128%20126.943%2035.5927%20133.364C46.475%20139.79%2058.4441%20143%2071.5%20143C84.5559%20143%2096.525%20139.79%20107.405%20133.362C118.285%20126.941%20126.941%20118.13%20133.362%20106.938C139.79%2095.748%20143%2083.4214%20143%2069.9461L143%201.52588e-05L-2.75733e-06%202.75733e-06Z%22%20fill%3D%22%23E0A5CF%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20id%3D%22w-node-bfc82ce2-9462-0d45-46a5-c9a2322d7808-cd9b83b6%22%20class%3D%22about-bento__card%20color-green%22%3E%3Cp%20class%3D%22h4%22%3ESprout%20brings%20modern%20developer%20workflows%20to%20robotics%20so%20teams%20can%20move%20from%20idea%20to%20prototype%20to%20deployment%20with%20less%20friction%20and%20more%20confidence%3C%2Fp%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fsection%3E%3Csection%20class%3D%22section%22%3E%3Cdiv%20class%3D%22about-partners%22%3E%3Ch2%20class%3D%22h5%22%3EBacked%20by%20leading%20%3C!--%24--%3E%3Cbr%3E%3C!--%2F%24--%3Einvestors%3C%2Fh2%3E%3Cdiv%20class%3D%22about-partners__silder%22%3E%3Cdiv%20class%3D%22splide%20is--loop-autoscroll%20splide--loop%20splide--ltr%20splide--draggable%20is-active%20is-overflow%20is-initialized%22%20id%3D%22splide01%22%20role%3D%22region%22%20aria-roledescription%3D%22carousel%22%3E%3Cdiv%20class%3D%22splide__track%20w-dyn-list%20splide__track--loop%20splide__track--ltr%20splide__track--draggable%22%20id%3D%22splide01-track%22%20aria-live%3D%22off%22%20aria-atomic%3D%22true%22%20style%3D%22padding-left%3A%200px%3B%20padding-right%3A%200px%3B%22%3E%3Cdiv%20role%3D%22presentation%22%20class%3D%22splide__list%20is--partners%20w-dyn-items%22%20id%3D%22splide01-list%22%20style%3D%22transform%3A%20translateX(-3056px)%3B%22%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%22%20id%3D%22splide01-clone01%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%221%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22about-partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22about-partner__logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%20is-active%22%20id%3D%22splide01-clone02%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%222%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22about-partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22about-partner__logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%22%20id%3D%22splide01-clone03%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%223%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22about-partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22about-partner__logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%22%20id%3D%22splide01-clone04%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%224%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22about-partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22about-partner__logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%22%20id%3D%22splide01-clone05%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%225%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22about-partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22about-partner__logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%22%20id%3D%22splide01-clone01%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%221%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22about-partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22about-partner__logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%20is-active%22%20id%3D%22splide01-clone02%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%222%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22about-partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22about-partner__logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%22%20id%3D%22splide01-clone03%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%223%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22about-partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22about-partner__logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%22%20id%3D%22splide01-clone04%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%224%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22about-partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22about-partner__logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%20is-visible%22%20id%3D%22splide01-clone05%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%225%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%3E%3Cdiv%20class%3D%22about-partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22about-partner__logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20is-visible%20is-prev%22%20id%3D%22splide01-slide01%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%221%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%3E%3Cdiv%20class%3D%22about-partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22about-partner__logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20is-visible%20is-active%22%20id%3D%22splide01-slide02%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%222%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%3E%3Cdiv%20class%3D%22about-partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22about-partner__logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20is-next%20is-visible%22%20id%3D%22splide01-slide03%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%223%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%3E%3Cdiv%20class%3D%22about-partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22about-partner__logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%22%20id%3D%22splide01-slide04%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%224%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22about-partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22about-partner__logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%22%20id%3D%22splide01-slide05%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%225%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22about-partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22about-partner__logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%22%20id%3D%22splide01-clone06%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%221%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22about-partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22about-partner__logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%20is-active%22%20id%3D%22splide01-clone07%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%222%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22about-partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22about-partner__logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%22%20id%3D%22splide01-clone08%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%223%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22about-partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22about-partner__logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%22%20id%3D%22splide01-clone09%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%224%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22about-partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22about-partner__logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%22%20id%3D%22splide01-clone10%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%225%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22about-partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22about-partner__logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%22%20id%3D%22splide01-clone06%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%221%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22about-partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22about-partner__logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%20is-active%22%20id%3D%22splide01-clone07%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%222%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22about-partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22about-partner__logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%22%20id%3D%22splide01-clone08%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%223%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22about-partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22about-partner__logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%22%20id%3D%22splide01-clone09%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%224%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22about-partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22about-partner__logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%22%20id%3D%22splide01-clone10%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%225%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22about-partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22about-partner__logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22home-hero__partners-gradient%22%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22home-hero__partners-gradient%20is--right%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fsection%3E%3C%2Fmain%3E%3Cdiv%20class%3D%22demo-popup__wrapper%22%3E%3Cdiv%20class%3D%22w-embed%22%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22demo-popup__overlay%22%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22demo-popup__closer%20w-embed%22%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%3E%0A%20%20%3Cpath%20d%3D%22M4%2020L20%204%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%3E%3C%2Fpath%3E%0A%20%20%3Cpath%20d%3D%22M20%2020L4%204%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22container%20is--demo-wrapper%20w-dyn-list%22%3E%3Cdiv%20role%3D%22list%22%20class%3D%22demo-popup__list%20w-dyn-items%22%3E%3Cdiv%20role%3D%22listitem%22%20class%3D%22demo-popup__list-item%20w-dyn-item%22%3E%3Cdiv%20class%3D%22demo-popup__video%20w-embed%20w-iframe%22%3E%3B%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cfooter%20class%3D%22footer%22%3E%3Cdiv%20class%3D%22container%20is--footer%22%3E%3Cdiv%20class%3D%22footer-content%22%3E%3Cdiv%20class%3D%22footer-content__grid%22%3E%3Cdiv%20class%3D%22footer-content__col-left%22%3E%3Ch2%20class%3D%22h3%22%3EFauna%20Robotics%2C%20building%20a%26nbsp%3Bworld%20where%20robots%20operate%20everywhere%20people%26nbsp%3Bdo.%3C%2Fh2%3E%3Cp%20class%3D%22text-brown-300%22%3EDesigned%20in%20New%20York%20City.%20%3C!--%24--%3E%3Cbr%3E%3C!--%2F%24--%3EAssembled%20in%20America.%3C%2Fp%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22footer-content__col-right%22%3E%3Cdiv%20id%3D%22w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de%22%20class%3D%22footer-content__col%22%3E%3Cdiv%20class%3D%22text-brown-300%22%3EExplore%3C%2Fdiv%3E%3Cul%20role%3D%22list%22%20class%3D%22footer-content__col-list%22%3E%3Cli%20class%3D%22footer-content__list-item%22%3E%3Ca%20href%3D%22%2Fproduct%22%20class%3D%22text-link%22%3EProduct%3C%2Fa%3E%3C%2Fli%3E%3Cli%20class%3D%22footer-content__list-item%22%3E%3Ca%20href%3D%22%2Fproduct%23tech-specs%22%20class%3D%22text-link%22%3ETechnical%20specifications%3C%2Fa%3E%3C%2Fli%3E%3Cli%20class%3D%22footer-content__list-item%22%3E%3Ca%20href%3D%22https%3A%2F%2Farxiv.org%2Fabs%2F2601.18963%22%20class%3D%22button-icon%20text-link%20w-inline-block%20plausible-event-name--Technical%2BReport%2BDownload%20plausible-event-location--footer%22%3E%3Cp%3ETechnical%20report%3C%2Fp%3E%3Cdiv%20class%3D%22icon-1-1%20is-20%20w-embed%22%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%3E%0A%20%20%3Cpath%20d%3D%22M4.14648%209.95801L14.9798%209.95801%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%3E%3C%2Fpath%3E%0A%20%20%3Cpath%20d%3D%22M9.97852%204.12476L15.8118%209.95809L9.97852%2015.7914%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E%3C%2Fdiv%3E%3C%2Fa%3E%3C%2Fli%3E%3Cli%20class%3D%22footer-content__list-item%22%3E%3Ca%20href%3D%22https%3A%2F%2Fdocsend.com%2Fview%2Fs%2F54yau8edf4ivbkzu%22%20target%3D%22_blank%22%20class%3D%22button-icon%20text-link%20w-inline-block%20plausible-event-name--Press%2BKit%2BClick%22%3E%3Cp%3EPress%20kit%3C%2Fp%3E%3Cdiv%20class%3D%22icon-1-1%20is-20%20w-embed%22%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%3E%0A%20%20%3Cpath%20d%3D%22M4.14648%209.95801L14.9798%209.95801%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%3E%3C%2Fpath%3E%0A%20%20%3Cpath%20d%3D%22M9.97852%204.12476L15.8118%209.95809L9.97852%2015.7914%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E%3C%2Fdiv%3E%3C%2Fa%3E%3C%2Fli%3E%3C%2Ful%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22footer-content__col%22%3E%3Cdiv%20class%3D%22text-brown-300%22%3EAbout%3C%2Fdiv%3E%3Cul%20role%3D%22list%22%20class%3D%22footer-content__col-list%22%3E%3Cli%20class%3D%22footer-content__list-item%22%3E%3Ca%20href%3D%22%2Fcompany%22%20aria-current%3D%22page%22%20class%3D%22text-link%20w--current%22%3ECompany%3C%2Fa%3E%3C%2Fli%3E%3Cli%20class%3D%22footer-content__list-item%22%3E%3Ca%20href%3D%22https%3A%2F%2Fwww.amazon.jobs%2Fen%2Fsearch%3Fbase_query%3Dfauna%22%20target%3D%22_blank%22%20class%3D%22text-link%22%3ECareers%3C%2Fa%3E%3C%2Fli%3E%3Cli%20class%3D%22footer-content__list-item%22%3E%3Ca%20href%3D%22%2Fnews%22%20class%3D%22text-link%22%3ENews%3C%2Fa%3E%3C%2Fli%3E%3C%2Ful%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22footer-content__col%22%3E%3Cdiv%20class%3D%22text-brown-300%22%3ESocial%3C%2Fdiv%3E%3Cul%20role%3D%22list%22%20class%3D%22footer-content__col-list%22%3E%3Cli%20class%3D%22footer-content__list-item%22%3E%3Ca%20href%3D%22https%3A%2F%2Fwww.youtube.com%2F%40FaunaRobotics%22%20target%3D%22_blank%22%20class%3D%22text-link%22%3EYouTube%3C%2Fa%3E%3C%2Fli%3E%3Cli%20class%3D%22footer-content__list-item%22%3E%3Ca%20href%3D%22https%3A%2F%2Fx.com%2Ffaunarobotics%22%20target%3D%22_blank%22%20class%3D%22text-link%22%3EX%20(Twitter)%3C%2Fa%3E%3C%2Fli%3E%3Cli%20class%3D%22footer-content__list-item%22%3E%3Ca%20href%3D%22https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Ffauna-robotics%2F%22%20target%3D%22_blank%22%20class%3D%22text-link%22%3ELinkedIn%3C%2Fa%3E%3C%2Fli%3E%3Cli%20class%3D%22footer-content__list-item%22%3E%3Ca%20href%3D%22https%3A%2F%2Fwww.instagram.com%2Ffaunarobotics%2F%3Figsh%3DcGg0dnozNGpiYm85%23%22%20target%3D%22_blank%22%20class%3D%22text-link%22%3EInstagram%3C%2Fa%3E%3C%2Fli%3E%3C%2Ful%3E%3C%2Fdiv%3E%3Cdiv%20id%3D%22w-node-f7573142-a4ef-60b7-12da-23c3f39da591-74d2b1de%22%20class%3D%22footer-content__col%20is--last%22%3E%3Cul%20role%3D%22list%22%20class%3D%22footer-content__col-list%22%3E%3Cli%20class%3D%22footer-content__list-item%22%3E%3Ca%20href%3D%22mailto%3Asales%40faunarobotics.com%22%20class%3D%22text-link%20decoration-underline%22%3EContact%20us%3C%2Fa%3E%3C%2Fli%3E%3C%2Ful%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22footer-content__grid%20is--second%22%3E%3Cdiv%20class%3D%22footer-content__col-left%20is--copy%22%3E%3Cdiv%20class%3D%22text-brown-200%20p-l%22%3E%C2%A9%20%3Cspan%20id%3D%22copyright-year%22%3E2026%3C%2Fspan%3E%20Fauna%20Robotics%20Inc%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20id%3D%22w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b21e-74d2b1de%22%20class%3D%22footer-content__col-right%20is--bottom%22%3E%3Cdiv%20class%3D%22footer-content__col%22%3E%3Ca%20href%3D%22%2Fprivacy-policy%22%20class%3D%22text-brown-200%20text-link%22%3EPrivacy%20Policy%3C%2Fa%3E%3C%2Fdiv%3E%3Cdiv%20id%3D%22w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b222-74d2b1de%22%20class%3D%22footer-content__col%22%3E%3Ca%20href%3D%22%2Fdata-processing%22%20class%3D%22text-brown-200%20text-link%22%3EData%20Processing%20Addendum%3C%2Fa%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Ffooter%3E%3C%2Fdiv%3E%0A%0A%0A%0A%0A%0A%0A%0A%0A%0A%20%20%3C%2Fbody%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E"
+    },
+    "scanID": "f17f9fbc-f8ee-480f-b295-2ecadc967427",
+    "toolID": "accessibility-checker-v4.0.10",
+    "label": "faunarobotics.com-company"
+  },
+  "puppeteer": {
+    "_isDragging": false,
+    "_timeoutSettings": {},
+    "aceBusy": false
+  }
+}

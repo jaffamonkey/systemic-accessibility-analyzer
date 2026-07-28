@@ -1,0 +1,11 @@
+Checking: https://faunarobotics.com/
+  Violations: 141, warnings: 59
+Checking: https://faunarobotics.com/product
+  Violations: 209, warnings: 87
+Checking: https://faunarobotics.com/company
+  Violations: 204, warnings: 50
+Checking: https://faunarobotics.com/news
+  Violations: 105, warnings: 41
+Checking: https://faunarobotics.com/data-processing
+  Violations: 33, warnings: 20
+Done. Reports written to /Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/reports/speca11y

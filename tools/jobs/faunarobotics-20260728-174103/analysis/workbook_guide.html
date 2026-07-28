@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Workbook Guide</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --panel: #ffffff;
+      --panel-soft: #f7f9fc;
+      --text: #333;
+      --muted: #6b7280;
+      --border: #e6ebf2;
+      --shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .doc-shell {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .doc-header {
+      background: var(--panel);
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+
+    .doc-body {
+      background: var(--panel);
+      border-radius: 14px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .doc-meta {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    .doc-nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .doc-chip {
+      display: inline-block;
+      background: var(--panel-soft);
+      border: 1px solid var(--border);
+      color: var(--text);
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+
+    .prose {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .prose h1,
+    .prose h2,
+    .prose h3,
+    .prose h4 {
+      margin-top: 1.5em;
+      margin-bottom: 0.55em;
+      line-height: 1.2;
+    }
+
+    .prose h1 {
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      margin-top: 0;
+    }
+
+    .prose h2 {
+      font-size: 1.6rem;
+    }
+
+    .prose h3 {
+      font-size: 1.25rem;
+    }
+
+    .prose h4 {
+      font-size: 1.05rem;
+    }
+
+    .prose p,
+    .prose li {
+      line-height: 1.65;
+      color: var(--text);
+    }
+
+    .prose ul,
+    .prose ol {
+      padding-left: 1.4rem;
+      margin: 0.6rem 0 1rem;
+    }
+
+    .prose hr {
+      border: 0;
+      border-top: 1px solid var(--border);
+      margin: 1.5rem 0;
+    }
+
+    .prose code {
+      background: var(--panel-soft);
+      padding: 0.15rem 0.4rem;
+      border-radius: 6px;
+      font-size: 0.95em;
+    }
+
+    .prose pre {
+      background: #1f2937;
+      color: #f9fafb;
+      padding: 16px;
+      border-radius: 10px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+
+    .prose pre code {
+      background: transparent;
+      padding: 0;
+      color: inherit;
+    }
+
+    .prose blockquote {
+      margin: 1rem 0;
+      padding: 0.75rem 1rem;
+      border-left: 4px solid #4e79a7;
+      background: var(--panel-soft);
+      color: var(--text);
+      border-radius: 0 10px 10px 0;
+    }
+
+    .prose table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.25rem;
+      font-size: 14px;
+    }
+
+    .prose th,
+    .prose td {
+      text-align: left;
+      padding: 10px 12px;
+      border-top: 1px solid #edf1f6;
+      vertical-align: top;
+    }
+
+    .prose th {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      border-top: none;
+      background: var(--panel-soft);
+    }
+
+    .note,
+    .warn {
+      padding: 12px 14px;
+      border-radius: 10px;
+      margin: 1rem 0;
+    }
+
+    .note {
+      background: #eef8f2;
+      border: 1px solid #dcefe2;
+    }
+
+    .warn {
+      background: #fff4ea;
+      border: 1px solid #f0dcc5;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 14px;
+      }
+
+      .doc-header,
+      .doc-body {
+        padding: 18px;
+        border-radius: 12px;
+      }
+    }
+
+    .top-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .doc-link-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      line-height: 1;
+      border: 1px solid #dbe7f5;
+      background: #f6f0ff;
+      color: #4b5563;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+      transition: 0.18s ease;
+    }
+
+    .doc-link-button:hover {
+      background: #efe4ff;
+      border-color: #cbb7f6;
+      color: #1f2937;
+      transform: translateY(-1px);
+    }
+
+    .doc-link-button.is-current {
+      background: #e8f0ff;
+      border-color: #bfd3fb;
+      color: #1d4ed8;
+    }
+
+    .doc-link-button.is-disabled {
+      opacity: 0.55;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="doc-shell">
+    <div class="doc-header">
+      <h1>Workbook Guide</h1>
+      <div class="doc-meta">Reference guide for the exported spreadsheet tabs, columns, and analysis model.</div>
+      <div class="top-links" id="topLinks">
+        <a class="doc-link-button" href="/">← Back to jobs dashboard</a>
+        <a class="doc-link-button" id="projectGuideLink" href="/readme_overview.html">Project Guide</a>
+        <a class="doc-link-button" id="dashboardGuideLink" href="/dashboard_guide.html">Dashboard Guide</a>
+        <a class="doc-link-button" id="workbookGuideLink" href="/workbook_guide.html">Workbook Guide</a>
+        <a class="doc-link-button" id="roadmapGuideLink" href="/roadmap_guide.html">Roadmap</a>
+      </div>
+    </div>
+    <div class="doc-body prose">
+
+      <h1>Spreadsheet Workbook Guide</h1>
+      <p>This workbook functions as the primary data and analysis export for the accessibility framework. It compiles processed findings, deduplicated clusters, prioritized fix sequences, and database-ready data schemas into a single offline file.</p>
+      
+      <div class="note">
+        <strong>Recent workbook changes:</strong> Implemented friendlier human rule labels, added Siteimprove Alfa and Nu HTML Checker evidence fields, introduced engine-family metadata, enforced strict visual separation between Rule names and WCAG codes, optimized WCAG-only chart logic, and preserved "needs-review" data fields.
+      </div>
+      
+      <hr>
+      
+      <h2>How to read the workbook overall</h2>
+      <p>The workbook is organized into three distinct structural layers depending on your immediate goal:</p>
+      
+      <h3>1. Human summary / analyst tabs</h3>
+      <ul>
+        <li><strong>Summary:</strong> Executive macro overview of overall digital estate health.</li>
+        <li><strong>Systemic Clusters:</strong> Grouped issue families showing repeated patterns.</li>
+        <li><strong>Issue Details:</strong> Master granular row-by-row view of every processed finding.</li>
+        <li><strong>Fix Once Benefit Many:</strong> Pre-ranked optimization backlog for developer triage.</li>
+        <li><strong>Top Fixes:</strong> Simplified root-cause groupings for clean management reporting.</li>
+      </ul>
+      
+      <h3>2. Flat reporting / BI tabs</h3>
+      <ul>
+        <li><strong>Power BI Findings:</strong> Flattered transactional reporting table with stable keys.</li>
+        <li><strong>Power BI Patterns:</strong> Pattern-level rollups optimized for downstream business intelligence.</li>
+      </ul>
+      
+      <h3>3. Star-schema modelling tabs</h3>
+      <ul>
+        <li><strong>Fact Findings:</strong> Central transactional core holding individual processed rows.</li>
+        <li><strong>Dim Page / Dim Rule / Dim Component / Dim Pattern:</strong> Normalized database dimensions tracking descriptive metadata attributes.</li>
+      </ul>
+      
+      <hr>
+      
+      <h2>Core field concepts used across tabs</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Field family</th>
+            <th>Meaning / Data Schema Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Rule</strong></td>
+            <td>Clear, human-readable display title for the issue.</td>
+          </tr>
+          <tr>
+            <td><strong>Rule Id</strong></td>
+            <td>The original, technical identifier used by the source scanner tool.</td>
+          </tr>
+          <tr>
+            <td><strong>WCAG</strong></td>
+            <td>The specific compliance success criterion code (e.g., <code>1.4.3</code>).</td>
+          </tr>
+          <tr>
+            <td><strong>WCAG Name</strong></td>
+            <td>The official title of the criterion (e.g., <code>Contrast (Minimum)</code>).</td>
+          </tr>
+          <tr>
+            <td><strong>Severity</strong></td>
+            <td>Normalized severity scales used for predictable sorting and triage.</td>
+          </tr>
+          <tr>
+            <td><strong>Consensus</strong></td>
+            <td>An overlap signal indicating how many tools matched on a bug pattern.</td>
+          </tr>
+          <tr>
+            <td><strong>Engine Family</strong></td>
+            <td>A normalized family label such as Axe, HTMLCS, IBM, Alfa, Validator, Browser, Keyboard, Visual, or AT. This helps distinguish repeated findings from the same underlying engine from findings supported by truly independent tool families.</td>
+          </tr>
+          <tr>
+            <td><strong>Confidence</strong></td>
+            <td>A broader evidence strength judgment score.</td>
+          </tr>
+          <tr>
+            <td><strong>Issue Rank Score</strong></td>
+            <td>Calculated numeric prioritization value used to sort the backlog.</td>
+          </tr>
+          <tr>
+            <td><strong>Pattern / Display Pattern</strong></td>
+            <td>A shared identifier and human label for a repeated issue family.</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <hr>
+      
+      <h2>Sheet-by-sheet guide</h2>
+      
+      <h3>1) Summary</h3>
+      <p>The executive overview sheet tracking macro KPIs like total Violations, Pages Affected, Design System Impact, Accessibility Debt Index, and Accessibility Opportunity Score.</p>
+      
+      <h3>2) Systemic Clusters</h3>
+      <p><em>One of the most vital analyst tabs.</em> It processes raw, high-volume findings down into manageable, repeated issue families. Typical schemas map out Rule properties, WCAG details, severity levels, owner teams, inferred root causes, and original engine sources.</p>
+      <p>🎯 <strong>Best used for:</strong> Identifying which specific code bugs repeat across the digital estate, evaluating which look systemic, and deciding which clusters to triage first.</p>
+      
+      <h3>3) Issue Details</h3>
+      <p>The granular analyst log: renders one distinct row per processed finding, enriched with readable fields like Page URLs, DOM structural context, tool messages, engine origins, engine-family labels, and adapter-specific context such as Alfa thresholds or Nu HTML Checker line/column locations. The workbook strictly enforces an architecture where bare WCAG codes are never mixed into human-readable Rule labels.</p>
+      
+      <h3>4) Power BI Findings &amp; 5) Power BI Patterns</h3>
+      <p>Flattered analytical tables tracking stable keys, ownership domains, and page spread metrics designed specifically for downstream BI ingestion and custom modeling.</p>
+      
+      <h3>6) Fact Findings through 10) Dim Pattern</h3>
+      <p>A normalized star-schema database model mapping facts and dimensional sheets (Page, Rule, Component, Pattern) to power advanced relational reporting.</p>
+      
+      <h3>11) Fix Once Benefit Many</h3>
+      <p>A pre-ranked remediation shortlist tracking pattern names, component roots, affected URL counts, responsible developer teams, and priority scores.</p>
+      <p>💡 <strong>Priority score note:</strong> The numeric score acts purely as a ranking aid. Multiple top rows can easily tie if they share identical technical severity values and page spread footprints.</p>
+      
+      <h3>12) Top Fixes</h3>
+      <p>A highly simplified, root-cause summary layout optimized for clean, concise management-style reporting.</p>
+      
+      <hr>
+      
+      <h2>Needs-review findings in the workbook</h2>
+      <p>Some tools emit rows that are not hard compliance failures but still matter operationally. Depending on your active adapter configurations, these appear labeled as <code>incomplete</code>, <code>potentialviolation</code>, <code>warning</code>, or Alfa <code>cantTell</code> outcomes. Nu HTML Checker warnings are also preserved as markup/ARIA validity evidence. The analyzer intentionally preserves these rows for deep structural exploration, but they should not be calculated as confirmed failures in your core compliance reporting.</p>
+      
+      <hr>
+      
+      <h2>When the workbook and dashboard differ</h2>
+      <p>The workbook and dashboard share a core engine and will usually align perfectly. However, because dashboards summarize data, the workbook is the superior space to inspect micro-level field attributes. If a metric looks unexpected on the frontend, cross-reference it against <strong>Issue Details</strong>, <strong>Dim Rule</strong>, and <strong>Systemic Clusters</strong>.</p>
+      
+      <hr>
+      
+      <h2>Typical analyst workflow</h2>
+      <ol>
+        <li><strong>Orient:</strong> Start with the <strong>Summary</strong> and <strong>Systemic Clusters</strong> tabs to capture the macro problem shape.</li>
+        <li><strong>Queue:</strong> Use the <strong>Fix Once Benefit Many</strong> pre-ranked list to build an immediate developer backlog.</li>
+        <li><strong>Triage:</strong> Drill into <strong>Issue Details</strong> to filter exact DOM paths, selectors, and messages for engineering handoffs.</li>
+        <li><strong>Model:</strong> Connect <strong>Power BI Findings</strong> or your star-schema tables to your company's downstream analytical reports.</li>
+      </ol>
+
+    </div>
+  </div>
+
+  <script>
+    function buildTopNav() {
+      const path = window.location.pathname;
+      const currentMap = [
+        ['projectGuideLink', /readme_overview\.html$/],
+        ['dashboardGuideLink', /dashboard_guide\.html$/],
+        ['workbookGuideLink', /workbook_guide\.html$/],
+        ['roadmapGuideLink', /roadmap_guide\.html$/]
+      ];
+
+      currentMap.forEach(([id, regex]) => {
+        const el = document.getElementById(id);
+        if (el && regex.test(path)) {
+          el.classList.add('is-current');
+          el.setAttribute('aria-current', 'page');
+        }
+      });
+    }
+    buildTopNav();
+  </script>
+</body>
+
+</html>

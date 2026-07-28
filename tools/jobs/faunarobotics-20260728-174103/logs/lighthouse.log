@@ -1,0 +1,437 @@
+Lighthouse running without storage state for public job
+Auditing Lighthouse accessibility: https://faunarobotics.com/
+2026-07-28T17:42:37.569Z LH:status Connecting to browser
+2026-07-28T17:42:37.603Z LH:status Navigating to about:blank
+2026-07-28T17:42:37.657Z LH:status Benchmarking machine
+2026-07-28T17:42:38.911Z LH:status Preparing target for navigation mode
+2026-07-28T17:42:38.999Z LH:status Preparing network conditions
+2026-07-28T17:42:39.027Z LH:status Navigating to https://faunarobotics.com/
+2026-07-28T17:43:24.073Z LH:waitFor:warn Timed out waiting for page load. Checking if page is hung...
+2026-07-28T17:43:24.274Z LH:status Getting artifact: DevtoolsLog
+2026-07-28T17:43:24.274Z LH:status Getting artifact: Accessibility
+2026-07-28T17:43:25.362Z LH:status Getting artifact: NetworkUserAgent
+2026-07-28T17:43:25.362Z LH:status Getting artifact: Stacks
+2026-07-28T17:43:25.362Z LH:status Collect stacks
+2026-07-28T17:43:25.506Z LH:status Getting artifact: FullPageScreenshot
+2026-07-28T17:43:29.443Z LH:status Analyzing and running audits...
+2026-07-28T17:43:29.447Z LH:status Auditing: `[accesskey]` values are unique
+2026-07-28T17:43:29.449Z LH:status Auditing: `[aria-*]` attributes match their roles
+2026-07-28T17:43:29.452Z LH:status Auditing: Values assigned to `role=""` are valid ARIA roles.
+2026-07-28T17:43:29.458Z LH:status Auditing: `button`, `link`, and `menuitem` elements have accessible names
+2026-07-28T17:43:29.464Z LH:status Auditing: Elements with `role="dialog"` or `role="alertdialog"` have accessible names.
+2026-07-28T17:43:29.465Z LH:status Auditing: `[aria-hidden="true"]` is not present on the document `<body>`
+2026-07-28T17:43:29.474Z LH:status Auditing: `[aria-hidden="true"]` elements do not contain focusable descendents
+2026-07-28T17:43:29.482Z LH:status Auditing: ARIA input fields have accessible names
+2026-07-28T17:43:29.484Z LH:status Auditing: ARIA `meter` elements have accessible names
+2026-07-28T17:43:29.498Z LH:status Auditing: ARIA `progressbar` elements have accessible names
+2026-07-28T17:43:29.499Z LH:status Auditing: `[role]`s have all required `[aria-*]` attributes
+2026-07-28T17:43:29.510Z LH:status Auditing: Elements with an ARIA `[role]` that require children to contain a specific `[role]` have all required children.
+2026-07-28T17:43:29.518Z LH:status Auditing: `[role]`s are contained by their required parent element
+2026-07-28T17:43:29.531Z LH:status Auditing: `[role]` values are valid
+2026-07-28T17:43:29.534Z LH:status Auditing: Elements with the `role=text` attribute do not have focusable descendents.
+2026-07-28T17:43:29.534Z LH:status Auditing: ARIA toggle fields have accessible names
+2026-07-28T17:43:29.535Z LH:status Auditing: ARIA `tooltip` elements have accessible names
+2026-07-28T17:43:29.538Z LH:status Auditing: ARIA `treeitem` elements have accessible names
+2026-07-28T17:43:29.540Z LH:status Auditing: `[aria-*]` attributes have valid values
+2026-07-28T17:43:29.542Z LH:status Auditing: `[aria-*]` attributes are valid and not misspelled
+2026-07-28T17:43:29.556Z LH:status Auditing: Buttons have an accessible name
+2026-07-28T17:43:29.561Z LH:status Auditing: The page contains a heading, skip link, or landmark region
+2026-07-28T17:43:29.566Z LH:status Auditing: Background and foreground colors have a sufficient contrast ratio
+2026-07-28T17:43:29.577Z LH:status Auditing: `<dl>`'s contain only properly-ordered `<dt>` and `<dd>` groups, `<script>`, `<template>` or `<div>` elements.
+2026-07-28T17:43:29.579Z LH:status Auditing: Definition list items are wrapped in `<dl>` elements
+2026-07-28T17:43:29.581Z LH:status Auditing: Document has a `<title>` element
+2026-07-28T17:43:29.583Z LH:status Auditing: `[id]` attributes on active, focusable elements are unique
+2026-07-28T17:43:29.585Z LH:status Auditing: ARIA IDs are unique
+2026-07-28T17:43:29.590Z LH:status Auditing: All heading elements contain content.
+2026-07-28T17:43:29.610Z LH:status Auditing: No form fields have multiple labels
+2026-07-28T17:43:29.610Z LH:status Auditing: `<frame>` or `<iframe>` elements have a title
+2026-07-28T17:43:29.614Z LH:status Auditing: Heading elements appear in a sequentially-descending order
+2026-07-28T17:43:29.615Z LH:status Auditing: `<html>` element has a `[lang]` attribute
+2026-07-28T17:43:29.617Z LH:status Auditing: `<html>` element has a valid value for its `[lang]` attribute
+2026-07-28T17:43:29.619Z LH:status Auditing: `<html>` element has an `[xml:lang]` attribute with the same base language as the `[lang]` attribute.
+2026-07-28T17:43:29.619Z LH:status Auditing: Identical links have the same purpose.
+2026-07-28T17:43:29.624Z LH:status Auditing: Image elements have `[alt]` attributes
+2026-07-28T17:43:29.626Z LH:status Auditing: Image elements do not have `[alt]` attributes that are redundant text.
+2026-07-28T17:43:29.628Z LH:status Auditing: Input buttons have discernible text.
+2026-07-28T17:43:29.629Z LH:status Auditing: `<input type="image">` elements have `[alt]` text
+2026-07-28T17:43:29.630Z LH:status Auditing: Elements with visible text labels have matching accessible names.
+2026-07-28T17:43:29.631Z LH:status Auditing: Form elements have associated labels
+2026-07-28T17:43:29.632Z LH:status Auditing: Document has a main landmark.
+2026-07-28T17:43:29.635Z LH:status Auditing: Links have a discernible name
+2026-07-28T17:43:29.643Z LH:status Auditing: Links are distinguishable without relying on color.
+2026-07-28T17:43:29.647Z LH:status Auditing: Lists contain only `<li>` elements and script supporting elements (`<script>` and `<template>`).
+2026-07-28T17:43:29.649Z LH:status Auditing: List items (`<li>`) are contained within `<ul>`, `<ol>` or `<menu>` parent elements
+2026-07-28T17:43:29.653Z LH:status Auditing: The document does not use `<meta http-equiv="refresh">`
+2026-07-28T17:43:29.656Z LH:status Auditing: `[user-scalable="no"]` is not used in the `<meta name="viewport">` element and the `[maximum-scale]` attribute is not less than 5.
+2026-07-28T17:43:29.658Z LH:status Auditing: `<object>` elements have alternate text
+2026-07-28T17:43:29.659Z LH:status Auditing: Select elements have associated label elements.
+2026-07-28T17:43:29.660Z LH:status Auditing: Skip links are focusable.
+2026-07-28T17:43:29.667Z LH:status Auditing: No element has a `[tabindex]` value greater than 0
+2026-07-28T17:43:29.669Z LH:status Auditing: Tables have different content in the summary attribute and `<caption>`.
+2026-07-28T17:43:29.672Z LH:status Auditing: Tables use `<caption>` instead of cells with the `[colspan]` attribute to indicate a caption.
+2026-07-28T17:43:29.673Z LH:status Auditing: Touch targets have sufficient size and spacing.
+2026-07-28T17:43:29.674Z LH:status Auditing: `<td>` elements in a large `<table>` have one or more table headers.
+2026-07-28T17:43:29.677Z LH:status Auditing: Cells in a `<table>` element that use the `[headers]` attribute refer to table cells within the same table.
+2026-07-28T17:43:29.680Z LH:status Auditing: `<th>` elements and elements with `[role="columnheader"/"rowheader"]` have data cells they describe.
+2026-07-28T17:43:29.683Z LH:status Auditing: `[lang]` attributes have a valid value
+2026-07-28T17:43:29.685Z LH:status Auditing: `<video>` elements contain a `<track>` element with `[kind="captions"]`
+2026-07-28T17:43:29.689Z LH:status Auditing: Custom controls have associated labels
+2026-07-28T17:43:29.689Z LH:status Auditing: Custom controls have ARIA roles
+2026-07-28T17:43:29.689Z LH:status Auditing: User focus is not accidentally trapped in a region
+2026-07-28T17:43:29.689Z LH:status Auditing: Interactive controls are keyboard focusable
+2026-07-28T17:43:29.689Z LH:status Auditing: Interactive elements indicate their purpose and state
+2026-07-28T17:43:29.689Z LH:status Auditing: The page has a logical tab order
+2026-07-28T17:43:29.689Z LH:status Auditing: The user's focus is directed to new content added to the page
+2026-07-28T17:43:29.689Z LH:status Auditing: Offscreen content is hidden from assistive technology
+2026-07-28T17:43:29.689Z LH:status Auditing: HTML5 landmark elements are used to improve navigation
+2026-07-28T17:43:29.689Z LH:status Auditing: Visual order on the page follows DOM order
+2026-07-28T17:43:29.689Z LH:status Generating results...
+Saved Lighthouse report: /Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/reports/lighthouse/faunarobotics.com.json
+Auditing Lighthouse accessibility: https://faunarobotics.com/product
+2026-07-28T17:43:32.323Z LH:status Connecting to browser
+2026-07-28T17:43:32.330Z LH:status Navigating to about:blank
+2026-07-28T17:43:32.338Z LH:status Benchmarking machine
+2026-07-28T17:43:33.344Z LH:status Preparing target for navigation mode
+2026-07-28T17:43:33.358Z LH:status Preparing network conditions
+2026-07-28T17:43:33.375Z LH:status Navigating to https://faunarobotics.com/product
+2026-07-28T17:43:37.159Z LH:status Getting artifact: DevtoolsLog
+2026-07-28T17:43:37.160Z LH:status Getting artifact: Accessibility
+2026-07-28T17:43:37.381Z LH:status Getting artifact: NetworkUserAgent
+2026-07-28T17:43:37.382Z LH:status Getting artifact: Stacks
+2026-07-28T17:43:37.382Z LH:status Collect stacks
+2026-07-28T17:43:37.391Z LH:status Getting artifact: FullPageScreenshot
+2026-07-28T17:43:38.717Z LH:status Analyzing and running audits...
+2026-07-28T17:43:38.718Z LH:status Auditing: `[accesskey]` values are unique
+2026-07-28T17:43:38.718Z LH:status Auditing: `[aria-*]` attributes match their roles
+2026-07-28T17:43:38.722Z LH:status Auditing: Values assigned to `role=""` are valid ARIA roles.
+2026-07-28T17:43:38.724Z LH:status Auditing: `button`, `link`, and `menuitem` elements have accessible names
+2026-07-28T17:43:38.728Z LH:status Auditing: Elements with `role="dialog"` or `role="alertdialog"` have accessible names.
+2026-07-28T17:43:38.733Z LH:status Auditing: `[aria-hidden="true"]` is not present on the document `<body>`
+2026-07-28T17:43:38.741Z LH:status Auditing: `[aria-hidden="true"]` elements do not contain focusable descendents
+2026-07-28T17:43:38.744Z LH:status Auditing: ARIA input fields have accessible names
+2026-07-28T17:43:38.747Z LH:status Auditing: ARIA `meter` elements have accessible names
+2026-07-28T17:43:38.748Z LH:status Auditing: ARIA `progressbar` elements have accessible names
+2026-07-28T17:43:38.750Z LH:status Auditing: `[role]`s have all required `[aria-*]` attributes
+2026-07-28T17:43:38.760Z LH:status Auditing: Elements with an ARIA `[role]` that require children to contain a specific `[role]` have all required children.
+2026-07-28T17:43:38.767Z LH:status Auditing: `[role]`s are contained by their required parent element
+2026-07-28T17:43:38.770Z LH:status Auditing: `[role]` values are valid
+2026-07-28T17:43:38.775Z LH:status Auditing: Elements with the `role=text` attribute do not have focusable descendents.
+2026-07-28T17:43:38.785Z LH:status Auditing: ARIA toggle fields have accessible names
+2026-07-28T17:43:38.786Z LH:status Auditing: ARIA `tooltip` elements have accessible names
+2026-07-28T17:43:38.789Z LH:status Auditing: ARIA `treeitem` elements have accessible names
+2026-07-28T17:43:38.791Z LH:status Auditing: `[aria-*]` attributes have valid values
+2026-07-28T17:43:38.815Z LH:status Auditing: `[aria-*]` attributes are valid and not misspelled
+2026-07-28T17:43:38.818Z LH:status Auditing: Buttons have an accessible name
+2026-07-28T17:43:38.820Z LH:status Auditing: The page contains a heading, skip link, or landmark region
+2026-07-28T17:43:38.823Z LH:status Auditing: Background and foreground colors have a sufficient contrast ratio
+2026-07-28T17:43:38.826Z LH:status Auditing: `<dl>`'s contain only properly-ordered `<dt>` and `<dd>` groups, `<script>`, `<template>` or `<div>` elements.
+2026-07-28T17:43:38.827Z LH:status Auditing: Definition list items are wrapped in `<dl>` elements
+2026-07-28T17:43:38.832Z LH:status Auditing: Document has a `<title>` element
+2026-07-28T17:43:38.835Z LH:status Auditing: `[id]` attributes on active, focusable elements are unique
+2026-07-28T17:43:38.838Z LH:status Auditing: ARIA IDs are unique
+2026-07-28T17:43:38.851Z LH:status Auditing: All heading elements contain content.
+2026-07-28T17:43:38.857Z LH:status Auditing: No form fields have multiple labels
+2026-07-28T17:43:38.858Z LH:status Auditing: `<frame>` or `<iframe>` elements have a title
+2026-07-28T17:43:38.859Z LH:status Auditing: Heading elements appear in a sequentially-descending order
+2026-07-28T17:43:38.861Z LH:status Auditing: `<html>` element has a `[lang]` attribute
+2026-07-28T17:43:38.866Z LH:status Auditing: `<html>` element has a valid value for its `[lang]` attribute
+2026-07-28T17:43:38.876Z LH:status Auditing: `<html>` element has an `[xml:lang]` attribute with the same base language as the `[lang]` attribute.
+2026-07-28T17:43:38.877Z LH:status Auditing: Identical links have the same purpose.
+2026-07-28T17:43:38.889Z LH:status Auditing: Image elements have `[alt]` attributes
+2026-07-28T17:43:38.892Z LH:status Auditing: Image elements do not have `[alt]` attributes that are redundant text.
+2026-07-28T17:43:38.918Z LH:status Auditing: Input buttons have discernible text.
+2026-07-28T17:43:38.923Z LH:status Auditing: `<input type="image">` elements have `[alt]` text
+2026-07-28T17:43:38.927Z LH:status Auditing: Elements with visible text labels have matching accessible names.
+2026-07-28T17:43:38.932Z LH:status Auditing: Form elements have associated labels
+2026-07-28T17:43:38.939Z LH:status Auditing: Document has a main landmark.
+2026-07-28T17:43:38.942Z LH:status Auditing: Links have a discernible name
+2026-07-28T17:43:38.944Z LH:status Auditing: Links are distinguishable without relying on color.
+2026-07-28T17:43:38.949Z LH:status Auditing: Lists contain only `<li>` elements and script supporting elements (`<script>` and `<template>`).
+2026-07-28T17:43:38.957Z LH:status Auditing: List items (`<li>`) are contained within `<ul>`, `<ol>` or `<menu>` parent elements
+2026-07-28T17:43:38.977Z LH:status Auditing: The document does not use `<meta http-equiv="refresh">`
+2026-07-28T17:43:39.020Z LH:status Auditing: `[user-scalable="no"]` is not used in the `<meta name="viewport">` element and the `[maximum-scale]` attribute is not less than 5.
+2026-07-28T17:43:39.026Z LH:status Auditing: `<object>` elements have alternate text
+2026-07-28T17:43:39.027Z LH:status Auditing: Select elements have associated label elements.
+2026-07-28T17:43:39.030Z LH:status Auditing: Skip links are focusable.
+2026-07-28T17:43:39.032Z LH:status Auditing: No element has a `[tabindex]` value greater than 0
+2026-07-28T17:43:39.034Z LH:status Auditing: Tables have different content in the summary attribute and `<caption>`.
+2026-07-28T17:43:39.044Z LH:status Auditing: Tables use `<caption>` instead of cells with the `[colspan]` attribute to indicate a caption.
+2026-07-28T17:43:39.052Z LH:status Auditing: Touch targets have sufficient size and spacing.
+2026-07-28T17:43:39.058Z LH:status Auditing: `<td>` elements in a large `<table>` have one or more table headers.
+2026-07-28T17:43:39.060Z LH:status Auditing: Cells in a `<table>` element that use the `[headers]` attribute refer to table cells within the same table.
+2026-07-28T17:43:39.073Z LH:status Auditing: `<th>` elements and elements with `[role="columnheader"/"rowheader"]` have data cells they describe.
+2026-07-28T17:43:39.074Z LH:status Auditing: `[lang]` attributes have a valid value
+2026-07-28T17:43:39.076Z LH:status Auditing: `<video>` elements contain a `<track>` element with `[kind="captions"]`
+2026-07-28T17:43:39.081Z LH:status Auditing: Custom controls have associated labels
+2026-07-28T17:43:39.082Z LH:status Auditing: Custom controls have ARIA roles
+2026-07-28T17:43:39.082Z LH:status Auditing: User focus is not accidentally trapped in a region
+2026-07-28T17:43:39.082Z LH:status Auditing: Interactive controls are keyboard focusable
+2026-07-28T17:43:39.082Z LH:status Auditing: Interactive elements indicate their purpose and state
+2026-07-28T17:43:39.082Z LH:status Auditing: The page has a logical tab order
+2026-07-28T17:43:39.082Z LH:status Auditing: The user's focus is directed to new content added to the page
+2026-07-28T17:43:39.082Z LH:status Auditing: Offscreen content is hidden from assistive technology
+2026-07-28T17:43:39.082Z LH:status Auditing: HTML5 landmark elements are used to improve navigation
+2026-07-28T17:43:39.082Z LH:status Auditing: Visual order on the page follows DOM order
+2026-07-28T17:43:39.082Z LH:status Generating results...
+Saved Lighthouse report: /Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/reports/lighthouse/faunarobotics.com-product.json
+Auditing Lighthouse accessibility: https://faunarobotics.com/company
+2026-07-28T17:43:41.432Z LH:status Connecting to browser
+2026-07-28T17:43:41.436Z LH:status Navigating to about:blank
+2026-07-28T17:43:41.442Z LH:status Benchmarking machine
+2026-07-28T17:43:42.445Z LH:status Preparing target for navigation mode
+2026-07-28T17:43:42.458Z LH:status Preparing network conditions
+2026-07-28T17:43:42.461Z LH:status Navigating to https://faunarobotics.com/company
+2026-07-28T17:43:45.114Z LH:status Getting artifact: DevtoolsLog
+2026-07-28T17:43:45.115Z LH:status Getting artifact: Accessibility
+2026-07-28T17:43:45.711Z LH:status Getting artifact: NetworkUserAgent
+2026-07-28T17:43:45.711Z LH:status Getting artifact: Stacks
+2026-07-28T17:43:45.711Z LH:status Collect stacks
+2026-07-28T17:43:45.727Z LH:status Getting artifact: FullPageScreenshot
+2026-07-28T17:43:46.936Z LH:status Analyzing and running audits...
+2026-07-28T17:43:46.938Z LH:status Auditing: `[accesskey]` values are unique
+2026-07-28T17:43:46.940Z LH:status Auditing: `[aria-*]` attributes match their roles
+2026-07-28T17:43:46.942Z LH:status Auditing: Values assigned to `role=""` are valid ARIA roles.
+2026-07-28T17:43:46.948Z LH:status Auditing: `button`, `link`, and `menuitem` elements have accessible names
+2026-07-28T17:43:46.950Z LH:status Auditing: Elements with `role="dialog"` or `role="alertdialog"` have accessible names.
+2026-07-28T17:43:46.951Z LH:status Auditing: `[aria-hidden="true"]` is not present on the document `<body>`
+2026-07-28T17:43:46.952Z LH:status Auditing: `[aria-hidden="true"]` elements do not contain focusable descendents
+2026-07-28T17:43:46.956Z LH:status Auditing: ARIA input fields have accessible names
+2026-07-28T17:43:46.956Z LH:status Auditing: ARIA `meter` elements have accessible names
+2026-07-28T17:43:46.957Z LH:status Auditing: ARIA `progressbar` elements have accessible names
+2026-07-28T17:43:46.958Z LH:status Auditing: `[role]`s have all required `[aria-*]` attributes
+2026-07-28T17:43:46.959Z LH:status Auditing: Elements with an ARIA `[role]` that require children to contain a specific `[role]` have all required children.
+2026-07-28T17:43:46.961Z LH:status Auditing: `[role]`s are contained by their required parent element
+2026-07-28T17:43:46.964Z LH:status Auditing: `[role]` values are valid
+2026-07-28T17:43:46.966Z LH:status Auditing: Elements with the `role=text` attribute do not have focusable descendents.
+2026-07-28T17:43:46.967Z LH:status Auditing: ARIA toggle fields have accessible names
+2026-07-28T17:43:46.968Z LH:status Auditing: ARIA `tooltip` elements have accessible names
+2026-07-28T17:43:46.972Z LH:status Auditing: ARIA `treeitem` elements have accessible names
+2026-07-28T17:43:46.974Z LH:status Auditing: `[aria-*]` attributes have valid values
+2026-07-28T17:43:46.975Z LH:status Auditing: `[aria-*]` attributes are valid and not misspelled
+2026-07-28T17:43:46.977Z LH:status Auditing: Buttons have an accessible name
+2026-07-28T17:43:46.981Z LH:status Auditing: The page contains a heading, skip link, or landmark region
+2026-07-28T17:43:46.983Z LH:status Auditing: Background and foreground colors have a sufficient contrast ratio
+2026-07-28T17:43:46.984Z LH:status Auditing: `<dl>`'s contain only properly-ordered `<dt>` and `<dd>` groups, `<script>`, `<template>` or `<div>` elements.
+2026-07-28T17:43:46.986Z LH:status Auditing: Definition list items are wrapped in `<dl>` elements
+2026-07-28T17:43:46.986Z LH:status Auditing: Document has a `<title>` element
+2026-07-28T17:43:46.990Z LH:status Auditing: `[id]` attributes on active, focusable elements are unique
+2026-07-28T17:43:46.997Z LH:status Auditing: ARIA IDs are unique
+2026-07-28T17:43:46.998Z LH:status Auditing: All heading elements contain content.
+2026-07-28T17:43:47.000Z LH:status Auditing: No form fields have multiple labels
+2026-07-28T17:43:47.001Z LH:status Auditing: `<frame>` or `<iframe>` elements have a title
+2026-07-28T17:43:47.002Z LH:status Auditing: Heading elements appear in a sequentially-descending order
+2026-07-28T17:43:47.005Z LH:status Auditing: `<html>` element has a `[lang]` attribute
+2026-07-28T17:43:47.007Z LH:status Auditing: `<html>` element has a valid value for its `[lang]` attribute
+2026-07-28T17:43:47.008Z LH:status Auditing: `<html>` element has an `[xml:lang]` attribute with the same base language as the `[lang]` attribute.
+2026-07-28T17:43:47.009Z LH:status Auditing: Identical links have the same purpose.
+2026-07-28T17:43:47.011Z LH:status Auditing: Image elements have `[alt]` attributes
+2026-07-28T17:43:47.019Z LH:status Auditing: Image elements do not have `[alt]` attributes that are redundant text.
+2026-07-28T17:43:47.022Z LH:status Auditing: Input buttons have discernible text.
+2026-07-28T17:43:47.023Z LH:status Auditing: `<input type="image">` elements have `[alt]` text
+2026-07-28T17:43:47.024Z LH:status Auditing: Elements with visible text labels have matching accessible names.
+2026-07-28T17:43:47.025Z LH:status Auditing: Form elements have associated labels
+2026-07-28T17:43:47.026Z LH:status Auditing: Document has a main landmark.
+2026-07-28T17:43:47.030Z LH:status Auditing: Links have a discernible name
+2026-07-28T17:43:47.031Z LH:status Auditing: Links are distinguishable without relying on color.
+2026-07-28T17:43:47.032Z LH:status Auditing: Lists contain only `<li>` elements and script supporting elements (`<script>` and `<template>`).
+2026-07-28T17:43:47.033Z LH:status Auditing: List items (`<li>`) are contained within `<ul>`, `<ol>` or `<menu>` parent elements
+2026-07-28T17:43:47.035Z LH:status Auditing: The document does not use `<meta http-equiv="refresh">`
+2026-07-28T17:43:47.043Z LH:status Auditing: `[user-scalable="no"]` is not used in the `<meta name="viewport">` element and the `[maximum-scale]` attribute is not less than 5.
+2026-07-28T17:43:47.044Z LH:status Auditing: `<object>` elements have alternate text
+2026-07-28T17:43:47.046Z LH:status Auditing: Select elements have associated label elements.
+2026-07-28T17:43:47.047Z LH:status Auditing: Skip links are focusable.
+2026-07-28T17:43:47.048Z LH:status Auditing: No element has a `[tabindex]` value greater than 0
+2026-07-28T17:43:47.050Z LH:status Auditing: Tables have different content in the summary attribute and `<caption>`.
+2026-07-28T17:43:47.052Z LH:status Auditing: Tables use `<caption>` instead of cells with the `[colspan]` attribute to indicate a caption.
+2026-07-28T17:43:47.055Z LH:status Auditing: Touch targets have sufficient size and spacing.
+2026-07-28T17:43:47.057Z LH:status Auditing: `<td>` elements in a large `<table>` have one or more table headers.
+2026-07-28T17:43:47.058Z LH:status Auditing: Cells in a `<table>` element that use the `[headers]` attribute refer to table cells within the same table.
+2026-07-28T17:43:47.064Z LH:status Auditing: `<th>` elements and elements with `[role="columnheader"/"rowheader"]` have data cells they describe.
+2026-07-28T17:43:47.066Z LH:status Auditing: `[lang]` attributes have a valid value
+2026-07-28T17:43:47.068Z LH:status Auditing: `<video>` elements contain a `<track>` element with `[kind="captions"]`
+2026-07-28T17:43:47.069Z LH:status Auditing: Custom controls have associated labels
+2026-07-28T17:43:47.069Z LH:status Auditing: Custom controls have ARIA roles
+2026-07-28T17:43:47.069Z LH:status Auditing: User focus is not accidentally trapped in a region
+2026-07-28T17:43:47.069Z LH:status Auditing: Interactive controls are keyboard focusable
+2026-07-28T17:43:47.069Z LH:status Auditing: Interactive elements indicate their purpose and state
+2026-07-28T17:43:47.069Z LH:status Auditing: The page has a logical tab order
+2026-07-28T17:43:47.069Z LH:status Auditing: The user's focus is directed to new content added to the page
+2026-07-28T17:43:47.069Z LH:status Auditing: Offscreen content is hidden from assistive technology
+2026-07-28T17:43:47.069Z LH:status Auditing: HTML5 landmark elements are used to improve navigation
+2026-07-28T17:43:47.069Z LH:status Auditing: Visual order on the page follows DOM order
+2026-07-28T17:43:47.069Z LH:status Generating results...
+Saved Lighthouse report: /Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/reports/lighthouse/faunarobotics.com-company.json
+Auditing Lighthouse accessibility: https://faunarobotics.com/news
+2026-07-28T17:43:49.414Z LH:status Connecting to browser
+2026-07-28T17:43:49.419Z LH:status Navigating to about:blank
+2026-07-28T17:43:49.424Z LH:status Benchmarking machine
+2026-07-28T17:43:50.429Z LH:status Preparing target for navigation mode
+2026-07-28T17:43:50.441Z LH:status Preparing network conditions
+2026-07-28T17:43:50.455Z LH:status Navigating to https://faunarobotics.com/news
+2026-07-28T17:43:53.268Z LH:status Getting artifact: DevtoolsLog
+2026-07-28T17:43:53.269Z LH:status Getting artifact: Accessibility
+2026-07-28T17:43:53.392Z LH:status Getting artifact: NetworkUserAgent
+2026-07-28T17:43:53.393Z LH:status Getting artifact: Stacks
+2026-07-28T17:43:53.393Z LH:status Collect stacks
+2026-07-28T17:43:53.402Z LH:status Getting artifact: FullPageScreenshot
+2026-07-28T17:43:54.528Z LH:status Analyzing and running audits...
+2026-07-28T17:43:54.529Z LH:status Auditing: `[accesskey]` values are unique
+2026-07-28T17:43:54.530Z LH:status Auditing: `[aria-*]` attributes match their roles
+2026-07-28T17:43:54.531Z LH:status Auditing: Values assigned to `role=""` are valid ARIA roles.
+2026-07-28T17:43:54.534Z LH:status Auditing: `button`, `link`, and `menuitem` elements have accessible names
+2026-07-28T17:43:54.536Z LH:status Auditing: Elements with `role="dialog"` or `role="alertdialog"` have accessible names.
+2026-07-28T17:43:54.537Z LH:status Auditing: `[aria-hidden="true"]` is not present on the document `<body>`
+2026-07-28T17:43:54.540Z LH:status Auditing: `[aria-hidden="true"]` elements do not contain focusable descendents
+2026-07-28T17:43:54.542Z LH:status Auditing: ARIA input fields have accessible names
+2026-07-28T17:43:54.542Z LH:status Auditing: ARIA `meter` elements have accessible names
+2026-07-28T17:43:54.543Z LH:status Auditing: ARIA `progressbar` elements have accessible names
+2026-07-28T17:43:54.543Z LH:status Auditing: `[role]`s have all required `[aria-*]` attributes
+2026-07-28T17:43:54.545Z LH:status Auditing: Elements with an ARIA `[role]` that require children to contain a specific `[role]` have all required children.
+2026-07-28T17:43:54.546Z LH:status Auditing: `[role]`s are contained by their required parent element
+2026-07-28T17:43:54.548Z LH:status Auditing: `[role]` values are valid
+2026-07-28T17:43:54.550Z LH:status Auditing: Elements with the `role=text` attribute do not have focusable descendents.
+2026-07-28T17:43:54.551Z LH:status Auditing: ARIA toggle fields have accessible names
+2026-07-28T17:43:54.551Z LH:status Auditing: ARIA `tooltip` elements have accessible names
+2026-07-28T17:43:54.552Z LH:status Auditing: ARIA `treeitem` elements have accessible names
+2026-07-28T17:43:54.553Z LH:status Auditing: `[aria-*]` attributes have valid values
+2026-07-28T17:43:54.559Z LH:status Auditing: `[aria-*]` attributes are valid and not misspelled
+2026-07-28T17:43:54.561Z LH:status Auditing: Buttons have an accessible name
+2026-07-28T17:43:54.562Z LH:status Auditing: The page contains a heading, skip link, or landmark region
+2026-07-28T17:43:54.564Z LH:status Auditing: Background and foreground colors have a sufficient contrast ratio
+2026-07-28T17:43:54.565Z LH:status Auditing: `<dl>`'s contain only properly-ordered `<dt>` and `<dd>` groups, `<script>`, `<template>` or `<div>` elements.
+2026-07-28T17:43:54.566Z LH:status Auditing: Definition list items are wrapped in `<dl>` elements
+2026-07-28T17:43:54.567Z LH:status Auditing: Document has a `<title>` element
+2026-07-28T17:43:54.569Z LH:status Auditing: `[id]` attributes on active, focusable elements are unique
+2026-07-28T17:43:54.569Z LH:status Auditing: ARIA IDs are unique
+2026-07-28T17:43:54.571Z LH:status Auditing: All heading elements contain content.
+2026-07-28T17:43:54.577Z LH:status Auditing: No form fields have multiple labels
+2026-07-28T17:43:54.578Z LH:status Auditing: `<frame>` or `<iframe>` elements have a title
+2026-07-28T17:43:54.579Z LH:status Auditing: Heading elements appear in a sequentially-descending order
+2026-07-28T17:43:54.580Z LH:status Auditing: `<html>` element has a `[lang]` attribute
+2026-07-28T17:43:54.582Z LH:status Auditing: `<html>` element has a valid value for its `[lang]` attribute
+2026-07-28T17:43:54.583Z LH:status Auditing: `<html>` element has an `[xml:lang]` attribute with the same base language as the `[lang]` attribute.
+2026-07-28T17:43:54.584Z LH:status Auditing: Identical links have the same purpose.
+2026-07-28T17:43:54.586Z LH:status Auditing: Image elements have `[alt]` attributes
+2026-07-28T17:43:54.587Z LH:status Auditing: Image elements do not have `[alt]` attributes that are redundant text.
+2026-07-28T17:43:54.589Z LH:status Auditing: Input buttons have discernible text.
+2026-07-28T17:43:54.595Z LH:status Auditing: `<input type="image">` elements have `[alt]` text
+2026-07-28T17:43:54.596Z LH:status Auditing: Elements with visible text labels have matching accessible names.
+2026-07-28T17:43:54.597Z LH:status Auditing: Form elements have associated labels
+2026-07-28T17:43:54.598Z LH:status Auditing: Document has a main landmark.
+2026-07-28T17:43:54.601Z LH:status Auditing: Links have a discernible name
+2026-07-28T17:43:54.603Z LH:status Auditing: Links are distinguishable without relying on color.
+2026-07-28T17:43:54.604Z LH:status Auditing: Lists contain only `<li>` elements and script supporting elements (`<script>` and `<template>`).
+2026-07-28T17:43:54.605Z LH:status Auditing: List items (`<li>`) are contained within `<ul>`, `<ol>` or `<menu>` parent elements
+2026-07-28T17:43:54.606Z LH:status Auditing: The document does not use `<meta http-equiv="refresh">`
+2026-07-28T17:43:54.608Z LH:status Auditing: `[user-scalable="no"]` is not used in the `<meta name="viewport">` element and the `[maximum-scale]` attribute is not less than 5.
+2026-07-28T17:43:54.613Z LH:status Auditing: `<object>` elements have alternate text
+2026-07-28T17:43:54.614Z LH:status Auditing: Select elements have associated label elements.
+2026-07-28T17:43:54.617Z LH:status Auditing: Skip links are focusable.
+2026-07-28T17:43:54.618Z LH:status Auditing: No element has a `[tabindex]` value greater than 0
+2026-07-28T17:43:54.620Z LH:status Auditing: Tables have different content in the summary attribute and `<caption>`.
+2026-07-28T17:43:54.622Z LH:status Auditing: Tables use `<caption>` instead of cells with the `[colspan]` attribute to indicate a caption.
+2026-07-28T17:43:54.623Z LH:status Auditing: Touch targets have sufficient size and spacing.
+2026-07-28T17:43:54.625Z LH:status Auditing: `<td>` elements in a large `<table>` have one or more table headers.
+2026-07-28T17:43:54.627Z LH:status Auditing: Cells in a `<table>` element that use the `[headers]` attribute refer to table cells within the same table.
+2026-07-28T17:43:54.631Z LH:status Auditing: `<th>` elements and elements with `[role="columnheader"/"rowheader"]` have data cells they describe.
+2026-07-28T17:43:54.633Z LH:status Auditing: `[lang]` attributes have a valid value
+2026-07-28T17:43:54.636Z LH:status Auditing: `<video>` elements contain a `<track>` element with `[kind="captions"]`
+2026-07-28T17:43:54.638Z LH:status Auditing: Custom controls have associated labels
+2026-07-28T17:43:54.638Z LH:status Auditing: Custom controls have ARIA roles
+2026-07-28T17:43:54.638Z LH:status Auditing: User focus is not accidentally trapped in a region
+2026-07-28T17:43:54.638Z LH:status Auditing: Interactive controls are keyboard focusable
+2026-07-28T17:43:54.638Z LH:status Auditing: Interactive elements indicate their purpose and state
+2026-07-28T17:43:54.638Z LH:status Auditing: The page has a logical tab order
+2026-07-28T17:43:54.638Z LH:status Auditing: The user's focus is directed to new content added to the page
+2026-07-28T17:43:54.638Z LH:status Auditing: Offscreen content is hidden from assistive technology
+2026-07-28T17:43:54.638Z LH:status Auditing: HTML5 landmark elements are used to improve navigation
+2026-07-28T17:43:54.638Z LH:status Auditing: Visual order on the page follows DOM order
+2026-07-28T17:43:54.638Z LH:status Generating results...
+Saved Lighthouse report: /Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/reports/lighthouse/faunarobotics.com-news.json
+Auditing Lighthouse accessibility: https://faunarobotics.com/data-processing
+2026-07-28T17:43:56.825Z LH:status Connecting to browser
+2026-07-28T17:43:56.831Z LH:status Navigating to about:blank
+2026-07-28T17:43:56.839Z LH:status Benchmarking machine
+2026-07-28T17:43:57.842Z LH:status Preparing target for navigation mode
+2026-07-28T17:43:57.854Z LH:status Preparing network conditions
+2026-07-28T17:43:57.861Z LH:status Navigating to https://faunarobotics.com/data-processing
+2026-07-28T17:44:00.299Z LH:status Getting artifact: DevtoolsLog
+2026-07-28T17:44:00.300Z LH:status Getting artifact: Accessibility
+2026-07-28T17:44:00.463Z LH:status Getting artifact: NetworkUserAgent
+2026-07-28T17:44:00.463Z LH:status Getting artifact: Stacks
+2026-07-28T17:44:00.463Z LH:status Collect stacks
+2026-07-28T17:44:00.473Z LH:status Getting artifact: FullPageScreenshot
+2026-07-28T17:44:01.950Z LH:status Analyzing and running audits...
+2026-07-28T17:44:01.951Z LH:status Auditing: `[accesskey]` values are unique
+2026-07-28T17:44:01.951Z LH:status Auditing: `[aria-*]` attributes match their roles
+2026-07-28T17:44:01.953Z LH:status Auditing: Values assigned to `role=""` are valid ARIA roles.
+2026-07-28T17:44:01.955Z LH:status Auditing: `button`, `link`, and `menuitem` elements have accessible names
+2026-07-28T17:44:01.958Z LH:status Auditing: Elements with `role="dialog"` or `role="alertdialog"` have accessible names.
+2026-07-28T17:44:01.959Z LH:status Auditing: `[aria-hidden="true"]` is not present on the document `<body>`
+2026-07-28T17:44:01.960Z LH:status Auditing: `[aria-hidden="true"]` elements do not contain focusable descendents
+2026-07-28T17:44:01.961Z LH:status Auditing: ARIA input fields have accessible names
+2026-07-28T17:44:01.961Z LH:status Auditing: ARIA `meter` elements have accessible names
+2026-07-28T17:44:01.963Z LH:status Auditing: ARIA `progressbar` elements have accessible names
+2026-07-28T17:44:01.964Z LH:status Auditing: `[role]`s have all required `[aria-*]` attributes
+2026-07-28T17:44:01.966Z LH:status Auditing: Elements with an ARIA `[role]` that require children to contain a specific `[role]` have all required children.
+2026-07-28T17:44:01.972Z LH:status Auditing: `[role]`s are contained by their required parent element
+2026-07-28T17:44:01.974Z LH:status Auditing: `[role]` values are valid
+2026-07-28T17:44:01.976Z LH:status Auditing: Elements with the `role=text` attribute do not have focusable descendents.
+2026-07-28T17:44:01.977Z LH:status Auditing: ARIA toggle fields have accessible names
+2026-07-28T17:44:01.977Z LH:status Auditing: ARIA `tooltip` elements have accessible names
+2026-07-28T17:44:01.978Z LH:status Auditing: ARIA `treeitem` elements have accessible names
+2026-07-28T17:44:01.980Z LH:status Auditing: `[aria-*]` attributes have valid values
+2026-07-28T17:44:01.982Z LH:status Auditing: `[aria-*]` attributes are valid and not misspelled
+2026-07-28T17:44:01.984Z LH:status Auditing: Buttons have an accessible name
+2026-07-28T17:44:01.986Z LH:status Auditing: The page contains a heading, skip link, or landmark region
+2026-07-28T17:44:01.993Z LH:status Auditing: Background and foreground colors have a sufficient contrast ratio
+2026-07-28T17:44:01.994Z LH:status Auditing: `<dl>`'s contain only properly-ordered `<dt>` and `<dd>` groups, `<script>`, `<template>` or `<div>` elements.
+2026-07-28T17:44:01.996Z LH:status Auditing: Definition list items are wrapped in `<dl>` elements
+2026-07-28T17:44:01.997Z LH:status Auditing: Document has a `<title>` element
+2026-07-28T17:44:01.999Z LH:status Auditing: `[id]` attributes on active, focusable elements are unique
+2026-07-28T17:44:02.000Z LH:status Auditing: ARIA IDs are unique
+2026-07-28T17:44:02.001Z LH:status Auditing: All heading elements contain content.
+2026-07-28T17:44:02.003Z LH:status Auditing: No form fields have multiple labels
+2026-07-28T17:44:02.004Z LH:status Auditing: `<frame>` or `<iframe>` elements have a title
+2026-07-28T17:44:02.005Z LH:status Auditing: Heading elements appear in a sequentially-descending order
+2026-07-28T17:44:02.007Z LH:status Auditing: `<html>` element has a `[lang]` attribute
+2026-07-28T17:44:02.014Z LH:status Auditing: `<html>` element has a valid value for its `[lang]` attribute
+2026-07-28T17:44:02.016Z LH:status Auditing: `<html>` element has an `[xml:lang]` attribute with the same base language as the `[lang]` attribute.
+2026-07-28T17:44:02.017Z LH:status Auditing: Identical links have the same purpose.
+2026-07-28T17:44:02.019Z LH:status Auditing: Image elements have `[alt]` attributes
+2026-07-28T17:44:02.022Z LH:status Auditing: Image elements do not have `[alt]` attributes that are redundant text.
+2026-07-28T17:44:02.024Z LH:status Auditing: Input buttons have discernible text.
+2026-07-28T17:44:02.025Z LH:status Auditing: `<input type="image">` elements have `[alt]` text
+2026-07-28T17:44:02.026Z LH:status Auditing: Elements with visible text labels have matching accessible names.
+2026-07-28T17:44:02.027Z LH:status Auditing: Form elements have associated labels
+2026-07-28T17:44:02.028Z LH:status Auditing: Document has a main landmark.
+2026-07-28T17:44:02.034Z LH:status Auditing: Links have a discernible name
+2026-07-28T17:44:02.036Z LH:status Auditing: Links are distinguishable without relying on color.
+2026-07-28T17:44:02.038Z LH:status Auditing: Lists contain only `<li>` elements and script supporting elements (`<script>` and `<template>`).
+2026-07-28T17:44:02.039Z LH:status Auditing: List items (`<li>`) are contained within `<ul>`, `<ol>` or `<menu>` parent elements
+2026-07-28T17:44:02.041Z LH:status Auditing: The document does not use `<meta http-equiv="refresh">`
+2026-07-28T17:44:02.042Z LH:status Auditing: `[user-scalable="no"]` is not used in the `<meta name="viewport">` element and the `[maximum-scale]` attribute is not less than 5.
+2026-07-28T17:44:02.043Z LH:status Auditing: `<object>` elements have alternate text
+2026-07-28T17:44:02.044Z LH:status Auditing: Select elements have associated label elements.
+2026-07-28T17:44:02.046Z LH:status Auditing: Skip links are focusable.
+2026-07-28T17:44:02.047Z LH:status Auditing: No element has a `[tabindex]` value greater than 0
+2026-07-28T17:44:02.053Z LH:status Auditing: Tables have different content in the summary attribute and `<caption>`.
+2026-07-28T17:44:02.055Z LH:status Auditing: Tables use `<caption>` instead of cells with the `[colspan]` attribute to indicate a caption.
+2026-07-28T17:44:02.056Z LH:status Auditing: Touch targets have sufficient size and spacing.
+2026-07-28T17:44:02.058Z LH:status Auditing: `<td>` elements in a large `<table>` have one or more table headers.
+2026-07-28T17:44:02.060Z LH:status Auditing: Cells in a `<table>` element that use the `[headers]` attribute refer to table cells within the same table.
+2026-07-28T17:44:02.061Z LH:status Auditing: `<th>` elements and elements with `[role="columnheader"/"rowheader"]` have data cells they describe.
+2026-07-28T17:44:02.064Z LH:status Auditing: `[lang]` attributes have a valid value
+2026-07-28T17:44:02.065Z LH:status Auditing: `<video>` elements contain a `<track>` element with `[kind="captions"]`
+2026-07-28T17:44:02.067Z LH:status Auditing: Custom controls have associated labels
+2026-07-28T17:44:02.067Z LH:status Auditing: Custom controls have ARIA roles
+2026-07-28T17:44:02.074Z LH:status Auditing: User focus is not accidentally trapped in a region
+2026-07-28T17:44:02.074Z LH:status Auditing: Interactive controls are keyboard focusable
+2026-07-28T17:44:02.074Z LH:status Auditing: Interactive elements indicate their purpose and state
+2026-07-28T17:44:02.074Z LH:status Auditing: The page has a logical tab order
+2026-07-28T17:44:02.074Z LH:status Auditing: The user's focus is directed to new content added to the page
+2026-07-28T17:44:02.074Z LH:status Auditing: Offscreen content is hidden from assistive technology
+2026-07-28T17:44:02.074Z LH:status Auditing: HTML5 landmark elements are used to improve navigation
+2026-07-28T17:44:02.074Z LH:status Auditing: Visual order on the page follows DOM order
+2026-07-28T17:44:02.074Z LH:status Generating results...
+Saved Lighthouse report: /Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/reports/lighthouse/faunarobotics.com-data-processing.json

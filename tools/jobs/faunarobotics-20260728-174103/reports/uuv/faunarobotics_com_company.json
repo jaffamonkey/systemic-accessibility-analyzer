@@ -1,0 +1,2948 @@
+{
+  "scenarioName": "Full page check for https://faunarobotics.com/company",
+  "requestedUrl": "https://faunarobotics.com/company",
+  "finalUrl": "https://faunarobotics.com/company",
+  "startedAt": "2026-07-28T17:46:39.008Z",
+  "endedAt": "2026-07-28T17:46:42.109Z",
+  "status": "failed",
+  "generatedBy": "@uuv/playwright + cucumber-js + playwright",
+  "summary": {
+    "httpStatus": 200,
+    "finalUrl": "https://faunarobotics.com/company",
+    "title": "Company | Fauna Robotics",
+    "bodyPresent": true,
+    "titlePresent": true,
+    "headingCount": 3,
+    "linkCount": 22,
+    "buttonCount": 2,
+    "inputCount": 0,
+    "imageCount": 27,
+    "formCount": 0,
+    "frameCount": 2,
+    "firstHeading": "Building a world where robots operate everywhere people do",
+    "pageErrorCount": 0,
+    "consoleIssueCount": 2,
+    "failedRequestCount": 0,
+    "axeViolationCount": 2,
+    "axeIncompleteCount": 2,
+    "manualReviewNeeded": true,
+    "contrastViolationCount": 2,
+    "contrastIncompleteCount": 1
+  },
+  "landmarks": {
+    "hasMain": true,
+    "hasHeader": true,
+    "hasFooter": true,
+    "hasNav": false
+  },
+  "findings": [
+    {
+      "severity": "low",
+      "code": "console-noise",
+      "message": "2 console warning/error message(s) captured."
+    },
+    {
+      "severity": "medium",
+      "code": "blank-buttons",
+      "message": "1 button(s) appear to have no accessible text."
+    },
+    {
+      "severity": "high",
+      "code": "axe-violations",
+      "message": "2 axe accessibility violation(s) detected.",
+      "ruleIds": [
+        "color-contrast",
+        "frame-title"
+      ],
+      "wcag": [
+        "wcag2aa",
+        "wcag143",
+        "wcag2a",
+        "wcag412"
+      ]
+    }
+  ],
+  "pageErrors": [],
+  "consoleMessages": [
+    {
+      "type": "warning",
+      "text": "Unrecognized feature: 'web-share'."
+    },
+    {
+      "type": "warning",
+      "text": "Allow attribute will take precedence over 'allowfullscreen'."
+    }
+  ],
+  "failedRequests": [],
+  "details": {
+    "linksWithoutText": [],
+    "buttonsWithoutText": [
+      {
+        "outerHTML": "<button class=\"popup-trigger\"></button>"
+      }
+    ],
+    "imagesMissingAlt": [],
+    "missingLabelInputs": []
+  },
+  "axe": {
+    "violationCount": 2,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "wcag": [
+          "wcag2aa",
+          "wcag143"
+        ],
+        "nodeCount": 8,
+        "nodes": [
+          {
+            "target": [
+              ".navbar-menu__list > .w--current[href$=\"company\"][aria-current=\"page\"]"
+            ],
+            "html": "<a href=\"/company\" aria-current=\"page\" class=\"navbar-link w--current\">Company</a>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.4 (foreground color: #f16b46, background color: #ede4d8, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element has insufficient color contrast of 2.4 (foreground color: #f16b46, background color: #ede4d8, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+                "data": {
+                  "fgColor": "#f16b46",
+                  "bgColor": "#ede4d8",
+                  "contrastRatio": 2.4,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".navbar-buttons__cta > .button-primary.button-large.w-inline-block > div"
+            ],
+            "html": "<div>Request Robot</div>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.67 (foreground color: #f8f0e3, background color: #f16b46, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element has insufficient color contrast of 2.67 (foreground color: #f8f0e3, background color: #f16b46, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+                "data": {
+                  "fgColor": "#f8f0e3",
+                  "bgColor": "#f16b46",
+                  "contrastRatio": 2.67,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".is--icon > .p-m"
+            ],
+            "html": "<div class=\"p-m\">Our story</div>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.45 (foreground color: #f8f0e3, background color: #63a4bc, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element has insufficient color contrast of 2.45 (foreground color: #f8f0e3, background color: #63a4bc, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+                "data": {
+                  "fgColor": "#f8f0e3",
+                  "bgColor": "#63a4bc",
+                  "contrastRatio": 2.45,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".about-bento__card-p-wr > .h2"
+            ],
+            "html": "<p class=\"h2\">We believe the future of robotics has to be useful and delightful: in homes, classrooms, and everyday human spaces</p>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.78 (foreground color: #f8f0e3, background color: #dbb154, font size: 31.5pt (42px), font weight: normal). Expected contrast ratio of 3:1",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element has insufficient color contrast of 1.78 (foreground color: #f8f0e3, background color: #dbb154, font size: 31.5pt (42px), font weight: normal). Expected contrast ratio of 3:1",
+                "data": {
+                  "fgColor": "#f8f0e3",
+                  "bgColor": "#dbb154",
+                  "contrastRatio": 1.78,
+                  "fontSize": "31.5pt (42px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "3:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".about-bento__card-text > .h4"
+            ],
+            "html": "<p class=\"h4\">But that future won’t arrive until far more developers can build for robotics quickly, safely, and in the real world without needing to reinvent the fundamentals each time</p>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.78 (foreground color: #f8f0e3, background color: #dbb154, font size: 18.0pt (24px), font weight: normal). Expected contrast ratio of 3:1",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element has insufficient color contrast of 1.78 (foreground color: #f8f0e3, background color: #dbb154, font size: 18.0pt (24px), font weight: normal). Expected contrast ratio of 3:1",
+                "data": {
+                  "fgColor": "#f8f0e3",
+                  "bgColor": "#dbb154",
+                  "contrastRatio": 1.78,
+                  "fontSize": "18.0pt (24px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "3:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".lead"
+            ],
+            "html": "<p class=\"lead is--second is--about\">Our mission is to build capable, safe, and fun robots for everyone</p>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.77 (foreground color: #f8f0e3, background color: #e0a5cf, font size: 74.4pt (99.2px), font weight: normal). Expected contrast ratio of 3:1",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element has insufficient color contrast of 1.77 (foreground color: #f8f0e3, background color: #e0a5cf, font size: 74.4pt (99.2px), font weight: normal). Expected contrast ratio of 3:1",
+                "data": {
+                  "fgColor": "#f8f0e3",
+                  "bgColor": "#e0a5cf",
+                  "contrastRatio": 1.77,
+                  "fontSize": "74.4pt (99.2px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "3:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              "#w-node-_4566542a-26d5-bcb6-ff56-23c2e0cb73d4-cd9b83b6 > .h2"
+            ],
+            "html": "<p class=\"h2\">That’s why we built Sprout: the development platform we always wished existed</p>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.67 (foreground color: #f8f0e3, background color: #f16b46, font size: 31.5pt (42px), font weight: normal). Expected contrast ratio of 3:1",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element has insufficient color contrast of 2.67 (foreground color: #f8f0e3, background color: #f16b46, font size: 31.5pt (42px), font weight: normal). Expected contrast ratio of 3:1",
+                "data": {
+                  "fgColor": "#f8f0e3",
+                  "bgColor": "#f16b46",
+                  "contrastRatio": 2.67,
+                  "fontSize": "31.5pt (42px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "3:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              "#w-node-bfc82ce2-9462-0d45-46a5-c9a2322d7808-cd9b83b6 > .h4"
+            ],
+            "html": "<p class=\"h4\">Sprout brings modern developer workflows to robotics so teams can move from idea to prototype to deployment with less friction and more confidence</p>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.47 (foreground color: #f8f0e3, background color: #3dac91, font size: 18.0pt (24px), font weight: normal). Expected contrast ratio of 3:1",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element has insufficient color contrast of 2.47 (foreground color: #f8f0e3, background color: #3dac91, font size: 18.0pt (24px), font weight: normal). Expected contrast ratio of 3:1",
+                "data": {
+                  "fgColor": "#f8f0e3",
+                  "bgColor": "#3dac91",
+                  "contrastRatio": 2.47,
+                  "fontSize": "18.0pt (24px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "3:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          }
+        ]
+      },
+      {
+        "id": "frame-title",
+        "impact": "serious",
+        "description": "Ensure <iframe> and <frame> elements have an accessible name",
+        "help": "Frames must have an accessible name",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/frame-title?application=playwright",
+        "tags": [
+          "cat.text-alternatives",
+          "wcag2a",
+          "wcag412",
+          "section508",
+          "section508.22.i",
+          "TTv5",
+          "TT12.d",
+          "EN-301-549",
+          "EN-9.4.1.2",
+          "RGAAv4",
+          "RGAA-2.1.1"
+        ],
+        "wcag": [
+          "wcag2a",
+          "wcag412"
+        ],
+        "nodeCount": 1,
+        "nodes": [
+          {
+            "target": [
+              ".product-hero__video-embed > div > iframe"
+            ],
+            "html": "<iframe class=\"video-vimeo-frame\" src=\"https://player.vimeo...\" style=\"position: absolute; ...\" frameborder=\"0\" allow=\"autoplay; fullscreen...\" referrerpolicy=\"strict-origin-when-c...\" allowfullscreen=\"\" data-ready=\"true\">",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element has no title attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+            "any": [
+              {
+                "id": "non-empty-title",
+                "message": "Element has no title attribute",
+                "data": {
+                  "messageKey": "noAttr"
+                }
+              },
+              {
+                "id": "aria-label",
+                "message": "aria-label attribute does not exist or is empty",
+                "data": null
+              },
+              {
+                "id": "aria-labelledby",
+                "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty",
+                "data": null
+              },
+              {
+                "id": "presentational-role",
+                "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+                "data": null
+              }
+            ],
+            "all": [],
+            "none": []
+          }
+        ]
+      }
+    ],
+    "incompleteCount": 2,
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "wcag": [
+          "wcag2aa",
+          "wcag143"
+        ],
+        "nodeCount": 21,
+        "nodes": [
+          {
+            "target": [
+              ".h3"
+            ],
+            "html": "<h2 class=\"h3\">Fauna Robotics, building a&nbsp;world where robots operate everywhere people&nbsp;do.</h2>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element's background color could not be determined due to a background gradient",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "24.0pt (32px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "3:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".footer-content__col-left > .text-brown-300"
+            ],
+            "html": "<p class=\"text-brown-300\">Designed in New York City. <!--$--><br><!--/$-->Assembled in America.</p>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element's background color could not be determined due to a background gradient",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              "#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de > .text-brown-300"
+            ],
+            "html": "<div class=\"text-brown-300\">Explore</div>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element's background color could not be determined due to a background gradient",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".text-link[href$=\"product\"]"
+            ],
+            "html": "<a href=\"/product\" class=\"text-link\">Product</a>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element's background color could not be determined due to a background gradient",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              "a[href$=\"product#tech-specs\"]"
+            ],
+            "html": "<a href=\"/product#tech-specs\" class=\"text-link\">Technical specifications</a>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element's background color could not be determined due to a background gradient",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".plausible-event-name--Technical\\+Report\\+Download > p"
+            ],
+            "html": "<p>Technical report</p>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element's background color could not be determined due to a background gradient",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".plausible-event-name--Press\\+Kit\\+Click > p"
+            ],
+            "html": "<p>Press kit</p>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element's background color could not be determined due to a background gradient",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".footer-content__col:nth-child(2) > .text-brown-300"
+            ],
+            "html": "<div class=\"text-brown-300\">About</div>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element's background color could not be determined due to a background gradient",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              "li:nth-child(1) > .w--current[href$=\"company\"][aria-current=\"page\"]"
+            ],
+            "html": "<a href=\"/company\" aria-current=\"page\" class=\"text-link w--current\">Company</a>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element's background color could not be determined due to a background gradient",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".footer-content__col:nth-child(2) > ul > li:nth-child(2) > .text-link[target=\"_blank\"]"
+            ],
+            "html": "<a href=\"https://www.amazon.jobs/en/search?base_query=fauna\" target=\"_blank\" class=\"text-link\">Careers</a>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element's background color could not be determined due to a background gradient",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".text-link[href$=\"news\"]"
+            ],
+            "html": "<a href=\"/news\" class=\"text-link\">News</a>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element's background color could not be determined due to a background gradient",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".footer-content__col:nth-child(3) > .text-brown-300"
+            ],
+            "html": "<div class=\"text-brown-300\">Social</div>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element's background color could not be determined due to a background gradient",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              "li:nth-child(1) > .text-link[target=\"_blank\"]"
+            ],
+            "html": "<a href=\"https://www.youtube.com/@FaunaRobotics\" target=\"_blank\" class=\"text-link\">YouTube</a>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element's background color could not be determined due to a background gradient",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              "a[href$=\"faunarobotics\"]"
+            ],
+            "html": "<a href=\"https://x.com/faunarobotics\" target=\"_blank\" class=\"text-link\">X (Twitter)</a>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element's background color could not be determined due to a background gradient",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              "li:nth-child(3) > .text-link[target=\"_blank\"]"
+            ],
+            "html": "<a href=\"https://www.linkedin.com/company/fauna-robotics/\" target=\"_blank\" class=\"text-link\">LinkedIn</a>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element's background color could not be determined due to a background gradient",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".footer-content__col:nth-child(3) > ul > li:nth-child(4) > .text-link[target=\"_blank\"]"
+            ],
+            "html": "<a href=\"https://www.instagram.com/faunarobotics/?igsh=cGg0dnozNGpiYm85#\" target=\"_blank\" class=\"text-link\">Instagram</a>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element's background color could not be determined due to a background gradient",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".decoration-underline"
+            ],
+            "html": "<a href=\"mailto:sales@faunarobotics.com\" class=\"text-link decoration-underline\">Contact us</a>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element's background color could not be determined due to a background gradient",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".p-l"
+            ],
+            "html": "<div class=\"text-brown-200 p-l\">© <span id=\"copyright-year\">2026</span> Fauna Robotics Inc</div>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element's background color could not be determined due to a background gradient",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              "#copyright-year"
+            ],
+            "html": "<span id=\"copyright-year\">2026</span>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element's background color could not be determined due to a background gradient",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              "a[href$=\"privacy-policy\"]"
+            ],
+            "html": "<a href=\"/privacy-policy\" class=\"text-brown-200 text-link\">Privacy Policy</a>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element's background color could not be determined due to a background gradient",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              "a[href$=\"data-processing\"]"
+            ],
+            "html": "<a href=\"/data-processing\" class=\"text-brown-200 text-link\">Data Processing Addendum</a>",
+            "impact": "serious",
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "any": [
+              {
+                "id": "color-contrast",
+                "message": "Element's background color could not be determined due to a background gradient",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "bgGradient",
+                  "expectedContrastRatio": "4.5:1"
+                }
+              }
+            ],
+            "all": [],
+            "none": []
+          }
+        ]
+      },
+      {
+        "id": "hidden-content",
+        "impact": "minor",
+        "description": "Inform users about hidden content.",
+        "help": "Hidden content on the page should be analyzed",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/hidden-content?application=playwright",
+        "tags": [
+          "cat.structure",
+          "best-practice",
+          "experimental",
+          "review-item"
+        ],
+        "wcag": [],
+        "nodeCount": 13,
+        "nodes": [
+          {
+            "target": [
+              ".navbar-menu__popup-trigger"
+            ],
+            "html": "<div class=\"navbar-menu__popup-trigger\">",
+            "impact": "minor",
+            "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+            "any": [
+              {
+                "id": "hidden-content",
+                "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "data": null
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".navbar-menu__content-buttons"
+            ],
+            "html": "<div class=\"navbar-menu__content-buttons\"><a href=\"https://form.typeform.com/to/HsZsaqmn\" target=\"_blank\" class=\"button-large button-primary w-inline-block\"><div>Request Robot</div></a></div>",
+            "impact": "minor",
+            "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+            "any": [
+              {
+                "id": "hidden-content",
+                "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "data": null
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".navbar-buttons__toggle"
+            ],
+            "html": "<div class=\"navbar-buttons__toggle\">",
+            "impact": "minor",
+            "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+            "any": [
+              {
+                "id": "hidden-content",
+                "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "data": null
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".product-hero__video-embed > div > iframe",
+              "#new-window"
+            ],
+            "html": "<span id=\"new-window\" hidden=\"\">(opens a new window)</span>",
+            "impact": "minor",
+            "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+            "any": [
+              {
+                "id": "hidden-content",
+                "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "data": null
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".product-hero__video-embed > div > iframe",
+              "div[data-menu=\"prefs\"]"
+            ],
+            "html": "<div class=\"vp-menu PopoverMenu_module_menu__9ead6f2c\" data-menu=\"prefs\" style=\"overflow: hidden; opacity: 0; pointer-events: none; display: none; height: 0px; max-height: 0px;\">",
+            "impact": "minor",
+            "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+            "any": [
+              {
+                "id": "hidden-content",
+                "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "data": null
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".product-hero__video-embed > div > iframe",
+              ".SpeedMenu_module_speedMenuPopover__74402423"
+            ],
+            "html": "<div class=\"vp-menu PopoverMenu_module_menu__9ead6f2c SpeedMenu_module_speedMenuPopover__74402423\" data-menu=\"speed\" style=\"overflow: hidden; opacity: 0; pointer-events: none; display: none; height: 0px; max-height: 0px;\">",
+            "impact": "minor",
+            "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+            "any": [
+              {
+                "id": "hidden-content",
+                "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "data": null
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".product-hero__video-embed > div > iframe",
+              "div[data-id=\"2\"] > .MenuOptionListItem_module_check__3200abe0 > svg[width=\"12\"][height=\"8\"][viewBox=\"0 0 12 8\"]"
+            ],
+            "html": "<svg width=\"12\" height=\"8\" viewBox=\"0 0 12 8\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">",
+            "impact": "minor",
+            "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+            "any": [
+              {
+                "id": "hidden-content",
+                "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "data": null
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".product-hero__video-embed > div > iframe",
+              "div[data-id=\"1.5\"] > .MenuOptionListItem_module_check__3200abe0 > svg[width=\"12\"][height=\"8\"][viewBox=\"0 0 12 8\"]"
+            ],
+            "html": "<svg width=\"12\" height=\"8\" viewBox=\"0 0 12 8\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">",
+            "impact": "minor",
+            "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+            "any": [
+              {
+                "id": "hidden-content",
+                "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "data": null
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".product-hero__video-embed > div > iframe",
+              "div[data-id=\"1.25\"] > .MenuOptionListItem_module_check__3200abe0 > svg[width=\"12\"][height=\"8\"][viewBox=\"0 0 12 8\"]"
+            ],
+            "html": "<svg width=\"12\" height=\"8\" viewBox=\"0 0 12 8\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">",
+            "impact": "minor",
+            "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+            "any": [
+              {
+                "id": "hidden-content",
+                "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "data": null
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".product-hero__video-embed > div > iframe",
+              "div[data-id=\"0.75\"] > .MenuOptionListItem_module_check__3200abe0 > svg[width=\"12\"][height=\"8\"][viewBox=\"0 0 12 8\"]"
+            ],
+            "html": "<svg width=\"12\" height=\"8\" viewBox=\"0 0 12 8\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">",
+            "impact": "minor",
+            "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+            "any": [
+              {
+                "id": "hidden-content",
+                "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "data": null
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".product-hero__video-embed > div > iframe",
+              "div[data-id=\"0.5\"] > .MenuOptionListItem_module_check__3200abe0 > svg[width=\"12\"][height=\"8\"][viewBox=\"0 0 12 8\"]"
+            ],
+            "html": "<svg width=\"12\" height=\"8\" viewBox=\"0 0 12 8\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">",
+            "impact": "minor",
+            "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+            "any": [
+              {
+                "id": "hidden-content",
+                "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "data": null
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".product-hero__video-embed > div > iframe",
+              ".Spinner_module_spinner__795e5e53"
+            ],
+            "html": "<svg viewBox=\"0 0 48 48\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" data-spinner=\"true\" class=\"Spinner_module_spinner__795e5e53 vp-spin Spinner_module_lg__795e5e53\" data-component-type=\"spinner\" style=\"overflow: hidden; opacity: 0; pointer-events: none; display: none;\">",
+            "impact": "minor",
+            "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+            "any": [
+              {
+                "id": "hidden-content",
+                "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "data": null
+              }
+            ],
+            "all": [],
+            "none": []
+          },
+          {
+            "target": [
+              ".demo-popup__wrapper"
+            ],
+            "html": "<div class=\"demo-popup__wrapper\">",
+            "impact": "minor",
+            "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+            "any": [
+              {
+                "id": "hidden-content",
+                "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "data": null
+              }
+            ],
+            "all": [],
+            "none": []
+          }
+        ]
+      }
+    ],
+    "passes": {
+      "broad": 37,
+      "contrast": 44
+    },
+    "inapplicable": {
+      "broad": 22,
+      "contrast": 44
+    },
+    "scans": {
+      "broad": {
+        "label": "broad",
+        "violationCount": 1,
+        "violations": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+            "tags": [
+              "cat.color",
+              "wcag2aa",
+              "wcag143",
+              "TTv5",
+              "TT13.c",
+              "EN-301-549",
+              "EN-9.1.4.3",
+              "ACT",
+              "RGAAv4",
+              "RGAA-3.2.1"
+            ],
+            "wcag": [
+              "wcag2aa",
+              "wcag143"
+            ],
+            "nodeCount": 8,
+            "nodes": [
+              {
+                "target": [
+                  ".navbar-menu__list > .w--current[href$=\"company\"][aria-current=\"page\"]"
+                ],
+                "html": "<a href=\"/company\" aria-current=\"page\" class=\"navbar-link w--current\">Company</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.4 (foreground color: #f16b46, background color: #ede4d8, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element has insufficient color contrast of 2.4 (foreground color: #f16b46, background color: #ede4d8, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+                    "data": {
+                      "fgColor": "#f16b46",
+                      "bgColor": "#ede4d8",
+                      "contrastRatio": 2.4,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": null,
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".navbar-buttons__cta > .button-primary.button-large.w-inline-block > div"
+                ],
+                "html": "<div>Request Robot</div>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.67 (foreground color: #f8f0e3, background color: #f16b46, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element has insufficient color contrast of 2.67 (foreground color: #f8f0e3, background color: #f16b46, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+                    "data": {
+                      "fgColor": "#f8f0e3",
+                      "bgColor": "#f16b46",
+                      "contrastRatio": 2.67,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": null,
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".is--icon > .p-m"
+                ],
+                "html": "<div class=\"p-m\">Our story</div>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.45 (foreground color: #f8f0e3, background color: #63a4bc, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element has insufficient color contrast of 2.45 (foreground color: #f8f0e3, background color: #63a4bc, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+                    "data": {
+                      "fgColor": "#f8f0e3",
+                      "bgColor": "#63a4bc",
+                      "contrastRatio": 2.45,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": null,
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".about-bento__card-p-wr > .h2"
+                ],
+                "html": "<p class=\"h2\">We believe the future of robotics has to be useful and delightful: in homes, classrooms, and everyday human spaces</p>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.78 (foreground color: #f8f0e3, background color: #dbb154, font size: 31.5pt (42px), font weight: normal). Expected contrast ratio of 3:1",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element has insufficient color contrast of 1.78 (foreground color: #f8f0e3, background color: #dbb154, font size: 31.5pt (42px), font weight: normal). Expected contrast ratio of 3:1",
+                    "data": {
+                      "fgColor": "#f8f0e3",
+                      "bgColor": "#dbb154",
+                      "contrastRatio": 1.78,
+                      "fontSize": "31.5pt (42px)",
+                      "fontWeight": "normal",
+                      "messageKey": null,
+                      "expectedContrastRatio": "3:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".about-bento__card-text > .h4"
+                ],
+                "html": "<p class=\"h4\">But that future won’t arrive until far more developers can build for robotics quickly, safely, and in the real world without needing to reinvent the fundamentals each time</p>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.78 (foreground color: #f8f0e3, background color: #dbb154, font size: 18.0pt (24px), font weight: normal). Expected contrast ratio of 3:1",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element has insufficient color contrast of 1.78 (foreground color: #f8f0e3, background color: #dbb154, font size: 18.0pt (24px), font weight: normal). Expected contrast ratio of 3:1",
+                    "data": {
+                      "fgColor": "#f8f0e3",
+                      "bgColor": "#dbb154",
+                      "contrastRatio": 1.78,
+                      "fontSize": "18.0pt (24px)",
+                      "fontWeight": "normal",
+                      "messageKey": null,
+                      "expectedContrastRatio": "3:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".lead"
+                ],
+                "html": "<p class=\"lead is--second is--about\">Our mission is to build capable, safe, and fun robots for everyone</p>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.77 (foreground color: #f8f0e3, background color: #e0a5cf, font size: 74.4pt (99.2px), font weight: normal). Expected contrast ratio of 3:1",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element has insufficient color contrast of 1.77 (foreground color: #f8f0e3, background color: #e0a5cf, font size: 74.4pt (99.2px), font weight: normal). Expected contrast ratio of 3:1",
+                    "data": {
+                      "fgColor": "#f8f0e3",
+                      "bgColor": "#e0a5cf",
+                      "contrastRatio": 1.77,
+                      "fontSize": "74.4pt (99.2px)",
+                      "fontWeight": "normal",
+                      "messageKey": null,
+                      "expectedContrastRatio": "3:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  "#w-node-_4566542a-26d5-bcb6-ff56-23c2e0cb73d4-cd9b83b6 > .h2"
+                ],
+                "html": "<p class=\"h2\">That’s why we built Sprout: the development platform we always wished existed</p>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.67 (foreground color: #f8f0e3, background color: #f16b46, font size: 31.5pt (42px), font weight: normal). Expected contrast ratio of 3:1",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element has insufficient color contrast of 2.67 (foreground color: #f8f0e3, background color: #f16b46, font size: 31.5pt (42px), font weight: normal). Expected contrast ratio of 3:1",
+                    "data": {
+                      "fgColor": "#f8f0e3",
+                      "bgColor": "#f16b46",
+                      "contrastRatio": 2.67,
+                      "fontSize": "31.5pt (42px)",
+                      "fontWeight": "normal",
+                      "messageKey": null,
+                      "expectedContrastRatio": "3:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  "#w-node-bfc82ce2-9462-0d45-46a5-c9a2322d7808-cd9b83b6 > .h4"
+                ],
+                "html": "<p class=\"h4\">Sprout brings modern developer workflows to robotics so teams can move from idea to prototype to deployment with less friction and more confidence</p>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.47 (foreground color: #f8f0e3, background color: #3dac91, font size: 18.0pt (24px), font weight: normal). Expected contrast ratio of 3:1",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element has insufficient color contrast of 2.47 (foreground color: #f8f0e3, background color: #3dac91, font size: 18.0pt (24px), font weight: normal). Expected contrast ratio of 3:1",
+                    "data": {
+                      "fgColor": "#f8f0e3",
+                      "bgColor": "#3dac91",
+                      "contrastRatio": 2.47,
+                      "fontSize": "18.0pt (24px)",
+                      "fontWeight": "normal",
+                      "messageKey": null,
+                      "expectedContrastRatio": "3:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              }
+            ]
+          }
+        ],
+        "incompleteCount": 2,
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+            "tags": [
+              "cat.color",
+              "wcag2aa",
+              "wcag143",
+              "TTv5",
+              "TT13.c",
+              "EN-301-549",
+              "EN-9.1.4.3",
+              "ACT",
+              "RGAAv4",
+              "RGAA-3.2.1"
+            ],
+            "wcag": [
+              "wcag2aa",
+              "wcag143"
+            ],
+            "nodeCount": 21,
+            "nodes": [
+              {
+                "target": [
+                  ".h3"
+                ],
+                "html": "<h2 class=\"h3\">Fauna Robotics, building a&nbsp;world where robots operate everywhere people&nbsp;do.</h2>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "24.0pt (32px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "3:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".footer-content__col-left > .text-brown-300"
+                ],
+                "html": "<p class=\"text-brown-300\">Designed in New York City. <!--$--><br><!--/$-->Assembled in America.</p>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  "#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de > .text-brown-300"
+                ],
+                "html": "<div class=\"text-brown-300\">Explore</div>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".text-link[href$=\"product\"]"
+                ],
+                "html": "<a href=\"/product\" class=\"text-link\">Product</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  "a[href$=\"product#tech-specs\"]"
+                ],
+                "html": "<a href=\"/product#tech-specs\" class=\"text-link\">Technical specifications</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".plausible-event-name--Technical\\+Report\\+Download > p"
+                ],
+                "html": "<p>Technical report</p>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".plausible-event-name--Press\\+Kit\\+Click > p"
+                ],
+                "html": "<p>Press kit</p>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".footer-content__col:nth-child(2) > .text-brown-300"
+                ],
+                "html": "<div class=\"text-brown-300\">About</div>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  "li:nth-child(1) > .w--current[href$=\"company\"][aria-current=\"page\"]"
+                ],
+                "html": "<a href=\"/company\" aria-current=\"page\" class=\"text-link w--current\">Company</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".footer-content__col:nth-child(2) > ul > li:nth-child(2) > .text-link[target=\"_blank\"]"
+                ],
+                "html": "<a href=\"https://www.amazon.jobs/en/search?base_query=fauna\" target=\"_blank\" class=\"text-link\">Careers</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".text-link[href$=\"news\"]"
+                ],
+                "html": "<a href=\"/news\" class=\"text-link\">News</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".footer-content__col:nth-child(3) > .text-brown-300"
+                ],
+                "html": "<div class=\"text-brown-300\">Social</div>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  "li:nth-child(1) > .text-link[target=\"_blank\"]"
+                ],
+                "html": "<a href=\"https://www.youtube.com/@FaunaRobotics\" target=\"_blank\" class=\"text-link\">YouTube</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  "a[href$=\"faunarobotics\"]"
+                ],
+                "html": "<a href=\"https://x.com/faunarobotics\" target=\"_blank\" class=\"text-link\">X (Twitter)</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  "li:nth-child(3) > .text-link[target=\"_blank\"]"
+                ],
+                "html": "<a href=\"https://www.linkedin.com/company/fauna-robotics/\" target=\"_blank\" class=\"text-link\">LinkedIn</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".footer-content__col:nth-child(3) > ul > li:nth-child(4) > .text-link[target=\"_blank\"]"
+                ],
+                "html": "<a href=\"https://www.instagram.com/faunarobotics/?igsh=cGg0dnozNGpiYm85#\" target=\"_blank\" class=\"text-link\">Instagram</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".decoration-underline"
+                ],
+                "html": "<a href=\"mailto:sales@faunarobotics.com\" class=\"text-link decoration-underline\">Contact us</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".p-l"
+                ],
+                "html": "<div class=\"text-brown-200 p-l\">© <span id=\"copyright-year\">2026</span> Fauna Robotics Inc</div>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  "#copyright-year"
+                ],
+                "html": "<span id=\"copyright-year\">2026</span>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  "a[href$=\"privacy-policy\"]"
+                ],
+                "html": "<a href=\"/privacy-policy\" class=\"text-brown-200 text-link\">Privacy Policy</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  "a[href$=\"data-processing\"]"
+                ],
+                "html": "<a href=\"/data-processing\" class=\"text-brown-200 text-link\">Data Processing Addendum</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              }
+            ]
+          },
+          {
+            "id": "hidden-content",
+            "impact": "minor",
+            "description": "Inform users about hidden content.",
+            "help": "Hidden content on the page should be analyzed",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/hidden-content?application=playwright",
+            "tags": [
+              "cat.structure",
+              "best-practice",
+              "experimental",
+              "review-item"
+            ],
+            "wcag": [],
+            "nodeCount": 13,
+            "nodes": [
+              {
+                "target": [
+                  ".navbar-menu__popup-trigger"
+                ],
+                "html": "<div class=\"navbar-menu__popup-trigger\">",
+                "impact": "minor",
+                "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "any": [
+                  {
+                    "id": "hidden-content",
+                    "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                    "data": null
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".navbar-menu__content-buttons"
+                ],
+                "html": "<div class=\"navbar-menu__content-buttons\"><a href=\"https://form.typeform.com/to/HsZsaqmn\" target=\"_blank\" class=\"button-large button-primary w-inline-block\"><div>Request Robot</div></a></div>",
+                "impact": "minor",
+                "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "any": [
+                  {
+                    "id": "hidden-content",
+                    "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                    "data": null
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".navbar-buttons__toggle"
+                ],
+                "html": "<div class=\"navbar-buttons__toggle\">",
+                "impact": "minor",
+                "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "any": [
+                  {
+                    "id": "hidden-content",
+                    "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                    "data": null
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".product-hero__video-embed > div > iframe",
+                  "#new-window"
+                ],
+                "html": "<span id=\"new-window\" hidden=\"\">(opens a new window)</span>",
+                "impact": "minor",
+                "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "any": [
+                  {
+                    "id": "hidden-content",
+                    "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                    "data": null
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".product-hero__video-embed > div > iframe",
+                  "div[data-menu=\"prefs\"]"
+                ],
+                "html": "<div class=\"vp-menu PopoverMenu_module_menu__9ead6f2c\" data-menu=\"prefs\" style=\"overflow: hidden; opacity: 0; pointer-events: none; display: none; height: 0px; max-height: 0px;\">",
+                "impact": "minor",
+                "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "any": [
+                  {
+                    "id": "hidden-content",
+                    "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                    "data": null
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".product-hero__video-embed > div > iframe",
+                  ".SpeedMenu_module_speedMenuPopover__74402423"
+                ],
+                "html": "<div class=\"vp-menu PopoverMenu_module_menu__9ead6f2c SpeedMenu_module_speedMenuPopover__74402423\" data-menu=\"speed\" style=\"overflow: hidden; opacity: 0; pointer-events: none; display: none; height: 0px; max-height: 0px;\">",
+                "impact": "minor",
+                "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "any": [
+                  {
+                    "id": "hidden-content",
+                    "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                    "data": null
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".product-hero__video-embed > div > iframe",
+                  "div[data-id=\"2\"] > .MenuOptionListItem_module_check__3200abe0 > svg[width=\"12\"][height=\"8\"][viewBox=\"0 0 12 8\"]"
+                ],
+                "html": "<svg width=\"12\" height=\"8\" viewBox=\"0 0 12 8\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">",
+                "impact": "minor",
+                "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "any": [
+                  {
+                    "id": "hidden-content",
+                    "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                    "data": null
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".product-hero__video-embed > div > iframe",
+                  "div[data-id=\"1.5\"] > .MenuOptionListItem_module_check__3200abe0 > svg[width=\"12\"][height=\"8\"][viewBox=\"0 0 12 8\"]"
+                ],
+                "html": "<svg width=\"12\" height=\"8\" viewBox=\"0 0 12 8\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">",
+                "impact": "minor",
+                "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "any": [
+                  {
+                    "id": "hidden-content",
+                    "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                    "data": null
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".product-hero__video-embed > div > iframe",
+                  "div[data-id=\"1.25\"] > .MenuOptionListItem_module_check__3200abe0 > svg[width=\"12\"][height=\"8\"][viewBox=\"0 0 12 8\"]"
+                ],
+                "html": "<svg width=\"12\" height=\"8\" viewBox=\"0 0 12 8\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">",
+                "impact": "minor",
+                "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "any": [
+                  {
+                    "id": "hidden-content",
+                    "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                    "data": null
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".product-hero__video-embed > div > iframe",
+                  "div[data-id=\"0.75\"] > .MenuOptionListItem_module_check__3200abe0 > svg[width=\"12\"][height=\"8\"][viewBox=\"0 0 12 8\"]"
+                ],
+                "html": "<svg width=\"12\" height=\"8\" viewBox=\"0 0 12 8\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">",
+                "impact": "minor",
+                "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "any": [
+                  {
+                    "id": "hidden-content",
+                    "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                    "data": null
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".product-hero__video-embed > div > iframe",
+                  "div[data-id=\"0.5\"] > .MenuOptionListItem_module_check__3200abe0 > svg[width=\"12\"][height=\"8\"][viewBox=\"0 0 12 8\"]"
+                ],
+                "html": "<svg width=\"12\" height=\"8\" viewBox=\"0 0 12 8\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">",
+                "impact": "minor",
+                "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "any": [
+                  {
+                    "id": "hidden-content",
+                    "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                    "data": null
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".product-hero__video-embed > div > iframe",
+                  ".Spinner_module_spinner__795e5e53"
+                ],
+                "html": "<svg viewBox=\"0 0 48 48\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" data-spinner=\"true\" class=\"Spinner_module_spinner__795e5e53 vp-spin Spinner_module_lg__795e5e53\" data-component-type=\"spinner\" style=\"overflow: hidden; opacity: 0; pointer-events: none; display: none;\">",
+                "impact": "minor",
+                "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "any": [
+                  {
+                    "id": "hidden-content",
+                    "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                    "data": null
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".demo-popup__wrapper"
+                ],
+                "html": "<div class=\"demo-popup__wrapper\">",
+                "impact": "minor",
+                "failureSummary": "Fix any of the following:\n  There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                "any": [
+                  {
+                    "id": "hidden-content",
+                    "message": "There is hidden content on the page that was not analyzed. You will need to trigger the display of this content in order to analyze it.",
+                    "data": null
+                  }
+                ],
+                "all": [],
+                "none": []
+              }
+            ]
+          }
+        ],
+        "passCount": 37,
+        "inapplicableCount": 22
+      },
+      "contrast": {
+        "label": "contrast",
+        "violationCount": 2,
+        "violations": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+            "tags": [
+              "cat.color",
+              "wcag2aa",
+              "wcag143",
+              "TTv5",
+              "TT13.c",
+              "EN-301-549",
+              "EN-9.1.4.3",
+              "ACT",
+              "RGAAv4",
+              "RGAA-3.2.1"
+            ],
+            "wcag": [
+              "wcag2aa",
+              "wcag143"
+            ],
+            "nodeCount": 8,
+            "nodes": [
+              {
+                "target": [
+                  ".navbar-menu__list > .w--current[href$=\"company\"][aria-current=\"page\"]"
+                ],
+                "html": "<a href=\"/company\" aria-current=\"page\" class=\"navbar-link w--current\">Company</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.4 (foreground color: #f16b46, background color: #ede4d8, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element has insufficient color contrast of 2.4 (foreground color: #f16b46, background color: #ede4d8, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+                    "data": {
+                      "fgColor": "#f16b46",
+                      "bgColor": "#ede4d8",
+                      "contrastRatio": 2.4,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": null,
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".navbar-buttons__cta > .button-primary.button-large.w-inline-block > div"
+                ],
+                "html": "<div>Request Robot</div>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.67 (foreground color: #f8f0e3, background color: #f16b46, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element has insufficient color contrast of 2.67 (foreground color: #f8f0e3, background color: #f16b46, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+                    "data": {
+                      "fgColor": "#f8f0e3",
+                      "bgColor": "#f16b46",
+                      "contrastRatio": 2.67,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": null,
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".is--icon > .p-m"
+                ],
+                "html": "<div class=\"p-m\">Our story</div>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.45 (foreground color: #f8f0e3, background color: #63a4bc, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element has insufficient color contrast of 2.45 (foreground color: #f8f0e3, background color: #63a4bc, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1",
+                    "data": {
+                      "fgColor": "#f8f0e3",
+                      "bgColor": "#63a4bc",
+                      "contrastRatio": 2.45,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": null,
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".about-bento__card-p-wr > .h2"
+                ],
+                "html": "<p class=\"h2\">We believe the future of robotics has to be useful and delightful: in homes, classrooms, and everyday human spaces</p>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.78 (foreground color: #f8f0e3, background color: #dbb154, font size: 31.5pt (42px), font weight: normal). Expected contrast ratio of 3:1",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element has insufficient color contrast of 1.78 (foreground color: #f8f0e3, background color: #dbb154, font size: 31.5pt (42px), font weight: normal). Expected contrast ratio of 3:1",
+                    "data": {
+                      "fgColor": "#f8f0e3",
+                      "bgColor": "#dbb154",
+                      "contrastRatio": 1.78,
+                      "fontSize": "31.5pt (42px)",
+                      "fontWeight": "normal",
+                      "messageKey": null,
+                      "expectedContrastRatio": "3:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".about-bento__card-text > .h4"
+                ],
+                "html": "<p class=\"h4\">But that future won’t arrive until far more developers can build for robotics quickly, safely, and in the real world without needing to reinvent the fundamentals each time</p>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.78 (foreground color: #f8f0e3, background color: #dbb154, font size: 18.0pt (24px), font weight: normal). Expected contrast ratio of 3:1",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element has insufficient color contrast of 1.78 (foreground color: #f8f0e3, background color: #dbb154, font size: 18.0pt (24px), font weight: normal). Expected contrast ratio of 3:1",
+                    "data": {
+                      "fgColor": "#f8f0e3",
+                      "bgColor": "#dbb154",
+                      "contrastRatio": 1.78,
+                      "fontSize": "18.0pt (24px)",
+                      "fontWeight": "normal",
+                      "messageKey": null,
+                      "expectedContrastRatio": "3:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".lead"
+                ],
+                "html": "<p class=\"lead is--second is--about\">Our mission is to build capable, safe, and fun robots for everyone</p>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.77 (foreground color: #f8f0e3, background color: #e0a5cf, font size: 74.4pt (99.2px), font weight: normal). Expected contrast ratio of 3:1",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element has insufficient color contrast of 1.77 (foreground color: #f8f0e3, background color: #e0a5cf, font size: 74.4pt (99.2px), font weight: normal). Expected contrast ratio of 3:1",
+                    "data": {
+                      "fgColor": "#f8f0e3",
+                      "bgColor": "#e0a5cf",
+                      "contrastRatio": 1.77,
+                      "fontSize": "74.4pt (99.2px)",
+                      "fontWeight": "normal",
+                      "messageKey": null,
+                      "expectedContrastRatio": "3:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  "#w-node-_4566542a-26d5-bcb6-ff56-23c2e0cb73d4-cd9b83b6 > .h2"
+                ],
+                "html": "<p class=\"h2\">That’s why we built Sprout: the development platform we always wished existed</p>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.67 (foreground color: #f8f0e3, background color: #f16b46, font size: 31.5pt (42px), font weight: normal). Expected contrast ratio of 3:1",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element has insufficient color contrast of 2.67 (foreground color: #f8f0e3, background color: #f16b46, font size: 31.5pt (42px), font weight: normal). Expected contrast ratio of 3:1",
+                    "data": {
+                      "fgColor": "#f8f0e3",
+                      "bgColor": "#f16b46",
+                      "contrastRatio": 2.67,
+                      "fontSize": "31.5pt (42px)",
+                      "fontWeight": "normal",
+                      "messageKey": null,
+                      "expectedContrastRatio": "3:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  "#w-node-bfc82ce2-9462-0d45-46a5-c9a2322d7808-cd9b83b6 > .h4"
+                ],
+                "html": "<p class=\"h4\">Sprout brings modern developer workflows to robotics so teams can move from idea to prototype to deployment with less friction and more confidence</p>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.47 (foreground color: #f8f0e3, background color: #3dac91, font size: 18.0pt (24px), font weight: normal). Expected contrast ratio of 3:1",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element has insufficient color contrast of 2.47 (foreground color: #f8f0e3, background color: #3dac91, font size: 18.0pt (24px), font weight: normal). Expected contrast ratio of 3:1",
+                    "data": {
+                      "fgColor": "#f8f0e3",
+                      "bgColor": "#3dac91",
+                      "contrastRatio": 2.47,
+                      "fontSize": "18.0pt (24px)",
+                      "fontWeight": "normal",
+                      "messageKey": null,
+                      "expectedContrastRatio": "3:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              }
+            ]
+          },
+          {
+            "id": "frame-title",
+            "impact": "serious",
+            "description": "Ensure <iframe> and <frame> elements have an accessible name",
+            "help": "Frames must have an accessible name",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/frame-title?application=playwright",
+            "tags": [
+              "cat.text-alternatives",
+              "wcag2a",
+              "wcag412",
+              "section508",
+              "section508.22.i",
+              "TTv5",
+              "TT12.d",
+              "EN-301-549",
+              "EN-9.4.1.2",
+              "RGAAv4",
+              "RGAA-2.1.1"
+            ],
+            "wcag": [
+              "wcag2a",
+              "wcag412"
+            ],
+            "nodeCount": 1,
+            "nodes": [
+              {
+                "target": [
+                  ".product-hero__video-embed > div > iframe"
+                ],
+                "html": "<iframe class=\"video-vimeo-frame\" src=\"https://player.vimeo...\" style=\"position: absolute; ...\" frameborder=\"0\" allow=\"autoplay; fullscreen...\" referrerpolicy=\"strict-origin-when-c...\" allowfullscreen=\"\" data-ready=\"true\">",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element has no title attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+                "any": [
+                  {
+                    "id": "non-empty-title",
+                    "message": "Element has no title attribute",
+                    "data": {
+                      "messageKey": "noAttr"
+                    }
+                  },
+                  {
+                    "id": "aria-label",
+                    "message": "aria-label attribute does not exist or is empty",
+                    "data": null
+                  },
+                  {
+                    "id": "aria-labelledby",
+                    "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty",
+                    "data": null
+                  },
+                  {
+                    "id": "presentational-role",
+                    "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\"",
+                    "data": null
+                  }
+                ],
+                "all": [],
+                "none": []
+              }
+            ]
+          }
+        ],
+        "incompleteCount": 1,
+        "incomplete": [
+          {
+            "id": "color-contrast",
+            "impact": "serious",
+            "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+            "help": "Elements must meet minimum color contrast ratio thresholds",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=playwright",
+            "tags": [
+              "cat.color",
+              "wcag2aa",
+              "wcag143",
+              "TTv5",
+              "TT13.c",
+              "EN-301-549",
+              "EN-9.1.4.3",
+              "ACT",
+              "RGAAv4",
+              "RGAA-3.2.1"
+            ],
+            "wcag": [
+              "wcag2aa",
+              "wcag143"
+            ],
+            "nodeCount": 21,
+            "nodes": [
+              {
+                "target": [
+                  ".h3"
+                ],
+                "html": "<h2 class=\"h3\">Fauna Robotics, building a&nbsp;world where robots operate everywhere people&nbsp;do.</h2>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "24.0pt (32px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "3:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".footer-content__col-left > .text-brown-300"
+                ],
+                "html": "<p class=\"text-brown-300\">Designed in New York City. <!--$--><br><!--/$-->Assembled in America.</p>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  "#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de > .text-brown-300"
+                ],
+                "html": "<div class=\"text-brown-300\">Explore</div>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".text-link[href$=\"product\"]"
+                ],
+                "html": "<a href=\"/product\" class=\"text-link\">Product</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  "a[href$=\"product#tech-specs\"]"
+                ],
+                "html": "<a href=\"/product#tech-specs\" class=\"text-link\">Technical specifications</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".plausible-event-name--Technical\\+Report\\+Download > p"
+                ],
+                "html": "<p>Technical report</p>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".plausible-event-name--Press\\+Kit\\+Click > p"
+                ],
+                "html": "<p>Press kit</p>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".footer-content__col:nth-child(2) > .text-brown-300"
+                ],
+                "html": "<div class=\"text-brown-300\">About</div>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  "li:nth-child(1) > .w--current[href$=\"company\"][aria-current=\"page\"]"
+                ],
+                "html": "<a href=\"/company\" aria-current=\"page\" class=\"text-link w--current\">Company</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".footer-content__col:nth-child(2) > ul > li:nth-child(2) > .text-link[target=\"_blank\"]"
+                ],
+                "html": "<a href=\"https://www.amazon.jobs/en/search?base_query=fauna\" target=\"_blank\" class=\"text-link\">Careers</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".text-link[href$=\"news\"]"
+                ],
+                "html": "<a href=\"/news\" class=\"text-link\">News</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".footer-content__col:nth-child(3) > .text-brown-300"
+                ],
+                "html": "<div class=\"text-brown-300\">Social</div>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  "li:nth-child(1) > .text-link[target=\"_blank\"]"
+                ],
+                "html": "<a href=\"https://www.youtube.com/@FaunaRobotics\" target=\"_blank\" class=\"text-link\">YouTube</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  "a[href$=\"faunarobotics\"]"
+                ],
+                "html": "<a href=\"https://x.com/faunarobotics\" target=\"_blank\" class=\"text-link\">X (Twitter)</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  "li:nth-child(3) > .text-link[target=\"_blank\"]"
+                ],
+                "html": "<a href=\"https://www.linkedin.com/company/fauna-robotics/\" target=\"_blank\" class=\"text-link\">LinkedIn</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".footer-content__col:nth-child(3) > ul > li:nth-child(4) > .text-link[target=\"_blank\"]"
+                ],
+                "html": "<a href=\"https://www.instagram.com/faunarobotics/?igsh=cGg0dnozNGpiYm85#\" target=\"_blank\" class=\"text-link\">Instagram</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".decoration-underline"
+                ],
+                "html": "<a href=\"mailto:sales@faunarobotics.com\" class=\"text-link decoration-underline\">Contact us</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  ".p-l"
+                ],
+                "html": "<div class=\"text-brown-200 p-l\">© <span id=\"copyright-year\">2026</span> Fauna Robotics Inc</div>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  "#copyright-year"
+                ],
+                "html": "<span id=\"copyright-year\">2026</span>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  "a[href$=\"privacy-policy\"]"
+                ],
+                "html": "<a href=\"/privacy-policy\" class=\"text-brown-200 text-link\">Privacy Policy</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              },
+              {
+                "target": [
+                  "a[href$=\"data-processing\"]"
+                ],
+                "html": "<a href=\"/data-processing\" class=\"text-brown-200 text-link\">Data Processing Addendum</a>",
+                "impact": "serious",
+                "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+                "any": [
+                  {
+                    "id": "color-contrast",
+                    "message": "Element's background color could not be determined due to a background gradient",
+                    "data": {
+                      "contrastRatio": 0,
+                      "fontSize": "12.0pt (16px)",
+                      "fontWeight": "normal",
+                      "messageKey": "bgGradient",
+                      "expectedContrastRatio": "4.5:1"
+                    }
+                  }
+                ],
+                "all": [],
+                "none": []
+              }
+            ]
+          }
+        ],
+        "passCount": 44,
+        "inapplicableCount": 44
+      }
+    }
+  }
+}

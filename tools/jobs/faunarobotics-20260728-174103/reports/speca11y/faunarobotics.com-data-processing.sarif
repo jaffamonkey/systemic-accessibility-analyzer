@@ -1,0 +1,2562 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/main/sarif-2.1/schema/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "SpecA11y",
+          "version": "0.5.2",
+          "informationUri": "https://github.com/OKlueck/SpecA11y",
+          "rules": [
+            {
+              "id": "color-contrast",
+              "name": "Elements must have sufficient color contrast",
+              "shortDescription": {
+                "text": "Ensures text elements have at least a 4.5:1 contrast ratio (3:1 for large text)."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "1.4.3",
+                    "name": "Contrast (Minimum)",
+                    "level": "AA",
+                    "version": "2.0",
+                    "principle": "perceivable"
+                  }
+                ],
+                "severity": "serious",
+                "confidence": "likely"
+              }
+            },
+            {
+              "id": "use-of-color",
+              "name": "Color must not be the only visual means of conveying information",
+              "shortDescription": {
+                "text": "Checks that links and interactive elements are distinguishable from surrounding text by more than just color (e.g. underline, font-weight, border)."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "1.4.1",
+                    "name": "Use of Color",
+                    "level": "A",
+                    "version": "2.0",
+                    "principle": "perceivable"
+                  }
+                ],
+                "severity": "moderate",
+                "confidence": "possible"
+              }
+            },
+            {
+              "id": "landmark-main",
+              "name": "Page must have exactly one main landmark",
+              "shortDescription": {
+                "text": "Ensures the page contains exactly one <main> or [role=\"main\"] landmark. Zero is a violation, multiple produces a warning."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "1.3.1",
+                    "name": "Info and Relationships",
+                    "level": "A",
+                    "version": "2.0",
+                    "principle": "perceivable"
+                  }
+                ],
+                "severity": "moderate",
+                "confidence": "certain"
+              }
+            },
+            {
+              "id": "bypass",
+              "name": "Page must provide a mechanism to bypass repeated blocks of content",
+              "shortDescription": {
+                "text": "Ensures the page has a skip link, <main> landmark, or [role=\"main\"] to allow users to bypass repeated content."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "2.4.1",
+                    "name": "Bypass Blocks",
+                    "level": "A",
+                    "version": "2.0",
+                    "principle": "operable"
+                  }
+                ],
+                "severity": "serious",
+                "confidence": "likely"
+              }
+            },
+            {
+              "id": "multiple-ways",
+              "name": "Page should provide multiple ways to locate content",
+              "shortDescription": {
+                "text": "Checks that the page provides at least one of: navigation landmark, search functionality, sitemap link, or table of contents."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "2.4.5",
+                    "name": "Multiple Ways",
+                    "level": "AA",
+                    "version": "2.0",
+                    "principle": "operable"
+                  }
+                ],
+                "severity": "moderate",
+                "confidence": "possible"
+              }
+            },
+            {
+              "id": "skip-link",
+              "name": "Page should have a skip navigation link",
+              "shortDescription": {
+                "text": "Checks if the page has a skip navigation link among the first few focusable elements that points to the main content area."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "2.4.1",
+                    "name": "Bypass Blocks",
+                    "level": "A",
+                    "version": "2.0",
+                    "principle": "operable"
+                  }
+                ],
+                "severity": "moderate",
+                "confidence": "possible"
+              }
+            },
+            {
+              "id": "pointer-interaction-blocked",
+              "name": "Content areas must not block pointer interaction",
+              "shortDescription": {
+                "text": "Detects pointer-events: none and cursor: none on content areas that would prevent mouse/touch interaction."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "2.5.1",
+                    "name": "Pointer Gestures",
+                    "level": "A",
+                    "version": "2.1",
+                    "principle": "operable"
+                  }
+                ],
+                "severity": "critical",
+                "confidence": "certain"
+              }
+            },
+            {
+              "id": "button-name",
+              "name": "Buttons must have accessible names",
+              "shortDescription": {
+                "text": "Ensures every <button> and [role=\"button\"] element has an accessible name via text content, aria-label, aria-labelledby, title, or value."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "4.1.2",
+                    "name": "Name, Role, Value",
+                    "level": "A",
+                    "version": "2.0",
+                    "principle": "robust"
+                  }
+                ],
+                "severity": "critical",
+                "confidence": "certain"
+              }
+            },
+            {
+              "id": "consistent-navigation",
+              "name": "Navigation elements should have consistent structure",
+              "shortDescription": {
+                "text": "Checks that nav elements use a consistent list-based structure with links, which supports predictable navigation for assistive technology users."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "3.2.3",
+                    "name": "Consistent Navigation",
+                    "level": "AA",
+                    "version": "2.0",
+                    "principle": "understandable"
+                  }
+                ],
+                "severity": "moderate",
+                "confidence": "possible"
+              }
+            },
+            {
+              "id": "aria-required-children",
+              "name": "ARIA roles must contain required children",
+              "shortDescription": {
+                "text": "Ensures elements with ARIA roles that require specific child roles contain at least one child with one of those roles."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "1.3.1",
+                    "name": "Info and Relationships",
+                    "level": "A",
+                    "version": "2.0",
+                    "principle": "perceivable"
+                  }
+                ],
+                "severity": "serious",
+                "confidence": "certain"
+              }
+            },
+            {
+              "id": "reflow",
+              "name": "Content must reflow without horizontal scrolling at 320px width",
+              "shortDescription": {
+                "text": "Resizes the viewport to 320px and checks for elements that cause horizontal scrolling (WCAG 1.4.10 Reflow)."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "1.4.10",
+                    "name": "Reflow",
+                    "level": "AA",
+                    "version": "2.1",
+                    "principle": "perceivable"
+                  }
+                ],
+                "severity": "serious",
+                "confidence": "likely"
+              }
+            },
+            {
+              "id": "focus-visible",
+              "name": "Focusable elements should have visible focus indicators",
+              "shortDescription": {
+                "text": "Takes before/after focus screenshots to verify that focusable elements have a visible focus indicator, not just a CSS outline check."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "2.4.7",
+                    "name": "Focus Visible",
+                    "level": "AA",
+                    "version": "2.0",
+                    "principle": "operable"
+                  }
+                ],
+                "severity": "serious",
+                "confidence": "likely"
+              }
+            },
+            {
+              "id": "focus-order",
+              "name": "Focus order should follow visual layout",
+              "shortDescription": {
+                "text": "Tabs through focusable elements and verifies that the focus order follows a logical top-to-bottom, left-to-right visual sequence."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "2.4.3",
+                    "name": "Focus Order",
+                    "level": "A",
+                    "version": "2.0",
+                    "principle": "operable"
+                  }
+                ],
+                "severity": "serious",
+                "confidence": "likely"
+              }
+            },
+            {
+              "id": "focus-not-obscured",
+              "name": "Focused elements must not be fully obscured",
+              "shortDescription": {
+                "text": "Checks that focused interactive elements are not hidden behind fixed/sticky positioned elements."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "2.4.11",
+                    "name": "Focus Not Obscured (Minimum)",
+                    "level": "AA",
+                    "version": "2.2",
+                    "principle": "operable"
+                  }
+                ],
+                "severity": "serious",
+                "confidence": "likely"
+              }
+            },
+            {
+              "id": "focus-appearance",
+              "name": "Focus indicators must be clearly visible",
+              "shortDescription": {
+                "text": "Takes before/after focus screenshots and verifies focus indicators change enough pixels to meet WCAG 2.4.13 area requirements."
+              },
+              "properties": {
+                "wcagCriteria": [
+                  {
+                    "id": "2.4.13",
+                    "name": "Focus Appearance",
+                    "level": "AAA",
+                    "version": "2.2",
+                    "principle": "operable"
+                  }
+                ],
+                "severity": "moderate",
+                "confidence": "likely"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "error",
+          "message": {
+            "text": "Contrast ratio 2.68:1 is below the 4.5:1 requirement for normal text."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.navbar-buttons:nth-of-type(2) > div.navbar-buttons__cta:nth-of-type(2) > a.button-large.button-primary"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"https://form.typeform.com/to/HsZsaqmn\" target=\"_blank\" class=\"button-large button-primary w-inline-block\"><div>Request Robot</div></a> | Accessible name: \"Request Robot\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "error",
+          "message": {
+            "text": "Contrast ratio 2.68:1 is below the 4.5:1 requirement for normal text."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.navbar-buttons__cta:nth-of-type(2) > a.button-large.button-primary > div"
+                }
+              ],
+              "message": {
+                "text": "<div>Request Robot</div> | Accessible name: \"Request Robot\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "footer.footer > div.container.is--footer > div.footer-content"
+                }
+              ],
+              "message": {
+                "text": "<div class=\"footer-content\"><div class=\"footer-content__grid\"><div class=\"footer-content__col-left\"><h2 class=\"h3\">Fauna Robotics, building a&nbsp;world where robots operate everywhere people&nbsp;do.</h2><p class=\"text-brown-300\">Designed in New York City. <!--$--><br><!--/$-->Assembled in America.</p></div><div class=\"footer-content__col-right\"><div id=\"w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de\" class=\"footer-content__col\"><div class=\"text-brown-300\">Explore</div><ul role=\"list\" class=\"footer-content__col-list\"><li class=\"footer-content__list-item\"><a href=\"/product\" class=\"text-link\">Product</a></li><li class=\"footer-content__list-item\"><a href=\"/product#tech-specs\" class=\"text-link\">Technical specifications</a></li><li class=\"footer-content__list-item\"><a href=\"https://arxiv.org/abs/2601.18963\" class=\"button-icon text-link w-inline-block plausible-event-name--Technical+Report+Download plausible-event-location--footer\"><p>Technical report</p><div class=\"icon-1-1 is-20 w-embed\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\">\n  <path d=\"M4.14648 9.95801L14.9798 9.95801\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n  <path d=\"M9.97852 4.12476L15.8118 9.95809L9.97852 15.7914\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n</svg></div></a></li><li class=\"footer-content__list-item\"><a href=\"https://docsend.com/view/s/54yau8edf4ivbkzu\" target=\"_blank\" class=\"button-icon text-link w-inline-block plausible-event-name--Press+Kit+Click\"><p>Press kit</p><div class=\"icon-1-1 is-20 w-embed\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\">\n  <path d=\"M4.14648 9.95801L14.9798 9.95801\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n  <path d=\"M9.97852 4.12476L15.8118 9.95809L9.97852 15.7914\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n</svg></div></a></li></ul></div><div class=\"footer-content__col\"><div class=\"text-brown-300\">About</div><ul role=\"list\" class=\"footer-content__col-list\"><li class=\"footer-content__list-item\"><a href=\"/company\" class=\"text-link\">Company</a></li><li class=\"footer-content__list-item\"><a href=\"https://www.amazon.jobs/en/search?base_query=fauna\" target=\"_blank\" class=\"text-link\">Careers</a></li><li class=\"footer-content__list-item\"><a href=\"/news\" class=\"text-link\">News</a></li></ul></div><div class=\"footer-content__col\"><div class=\"text-brown-300\">Social</div><ul role=\"list\" class=\"footer-content__col-list\"><li class=\"footer-content__list-item\"><a href=\"https://www.youtube.com/@FaunaRobotics\" target=\"_blank\" class=\"text-link\">YouTube</a></li><li class=\"footer-content__list-item\"><a href=\"https://x.com/faunarobotics\" target=\"_blank\" class=\"text-link\">X (Twitter)</a></li><li class=\"footer-content__list-item\"><a href=\"https://www.linkedin.com/company/fauna-robotics/\" target=\"_blank\" class=\"text-link\">LinkedIn</a></li><li class=\"footer-content__list-item\"><a href=\"https://www.instagram.com/faunarobotics/?igsh=cGg0dnozNGpiYm85#\" target=\"_blank\" class=\"text-link\">Instagram</a></li></ul></div><div id=\"w-node-f7573142-a4ef-60b7-12da-23c3f39da591-74d2b1de\" class=\"footer-content__col is--last\"><ul role=\"list\" class=\"footer-content__col-list\"><li class=\"footer-content__list-item\"><a href=\"mailto:sales@faunarobotics.com\" class=\"text-link decoration-underline\">Contact us</a></li></ul></div></div></div><div class=\"footer-content__grid is--second\"><div class=\"footer-content__col-left is--copy\"><div class=\"text-brown-200 p-l\">© <span id=\"copyright-year\">2026</span> Fauna Robotics Inc</div></div><div id=\"w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b21e-74d2b1de\" class=\"footer-content__col-right is--bottom\"><div class=\"footer-content__col\"><a href=\"/privacy-policy\" class=\"text-brown-200 text-link\">Privacy Policy</a></div><div id=\"w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b222-74d2b1de\" class=\"footer-content__col\"><a href=\"/data-processing\" aria-current=\"page\" class=\"text-brown-200 text-link w--current\">Data Processing Addendum</a></div></div></div></div> | Accessible name: \"Fauna Robotics, building a world where robots o...\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.container.is--footer > div.footer-content > div.footer-content__grid:nth-of-type(1)"
+                }
+              ],
+              "message": {
+                "text": "<div class=\"footer-content__grid\"><div class=\"footer-content__col-left\"><h2 class=\"h3\">Fauna Robotics, building a&nbsp;world where robots operate everywhere people&nbsp;do.</h2><p class=\"text-brown-300\">Designed in New York City. <!--$--><br><!--/$-->Assembled in America.</p></div><div class=\"footer-content__col-right\"><div id=\"w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de\" class=\"footer-content__col\"><div class=\"text-brown-300\">Explore</div><ul role=\"list\" class=\"footer-content__col-list\"><li class=\"footer-content__list-item\"><a href=\"/product\" class=\"text-link\">Product</a></li><li class=\"footer-content__list-item\"><a href=\"/product#tech-specs\" class=\"text-link\">Technical specifications</a></li><li class=\"footer-content__list-item\"><a href=\"https://arxiv.org/abs/2601.18963\" class=\"button-icon text-link w-inline-block plausible-event-name--Technical+Report+Download plausible-event-location--footer\"><p>Technical report</p><div class=\"icon-1-1 is-20 w-embed\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\">\n  <path d=\"M4.14648 9.95801L14.9798 9.95801\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n  <path d=\"M9.97852 4.12476L15.8118 9.95809L9.97852 15.7914\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n</svg></div></a></li><li class=\"footer-content__list-item\"><a href=\"https://docsend.com/view/s/54yau8edf4ivbkzu\" target=\"_blank\" class=\"button-icon text-link w-inline-block plausible-event-name--Press+Kit+Click\"><p>Press kit</p><div class=\"icon-1-1 is-20 w-embed\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\">\n  <path d=\"M4.14648 9.95801L14.9798 9.95801\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n  <path d=\"M9.97852 4.12476L15.8118 9.95809L9.97852 15.7914\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n</svg></div></a></li></ul></div><div class=\"footer-content__col\"><div class=\"text-brown-300\">About</div><ul role=\"list\" class=\"footer-content__col-list\"><li class=\"footer-content__list-item\"><a href=\"/company\" class=\"text-link\">Company</a></li><li class=\"footer-content__list-item\"><a href=\"https://www.amazon.jobs/en/search?base_query=fauna\" target=\"_blank\" class=\"text-link\">Careers</a></li><li class=\"footer-content__list-item\"><a href=\"/news\" class=\"text-link\">News</a></li></ul></div><div class=\"footer-content__col\"><div class=\"text-brown-300\">Social</div><ul role=\"list\" class=\"footer-content__col-list\"><li class=\"footer-content__list-item\"><a href=\"https://www.youtube.com/@FaunaRobotics\" target=\"_blank\" class=\"text-link\">YouTube</a></li><li class=\"footer-content__list-item\"><a href=\"https://x.com/faunarobotics\" target=\"_blank\" class=\"text-link\">X (Twitter)</a></li><li class=\"footer-content__list-item\"><a href=\"https://www.linkedin.com/company/fauna-robotics/\" target=\"_blank\" class=\"text-link\">LinkedIn</a></li><li class=\"footer-content__list-item\"><a href=\"https://www.instagram.com/faunarobotics/?igsh=cGg0dnozNGpiYm85#\" target=\"_blank\" class=\"text-link\">Instagram</a></li></ul></div><div id=\"w-node-f7573142-a4ef-60b7-12da-23c3f39da591-74d2b1de\" class=\"footer-content__col is--last\"><ul role=\"list\" class=\"footer-content__col-list\"><li class=\"footer-content__list-item\"><a href=\"mailto:sales@faunarobotics.com\" class=\"text-link decoration-underline\">Contact us</a></li></ul></div></div></div> | Accessible name: \"Fauna Robotics, building a world where robots o...\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.footer-content > div.footer-content__grid:nth-of-type(1) > div.footer-content__col-left:nth-of-type(1)"
+                }
+              ],
+              "message": {
+                "text": "<div class=\"footer-content__col-left\"><h2 class=\"h3\">Fauna Robotics, building a&nbsp;world where robots operate everywhere people&nbsp;do.</h2><p class=\"text-brown-300\">Designed in New York City. <!--$--><br><!--/$-->Assembled in America.</p></div> | Accessible name: \"Fauna Robotics, building a world where robots o...\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.footer-content__grid:nth-of-type(1) > div.footer-content__col-left:nth-of-type(1) > h2.h3"
+                }
+              ],
+              "message": {
+                "text": "<h2 class=\"h3\">Fauna Robotics, building a&nbsp;world where robots operate everywhere people&nbsp;do.</h2> | Accessible name: \"Fauna Robotics, building a world where robots o...\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.footer-content__grid:nth-of-type(1) > div.footer-content__col-left:nth-of-type(1) > p.text-brown-300"
+                }
+              ],
+              "message": {
+                "text": "<p class=\"text-brown-300\">Designed in New York City. <!--$--><br><!--/$-->Assembled in America.</p> | Accessible name: \"Designed in New York City. Assembled in America.\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.footer-content > div.footer-content__grid:nth-of-type(1) > div.footer-content__col-right:nth-of-type(2)"
+                }
+              ],
+              "message": {
+                "text": "<div class=\"footer-content__col-right\"><div id=\"w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de\" class=\"footer-content__col\"><div class=\"text-brown-300\">Explore</div><ul role=\"list\" class=\"footer-content__col-list\"><li class=\"footer-content__list-item\"><a href=\"/product\" class=\"text-link\">Product</a></li><li class=\"footer-content__list-item\"><a href=\"/product#tech-specs\" class=\"text-link\">Technical specifications</a></li><li class=\"footer-content__list-item\"><a href=\"https://arxiv.org/abs/2601.18963\" class=\"button-icon text-link w-inline-block plausible-event-name--Technical+Report+Download plausible-event-location--footer\"><p>Technical report</p><div class=\"icon-1-1 is-20 w-embed\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\">\n  <path d=\"M4.14648 9.95801L14.9798 9.95801\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n  <path d=\"M9.97852 4.12476L15.8118 9.95809L9.97852 15.7914\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n</svg></div></a></li><li class=\"footer-content__list-item\"><a href=\"https://docsend.com/view/s/54yau8edf4ivbkzu\" target=\"_blank\" class=\"button-icon text-link w-inline-block plausible-event-name--Press+Kit+Click\"><p>Press kit</p><div class=\"icon-1-1 is-20 w-embed\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\">\n  <path d=\"M4.14648 9.95801L14.9798 9.95801\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n  <path d=\"M9.97852 4.12476L15.8118 9.95809L9.97852 15.7914\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n</svg></div></a></li></ul></div><div class=\"footer-content__col\"><div class=\"text-brown-300\">About</div><ul role=\"list\" class=\"footer-content__col-list\"><li class=\"footer-content__list-item\"><a href=\"/company\" class=\"text-link\">Company</a></li><li class=\"footer-content__list-item\"><a href=\"https://www.amazon.jobs/en/search?base_query=fauna\" target=\"_blank\" class=\"text-link\">Careers</a></li><li class=\"footer-content__list-item\"><a href=\"/news\" class=\"text-link\">News</a></li></ul></div><div class=\"footer-content__col\"><div class=\"text-brown-300\">Social</div><ul role=\"list\" class=\"footer-content__col-list\"><li class=\"footer-content__list-item\"><a href=\"https://www.youtube.com/@FaunaRobotics\" target=\"_blank\" class=\"text-link\">YouTube</a></li><li class=\"footer-content__list-item\"><a href=\"https://x.com/faunarobotics\" target=\"_blank\" class=\"text-link\">X (Twitter)</a></li><li class=\"footer-content__list-item\"><a href=\"https://www.linkedin.com/company/fauna-robotics/\" target=\"_blank\" class=\"text-link\">LinkedIn</a></li><li class=\"footer-content__list-item\"><a href=\"https://www.instagram.com/faunarobotics/?igsh=cGg0dnozNGpiYm85#\" target=\"_blank\" class=\"text-link\">Instagram</a></li></ul></div><div id=\"w-node-f7573142-a4ef-60b7-12da-23c3f39da591-74d2b1de\" class=\"footer-content__col is--last\"><ul role=\"list\" class=\"footer-content__col-list\"><li class=\"footer-content__list-item\"><a href=\"mailto:sales@faunarobotics.com\" class=\"text-link decoration-underline\">Contact us</a></li></ul></div></div> | Accessible name: \"ExploreProductTechnical specificationsTechnical...\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de"
+                }
+              ],
+              "message": {
+                "text": "<div id=\"w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de\" class=\"footer-content__col\"><div class=\"text-brown-300\">Explore</div><ul role=\"list\" class=\"footer-content__col-list\"><li class=\"footer-content__list-item\"><a href=\"/product\" class=\"text-link\">Product</a></li><li class=\"footer-content__list-item\"><a href=\"/product#tech-specs\" class=\"text-link\">Technical specifications</a></li><li class=\"footer-content__list-item\"><a href=\"https://arxiv.org/abs/2601.18963\" class=\"button-icon text-link w-inline-block plausible-event-name--Technical+Report+Download plausible-event-location--footer\"><p>Technical report</p><div class=\"icon-1-1 is-20 w-embed\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\">\n  <path d=\"M4.14648 9.95801L14.9798 9.95801\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n  <path d=\"M9.97852 4.12476L15.8118 9.95809L9.97852 15.7914\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n</svg></div></a></li><li class=\"footer-content__list-item\"><a href=\"https://docsend.com/view/s/54yau8edf4ivbkzu\" target=\"_blank\" class=\"button-icon text-link w-inline-block plausible-event-name--Press+Kit+Click\"><p>Press kit</p><div class=\"icon-1-1 is-20 w-embed\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\">\n  <path d=\"M4.14648 9.95801L14.9798 9.95801\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n  <path d=\"M9.97852 4.12476L15.8118 9.95809L9.97852 15.7914\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n</svg></div></a></li></ul></div> | Accessible name: \"ExploreProductTechnical specificationsTechnical...\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de > div.text-brown-300"
+                }
+              ],
+              "message": {
+                "text": "<div class=\"text-brown-300\">Explore</div> | Accessible name: \"Explore\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de > ul.footer-content__col-list > li.footer-content__list-item:nth-of-type(1)"
+                }
+              ],
+              "message": {
+                "text": "<li class=\"footer-content__list-item\"><a href=\"/product\" class=\"text-link\">Product</a></li> | Accessible name: \"Product\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ul.footer-content__col-list > li.footer-content__list-item:nth-of-type(1) > a.text-link"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/product\" class=\"text-link\">Product</a> | Accessible name: \"Product\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de > ul.footer-content__col-list > li.footer-content__list-item:nth-of-type(2)"
+                }
+              ],
+              "message": {
+                "text": "<li class=\"footer-content__list-item\"><a href=\"/product#tech-specs\" class=\"text-link\">Technical specifications</a></li> | Accessible name: \"Technical specifications\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ul.footer-content__col-list > li.footer-content__list-item:nth-of-type(2) > a.text-link"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/product#tech-specs\" class=\"text-link\">Technical specifications</a> | Accessible name: \"Technical specifications\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de > ul.footer-content__col-list > li.footer-content__list-item:nth-of-type(3)"
+                }
+              ],
+              "message": {
+                "text": "<li class=\"footer-content__list-item\"><a href=\"https://arxiv.org/abs/2601.18963\" class=\"button-icon text-link w-inline-block plausible-event-name--Technical+Report+Download plausible-event-location--footer\"><p>Technical report</p><div class=\"icon-1-1 is-20 w-embed\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\">\n  <path d=\"M4.14648 9.95801L14.9798 9.95801\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n  <path d=\"M9.97852 4.12476L15.8118 9.95809L9.97852 15.7914\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n</svg></div></a></li> | Accessible name: \"Technical report\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ul.footer-content__col-list > li.footer-content__list-item:nth-of-type(3) > a.button-icon.text-link"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"https://arxiv.org/abs/2601.18963\" class=\"button-icon text-link w-inline-block plausible-event-name--Technical+Report+Download plausible-event-location--footer\"><p>Technical report</p><div class=\"icon-1-1 is-20 w-embed\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\">\n  <path d=\"M4.14648 9.95801L14.9798 9.95801\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n  <path d=\"M9.97852 4.12476L15.8118 9.95809L9.97852 15.7914\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n</svg></div></a> | Accessible name: \"Technical report\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "li.footer-content__list-item:nth-of-type(3) > a.button-icon.text-link > p"
+                }
+              ],
+              "message": {
+                "text": "<p>Technical report</p> | Accessible name: \"Technical report\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de > ul.footer-content__col-list > li.footer-content__list-item:nth-of-type(4)"
+                }
+              ],
+              "message": {
+                "text": "<li class=\"footer-content__list-item\"><a href=\"https://docsend.com/view/s/54yau8edf4ivbkzu\" target=\"_blank\" class=\"button-icon text-link w-inline-block plausible-event-name--Press+Kit+Click\"><p>Press kit</p><div class=\"icon-1-1 is-20 w-embed\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\">\n  <path d=\"M4.14648 9.95801L14.9798 9.95801\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n  <path d=\"M9.97852 4.12476L15.8118 9.95809L9.97852 15.7914\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n</svg></div></a></li> | Accessible name: \"Press kit\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ul.footer-content__col-list > li.footer-content__list-item:nth-of-type(4) > a.button-icon.text-link"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"https://docsend.com/view/s/54yau8edf4ivbkzu\" target=\"_blank\" class=\"button-icon text-link w-inline-block plausible-event-name--Press+Kit+Click\"><p>Press kit</p><div class=\"icon-1-1 is-20 w-embed\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\">\n  <path d=\"M4.14648 9.95801L14.9798 9.95801\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n  <path d=\"M9.97852 4.12476L15.8118 9.95809L9.97852 15.7914\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n</svg></div></a> | Accessible name: \"Press kit\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "li.footer-content__list-item:nth-of-type(4) > a.button-icon.text-link > p"
+                }
+              ],
+              "message": {
+                "text": "<p>Press kit</p> | Accessible name: \"Press kit\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.footer-content__grid:nth-of-type(1) > div.footer-content__col-right:nth-of-type(2) > div.footer-content__col:nth-of-type(2)"
+                }
+              ],
+              "message": {
+                "text": "<div class=\"footer-content__col\"><div class=\"text-brown-300\">About</div><ul role=\"list\" class=\"footer-content__col-list\"><li class=\"footer-content__list-item\"><a href=\"/company\" class=\"text-link\">Company</a></li><li class=\"footer-content__list-item\"><a href=\"https://www.amazon.jobs/en/search?base_query=fauna\" target=\"_blank\" class=\"text-link\">Careers</a></li><li class=\"footer-content__list-item\"><a href=\"/news\" class=\"text-link\">News</a></li></ul></div> | Accessible name: \"AboutCompanyCareersNews\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.footer-content__col-right:nth-of-type(2) > div.footer-content__col:nth-of-type(2) > div.text-brown-300"
+                }
+              ],
+              "message": {
+                "text": "<div class=\"text-brown-300\">About</div> | Accessible name: \"About\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.footer-content__col:nth-of-type(2) > ul.footer-content__col-list > li.footer-content__list-item:nth-of-type(1)"
+                }
+              ],
+              "message": {
+                "text": "<li class=\"footer-content__list-item\"><a href=\"/company\" class=\"text-link\">Company</a></li> | Accessible name: \"Company\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ul.footer-content__col-list > li.footer-content__list-item:nth-of-type(1) > a.text-link"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/company\" class=\"text-link\">Company</a> | Accessible name: \"Company\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.footer-content__col:nth-of-type(2) > ul.footer-content__col-list > li.footer-content__list-item:nth-of-type(2)"
+                }
+              ],
+              "message": {
+                "text": "<li class=\"footer-content__list-item\"><a href=\"https://www.amazon.jobs/en/search?base_query=fauna\" target=\"_blank\" class=\"text-link\">Careers</a></li> | Accessible name: \"Careers\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ul.footer-content__col-list > li.footer-content__list-item:nth-of-type(2) > a.text-link"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"https://www.amazon.jobs/en/search?base_query=fauna\" target=\"_blank\" class=\"text-link\">Careers</a> | Accessible name: \"Careers\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.footer-content__col:nth-of-type(2) > ul.footer-content__col-list > li.footer-content__list-item:nth-of-type(3)"
+                }
+              ],
+              "message": {
+                "text": "<li class=\"footer-content__list-item\"><a href=\"/news\" class=\"text-link\">News</a></li> | Accessible name: \"News\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ul.footer-content__col-list > li.footer-content__list-item:nth-of-type(3) > a.text-link"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/news\" class=\"text-link\">News</a> | Accessible name: \"News\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.footer-content__grid:nth-of-type(1) > div.footer-content__col-right:nth-of-type(2) > div.footer-content__col:nth-of-type(3)"
+                }
+              ],
+              "message": {
+                "text": "<div class=\"footer-content__col\"><div class=\"text-brown-300\">Social</div><ul role=\"list\" class=\"footer-content__col-list\"><li class=\"footer-content__list-item\"><a href=\"https://www.youtube.com/@FaunaRobotics\" target=\"_blank\" class=\"text-link\">YouTube</a></li><li class=\"footer-content__list-item\"><a href=\"https://x.com/faunarobotics\" target=\"_blank\" class=\"text-link\">X (Twitter)</a></li><li class=\"footer-content__list-item\"><a href=\"https://www.linkedin.com/company/fauna-robotics/\" target=\"_blank\" class=\"text-link\">LinkedIn</a></li><li class=\"footer-content__list-item\"><a href=\"https://www.instagram.com/faunarobotics/?igsh=cGg0dnozNGpiYm85#\" target=\"_blank\" class=\"text-link\">Instagram</a></li></ul></div> | Accessible name: \"SocialYouTubeX (Twitter)LinkedInInstagram\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.footer-content__col-right:nth-of-type(2) > div.footer-content__col:nth-of-type(3) > div.text-brown-300"
+                }
+              ],
+              "message": {
+                "text": "<div class=\"text-brown-300\">Social</div> | Accessible name: \"Social\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.footer-content__col:nth-of-type(3) > ul.footer-content__col-list > li.footer-content__list-item:nth-of-type(1)"
+                }
+              ],
+              "message": {
+                "text": "<li class=\"footer-content__list-item\"><a href=\"https://www.youtube.com/@FaunaRobotics\" target=\"_blank\" class=\"text-link\">YouTube</a></li> | Accessible name: \"YouTube\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ul.footer-content__col-list > li.footer-content__list-item:nth-of-type(1) > a.text-link"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"https://www.youtube.com/@FaunaRobotics\" target=\"_blank\" class=\"text-link\">YouTube</a> | Accessible name: \"YouTube\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.footer-content__col:nth-of-type(3) > ul.footer-content__col-list > li.footer-content__list-item:nth-of-type(2)"
+                }
+              ],
+              "message": {
+                "text": "<li class=\"footer-content__list-item\"><a href=\"https://x.com/faunarobotics\" target=\"_blank\" class=\"text-link\">X (Twitter)</a></li> | Accessible name: \"X (Twitter)\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ul.footer-content__col-list > li.footer-content__list-item:nth-of-type(2) > a.text-link"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"https://x.com/faunarobotics\" target=\"_blank\" class=\"text-link\">X (Twitter)</a> | Accessible name: \"X (Twitter)\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.footer-content__col:nth-of-type(3) > ul.footer-content__col-list > li.footer-content__list-item:nth-of-type(3)"
+                }
+              ],
+              "message": {
+                "text": "<li class=\"footer-content__list-item\"><a href=\"https://www.linkedin.com/company/fauna-robotics/\" target=\"_blank\" class=\"text-link\">LinkedIn</a></li> | Accessible name: \"LinkedIn\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ul.footer-content__col-list > li.footer-content__list-item:nth-of-type(3) > a.text-link"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"https://www.linkedin.com/company/fauna-robotics/\" target=\"_blank\" class=\"text-link\">LinkedIn</a> | Accessible name: \"LinkedIn\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.footer-content__col:nth-of-type(3) > ul.footer-content__col-list > li.footer-content__list-item:nth-of-type(4)"
+                }
+              ],
+              "message": {
+                "text": "<li class=\"footer-content__list-item\"><a href=\"https://www.instagram.com/faunarobotics/?igsh=cGg0dnozNGpiYm85#\" target=\"_blank\" class=\"text-link\">Instagram</a></li> | Accessible name: \"Instagram\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ul.footer-content__col-list > li.footer-content__list-item:nth-of-type(4) > a.text-link"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"https://www.instagram.com/faunarobotics/?igsh=cGg0dnozNGpiYm85#\" target=\"_blank\" class=\"text-link\">Instagram</a> | Accessible name: \"Instagram\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div#w-node-f7573142-a4ef-60b7-12da-23c3f39da591-74d2b1de"
+                }
+              ],
+              "message": {
+                "text": "<div id=\"w-node-f7573142-a4ef-60b7-12da-23c3f39da591-74d2b1de\" class=\"footer-content__col is--last\"><ul role=\"list\" class=\"footer-content__col-list\"><li class=\"footer-content__list-item\"><a href=\"mailto:sales@faunarobotics.com\" class=\"text-link decoration-underline\">Contact us</a></li></ul></div> | Accessible name: \"Contact us\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div#w-node-f7573142-a4ef-60b7-12da-23c3f39da591-74d2b1de > ul.footer-content__col-list > li.footer-content__list-item"
+                }
+              ],
+              "message": {
+                "text": "<li class=\"footer-content__list-item\"><a href=\"mailto:sales@faunarobotics.com\" class=\"text-link decoration-underline\">Contact us</a></li> | Accessible name: \"Contact us\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ul.footer-content__col-list > li.footer-content__list-item > a.text-link.decoration-underline"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"mailto:sales@faunarobotics.com\" class=\"text-link decoration-underline\">Contact us</a> | Accessible name: \"Contact us\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.container.is--footer > div.footer-content > div.footer-content__grid.is--second:nth-of-type(2)"
+                }
+              ],
+              "message": {
+                "text": "<div class=\"footer-content__grid is--second\"><div class=\"footer-content__col-left is--copy\"><div class=\"text-brown-200 p-l\">© <span id=\"copyright-year\">2026</span> Fauna Robotics Inc</div></div><div id=\"w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b21e-74d2b1de\" class=\"footer-content__col-right is--bottom\"><div class=\"footer-content__col\"><a href=\"/privacy-policy\" class=\"text-brown-200 text-link\">Privacy Policy</a></div><div id=\"w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b222-74d2b1de\" class=\"footer-content__col\"><a href=\"/data-processing\" aria-current=\"page\" class=\"text-brown-200 text-link w--current\">Data Processing Addendum</a></div></div></div> | Accessible name: \"© 2026 Fauna Robotics IncPrivacy PolicyData Pro...\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.footer-content > div.footer-content__grid.is--second:nth-of-type(2) > div.footer-content__col-left.is--copy:nth-of-type(1)"
+                }
+              ],
+              "message": {
+                "text": "<div class=\"footer-content__col-left is--copy\"><div class=\"text-brown-200 p-l\">© <span id=\"copyright-year\">2026</span> Fauna Robotics Inc</div></div> | Accessible name: \"© 2026 Fauna Robotics Inc\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.footer-content__grid.is--second:nth-of-type(2) > div.footer-content__col-left.is--copy:nth-of-type(1) > div.text-brown-200.p-l"
+                }
+              ],
+              "message": {
+                "text": "<div class=\"text-brown-200 p-l\">© <span id=\"copyright-year\">2026</span> Fauna Robotics Inc</div> | Accessible name: \"© 2026 Fauna Robotics Inc\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "span#copyright-year"
+                }
+              ],
+              "message": {
+                "text": "<span id=\"copyright-year\">2026</span> | Accessible name: \"2026\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b21e-74d2b1de"
+                }
+              ],
+              "message": {
+                "text": "<div id=\"w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b21e-74d2b1de\" class=\"footer-content__col-right is--bottom\"><div class=\"footer-content__col\"><a href=\"/privacy-policy\" class=\"text-brown-200 text-link\">Privacy Policy</a></div><div id=\"w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b222-74d2b1de\" class=\"footer-content__col\"><a href=\"/data-processing\" aria-current=\"page\" class=\"text-brown-200 text-link w--current\">Data Processing Addendum</a></div></div> | Accessible name: \"Privacy PolicyData Processing Addendum\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b21e-74d2b1de > div.footer-content__col:nth-of-type(1)"
+                }
+              ],
+              "message": {
+                "text": "<div class=\"footer-content__col\"><a href=\"/privacy-policy\" class=\"text-brown-200 text-link\">Privacy Policy</a></div> | Accessible name: \"Privacy Policy\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b21e-74d2b1de > div.footer-content__col:nth-of-type(1) > a.text-brown-200.text-link"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/privacy-policy\" class=\"text-brown-200 text-link\">Privacy Policy</a> | Accessible name: \"Privacy Policy\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b222-74d2b1de"
+                }
+              ],
+              "message": {
+                "text": "<div id=\"w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b222-74d2b1de\" class=\"footer-content__col\"><a href=\"/data-processing\" aria-current=\"page\" class=\"text-brown-200 text-link w--current\">Data Processing Addendum</a></div> | Accessible name: \"Data Processing Addendum\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "color-contrast",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "Unable to determine background color due to background-image (gradient or url)."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b222-74d2b1de > a.text-brown-200.text-link"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/data-processing\" aria-current=\"page\" class=\"text-brown-200 text-link w--current\">Data Processing Addendum</a> | Accessible name: \"Data Processing Addendum\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "use-of-color",
+          "ruleIndex": 1,
+          "level": "warning",
+          "message": {
+            "text": "Link is only distinguished from surrounding text by color (rgb(51, 51, 51) vs rgb(24, 1, 2)). Add underline, font-weight, border, or other non-color visual indicator."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/\" class=\"navbar-logo__wrapper w-nav-brand\" aria-label=\"home\"><div class=\"logo-wrapper w-embed\"><canvas id=\"logo\" width=\"200\" height=\"60\"></canvas></div></a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "landmark-main",
+          "ruleIndex": 2,
+          "level": "error",
+          "message": {
+            "text": "Page does not have a main landmark. Add a <main> element or an element with role=\"main\"."
+          }
+        },
+        {
+          "ruleId": "bypass",
+          "ruleIndex": 3,
+          "level": "error",
+          "message": {
+            "text": "Page does not have a mechanism to bypass repeated blocks of content. Add a skip link, <main> element, or role=\"main\"."
+          }
+        },
+        {
+          "ruleId": "multiple-ways",
+          "ruleIndex": 4,
+          "level": "warning",
+          "message": {
+            "text": "Page does not appear to provide multiple ways to locate content. Consider adding a navigation landmark, search functionality, sitemap link, or table of contents."
+          }
+        },
+        {
+          "ruleId": "skip-link",
+          "ruleIndex": 5,
+          "level": "warning",
+          "message": {
+            "text": "Page does not appear to have a skip navigation link among the first focusable elements. Consider adding a skip link to help keyboard users bypass repeated content."
+          }
+        },
+        {
+          "ruleId": "pointer-interaction-blocked",
+          "ruleIndex": 6,
+          "level": "error",
+          "message": {
+            "text": "Content area has pointer-events: none, which prevents mouse and touch interaction with interactive elements inside it."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.page-wrapper > div.navbar.w-nav:nth-of-type(4)"
+                }
+              ],
+              "message": {
+                "text": "<div data-animation=\"default\" data-collapse=\"all\" data-duration=\"400\" data-easing=\"ease\" data-easing2=\"ease\" role=\"banner\" class=\"navbar w-nav\"><div class=\"container is--navbar\"><a href=\"/\" class=\"navbar-logo__wrapper w-nav-brand\" aria-label=\"home\"><div class=\"logo-wrapper w-embed\"><canvas id=\"logo\" width=\"200\" height=\"60\"></canvas></div></a><div class=\"navbar-menu\" style=\"width: 449px;\"><div class=\"navbar-menu__content\"><div class=\"navbar-menu__list\"><a href=\"/\" class=\"navbar-link\">Home</a><a href=\"/product\" class=\"navbar-link\">Product</a><a href=\"/company\" class=\"navbar-link\">Company</a><a href=\"https://www.amazon.jobs/en/search?base_query=fauna\" target=\"_blank\" class=\"navbar-link\">Careers</a><a href=\"/news\" class=\"navbar-link\">News</a></div><div class=\"navbar-menu__popup-trigger\"><div class=\"w-dyn-list\"><div role=\"list\" class=\"w-dyn-items\"><div role=\"listitem\" class=\"w-dyn-item\"><img src=\"https://cdn.prod.website-files.com/693933367980a29f6ff36b6d/69775f291f66f1bbf54f4ab1_demo-poster.webp\" loading=\"lazy\" alt=\"\" sizes=\"100vw\" srcset=\"https://cdn.prod.website-files.com/693933367980a29f6ff36b6d/69775f291f66f1bbf54f4ab1_demo-poster-p-500.webp 500w, https://cdn.prod.website-files.com/693933367980a29f6ff36b6d/69775f291f66f1bbf54f4ab1_demo-poster-p-800.webp 800w, https://cdn.prod.website-files.com/693933367980a29f6ff36b6d/69775f291f66f1bbf54f4ab1_demo-poster-p-1080.webp 1080w, https://cdn.prod.website-files.com/693933367980a29f6ff36b6d/69775f291f66f1bbf54f4ab1_demo-poster-p-1600.webp 1600w, https://cdn.prod.website-files.com/693933367980a29f6ff36b6d/69775f291f66f1bbf54f4ab1_demo-poster.webp 2340w\" class=\"absolute-cover is--cover\"><!--$--><button class=\"popup-trigger\"></button><!--/$--><div class=\"button-secondary button-large button-icon is--trigger is--navbar\"><div class=\"w-embed\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\">\n  <path d=\"M16.589 8.37749C18.0631 9.11454 18.0631 11.2181 16.589 11.9552L6.39443 17.0525C5.06462 17.7174 3.5 16.7504 3.5 15.2636L3.5 5.06908C3.5 3.58231 5.06463 2.61532 6.39443 3.28022L16.589 8.37749Z\" fill=\"currentColor\"></path>\n</svg></div><div class=\"p-m\">Play video</div></div></div></div></div></div><div class=\"navbar-menu__content-buttons\"><a href=\"https://form.typeform.com/to/HsZsaqmn\" target=\"_blank\" class=\"button-large button-primary w-inline-block\"><div>Request Robot</div></a></div></div></div><div class=\"navbar-buttons\"><div class=\"navbar-buttons__toggle\"><div class=\"navbar-menu__button morph-btn w-nav-button\" style=\"-webkit-user-select: text;\" aria-label=\"menu\" role=\"button\" tabindex=\"0\" aria-controls=\"w-nav-overlay-0\" aria-haspopup=\"menu\" aria-expanded=\"false\"><div class=\"navbar-menu__button-overlay btn-icon\"><div class=\"navbar-menu__button-line is--top\"></div><div class=\"navbar-menu__button-line is--bottom\"></div></div><div class=\"navbar-menu__button-fake\"><div>White papers</div><div class=\"embed-icon w-embed\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\">\n  <path d=\"M4.14575 9.95801L14.9791 9.95801\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n  <path d=\"M9.979 4.125L15.8123 9.95833L9.979 15.7917\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n</svg></div></div></div></div><div class=\"navbar-buttons__cta\"><a href=\"https://form.typeform.com/to/HsZsaqmn\" target=\"_blank\" class=\"button-large button-primary w-inline-block\"><div>Request Robot</div></a></div></div></div><div class=\"w-nav-overlay\" data-wf-ignore=\"\" id=\"w-nav-overlay-0\"></div></div> | Accessible name: \"HomeProductCompanyCareersNews Play videoRequest...\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "button-name",
+          "ruleIndex": 7,
+          "level": "error",
+          "message": {
+            "text": "Button does not have an accessible name. Add text content, aria-label, aria-labelledby, title, or value."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.w-dyn-items > div.w-dyn-item > button.popup-trigger"
+                }
+              ],
+              "message": {
+                "text": "<button class=\"popup-trigger\"></button>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "consistent-navigation",
+          "ruleIndex": 8,
+          "level": "warning",
+          "message": {
+            "text": "No <nav> or [role=\"navigation\"] elements found. Pages should have a navigation landmark for consistent navigation."
+          }
+        },
+        {
+          "ruleId": "aria-required-children",
+          "ruleIndex": 9,
+          "level": "error",
+          "message": {
+            "text": "Element with role=\"list\" must contain at least one child with role: listitem."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div#privacy-policy-covers > ol:nth-of-type(1)"
+                }
+              ],
+              "message": {
+                "text": "<ol role=\"list\"><li><strong>Definitions. </strong> <!--$--><br><!--/$--><ol role=\"list\"><li>“Authorized Subprocessor” means a third-party party entity engaged by Fauna to process Personal Data in order to provide the Services and that has been approved by Customer in accordance with Section 6.</li><li>“Account Data” means personal data that relates to Fauna’s relationship with Customer, including the names or contact information of individuals authorized by Customer to access Customer’s account and billing information of individuals that Customer has associated with its account.</li><li>“Usage Data” means Service usage, performance, and diagnostic data collected and processed by Company in connection with the provision of the Services, including without limitation sensor data, battery data, data used to identify the source and destination of a communication, activity logs, and similar backend data about the use of the Services.</li><li>“Consumer Request” means a request from a Consumer to exercise their rights over Personal data afforded pursuant to Privacy Laws.</li><li> “Controller” means the natural or legal person that, alone or jointly with others, determines the purpose and means of processing Personal Data. “Controller” includes the term “Business” or equivalent term under Privacy laws. </li><li>“Personal Data” means any information that relates to an identified or identifiable Consumer that is processed on behalf of Customer and constitutes “personal data,” “personal information,” or equivalent term under Privacy Laws.</li><li>“Privacy Laws” means any applicable laws and regulations in any relevant jurisdiction relating to the processing of Personal Data. Privacy Laws includes but are not limited to U.S. state comprehensive privacy laws, such as the California Consumer Privacy Act, as amended by the California Privacy Rights Act of 2020 (the “CCPA”), in each case as updated, amended or replaced from time to time. The terms “consumer,” “affiliates,” “business purpose,” “Controller,” “Personal Data Breach,” “Processor,” “process” or “processing,” “sell,” or “share,” shall have the meaning set forth for that or any equivalent term under Privacy Laws. For the avoidance of doubt, the terms “Controller” and “Processor” include “Business” and “Service Provider,” respectively, as defined in the CCPA.</li><li>“Services” means the Products and services provided by Fauna to Customer pursuant to the Agreement. </li></ol></li><li><strong>Description of Processing.</strong> <!--$--><br><!--/$--><ol role=\"list\"><li>Nature and Purpose of Processing: Except with respect to Account Data and Usage Data, Fauna shall process Personal Data provided by Customer under the Agreement as necessary to provide the Services under the Agreement, for the purposes specified in the Agreement and this DPA, and in accordance with Customer’s instructions as set forth in this DPA. </li><li>Duration of Processing: Fauna shall process Personal Data provided by Customer as long as required to provide the Services to Customer under the Agreement, or by applicable law or regulation.</li><li>Categories of Consumers: The Consumers whose Personal Data Fauna processes is at the sole discretion of Customer. </li><li>Categories of Personal Data: Fauna may process any Personal Data that Customer provides or is otherwise submitted to the Services by or on behalf of Customer. </li></ol></li><li><strong>Customer’s Obligations. </strong>Customer shall, in its use of the Services, at all times process Personal Data, and provide instructions for the processing of Personal Data, in compliance with Privacy Laws. Customer shall ensure that the processing of Personal Data in accordance with Customer’s instructions will not cause Fauna to be in breach of the Privacy Laws. Customer is solely responsible for the accuracy, quality, and legality of (i) the Personal Data provided to Fauna by or on behalf of Customer, (ii) the means by which Customer acquired any such Personal Data, and (iii) the instructions it provides to Fauna regarding the processing of such Personal Data. Customer shall not provide or make available to Fauna any Personal Data in violation of the Agreement or otherwise inappropriate for the nature of the Services, and shall indemnify Fauna from all claims and losses in connection therewith. </li><li><strong>Use of Personal Data. </strong> Fauna shall not: (i) sell or share Personal Data; (ii) retain, use, or disclose Personal Data outside of Fauna’s direct business relationship with Customer or for any purpose other than to perform the Services and other obligations under the Agreement, which constitutes a business purpose under the Privacy Laws, except as otherwise permitted in Agreement or by Privacy Laws; and (iii) combine Personal Data received from, or on behalf of, Customer with Personal Data that it receives from, or on behalf of, another party or person, except as necessary to provide the Services or as otherwise instructed by Customer. </li><li><strong>Audit. </strong>To the extent required by applicable Privacy Laws, and upon Customer’s written request at reasonable intervals, and subject to reasonable confidentiality controls, Fauna shall either (i) make available for Customer’s review copies of certifications or reports demonstrating Fauna’s compliance with prevailing data security standards applicable to the processing of Personal Data provided by Customer under the Agreement, or (ii) if the provision of reports or certifications pursuant to (i) is not reasonably sufficient under the applicable Privacy Laws, allow Customer or Customer’s independent third party representative to conduct an audit or assessment of Fauna’s policies and technical and organizational measures using an appropriate and accepted control standard or framework and assessment procedure for such assessments, that (a) Customer provides reasonable prior written notice of any such request for an audit and such inspection shall not be unreasonably disruptive to Fauna’s business; (b) such audit shall only be performed during business hours and occur no more than once per calendar year; and (c) such audit shall be restricted to data relevant to Customer. Customer shall be responsible for the costs of any such audits or inspections, including without limitation a reimbursement to Fauna for any time expended for on-site audits. To the extent permitted under Privacy Laws, if Customer determines that Fauna is processing Personal Data in an unauthorized manner, Customer may, taking into account nature of Fauna’s processing and the nature of the Personal Data processed by Fauna on behalf of Customer, and upon providing prior written notice, take commercially reasonable and appropriate steps to stop and remediate such unauthorized processing.</li><li><strong>Authorized Subprocessors.</strong> <!--$--><br><!--/$--><ol role=\"list\"><li>A list of Fauna’s current Authorized Subprocessors (the “List”) will be made available to Customer, either attached hereto (<em>See</em>, Annex A), at a link provided to Customer, via email or through another means made available to Customer. &nbsp;Such List may be updated by Fauna from time to time. &nbsp;Fauna may provide a mechanism to subscribe to notifications of new subprocessors and Customer agrees to subscribe to such notifications where available. At least ten (10) days before enabling any third party other than existing Authorized Subprocessors to access or participate in the processing of Personal Data, Fauna will add such third party to the List and notify Customer via email. Customer may object to such an engagement by informing Fauna within ten (10) days of receipt of the aforementioned notice to Customer, provided such objection is in writing and based on reasonable grounds relating to data protection. If Customer does not object during this period, that third party will be deemed an Authorized Subprocessor. Customer acknowledges that certain subprocessors are essential to providing the Services and that objecting to the use of a subprocessor may prevent Fauna from offering the Services to Customer.</li><li>If Customer reasonably objects to an engagement in accordance with Section 6.1, and Fauna cannot provide a commercially reasonable alternative within a reasonable period of time, Customer may discontinue the use of the affected Service by providing written notice to Fauna. &nbsp;Discontinuation shall not relieve Customer of any fees owed to Fauna under the Agreement.</li><li>Fauna will enter into a written agreement with the Authorized Subprocessor imposing on the Authorized Subprocessor data protection obligations comparable to those imposed on Fauna under this DPA with respect to the protection of Personal Data. &nbsp;In case an Authorized Subprocessor fails to fulfill its data protection obligations under such written agreement with Fauna, Fauna will remain liable to Customer for the performance of the Authorized Subprocessor’s obligations under such agreement.</li></ol></li></ol> | Accessible name: \"Definitions. “Authorized Subprocessor” means a ...\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "aria-required-children",
+          "ruleIndex": 9,
+          "level": "error",
+          "message": {
+            "text": "Element with role=\"list\" must contain at least one child with role: listitem."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ol:nth-of-type(1) > li:nth-of-type(1) > ol"
+                }
+              ],
+              "message": {
+                "text": "<ol role=\"list\"><li>“Authorized Subprocessor” means a third-party party entity engaged by Fauna to process Personal Data in order to provide the Services and that has been approved by Customer in accordance with Section 6.</li><li>“Account Data” means personal data that relates to Fauna’s relationship with Customer, including the names or contact information of individuals authorized by Customer to access Customer’s account and billing information of individuals that Customer has associated with its account.</li><li>“Usage Data” means Service usage, performance, and diagnostic data collected and processed by Company in connection with the provision of the Services, including without limitation sensor data, battery data, data used to identify the source and destination of a communication, activity logs, and similar backend data about the use of the Services.</li><li>“Consumer Request” means a request from a Consumer to exercise their rights over Personal data afforded pursuant to Privacy Laws.</li><li> “Controller” means the natural or legal person that, alone or jointly with others, determines the purpose and means of processing Personal Data. “Controller” includes the term “Business” or equivalent term under Privacy laws. </li><li>“Personal Data” means any information that relates to an identified or identifiable Consumer that is processed on behalf of Customer and constitutes “personal data,” “personal information,” or equivalent term under Privacy Laws.</li><li>“Privacy Laws” means any applicable laws and regulations in any relevant jurisdiction relating to the processing of Personal Data. Privacy Laws includes but are not limited to U.S. state comprehensive privacy laws, such as the California Consumer Privacy Act, as amended by the California Privacy Rights Act of 2020 (the “CCPA”), in each case as updated, amended or replaced from time to time. The terms “consumer,” “affiliates,” “business purpose,” “Controller,” “Personal Data Breach,” “Processor,” “process” or “processing,” “sell,” or “share,” shall have the meaning set forth for that or any equivalent term under Privacy Laws. For the avoidance of doubt, the terms “Controller” and “Processor” include “Business” and “Service Provider,” respectively, as defined in the CCPA.</li><li>“Services” means the Products and services provided by Fauna to Customer pursuant to the Agreement. </li></ol> | Accessible name: \"“Authorized Subprocessor” means a third-party p...\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "aria-required-children",
+          "ruleIndex": 9,
+          "level": "error",
+          "message": {
+            "text": "Element with role=\"list\" must contain at least one child with role: listitem."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ol:nth-of-type(1) > li:nth-of-type(2) > ol"
+                }
+              ],
+              "message": {
+                "text": "<ol role=\"list\"><li>Nature and Purpose of Processing: Except with respect to Account Data and Usage Data, Fauna shall process Personal Data provided by Customer under the Agreement as necessary to provide the Services under the Agreement, for the purposes specified in the Agreement and this DPA, and in accordance with Customer’s instructions as set forth in this DPA. </li><li>Duration of Processing: Fauna shall process Personal Data provided by Customer as long as required to provide the Services to Customer under the Agreement, or by applicable law or regulation.</li><li>Categories of Consumers: The Consumers whose Personal Data Fauna processes is at the sole discretion of Customer. </li><li>Categories of Personal Data: Fauna may process any Personal Data that Customer provides or is otherwise submitted to the Services by or on behalf of Customer. </li></ol> | Accessible name: \"Nature and Purpose of Processing: Except with r...\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "aria-required-children",
+          "ruleIndex": 9,
+          "level": "error",
+          "message": {
+            "text": "Element with role=\"list\" must contain at least one child with role: listitem."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ol:nth-of-type(1) > li:nth-of-type(6) > ol"
+                }
+              ],
+              "message": {
+                "text": "<ol role=\"list\"><li>A list of Fauna’s current Authorized Subprocessors (the “List”) will be made available to Customer, either attached hereto (<em>See</em>, Annex A), at a link provided to Customer, via email or through another means made available to Customer. &nbsp;Such List may be updated by Fauna from time to time. &nbsp;Fauna may provide a mechanism to subscribe to notifications of new subprocessors and Customer agrees to subscribe to such notifications where available. At least ten (10) days before enabling any third party other than existing Authorized Subprocessors to access or participate in the processing of Personal Data, Fauna will add such third party to the List and notify Customer via email. Customer may object to such an engagement by informing Fauna within ten (10) days of receipt of the aforementioned notice to Customer, provided such objection is in writing and based on reasonable grounds relating to data protection. If Customer does not object during this period, that third party will be deemed an Authorized Subprocessor. Customer acknowledges that certain subprocessors are essential to providing the Services and that objecting to the use of a subprocessor may prevent Fauna from offering the Services to Customer.</li><li>If Customer reasonably objects to an engagement in accordance with Section 6.1, and Fauna cannot provide a commercially reasonable alternative within a reasonable period of time, Customer may discontinue the use of the affected Service by providing written notice to Fauna. &nbsp;Discontinuation shall not relieve Customer of any fees owed to Fauna under the Agreement.</li><li>Fauna will enter into a written agreement with the Authorized Subprocessor imposing on the Authorized Subprocessor data protection obligations comparable to those imposed on Fauna under this DPA with respect to the protection of Personal Data. &nbsp;In case an Authorized Subprocessor fails to fulfill its data protection obligations under such written agreement with Fauna, Fauna will remain liable to Customer for the performance of the Authorized Subprocessor’s obligations under such agreement.</li></ol> | Accessible name: \"A list of Fauna’s current Authorized Subprocess...\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "aria-required-children",
+          "ruleIndex": 9,
+          "level": "error",
+          "message": {
+            "text": "Element with role=\"list\" must contain at least one child with role: listitem."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div#privacy-policy-covers > ol:nth-of-type(2)"
+                }
+              ],
+              "message": {
+                "text": "<ol role=\"list\"><li><strong>Confidentiality and Security of Personal Data.</strong> <!--$--><br><!--/$--><ol role=\"list\"><li>Fauna shall ensure that any person it authorizes to process Personal Data has agreed to protect Personal Data in accordance with Fauna’s confidentiality obligations in the Agreement. Customer agrees that Fauna may disclose Personal Data to its advisers, auditors or other third parties as reasonably required in connection with the performance of its obligations under this DPA, the Agreement, or the provision of Services to Customer.</li><li>Taking into account the state of the art, the costs of implementation and the nature, scope, context and purposes of processing as well as the risk of varying likelihood and severity for the rights and freedoms of natural persons, Fauna shall maintain appropriate technical and organizational measures to ensure a level of security appropriate to the risk of processing Personal Data. </li></ol></li><li><strong>Personal Data Breach. </strong> <!--$--><br><!--/$--><ol role=\"list\"><li>In the event of a Personal Data Breach, Fauna shall, without undue delay, inform Customer of the Personal Data Breach and take such steps as Fauna in its sole discretion deems necessary and reasonable to remediate such Personal Data Breach, to the extent that remediation is within Fauna’s reasonable control.</li><li>In the event of a Personal Data Breach, Fauna shall, taking into account the nature of the processing and the information available to Fauna, provide Customer with reasonable cooperation and assistance necessary for Customer to comply with its obligations under Privacy Laws with respect to notifying (i) the relevant regulatory agency and (ii) Consumers affected by such Personal Data Breach without undue delay.</li><li>The obligations described in Sections 8.1 and 8.2 shall not apply in the event that a Personal Data Breach results from the actions or omissions of Customer. Fauna’s obligation to report or respond to a Personal Data Breach under Sections 8.1 and 8.2 will not be construed as an acknowledgement by Fauna of any fault or liability with respect to the Personal Data Breach. &nbsp;</li></ol></li><li><strong>Data Protection Assessments.</strong> Taking into account the nature of Fauna’s processing and the information available to Fauna, Fauna shall reasonably cooperate with Customer to conduct any data protection or privacy impact assessments as required by Privacy Laws, including by providing Customer with information and documents necessary for such assessments that Customer cannot otherwise obtain without Fauna’s assistance. Notwithstanding the foregoing, Customer and Fauna each remain responsible only for the measures respectively allocated to them under Privacy Laws pertaining to any such assessment.</li></ol> | Accessible name: \"Confidentiality and Security of Personal Data. ...\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "aria-required-children",
+          "ruleIndex": 9,
+          "level": "error",
+          "message": {
+            "text": "Element with role=\"list\" must contain at least one child with role: listitem."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ol:nth-of-type(2) > li:nth-of-type(1) > ol"
+                }
+              ],
+              "message": {
+                "text": "<ol role=\"list\"><li>Fauna shall ensure that any person it authorizes to process Personal Data has agreed to protect Personal Data in accordance with Fauna’s confidentiality obligations in the Agreement. Customer agrees that Fauna may disclose Personal Data to its advisers, auditors or other third parties as reasonably required in connection with the performance of its obligations under this DPA, the Agreement, or the provision of Services to Customer.</li><li>Taking into account the state of the art, the costs of implementation and the nature, scope, context and purposes of processing as well as the risk of varying likelihood and severity for the rights and freedoms of natural persons, Fauna shall maintain appropriate technical and organizational measures to ensure a level of security appropriate to the risk of processing Personal Data. </li></ol> | Accessible name: \"Fauna shall ensure that any person it authorize...\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "aria-required-children",
+          "ruleIndex": 9,
+          "level": "error",
+          "message": {
+            "text": "Element with role=\"list\" must contain at least one child with role: listitem."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ol:nth-of-type(2) > li:nth-of-type(2) > ol"
+                }
+              ],
+              "message": {
+                "text": "<ol role=\"list\"><li>In the event of a Personal Data Breach, Fauna shall, without undue delay, inform Customer of the Personal Data Breach and take such steps as Fauna in its sole discretion deems necessary and reasonable to remediate such Personal Data Breach, to the extent that remediation is within Fauna’s reasonable control.</li><li>In the event of a Personal Data Breach, Fauna shall, taking into account the nature of the processing and the information available to Fauna, provide Customer with reasonable cooperation and assistance necessary for Customer to comply with its obligations under Privacy Laws with respect to notifying (i) the relevant regulatory agency and (ii) Consumers affected by such Personal Data Breach without undue delay.</li><li>The obligations described in Sections 8.1 and 8.2 shall not apply in the event that a Personal Data Breach results from the actions or omissions of Customer. Fauna’s obligation to report or respond to a Personal Data Breach under Sections 8.1 and 8.2 will not be construed as an acknowledgement by Fauna of any fault or liability with respect to the Personal Data Breach. &nbsp;</li></ol> | Accessible name: \"In the event of a Personal Data Breach, Fauna s...\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "aria-required-children",
+          "ruleIndex": 9,
+          "level": "error",
+          "message": {
+            "text": "Element with role=\"list\" must contain at least one child with role: listitem."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div#privacy-policy-covers > ol:nth-of-type(3)"
+                }
+              ],
+              "message": {
+                "text": "<ol role=\"list\"><li><strong>Consumer Request. </strong>Fauna shall, to the extent permitted by Privacy Laws, notify Customer upon receipt of a Consumer Request. If Fauna receives a Consumer Request in relation to Personal Data, Fauna will advise the Consumer to submit their request to Customer and Customer will be responsible for responding to such request, including, where necessary, by using the functionality of the Services. Customer is solely responsible for ensuring that Consumer Requests communicated to Fauna, and, if applicable, for ensuring that a record of consent to processing is maintained with respect to each Consumer.<strong> </strong></li><li><strong>Return or Destruction of Personal Data. </strong>Upon the termination or expiration of the Agreement, at Customer’s choice, Fauna shall return or delete Personal Data, unless further storage of such Personal Data is required or authorized by applicable law. If return or destruction is impracticable or prohibited by law, rule or regulation, Fauna shall take measures to block such Personal Data from any further processing (except to the extent necessary for its continued hosting or processing required by law, rule or regulation) and shall continue to appropriately protect the Personal Data remaining in its possession, custody, or control. </li><li><strong>Fauna’s Role as a Controller. </strong>The parties acknowledge and agree that with respect to Account Data and Usage Data, Fauna is an independent Controller, not a joint Controller with Customer. Fauna will process Account Data and Usage Data as a Controller (i) to manage the relationship with Customer; (ii) to carry out Fauna’s core business operations, such as accounting, audits, tax preparation and filing and compliance purposes; (iii) to monitor, investigate, prevent and detect fraud, security incidents and other misuse of the Services, and to prevent harm to Customer; (iv) for identity verification purposes; (v) to comply with legal or regulatory obligations applicable to the processing and retention of Personal Data to which Fauna is subject; and (vi) as otherwise permitted under Privacy Laws and in accordance with this DPA and the Agreement. Fauna may also process Usage Data as a Controller to provide, optimize, and maintain the Services, to the extent permitted by Privacy Laws. Any processing by Fauna as a Controller shall be in accordance with Fauna’s privacy policy.</li></ol> | Accessible name: \"Consumer Request. Fauna shall, to the extent pe...\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "aria-required-children",
+          "ruleIndex": 9,
+          "level": "error",
+          "message": {
+            "text": "Element with role=\"list\" must contain at least one child with role: listitem."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de > ul.footer-content__col-list"
+                }
+              ],
+              "message": {
+                "text": "<ul role=\"list\" class=\"footer-content__col-list\"><li class=\"footer-content__list-item\"><a href=\"/product\" class=\"text-link\">Product</a></li><li class=\"footer-content__list-item\"><a href=\"/product#tech-specs\" class=\"text-link\">Technical specifications</a></li><li class=\"footer-content__list-item\"><a href=\"https://arxiv.org/abs/2601.18963\" class=\"button-icon text-link w-inline-block plausible-event-name--Technical+Report+Download plausible-event-location--footer\"><p>Technical report</p><div class=\"icon-1-1 is-20 w-embed\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\">\n  <path d=\"M4.14648 9.95801L14.9798 9.95801\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n  <path d=\"M9.97852 4.12476L15.8118 9.95809L9.97852 15.7914\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n</svg></div></a></li><li class=\"footer-content__list-item\"><a href=\"https://docsend.com/view/s/54yau8edf4ivbkzu\" target=\"_blank\" class=\"button-icon text-link w-inline-block plausible-event-name--Press+Kit+Click\"><p>Press kit</p><div class=\"icon-1-1 is-20 w-embed\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\">\n  <path d=\"M4.14648 9.95801L14.9798 9.95801\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n  <path d=\"M9.97852 4.12476L15.8118 9.95809L9.97852 15.7914\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n</svg></div></a></li></ul> | Accessible name: \"ProductTechnical specificationsTechnical report...\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "aria-required-children",
+          "ruleIndex": 9,
+          "level": "error",
+          "message": {
+            "text": "Element with role=\"list\" must contain at least one child with role: listitem."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.footer-content__col-right:nth-of-type(2) > div.footer-content__col:nth-of-type(2) > ul.footer-content__col-list"
+                }
+              ],
+              "message": {
+                "text": "<ul role=\"list\" class=\"footer-content__col-list\"><li class=\"footer-content__list-item\"><a href=\"/company\" class=\"text-link\">Company</a></li><li class=\"footer-content__list-item\"><a href=\"https://www.amazon.jobs/en/search?base_query=fauna\" target=\"_blank\" class=\"text-link\">Careers</a></li><li class=\"footer-content__list-item\"><a href=\"/news\" class=\"text-link\">News</a></li></ul> | Accessible name: \"CompanyCareersNews\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "aria-required-children",
+          "ruleIndex": 9,
+          "level": "error",
+          "message": {
+            "text": "Element with role=\"list\" must contain at least one child with role: listitem."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.footer-content__col-right:nth-of-type(2) > div.footer-content__col:nth-of-type(3) > ul.footer-content__col-list"
+                }
+              ],
+              "message": {
+                "text": "<ul role=\"list\" class=\"footer-content__col-list\"><li class=\"footer-content__list-item\"><a href=\"https://www.youtube.com/@FaunaRobotics\" target=\"_blank\" class=\"text-link\">YouTube</a></li><li class=\"footer-content__list-item\"><a href=\"https://x.com/faunarobotics\" target=\"_blank\" class=\"text-link\">X (Twitter)</a></li><li class=\"footer-content__list-item\"><a href=\"https://www.linkedin.com/company/fauna-robotics/\" target=\"_blank\" class=\"text-link\">LinkedIn</a></li><li class=\"footer-content__list-item\"><a href=\"https://www.instagram.com/faunarobotics/?igsh=cGg0dnozNGpiYm85#\" target=\"_blank\" class=\"text-link\">Instagram</a></li></ul> | Accessible name: \"YouTubeX (Twitter)LinkedInInstagram\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "aria-required-children",
+          "ruleIndex": 9,
+          "level": "error",
+          "message": {
+            "text": "Element with role=\"list\" must contain at least one child with role: listitem."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div#w-node-f7573142-a4ef-60b7-12da-23c3f39da591-74d2b1de > ul.footer-content__col-list"
+                }
+              ],
+              "message": {
+                "text": "<ul role=\"list\" class=\"footer-content__col-list\"><li class=\"footer-content__list-item\"><a href=\"mailto:sales@faunarobotics.com\" class=\"text-link decoration-underline\">Contact us</a></li></ul> | Accessible name: \"Contact us\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "reflow",
+          "ruleIndex": 10,
+          "level": "error",
+          "message": {
+            "text": "Element extends beyond 320px viewport (width: 438px). Content must reflow without horizontal scrolling."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.navbar.w-nav:nth-of-type(4) > div.container.is--navbar:nth-of-type(1) > div.navbar-menu:nth-of-type(1)"
+                }
+              ],
+              "message": {
+                "text": "<div class=\"navbar-menu\" style=\"height: 0px;\"><div class=\"navbar-menu__content\"><div class=\"navbar-menu__list\"><a href=\"/\" class=\"navbar-link\">Home</a><a href=\"/product\" class=\"navbar-link\">Product</a | Accessible name: \"HomeProductCompanyCareersNews Play videoRequest...\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "reflow",
+          "ruleIndex": 10,
+          "level": "error",
+          "message": {
+            "text": "Element extends beyond 320px viewport (width: 406px). Content must reflow without horizontal scrolling."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.container.is--navbar:nth-of-type(1) > div.navbar-menu:nth-of-type(1) > div.navbar-menu__content"
+                }
+              ],
+              "message": {
+                "text": "<div class=\"navbar-menu__content\"><div class=\"navbar-menu__list\"><a href=\"/\" class=\"navbar-link\">Home</a><a href=\"/product\" class=\"navbar-link\">Product</a><a href=\"/company\" class=\"navbar-link\">Compan | Accessible name: \"HomeProductCompanyCareersNews Play videoRequest...\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "reflow",
+          "ruleIndex": 10,
+          "level": "error",
+          "message": {
+            "text": "Element extends beyond 320px viewport (width: 406px). Content must reflow without horizontal scrolling."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.navbar-menu:nth-of-type(1) > div.navbar-menu__content > div.navbar-menu__list:nth-of-type(1)"
+                }
+              ],
+              "message": {
+                "text": "<div class=\"navbar-menu__list\"><a href=\"/\" class=\"navbar-link\">Home</a><a href=\"/product\" class=\"navbar-link\">Product</a><a href=\"/company\" class=\"navbar-link\">Company</a><a href=\"https://www.amazon.j | Accessible name: \"HomeProductCompanyCareersNews\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "reflow",
+          "ruleIndex": 10,
+          "level": "error",
+          "message": {
+            "text": "Element extends beyond 320px viewport (width: 406px). Content must reflow without horizontal scrolling."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.navbar-menu:nth-of-type(1) > div.navbar-menu__content > div.navbar-menu__popup-trigger:nth-of-type(2)"
+                }
+              ],
+              "message": {
+                "text": "<div class=\"navbar-menu__popup-trigger\"><div class=\"w-dyn-list\"><div role=\"list\" class=\"w-dyn-items\"><div role=\"listitem\" class=\"w-dyn-item\"><img src=\"https://cdn.prod.website-files.com/693933367980a2 | Accessible name: \"Play video\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "reflow",
+          "ruleIndex": 10,
+          "level": "error",
+          "message": {
+            "text": "Element extends beyond 320px viewport (width: 406px). Content must reflow without horizontal scrolling."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.w-dyn-items > div.w-dyn-item > img.absolute-cover.is--cover"
+                }
+              ],
+              "message": {
+                "text": "<img src=\"https://cdn.prod.website-files.com/693933367980a29f6ff36b6d/69775f291f66f1bbf54f4ab1_demo-poster.webp\" loading=\"lazy\" alt=\"\" sizes=\"100vw\" srcset=\"https://cdn.prod.website-files.com/69393336"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "reflow",
+          "ruleIndex": 10,
+          "level": "error",
+          "message": {
+            "text": "Element extends beyond 320px viewport (width: 406px). Content must reflow without horizontal scrolling."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.w-dyn-items > div.w-dyn-item > button.popup-trigger"
+                }
+              ],
+              "message": {
+                "text": "<button class=\"popup-trigger\"></button>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "reflow",
+          "ruleIndex": 10,
+          "level": "error",
+          "message": {
+            "text": "Element extends beyond 320px viewport (width: 406px). Content must reflow without horizontal scrolling."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.navbar-menu:nth-of-type(1) > div.navbar-menu__content > div.navbar-menu__content-buttons:nth-of-type(3)"
+                }
+              ],
+              "message": {
+                "text": "<div class=\"navbar-menu__content-buttons\"><a href=\"https://form.typeform.com/to/HsZsaqmn\" target=\"_blank\" class=\"button-large button-primary w-inline-block\"><div>Request Robot</div></a></div> | Accessible name: \"Request Robot\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "reflow",
+          "ruleIndex": 10,
+          "level": "error",
+          "message": {
+            "text": "Element extends beyond 320px viewport (width: 406px). Content must reflow without horizontal scrolling."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.navbar-menu__content > div.navbar-menu__content-buttons:nth-of-type(3) > a.button-large.button-primary"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"https://form.typeform.com/to/HsZsaqmn\" target=\"_blank\" class=\"button-large button-primary w-inline-block\"><div>Request Robot</div></a> | Accessible name: \"Request Robot\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "reflow",
+          "ruleIndex": 10,
+          "level": "error",
+          "message": {
+            "text": "Element extends beyond 320px viewport (width: 20px). Content must reflow without horizontal scrolling."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.navbar-menu__button.morph-btn > div.navbar-menu__button-fake:nth-of-type(2) > div.embed-icon.w-embed:nth-of-type(2)"
+                }
+              ],
+              "message": {
+                "text": "<div class=\"embed-icon w-embed\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\">\n  <path d=\"M4.14575 9.95801L14.9791 9.95801\" stroke=\"currentColor\" strok"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "reflow",
+          "ruleIndex": 10,
+          "level": "error",
+          "message": {
+            "text": "Element extends beyond 320px viewport (width: 20px). Content must reflow without horizontal scrolling."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.navbar-menu__button-fake:nth-of-type(2) > div.embed-icon.w-embed:nth-of-type(2) > svg"
+                }
+              ],
+              "message": {
+                "text": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\">\n  <path d=\"M4.14575 9.95801L14.9791 9.95801\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"roun"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-visible",
+          "ruleIndex": 11,
+          "level": "note",
+          "message": {
+            "text": "Could not perform screenshot comparison: page.screenshot: Clipped area is either empty or outside the resulting image\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n"
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a[href], button, input:not([type=\"hidden\"]), select, textarea, [tabindex]:not([tabindex=\"-1\"]) >> nth=10"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/product\" class=\"text-link\">Product</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-visible",
+          "ruleIndex": 11,
+          "level": "note",
+          "message": {
+            "text": "Could not perform screenshot comparison: page.screenshot: Clipped area is either empty or outside the resulting image\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n"
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a[href], button, input:not([type=\"hidden\"]), select, textarea, [tabindex]:not([tabindex=\"-1\"]) >> nth=11"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/product#tech-specs\" class=\"text-link\">Technical specifications</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-visible",
+          "ruleIndex": 11,
+          "level": "note",
+          "message": {
+            "text": "Could not perform screenshot comparison: page.screenshot: Clipped area is either empty or outside the resulting image\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n"
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a[href], button, input:not([type=\"hidden\"]), select, textarea, [tabindex]:not([tabindex=\"-1\"]) >> nth=12"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"https://arxiv.org/abs/2601.18963\" class=\"button-icon text-link w-inline-block plausible-event-name--Technical+Report+Download plausible-event-location--footer\"><p>Technical report</p><div class=\"icon-1-1 is-20 w-embed\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\">\n  <path d=\"M4.14648 9.95801L14.9798 9.95801\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n  <path d=\"M9.97852 4.12476L15.8118 9.95809L9.97852 15.7914\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n</svg></div></a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-visible",
+          "ruleIndex": 11,
+          "level": "note",
+          "message": {
+            "text": "Could not perform screenshot comparison: page.screenshot: Clipped area is either empty or outside the resulting image\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n"
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a[href], button, input:not([type=\"hidden\"]), select, textarea, [tabindex]:not([tabindex=\"-1\"]) >> nth=13"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"https://docsend.com/view/s/54yau8edf4ivbkzu\" target=\"_blank\" class=\"button-icon text-link w-inline-block plausible-event-name--Press+Kit+Click\"><p>Press kit</p><div class=\"icon-1-1 is-20 w-embed\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\">\n  <path d=\"M4.14648 9.95801L14.9798 9.95801\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n  <path d=\"M9.97852 4.12476L15.8118 9.95809L9.97852 15.7914\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"></path>\n</svg></div></a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-visible",
+          "ruleIndex": 11,
+          "level": "note",
+          "message": {
+            "text": "Could not perform screenshot comparison: page.screenshot: Clipped area is either empty or outside the resulting image\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n"
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a[href], button, input:not([type=\"hidden\"]), select, textarea, [tabindex]:not([tabindex=\"-1\"]) >> nth=14"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/company\" class=\"text-link\">Company</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-visible",
+          "ruleIndex": 11,
+          "level": "note",
+          "message": {
+            "text": "Could not perform screenshot comparison: page.screenshot: Clipped area is either empty or outside the resulting image\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n"
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a[href], button, input:not([type=\"hidden\"]), select, textarea, [tabindex]:not([tabindex=\"-1\"]) >> nth=15"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"https://www.amazon.jobs/en/search?base_query=fauna\" target=\"_blank\" class=\"text-link\">Careers</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-visible",
+          "ruleIndex": 11,
+          "level": "note",
+          "message": {
+            "text": "Could not perform screenshot comparison: page.screenshot: Clipped area is either empty or outside the resulting image\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n"
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a[href], button, input:not([type=\"hidden\"]), select, textarea, [tabindex]:not([tabindex=\"-1\"]) >> nth=16"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/news\" class=\"text-link\">News</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-visible",
+          "ruleIndex": 11,
+          "level": "note",
+          "message": {
+            "text": "Could not perform screenshot comparison: page.screenshot: Clipped area is either empty or outside the resulting image\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n"
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a[href], button, input:not([type=\"hidden\"]), select, textarea, [tabindex]:not([tabindex=\"-1\"]) >> nth=17"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"https://www.youtube.com/@FaunaRobotics\" target=\"_blank\" class=\"text-link\">YouTube</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-visible",
+          "ruleIndex": 11,
+          "level": "note",
+          "message": {
+            "text": "Could not perform screenshot comparison: page.screenshot: Clipped area is either empty or outside the resulting image\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n"
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a[href], button, input:not([type=\"hidden\"]), select, textarea, [tabindex]:not([tabindex=\"-1\"]) >> nth=18"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"https://x.com/faunarobotics\" target=\"_blank\" class=\"text-link\">X (Twitter)</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-visible",
+          "ruleIndex": 11,
+          "level": "note",
+          "message": {
+            "text": "Could not perform screenshot comparison: page.screenshot: Clipped area is either empty or outside the resulting image\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n"
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a[href], button, input:not([type=\"hidden\"]), select, textarea, [tabindex]:not([tabindex=\"-1\"]) >> nth=19"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"https://www.linkedin.com/company/fauna-robotics/\" target=\"_blank\" class=\"text-link\">LinkedIn</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-visible",
+          "ruleIndex": 11,
+          "level": "note",
+          "message": {
+            "text": "Could not perform screenshot comparison: page.screenshot: Clipped area is either empty or outside the resulting image\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n"
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a[href], button, input:not([type=\"hidden\"]), select, textarea, [tabindex]:not([tabindex=\"-1\"]) >> nth=20"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"https://www.instagram.com/faunarobotics/?igsh=cGg0dnozNGpiYm85#\" target=\"_blank\" class=\"text-link\">Instagram</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-visible",
+          "ruleIndex": 11,
+          "level": "note",
+          "message": {
+            "text": "Could not perform screenshot comparison: page.screenshot: Clipped area is either empty or outside the resulting image\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n"
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a[href], button, input:not([type=\"hidden\"]), select, textarea, [tabindex]:not([tabindex=\"-1\"]) >> nth=21"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"mailto:sales@faunarobotics.com\" class=\"text-link decoration-underline\">Contact us</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-visible",
+          "ruleIndex": 11,
+          "level": "note",
+          "message": {
+            "text": "Could not perform screenshot comparison: page.screenshot: Clipped area is either empty or outside the resulting image\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n"
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a[href], button, input:not([type=\"hidden\"]), select, textarea, [tabindex]:not([tabindex=\"-1\"]) >> nth=22"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/privacy-policy\" class=\"text-brown-200 text-link\">Privacy Policy</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-visible",
+          "ruleIndex": 11,
+          "level": "note",
+          "message": {
+            "text": "Could not perform screenshot comparison: page.screenshot: Clipped area is either empty or outside the resulting image\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n"
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a[href], button, input:not([type=\"hidden\"]), select, textarea, [tabindex]:not([tabindex=\"-1\"]) >> nth=23"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/data-processing\" aria-current=\"page\" class=\"text-brown-200 text-link w--current\">Data Processing Addendum</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-order",
+          "ruleIndex": 12,
+          "level": "warning",
+          "message": {
+            "text": "Focus order may not follow visual layout: element 5 (at y:450, x:817) appears before element 4 (at y:585, x:608) visually but receives focus after it."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ul.footer-content__col-list > li.footer-content__list-item:nth-of-type(1) > a.text-link"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/company\" class=\"text-link\">Company</a> | Accessible name: \"Company\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-order",
+          "ruleIndex": 12,
+          "level": "warning",
+          "message": {
+            "text": "Focus order may not follow visual layout: element 8 (at y:450, x:1072) appears before element 7 (at y:536, x:802) visually but receives focus after it."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ul.footer-content__col-list > li.footer-content__list-item:nth-of-type(1) > a.text-link"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"https://www.youtube.com/@FaunaRobotics\" target=\"_blank\" class=\"text-link\">YouTube</a> | Accessible name: \"YouTube\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 13,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/\" class=\"navbar-logo__wrapper w-nav-brand logo-scrolled\" aria-label=\"home\"><div class=\"logo-wrapper w-embed\"><canvas id=\"logo\" width=\"200\" height=\"60\"></canvas></div></a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 13,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/\" class=\"navbar-link\">Home</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 13,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/product\" class=\"navbar-link\">Product</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 13,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/company\" class=\"navbar-link\">Company</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 13,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"https://www.amazon.jobs/en/search?base_query=fauna\" target=\"_blank\" class=\"navbar-link\">Careers</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 13,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/news\" class=\"navbar-link\">News</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 13,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"https://form.typeform.com/to/HsZsaqmn\" target=\"_blank\" class=\"button-large button-primary w-inline-block\"><div>Request Robot</div></a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 13,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/\" class=\"navbar-logo__wrapper w-nav-brand logo-scrolled\" aria-label=\"home\"><div class=\"logo-wrapper w-embed\"><canvas id=\"logo\" width=\"200\" height=\"60\"></canvas></div></a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 13,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/\" class=\"navbar-link\">Home</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 13,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/product\" class=\"navbar-link\">Product</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 13,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/company\" class=\"navbar-link\">Company</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 13,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"https://www.amazon.jobs/en/search?base_query=fauna\" target=\"_blank\" class=\"navbar-link\">Careers</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 13,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/news\" class=\"navbar-link\">News</a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-not-obscured",
+          "ruleIndex": 13,
+          "level": "warning",
+          "message": {
+            "text": "Focused element is more than 50% obscured by a fixed/sticky positioned element."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "a"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"https://form.typeform.com/to/HsZsaqmn\" target=\"_blank\" class=\"button-large button-primary w-inline-block\"><div>Request Robot</div></a>"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-appearance",
+          "ruleIndex": 14,
+          "level": "error",
+          "message": {
+            "text": "Element has no visible focus indicator. No visual change was detected on focus."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.navbar-menu__content > div.navbar-menu__list:nth-of-type(1) > a.navbar-link:nth-of-type(1)"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/\" class=\"navbar-link\">Home</a> | Accessible name: \"Home\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-appearance",
+          "ruleIndex": 14,
+          "level": "error",
+          "message": {
+            "text": "Element has no visible focus indicator. No visual change was detected on focus."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.navbar-menu__content > div.navbar-menu__list:nth-of-type(1) > a.navbar-link:nth-of-type(2)"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/product\" class=\"navbar-link\">Product</a> | Accessible name: \"Product\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-appearance",
+          "ruleIndex": 14,
+          "level": "error",
+          "message": {
+            "text": "Element has no visible focus indicator. No visual change was detected on focus."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.navbar-menu__content > div.navbar-menu__list:nth-of-type(1) > a.navbar-link:nth-of-type(3)"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/company\" class=\"navbar-link\">Company</a> | Accessible name: \"Company\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-appearance",
+          "ruleIndex": 14,
+          "level": "error",
+          "message": {
+            "text": "Element has no visible focus indicator. No visual change was detected on focus."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.navbar-menu__content > div.navbar-menu__list:nth-of-type(1) > a.navbar-link:nth-of-type(4)"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"https://www.amazon.jobs/en/search?base_query=fauna\" target=\"_blank\" class=\"navbar-link\">Careers</a> | Accessible name: \"Careers\""
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "focus-appearance",
+          "ruleIndex": 14,
+          "level": "error",
+          "message": {
+            "text": "Element has no visible focus indicator. No visual change was detected on focus."
+          },
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "div.navbar-menu__content > div.navbar-menu__list:nth-of-type(1) > a.navbar-link:nth-of-type(5)"
+                }
+              ],
+              "message": {
+                "text": "<a href=\"/news\" class=\"navbar-link\">News</a> | Accessible name: \"News\""
+              }
+            }
+          ]
+        }
+      ],
+      "automationDetails": {
+        "id": "speca11y/https://faunarobotics.com/data-processing/2026-07-28T17:50:08.588Z"
+      }
+    }
+  ]
+}

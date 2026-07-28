@@ -1,0 +1,94 @@
+{
+  "job_id": "faunarobotics-20260728-174103",
+  "job_dir": "/Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103",
+  "job_config": "/Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/incoming_job_config.json",
+  "reports_dir": "/Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/reports",
+  "analysis_dir": "/Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/analysis",
+  "auth": {
+    "status": "skipped",
+    "message": "Public job prepared without authentication"
+  },
+  "tools": {
+    "axe-core": {
+      "status": "ok",
+      "report_count": 5,
+      "reports_dir": "/Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/reports/axe-core"
+    },
+    "html-sniffer": {
+      "status": "ok",
+      "report_count": 5,
+      "reports_dir": "/Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/reports/html-sniffer"
+    },
+    "oobee": {
+      "status": "ok",
+      "report_count": 5,
+      "reports_dir": "/Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/reports/oobee"
+    },
+    "lighthouse": {
+      "status": "ok",
+      "report_count": 5,
+      "reports_dir": "/Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/reports/lighthouse"
+    },
+    "ibm": {
+      "status": "ok",
+      "report_count": 5,
+      "reports_dir": "/Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/reports/ibm"
+    },
+    "uuv": {
+      "status": "ok",
+      "report_count": 5,
+      "reports_dir": "/Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/reports/uuv"
+    },
+    "nu-html-checker": {
+      "status": "ok",
+      "report_count": 5,
+      "reports_dir": "/Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/reports/nu-html-checker"
+    },
+    "alfa": {
+      "status": "ok",
+      "report_count": 5,
+      "reports_dir": "/Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/reports/alfa"
+    },
+    "speca11y": {
+      "status": "ok",
+      "report_count": 6,
+      "reports_dir": "/Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/reports/speca11y"
+    },
+    "pa11y-axe": {
+      "status": "ok",
+      "report_count": 5,
+      "reports_dir": "/Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/reports/pa11y-axe"
+    },
+    "pa11y-htmlcs": {
+      "status": "ok",
+      "report_count": 5,
+      "reports_dir": "/Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/reports/pa11y-htmlcs"
+    },
+    "axe-scan": {
+      "status": "ok",
+      "report_count": 5,
+      "reports_dir": "/Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/reports/axe-scan"
+    },
+    "virtual-screenreader": {
+      "status": "ok",
+      "report_count": 6,
+      "reports_dir": "/Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/reports/virtual-screenreader"
+    },
+    "tab-map": {
+      "status": "ok",
+      "report_count": 6,
+      "reports_dir": "/Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/reports/tab-map"
+    },
+    "contrast-checker": {
+      "status": "ok",
+      "report_count": 6,
+      "reports_dir": "/Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/reports/contrast-checker"
+    }
+  },
+  "analysis": {
+    "status": "ok",
+    "output_dir": "/Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/analysis",
+    "dashboard": "/Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/analysis/dashboard.html",
+    "workbook": "/Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/analysis/accessibility_analysis.xlsx"
+  }
+}

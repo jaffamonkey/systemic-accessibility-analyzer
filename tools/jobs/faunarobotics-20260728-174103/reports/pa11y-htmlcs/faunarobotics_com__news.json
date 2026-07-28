@@ -1,0 +1,446 @@
+{
+  "documentTitle": "News | Fauna Robotics",
+  "pageUrl": "https://faunarobotics.com/news",
+  "issues": [
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_10.C32,C31,C33,C38,SCR34,G206",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "This element has \"position: fixed\". This may require scrolling in two dimensions, which is considered a failure of this Success Criterion.",
+      "context": "<div data-animation=\"default\" data-collapse=\"all\" data-duration=\"400\" data-easing=\"ease\" data-easing2=\"ease\" role=\"banner\" class=\"navbar w-nav\"><div class=\"container is--navba...</div>",
+      "selector": "html > body > div > div:nth-child(3)",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_3.1_3_1.H48",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "If this element contains a navigation section, it is recommended that it be marked up as a list.",
+      "context": "<div class=\"navbar-menu__list\"><a href=\"/\" class=\"navbar-link\"...</div>",
+      "selector": "html > body > div > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(1)",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+      "type": "error",
+      "typeCode": 1,
+      "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.41:1. Recommendation:  change text colour to #050100.",
+      "context": "<a href=\"/news\" aria-current=\"page\" class=\"navbar-link w--current\">News</a>",
+      "selector": "html > body > div > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(1) > a:nth-child(5)",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H67.2",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "Img element is marked so that it is ignored by Assistive Technology.",
+      "context": "<img src=\"https://cdn.prod.website-files.com/693933367980a29f6ff36b6d/69775f291f66f1bbf54f4ab1_demo-poster.webp\" loading=\"lazy\" alt=\"\" sizes=\"100vw\" srcset=\"https://cdn.prod.website-files.com/693933367980a29f6ff36b6d/69775f291f66f1bbf54f4ab1_demo-pos...",
+      "selector": "html > body > div > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(2) > div > div > div > img",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.Button.Name",
+      "type": "error",
+      "typeCode": 1,
+      "message": "This button element does not have a name available to an accessibility API. Valid names are: title , element content, aria-label , aria-labelledby .",
+      "context": "<button class=\"popup-trigger\"></button>",
+      "selector": "html > body > div > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(2) > div > div > div > button",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+      "type": "error",
+      "typeCode": 1,
+      "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.68:1. Recommendation:  change background to #060100.",
+      "context": "<div>Request Robot</div>",
+      "selector": "html > body > div > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > a > div",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_1.1_1_1.H67.2",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "Img element is marked so that it is ignored by Assistive Technology.",
+      "context": "<img src=\"https://cdn.prod.website-files.com/6931911db0300aa6e7e3fc81/696e373e111530353e2d2af8_Sprout_Renderings_Rd4_6_MAIN_MINTCODE_W-FLAG.avif\" loading=\"lazy\" sizes=\"(max-width: 1392px) 100vw, 1392px\" srcset=\"https://cdn.prod.website-files.com/6931...",
+      "selector": "#w-node-cee6d2b4-355d-5276-be5f-1f0f21623c6b-f568663a > img",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+      "type": "error",
+      "typeCode": 1,
+      "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.47:1. Recommendation:  change background to #000403.",
+      "context": "<div data-tag=\"Announcements\" class=\"news-item__details-tag\">Announcements</div>",
+      "selector": "#w-node-_7b39de47-5f1a-7fa5-04fb-6a3685ca8b31-f568663a > div:nth-child(1) > div > div:nth-child(1)",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Alpha",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "This element's text or background contains transparency. Ensure the contrast ratio between the text and background are at least 4.5:1.",
+      "context": "<div class=\"text-black-300\">March 24, 2026</div>",
+      "selector": "#w-node-_7b39de47-5f1a-7fa5-04fb-6a3685ca8b31-f568663a > div:nth-child(1) > div > div:nth-child(2)",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_3.1_3_1_A.G141",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "The heading structure is not logically nested. This h3 element should be an h2 to be properly nested.",
+      "context": "<h3 class=\"h4\">Fauna Robotics joins Amazon</h3>",
+      "selector": "#w-node-_7b39de47-5f1a-7fa5-04fb-6a3685ca8b31-f568663a > div:nth-child(1) > h3",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Alpha",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "This element's text or background contains transparency. Ensure the contrast ratio between the text and background are at least 4.5:1.",
+      "context": "<p class=\"text-black-300\">Fauna Robotics has officially j...</p>",
+      "selector": "#w-node-_7b39de47-5f1a-7fa5-04fb-6a3685ca8b31-f568663a > div:nth-child(1) > p",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.NoContent",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Anchor element found with a valid href attribute, but no link content has been supplied.",
+      "context": "<a href=\"/news/fauna-robotics-joins-amazon\" class=\"absolute-cover w-inline-block\"></a>",
+      "selector": "#w-node-_13573b50-247d-7b1f-c121-609b8a13362c-f568663a > div > div > div > div:nth-child(3) > a",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+      "type": "error",
+      "typeCode": 1,
+      "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 1.78:1. Recommendation:  change background to #050300.",
+      "context": "<div data-tag=\"Blog post\" class=\"news-item__details-tag\">Blog post</div>",
+      "selector": "#w-node-_75723dcf-83fb-2c07-3aed-825c71c01abb-f568663a > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(1)",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Alpha",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "This element's text or background contains transparency. Ensure the contrast ratio between the text and background are at least 4.5:1.",
+      "context": "<div class=\"text-black-300\">January 27, 2026</div>",
+      "selector": "#w-node-_75723dcf-83fb-2c07-3aed-825c71c01abb-f568663a > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(2)",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Alpha",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "This element's text or background contains transparency. Ensure the contrast ratio between the text and background are at least 4.5:1.",
+      "context": "<p class=\"text-black-300\">We started Fauna with a simple ...</p>",
+      "selector": "#w-node-_75723dcf-83fb-2c07-3aed-825c71c01abb-f568663a > div:nth-child(1) > div:nth-child(1) > p",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.NoContent",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Anchor element found with a valid href attribute, but no link content has been supplied.",
+      "context": "<a href=\"/news/the-robot-youre-looking-for-introducing-sprout\" class=\"absolute-cover w-inline-block\"></a>",
+      "selector": "#w-node-_75723dcf-83fb-2c07-3aed-825c71c01abb-f568663a > div:nth-child(2) > a",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle4.Guideline4_1.4_1_1.F77",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Duplicate id attribute value \"w-node-_75723dcf-83fb-2c07-3aed-825c71c01abb-f568663a\" found on the web page.",
+      "context": "<div data-item=\"Announcements\" id=\"w-node-_75723dcf-83fb-2c07-3aed-825c71c01abb-f568663a\" role=\"listitem\" class=\"news-list__grid-item w-dyn-item\"><div class=\"news-item__featured...</div>",
+      "selector": "#w-node-_75723dcf-83fb-2c07-3aed-825c71c01abb-f568663a",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail",
+      "type": "error",
+      "typeCode": 1,
+      "message": "This element has insufficient contrast at this conformance level. Expected a contrast ratio of at least 4.5:1, but text in this element has a contrast ratio of 2.47:1. Recommendation:  change background to #000403.",
+      "context": "<div data-tag=\"Announcements\" class=\"news-item__details-tag\">Announcements</div>",
+      "selector": "#w-node-_75723dcf-83fb-2c07-3aed-825c71c01abb-f568663a > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(1)",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Alpha",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "This element's text or background contains transparency. Ensure the contrast ratio between the text and background are at least 4.5:1.",
+      "context": "<div class=\"text-black-300\">January 27, 2026</div>",
+      "selector": "#w-node-_75723dcf-83fb-2c07-3aed-825c71c01abb-f568663a > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(2)",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Alpha",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "This element's text or background contains transparency. Ensure the contrast ratio between the text and background are at least 4.5:1.",
+      "context": "<p class=\"text-black-300\">Fauna combines NY tech talent, ...</p>",
+      "selector": "#w-node-_75723dcf-83fb-2c07-3aed-825c71c01abb-f568663a > div:nth-child(1) > div:nth-child(1) > p",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.NoContent",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Anchor element found with a valid href attribute, but no link content has been supplied.",
+      "context": "<a href=\"/news/fauna-robotics-launches-sprout-the-easiest-way-to-build-with-humanoids\" class=\"absolute-cover w-inline-block\"></a>",
+      "selector": "#w-node-_75723dcf-83fb-2c07-3aed-825c71c01abb-f568663a > div:nth-child(2) > a",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_10.C32,C31,C33,C38,SCR34,G206",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "This element has \"position: fixed\". This may require scrolling in two dimensions, which is considered a failure of this Success Criterion.",
+      "context": "<div class=\"demo-popup__wrapper\"><div class=\"w-embed\"><style>\n\t....</div>",
+      "selector": "html > body > div > div:nth-child(5)",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Iframe element requires a non-empty title attribute that identifies the frame.",
+      "context": "<iframe class=\"video-vimeo-frame\" src=\"https://player.vimeo.com/video/1159645799?api=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;controls=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;dnt=1\" style=\"height: 100%; width: 100%; position: absolute;...",
+      "selector": "html > body > div > div:nth-child(5) > div:nth-child(4) > div > div > div > iframe",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.BgImage",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "This element's text is placed on a background image. Ensure the contrast ratio between the text and all covered parts of the image are at least 3:1.",
+      "context": "<h2 class=\"h3\">Fauna Robotics, building a&nbsp...</h2>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(1) > h2",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Alpha",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "This element's text or background contains transparency. Ensure the contrast ratio between the text and background are at least 4.5:1.",
+      "context": "<p class=\"text-brown-300\">Designed in New York City. <!--...</p>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(1) > p",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Alpha",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "This element's text or background contains transparency. Ensure the contrast ratio between the text and background are at least 4.5:1.",
+      "context": "<div class=\"text-brown-300\">Explore</div>",
+      "selector": "#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de > div",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.BgImage",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "This element's text is placed on a background image. Ensure the contrast ratio between the text and all covered parts of the image are at least 4.5:1.",
+      "context": "<a href=\"/product\" class=\"text-link\">Product</a>",
+      "selector": "#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de > ul > li:nth-child(1) > a",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.BgImage",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "This element's text is placed on a background image. Ensure the contrast ratio between the text and all covered parts of the image are at least 4.5:1.",
+      "context": "<a href=\"/product#tech-specs\" class=\"text-link\">Technical specifications</a>",
+      "selector": "#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de > ul > li:nth-child(2) > a",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.BgImage",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "This element's text is placed on a background image. Ensure the contrast ratio between the text and all covered parts of the image are at least 4.5:1.",
+      "context": "<p>Technical report</p>",
+      "selector": "#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de > ul > li:nth-child(3) > a > p",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.BgImage",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "This element's text is placed on a background image. Ensure the contrast ratio between the text and all covered parts of the image are at least 4.5:1.",
+      "context": "<p>Press kit</p>",
+      "selector": "#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de > ul > li:nth-child(4) > a > p",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Alpha",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "This element's text or background contains transparency. Ensure the contrast ratio between the text and background are at least 4.5:1.",
+      "context": "<div class=\"text-brown-300\">About</div>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.BgImage",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "This element's text is placed on a background image. Ensure the contrast ratio between the text and all covered parts of the image are at least 4.5:1.",
+      "context": "<a href=\"/company\" class=\"text-link\">Company</a>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > ul > li:nth-child(1) > a",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.BgImage",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "This element's text is placed on a background image. Ensure the contrast ratio between the text and all covered parts of the image are at least 4.5:1.",
+      "context": "<a href=\"https://www.amazon.jobs/en/search?base_query=fauna\" target=\"_blank\" class=\"text-link\">Careers</a>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > ul > li:nth-child(2) > a",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.BgImage",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "This element's text is placed on a background image. Ensure the contrast ratio between the text and all covered parts of the image are at least 4.5:1.",
+      "context": "<a href=\"/news\" aria-current=\"page\" class=\"text-link w--current\">News</a>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > ul > li:nth-child(3) > a",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Alpha",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "This element's text or background contains transparency. Ensure the contrast ratio between the text and background are at least 4.5:1.",
+      "context": "<div class=\"text-brown-300\">Social</div>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > div",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.BgImage",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "This element's text is placed on a background image. Ensure the contrast ratio between the text and all covered parts of the image are at least 4.5:1.",
+      "context": "<a href=\"https://www.youtube.com/@FaunaRobotics\" target=\"_blank\" class=\"text-link\">YouTube</a>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > ul > li:nth-child(1) > a",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.BgImage",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "This element's text is placed on a background image. Ensure the contrast ratio between the text and all covered parts of the image are at least 4.5:1.",
+      "context": "<a href=\"https://x.com/faunarobotics\" target=\"_blank\" class=\"text-link\">X (Twitter)</a>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > ul > li:nth-child(2) > a",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.BgImage",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "This element's text is placed on a background image. Ensure the contrast ratio between the text and all covered parts of the image are at least 4.5:1.",
+      "context": "<a href=\"https://www.linkedin.com/company/fauna-robotics/\" target=\"_blank\" class=\"text-link\">LinkedIn</a>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > ul > li:nth-child(3) > a",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.BgImage",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "This element's text is placed on a background image. Ensure the contrast ratio between the text and all covered parts of the image are at least 4.5:1.",
+      "context": "<a href=\"https://www.instagram.com/faunarobotics/?igsh=cGg0dnozNGpiYm85#\" target=\"_blank\" class=\"text-link\">Instagram</a>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > ul > li:nth-child(4) > a",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.BgImage",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "This element's text is placed on a background image. Ensure the contrast ratio between the text and all covered parts of the image are at least 4.5:1.",
+      "context": "<a href=\"mailto:sales@faunarobotics.com\" class=\"text-link decoration-underline\">Contact us</a>",
+      "selector": "#w-node-f7573142-a4ef-60b7-12da-23c3f39da591-74d2b1de > ul > li > a",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.BgImage",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "This element's text is placed on a background image. Ensure the contrast ratio between the text and all covered parts of the image are at least 4.5:1.",
+      "context": "<div class=\"text-brown-200 p-l\">© <span id=\"copyright-year\">202...</div>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(2) > div:nth-child(1) > div",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.BgImage",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "This element's text is placed on a background image. Ensure the contrast ratio between the text and all covered parts of the image are at least 4.5:1.",
+      "context": "<span id=\"copyright-year\">2026</span>",
+      "selector": "#copyright-year",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.BgImage",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "This element's text is placed on a background image. Ensure the contrast ratio between the text and all covered parts of the image are at least 4.5:1.",
+      "context": "<a href=\"/privacy-policy\" class=\"text-brown-200 text-link\">Privacy Policy</a>",
+      "selector": "#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b21e-74d2b1de > div:nth-child(1) > a",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    },
+    {
+      "code": "WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.BgImage",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "This element's text is placed on a background image. Ensure the contrast ratio between the text and all covered parts of the image are at least 4.5:1.",
+      "context": "<a href=\"/data-processing\" class=\"text-brown-200 text-link\">Data Processing Addendum</a>",
+      "selector": "#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b222-74d2b1de > a",
+      "runner": "htmlcs",
+      "runnerExtras": {}
+    }
+  ]
+}

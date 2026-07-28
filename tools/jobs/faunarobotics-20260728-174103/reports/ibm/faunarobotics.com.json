@@ -1,0 +1,1703 @@
+{
+  "report": {
+    "results": [
+      {
+        "ruleId": "input_label_exists",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]",
+          "aria": "/document[1]/banner[1]/list[1]/listitem[1]/button[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Fail_1",
+        "message": "Form control element <button> has no associated label",
+        "messageArgs": [
+          "button"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 102,
+          "height": 6,
+          "width": 16
+        },
+        "snippet": "<button class=\"popup-trigger\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/input_label_exists.html#%7B%22message%22%3A%22Form%20control%20element%20%3Cbutton%3E%20has%20no%20associated%20label%22%2C%22snippet%22%3A%22%3Cbutton%20class%3D%5C%22popup-trigger%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22input_label_exists%22%2C%22msgArgs%22%3A%5B%22button%22%5D%7D"
+      },
+      {
+        "ruleId": "svg_graphics_labelled",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/svg[1]",
+          "aria": "/document[1]/banner[1]/list[1]/listitem[1]/graphics-document[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_acc_name",
+        "message": "The SVG element has no accessible name",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 109,
+          "height": 20,
+          "width": 20
+        },
+        "snippet": "<svg fill=\"none\" viewBox=\"0 0 20 20\" height=\"20\" width=\"20\" xmlns=\"http://www.w3.org/2000/svg\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/svg_graphics_labelled.html#%7B%22message%22%3A%22The%20SVG%20element%20has%20no%20accessible%20name%22%2C%22snippet%22%3A%22%3Csvg%20fill%3D%5C%22none%5C%22%20viewBox%3D%5C%220%200%2020%2020%5C%22%20height%3D%5C%2220%5C%22%20width%3D%5C%2220%5C%22%20xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_acc_name%22%2C%22ruleId%22%3A%22svg_graphics_labelled%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "label_name_visible",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]",
+          "aria": "/document[1]/banner[1]/button[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Fail_1",
+        "message": "Accessible name does not match or contain the visible label text",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 170,
+          "height": 43,
+          "width": 784
+        },
+        "snippet": "<div aria-expanded=\"false\" aria-haspopup=\"menu\" aria-controls=\"w-nav-overlay-0\" tabindex=\"0\" role=\"button\" aria-label=\"menu\" style=\"-webkit-user-select: text;\" class=\"navbar-menu__button morph-btn w-nav-button\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/label_name_visible.html#%7B%22message%22%3A%22Accessible%20name%20does%20not%20match%20or%20contain%20the%20visible%20label%20text%22%2C%22snippet%22%3A%22%3Cdiv%20aria-expanded%3D%5C%22false%5C%22%20aria-haspopup%3D%5C%22menu%5C%22%20aria-controls%3D%5C%22w-nav-overlay-0%5C%22%20tabindex%3D%5C%220%5C%22%20role%3D%5C%22button%5C%22%20aria-label%3D%5C%22menu%5C%22%20style%3D%5C%22-webkit-user-select%3A%20text%3B%5C%22%20class%3D%5C%22navbar-menu__button%20morph-btn%20w-nav-button%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22label_name_visible%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "svg_graphics_labelled",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[2]/div[2]/svg[1]",
+          "aria": "/document[1]/banner[1]/button[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_acc_name",
+        "message": "The SVG element has no accessible name",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 189,
+          "height": 20,
+          "width": 20
+        },
+        "snippet": "<svg fill=\"none\" viewBox=\"0 0 20 20\" height=\"20\" width=\"20\" xmlns=\"http://www.w3.org/2000/svg\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/svg_graphics_labelled.html#%7B%22message%22%3A%22The%20SVG%20element%20has%20no%20accessible%20name%22%2C%22snippet%22%3A%22%3Csvg%20fill%3D%5C%22none%5C%22%20viewBox%3D%5C%220%200%2020%2020%5C%22%20height%3D%5C%2220%5C%22%20width%3D%5C%2220%5C%22%20xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_acc_name%22%2C%22ruleId%22%3A%22svg_graphics_labelled%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "caption_track_exists",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/video[1]",
+          "aria": "/document[1]/main[1]/list[1]/listitem[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Potential_1",
+        "message": "Verify that captions are available for any meaningful audio or provide a caption track for the <video> element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 326,
+          "height": 1440,
+          "width": 2560
+        },
+        "snippet": "<video poster=\"https://cdn.prod.website-files.com/693933367980a29f6ff36b6d/69775f38bf0b15f93ba8046b_home-teaser.webp\" webkit-playsinline=\"\" playsinline=\"\" muted=\"\" loop=\"\" autoplay=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/caption_track_exists.html#%7B%22message%22%3A%22Verify%20that%20captions%20are%20available%20for%20any%20meaningful%20audio%20or%20provide%20a%20caption%20track%20for%20the%20%3Cvideo%3E%20element%22%2C%22snippet%22%3A%22%3Cvideo%20poster%3D%5C%22https%3A%2F%2Fcdn.prod.website-files.com%2F693933367980a29f6ff36b6d%2F69775f38bf0b15f93ba8046b_home-teaser.webp%5C%22%20webkit-playsinline%3D%5C%22%5C%22%20playsinline%3D%5C%22%5C%22%20muted%3D%5C%22%5C%22%20loop%3D%5C%22%5C%22%20autoplay%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22caption_track_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "aria_region_labelled",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[1]/div[2]/div[2]",
+          "aria": "/document[1]/main[1]/region[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Fail_1",
+        "message": "Element with \"region\" role does not have a label",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 1789,
+          "height": 278,
+          "width": 784
+        },
+        "snippet": "<div aria-roledescription=\"carousel\" role=\"region\" id=\"splide01\" class=\"splide is--loop-autoscroll splide--loop splide--ltr splide--draggable is-active is-overflow is-initialized\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/aria_region_labelled.html#%7B%22message%22%3A%22Element%20with%20%5C%22region%5C%22%20role%20does%20not%20have%20a%20label%22%2C%22snippet%22%3A%22%3Cdiv%20aria-roledescription%3D%5C%22carousel%5C%22%20role%3D%5C%22region%5C%22%20id%3D%5C%22splide01%5C%22%20class%3D%5C%22splide%20is--loop-autoscroll%20splide--loop%20splide--ltr%20splide--draggable%20is-active%20is-overflow%20is-initialized%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22aria_region_labelled%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "svg_graphics_labelled",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]/svg[1]",
+          "aria": "/document[1]/main[1]/list[2]/listitem[1]/button[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_acc_name",
+        "message": "The SVG element has no accessible name",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 390,
+          "top": 281,
+          "height": 20,
+          "width": 20
+        },
+        "snippet": "<svg fill=\"none\" viewBox=\"0 0 20 20\" height=\"20\" width=\"20\" xmlns=\"http://www.w3.org/2000/svg\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/svg_graphics_labelled.html#%7B%22message%22%3A%22The%20SVG%20element%20has%20no%20accessible%20name%22%2C%22snippet%22%3A%22%3Csvg%20fill%3D%5C%22none%5C%22%20viewBox%3D%5C%220%200%2020%2020%5C%22%20height%3D%5C%2220%5C%22%20width%3D%5C%2220%5C%22%20xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_acc_name%22%2C%22ruleId%22%3A%22svg_graphics_labelled%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "text_block_heading",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[1]/div[1]/div[1]",
+          "aria": "/document[1]/main[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_heading",
+        "message": "Confirm this text 'A modern platform' is used as a heading and if so, modify to use a heading element or role",
+        "messageArgs": [
+          "A modern platform"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 3109,
+          "height": 55,
+          "width": 784
+        },
+        "snippet": "<div class=\"home-bento__title\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'A%20modern%20platform'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cdiv%20class%3D%5C%22home-bento__title%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22A%20modern%20platform%22%5D%7D"
+      },
+      {
+        "ruleId": "text_block_heading",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[1]/div[1]/div[1]/h2[1]/br[1]",
+          "aria": "/document[1]/main[1]/heading[6]"
+        },
+        "ruleTime": 1,
+        "reasonId": "potential_heading",
+        "message": "Confirm this text 'for robotics development' is used as a heading and if so, modify to use a heading element or role",
+        "messageArgs": [
+          "for robotics development"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": 213,
+          "top": 3109,
+          "height": 27,
+          "width": 0
+        },
+        "snippet": "<br>",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'for%20robotics%20development'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cbr%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22for%20robotics%20development%22%5D%7D"
+      },
+      {
+        "ruleId": "text_block_heading",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[1]/div[1]/div[2]/div[3]/h3[1]/br[1]",
+          "aria": "/document[1]/main[1]/heading[9]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_heading",
+        "message": "Confirm this text 'teleoperation' is used as a heading and if so, modify to use a heading element or role",
+        "messageArgs": [
+          "teleoperation"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": 106,
+          "top": 3920,
+          "height": 21,
+          "width": 0
+        },
+        "snippet": "<br>",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'teleoperation'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cbr%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22teleoperation%22%5D%7D"
+      },
+      {
+        "ruleId": "caption_track_exists",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[1]/div[1]/div[2]/div[4]/div[1]/div[1]/div[1]/div[1]/video[1]",
+          "aria": "/document[1]/main[1]/list[3]/listitem[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Potential_1",
+        "message": "Verify that captions are available for any meaningful audio or provide a caption track for the <video> element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 3982,
+          "height": 150,
+          "width": 300
+        },
+        "snippet": "<video webkit-playsinline=\"\" playsinline=\"\" muted=\"\" loop=\"\" autoplay=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/caption_track_exists.html#%7B%22message%22%3A%22Verify%20that%20captions%20are%20available%20for%20any%20meaningful%20audio%20or%20provide%20a%20caption%20track%20for%20the%20%3Cvideo%3E%20element%22%2C%22snippet%22%3A%22%3Cvideo%20webkit-playsinline%3D%5C%22%5C%22%20playsinline%3D%5C%22%5C%22%20muted%3D%5C%22%5C%22%20loop%3D%5C%22%5C%22%20autoplay%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22caption_track_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "caption_track_exists",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[3]/div[1]/div[1]/div[2]/div[5]/div[1]/div[1]/div[1]/div[1]/video[1]",
+          "aria": "/document[1]/main[1]/list[4]/listitem[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Potential_1",
+        "message": "Verify that captions are available for any meaningful audio or provide a caption track for the <video> element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 4154,
+          "height": 150,
+          "width": 300
+        },
+        "snippet": "<video webkit-playsinline=\"\" playsinline=\"\" muted=\"\" loop=\"\" autoplay=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/caption_track_exists.html#%7B%22message%22%3A%22Verify%20that%20captions%20are%20available%20for%20any%20meaningful%20audio%20or%20provide%20a%20caption%20track%20for%20the%20%3Cvideo%3E%20element%22%2C%22snippet%22%3A%22%3Cvideo%20webkit-playsinline%3D%5C%22%5C%22%20playsinline%3D%5C%22%5C%22%20muted%3D%5C%22%5C%22%20loop%3D%5C%22%5C%22%20autoplay%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22caption_track_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "text_block_heading",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]",
+          "aria": "/document[1]/main[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_heading",
+        "message": "Confirm this text 'Retail' is used as a heading and if so, modify to use a heading element or role",
+        "messageArgs": [
+          "Retail"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 4494,
+          "height": 99,
+          "width": 784
+        },
+        "snippet": "<div class=\"home-use__shape-text is--top-left\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'Retail'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cdiv%20class%3D%5C%22home-use__shape-text%20is--top-left%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22Retail%22%5D%7D"
+      },
+      {
+        "ruleId": "text_block_heading",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h3[1]/br[1]",
+          "aria": "/document[1]/main[1]/heading[11]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_heading",
+        "message": "Confirm this text '& hospitality' is used as a heading and if so, modify to use a heading element or role",
+        "messageArgs": [
+          "& hospitality"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": 56,
+          "top": 4495,
+          "height": 21,
+          "width": 0
+        },
+        "snippet": "<br>",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'%26%20hospitality'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cbr%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22%26%20hospitality%22%5D%7D"
+      },
+      {
+        "ruleId": "text_block_heading",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]",
+          "aria": "/document[1]/main[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_heading",
+        "message": "Confirm this text 'Consumer' is used as a heading and if so, modify to use a heading element or role",
+        "messageArgs": [
+          "Consumer"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 4646,
+          "height": 99,
+          "width": 784
+        },
+        "snippet": "<div class=\"home-use__shape-text is--center\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'Consumer'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cdiv%20class%3D%5C%22home-use__shape-text%20is--center%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22Consumer%22%5D%7D"
+      },
+      {
+        "ruleId": "text_block_heading",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/h3[1]/br[1]",
+          "aria": "/document[1]/main[1]/heading[12]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_heading",
+        "message": "Confirm this text '& home' is used as a heading and if so, modify to use a heading element or role",
+        "messageArgs": [
+          "& home"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": 92,
+          "top": 4647,
+          "height": 21,
+          "width": 0
+        },
+        "snippet": "<br>",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'%26%20home'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cbr%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22%26%20home%22%5D%7D"
+      },
+      {
+        "ruleId": "text_block_heading",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]",
+          "aria": "/document[1]/main[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_heading",
+        "message": "Confirm this text 'Research' is used as a heading and if so, modify to use a heading element or role",
+        "messageArgs": [
+          "Research"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 4798,
+          "height": 118,
+          "width": 784
+        },
+        "snippet": "<div class=\"home-use__shape-text is--top-left\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'Research'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cdiv%20class%3D%5C%22home-use__shape-text%20is--top-left%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22Research%22%5D%7D"
+      },
+      {
+        "ruleId": "text_block_heading",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[1]/div[1]/div[1]/div[3]/div[1]/div[1]/h3[1]/br[1]",
+          "aria": "/document[1]/main[1]/heading[13]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_heading",
+        "message": "Confirm this text '& education' is used as a heading and if so, modify to use a heading element or role",
+        "messageArgs": [
+          "& education"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": 82,
+          "top": 4799,
+          "height": 21,
+          "width": 0
+        },
+        "snippet": "<br>",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'%26%C2%A0education'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cbr%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22%26%C2%A0education%22%5D%7D"
+      },
+      {
+        "ruleId": "text_block_heading",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]",
+          "aria": "/document[1]/main[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_heading",
+        "message": "Confirm this text 'Retail' is used as a heading and if so, modify to use a heading element or role",
+        "messageArgs": [
+          "Retail"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 5099,
+          "height": 99,
+          "width": 784
+        },
+        "snippet": "<div class=\"home-use__shape-text is--top-left\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'Retail'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cdiv%20class%3D%5C%22home-use__shape-text%20is--top-left%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22Retail%22%5D%7D"
+      },
+      {
+        "ruleId": "text_block_heading",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/h3[1]/br[1]",
+          "aria": "/document[1]/main[1]/heading[15]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_heading",
+        "message": "Confirm this text '& hospitality' is used as a heading and if so, modify to use a heading element or role",
+        "messageArgs": [
+          "& hospitality"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": 56,
+          "top": 5100,
+          "height": 21,
+          "width": 0
+        },
+        "snippet": "<br>",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'%26%20hospitality'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cbr%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22%26%20hospitality%22%5D%7D"
+      },
+      {
+        "ruleId": "text_block_heading",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]",
+          "aria": "/document[1]/main[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_heading",
+        "message": "Confirm this text 'Consumer' is used as a heading and if so, modify to use a heading element or role",
+        "messageArgs": [
+          "Consumer"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 5251,
+          "height": 99,
+          "width": 784
+        },
+        "snippet": "<div class=\"home-use__shape-text is--center\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'Consumer'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cdiv%20class%3D%5C%22home-use__shape-text%20is--center%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22Consumer%22%5D%7D"
+      },
+      {
+        "ruleId": "text_block_heading",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/h3[1]/br[1]",
+          "aria": "/document[1]/main[1]/heading[16]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_heading",
+        "message": "Confirm this text '& home' is used as a heading and if so, modify to use a heading element or role",
+        "messageArgs": [
+          "& home"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": 92,
+          "top": 5251,
+          "height": 21,
+          "width": 0
+        },
+        "snippet": "<br>",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'%26%20home'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cbr%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22%26%20home%22%5D%7D"
+      },
+      {
+        "ruleId": "text_block_heading",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]",
+          "aria": "/document[1]/main[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_heading",
+        "message": "Confirm this text 'Research' is used as a heading and if so, modify to use a heading element or role",
+        "messageArgs": [
+          "Research"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 5403,
+          "height": 118,
+          "width": 784
+        },
+        "snippet": "<div class=\"home-use__shape-text is--top-left\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'Research'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cdiv%20class%3D%5C%22home-use__shape-text%20is--top-left%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22Research%22%5D%7D"
+      },
+      {
+        "ruleId": "text_block_heading",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/h3[1]/br[1]",
+          "aria": "/document[1]/main[1]/heading[17]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_heading",
+        "message": "Confirm this text '& education' is used as a heading and if so, modify to use a heading element or role",
+        "messageArgs": [
+          "& education"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": 82,
+          "top": 5403,
+          "height": 21,
+          "width": 0
+        },
+        "snippet": "<br>",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'%26%C2%A0education'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cbr%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22%26%C2%A0education%22%5D%7D"
+      },
+      {
+        "ruleId": "text_block_heading",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[1]/div[2]/div[1]/div[4]/div[1]/div[1]",
+          "aria": "/document[1]/main[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_heading",
+        "message": "Confirm this text 'Entertainment' is used as a heading and if so, modify to use a heading element or role",
+        "messageArgs": [
+          "Entertainment"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 5573,
+          "height": 99,
+          "width": 784
+        },
+        "snippet": "<div class=\"home-use__shape-text is--center is--left-mob\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'Entertainment'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cdiv%20class%3D%5C%22home-use__shape-text%20is--center%20is--left-mob%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22Entertainment%22%5D%7D"
+      },
+      {
+        "ruleId": "text_block_heading",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[4]/div[1]/div[2]/div[1]/div[4]/div[1]/div[1]/h3[1]/br[1]",
+          "aria": "/document[1]/main[1]/heading[18]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_heading",
+        "message": "Confirm this text '& experiences' is used as a heading and if so, modify to use a heading element or role",
+        "messageArgs": [
+          "& experiences"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": 126,
+          "top": 5574,
+          "height": 21,
+          "width": 0
+        },
+        "snippet": "<br>",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'%26%C2%A0experiences'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cbr%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22%26%C2%A0experiences%22%5D%7D"
+      },
+      {
+        "ruleId": "svg_graphics_labelled",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[1]/div[2]/div[1]/div[1]/div[1]/svg[1]",
+          "aria": "/document[1]/main[1]/graphics-document[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_acc_name",
+        "message": "The SVG element has no accessible name",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 5739,
+          "height": 64,
+          "width": 64
+        },
+        "snippet": "<svg fill=\"none\" viewBox=\"0 0 64 64\" height=\"64\" width=\"64\" xmlns=\"http://www.w3.org/2000/svg\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/svg_graphics_labelled.html#%7B%22message%22%3A%22The%20SVG%20element%20has%20no%20accessible%20name%22%2C%22snippet%22%3A%22%3Csvg%20fill%3D%5C%22none%5C%22%20viewBox%3D%5C%220%200%2064%2064%5C%22%20height%3D%5C%2264%5C%22%20width%3D%5C%2264%5C%22%20xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_acc_name%22%2C%22ruleId%22%3A%22svg_graphics_labelled%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "text_block_heading",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[5]/div[1]/div[2]/div[1]/div[1]/h3[1]/br[1]",
+          "aria": "/document[1]/main[1]/heading[20]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_heading",
+        "message": "Confirm this text 'Assembled in America' is used as a heading and if so, modify to use a heading element or role",
+        "messageArgs": [
+          "Assembled in America"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": 147,
+          "top": 5827,
+          "height": 21,
+          "width": 0
+        },
+        "snippet": "<br>",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'Assembled%20in%20America'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cbr%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22Assembled%20in%20America%22%5D%7D"
+      },
+      {
+        "ruleId": "text_block_heading",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[1]/div[1]/h2[1]/br[1]",
+          "aria": "/document[1]/main[1]/heading[21]"
+        },
+        "ruleTime": 0,
+        "reasonId": "potential_heading",
+        "message": "Confirm this text 'real fun' is used as a heading and if so, modify to use a heading element or role",
+        "messageArgs": [
+          "real fun"
+        ],
+        "apiArgs": [],
+        "bounds": {
+          "left": 132,
+          "top": 5945,
+          "height": 27,
+          "width": 0
+        },
+        "snippet": "<br>",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/text_block_heading.html#%7B%22message%22%3A%22Confirm%20this%20text%20'real%20fun'%20is%20used%20as%20a%20heading%20and%20if%20so%2C%20modify%20to%20use%20a%20heading%20element%20or%20role%22%2C%22snippet%22%3A%22%3Cbr%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22potential_heading%22%2C%22ruleId%22%3A%22text_block_heading%22%2C%22msgArgs%22%3A%5B%22real%20fun%22%5D%7D"
+      },
+      {
+        "ruleId": "aria_region_labelled",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[1]/div[2]",
+          "aria": "/document[1]/main[1]/region[2]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Fail_1",
+        "message": "Element with \"region\" role does not have a label",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 6020,
+          "height": 4140,
+          "width": 784
+        },
+        "snippet": "<div aria-roledescription=\"carousel\" role=\"region\" id=\"splide02\" class=\"splide is--loop-autoscroll splide--loop splide--ltr splide--draggable is-active is-initialized\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/aria_region_labelled.html#%7B%22message%22%3A%22Element%20with%20%5C%22region%5C%22%20role%20does%20not%20have%20a%20label%22%2C%22snippet%22%3A%22%3Cdiv%20aria-roledescription%3D%5C%22carousel%5C%22%20role%3D%5C%22region%5C%22%20id%3D%5C%22splide02%5C%22%20class%3D%5C%22splide%20is--loop-autoscroll%20splide--loop%20splide--ltr%20splide--draggable%20is-active%20is-initialized%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22Fail_1%22%2C%22ruleId%22%3A%22aria_region_labelled%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "caption_track_exists",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/video[1]",
+          "aria": "/document[1]/main[1]/region[2]/generic[1]/group[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Potential_1",
+        "message": "Verify that captions are available for any meaningful audio or provide a caption track for the <video> element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 174,
+          "top": 6020,
+          "height": 150,
+          "width": 300
+        },
+        "snippet": "<video webkit-playsinline=\"\" playsinline=\"\" muted=\"\" loop=\"\" autoplay=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/caption_track_exists.html#%7B%22message%22%3A%22Verify%20that%20captions%20are%20available%20for%20any%20meaningful%20audio%20or%20provide%20a%20caption%20track%20for%20the%20%3Cvideo%3E%20element%22%2C%22snippet%22%3A%22%3Cvideo%20webkit-playsinline%3D%5C%22%5C%22%20playsinline%3D%5C%22%5C%22%20muted%3D%5C%22%5C%22%20loop%3D%5C%22%5C%22%20autoplay%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22caption_track_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "caption_track_exists",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/video[1]",
+          "aria": "/document[1]/main[1]/region[2]/generic[1]/group[2]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Potential_1",
+        "message": "Verify that captions are available for any meaningful audio or provide a caption track for the <video> element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 174,
+          "top": 6192,
+          "height": 150,
+          "width": 300
+        },
+        "snippet": "<video webkit-playsinline=\"\" playsinline=\"\" muted=\"\" loop=\"\" autoplay=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/caption_track_exists.html#%7B%22message%22%3A%22Verify%20that%20captions%20are%20available%20for%20any%20meaningful%20audio%20or%20provide%20a%20caption%20track%20for%20the%20%3Cvideo%3E%20element%22%2C%22snippet%22%3A%22%3Cvideo%20webkit-playsinline%3D%5C%22%5C%22%20playsinline%3D%5C%22%5C%22%20muted%3D%5C%22%5C%22%20loop%3D%5C%22%5C%22%20autoplay%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22caption_track_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "caption_track_exists",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/video[1]",
+          "aria": "/document[1]/main[1]/region[2]/generic[1]/group[3]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Potential_1",
+        "message": "Verify that captions are available for any meaningful audio or provide a caption track for the <video> element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 174,
+          "top": 6365,
+          "height": 150,
+          "width": 300
+        },
+        "snippet": "<video webkit-playsinline=\"\" playsinline=\"\" muted=\"\" loop=\"\" autoplay=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/caption_track_exists.html#%7B%22message%22%3A%22Verify%20that%20captions%20are%20available%20for%20any%20meaningful%20audio%20or%20provide%20a%20caption%20track%20for%20the%20%3Cvideo%3E%20element%22%2C%22snippet%22%3A%22%3Cvideo%20webkit-playsinline%3D%5C%22%5C%22%20playsinline%3D%5C%22%5C%22%20muted%3D%5C%22%5C%22%20loop%3D%5C%22%5C%22%20autoplay%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22caption_track_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "caption_track_exists",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[1]/div[2]/div[1]/div[1]/div[4]/div[1]/video[1]",
+          "aria": "/document[1]/main[1]/region[2]/generic[1]/group[4]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Potential_1",
+        "message": "Verify that captions are available for any meaningful audio or provide a caption track for the <video> element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 174,
+          "top": 6537,
+          "height": 150,
+          "width": 300
+        },
+        "snippet": "<video webkit-playsinline=\"\" playsinline=\"\" muted=\"\" loop=\"\" autoplay=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/caption_track_exists.html#%7B%22message%22%3A%22Verify%20that%20captions%20are%20available%20for%20any%20meaningful%20audio%20or%20provide%20a%20caption%20track%20for%20the%20%3Cvideo%3E%20element%22%2C%22snippet%22%3A%22%3Cvideo%20webkit-playsinline%3D%5C%22%5C%22%20playsinline%3D%5C%22%5C%22%20muted%3D%5C%22%5C%22%20loop%3D%5C%22%5C%22%20autoplay%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22caption_track_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "caption_track_exists",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[1]/div[2]/div[1]/div[1]/div[5]/div[1]/video[1]",
+          "aria": "/document[1]/main[1]/region[2]/generic[1]/group[5]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Potential_1",
+        "message": "Verify that captions are available for any meaningful audio or provide a caption track for the <video> element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 174,
+          "top": 6710,
+          "height": 150,
+          "width": 300
+        },
+        "snippet": "<video webkit-playsinline=\"\" playsinline=\"\" muted=\"\" loop=\"\" autoplay=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/caption_track_exists.html#%7B%22message%22%3A%22Verify%20that%20captions%20are%20available%20for%20any%20meaningful%20audio%20or%20provide%20a%20caption%20track%20for%20the%20%3Cvideo%3E%20element%22%2C%22snippet%22%3A%22%3Cvideo%20webkit-playsinline%3D%5C%22%5C%22%20playsinline%3D%5C%22%5C%22%20muted%3D%5C%22%5C%22%20loop%3D%5C%22%5C%22%20autoplay%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22caption_track_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "caption_track_exists",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[1]/div[2]/div[1]/div[1]/div[6]/div[1]/video[1]",
+          "aria": "/document[1]/main[1]/region[2]/generic[1]/group[6]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Potential_1",
+        "message": "Verify that captions are available for any meaningful audio or provide a caption track for the <video> element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 174,
+          "top": 6882,
+          "height": 150,
+          "width": 300
+        },
+        "snippet": "<video webkit-playsinline=\"\" playsinline=\"\" muted=\"\" loop=\"\" autoplay=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/caption_track_exists.html#%7B%22message%22%3A%22Verify%20that%20captions%20are%20available%20for%20any%20meaningful%20audio%20or%20provide%20a%20caption%20track%20for%20the%20%3Cvideo%3E%20element%22%2C%22snippet%22%3A%22%3Cvideo%20webkit-playsinline%3D%5C%22%5C%22%20playsinline%3D%5C%22%5C%22%20muted%3D%5C%22%5C%22%20loop%3D%5C%22%5C%22%20autoplay%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22caption_track_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "caption_track_exists",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[1]/div[2]/div[1]/div[1]/div[7]/div[1]/video[1]",
+          "aria": "/document[1]/main[1]/region[2]/generic[1]/group[7]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Potential_1",
+        "message": "Verify that captions are available for any meaningful audio or provide a caption track for the <video> element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 174,
+          "top": 7055,
+          "height": 150,
+          "width": 300
+        },
+        "snippet": "<video webkit-playsinline=\"\" playsinline=\"\" muted=\"\" loop=\"\" autoplay=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/caption_track_exists.html#%7B%22message%22%3A%22Verify%20that%20captions%20are%20available%20for%20any%20meaningful%20audio%20or%20provide%20a%20caption%20track%20for%20the%20%3Cvideo%3E%20element%22%2C%22snippet%22%3A%22%3Cvideo%20webkit-playsinline%3D%5C%22%5C%22%20playsinline%3D%5C%22%5C%22%20muted%3D%5C%22%5C%22%20loop%3D%5C%22%5C%22%20autoplay%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22caption_track_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "caption_track_exists",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[1]/div[2]/div[1]/div[1]/div[8]/div[1]/video[1]",
+          "aria": "/document[1]/main[1]/region[2]/generic[1]/group[8]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Potential_1",
+        "message": "Verify that captions are available for any meaningful audio or provide a caption track for the <video> element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 174,
+          "top": 7227,
+          "height": 150,
+          "width": 300
+        },
+        "snippet": "<video webkit-playsinline=\"\" playsinline=\"\" muted=\"\" loop=\"\" autoplay=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/caption_track_exists.html#%7B%22message%22%3A%22Verify%20that%20captions%20are%20available%20for%20any%20meaningful%20audio%20or%20provide%20a%20caption%20track%20for%20the%20%3Cvideo%3E%20element%22%2C%22snippet%22%3A%22%3Cvideo%20webkit-playsinline%3D%5C%22%5C%22%20playsinline%3D%5C%22%5C%22%20muted%3D%5C%22%5C%22%20loop%3D%5C%22%5C%22%20autoplay%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22caption_track_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "caption_track_exists",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[1]/div[2]/div[1]/div[1]/div[9]/div[1]/video[1]",
+          "aria": "/document[1]/main[1]/region[2]/generic[1]/group[9]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Potential_1",
+        "message": "Verify that captions are available for any meaningful audio or provide a caption track for the <video> element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 174,
+          "top": 7400,
+          "height": 150,
+          "width": 300
+        },
+        "snippet": "<video webkit-playsinline=\"\" playsinline=\"\" muted=\"\" loop=\"\" autoplay=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/caption_track_exists.html#%7B%22message%22%3A%22Verify%20that%20captions%20are%20available%20for%20any%20meaningful%20audio%20or%20provide%20a%20caption%20track%20for%20the%20%3Cvideo%3E%20element%22%2C%22snippet%22%3A%22%3Cvideo%20webkit-playsinline%3D%5C%22%5C%22%20playsinline%3D%5C%22%5C%22%20muted%3D%5C%22%5C%22%20loop%3D%5C%22%5C%22%20autoplay%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22caption_track_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "caption_track_exists",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[1]/div[2]/div[1]/div[1]/div[10]/div[1]/video[1]",
+          "aria": "/document[1]/main[1]/region[2]/generic[1]/group[10]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Potential_1",
+        "message": "Verify that captions are available for any meaningful audio or provide a caption track for the <video> element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 174,
+          "top": 7572,
+          "height": 150,
+          "width": 300
+        },
+        "snippet": "<video webkit-playsinline=\"\" playsinline=\"\" muted=\"\" loop=\"\" autoplay=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/caption_track_exists.html#%7B%22message%22%3A%22Verify%20that%20captions%20are%20available%20for%20any%20meaningful%20audio%20or%20provide%20a%20caption%20track%20for%20the%20%3Cvideo%3E%20element%22%2C%22snippet%22%3A%22%3Cvideo%20webkit-playsinline%3D%5C%22%5C%22%20playsinline%3D%5C%22%5C%22%20muted%3D%5C%22%5C%22%20loop%3D%5C%22%5C%22%20autoplay%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22caption_track_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "caption_track_exists",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[1]/div[2]/div[1]/div[1]/div[11]/div[1]/video[1]",
+          "aria": "/document[1]/main[1]/region[2]/generic[1]/group[11]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Potential_1",
+        "message": "Verify that captions are available for any meaningful audio or provide a caption track for the <video> element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 174,
+          "top": 7745,
+          "height": 150,
+          "width": 300
+        },
+        "snippet": "<video webkit-playsinline=\"\" playsinline=\"\" muted=\"\" loop=\"\" autoplay=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/caption_track_exists.html#%7B%22message%22%3A%22Verify%20that%20captions%20are%20available%20for%20any%20meaningful%20audio%20or%20provide%20a%20caption%20track%20for%20the%20%3Cvideo%3E%20element%22%2C%22snippet%22%3A%22%3Cvideo%20webkit-playsinline%3D%5C%22%5C%22%20playsinline%3D%5C%22%5C%22%20muted%3D%5C%22%5C%22%20loop%3D%5C%22%5C%22%20autoplay%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22caption_track_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "caption_track_exists",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[1]/div[2]/div[1]/div[1]/div[12]/div[1]/video[1]",
+          "aria": "/document[1]/main[1]/region[2]/generic[1]/group[12]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Potential_1",
+        "message": "Verify that captions are available for any meaningful audio or provide a caption track for the <video> element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 174,
+          "top": 7917,
+          "height": 150,
+          "width": 300
+        },
+        "snippet": "<video webkit-playsinline=\"\" playsinline=\"\" muted=\"\" loop=\"\" autoplay=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/caption_track_exists.html#%7B%22message%22%3A%22Verify%20that%20captions%20are%20available%20for%20any%20meaningful%20audio%20or%20provide%20a%20caption%20track%20for%20the%20%3Cvideo%3E%20element%22%2C%22snippet%22%3A%22%3Cvideo%20webkit-playsinline%3D%5C%22%5C%22%20playsinline%3D%5C%22%5C%22%20muted%3D%5C%22%5C%22%20loop%3D%5C%22%5C%22%20autoplay%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22caption_track_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "caption_track_exists",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[1]/div[2]/div[1]/div[1]/div[13]/div[1]/video[1]",
+          "aria": "/document[1]/main[1]/region[2]/generic[1]/group[13]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Potential_1",
+        "message": "Verify that captions are available for any meaningful audio or provide a caption track for the <video> element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 174,
+          "top": 8090,
+          "height": 150,
+          "width": 300
+        },
+        "snippet": "<video webkit-playsinline=\"\" playsinline=\"\" muted=\"\" loop=\"\" autoplay=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/caption_track_exists.html#%7B%22message%22%3A%22Verify%20that%20captions%20are%20available%20for%20any%20meaningful%20audio%20or%20provide%20a%20caption%20track%20for%20the%20%3Cvideo%3E%20element%22%2C%22snippet%22%3A%22%3Cvideo%20webkit-playsinline%3D%5C%22%5C%22%20playsinline%3D%5C%22%5C%22%20muted%3D%5C%22%5C%22%20loop%3D%5C%22%5C%22%20autoplay%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22caption_track_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "caption_track_exists",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[1]/div[2]/div[1]/div[1]/div[14]/div[1]/video[1]",
+          "aria": "/document[1]/main[1]/region[2]/generic[1]/group[14]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Potential_1",
+        "message": "Verify that captions are available for any meaningful audio or provide a caption track for the <video> element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 174,
+          "top": 8262,
+          "height": 150,
+          "width": 300
+        },
+        "snippet": "<video webkit-playsinline=\"\" playsinline=\"\" muted=\"\" loop=\"\" autoplay=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/caption_track_exists.html#%7B%22message%22%3A%22Verify%20that%20captions%20are%20available%20for%20any%20meaningful%20audio%20or%20provide%20a%20caption%20track%20for%20the%20%3Cvideo%3E%20element%22%2C%22snippet%22%3A%22%3Cvideo%20webkit-playsinline%3D%5C%22%5C%22%20playsinline%3D%5C%22%5C%22%20muted%3D%5C%22%5C%22%20loop%3D%5C%22%5C%22%20autoplay%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22caption_track_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "caption_track_exists",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[1]/div[2]/div[1]/div[1]/div[15]/div[1]/video[1]",
+          "aria": "/document[1]/main[1]/region[2]/generic[1]/group[15]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Potential_1",
+        "message": "Verify that captions are available for any meaningful audio or provide a caption track for the <video> element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 174,
+          "top": 8435,
+          "height": 150,
+          "width": 300
+        },
+        "snippet": "<video webkit-playsinline=\"\" playsinline=\"\" muted=\"\" loop=\"\" autoplay=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/caption_track_exists.html#%7B%22message%22%3A%22Verify%20that%20captions%20are%20available%20for%20any%20meaningful%20audio%20or%20provide%20a%20caption%20track%20for%20the%20%3Cvideo%3E%20element%22%2C%22snippet%22%3A%22%3Cvideo%20webkit-playsinline%3D%5C%22%5C%22%20playsinline%3D%5C%22%5C%22%20muted%3D%5C%22%5C%22%20loop%3D%5C%22%5C%22%20autoplay%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22caption_track_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "caption_track_exists",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[1]/div[2]/div[1]/div[1]/div[16]/div[1]/video[1]",
+          "aria": "/document[1]/main[1]/region[2]/generic[1]/group[16]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Potential_1",
+        "message": "Verify that captions are available for any meaningful audio or provide a caption track for the <video> element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 174,
+          "top": 8607,
+          "height": 150,
+          "width": 300
+        },
+        "snippet": "<video webkit-playsinline=\"\" playsinline=\"\" muted=\"\" loop=\"\" autoplay=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/caption_track_exists.html#%7B%22message%22%3A%22Verify%20that%20captions%20are%20available%20for%20any%20meaningful%20audio%20or%20provide%20a%20caption%20track%20for%20the%20%3Cvideo%3E%20element%22%2C%22snippet%22%3A%22%3Cvideo%20webkit-playsinline%3D%5C%22%5C%22%20playsinline%3D%5C%22%5C%22%20muted%3D%5C%22%5C%22%20loop%3D%5C%22%5C%22%20autoplay%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22caption_track_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "caption_track_exists",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[1]/div[2]/div[1]/div[1]/div[17]/div[1]/video[1]",
+          "aria": "/document[1]/main[1]/region[2]/generic[1]/group[17]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Potential_1",
+        "message": "Verify that captions are available for any meaningful audio or provide a caption track for the <video> element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 174,
+          "top": 8780,
+          "height": 150,
+          "width": 300
+        },
+        "snippet": "<video webkit-playsinline=\"\" playsinline=\"\" muted=\"\" loop=\"\" autoplay=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/caption_track_exists.html#%7B%22message%22%3A%22Verify%20that%20captions%20are%20available%20for%20any%20meaningful%20audio%20or%20provide%20a%20caption%20track%20for%20the%20%3Cvideo%3E%20element%22%2C%22snippet%22%3A%22%3Cvideo%20webkit-playsinline%3D%5C%22%5C%22%20playsinline%3D%5C%22%5C%22%20muted%3D%5C%22%5C%22%20loop%3D%5C%22%5C%22%20autoplay%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22caption_track_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "caption_track_exists",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[1]/div[2]/div[1]/div[1]/div[18]/div[1]/video[1]",
+          "aria": "/document[1]/main[1]/region[2]/generic[1]/group[18]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Potential_1",
+        "message": "Verify that captions are available for any meaningful audio or provide a caption track for the <video> element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 174,
+          "top": 8952,
+          "height": 150,
+          "width": 300
+        },
+        "snippet": "<video webkit-playsinline=\"\" playsinline=\"\" muted=\"\" loop=\"\" autoplay=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/caption_track_exists.html#%7B%22message%22%3A%22Verify%20that%20captions%20are%20available%20for%20any%20meaningful%20audio%20or%20provide%20a%20caption%20track%20for%20the%20%3Cvideo%3E%20element%22%2C%22snippet%22%3A%22%3Cvideo%20webkit-playsinline%3D%5C%22%5C%22%20playsinline%3D%5C%22%5C%22%20muted%3D%5C%22%5C%22%20loop%3D%5C%22%5C%22%20autoplay%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22caption_track_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "caption_track_exists",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[1]/div[2]/div[1]/div[1]/div[19]/div[1]/video[1]",
+          "aria": "/document[1]/main[1]/region[2]/generic[1]/group[19]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Potential_1",
+        "message": "Verify that captions are available for any meaningful audio or provide a caption track for the <video> element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 174,
+          "top": 9125,
+          "height": 150,
+          "width": 300
+        },
+        "snippet": "<video webkit-playsinline=\"\" playsinline=\"\" muted=\"\" loop=\"\" autoplay=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/caption_track_exists.html#%7B%22message%22%3A%22Verify%20that%20captions%20are%20available%20for%20any%20meaningful%20audio%20or%20provide%20a%20caption%20track%20for%20the%20%3Cvideo%3E%20element%22%2C%22snippet%22%3A%22%3Cvideo%20webkit-playsinline%3D%5C%22%5C%22%20playsinline%3D%5C%22%5C%22%20muted%3D%5C%22%5C%22%20loop%3D%5C%22%5C%22%20autoplay%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22caption_track_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "caption_track_exists",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[1]/div[2]/div[1]/div[1]/div[20]/div[1]/video[1]",
+          "aria": "/document[1]/main[1]/region[2]/generic[1]/group[20]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Potential_1",
+        "message": "Verify that captions are available for any meaningful audio or provide a caption track for the <video> element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 174,
+          "top": 9297,
+          "height": 150,
+          "width": 300
+        },
+        "snippet": "<video webkit-playsinline=\"\" playsinline=\"\" muted=\"\" loop=\"\" autoplay=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/caption_track_exists.html#%7B%22message%22%3A%22Verify%20that%20captions%20are%20available%20for%20any%20meaningful%20audio%20or%20provide%20a%20caption%20track%20for%20the%20%3Cvideo%3E%20element%22%2C%22snippet%22%3A%22%3Cvideo%20webkit-playsinline%3D%5C%22%5C%22%20playsinline%3D%5C%22%5C%22%20muted%3D%5C%22%5C%22%20loop%3D%5C%22%5C%22%20autoplay%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22caption_track_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "caption_track_exists",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[1]/div[2]/div[1]/div[1]/div[21]/div[1]/video[1]",
+          "aria": "/document[1]/main[1]/region[2]/generic[1]/group[21]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Potential_1",
+        "message": "Verify that captions are available for any meaningful audio or provide a caption track for the <video> element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 174,
+          "top": 9470,
+          "height": 150,
+          "width": 300
+        },
+        "snippet": "<video webkit-playsinline=\"\" playsinline=\"\" muted=\"\" loop=\"\" autoplay=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/caption_track_exists.html#%7B%22message%22%3A%22Verify%20that%20captions%20are%20available%20for%20any%20meaningful%20audio%20or%20provide%20a%20caption%20track%20for%20the%20%3Cvideo%3E%20element%22%2C%22snippet%22%3A%22%3Cvideo%20webkit-playsinline%3D%5C%22%5C%22%20playsinline%3D%5C%22%5C%22%20muted%3D%5C%22%5C%22%20loop%3D%5C%22%5C%22%20autoplay%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22caption_track_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "caption_track_exists",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[1]/div[2]/div[1]/div[1]/div[22]/div[1]/video[1]",
+          "aria": "/document[1]/main[1]/region[2]/generic[1]/group[22]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Potential_1",
+        "message": "Verify that captions are available for any meaningful audio or provide a caption track for the <video> element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 174,
+          "top": 9642,
+          "height": 150,
+          "width": 300
+        },
+        "snippet": "<video webkit-playsinline=\"\" playsinline=\"\" muted=\"\" loop=\"\" autoplay=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/caption_track_exists.html#%7B%22message%22%3A%22Verify%20that%20captions%20are%20available%20for%20any%20meaningful%20audio%20or%20provide%20a%20caption%20track%20for%20the%20%3Cvideo%3E%20element%22%2C%22snippet%22%3A%22%3Cvideo%20webkit-playsinline%3D%5C%22%5C%22%20playsinline%3D%5C%22%5C%22%20muted%3D%5C%22%5C%22%20loop%3D%5C%22%5C%22%20autoplay%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22caption_track_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "caption_track_exists",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[1]/div[2]/div[1]/div[1]/div[23]/div[1]/video[1]",
+          "aria": "/document[1]/main[1]/region[2]/generic[1]/group[23]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Potential_1",
+        "message": "Verify that captions are available for any meaningful audio or provide a caption track for the <video> element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 174,
+          "top": 9815,
+          "height": 150,
+          "width": 300
+        },
+        "snippet": "<video webkit-playsinline=\"\" playsinline=\"\" muted=\"\" loop=\"\" autoplay=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/caption_track_exists.html#%7B%22message%22%3A%22Verify%20that%20captions%20are%20available%20for%20any%20meaningful%20audio%20or%20provide%20a%20caption%20track%20for%20the%20%3Cvideo%3E%20element%22%2C%22snippet%22%3A%22%3Cvideo%20webkit-playsinline%3D%5C%22%5C%22%20playsinline%3D%5C%22%5C%22%20muted%3D%5C%22%5C%22%20loop%3D%5C%22%5C%22%20autoplay%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22caption_track_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "caption_track_exists",
+        "value": [
+          "VIOLATION",
+          "POTENTIAL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/section[6]/div[1]/div[2]/div[1]/div[1]/div[24]/div[1]/video[1]",
+          "aria": "/document[1]/main[1]/region[2]/generic[1]/group[24]"
+        },
+        "ruleTime": 0,
+        "reasonId": "Potential_1",
+        "message": "Verify that captions are available for any meaningful audio or provide a caption track for the <video> element",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 174,
+          "top": 9987,
+          "height": 150,
+          "width": 300
+        },
+        "snippet": "<video webkit-playsinline=\"\" playsinline=\"\" muted=\"\" loop=\"\" autoplay=\"\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "potentialviolation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/caption_track_exists.html#%7B%22message%22%3A%22Verify%20that%20captions%20are%20available%20for%20any%20meaningful%20audio%20or%20provide%20a%20caption%20track%20for%20the%20%3Cvideo%3E%20element%22%2C%22snippet%22%3A%22%3Cvideo%20webkit-playsinline%3D%5C%22%5C%22%20playsinline%3D%5C%22%5C%22%20muted%3D%5C%22%5C%22%20loop%3D%5C%22%5C%22%20autoplay%3D%5C%22%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22POTENTIAL%22%5D%2C%22reasonId%22%3A%22Potential_1%22%2C%22ruleId%22%3A%22caption_track_exists%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "svg_graphics_labelled",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/main[1]/div[1]/div[3]/svg[1]",
+          "aria": "/document[1]/main[1]/graphics-document[2]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_acc_name",
+        "message": "The SVG element has no accessible name",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 8,
+          "top": 11062,
+          "height": 24,
+          "width": 24
+        },
+        "snippet": "<svg fill=\"none\" viewBox=\"0 0 24 24\" height=\"24\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/svg_graphics_labelled.html#%7B%22message%22%3A%22The%20SVG%20element%20has%20no%20accessible%20name%22%2C%22snippet%22%3A%22%3Csvg%20fill%3D%5C%22none%5C%22%20viewBox%3D%5C%220%200%2024%2024%5C%22%20height%3D%5C%2224%5C%22%20width%3D%5C%2224%5C%22%20xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_acc_name%22%2C%22ruleId%22%3A%22svg_graphics_labelled%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "svg_graphics_labelled",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/footer[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[3]/a[1]/div[1]/svg[1]",
+          "aria": "/document[1]/contentinfo[1]/list[1]/listitem[3]/link[1]/graphics-document[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_acc_name",
+        "message": "The SVG element has no accessible name",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 48,
+          "top": 11378,
+          "height": 20,
+          "width": 20
+        },
+        "snippet": "<svg fill=\"none\" viewBox=\"0 0 20 20\" height=\"20\" width=\"20\" xmlns=\"http://www.w3.org/2000/svg\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/svg_graphics_labelled.html#%7B%22message%22%3A%22The%20SVG%20element%20has%20no%20accessible%20name%22%2C%22snippet%22%3A%22%3Csvg%20fill%3D%5C%22none%5C%22%20viewBox%3D%5C%220%200%2020%2020%5C%22%20height%3D%5C%2220%5C%22%20width%3D%5C%2220%5C%22%20xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_acc_name%22%2C%22ruleId%22%3A%22svg_graphics_labelled%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      },
+      {
+        "ruleId": "svg_graphics_labelled",
+        "value": [
+          "VIOLATION",
+          "FAIL"
+        ],
+        "path": {
+          "dom": "/html[1]/body[1]/div[1]/footer[1]/div[1]/div[1]/div[1]/div[2]/div[1]/ul[1]/li[4]/a[1]/div[1]/svg[1]",
+          "aria": "/document[1]/contentinfo[1]/list[1]/listitem[4]/link[1]/graphics-document[1]"
+        },
+        "ruleTime": 0,
+        "reasonId": "fail_acc_name",
+        "message": "The SVG element has no accessible name",
+        "messageArgs": [],
+        "apiArgs": [],
+        "bounds": {
+          "left": 48,
+          "top": 11453,
+          "height": 20,
+          "width": 20
+        },
+        "snippet": "<svg fill=\"none\" viewBox=\"0 0 20 20\" height=\"20\" width=\"20\" xmlns=\"http://www.w3.org/2000/svg\">",
+        "source": null,
+        "category": "Accessibility",
+        "level": "violation",
+        "ignored": false,
+        "help": "https://able.ibm.com/rules/archives/2026.07.13/doc/en-US/svg_graphics_labelled.html#%7B%22message%22%3A%22The%20SVG%20element%20has%20no%20accessible%20name%22%2C%22snippet%22%3A%22%3Csvg%20fill%3D%5C%22none%5C%22%20viewBox%3D%5C%220%200%2020%2020%5C%22%20height%3D%5C%2220%5C%22%20width%3D%5C%2220%5C%22%20xmlns%3D%5C%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%5C%22%3E%22%2C%22value%22%3A%5B%22VIOLATION%22%2C%22FAIL%22%5D%2C%22reasonId%22%3A%22fail_acc_name%22%2C%22ruleId%22%3A%22svg_graphics_labelled%22%2C%22msgArgs%22%3A%5B%5D%7D"
+      }
+    ],
+    "numExecuted": 3235,
+    "ruleTime": 58,
+    "nls": {
+      "label_name_visible": {
+        "0": "Accessible name must match or contain the visible label text",
+        "Fail_1": "Accessible name does not match or contain the visible label text"
+      },
+      "input_label_exists": {
+        "0": "Each form control must have an associated label",
+        "Fail_1": "Form control element <{0}> has no associated label"
+      },
+      "svg_graphics_labelled": {
+        "0": "A non-decorative SVG element must have an accessible name",
+        "fail_acc_name": "The SVG element has no accessible name"
+      },
+      "caption_track_exists": {
+        "0": "A <video> element must have a text alternative for any meaningful audio content",
+        "Potential_1": "Verify that captions are available for any meaningful audio or provide a caption track for the <video> element"
+      },
+      "aria_region_labelled": {
+        "0": "Each element with \"region\" role must have a label that describes its purpose",
+        "Fail_1": "Element with \"region\" role does not have a label"
+      },
+      "text_block_heading": {
+        "0": "Heading text should use a heading element or role",
+        "potential_heading": "Confirm this text '{0}' is used as a heading and if so, modify to use a heading element or role"
+      }
+    },
+    "summary": {
+      "counts": {
+        "ignored": 0,
+        "elements": 80,
+        "elementsViolation": 11,
+        "elementsViolationReview": 66,
+        "violation": 11,
+        "potentialviolation": 46,
+        "recommendation": 4,
+        "potentialrecommendation": 10,
+        "manual": 34,
+        "pass": 3130
+      },
+      "scanTime": 174,
+      "ruleArchive": "Latest Deployment (latest)",
+      "policies": [
+        "IBM_Accessibility"
+      ],
+      "reportLevels": [
+        "violation",
+        "potentialviolation"
+      ],
+      "startScan": 1785260651984,
+      "URL": "data:text/html;charset=utf-8,%3C!doctype%20html%3E%0A%3Chtml%20lang%3D%22en%22%3E%0A%3Chead%3E%0A%20%20%3Cmeta%20charset%3D%22utf-8%22%3E%0A%20%20%3Ctitle%3EFauna%20Robotics%20%7C%20Capable%2C%20Safe%2C%20Fun%20Robots%20for%20Everyone%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%3Cbody%3E%0A%3Cbody%3E%3Cdiv%20class%3D%22page-wrapper%22%3E%3Cdiv%20class%3D%22style-guide-utilities%22%3E%3Cdiv%20class%3D%22style-guide__global-styles%20w-embed%22%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22style-guide__pm-reseters%20w-embed%22%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22style-guide__buttons%20w-embed%22%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22style-guide__links%20w-embed%22%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22style-guide__text-styles%20w-embed%22%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22style-guide__typography%20w-embed%22%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22style-guide__margins%20w-embed%22%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22style-guide__tabs%20w-embed%22%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22style-guide__footer%20w-embed%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22w-embed%22%3E%3C%2Fdiv%3E%3Cdiv%20data-animation%3D%22default%22%20data-collapse%3D%22all%22%20data-duration%3D%22400%22%20data-easing%3D%22ease%22%20data-easing2%3D%22ease%22%20role%3D%22banner%22%20class%3D%22navbar%20w-nav%22%3E%3Cdiv%20class%3D%22container%20is--navbar%22%3E%3Ca%20href%3D%22%2F%22%20aria-current%3D%22page%22%20class%3D%22navbar-logo__wrapper%20w-nav-brand%20w--current%22%20aria-label%3D%22home%22%3E%3Cdiv%20class%3D%22logo-wrapper%20w-embed%22%3E%3Ccanvas%20id%3D%22logo%22%20width%3D%22200%22%20height%3D%2260%22%3E%3C%2Fcanvas%3E%3C%2Fdiv%3E%3C%2Fa%3E%3Cdiv%20class%3D%22navbar-menu%22%3E%3Cdiv%20class%3D%22navbar-menu__content%22%3E%3Cdiv%20class%3D%22navbar-menu__list%22%3E%3Ca%20href%3D%22%2F%22%20aria-current%3D%22page%22%20class%3D%22navbar-link%20w--current%22%3EHome%3C%2Fa%3E%3Ca%20href%3D%22%2Fproduct%22%20class%3D%22navbar-link%22%3EProduct%3C%2Fa%3E%3Ca%20href%3D%22%2Fcompany%22%20class%3D%22navbar-link%22%3ECompany%3C%2Fa%3E%3Ca%20href%3D%22https%3A%2F%2Fwww.amazon.jobs%2Fen%2Fsearch%3Fbase_query%3Dfauna%22%20target%3D%22_blank%22%20class%3D%22navbar-link%22%3ECareers%3C%2Fa%3E%3Ca%20href%3D%22%2Fnews%22%20class%3D%22navbar-link%22%3ENews%3C%2Fa%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22navbar-menu__popup-trigger%22%3E%3Cdiv%20class%3D%22w-dyn-list%22%3E%3Cdiv%20role%3D%22list%22%20class%3D%22w-dyn-items%22%3E%3Cdiv%20role%3D%22listitem%22%20class%3D%22w-dyn-item%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20sizes%3D%22100vw%22%20class%3D%22absolute-cover%20is--cover%22%3E%3C!--%24--%3E%3Cbutton%20class%3D%22popup-trigger%22%3E%3C%2Fbutton%3E%3C!--%2F%24--%3E%3Cdiv%20class%3D%22button-secondary%20button-large%20button-icon%20is--trigger%20is--navbar%22%3E%3Cdiv%20class%3D%22w-embed%22%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%3E%0A%20%20%3Cpath%20d%3D%22M16.589%208.37749C18.0631%209.11454%2018.0631%2011.2181%2016.589%2011.9552L6.39443%2017.0525C5.06462%2017.7174%203.5%2016.7504%203.5%2015.2636L3.5%205.06908C3.5%203.58231%205.06463%202.61532%206.39443%203.28022L16.589%208.37749Z%22%20fill%3D%22currentColor%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22p-m%22%3EPlay%20video%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22navbar-menu__content-buttons%22%3E%3Ca%20href%3D%22https%3A%2F%2Fform.typeform.com%2Fto%2FHsZsaqmn%22%20target%3D%22_blank%22%20class%3D%22button-large%20button-primary%20w-inline-block%22%3E%3Cdiv%3ERequest%20Robot%3C%2Fdiv%3E%3C%2Fa%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22navbar-buttons%22%3E%3Cdiv%20class%3D%22navbar-buttons__toggle%22%3E%3Cdiv%20class%3D%22navbar-menu__button%20morph-btn%20w-nav-button%22%20style%3D%22-webkit-user-select%3A%20text%3B%22%20aria-label%3D%22menu%22%20role%3D%22button%22%20tabindex%3D%220%22%20aria-controls%3D%22w-nav-overlay-0%22%20aria-haspopup%3D%22menu%22%20aria-expanded%3D%22false%22%3E%3Cdiv%20class%3D%22navbar-menu__button-overlay%20btn-icon%22%3E%3Cdiv%20class%3D%22navbar-menu__button-line%20is--top%22%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22navbar-menu__button-line%20is--bottom%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22navbar-menu__button-fake%22%3E%3Cdiv%3EWhite%20papers%3C%2Fdiv%3E%3Cdiv%20class%3D%22embed-icon%20w-embed%22%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%3E%0A%20%20%3Cpath%20d%3D%22M4.14575%209.95801L14.9791%209.95801%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%3E%3C%2Fpath%3E%0A%20%20%3Cpath%20d%3D%22M9.979%204.125L15.8123%209.95833L9.979%2015.7917%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22navbar-buttons__cta%22%3E%3Ca%20href%3D%22https%3A%2F%2Fform.typeform.com%2Fto%2FHsZsaqmn%22%20target%3D%22_blank%22%20class%3D%22button-large%20button-primary%20w-inline-block%22%3E%3Cdiv%3ERequest%20Robot%3C%2Fdiv%3E%3C%2Fa%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22w-nav-overlay%22%20data-wf-ignore%3D%22%22%20id%3D%22w-nav-overlay-0%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cmain%20class%3D%22main-wrapper%20is--home%22%3E%3Csection%20class%3D%22section%22%3E%3Cdiv%20class%3D%22container%20is--home-hero%22%3E%3Cdiv%20class%3D%22home-hero%22%3E%3Cdiv%20class%3D%22home-hero__title%22%3E%3Ch1%20class%3D%22h5%22%3ECapable%2C%20safe%2C%20fun.%20%3C!--%24--%3E%3Cbr%3E%3C!--%2F%24--%3ERobots%20for%20everyone.%3C%2Fh1%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22home-hero__asset%22%3E%3Cdiv%20class%3D%22w-dyn-list%22%3E%3Cdiv%20role%3D%22list%22%20class%3D%22w-dyn-items%22%3E%3Cdiv%20role%3D%22listitem%22%20class%3D%22w-dyn-item%22%3E%3Cdiv%20class%3D%22product-hero__video-embed%20is--static%20w-embed%22%3E%3Cvideo%20autoplay%3D%22%22%20loop%3D%22%22%20muted%3D%22%22%20playsinline%3D%22%22%20webkit-playsinline%3D%22%22%20poster%3D%22https%3A%2F%2Fcdn.prod.website-files.com%2F693933367980a29f6ff36b6d%2F69775f38bf0b15f93ba8046b_home-teaser.webp%22%3E%0A%20%20%3Csource%20type%3D%22video%2Fmp4%22%3E%0A%3C%2Fvideo%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22home-hero__partners%22%3E%3Cdiv%20class%3D%22text-black-300%22%3ETrusted%20by%3C%2Fdiv%3E%3Cdiv%20class%3D%22splide%20is--loop-autoscroll%20splide--loop%20splide--ltr%20splide--draggable%20is-active%20is-overflow%20is-initialized%22%20id%3D%22splide01%22%20role%3D%22region%22%20aria-roledescription%3D%22carousel%22%3E%3Cdiv%20class%3D%22splide__track%20w-dyn-list%20splide__track--loop%20splide__track--ltr%20splide__track--draggable%22%20id%3D%22splide01-track%22%20aria-live%3D%22polite%22%20aria-atomic%3D%22true%22%20style%3D%22padding-left%3A%200px%3B%20padding-right%3A%200px%3B%22%3E%3Cdiv%20role%3D%22presentation%22%20class%3D%22splide__list%20is--partners%20w-dyn-items%22%20id%3D%22splide01-list%22%20style%3D%22transform%3A%20translateX(-1134px)%3B%22%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%20is-active%22%20id%3D%22splide01-clone01%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%221%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22partner-slider__wrapper-logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%22%20id%3D%22splide01-clone02%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%222%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22partner-slider__wrapper-logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%22%20id%3D%22splide01-clone03%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%223%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22partner-slider__wrapper-logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%22%20id%3D%22splide01-clone04%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%224%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22partner-slider__wrapper-logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%20is-visible%20is-prev%22%20id%3D%22splide01-clone05%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%225%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%3E%3Cdiv%20class%3D%22partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22partner-slider__wrapper-logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20is-active%20is-visible%22%20id%3D%22splide01-slide01%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%221%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%3E%3Cdiv%20class%3D%22partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22partner-slider__wrapper-logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20is-visible%20is-next%22%20id%3D%22splide01-slide02%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%222%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%3E%3Cdiv%20class%3D%22partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22partner-slider__wrapper-logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%22%20id%3D%22splide01-slide03%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%223%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22partner-slider__wrapper-logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%22%20id%3D%22splide01-slide04%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%224%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22partner-slider__wrapper-logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%22%20id%3D%22splide01-slide05%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%225%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22partner-slider__wrapper-logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%20is-active%22%20id%3D%22splide01-clone06%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%221%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22partner-slider__wrapper-logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%22%20id%3D%22splide01-clone07%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%222%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22partner-slider__wrapper-logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%22%20id%3D%22splide01-clone08%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%223%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22partner-slider__wrapper-logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%22%20id%3D%22splide01-clone09%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%224%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22partner-slider__wrapper-logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--partners%20w-dyn-item%20splide__slide--clone%22%20id%3D%22splide01-clone10%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%225%20of%205%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22partner-slider__wrapper%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22partner-slider__wrapper-logo%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22home-hero__partners-gradient%22%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22home-hero__partners-gradient%20is--right%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fsection%3E%3Csection%20id%3D%22demo%22%20class%3D%22section%22%3E%3Cdiv%20class%3D%22container%20is--demo%22%20style%3D%22transition%3A%20max-width%200.5s%20ease-in-out%3B%22%3E%3Cdiv%20class%3D%22home-demo%22%3E%3Cdiv%20class%3D%22home-demo__title%22%3E%3Ch2%20class%3D%22h5%22%3ECreate%20new%20experiences.%3C!--%24--%3E%3Cbr%3E%3C!--%2F%24--%3EShipping%20today.%3C%2Fh2%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22home-demo__video%22%3E%3Cdiv%20class%3D%22w-dyn-list%22%3E%3Cdiv%20role%3D%22list%22%20class%3D%22w-dyn-items%22%3E%3Cdiv%20role%3D%22listitem%22%20class%3D%22w-dyn-item%22%3E%3C!--%24--%3E%3Cbutton%20class%3D%22button-secondary%20is--icon%20button-play__video%22%20style%3D%22position%3A%20absolute%3B%20left%3A%2050%25%3B%20top%3A%2050%25%3B%20transform%3A%20translate(-50%25%2C%20-50%25)%3B%20z-index%3A%2010%3B%20transition%3A%20opacity%200.3s%3B%22%3E%3Cdiv%20class%3D%22w-embed%22%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%3E%0A%20%20%3Cpath%20d%3D%22M16.589%208.37749C18.0631%209.11454%2018.0631%2011.2181%2016.589%2011.9552L6.39443%2017.0525C5.06462%2017.7174%203.5%2016.7504%203.5%2015.2636L3.5%205.06908C3.5%203.58231%205.06463%202.61532%206.39443%203.28022L16.589%208.37749Z%22%20fill%3D%22currentColor%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22p-m%22%3EPlay%20video%3C%2Fdiv%3E%3C%2Fbutton%3E%3C!--%2F%24--%3E%3Cdiv%20class%3D%22product-hero__video-embed%20w-embed%20w-iframe%22%3E%3Cdiv%20style%3D%22padding-top%3A%2056.25%25%3B%20width%3A%20100%25%3B%20position%3A%20relative%3B%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22home-demo__overlay%22%20style%3D%22z-index%3A%205%3B%20transition%3A%20opacity%200.3s%3B%20cursor%3A%20pointer%3B%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22home-demo__grid%22%3E%3Cdiv%20class%3D%22home-demo__grid-item%22%3E%3Cdiv%20class%3D%22home-demo__item-asset%22%3E%3C!--%24--%3E%3Ccanvas%20id%3D%22home-icon-1%22%20width%3D%2264%22%20height%3D%2264%22%3E%3C%2Fcanvas%3E%3C!--%2F%24--%3E%3C%2Fdiv%3E%3Ch3%20class%3D%22h4%22%3EFor%20developers%3C%2Fh3%3E%3Cp%20class%3D%22text-black-300%22%3EBuild%20and%20test%20your%20own%20applications%20on%20easy-to-use%20hardware%20with%20full%20%3C!--%24--%3E%3Cbr%3E%3C!--%2F%24--%3ESDK%20access.%3C%2Fp%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22home-demo__grid-item%22%3E%3Cdiv%20class%3D%22home-demo__item-asset%22%3E%3C!--%24--%3E%3Ccanvas%20id%3D%22home-icon-2%22%20width%3D%2264%22%20height%3D%2264%22%3E%3C%2Fcanvas%3E%3C!--%2F%24--%3E%3C%2Fdiv%3E%3Ch3%20class%3D%22h4%22%3EFor%20enterprises%3C%2Fh3%3E%3Cp%20class%3D%22text-black-300%22%3ECreate%20next-generation%20AI%20applications%20that%20solve%20real%20business%20problems%20and%20deploy%20safely%20in%20human%20environments.%3C%2Fp%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22home-demo__grid-item%22%3E%3Cdiv%20class%3D%22home-demo__item-asset%22%3E%3C!--%24--%3E%3Ccanvas%20id%3D%22home-icon-3%22%20width%3D%2264%22%20height%3D%2264%22%3E%3C%2Fcanvas%3E%3C!--%2F%24--%3E%3C%2Fdiv%3E%3Ch3%20class%3D%22h4%22%3EFor%20researchers%3C%2Fh3%3E%3Cp%20class%3D%22text-black-300%22%3EStudy%20locomotion%2C%20manipulation%2C%20autonomy%2C%20and%20human-robot%20interaction%20on%20a%20versatile%20humanoid%20platform.%3C%2Fp%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fsection%3E%3Csection%20class%3D%22section%22%3E%3Cdiv%20class%3D%22container%22%3E%3Cdiv%20class%3D%22home-bento%22%3E%3Cdiv%20class%3D%22home-bento__title%22%3E%3Ch2%20class%3D%22h5%22%3EA%20modern%20platform%E2%80%A8%3C!--%24--%3E%3Cbr%3E%3C!--%2F%24--%3Efor%20robotics%20development%3C%2Fh2%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22home-bento__grid%22%3E%3Cdiv%20id%3D%22w-node-e5263c37-0808-ba09-802c-cccbb7d4c9d9-e7e3fd1b%22%20class%3D%22home-bento__grid-item%20is--1%22%3E%3Cdiv%20class%3D%22product-bento__item-header%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22product-bento__header-icon%22%3E%3Ch3%20class%3D%22h4%22%3EModular%20autonomy%3C%2Fh3%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22scan-animation%22%20data-rive-url%3D%22https%3A%2F%2Fcdn.prod.website-files.com%2F6931911db0300aa6e7e3fc81%2F6970b762f6c3a0eeccbd25e1_06_scan_(1).riv%22%20data-rive-state-machine%3D%22State%20Machine%201%22%20data-rive-artboard%3D%2206%20scan%22%20data-rive-autoplay%3D%22true%22%20data-rive-is-touch-scroll-enabled%3D%22false%22%20data-rive-automatically-handle-events%3D%22false%22%20data-rive-fit%3D%22contain%22%20data-rive-alignment%3D%22center%22%20data-animation-type%3D%22rive%22%3E%3Ccanvas%20style%3D%22height%3A100%25%3Bwidth%3A100%25%22%20width%3D%22552%22%20height%3D%22276%22%3E%3C%2Fcanvas%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20id%3D%22w-node-_47ebc224-0349-2b20-020b-4578c3f64197-e7e3fd1b%22%20class%3D%22home-bento__grid-item%20is--2%22%3E%3Cdiv%20class%3D%22product-bento__item-header%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22product-bento__header-icon%22%3E%3Ch3%20class%3D%22h4%22%3ECompliant%2C%20capable%20locomotion%20%3C%2Fh3%3E%3C%2Fdiv%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22full-cover-image%20is--absolute%20is--negative%22%3E%3C%2Fdiv%3E%3Cdiv%20id%3D%22w-node-_212c956c-2011-f302-5e78-5b7faa9f5a4b-e7e3fd1b%22%20class%3D%22home-bento__grid-item%20is--3%22%3E%3Cdiv%20class%3D%22tab-content__header-icon%20is--big%20is--hoem%22%3E%3C!--%24--%3E%3Ccanvas%20id%3D%22icon-2%22%20width%3D%22144%22%20height%3D%22144%22%3E%3C%2Fcanvas%3E%3C!--%2F%24--%3E%3C%2Fdiv%3E%3Ch3%20class%3D%22h2%22%3EWhole-body%20%3C!--%24--%3E%3Cbr%3E%3C!--%2F%24--%3Eteleoperation%3C%2Fh3%3E%3C%2Fdiv%3E%3Cdiv%20id%3D%22w-node-_87ecbd04-af81-9062-638a-4537eb05f5a6-e7e3fd1b%22%20class%3D%22home-bento__grid-item%20is--4%22%3E%3Cdiv%20class%3D%22w-dyn-list%22%3E%3Cdiv%20role%3D%22list%22%20class%3D%22w-dyn-items%22%3E%3Cdiv%20role%3D%22listitem%22%20class%3D%22w-dyn-item%22%3E%3Cdiv%20class%3D%22absolute-cover%20w-embed%22%3E%3Cvideo%20autoplay%3D%22%22%20loop%3D%22%22%20muted%3D%22%22%20playsinline%3D%22%22%20webkit-playsinline%3D%22%22%3E%0A%20%20%3Csource%20type%3D%22video%2Fmp4%22%3E%0A%3C%2Fvideo%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22tag%22%3E%3Cdiv%3EReady%20for%20developers%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20id%3D%22w-node-_5cae599d-cc18-5d47-d62f-2fe085d1ef7e-e7e3fd1b%22%20class%3D%22home-bento__grid-item%20is--5%22%3E%3Cdiv%20class%3D%22w-dyn-list%22%3E%3Cdiv%20role%3D%22list%22%20class%3D%22w-dyn-items%22%3E%3Cdiv%20role%3D%22listitem%22%20class%3D%22w-dyn-item%22%3E%3Cdiv%20class%3D%22absolute-cover%20w-embed%22%3E%3Cvideo%20autoplay%3D%22%22%20loop%3D%22%22%20muted%3D%22%22%20playsinline%3D%22%22%20webkit-playsinline%3D%22%22%3E%0A%20%20%3Csource%20type%3D%22video%2Fmp4%22%3E%0A%3C%2Fvideo%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22tag%22%3E%3Cdiv%3ESocially%20engaging%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20id%3D%22w-node-e05c303c-6f1d-7fe8-0890-54fd8d53a765-e7e3fd1b%22%20class%3D%22home-bento__grid-item%20is--6%22%3E%3Cdiv%20class%3D%22product-bento__item-header%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22product-bento__header-icon%22%3E%3Ch3%20class%3D%22h4%22%3ESafety-first%20design%3C%2Fh3%3E%3Cp%20class%3D%22text-black-300%22%3EDesigned%20for%20safer%20human%20interaction%20with%20lightweight%20materials%2C%20a%20soft%20exterior%2C%20minimized%20pinch%20points%2C%20onboard%20safety%20sensing%2C%20and%20compliant%20motor%20control%20that%20yields%20to%20external%20forces.%3C%2Fp%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fsection%3E%3Csection%20class%3D%22section%22%3E%3Cdiv%20class%3D%22container%20is--2x-padding%20is--usecases%22%3E%3Cdiv%20class%3D%22home-use__cases%20is--desktop%22%3E%3Cdiv%20class%3D%22home-use__cases-flex%22%3E%3Cdiv%20class%3D%22home-use__case%20mob-margin%22%3E%3Cdiv%20class%3D%22home-use__case-shape%20is--1%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22home-use__shape-image%20is--bottom%22%3E%3Cdiv%20class%3D%22home-use__shape-text%20is--top-left%22%3E%3Ch3%20class%3D%22h3%22%3ERetail%20%3C!--%24--%3E%3Cbr%3E%3C!--%2F%24--%3E%26amp%3B%20hospitality%3C%2Fh3%3E%3Cp%20style%3D%22opacity%3A%200%3B%20visibility%3A%20hidden%3B%22%3EWelcome%20guests%2C%20showcase%20products%2C%20and%20guide%20shoppers%20in%20stores%2C%20lobbies%2C%20and%20pop-ups.%20With%20custom%20voices%20and%20gestures%2C%20Sprout%20creates%20attention-grabbing%2C%20shareable%20experiences%20at%20scale.%3C%2Fp%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22home-use__case%22%3E%3Cdiv%20class%3D%22home-use__case-shape%20is--2%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22home-use__shape-image%20is--top%22%3E%3Cdiv%20class%3D%22home-use__shape-text%20is--center%22%3E%3Ch3%20class%3D%22h3%22%3EConsumer%3C!--%24--%3E%3Cbr%3E%3C!--%2F%24--%3E%20%26amp%3B%20home%3C%2Fh3%3E%3Cp%20style%3D%22opacity%3A%200%3B%20visibility%3A%20hidden%3B%22%3ECreate%20experiences%20in%20real%20spaces%20by%20transforming%20Sprout%20into%20a%20personal%20assistant%2C%20a%20companion%20for%20family%20members%2C%20or%20a%20friendly%20concierge%20for%20the%20home.%3C%2Fp%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22home-use__case%20mob-margin%22%3E%3Cdiv%20class%3D%22home-use__case-shape%20is--3%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22home-use__shape-image%20is--bottom%22%3E%3Cdiv%20class%3D%22home-use__shape-text%20is--top-left%22%3E%3Ch3%20class%3D%22h3%22%3EResearch%3C!--%24--%3E%3Cbr%3E%3C!--%2F%24--%3E%26amp%3B%26nbsp%3Beducation%3C%2Fh3%3E%3Cp%20style%3D%22opacity%3A%200%3B%20visibility%3A%20hidden%3B%22%3EAccelerate%20AI%20and%20academic%20robotics%20research.%20Sprout%20is%20great%20for%20collecting%20real-world%20data%20and%20advancing%20AI%20research%20across%20locomotion%2C%20manipulation%2C%20and%20interactive%20behaviors.%20Sprout%20also%20doubles%20as%20a%20safer%2C%20reliable%20platform%20for%20engineering%20curriculum%2C%20student%20projects%2C%20and%20competitions.%3C%2Fp%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22home-use__case%22%3E%3Cdiv%20class%3D%22home-use__case-shape%20is--4%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22home-use__shape-image%20is--top%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22home-use__shape-image%20is--bottom%20is--right%22%3E%3Cdiv%20class%3D%22home-use__shape-text%20is--center%20is--left-mob%22%3E%3Ch3%20class%3D%22h3%22%3EEntertainment%20%26amp%3B%26nbsp%3Bexperiences%3C%2Fh3%3E%3Cp%20style%3D%22opacity%3A%200%3B%20visibility%3A%20hidden%3B%22%3EBring%20interactive%20characters%20to%20life%20in%20parks%2C%20attractions%2C%20and%20live%20experiences.%20With%20custom%20voices%2C%20gestures%2C%20and%20movements%2C%20Sprout%20unlocks%20immersive%2C%20shareable%20guest%20interactions%20at%20scale.%3C%2Fp%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22home-use__cases%20is--smaller%22%3E%3Cdiv%20class%3D%22home-use__cases-flex%22%3E%3Cdiv%20class%3D%22home-use__case%20mob-margin%22%3E%3Cdiv%20class%3D%22home-use__case-shape%20is--1%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22home-use__shape-image%20is--bottom%22%3E%3Cdiv%20class%3D%22home-use__shape-text%20is--top-left%22%3E%3Ch3%20class%3D%22h3%22%3ERetail%20%3C!--%24--%3E%3Cbr%3E%3C!--%2F%24--%3E%26amp%3B%20hospitality%3C%2Fh3%3E%3Cp%3EWelcome%20guests%2C%20showcase%20products%2C%20and%20guide%20shoppers%20in%20stores%2C%20lobbies%2C%20and%20pop-ups.%20With%20custom%20voices%20and%20gestures%2C%20Sprout%20creates%20attention-grabbing%2C%20shareable%20experiences%20at%20scale.%3C%2Fp%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22home-use__case%22%3E%3Cdiv%20class%3D%22home-use__case-shape%20is--2%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22home-use__shape-image%20is--top%22%3E%3Cdiv%20class%3D%22home-use__shape-text%20is--center%22%3E%3Ch3%20class%3D%22h3%22%3EConsumer%3C!--%24--%3E%3Cbr%3E%3C!--%2F%24--%3E%20%26amp%3B%20home%3C%2Fh3%3E%3Cp%3ECreate%20experiences%20in%20real%20spaces%20by%20transforming%20Sprout%20into%20a%20personal%20assistant%2C%20a%20companion%20for%20family%20members%2C%20or%20a%20friendly%20concierge%20for%20the%20home.%3C%2Fp%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22home-use__case%20mob-margin%22%3E%3Cdiv%20class%3D%22home-use__case-shape%20is--3%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22home-use__shape-image%20is--bottom%22%3E%3Cdiv%20class%3D%22home-use__shape-text%20is--top-left%22%3E%3Ch3%20class%3D%22h3%22%3EResearch%3C!--%24--%3E%3Cbr%3E%3C!--%2F%24--%3E%26amp%3B%26nbsp%3Beducation%3C%2Fh3%3E%3Cp%3EAccelerate%20AI%20and%20academic%20robotics%20research.%20Sprout%20is%20great%20for%20collecting%20real-world%20data%20and%20advancing%20AI%20research%20across%20locomotion%2C%20manipulation%2C%20and%20interactive%20behaviors.%20Sprout%20also%20doubles%20as%20a%20safer%2C%20reliable%20platform%20for%20engineering%20curriculum%2C%20student%20projects%2C%20and%20competitions.%3C%2Fp%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22home-use__case%22%3E%3Cdiv%20class%3D%22home-use__case-shape%20is--4%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22home-use__shape-image%20is--top%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22home-use__shape-image%20is--bottom%20is--right%22%3E%3Cdiv%20class%3D%22home-use__shape-text%20is--center%20is--left-mob%22%3E%3Ch3%20class%3D%22h3%22%3EEntertainment%20%3C!--%24--%3E%3Cbr%3E%3C!--%2F%24--%3E%26amp%3B%26nbsp%3Bexperiences%3C%2Fh3%3E%3Cp%3EBring%20interactive%20characters%20to%20life%20in%20parks%2C%20attractions%2C%20and%20live%20experiences.%20With%20custom%20voices%2C%20gestures%2C%20and%20movements%2C%20Sprout%20unlocks%20immersive%2C%20shareable%20guest%20interactions%20at%20scale.%3C%2Fp%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fsection%3E%3Csection%20class%3D%22section%22%3E%3Cdiv%20class%3D%22container%22%3E%3Cdiv%20class%3D%22home-about__title%20mb-14%22%3E%3Ch2%20class%3D%22h5%22%3EBuilding%20a%20world%20where%20robots%20operate%20everywhere%20people%20do%3C%2Fh2%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22home-about__content%22%3E%3Cdiv%20id%3D%22w-node-_1127dcde-748f-e93b-5578-f529d4dae62c-e7e3fd1b%22%20class%3D%22home-about__content-left%22%3E%3Cdiv%20class%3D%22home-about__content-shape%22%3E%3Cdiv%20class%3D%22w-embed%22%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2264%22%20height%3D%2264%22%20viewBox%3D%220%200%2064%2064%22%20fill%3D%22none%22%3E%0A%20%20%3Cpath%20d%3D%22M48%2032C48%2027.7565%2046.3143%2023.6869%2043.3137%2020.6863C40.3131%2017.6857%2036.2435%2016%2032%2016C27.7565%2016%2023.6869%2017.6857%2020.6863%2020.6863C17.6857%2023.6869%2016%2027.7565%2016%2032L32%2032L48%2032Z%22%20fill%3D%22%23F16B46%22%3E%3C%2Fpath%3E%0A%20%20%3Cpath%20d%3D%22M64%2032C64%2040.4869%2060.6286%2048.6263%2054.6274%2054.6274C48.6262%2060.6286%2040.4869%2064%2032%2064C23.5131%2064%2015.3737%2060.6286%209.37258%2054.6274C3.37142%2048.6263%20-3.65675e-06%2040.4869%20-4.19629e-06%2032L32%2032L64%2032Z%22%20fill%3D%22%23DBB154%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E%3C%2Fdiv%3E%3Ch3%20class%3D%22h4%22%3EDesigned%20in%20NYC%20%3C!--%24--%3E%3Cbr%3E%3C!--%2F%24--%3EAssembled%20in%20America%3C%2Fh3%3E%3C%2Fdiv%3E%3Ca%20href%3D%22%2Fcompany%22%20class%3D%22button-large%20button-secondary%20button-icon%20w-inline-block%22%3E%3Cdiv%3EMore%20about%20us%3C%2Fdiv%3E%3C%2Fa%3E%3C%2Fdiv%3E%3Cdiv%20id%3D%22w-node-_29838be7-9088-954a-5763-ce96ecd655d1-e7e3fd1b%22%20class%3D%22home-about__content-right%22%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22full-cover-image%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fsection%3E%3Csection%20class%3D%22section%22%3E%3Cdiv%20class%3D%22home-fun%22%3E%3Cdiv%3E%3Ch2%20class%3D%22lead%20is--second%22%3EReal%20robots%2C%20%3C!--%24--%3E%3Cbr%3E%3C!--%2F%24--%3Ereal%20fun%3C%2Fh2%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22splide%20is--loop-autoscroll%20splide--loop%20splide--ltr%20splide--draggable%20is-active%20is-initialized%22%20id%3D%22splide02%22%20role%3D%22region%22%20aria-roledescription%3D%22carousel%22%3E%3Cdiv%20class%3D%22splide__track%20w-dyn-list%20splide__track--loop%20splide__track--ltr%20splide__track--draggable%22%20id%3D%22splide02-track%22%20aria-live%3D%22polite%22%20aria-atomic%3D%22true%22%20style%3D%22padding-left%3A%200px%3B%20padding-right%3A%200px%3B%22%3E%3Cdiv%20role%3D%22presentation%22%20class%3D%22splide__list%20is--home-fun%20w-dyn-items%22%20id%3D%22splide02-list%22%20style%3D%22transform%3A%20translateX(165.352px)%3B%22%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--fun%20is-active%20w-dyn-item%20splide__slide--clone%20is-visible%22%20id%3D%22splide02-clone01%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%221%20of%208%22%20style%3D%22margin-right%3A%201rem%3B%22%3E%3Cdiv%20class%3D%22absolute-cover%20is--video%20w-embed%22%3E%3Cvideo%20autoplay%3D%22%22%20loop%3D%22%22%20muted%3D%22%22%20playsinline%3D%22%22%20webkit-playsinline%3D%22%22%3E%0A%20%20%3Csource%20type%3D%22video%2Fmp4%22%3E%0A%3C%2Fvideo%3E%3C%2Fdiv%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22absolute-cover%20is--cover%20w-dyn-bind-empty%22%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--fun%20w-dyn-item%20splide__slide--clone%20is-visible%22%20id%3D%22splide02-clone02%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%222%20of%208%22%20style%3D%22margin-right%3A%201rem%3B%22%3E%3Cdiv%20class%3D%22absolute-cover%20is--video%20w-embed%22%3E%3Cvideo%20autoplay%3D%22%22%20loop%3D%22%22%20muted%3D%22%22%20playsinline%3D%22%22%20webkit-playsinline%3D%22%22%3E%0A%20%20%3Csource%20type%3D%22video%2Fmp4%22%3E%0A%3C%2Fvideo%3E%3C%2Fdiv%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20sizes%3D%22100vw%22%20class%3D%22absolute-cover%20is--cover%22%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--fun%20w-dyn-item%20splide__slide--clone%20is-visible%22%20id%3D%22splide02-clone03%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%223%20of%208%22%20style%3D%22margin-right%3A%201rem%3B%22%3E%3Cdiv%20class%3D%22absolute-cover%20is--video%20w-embed%22%3E%3Cvideo%20autoplay%3D%22%22%20loop%3D%22%22%20muted%3D%22%22%20playsinline%3D%22%22%20webkit-playsinline%3D%22%22%3E%0A%20%20%3Csource%20type%3D%22video%2Fmp4%22%3E%0A%3C%2Fvideo%3E%3C%2Fdiv%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20sizes%3D%22100vw%22%20class%3D%22absolute-cover%20is--cover%22%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--fun%20w-dyn-item%20splide__slide--clone%20is-visible%22%20id%3D%22splide02-clone04%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%224%20of%208%22%20style%3D%22margin-right%3A%201rem%3B%22%3E%3Cdiv%20class%3D%22absolute-cover%20is--video%20w-embed%22%3E%3Cvideo%20autoplay%3D%22%22%20loop%3D%22%22%20muted%3D%22%22%20playsinline%3D%22%22%20webkit-playsinline%3D%22%22%3E%0A%20%20%3Csource%20type%3D%22video%2Fmp4%22%3E%0A%3C%2Fvideo%3E%3C%2Fdiv%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20sizes%3D%22100vw%22%20class%3D%22absolute-cover%20is--cover%22%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--fun%20w-dyn-item%20splide__slide--clone%20is-visible%22%20id%3D%22splide02-clone05%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%225%20of%208%22%20style%3D%22margin-right%3A%201rem%3B%22%3E%3Cdiv%20class%3D%22absolute-cover%20is--video%20w-embed%22%3E%3Cvideo%20autoplay%3D%22%22%20loop%3D%22%22%20muted%3D%22%22%20playsinline%3D%22%22%20webkit-playsinline%3D%22%22%3E%0A%20%20%3Csource%20type%3D%22video%2Fmp4%22%3E%0A%3C%2Fvideo%3E%3C%2Fdiv%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20sizes%3D%22100vw%22%20class%3D%22absolute-cover%20is--cover%22%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--fun%20w-dyn-item%20splide__slide--clone%20is-visible%22%20id%3D%22splide02-clone06%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%226%20of%208%22%20style%3D%22margin-right%3A%201rem%3B%22%3E%3Cdiv%20class%3D%22absolute-cover%20is--video%20w-embed%22%3E%3Cvideo%20autoplay%3D%22%22%20loop%3D%22%22%20muted%3D%22%22%20playsinline%3D%22%22%20webkit-playsinline%3D%22%22%3E%0A%20%20%3Csource%20type%3D%22video%2Fmp4%22%3E%0A%3C%2Fvideo%3E%3C%2Fdiv%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20sizes%3D%22100vw%22%20class%3D%22absolute-cover%20is--cover%22%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--fun%20w-dyn-item%20splide__slide--clone%20is-visible%22%20id%3D%22splide02-clone07%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%227%20of%208%22%20style%3D%22margin-right%3A%201rem%3B%22%3E%3Cdiv%20class%3D%22absolute-cover%20is--video%20w-embed%22%3E%3Cvideo%20autoplay%3D%22%22%20loop%3D%22%22%20muted%3D%22%22%20playsinline%3D%22%22%20webkit-playsinline%3D%22%22%3E%0A%20%20%3Csource%20type%3D%22video%2Fmp4%22%3E%0A%3C%2Fvideo%3E%3C%2Fdiv%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20sizes%3D%22100vw%22%20class%3D%22absolute-cover%20is--cover%22%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--fun%20w-dyn-item%20splide__slide--clone%20is-visible%20is-prev%22%20id%3D%22splide02-clone08%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%228%20of%208%22%20style%3D%22margin-right%3A%201rem%3B%22%3E%3Cdiv%20class%3D%22absolute-cover%20is--video%20w-embed%22%3E%3Cvideo%20autoplay%3D%22%22%20loop%3D%22%22%20muted%3D%22%22%20playsinline%3D%22%22%20webkit-playsinline%3D%22%22%3E%0A%20%20%3Csource%20type%3D%22video%2Fmp4%22%3E%0A%3C%2Fvideo%3E%3C%2Fdiv%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20sizes%3D%22100vw%22%20class%3D%22absolute-cover%20is--cover%22%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--fun%20is-active%20w-dyn-item%20is-visible%22%20id%3D%22splide02-slide01%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%221%20of%208%22%20style%3D%22margin-right%3A%201rem%3B%22%3E%3Cdiv%20class%3D%22absolute-cover%20is--video%20w-embed%22%3E%3Cvideo%20autoplay%3D%22%22%20loop%3D%22%22%20muted%3D%22%22%20playsinline%3D%22%22%20webkit-playsinline%3D%22%22%3E%0A%20%20%3Csource%20type%3D%22video%2Fmp4%22%3E%0A%3C%2Fvideo%3E%3C%2Fdiv%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22absolute-cover%20is--cover%20w-dyn-bind-empty%22%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--fun%20w-dyn-item%20is-visible%20is-next%22%20id%3D%22splide02-slide02%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%222%20of%208%22%20style%3D%22margin-right%3A%201rem%3B%22%3E%3Cdiv%20class%3D%22absolute-cover%20is--video%20w-embed%22%3E%3Cvideo%20autoplay%3D%22%22%20loop%3D%22%22%20muted%3D%22%22%20playsinline%3D%22%22%20webkit-playsinline%3D%22%22%3E%0A%20%20%3Csource%20type%3D%22video%2Fmp4%22%3E%0A%3C%2Fvideo%3E%3C%2Fdiv%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20sizes%3D%22100vw%22%20class%3D%22absolute-cover%20is--cover%22%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--fun%20w-dyn-item%20is-visible%22%20id%3D%22splide02-slide03%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%223%20of%208%22%20style%3D%22margin-right%3A%201rem%3B%22%3E%3Cdiv%20class%3D%22absolute-cover%20is--video%20w-embed%22%3E%3Cvideo%20autoplay%3D%22%22%20loop%3D%22%22%20muted%3D%22%22%20playsinline%3D%22%22%20webkit-playsinline%3D%22%22%3E%0A%20%20%3Csource%20type%3D%22video%2Fmp4%22%3E%0A%3C%2Fvideo%3E%3C%2Fdiv%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20sizes%3D%22100vw%22%20class%3D%22absolute-cover%20is--cover%22%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--fun%20w-dyn-item%20is-visible%22%20id%3D%22splide02-slide04%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%224%20of%208%22%20style%3D%22margin-right%3A%201rem%3B%22%3E%3Cdiv%20class%3D%22absolute-cover%20is--video%20w-embed%22%3E%3Cvideo%20autoplay%3D%22%22%20loop%3D%22%22%20muted%3D%22%22%20playsinline%3D%22%22%20webkit-playsinline%3D%22%22%3E%0A%20%20%3Csource%20type%3D%22video%2Fmp4%22%3E%0A%3C%2Fvideo%3E%3C%2Fdiv%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20sizes%3D%22100vw%22%20class%3D%22absolute-cover%20is--cover%22%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--fun%20w-dyn-item%20is-visible%22%20id%3D%22splide02-slide05%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%225%20of%208%22%20style%3D%22margin-right%3A%201rem%3B%22%3E%3Cdiv%20class%3D%22absolute-cover%20is--video%20w-embed%22%3E%3Cvideo%20autoplay%3D%22%22%20loop%3D%22%22%20muted%3D%22%22%20playsinline%3D%22%22%20webkit-playsinline%3D%22%22%3E%0A%20%20%3Csource%20type%3D%22video%2Fmp4%22%3E%0A%3C%2Fvideo%3E%3C%2Fdiv%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20sizes%3D%22100vw%22%20class%3D%22absolute-cover%20is--cover%22%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--fun%20w-dyn-item%20is-visible%22%20id%3D%22splide02-slide06%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%226%20of%208%22%20style%3D%22margin-right%3A%201rem%3B%22%3E%3Cdiv%20class%3D%22absolute-cover%20is--video%20w-embed%22%3E%3Cvideo%20autoplay%3D%22%22%20loop%3D%22%22%20muted%3D%22%22%20playsinline%3D%22%22%20webkit-playsinline%3D%22%22%3E%0A%20%20%3Csource%20type%3D%22video%2Fmp4%22%3E%0A%3C%2Fvideo%3E%3C%2Fdiv%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20sizes%3D%22100vw%22%20class%3D%22absolute-cover%20is--cover%22%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--fun%20w-dyn-item%20is-visible%22%20id%3D%22splide02-slide07%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%227%20of%208%22%20style%3D%22margin-right%3A%201rem%3B%22%3E%3Cdiv%20class%3D%22absolute-cover%20is--video%20w-embed%22%3E%3Cvideo%20autoplay%3D%22%22%20loop%3D%22%22%20muted%3D%22%22%20playsinline%3D%22%22%20webkit-playsinline%3D%22%22%3E%0A%20%20%3Csource%20type%3D%22video%2Fmp4%22%3E%0A%3C%2Fvideo%3E%3C%2Fdiv%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20sizes%3D%22100vw%22%20class%3D%22absolute-cover%20is--cover%22%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--fun%20w-dyn-item%20is-visible%22%20id%3D%22splide02-slide08%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%228%20of%208%22%20style%3D%22margin-right%3A%201rem%3B%22%3E%3Cdiv%20class%3D%22absolute-cover%20is--video%20w-embed%22%3E%3Cvideo%20autoplay%3D%22%22%20loop%3D%22%22%20muted%3D%22%22%20playsinline%3D%22%22%20webkit-playsinline%3D%22%22%3E%0A%20%20%3Csource%20type%3D%22video%2Fmp4%22%3E%0A%3C%2Fvideo%3E%3C%2Fdiv%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20sizes%3D%22100vw%22%20class%3D%22absolute-cover%20is--cover%22%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--fun%20is-active%20w-dyn-item%20splide__slide--clone%20is-visible%22%20id%3D%22splide02-clone09%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%221%20of%208%22%20style%3D%22margin-right%3A%201rem%3B%22%3E%3Cdiv%20class%3D%22absolute-cover%20is--video%20w-embed%22%3E%3Cvideo%20autoplay%3D%22%22%20loop%3D%22%22%20muted%3D%22%22%20playsinline%3D%22%22%20webkit-playsinline%3D%22%22%3E%0A%20%20%3Csource%20type%3D%22video%2Fmp4%22%3E%0A%3C%2Fvideo%3E%3C%2Fdiv%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20class%3D%22absolute-cover%20is--cover%20w-dyn-bind-empty%22%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--fun%20w-dyn-item%20splide__slide--clone%20is-visible%22%20id%3D%22splide02-clone10%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%222%20of%208%22%20style%3D%22margin-right%3A%201rem%3B%22%3E%3Cdiv%20class%3D%22absolute-cover%20is--video%20w-embed%22%3E%3Cvideo%20autoplay%3D%22%22%20loop%3D%22%22%20muted%3D%22%22%20playsinline%3D%22%22%20webkit-playsinline%3D%22%22%3E%0A%20%20%3Csource%20type%3D%22video%2Fmp4%22%3E%0A%3C%2Fvideo%3E%3C%2Fdiv%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20sizes%3D%22100vw%22%20class%3D%22absolute-cover%20is--cover%22%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--fun%20w-dyn-item%20splide__slide--clone%20is-visible%22%20id%3D%22splide02-clone11%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%223%20of%208%22%20style%3D%22margin-right%3A%201rem%3B%22%3E%3Cdiv%20class%3D%22absolute-cover%20is--video%20w-embed%22%3E%3Cvideo%20autoplay%3D%22%22%20loop%3D%22%22%20muted%3D%22%22%20playsinline%3D%22%22%20webkit-playsinline%3D%22%22%3E%0A%20%20%3Csource%20type%3D%22video%2Fmp4%22%3E%0A%3C%2Fvideo%3E%3C%2Fdiv%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20sizes%3D%22100vw%22%20class%3D%22absolute-cover%20is--cover%22%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--fun%20w-dyn-item%20splide__slide--clone%20is-visible%22%20id%3D%22splide02-clone12%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%224%20of%208%22%20style%3D%22margin-right%3A%201rem%3B%22%3E%3Cdiv%20class%3D%22absolute-cover%20is--video%20w-embed%22%3E%3Cvideo%20autoplay%3D%22%22%20loop%3D%22%22%20muted%3D%22%22%20playsinline%3D%22%22%20webkit-playsinline%3D%22%22%3E%0A%20%20%3Csource%20type%3D%22video%2Fmp4%22%3E%0A%3C%2Fvideo%3E%3C%2Fdiv%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20sizes%3D%22100vw%22%20class%3D%22absolute-cover%20is--cover%22%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--fun%20w-dyn-item%20splide__slide--clone%20is-visible%22%20id%3D%22splide02-clone13%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%225%20of%208%22%20style%3D%22margin-right%3A%201rem%3B%22%3E%3Cdiv%20class%3D%22absolute-cover%20is--video%20w-embed%22%3E%3Cvideo%20autoplay%3D%22%22%20loop%3D%22%22%20muted%3D%22%22%20playsinline%3D%22%22%20webkit-playsinline%3D%22%22%3E%0A%20%20%3Csource%20type%3D%22video%2Fmp4%22%3E%0A%3C%2Fvideo%3E%3C%2Fdiv%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20sizes%3D%22100vw%22%20class%3D%22absolute-cover%20is--cover%22%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--fun%20w-dyn-item%20splide__slide--clone%22%20id%3D%22splide02-clone14%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%226%20of%208%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22absolute-cover%20is--video%20w-embed%22%3E%3Cvideo%20autoplay%3D%22%22%20loop%3D%22%22%20muted%3D%22%22%20playsinline%3D%22%22%20webkit-playsinline%3D%22%22%3E%0A%20%20%3Csource%20type%3D%22video%2Fmp4%22%3E%0A%3C%2Fvideo%3E%3C%2Fdiv%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20sizes%3D%22100vw%22%20class%3D%22absolute-cover%20is--cover%22%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--fun%20w-dyn-item%20splide__slide--clone%22%20id%3D%22splide02-clone15%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%227%20of%208%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22absolute-cover%20is--video%20w-embed%22%3E%3Cvideo%20autoplay%3D%22%22%20loop%3D%22%22%20muted%3D%22%22%20playsinline%3D%22%22%20webkit-playsinline%3D%22%22%3E%0A%20%20%3Csource%20type%3D%22video%2Fmp4%22%3E%0A%3C%2Fvideo%3E%3C%2Fdiv%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20sizes%3D%22100vw%22%20class%3D%22absolute-cover%20is--cover%22%3E%3C%2Fdiv%3E%3Cdiv%20role%3D%22group%22%20class%3D%22splide__slide%20is--fun%20w-dyn-item%20splide__slide--clone%22%20id%3D%22splide02-clone16%22%20aria-roledescription%3D%22slide%22%20aria-label%3D%228%20of%208%22%20style%3D%22margin-right%3A%201rem%3B%22%20aria-hidden%3D%22true%22%3E%3Cdiv%20class%3D%22absolute-cover%20is--video%20w-embed%22%3E%3Cvideo%20autoplay%3D%22%22%20loop%3D%22%22%20muted%3D%22%22%20playsinline%3D%22%22%20webkit-playsinline%3D%22%22%3E%0A%20%20%3Csource%20type%3D%22video%2Fmp4%22%3E%0A%3C%2Fvideo%3E%3C%2Fdiv%3E%3Cimg%20loading%3D%22lazy%22%20alt%3D%22%22%20sizes%3D%22100vw%22%20class%3D%22absolute-cover%20is--cover%22%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fsection%3E%3Csection%20class%3D%22section%22%3E%3Cdiv%20class%3D%22product-cta%22%3E%3Cdiv%20class%3D%22product-cta__header%22%3E%3Ch2%20class%3D%22lead%20is--second%22%3EMake%20it%20yours%3C%2Fh2%3E%3Cdiv%20class%3D%22product-cta__header-info%22%3E%3Cdiv%20class%3D%22product-cta__info-pill%22%3E%3Cdiv%3EBattery%2C%20grippers%2C%20and%20software%20included%3C%2Fdiv%3E%3C%2Fdiv%3E%3Ca%20href%3D%22https%3A%2F%2Fform.typeform.com%2Fto%2FHsZsaqmn%22%20target%3D%22_blank%22%20class%3D%22button-large%20button-primary%20w-inline-block%22%3E%3Cdiv%3ERequest%20Robot%3C%2Fdiv%3E%3C%2Fa%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C!--%24--%3E%3Ccanvas%20id%3D%22robots-desktop%22%20class%3D%22product-inner__header-desktop%22%20width%3D%221280%22%20height%3D%22640%22%3E%3C%2Fcanvas%3E%3C!--%2F%24--%3E%3C!--%24--%3E%3Ccanvas%20id%3D%22robots-tab%22%20class%3D%22product-inner__header-tab%22%3E%3C%2Fcanvas%3E%3C!--%2F%24--%3E%3C!--%24--%3E%3Ccanvas%20id%3D%22robots-mob%22%20class%3D%22product-inner__header-mob%22%3E%3C%2Fcanvas%3E%3C!--%2F%24--%3E%3C%2Fdiv%3E%3C%2Fsection%3E%3Cdiv%20class%3D%22demo-popup__wrapper%22%3E%3Cdiv%20class%3D%22w-embed%22%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22demo-popup__overlay%22%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22demo-popup__closer%20w-embed%22%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%3E%0A%20%20%3Cpath%20d%3D%22M4%2020L20%204%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%3E%3C%2Fpath%3E%0A%20%20%3Cpath%20d%3D%22M20%2020L4%204%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22container%20is--demo-wrapper%20w-dyn-list%22%3E%3Cdiv%20role%3D%22list%22%20class%3D%22demo-popup__list%20w-dyn-items%22%3E%3Cdiv%20role%3D%22listitem%22%20class%3D%22demo-popup__list-item%20w-dyn-item%22%3E%3Cdiv%20class%3D%22demo-popup__video%20w-embed%20w-iframe%22%3E%3B%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fmain%3E%3Cfooter%20class%3D%22footer%22%3E%3Cdiv%20class%3D%22container%20is--footer%22%3E%3Cdiv%20class%3D%22footer-content%22%3E%3Cdiv%20class%3D%22footer-content__grid%22%3E%3Cdiv%20class%3D%22footer-content__col-left%22%3E%3Ch2%20class%3D%22h3%22%3EFauna%20Robotics%2C%20building%20a%26nbsp%3Bworld%20where%20robots%20operate%20everywhere%20people%26nbsp%3Bdo.%3C%2Fh2%3E%3Cp%20class%3D%22text-brown-300%22%3EDesigned%20in%20New%20York%20City.%20%3C!--%24--%3E%3Cbr%3E%3C!--%2F%24--%3EAssembled%20in%20America.%3C%2Fp%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22footer-content__col-right%22%3E%3Cdiv%20id%3D%22w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de%22%20class%3D%22footer-content__col%22%3E%3Cdiv%20class%3D%22text-brown-300%22%3EExplore%3C%2Fdiv%3E%3Cul%20role%3D%22list%22%20class%3D%22footer-content__col-list%22%3E%3Cli%20class%3D%22footer-content__list-item%22%3E%3Ca%20href%3D%22%2Fproduct%22%20class%3D%22text-link%22%3EProduct%3C%2Fa%3E%3C%2Fli%3E%3Cli%20class%3D%22footer-content__list-item%22%3E%3Ca%20href%3D%22%2Fproduct%23tech-specs%22%20class%3D%22text-link%22%3ETechnical%20specifications%3C%2Fa%3E%3C%2Fli%3E%3Cli%20class%3D%22footer-content__list-item%22%3E%3Ca%20href%3D%22https%3A%2F%2Farxiv.org%2Fabs%2F2601.18963%22%20class%3D%22button-icon%20text-link%20w-inline-block%20plausible-event-name--Technical%2BReport%2BDownload%20plausible-event-location--footer%22%3E%3Cp%3ETechnical%20report%3C%2Fp%3E%3Cdiv%20class%3D%22icon-1-1%20is-20%20w-embed%22%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%3E%0A%20%20%3Cpath%20d%3D%22M4.14648%209.95801L14.9798%209.95801%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%3E%3C%2Fpath%3E%0A%20%20%3Cpath%20d%3D%22M9.97852%204.12476L15.8118%209.95809L9.97852%2015.7914%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E%3C%2Fdiv%3E%3C%2Fa%3E%3C%2Fli%3E%3Cli%20class%3D%22footer-content__list-item%22%3E%3Ca%20href%3D%22https%3A%2F%2Fdocsend.com%2Fview%2Fs%2F54yau8edf4ivbkzu%22%20target%3D%22_blank%22%20class%3D%22button-icon%20text-link%20w-inline-block%20plausible-event-name--Press%2BKit%2BClick%22%3E%3Cp%3EPress%20kit%3C%2Fp%3E%3Cdiv%20class%3D%22icon-1-1%20is-20%20w-embed%22%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%3E%0A%20%20%3Cpath%20d%3D%22M4.14648%209.95801L14.9798%209.95801%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%3E%3C%2Fpath%3E%0A%20%20%3Cpath%20d%3D%22M9.97852%204.12476L15.8118%209.95809L9.97852%2015.7914%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E%3C%2Fdiv%3E%3C%2Fa%3E%3C%2Fli%3E%3C%2Ful%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22footer-content__col%22%3E%3Cdiv%20class%3D%22text-brown-300%22%3EAbout%3C%2Fdiv%3E%3Cul%20role%3D%22list%22%20class%3D%22footer-content__col-list%22%3E%3Cli%20class%3D%22footer-content__list-item%22%3E%3Ca%20href%3D%22%2Fcompany%22%20class%3D%22text-link%22%3ECompany%3C%2Fa%3E%3C%2Fli%3E%3Cli%20class%3D%22footer-content__list-item%22%3E%3Ca%20href%3D%22https%3A%2F%2Fwww.amazon.jobs%2Fen%2Fsearch%3Fbase_query%3Dfauna%22%20target%3D%22_blank%22%20class%3D%22text-link%22%3ECareers%3C%2Fa%3E%3C%2Fli%3E%3Cli%20class%3D%22footer-content__list-item%22%3E%3Ca%20href%3D%22%2Fnews%22%20class%3D%22text-link%22%3ENews%3C%2Fa%3E%3C%2Fli%3E%3C%2Ful%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22footer-content__col%22%3E%3Cdiv%20class%3D%22text-brown-300%22%3ESocial%3C%2Fdiv%3E%3Cul%20role%3D%22list%22%20class%3D%22footer-content__col-list%22%3E%3Cli%20class%3D%22footer-content__list-item%22%3E%3Ca%20href%3D%22https%3A%2F%2Fwww.youtube.com%2F%40FaunaRobotics%22%20target%3D%22_blank%22%20class%3D%22text-link%22%3EYouTube%3C%2Fa%3E%3C%2Fli%3E%3Cli%20class%3D%22footer-content__list-item%22%3E%3Ca%20href%3D%22https%3A%2F%2Fx.com%2Ffaunarobotics%22%20target%3D%22_blank%22%20class%3D%22text-link%22%3EX%20(Twitter)%3C%2Fa%3E%3C%2Fli%3E%3Cli%20class%3D%22footer-content__list-item%22%3E%3Ca%20href%3D%22https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Ffauna-robotics%2F%22%20target%3D%22_blank%22%20class%3D%22text-link%22%3ELinkedIn%3C%2Fa%3E%3C%2Fli%3E%3Cli%20class%3D%22footer-content__list-item%22%3E%3Ca%20href%3D%22https%3A%2F%2Fwww.instagram.com%2Ffaunarobotics%2F%3Figsh%3DcGg0dnozNGpiYm85%23%22%20target%3D%22_blank%22%20class%3D%22text-link%22%3EInstagram%3C%2Fa%3E%3C%2Fli%3E%3C%2Ful%3E%3C%2Fdiv%3E%3Cdiv%20id%3D%22w-node-f7573142-a4ef-60b7-12da-23c3f39da591-74d2b1de%22%20class%3D%22footer-content__col%20is--last%22%3E%3Cul%20role%3D%22list%22%20class%3D%22footer-content__col-list%22%3E%3Cli%20class%3D%22footer-content__list-item%22%3E%3Ca%20href%3D%22mailto%3Asales%40faunarobotics.com%22%20class%3D%22text-link%20decoration-underline%22%3EContact%20us%3C%2Fa%3E%3C%2Fli%3E%3C%2Ful%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22footer-content__grid%20is--second%22%3E%3Cdiv%20class%3D%22footer-content__col-left%20is--copy%22%3E%3Cdiv%20class%3D%22text-brown-200%20p-l%22%3E%C2%A9%20%3Cspan%20id%3D%22copyright-year%22%3E2026%3C%2Fspan%3E%20Fauna%20Robotics%20Inc%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20id%3D%22w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b21e-74d2b1de%22%20class%3D%22footer-content__col-right%20is--bottom%22%3E%3Cdiv%20class%3D%22footer-content__col%22%3E%3Ca%20href%3D%22%2Fprivacy-policy%22%20class%3D%22text-brown-200%20text-link%22%3EPrivacy%20Policy%3C%2Fa%3E%3C%2Fdiv%3E%3Cdiv%20id%3D%22w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b222-74d2b1de%22%20class%3D%22footer-content__col%22%3E%3Ca%20href%3D%22%2Fdata-processing%22%20class%3D%22text-brown-200%20text-link%22%3EData%20Processing%20Addendum%3C%2Fa%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Ffooter%3E%3C%2Fdiv%3E%0A%0A%0A%0A%0A%0A%0A%0A%0A%3C%2Fbody%3E%0A%3C%2Fbody%3E%0A%3C%2Fhtml%3E"
+    },
+    "scanID": "f17f9fbc-f8ee-480f-b295-2ecadc967427",
+    "toolID": "accessibility-checker-v4.0.10",
+    "label": "faunarobotics.com"
+  },
+  "puppeteer": {
+    "_isDragging": false,
+    "_timeoutSettings": {},
+    "aceBusy": false
+  }
+}

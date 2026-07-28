@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Systemic Accessibility Analyzer</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --panel: #ffffff;
+      --panel-soft: #f7f9fc;
+      --text: #333;
+      --muted: #6b7280;
+      --border: #e6ebf2;
+      --shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      margin: 0;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .doc-shell {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .doc-header {
+      background: var(--panel);
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+    }
+
+    .doc-body {
+      background: var(--panel);
+      border-radius: 14px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .doc-meta {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    .doc-nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .doc-chip {
+      display: inline-block;
+      background: var(--panel-soft);
+      border: 1px solid var(--border);
+      color: var(--text);
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+
+    .prose {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .prose h1,
+    .prose h2,
+    .prose h3,
+    .prose h4 {
+      margin-top: 1.5em;
+      margin-bottom: 0.55em;
+      line-height: 1.2;
+    }
+
+    .prose h1 {
+      font-size: clamp(2rem, 4vw, 2.6rem);
+      margin-top: 0;
+    }
+
+    .prose h2 {
+      font-size: 1.6rem;
+    }
+
+    .prose h3 {
+      font-size: 1.25rem;
+    }
+
+    .prose h4 {
+      font-size: 1.05rem;
+    }
+
+    .prose p,
+    .prose li {
+      line-height: 1.65;
+      color: var(--text);
+    }
+
+    .prose ul,
+    .prose ol {
+      padding-left: 1.4rem;
+      margin: 0.6rem 0 1rem;
+    }
+
+    .prose hr {
+      border: 0;
+      border-top: 1px solid var(--border);
+      margin: 1.5rem 0;
+    }
+
+    .prose code {
+      background: var(--panel-soft);
+      padding: 0.15rem 0.4rem;
+      border-radius: 6px;
+      font-size: 0.95em;
+    }
+
+    .prose pre {
+      background: #1f2937;
+      color: #f9fafb;
+      padding: 16px;
+      border-radius: 10px;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
+
+    .prose pre code {
+      background: transparent;
+      padding: 0;
+      color: inherit;
+    }
+
+    .prose blockquote {
+      margin: 1rem 0;
+      padding: 0.75rem 1rem;
+      border-left: 4px solid #4e79a7;
+      background: var(--panel-soft);
+      color: var(--text);
+      border-radius: 0 10px 10px 0;
+    }
+
+    .prose table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.25rem;
+      font-size: 14px;
+    }
+
+    .prose th,
+    .prose td {
+      text-align: left;
+      padding: 10px 12px;
+      border-top: 1px solid #edf1f6;
+      vertical-align: top;
+    }
+
+    .prose th {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      border-top: none;
+      background: var(--panel-soft);
+    }
+
+    .note,
+    .warn {
+      padding: 12px 14px;
+      border-radius: 10px;
+      margin: 1rem 0;
+    }
+
+    .note {
+      background: #eef8f2;
+      border: 1px solid #dcefe2;
+    }
+
+    .warn {
+      background: #fff4ea;
+      border: 1px solid #f0dcc5;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 14px;
+      }
+
+      .doc-header,
+      .doc-body {
+        padding: 18px;
+        border-radius: 12px;
+      }
+    }
+
+    .top-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .doc-link-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      line-height: 1;
+      border: 1px solid #dbe7f5;
+      background: #f6f0ff;
+      color: #4b5563;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+      transition: 0.18s ease;
+    }
+
+    .doc-link-button:hover {
+      background: #efe4ff;
+      border-color: #cbb7f6;
+      color: #1f2937;
+      transform: translateY(-1px);
+    }
+
+    .doc-link-button.is-current {
+      background: #e8f0ff;
+      border-color: #bfd3fb;
+      color: #1d4ed8;
+    }
+
+    .doc-link-button.is-disabled {
+      opacity: 0.55;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="doc-shell">
+    <div class="doc-header">
+      <h1>Systemic Accessibility Analyzer</h1>
+      <div class="doc-meta">Project overview covering the current architecture, supported tools, workflow, workbook, and dashboard notes.</div>
+      <div class="top-links" id="topLinks">
+        <a class="doc-link-button" href="/">← Back to jobs dashboard</a>
+        <a class="doc-link-button" id="projectGuideLink" href="/readme_overview.html">Project Guide</a>
+        <a class="doc-link-button" id="dashboardGuideLink" href="/dashboard_guide.html">Dashboard Guide</a>
+        <a class="doc-link-button" id="workbookGuideLink" href="/workbook_guide.html">Workbook Guide</a>
+        <a class="doc-link-button" id="roadmapGuideLink" href="/roadmap_guide.html">Roadmap</a>
+      </div>
+    </div>
+    <div class="doc-body prose">
+
+      <h1>Systemic Accessibility Analyzer</h1>
+      <p>The <strong>Systemic Accessibility Analyzer</strong> serves as an advanced architectural analysis and reporting layer for multi-tool accessibility scan outputs. It is designed explicitly for development and product teams managing large digital estates where issue backlogs have grown too massive to sensibly triage page by page.</p>
+      <p>Instead of logging every single automated scanner match as an isolated, independent defect, the engine normalizes incoming source attributes, deduplicates overlapping data rows, maps entries to standard WCAG taxonomies, and groups matching issue footprints into highly actionable remediation patterns. This pipeline generates an interactive visual dashboard alongside a detailed spreadsheet workbook built for rapid remediation planning.</p>
+
+      <div class="note">
+        <strong>Current system state:</strong> The analyzer natively supports an expanded tool adapter set including Siteimprove Alfa and Nu HTML Checker, deep WCAG schema enrichment, humanized rule titles, tightened workbook/dashboard synchronization, static site compilation paths, and searchable, paginated data drilldowns.
+      </div>
+
+      <hr>
+
+      <h2>Why this exists</h2>
+      <p>Automated testing engines record entries per URL node. While this method is excellent for localized debugging, it makes high-level remediation orchestration incredibly difficult. A single global component bug will trigger hundreds of repetitive failures across a site's templates.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Scanned Page Location</th>
+            <th>Automated Scanner Output Item</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Home</strong></td>
+            <td>Button contrast failure</td>
+          </tr>
+          <tr>
+            <td><strong>Product page</strong></td>
+            <td>Button contrast failure</td>
+          </tr>
+          <tr>
+            <td><strong>Cart</strong></td>
+            <td>Button contrast failure</td>
+          </tr>
+          <tr>
+            <td><strong>Checkout</strong></td>
+            <td>Button contrast failure</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Standard reporting structures force teams to triage these as four distinct, unrelated tasks.</p>
+      <blockquote>💡 <strong>The Reality:</strong> The actual engineering root cause is simply <strong>one single shared component</strong> possessing a faulty CSS color assignment.</blockquote>
+      <p>The analyzer exists to collapse high-volume raw rows into a lean list of high-impact reusable remediation targets.</p>
+
+      <hr>
+
+      <h2>Core Engine Operations</h2>
+      <p>To clean and structure high-volume testing data, the analyzer executes the following pipeline functions:</p>
+      <ul>
+        <li><strong>Ingestion:</strong> Automatically detects and processes supported scanner log layouts.</li>
+        <li><strong>Standardization:</strong> Translates diverse source attributes into a shared row schema.</li>
+        <li><strong>Compliance Mapping:</strong> Correlates scanner codes to standard WCAG criteria, success levels, and criteria names.</li>
+        <li><strong>Sanitization:</strong> Normalizes string values, DOM selectors, severities, and labels.</li>
+        <li><strong>Inference:</strong> Evaluates code context to track element, component, or design-system ownership.</li>
+        <li><strong>Deduplication:</strong> Collapses overlapping tool matches targeting identical elements on a single page.</li>
+        <li><strong>Clustering:</strong> Groups repeated issue patterns into site-wide systemic blocks.</li>
+        <li><strong>Analytics:</strong> Computes data indicators for tool consensus, confidence scales, and fix priority ranks.</li>
+        <li><strong>Exporting:</strong> Compiles finished data loops into rich multi-sheet workbooks and static web dashboard bundles.</li>
+      </ul>
+
+      <hr>
+
+      <h2>Supported Tools &amp; Adapters</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Testing Engine Source</th>
+            <th>Capability &amp; Parsing Attributes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>axe-core</strong></td>
+            <td>Extracts WCAG structural metadata; preserves verified violations and manual-review check rows.</td>
+          </tr>
+          <tr>
+            <td><strong>axe-scan</strong></td>
+            <td>Ingests axe-derived scanner files; manages partial/incomplete contrast logs.</td>
+          </tr>
+          <tr>
+            <td><strong>IBM Accessibility Checker</strong></td>
+            <td>Maps native IBM rule identifiers directly to WCAG; models distinct <code>violation</code> and <code>potentialviolation</code> parameters.</td>
+          </tr>
+          <tr>
+            <td><strong>Lighthouse</strong></td>
+            <td>Parses automated accessibility failure audits and pulls out WCAG tags from underlying debug arrays.</td>
+          </tr>
+          <tr>
+            <td><strong>Oobee</strong></td>
+            <td>Crawler-oriented architecture optimized to sweep across massive digital estates and page inventories.</td>
+          </tr>
+          <tr>
+            <td><strong>UUV</strong></td>
+            <td>Run/flow-oriented tracking system incorporating strict severity normalization and compliance metadata parsing.</td>
+          </tr>
+          <tr>
+            <td><strong>Pa11y</strong></td>
+            <td>Modeled as a unified source pipeline while cleanly tracking individual runner properties (e.g., <code>axe</code> vs <code>htmlcs</code>).</td>
+          </tr>
+          <tr>
+            <td><strong>HTMLCS / html-sniffer</strong></td>
+            <td>Enables HTMLCS-specific parsing schemas matching technique-style rule titles.</td>
+          </tr>
+          <tr>
+            <td><strong>Siteimprove Alfa</strong></td>
+            <td>Runs Siteimprove Alfa rule outcomes through a dedicated adapter, preserving Alfa rule IDs, review states, contrast thresholds, and conservative WCAG mappings where rule semantics are known.</td>
+          </tr>
+          <tr>
+            <td><strong>Nu HTML Checker</strong></td>
+            <td>Validates rendered markup and ARIA syntax using the Nu/VNU engine, adding standards-validity evidence that complements WCAG rule engines without pretending to be a configurable WCAG-level scanner.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="small">Certain adapters intentionally preserve "needs-review" flags rather than deleting them. This behavior ensures engineering teams can investigate subtle potential flaws.</p>
+
+      <hr>
+
+      <h2>WCAG Handling &amp; Data Schema</h2>
+      <p>The analyzer runs dedicated rule-to-compliance mapping frameworks, leverages fallback messages, and enriches criteria metadata. To maximize text scannability, the database architecture completely separates rule vocabulary layers:</p>
+      <ul>
+        <li><strong>Rule:</strong> The clean, humanized label identifying the issue (e.g., <code>Contrast (Minimum)</code>).</li>
+        <li><strong>Rule Id:</strong> The raw, technical string identifier generated by the testing engine.</li>
+        <li><strong>WCAG:</strong> The formal compliance success criterion numerical code (e.g., <code>1.4.3</code>).</li>
+        <li><strong>WCAG Name:</strong> The official compliance title of the criterion.</li>
+      </ul>
+
+      <hr>
+
+      <h2>Important recent model changes</h2>
+      <h3>🔄 Pa11y mixed-run support</h3>
+      <p>Pa11y records are no longer tracked as two synthetic tools when axe and HTMLCS outputs inhabit the same file. The engine tracks a single, clean <code>pa11y</code> pipeline while maintaining precise per-issue <code>runner</code> metadata.</p>
+
+      <h3>🏷️ Friendly rule labels</h3>
+      <p>Label rendering has been significantly sharpened. The engine avoids raw tool codes if a clear, humanized title can be derived using metadata mappings or technique-aware context flags (e.g., <code>1.4.6 [G17]</code>).</p>
+
+      <h3>🧼 WCAG chart cleanup</h3>
+      <p>Analytical dashboard elements and spreadsheet summary tabs accept only real, verified WCAG codes. Raw engine error descriptions and unmapped technical strings are blocked from entering compliance graphics.</p>
+
+      <h3>🔍 Drilldown UX upgrade</h3>
+      <p>The primary analytics drilldown interface features real-time keyword text filtering, custom row display limits, and full pagination.</p>
+
+      <h3>🧩 Engine-family visibility</h3>
+      <p>Dashboard labels now distinguish underlying rule-engine families such as Axe, HTMLCS, IBM, Alfa, browser audits, validators, keyboard tooling, and assistive-technology style evidence. This makes cross-family agreement easier to interpret than raw tool counts alone.</p>
+
+      <hr>
+
+      <h2>How the pipeline works</h2>
+      <ol>
+        <li><strong>Adapters:</strong> Tool-specific parsing layers scan source outputs to output standardized rows holding keys like selector strings, severities, and paths.</li>
+        <li><strong>Enrichment:</strong> Rows are injected with readable WCAG criteria parameters, stable page markers, and refined rules.</li>
+        <li><strong>Processing:</strong> The layer checks the code layout to infer design-system component roots, layout templates, or page-level ownership constraints.</li>
+        <li><strong>Deduplication:</strong> Overlapping failures occurring on identical nodes are merged, computing engine consensus values.</li>
+        <li><strong>Clustering &amp; Metrics:</strong> Repetitive bugs are structured into systemic families. The system computes metrics for tool agreement, page spread, and remediation impact.</li>
+        <li><strong>Exports:</strong> The analytical architecture compiles payloads directly into structured workbooks, Power BI tables, and static site assets.</li>
+      </ol>
+
+      <hr>
+
+      <h2>Defining “Systemic”</h2>
+      <p>A <strong>systemic issue</strong> is any finding pattern that repeats frequently enough that a single development change will repair multiple page variants simultaneously. The analyzer relies on three distinct operational classifications to separate these concerns:</p>
+      <ul>
+        <li><strong>design_system_issue:</strong> High-probability indicators of an issue living within global shared source components.</li>
+        <li><strong>issue_scope:</strong> Tracks whether a failure is localized to a single page, a template type, or a global component.</li>
+        <li><strong>systemic:</strong> A computed rating showing how efficient the item is as a centralized "fix-once" choice.</li>
+      </ul>
+
+      <hr>
+
+      <h2>Dashboard, Workbook, &amp; Deployment Support</h2>
+      <p>The application engine outputs a static-build track built for quick, documentation-style hosting platforms. This build outputs analytical dashboard charts, support matrices, page coverage checks, and fully searchable drilldowns alongside a downloadable spreadsheet workbook model. The data model features built-in fields like <code>tool_count</code>, <code>consensus</code>, and <code>confidence</code> to help your engineering team track exactly how much tool agreement backs an issue.</p>
+
+      <hr>
+
+      <h2>⚠️ Interpretation guidance and limits</h2>
+      <div class="warn"><strong>Automated coverage remains partial.</strong> Deploying a robust, multi-engine testing stack optimizes bug discovery and confidence, but it <strong>does not replace expert manual testing</strong> or human judgment.</div>
+      <p>Subjective evaluation criteria—such as image alt-text context quality, meaningful button labels, logical keyboard focus tracking, error recovery text clarity, document layout semantic clarity, and cognitive accessibility paths—must still be validated through human inspection.</p>
+
+      <hr>
+
+      <h2>Suggested operational workflow</h2>
+      <ol>
+        <li><strong>Generate:</strong> Execute your automated accessibility scanners across your properties and gather the report files.</li>
+        <li><strong>Compile:</strong> Build the normalized analyzer dashboard and spreadsheet models using the core framework.</li>
+        <li><strong>Validate:</strong> Inspect the <strong>Page Inventory Check</strong> page first to verify data alignment across all tool sets.</li>
+        <li><strong>Triage:</strong> Evaluate the dashboard views to pull out high-density components, WCAG hotspots, and "fix-once" tasks.</li>
+        <li><strong>Execute:</strong> Leverage the spreadsheet workbook tabs for filtered engineer handoffs, bug tracking, and corporate BI reporting.</li>
+        <li><strong>Audit:</strong> Re-run the analysis pipeline post-remediation to verify improvements across tool consensus, volume, and systemic impact.</li>
+      </ol>
+
+      <hr>
+
+      <h2>Quick start development pipeline</h2>
+      <pre><code>python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload</code></pre>
+
+      <hr>
+
+      <h2>Related guides</h2>
+      <ul>
+        <li><strong>Dashboard Guide:</strong> Full reference covering dashboard indicators, action panels, and interactive drilldowns.</li>
+        <li><strong>Workbook Guide:</strong> Complete technical reference explaining spreadsheet tabs, fact-tables, and column data dict formats.</li>
+      </ul>
+
+    </div>
+  </div>
+
+  <script>
+    function buildTopNav() {
+      const path = window.location.pathname;
+      const currentMap = [
+        ['projectGuideLink', /readme_overview\.html$/],
+        ['dashboardGuideLink', /dashboard_guide\.html$/],
+        ['workbookGuideLink', /workbook_guide\.html$/],
+        ['roadmapGuideLink', /roadmap_guide\.html$/]
+      ];
+
+      currentMap.forEach(([id, regex]) => {
+        const el = document.getElementById(id);
+        if (el && regex.test(path)) {
+          el.classList.add('is-current');
+          el.setAttribute('aria-current', 'page');
+        }
+      });
+    }
+    buildTopNav();
+  </script>
+</body>
+
+</html>

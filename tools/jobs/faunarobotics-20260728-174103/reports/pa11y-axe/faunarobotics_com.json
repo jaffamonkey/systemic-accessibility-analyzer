@@ -1,0 +1,1062 @@
+{
+  "documentTitle": "Fauna Robotics | Capable, Safe, Fun Robots for Everyone",
+  "pageUrl": "https://faunarobotics.com/",
+  "issues": [
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<a href=\"/\" aria-current=\"page\" class=\"navbar-link w--current\">Home</a>",
+      "selector": "html > body > div > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(1) > a:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div>Request Robot</div>",
+      "selector": "html > body > div > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > a > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div class=\"text-black-300\">Trusted by</div>",
+      "selector": "html > body > div > main > section:nth-child(1) > div:nth-child(2) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div class=\"p-m\">Play video</div>",
+      "selector": "#demo > div > div > div:nth-child(2) > div:nth-child(1) > div > div > button > div:nth-child(2)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<p class=\"text-black-300\">Build and test your own applica...</p>",
+      "selector": "#demo > div > div > div:nth-child(3) > div:nth-child(1) > p",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<p class=\"text-black-300\">Create next-generation AI appli...</p>",
+      "selector": "#demo > div > div > div:nth-child(3) > div:nth-child(2) > p",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<p class=\"text-black-300\">Study locomotion, manipulation,...</p>",
+      "selector": "#demo > div > div > div:nth-child(3) > div:nth-child(3) > p",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<p class=\"text-black-300\">Designed for safer human intera...</p>",
+      "selector": "#w-node-e05c303c-6f1d-7fe8-0890-54fd8d53a765-e7e3fd1b > div > p",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<h3 class=\"h3\">Retail <!--$--><br><!--/$-->&am...</h3>",
+      "selector": "html > body > div > main > section:nth-child(4) > div > div:nth-child(1) > div > div:nth-child(1) > div > div > h3",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<h3 class=\"h3\">Consumer<!--$--><br><!--/$--> &...</h3>",
+      "selector": "html > body > div > main > section:nth-child(4) > div > div:nth-child(1) > div > div:nth-child(2) > div > div > h3",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<h3 class=\"h3\">Entertainment &amp;&nbsp;experi...</h3>",
+      "selector": "html > body > div > main > section:nth-child(4) > div > div:nth-child(1) > div > div:nth-child(4) > div > div > h3",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div>More about us</div>",
+      "selector": "#w-node-_1127dcde-748f-e93b-5578-f529d4dae62c-e7e3fd1b > a > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div>Request Robot</div>",
+      "selector": "html > body > div > main > section:nth-child(7) > div > div > div > a > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "frame-title",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Frames must have an accessible name (https://dequeuniversity.com/rules/axe/4.11/frame-title?application=axeAPI)",
+      "context": "<iframe class=\"video-vimeo-frame\" src=\"https://player.vimeo.com/video/1159645799?api=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;controls=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;dnt=1\" style=\"position: absolute; top: 0; left: 0; width: 10...",
+      "selector": "#demo > div > div > div:nth-child(2) > div:nth-child(1) > div > div > div > div > iframe",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <iframe> and <frame> elements have an accessible name",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Frames must have an accessible name",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/frame-title?application=axeAPI"
+      }
+    },
+    {
+      "code": "landmark-unique",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination (https://dequeuniversity.com/rules/axe/4.11/landmark-unique?application=axeAPI)",
+      "context": "<div class=\"splide is--loop-autoscroll splide--loop splide--ltr splide--draggable is-active is-overflow is-initialized\" id=\"splide01\" role=\"region\" aria-roledescription=\"carousel\"><div class=\"splide__track w-dyn...</div>",
+      "selector": "#splide01",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure landmarks are unique",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/landmark-unique?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<h3 class=\"h4\">Compliant, capable locomotion </h3>",
+      "selector": "#w-node-_47ebc224-0349-2b20-020b-4578c3f64197-e7e3fd1b > div > h3",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div>Ready for developers</div>",
+      "selector": "#w-node-_87ecbd04-af81-9062-638a-4537eb05f5a6-e7e3fd1b > div:nth-child(2) > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div>Socially engaging</div>",
+      "selector": "#w-node-_5cae599d-cc18-5d47-d62f-2fe085d1ef7e-e7e3fd1b > div:nth-child(2) > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<h2 class=\"h3\">Fauna Robotics, building a&nbsp...</h2>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(1) > h2",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<p class=\"text-brown-300\">Designed in New York City. <!--...</p>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(1) > p",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">Explore</div>",
+      "selector": "#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<a href=\"/product\" class=\"text-link\">Product</a>",
+      "selector": "#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de > ul > li:nth-child(1) > a",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<a href=\"/product#tech-specs\" class=\"text-link\">Technical specifications</a>",
+      "selector": "#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de > ul > li:nth-child(2) > a",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<p>Technical report</p>",
+      "selector": "#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de > ul > li:nth-child(3) > a > p",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<p>Press kit</p>",
+      "selector": "#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de > ul > li:nth-child(4) > a > p",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">About</div>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<a href=\"/company\" class=\"text-link\">Company</a>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > ul > li:nth-child(1) > a",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<a href=\"https://www.amazon.jobs/en/search?base_query=fauna\" target=\"_blank\" class=\"text-link\">Careers</a>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > ul > li:nth-child(2) > a",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<a href=\"/news\" class=\"text-link\">News</a>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > ul > li:nth-child(3) > a",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">Social</div>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<a href=\"https://www.youtube.com/@FaunaRobotics\" target=\"_blank\" class=\"text-link\">YouTube</a>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > ul > li:nth-child(1) > a",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<a href=\"https://x.com/faunarobotics\" target=\"_blank\" class=\"text-link\">X (Twitter)</a>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > ul > li:nth-child(2) > a",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<a href=\"https://www.linkedin.com/company/fauna-robotics/\" target=\"_blank\" class=\"text-link\">LinkedIn</a>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > ul > li:nth-child(3) > a",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<a href=\"https://www.instagram.com/faunarobotics/?igsh=cGg0dnozNGpiYm85#\" target=\"_blank\" class=\"text-link\">Instagram</a>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > ul > li:nth-child(4) > a",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<a href=\"mailto:sales@faunarobotics.com\" class=\"text-link decoration-underline\">Contact us</a>",
+      "selector": "#w-node-f7573142-a4ef-60b7-12da-23c3f39da591-74d2b1de > ul > li > a",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div class=\"text-brown-200 p-l\">© <span id=\"copyright-year\">202...</div>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(2) > div:nth-child(1) > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<span id=\"copyright-year\">2026</span>",
+      "selector": "#copyright-year",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<a href=\"/privacy-policy\" class=\"text-brown-200 text-link\">Privacy Policy</a>",
+      "selector": "#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b21e-74d2b1de > div:nth-child(1) > a",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<a href=\"/data-processing\" class=\"text-brown-200 text-link\">Data Processing Addendum</a>",
+      "selector": "#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b222-74d2b1de > a",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "frame-tested",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Frames should be tested with axe-core (https://dequeuniversity.com/rules/axe/4.11/frame-tested?application=axeAPI)",
+      "context": "<iframe class=\"video-vimeo-frame\" src=\"https://player.vimeo.com/video/1159645799?api=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;controls=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;dnt=1\" style=\"position: absolute; top: 0; left: 0; width: 10...",
+      "selector": "#demo > div > div > div:nth-child(2) > div:nth-child(1) > div > div > div > div > iframe",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <iframe> and <frame> elements contain the axe-core script",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "Frames should be tested with axe-core",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/frame-tested?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\" poster=\"https://cdn.prod.website-files.com/693933367980a29f6ff36b6d/69775f38bf0b15f93ba8046b_home-teaser.webp\">\n  <source src=\"https://player....</video>",
+      "selector": "html > body > div > main > section:nth-child(1) > div:nth-child(1) > div > div:nth-child(2) > div > div > div > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source src=\"https://player....</video>",
+      "selector": "#w-node-_87ecbd04-af81-9062-638a-4537eb05f5a6-e7e3fd1b > div:nth-child(1) > div > div > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source src=\"https://player....</video>",
+      "selector": "#w-node-_5cae599d-cc18-5d47-d62f-2fe085d1ef7e-e7e3fd1b > div:nth-child(1) > div > div > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source src=\"https://player....</video>",
+      "selector": "#splide02-clone02 > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source src=\"https://player....</video>",
+      "selector": "#splide02-clone03 > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source src=\"https://player....</video>",
+      "selector": "#splide02-clone04 > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source src=\"https://player....</video>",
+      "selector": "#splide02-clone05 > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source src=\"https://player....</video>",
+      "selector": "#splide02-clone06 > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source src=\"https://player....</video>",
+      "selector": "#splide02-clone07 > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source src=\"https://player....</video>",
+      "selector": "#splide02-clone08 > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source src=\"https://player....</video>",
+      "selector": "#splide02-slide01 > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source src=\"https://player....</video>",
+      "selector": "#splide02-slide02 > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source src=\"https://player....</video>",
+      "selector": "#splide02-slide03 > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source src=\"https://player....</video>",
+      "selector": "#splide02-slide04 > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source src=\"https://player....</video>",
+      "selector": "#splide02-slide05 > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source src=\"https://player....</video>",
+      "selector": "#splide02-slide06 > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source src=\"https://player....</video>",
+      "selector": "#splide02-slide07 > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source src=\"https://player....</video>",
+      "selector": "#splide02-slide08 > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source src=\"https://player....</video>",
+      "selector": "#splide02-clone09 > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source src=\"https://player....</video>",
+      "selector": "#splide02-clone10 > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source src=\"https://player....</video>",
+      "selector": "#splide02-clone11 > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source src=\"https://player....</video>",
+      "selector": "#splide02-clone12 > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source src=\"https://player....</video>",
+      "selector": "#splide02-clone13 > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source src=\"https://player....</video>",
+      "selector": "#splide02-clone14 > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source src=\"https://player....</video>",
+      "selector": "#splide02-clone15 > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source src=\"https://player....</video>",
+      "selector": "#splide02-clone16 > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    }
+  ]
+}

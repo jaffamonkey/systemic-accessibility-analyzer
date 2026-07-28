@@ -1,0 +1,2518 @@
+{
+  "documentTitle": "Sprout Creator Edition | Humanoid Developer Platform | Fauna",
+  "pageUrl": "https://faunarobotics.com/product",
+  "issues": [
+    {
+      "code": "aria-allowed-attr",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must only use supported ARIA attributes (https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=axeAPI)",
+      "context": "<button class=\"tab-content__panel-control plausible-event-name--Feature+Click plausible-event-feature--Follows+your+lead active\" aria-selected=\"true\"><div>Follows your lead</div></button>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(4) > div > div > div > div:nth-child(4) > button:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure an element's role supports its ARIA attributes",
+        "impact": "critical",
+        "needsFurtherReview": false,
+        "help": "Elements must only use supported ARIA attributes",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=axeAPI"
+      }
+    },
+    {
+      "code": "aria-allowed-attr",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must only use supported ARIA attributes (https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=axeAPI)",
+      "context": "<button class=\"tab-content__panel-control plausible-event-name--Feature+Click plausible-event-feature--Capable+transitions\" aria-selected=\"false\"><div>Capable transitions</div></button>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(4) > div > div > div > div:nth-child(4) > button:nth-child(2)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure an element's role supports its ARIA attributes",
+        "impact": "critical",
+        "needsFurtherReview": false,
+        "help": "Elements must only use supported ARIA attributes",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=axeAPI"
+      }
+    },
+    {
+      "code": "aria-allowed-attr",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must only use supported ARIA attributes (https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=axeAPI)",
+      "context": "<button class=\"tab-content__panel-control plausible-event-name--Feature+Click plausible-event-feature--Stable+and+balanced\" aria-selected=\"false\"><div>Stable and balanced</div></button>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(4) > div > div > div > div:nth-child(4) > button:nth-child(3)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure an element's role supports its ARIA attributes",
+        "impact": "critical",
+        "needsFurtherReview": false,
+        "help": "Elements must only use supported ARIA attributes",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=axeAPI"
+      }
+    },
+    {
+      "code": "aria-allowed-attr",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must only use supported ARIA attributes (https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=axeAPI)",
+      "context": "<button class=\"tab-content__panel-control plausible-event-name--Feature+Click plausible-event-feature--Quick+on+its+feet\" aria-selected=\"false\"><div>Quick on its feet</div></button>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(4) > div > div > div > div:nth-child(4) > button:nth-child(4)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure an element's role supports its ARIA attributes",
+        "impact": "critical",
+        "needsFurtherReview": false,
+        "help": "Elements must only use supported ARIA attributes",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=axeAPI"
+      }
+    },
+    {
+      "code": "aria-allowed-attr",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must only use supported ARIA attributes (https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=axeAPI)",
+      "context": "<button class=\"tab-content__panel-control plausible-event-name--Feature+Click plausible-event-feature--Floor-to-countertop+reach active\" aria-selected=\"true\"><div>Floor-to-countertop reach<...</button>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(5) > div > div > div > div:nth-child(4) > button:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure an element's role supports its ARIA attributes",
+        "impact": "critical",
+        "needsFurtherReview": false,
+        "help": "Elements must only use supported ARIA attributes",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=axeAPI"
+      }
+    },
+    {
+      "code": "aria-allowed-attr",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must only use supported ARIA attributes (https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=axeAPI)",
+      "context": "<button class=\"tab-content__panel-control plausible-event-name--Feature+Click plausible-event-feature--Robust+integrated+grippers\" aria-selected=\"false\"><div>Robust, integrated gripper...</button>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(5) > div > div > div > div:nth-child(4) > button:nth-child(2)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure an element's role supports its ARIA attributes",
+        "impact": "critical",
+        "needsFurtherReview": false,
+        "help": "Elements must only use supported ARIA attributes",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=axeAPI"
+      }
+    },
+    {
+      "code": "aria-allowed-attr",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must only use supported ARIA attributes (https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=axeAPI)",
+      "context": "<button class=\"tab-content__panel-control plausible-event-name--Feature+Click plausible-event-feature--Easy+to+pilot\" aria-selected=\"false\"><div>Easy to pilot</div></button>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(5) > div > div > div > div:nth-child(4) > button:nth-child(3)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure an element's role supports its ARIA attributes",
+        "impact": "critical",
+        "needsFurtherReview": false,
+        "help": "Elements must only use supported ARIA attributes",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=axeAPI"
+      }
+    },
+    {
+      "code": "aria-allowed-attr",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must only use supported ARIA attributes (https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=axeAPI)",
+      "context": "<button class=\"tab-content__panel-control plausible-event-name--Feature+Click plausible-event-feature--Companion+app\" aria-selected=\"false\"><div>Companion app</div></button>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(5) > div > div > div > div:nth-child(4) > button:nth-child(4)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure an element's role supports its ARIA attributes",
+        "impact": "critical",
+        "needsFurtherReview": false,
+        "help": "Elements must only use supported ARIA attributes",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=axeAPI"
+      }
+    },
+    {
+      "code": "aria-allowed-attr",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must only use supported ARIA attributes (https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=axeAPI)",
+      "context": "<button class=\"tab-content__panel-control is--static plausible-event-name--Feature+Click plausible-event-feature--Navigation active\" aria-selected=\"true\"><div>Navigation</div></button>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(6) > div > div > div > div:nth-child(3) > button:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure an element's role supports its ARIA attributes",
+        "impact": "critical",
+        "needsFurtherReview": false,
+        "help": "Elements must only use supported ARIA attributes",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=axeAPI"
+      }
+    },
+    {
+      "code": "aria-allowed-attr",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must only use supported ARIA attributes (https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=axeAPI)",
+      "context": "<button class=\"tab-content__panel-control is--static plausible-event-name--Feature+Click plausible-event-feature--Mapping\" aria-selected=\"false\"><div>Mapping</div></button>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(6) > div > div > div > div:nth-child(3) > button:nth-child(2)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure an element's role supports its ARIA attributes",
+        "impact": "critical",
+        "needsFurtherReview": false,
+        "help": "Elements must only use supported ARIA attributes",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=axeAPI"
+      }
+    },
+    {
+      "code": "aria-allowed-attr",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must only use supported ARIA attributes (https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=axeAPI)",
+      "context": "<button class=\"tab-content__panel-control is--static plausible-event-name--Feature+Click plausible-event-feature--Human+awareness\" aria-selected=\"false\"><div>Human awareness</div></button>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(6) > div > div > div > div:nth-child(3) > button:nth-child(3)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure an element's role supports its ARIA attributes",
+        "impact": "critical",
+        "needsFurtherReview": false,
+        "help": "Elements must only use supported ARIA attributes",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=axeAPI"
+      }
+    },
+    {
+      "code": "aria-allowed-attr",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must only use supported ARIA attributes (https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=axeAPI)",
+      "context": "<button class=\"tab-content__panel-control plausible-event-name--Feature+Click plausible-event-feature--Interactive+behaviors active\" aria-selected=\"true\"><div>Interactive behaviors</div...</button>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(7) > div > div > div > div:nth-child(3) > button:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure an element's role supports its ARIA attributes",
+        "impact": "critical",
+        "needsFurtherReview": false,
+        "help": "Elements must only use supported ARIA attributes",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=axeAPI"
+      }
+    },
+    {
+      "code": "aria-allowed-attr",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must only use supported ARIA attributes (https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=axeAPI)",
+      "context": "<button class=\"tab-content__panel-control plausible-event-name--Feature+Click plausible-event-feature--Conversation-driven\" aria-selected=\"false\"><div>Conversation-driven</div></button>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(7) > div > div > div > div:nth-child(3) > button:nth-child(2)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure an element's role supports its ARIA attributes",
+        "impact": "critical",
+        "needsFurtherReview": false,
+        "help": "Elements must only use supported ARIA attributes",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=axeAPI"
+      }
+    },
+    {
+      "code": "aria-allowed-attr",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must only use supported ARIA attributes (https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=axeAPI)",
+      "context": "<button class=\"tab-content__panel-control plausible-event-name--Feature+Click plausible-event-feature--Dynamic+expressions\" aria-selected=\"false\"><div>Dynamic expressions</div></button>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(7) > div > div > div > div:nth-child(3) > button:nth-child(3)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure an element's role supports its ARIA attributes",
+        "impact": "critical",
+        "needsFurtherReview": false,
+        "help": "Elements must only use supported ARIA attributes",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/aria-allowed-attr?application=axeAPI"
+      }
+    },
+    {
+      "code": "button-name",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Buttons must have discernible text (https://dequeuniversity.com/rules/axe/4.11/button-name?application=axeAPI)",
+      "context": "<button class=\"button-secondary is--icon is--play button-secondary is--icon is--play button-play__video\"><div class=\"w-embed\"><svg xmlns...</button>",
+      "selector": "html > body > div > div:nth-child(5) > section:nth-child(1) > div:nth-child(2) > div > button",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure buttons have discernible text",
+        "impact": "critical",
+        "needsFurtherReview": false,
+        "help": "Buttons must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/button-name?application=axeAPI"
+      }
+    },
+    {
+      "code": "button-name",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Buttons must have discernible text (https://dequeuniversity.com/rules/axe/4.11/button-name?application=axeAPI)",
+      "context": "<button class=\"popup-trigger\"></button>",
+      "selector": "html > body > div > div:nth-child(5) > section:nth-child(1) > div:nth-child(2) > div > div:nth-child(2) > div > div > button",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure buttons have discernible text",
+        "impact": "critical",
+        "needsFurtherReview": false,
+        "help": "Buttons must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/button-name?application=axeAPI"
+      }
+    },
+    {
+      "code": "button-name",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Buttons must have discernible text (https://dequeuniversity.com/rules/axe/4.11/button-name?application=axeAPI)",
+      "context": "<button class=\"product-wizard__color is--active\"></button>",
+      "selector": "#main-carousel > div:nth-child(2) > button:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure buttons have discernible text",
+        "impact": "critical",
+        "needsFurtherReview": false,
+        "help": "Buttons must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/button-name?application=axeAPI"
+      }
+    },
+    {
+      "code": "button-name",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Buttons must have discernible text (https://dequeuniversity.com/rules/axe/4.11/button-name?application=axeAPI)",
+      "context": "<button class=\"product-wizard__color is--yellow plausible-event-name--Colorway+Click plausible-event-color--yellow\"></button>",
+      "selector": "#main-carousel > div:nth-child(2) > button:nth-child(2)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure buttons have discernible text",
+        "impact": "critical",
+        "needsFurtherReview": false,
+        "help": "Buttons must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/button-name?application=axeAPI"
+      }
+    },
+    {
+      "code": "button-name",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Buttons must have discernible text (https://dequeuniversity.com/rules/axe/4.11/button-name?application=axeAPI)",
+      "context": "<button class=\"product-wizard__color is--blue plausible-event-name--Colorway+Click plausible-event-color--blue\"></button>",
+      "selector": "#main-carousel > div:nth-child(2) > button:nth-child(3)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure buttons have discernible text",
+        "impact": "critical",
+        "needsFurtherReview": false,
+        "help": "Buttons must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/button-name?application=axeAPI"
+      }
+    },
+    {
+      "code": "button-name",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Buttons must have discernible text (https://dequeuniversity.com/rules/axe/4.11/button-name?application=axeAPI)",
+      "context": "<button class=\"product-wizard__color is--orange plausible-event-name--Colorway+Click plausible-event-color--orange\"></button>",
+      "selector": "#main-carousel > div:nth-child(2) > button:nth-child(4)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure buttons have discernible text",
+        "impact": "critical",
+        "needsFurtherReview": false,
+        "help": "Buttons must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/button-name?application=axeAPI"
+      }
+    },
+    {
+      "code": "button-name",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Buttons must have discernible text (https://dequeuniversity.com/rules/axe/4.11/button-name?application=axeAPI)",
+      "context": "<button class=\"product-wizard__color is--cream plausible-event-name--Colorway+Click plausible-event-color--cream\"></button>",
+      "selector": "#main-carousel > div:nth-child(2) > button:nth-child(5)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure buttons have discernible text",
+        "impact": "critical",
+        "needsFurtherReview": false,
+        "help": "Buttons must have discernible text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/button-name?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<a href=\"/product\" aria-current=\"page\" class=\"navbar-link w--current\">Product</a>",
+      "selector": "html > body > div > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(1) > a:nth-child(2)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div>Request Robot</div>",
+      "selector": "html > body > div > div:nth-child(4) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > a > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<p class=\"text-black-300\">Supports autonomy out-of-the-bo...</p>",
+      "selector": "#w-node-_72c50a6b-7840-6c35-483f-3d1f1c23a8d9-7497a197 > div > p",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<p class=\"text-black-300\">A modular software stack, power...</p>",
+      "selector": "#w-node-_2bc02d0b-58e2-a21a-c6a7-084924228283-7497a197 > div:nth-child(1) > p",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<p class=\"text-black-300\">Designed for safer human intera...</p>",
+      "selector": "#w-node-_7f6225d0-49e0-225a-60d1-9cef20c5811e-7497a197 > div:nth-child(1) > p",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div>Follows your lead</div>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(4) > div > div > div > div:nth-child(4) > button:nth-child(1) > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div>Capable transitions</div>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(4) > div > div > div > div:nth-child(4) > button:nth-child(2) > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div>Stable and balanced</div>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(4) > div > div > div > div:nth-child(4) > button:nth-child(3) > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div>Quick on its feet</div>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(4) > div > div > div > div:nth-child(4) > button:nth-child(4) > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div>Floor-to-countertop reach</div>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(5) > div > div > div > div:nth-child(4) > button:nth-child(1) > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div>Robust, integrated grippers</div>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(5) > div > div > div > div:nth-child(4) > button:nth-child(2) > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div>Easy to pilot</div>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(5) > div > div > div > div:nth-child(4) > button:nth-child(3) > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div>Companion app</div>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(5) > div > div > div > div:nth-child(4) > button:nth-child(4) > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div>Navigation</div>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(6) > div > div > div > div:nth-child(3) > button:nth-child(1) > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div>Mapping</div>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(6) > div > div > div > div:nth-child(3) > button:nth-child(2) > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div>Human awareness</div>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(6) > div > div > div > div:nth-child(3) > button:nth-child(3) > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div>Interactive behaviors</div>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(7) > div > div > div > div:nth-child(3) > button:nth-child(1) > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div>Conversation-driven</div>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(7) > div > div > div > div:nth-child(3) > button:nth-child(2) > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div>Dynamic expressions</div>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(7) > div > div > div > div:nth-child(3) > button:nth-child(3) > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">DoF</div>",
+      "selector": "#Overview > div > div:nth-child(1) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">29</div>",
+      "selector": "#Overview > div > div:nth-child(1) > div:nth-child(2)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">Height</div>",
+      "selector": "#Overview > div > div:nth-child(2) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">107 cm</div>",
+      "selector": "#Overview > div > div:nth-child(2) > div:nth-child(2)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">Weight</div>",
+      "selector": "#Overview > div > div:nth-child(3) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">22.7 kg</div>",
+      "selector": "#Overview > div > div:nth-child(3) > div:nth-child(2)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">Exterior</div>",
+      "selector": "#Overview > div > div:nth-child(4) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">Soft to the touch</div>",
+      "selector": "#Overview > div > div:nth-child(4) > div:nth-child(2)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">Articulated eyebrows</div>",
+      "selector": "#Human Interaction > div > div:nth-child(1) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">Full color, 360 degree facial L...</div>",
+      "selector": "#Human Interaction > div > div:nth-child(2) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">2 DoF neck</div>",
+      "selector": "#Human Interaction > div > div:nth-child(3) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">Directional microphone array</div>",
+      "selector": "#Human Interaction > div > div:nth-child(4) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">Dual speakers, high fidelity</div>",
+      "selector": "#Human Interaction > div > div:nth-child(5) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">Robust and durable 1 DoF grippe...</div>",
+      "selector": "#Manipulation > div > div:nth-child(1) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">Rubberized interior</div>",
+      "selector": "#Manipulation > div > div:nth-child(2) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">6 DoF arms</div>",
+      "selector": "#Manipulation > div > div:nth-child(3) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">ZED 2i stereoscopic vision</div>",
+      "selector": "#Sensing & Perception > div > div:nth-child(1) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">4x time-of-flight sensors</div>",
+      "selector": "#Sensing & Perception > div > div:nth-child(2) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">Torso IMU</div>",
+      "selector": "#Sensing & Perception > div > div:nth-child(3) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div>Full specs (PDF)</div>",
+      "selector": "#tech-specs > div > div > div:nth-child(1) > div:nth-child(3) > a:nth-child(1) > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div>Request Robot</div>",
+      "selector": "html > body > div > div:nth-child(5) > section:nth-child(3) > div > div > div > a > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "heading-order",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "Heading levels should only increase by one (https://dequeuniversity.com/rules/axe/4.11/heading-order?application=axeAPI)",
+      "context": "<h3 class=\"h4\">Full-stack capabilities</h3>",
+      "selector": "#w-node-_72c50a6b-7840-6c35-483f-3d1f1c23a8d9-7497a197 > div > h3",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the order of headings is semantically correct",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "Heading levels should only increase by one",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/heading-order?application=axeAPI"
+      }
+    },
+    {
+      "code": "image-alt",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Images must have alternative text (https://dequeuniversity.com/rules/axe/4.11/image-alt?application=axeAPI)",
+      "context": "<img src=\"https://cdn.prod.website-files.com/693933367980a29f6ff36b6d/69775f291f66f1bbf54f4ab1_demo-poster.webp\" class=\"absolute-cover is--cover\">",
+      "selector": "html > body > div > div:nth-child(5) > section:nth-child(1) > div:nth-child(2) > div > div:nth-child(2) > div > div > div > img",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+        "impact": "critical",
+        "needsFurtherReview": false,
+        "help": "Images must have alternative text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/image-alt?application=axeAPI"
+      }
+    },
+    {
+      "code": "image-alt",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Images must have alternative text (https://dequeuniversity.com/rules/axe/4.11/image-alt?application=axeAPI)",
+      "context": "<img class=\"absolute-cover is--cover is--desktop\" src=\"https://cdn.prod.website-files.com/693933367980a29f6ff36b6d/69776e1541b03771e6de16ab_productpage-locomotion-1-desktop.webp\">",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(4) > div > div > div > div:nth-child(3) > div > div > div:nth-child(1) > div > img:nth-child(2)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+        "impact": "critical",
+        "needsFurtherReview": false,
+        "help": "Images must have alternative text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/image-alt?application=axeAPI"
+      }
+    },
+    {
+      "code": "image-alt",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Images must have alternative text (https://dequeuniversity.com/rules/axe/4.11/image-alt?application=axeAPI)",
+      "context": "<img class=\"absolute-cover is--cover is--desktop\" src=\"https://cdn.prod.website-files.com/693933367980a29f6ff36b6d/69776e36d83f14747070c6d1_productpage-teleoperation-1-desktop.webp\">",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(5) > div > div > div > div:nth-child(3) > div > div > div:nth-child(1) > div > img:nth-child(2)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+        "impact": "critical",
+        "needsFurtherReview": false,
+        "help": "Images must have alternative text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/image-alt?application=axeAPI"
+      }
+    },
+    {
+      "code": "image-alt",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Images must have alternative text (https://dequeuniversity.com/rules/axe/4.11/image-alt?application=axeAPI)",
+      "context": "<img class=\"absolute-cover is--cover is--desktop\" src=\"https://cdn.prod.website-files.com/693933367980a29f6ff36b6d/69776f6296b6af94c782262d_productpage-autonomy-1-desktop.webp\">",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(6) > div > div > div > div:nth-child(2) > div > div > div:nth-child(1) > div > img:nth-child(2)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+        "impact": "critical",
+        "needsFurtherReview": false,
+        "help": "Images must have alternative text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/image-alt?application=axeAPI"
+      }
+    },
+    {
+      "code": "image-alt",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Images must have alternative text (https://dequeuniversity.com/rules/axe/4.11/image-alt?application=axeAPI)",
+      "context": "<img class=\"absolute-cover is--cover is--desktop\" src=\"https://cdn.prod.website-files.com/693933367980a29f6ff36b6d/69776e55e82c0b57cdac2a0f_productpage-social-1-desktop.webp\">",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(7) > div > div > div > div:nth-child(2) > div > div > div:nth-child(1) > div > img:nth-child(2)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <img> elements have alternative text or a role of none or presentation",
+        "impact": "critical",
+        "needsFurtherReview": false,
+        "help": "Images must have alternative text",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/image-alt?application=axeAPI"
+      }
+    },
+    {
+      "code": "landmark-unique",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination (https://dequeuniversity.com/rules/axe/4.11/landmark-unique?application=axeAPI)",
+      "context": "<div class=\"splide is--autowidth is--specs splide--slide splide--ltr splide--draggable is-active is-overflow is-initialized\" id=\"splide01\" role=\"region\" aria-roledescription=\"carousel\"><div class=\"product-wizard__hea...</div>",
+      "selector": "#splide01",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure landmarks are unique",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/landmark-unique?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<div class=\"product-hero__bg\"><div class=\"w-dyn-list\"><div ro...</div>",
+      "selector": "html > body > div > div:nth-child(5) > section:nth-child(1) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<div class=\"product-hero__video-embed is--product-page w-embed\"><img src=\"https://cdn.prod.webs...</div>",
+      "selector": "html > body > div > div:nth-child(5) > section:nth-child(1) > div:nth-child(2) > div > div:nth-child(2) > div > div > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<div class=\"product-hero__content\"><div class=\"opacity-70 mb-4\">Me...</div>",
+      "selector": "html > body > div > div:nth-child(5) > section:nth-child(1) > div:nth-child(3)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<canvas id=\"hero-animation-desktop\" class=\"product-inner__header-desktop\" width=\"882\" height=\"441\"></canvas>",
+      "selector": "#hero-animation-desktop",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<section class=\"section\"><div class=\"container\"><div cla...</section>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(3)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<div class=\"tab-content__panel-header\"><div class=\"tab-content__header...</div>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(4) > div > div > div > div:nth-child(2)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<video muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source data-src=\"https://pl...</video>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(4) > div > div > div > div:nth-child(3) > div > div > div:nth-child(1) > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<img class=\"absolute-cover is--cover is--desktop\" src=\"https://cdn.prod.website-files.com/693933367980a29f6ff36b6d/69776e1541b03771e6de16ab_productpage-locomotion-1-desktop.webp\">",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(4) > div > div > div > div:nth-child(3) > div > div > div:nth-child(1) > div > img:nth-child(2)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<div class=\"tab-content__panel-header\"><div class=\"tab-content__header...</div>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(5) > div > div > div > div:nth-child(2)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<video muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source data-src=\"https://pl...</video>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(5) > div > div > div > div:nth-child(3) > div > div > div:nth-child(1) > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<img class=\"absolute-cover is--cover is--desktop\" src=\"https://cdn.prod.website-files.com/693933367980a29f6ff36b6d/69776e36d83f14747070c6d1_productpage-teleoperation-1-desktop.webp\">",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(5) > div > div > div > div:nth-child(3) > div > div > div:nth-child(1) > div > img:nth-child(2)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<div class=\"tab-content__panel-header is--shaped\"><div class=\"tab-content__header...</div>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(6) > div > div > div > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<video muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source data-src=\"https://pl...</video>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(6) > div > div > div > div:nth-child(2) > div > div > div:nth-child(1) > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<img class=\"absolute-cover is--cover is--desktop\" src=\"https://cdn.prod.website-files.com/693933367980a29f6ff36b6d/69776f6296b6af94c782262d_productpage-autonomy-1-desktop.webp\">",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(6) > div > div > div > div:nth-child(2) > div > div > div:nth-child(1) > div > img:nth-child(2)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<div class=\"tab-content__panel-header\"><div class=\"tab-content__header...</div>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(7) > div > div > div > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<video muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source data-src=\"https://pl...</video>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(7) > div > div > div > div:nth-child(2) > div > div > div:nth-child(1) > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<img class=\"absolute-cover is--cover is--desktop\" src=\"https://cdn.prod.website-files.com/693933367980a29f6ff36b6d/69776e55e82c0b57cdac2a0f_productpage-social-1-desktop.webp\">",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(7) > div > div > div > div:nth-child(2) > div > div > div:nth-child(1) > div > img:nth-child(2)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<section class=\"section\"><div class=\"product-design\"><di...</section>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(8)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<h2 class=\"h2\">Technical specifications</h2>",
+      "selector": "#tech-specs > div > div > div:nth-child(1) > div:nth-child(1) > h2",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<p class=\"product-wizard__specs-name\">Overview</p>",
+      "selector": "#tech-specs > div > div > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(1) > div > p",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<div id=\"Overview\" class=\"product-wizard__specs-details w-dyn-list\" style=\"overflow: hidden; transition: height 0.3s; height: auto;\"><div role=\"list\" class=\"product...</div>",
+      "selector": "#Overview",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<p class=\"product-wizard__specs-name\">Human Interaction</p>",
+      "selector": "#tech-specs > div > div > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(2) > div > p",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">Articulated eyebrows</div>",
+      "selector": "#Human Interaction > div > div:nth-child(1) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">Full color, 360 degree facial L...</div>",
+      "selector": "#Human Interaction > div > div:nth-child(2) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">2 DoF neck</div>",
+      "selector": "#Human Interaction > div > div:nth-child(3) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">Directional microphone array</div>",
+      "selector": "#Human Interaction > div > div:nth-child(4) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">Dual speakers, high fidelity</div>",
+      "selector": "#Human Interaction > div > div:nth-child(5) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<p class=\"product-wizard__specs-name\">Manipulation</p>",
+      "selector": "#tech-specs > div > div > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(3) > div > p",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">Robust and durable 1 DoF grippe...</div>",
+      "selector": "#Manipulation > div > div:nth-child(1) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">Rubberized interior</div>",
+      "selector": "#Manipulation > div > div:nth-child(2) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">6 DoF arms</div>",
+      "selector": "#Manipulation > div > div:nth-child(3) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<p class=\"product-wizard__specs-name\">Sensing &amp; Perception</p>",
+      "selector": "#tech-specs > div > div > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(4) > div > p",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">ZED 2i stereoscopic vision</div>",
+      "selector": "#Sensing & Perception > div > div:nth-child(1) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">4x time-of-flight sensors</div>",
+      "selector": "#Sensing & Perception > div > div:nth-child(2) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">Torso IMU</div>",
+      "selector": "#Sensing & Perception > div > div:nth-child(3) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">NVIDIA Jetson AGX Orin 64GB</div>",
+      "selector": "#Sensing & Perception > div > div:nth-child(4) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">1 TB SSD</div>",
+      "selector": "#Sensing & Perception > div > div:nth-child(5) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<p class=\"product-wizard__specs-name\">Usability</p>",
+      "selector": "#tech-specs > div > div > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(5) > div > p",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">Swappable battery (Runtime 3 – ...</div>",
+      "selector": "#Usability > div > div:nth-child(1) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">Ergonomic handle</div>",
+      "selector": "#Usability > div > div:nth-child(2) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">E-Stop</div>",
+      "selector": "#Usability > div > div:nth-child(3) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">Ethernet port</div>",
+      "selector": "#Usability > div > div:nth-child(4) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<p class=\"product-wizard__specs-name\">Locomotion</p>",
+      "selector": "#tech-specs > div > div > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(6) > div > p",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">5 DoF legs</div>",
+      "selector": "#Locomotion > div > div:nth-child(1) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">Low-impact feet</div>",
+      "selector": "#Locomotion > div > div:nth-child(2) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<a href=\"https://cdn.prod.website-files.com/6931911db0300aa6e7e3fc81/696669bbc6fffe2c49ba9413_Sprout_Specifications.pdf\" target=\"_blank\" class=\"button-large button-secondary button-icon w-inline-block\"><div>Full specs (PDF)</div></a>",
+      "selector": "#tech-specs > div > div > div:nth-child(1) > div:nth-child(3) > a:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<div>Technical report</div>",
+      "selector": "#tech-specs > div > div > div:nth-child(1) > div:nth-child(3) > a:nth-child(2) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<div class=\"product-cta__header\"><h2 class=\"lead is--second\">Mak...</div>",
+      "selector": "html > body > div > div:nth-child(5) > section:nth-child(3) > div > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "region",
+      "type": "warning",
+      "typeCode": 2,
+      "message": "All page content should be contained by landmarks (https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI)",
+      "context": "<canvas id=\"robots-desktop\" class=\"product-inner__header-desktop\" width=\"1280\" height=\"640\"></canvas>",
+      "selector": "#robots-desktop",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure all page content is contained by landmarks",
+        "impact": "moderate",
+        "needsFurtherReview": false,
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/region?application=axeAPI"
+      }
+    },
+    {
+      "code": "scrollable-region-focusable",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Scrollable region must have keyboard access (https://dequeuniversity.com/rules/axe/4.11/scrollable-region-focusable?application=axeAPI)",
+      "context": "<div role=\"list\" class=\"product-wizard__specs-list w-dyn-items\"><div role=\"listitem\" class=\"pro...</div>",
+      "selector": "#tech-specs > div > div > div:nth-child(1) > div:nth-child(2) > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure elements that have scrollable content are accessible by keyboard in Safari",
+        "impact": "serious",
+        "needsFurtherReview": false,
+        "help": "Scrollable region must have keyboard access",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/scrollable-region-focusable?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div class=\"opacity-70 mb-4\">Meet</div>",
+      "selector": "html > body > div > div:nth-child(5) > section:nth-child(1) > div:nth-child(3) > div:nth-child(1)",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<h1 class=\"lead mb-8\">Sprout</h1>",
+      "selector": "html > body > div > div:nth-child(5) > section:nth-child(1) > div:nth-child(3) > h1",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div>Creator Edition</div>",
+      "selector": "html > body > div > div:nth-child(5) > section:nth-child(1) > div:nth-child(3) > div:nth-child(3) > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div>Social, engaging, and expressiv...</div>",
+      "selector": "#w-node-df81607d-4870-0b37-c66e-17e3e6d54fbd-7497a197 > div:nth-child(2) > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div>Tiered safety system</div>",
+      "selector": "#w-node-d18a056e-7013-e988-17ab-12f9de366085-7497a197 > div > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div>Fun-sized and lightweight</div>",
+      "selector": "#w-node-_0f455896-b520-64e9-c2d7-925dd75eb625-7497a197 > div:nth-child(2) > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div>Soft to the touch</div>",
+      "selector": "#w-node-b85984e5-1d52-d740-aa08-3053ca0633bd-7497a197 > div:nth-child(2) > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<a href=\"#\" class=\"product-wizard__specs-link plausible-event-name--Tech+Spec+Click\">Sensing &amp; Perception</a>",
+      "selector": "#splide01-slide04 > a",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<a href=\"#\" class=\"product-wizard__specs-link plausible-event-name--Tech+Spec+Click\" tabindex=\"-1\">Usability</a>",
+      "selector": "#splide01-slide05 > a",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<h2 class=\"h3\">Fauna Robotics, building a&nbsp...</h2>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(1) > h2",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<p class=\"text-brown-300\">Designed in New York City. <!--...</p>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(1) > p",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">Explore</div>",
+      "selector": "#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<a href=\"/product\" aria-current=\"page\" class=\"text-link w--current\">Product</a>",
+      "selector": "#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de > ul > li:nth-child(1) > a",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<a href=\"/product#tech-specs\" class=\"text-link\">Technical specifications</a>",
+      "selector": "#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de > ul > li:nth-child(2) > a",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<p>Technical report</p>",
+      "selector": "#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de > ul > li:nth-child(3) > a > p",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<p>Press kit</p>",
+      "selector": "#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b1ea-74d2b1de > ul > li:nth-child(4) > a > p",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">About</div>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<a href=\"/company\" class=\"text-link\">Company</a>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > ul > li:nth-child(1) > a",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<a href=\"https://www.amazon.jobs/en/search?base_query=fauna\" target=\"_blank\" class=\"text-link\">Careers</a>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > ul > li:nth-child(2) > a",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<a href=\"/news\" class=\"text-link\">News</a>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > ul > li:nth-child(3) > a",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div class=\"text-brown-300\">Social</div>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<a href=\"https://www.youtube.com/@FaunaRobotics\" target=\"_blank\" class=\"text-link\">YouTube</a>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > ul > li:nth-child(1) > a",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<a href=\"https://x.com/faunarobotics\" target=\"_blank\" class=\"text-link\">X (Twitter)</a>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > ul > li:nth-child(2) > a",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<a href=\"https://www.linkedin.com/company/fauna-robotics/\" target=\"_blank\" class=\"text-link\">LinkedIn</a>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > ul > li:nth-child(3) > a",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<a href=\"https://www.instagram.com/faunarobotics/?igsh=cGg0dnozNGpiYm85#\" target=\"_blank\" class=\"text-link\">Instagram</a>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(3) > ul > li:nth-child(4) > a",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<a href=\"mailto:sales@faunarobotics.com\" class=\"text-link decoration-underline\">Contact us</a>",
+      "selector": "#w-node-f7573142-a4ef-60b7-12da-23c3f39da591-74d2b1de > ul > li > a",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<div class=\"text-brown-200 p-l\">© <span id=\"copyright-year\">202...</div>",
+      "selector": "html > body > div > footer > div > div > div:nth-child(2) > div:nth-child(1) > div",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<span id=\"copyright-year\">2026</span>",
+      "selector": "#copyright-year",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<a href=\"/privacy-policy\" class=\"text-brown-200 text-link\">Privacy Policy</a>",
+      "selector": "#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b21e-74d2b1de > div:nth-child(1) > a",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "color-contrast",
+      "type": "error",
+      "typeCode": 1,
+      "message": "Elements must meet minimum color contrast ratio thresholds (https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI)",
+      "context": "<a href=\"/data-processing\" class=\"text-brown-200 text-link\">Data Processing Addendum</a>",
+      "selector": "#w-node-_3bc4d05a-f457-76d5-2f17-7eee74d2b222-74d2b1de > a",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "impact": "serious",
+        "needsFurtherReview": true,
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/color-contrast?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source src=\"https://player....</video>",
+      "selector": "html > body > div > div:nth-child(5) > section:nth-child(1) > div:nth-child(1) > div > div > div > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source src=\"https://player....</video>",
+      "selector": "#w-node-df81607d-4870-0b37-c66e-17e3e6d54fbd-7497a197 > div:nth-child(1) > div > div > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source src=\"https://player....</video>",
+      "selector": "#w-node-_7f6225d0-49e0-225a-60d1-9cef20c5811e-7497a197 > div:nth-child(2) > div > div > div > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source data-src=\"https://pl...</video>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(4) > div > div > div > div:nth-child(3) > div > div > div:nth-child(1) > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source data-src=\"https://pl...</video>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(5) > div > div > div > div:nth-child(3) > div > div > div:nth-child(1) > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source data-src=\"https://pl...</video>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(6) > div > div > div > div:nth-child(2) > div > div > div:nth-child(1) > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source data-src=\"https://pl...</video>",
+      "selector": "html > body > div > div:nth-child(5) > div > section:nth-child(7) > div > div > div > div:nth-child(2) > div > div > div:nth-child(1) > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source src=\"https://player....</video>",
+      "selector": "#w-node-_0f455896-b520-64e9-c2d7-925dd75eb625-7497a197 > div:nth-child(1) > div > div > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    },
+    {
+      "code": "video-caption",
+      "type": "error",
+      "typeCode": 1,
+      "message": "<video> elements must have captions (https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI)",
+      "context": "<video autoplay=\"\" loop=\"\" muted=\"\" playsinline=\"\" webkit-playsinline=\"\">\n  <source src=\"https://player....</video>",
+      "selector": "#w-node-b85984e5-1d52-d740-aa08-3053ca0633bd-7497a197 > div:nth-child(1) > div > div > div > video",
+      "runner": "axe",
+      "runnerExtras": {
+        "description": "Ensure <video> elements have captions",
+        "impact": "critical",
+        "needsFurtherReview": true,
+        "help": "<video> elements must have captions",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.11/video-caption?application=axeAPI"
+      }
+    }
+  ]
+}

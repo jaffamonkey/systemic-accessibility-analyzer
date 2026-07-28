@@ -1,0 +1,20 @@
+- Running accessibility scan...
+Wrote reports/faunarobotics.com.json (40 rows)
+Wrote reports/faunarobotics.com-product.json (57 rows)
+Wrote reports/faunarobotics.com-company.json (28 rows)
+Wrote reports/faunarobotics.com-news.json (35 rows)
+Wrote reports/faunarobotics.com-data-processing.json (27 rows)
+Running axe-scan in /Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/tool_work/axe-scan
+Using runner dir: /Users/user/code/systemic-accessibility-analyzer/tools/tool_runners/axe-scan
+Normalized URL count: 5
+Command: /Users/user/.nvm/versions/node/v22.19.0/bin/axe-scan run
+axe-scan exit code: 0
+converter exit code: 0
+JSON candidates after conversion:
+  /Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/tool_work/axe-scan/reports/faunarobotics.com-company.json
+  /Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/tool_work/axe-scan/reports/faunarobotics.com-data-processing.json
+  /Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/tool_work/axe-scan/reports/faunarobotics.com-news.json
+  /Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/tool_work/axe-scan/reports/faunarobotics.com-product.json
+  /Users/user/code/systemic-accessibility-analyzer/tools/jobs/faunarobotics-20260728-174103/tool_work/axe-scan/reports/faunarobotics.com.json
+Converted JSON report count: 5
+Expected URL count: 5
