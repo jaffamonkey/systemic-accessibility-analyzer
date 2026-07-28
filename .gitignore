@@ -100,3 +100,8 @@ desktop.ini
 *.sln
 *.swp
 
+# Ignore all job execution folders under tools/jobs/
+tools/jobs/*/
+
+# Ignore any 'results' directory deep within the tool runners structure
+tools/tool_runners/**/results/
