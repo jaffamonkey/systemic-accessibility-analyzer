@@ -99,8 +99,13 @@ def adapt_nu_html_checker(file, data):
             "ruleId": rule_id,
             "rule_name": rule_name,
             "message": message,
-            "dom": extract or message,
+            
+            # 🔥 FIX: Isolate DOM to purely HTML snippets and route selector to pattern
+            "dom": extract,
             "selector": "",
+            "pattern": "",
+            "display_pattern": rule_name,
+            
             "html": extract,
             "severity": _severity(msg_type, subtype),
             "source": "nu-html-checker",

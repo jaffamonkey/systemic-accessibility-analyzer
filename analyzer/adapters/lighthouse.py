@@ -72,8 +72,13 @@ def _push(out, file, page_url, audit_id, audit, item, result_type):
         "ruleId": audit_id,
         "rule_name": audit.get("title") or audit_id,
         "message": explanation or audit.get("title") or audit_id,
-        "dom": selector or html or (audit.get("title") or audit_id),
+        
+        # 🔥 FIX: Isolate DOM to purely HTML snippets and route selector to pattern
+        "dom": html,
         "selector": selector,
+        "pattern": selector,
+        "display_pattern": audit.get("title") or audit_id,
+        
         "html": html,
         "severity": _normalize_severity(debug.get("impact")),
         "source": "lighthouse",

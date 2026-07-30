@@ -42,8 +42,13 @@ def adapt_axe_scan(file, data):
             "ruleId": rule_id,
             "rule_name": rule_id,
             "message": item.get("Message") or item.get("Help") or rule_id,
-            "dom": item.get("HTML Element") or item.get("DOM Element") or rule_id,
-            "selector": item.get("DOM Element"),
+            
+            # 🔥 FIX: Isolate DOM to purely HTML snippets and route selector to pattern
+            "dom": item.get("HTML Element") or "",
+            "selector": item.get("DOM Element") or "",
+            "pattern": item.get("DOM Element") or "",
+            "display_pattern": rule_id,
+            
             "html": item.get("HTML Element"),
             "severity": item.get("Impact"),
             "source": "axe-scan",

@@ -424,8 +424,8 @@ https://example.com/contact"></textarea>
                 <label class="tool-item"><input type="checkbox" name="tools" value="ibm" checked /> ibm</label>
                 <label class="tool-item"><input type="checkbox" name="tools" value="uuv" checked /> uuv</label>
                 <label class="tool-item"><input type="checkbox" name="tools" value="nu-html-checker" checked /> nu html checker</label>
-                <label class="tool-item"><input type="checkbox" name="tools" value="alfa" /> alfa</label>
-                <label class="tool-item"><input type="checkbox" name="tools" value="speca11y" /> speca11y</label>
+                <label class="tool-item"><input type="checkbox" name="tools" value="alfa" checked /> alfa</label>
+                <label class="tool-item"><input type="checkbox" name="tools" value="speca11y" checked /> speca11y</label>
                 <label class="tool-item"><input type="checkbox" name="tools" value="pa11y" checked /> pa11y</label>
                 <label class="tool-item"><input type="checkbox" name="tools" value="axe-scan" /> axe-scan</label>
               </div>

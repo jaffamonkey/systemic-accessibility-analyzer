@@ -1,4 +1,12 @@
+"""
+SpecA11y Adapter
+
+Parses report outputs from the SpecA11y execution engine into the standard 
+Systemic Accessibility Analyzer schema.
+"""
+
 from adapters.registry import register_adapter
+import re
 
 WCAG_LEVEL_MAP = {
     "1.1.1": "A",
@@ -96,10 +104,22 @@ def _normalise_element(element):
     )
 
     html = element.get("html") or ""
+    
+    # 🔥 FIX 1: Strip hyper-dynamic SmartMenu IDs from selectors and HTML
+    # so they don't break the deduplication fingerprinting
+    import re
+    selector = re.sub(r'#sm-\d+-\d+', '', selector)
+    html = re.sub(r'id="sm-\d+-\d+"', '', html)
+    html = re.sub(r'aria-controls="sm-\d+-\d+"', '', html)
+
+    # 🔥 FIX 2: Repair SpecA11y's violent 200-character truncation
+    # If the HTML ends in a broken tag (like '<span clas'), chop it off cleanly
+    html = re.sub(r'<[^>]*$', '', html).strip()
+
     accessible_name = element.get("accessibleName")
     role = element.get("role")
 
-    dom = html or selector or ""
+    dom = html or ""
 
     return {
         "selector": selector,
@@ -109,7 +129,6 @@ def _normalise_element(element):
         "role": role,
         "bounding_box": element.get("boundingBox"),
     }
-
 def _is_page_level(element):
     return not (element.get("selector") or element.get("html") or element.get("dom"))
 
@@ -161,7 +180,7 @@ def adapt_speca11y(file, data):
 
             result_type = _normalise_result_type(result.get("type"))
 
-            # Ignore execution failures.
+            # Filter out execution timeouts (common in intensive layout checks)
             if (
                 result_type == "needs_review"
                 and "timed out" in message.lower()
@@ -172,7 +191,7 @@ def adapt_speca11y(file, data):
 
             element = _normalise_element(result.get("element") or {})
 
-            # 🔥 NEW FIX: Scrub the rule ID from the DOM to prevent it mimicking an element
+            # Scrub the rule ID from the DOM to prevent it mimicking an element
             if element["selector"] == result_rule_id or element["dom"] == result_rule_id:
                 element["selector"] = ""
                 element["dom"] = ""
@@ -180,16 +199,11 @@ def adapt_speca11y(file, data):
 
             is_page_level = _is_page_level(element)
 
-            issue_scope = (
-                "page"
-                if is_page_level
-                else "dom"
-            )
+            issue_scope = "page" if is_page_level else "dom"
 
             out.append({
-
                 # File / page
-                "file": file,
+                "file": str(file),
                 "page_url": page_url,
                 "url": page_url,
 
@@ -198,10 +212,6 @@ def adapt_speca11y(file, data):
                 "rule_id": result_rule_id,
                 "rule_name": rule_name,
                 "rule_label": rule_name,
-
-                # Display / clustering
-                "display_pattern": rule_name,
-                "pattern": result_rule_id,
 
                 # Scope
                 "issue_scope": issue_scope,
@@ -216,19 +226,11 @@ def adapt_speca11y(file, data):
                 "html": "" if is_page_level else element["html"],
 
                 # Component
-                "component": (
-                    "document_metadata"
-                    if is_page_level
-                    else None
-                ),
+                "component": "document_metadata" if is_page_level else None,
 
                 # Severity
-                "severity": _normalise_severity(
-                    rule.get("severity")
-                ),
-
+                "severity": _normalise_severity(rule.get("severity")),
                 "source": "speca11y",
-
                 "result_type": result_type,
                 "needs_review": needs_review,
 
@@ -238,10 +240,7 @@ def adapt_speca11y(file, data):
                 "wcag_level": wcag_level,
 
                 # Help
-                "helpUrl": (
-                    rule.get("helpUrl")
-                    or rule.get("url")
-                ),
+                "helpUrl": rule.get("helpUrl") or rule.get("url"),
 
                 # Confidence
                 "confidence": rule.get("confidence"),

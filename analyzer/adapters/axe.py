@@ -117,8 +117,13 @@ def _push(out, file, page_url, source, result_type, rule, node=None, **extra):
         "ruleId": rule.get("id") or "axe-rule",
         "rule_name": rule.get("help") or rule.get("description") or rule.get("id") or "axe-rule",
         "message": softened["message_override"] or _build_message(rule, node),
-        "dom": selector or html or (rule.get("help") or rule.get("description") or rule.get("id") or "axe-rule"),
+        
+        # 🔥 FIX: Explicitly assign HTML to DOM and map selector directly to pattern
+        "dom": html,
         "selector": selector,
+        "pattern": selector,
+        "display_pattern": rule.get("help") or rule.get("description") or rule.get("id") or "axe-rule",
+        
         "html": html,
         "severity": _normalize_severity(softened["severity"]),
         "source": _normalize_source(source),

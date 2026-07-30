@@ -98,8 +98,13 @@ def adapt_oobee(file, data):
                     "ruleId": rule_id,
                     "rule_name": description or rule_id,
                     "message": message,
-                    "dom": selector or html or message,
+                    
+                    # 🔥 FIX: Isolate DOM to purely HTML snippets and route selector to pattern
+                    "dom": html,
                     "selector": selector,
+                    "pattern": selector,
+                    "display_pattern": description or rule_id,
+                    
                     "html": html,
                     "severity": severity,
                     "wcag": wcag,

@@ -103,7 +103,6 @@ def adapt_alfa(file, data):
         wcag, wcag_level = _wcag_for(rule_id, threshold)
         meta = ALFA_RULE_MAP.get(rule_id, {})
 
-        # NEW - normalise the target here
         target = _normalise_alfa_target(item.get("target"))
 
         if not target and item.get("target") is not None:
@@ -144,8 +143,14 @@ def adapt_alfa(file, data):
             "ruleId": rule_id,
             "rule_name": rule_name,
             "message": row_message,
-            "dom": target_id or row_message or rule_id,
+            
+            # 🔥 FIX: Alfa uses 'serializationId' which looks like '#my-id' instead of HTML
+            # We map this to pattern/selector, and leave DOM empty rather than injecting it
+            "dom": "",
             "selector": target_id,
+            "pattern": target_id,
+            "display_pattern": rule_name,
+            
             "html": "",
             "severity": severity,
             "source": "alfa",

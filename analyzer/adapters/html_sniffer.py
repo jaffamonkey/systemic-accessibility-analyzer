@@ -170,8 +170,13 @@ def adapt_htmlcs(file, data):
             "ruleId": rule,
             "rule_name": rule,
             "message": clean_message,
-            "dom": dom_path or target or rule,
+            
+            # 🔥 FIX: Isolate DOM to purely HTML snippets. Do NOT fallback to Rule IDs.
+            "dom": extracted_html or cleaned_html,
             "selector": selector or target,
+            "pattern": selector or target,
+            "display_pattern": rule,
+            
             "dom_path": dom_path or selector or target,
             "html": extracted_html or cleaned_html,
             "severity": _normalize_severity(severity),
@@ -183,7 +188,6 @@ def adapt_htmlcs(file, data):
             "needs_review": severity == "warning",
             "is_audit_note": False,
             "raw_log": log,
-
             "display_message": clean_message,
             "display_dom_path": display_dom,
             "raw_html": html_snippet,

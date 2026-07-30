@@ -113,8 +113,13 @@ def adapt_generic_axe(file, data):
                 "ruleId": rule_id,
                 "rule_name": rule_name,
                 "message": _build_message(v, node),
-                "dom": selector or html or rule_name,
+                
+                # 🔥 FIX: Isolate DOM to purely HTML snippets and route selector to pattern
+                "dom": html,
                 "selector": selector,
+                "pattern": selector,
+                "display_pattern": rule_name,
+                
                 "html": html,
                 "severity": _normalize_severity(v.get("impact")),
                 "source": source,
@@ -144,8 +149,13 @@ def adapt_generic_axe(file, data):
                 "ruleId": rule_id,
                 "rule_name": rule_name,
                 "message": _build_message(v, node),
-                "dom": selector or html or rule_name,
+                
+                # 🔥 FIX: Isolate DOM to purely HTML snippets and route selector to pattern
+                "dom": html,
                 "selector": selector,
+                "pattern": selector,
+                "display_pattern": rule_name,
+                
                 "html": html,
                 "severity": _normalize_severity(v.get("impact")),
                 "source": source,
