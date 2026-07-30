@@ -12,19 +12,28 @@ GENERIC_TAGS = {"a", "li", "div", "span", "em", "i", "p"}
 def clean_dynamic_selectors(selector: str | None) -> str:
     """
     Strips out highly dynamic, auto-generated noise from selectors 
-    (like Webpack hashes or long database IDs) to prevent clustering failures.
+    to prevent clustering failures. Targets common CMS and frontend frameworks.
     """
     if not selector:
         return ""
         
     selector = str(selector).lower().strip()
     
-    # Strip trailing numbers from dynamically generated IDs (e.g., #button-12345 -> #button-)
+    # Generic dynamically generated trailing numbers (e.g., #button-12345 -> #button-)
     selector = re.sub(r'#([a-zA-Z_-]+)\d{4,}', r'#\1', selector)
     
     # Catch 32-character hex hashes (e.g., Siteimprove Alfa artifacts)
     if re.match(r'^[a-f0-9]{32}$', selector):
         return "alfa-opaque-node-hash"
+        
+    # Elementor dynamic element hashes
+    selector = re.sub(r'elementor-element-[a-f0-9]+', 'elementor-element', selector)
+    
+    # WordPress dynamic menu item IDs
+    selector = re.sub(r'menu-item-\d+', 'menu-item', selector)
+    
+    # SmartMenu dynamic IDs
+    selector = re.sub(r'#sm-\d+-\d+', '', selector)
         
     return selector
 
@@ -37,7 +46,6 @@ def simplify_pattern(selector) -> str:
     if selector is None:
         return "unknown"
 
-    # Normalize lists/tuples/sets into a single string
     if isinstance(selector, (list, tuple, set)):
         parts = []
         for item in selector:
@@ -55,7 +63,6 @@ def simplify_pattern(selector) -> str:
                 parts.append(str(item))
         selector = " ".join(parts)
 
-    # Normalize dictionaries
     elif isinstance(selector, dict):
         for key in ("xpath", "selector", "target", "html", "path"):
             value = selector.get(key)
@@ -72,11 +79,8 @@ def simplify_pattern(selector) -> str:
     if not s:
         return "unknown"
 
-    # Remove fragile nth-child and nth-of-type noise
     s = re.sub(r":nth-child\(\d+\)", "", s)
     s = re.sub(r":nth-of-type\(\d+\)", "", s)
-    
-    # Collapse whitespace
     s = re.sub(r"\s+", " ", s)
 
     return s

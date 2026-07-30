@@ -75,61 +75,6 @@ def friendly_pattern(pattern: str) -> str:
 
 
 # -------------------------
-# 🐛 DEBUG UTILITIES
-# -------------------------
-
-def _build_debug_matches(rows: list) -> list:
-    """
-    A developer diagnostic tool. Filters the processed rows down to a specific 
-    'watch list' of high-priority or problematic WCAG rules to help trace 
-    clustering logic issues during local development.
-    """
-    watch = {
-        "button-name",
-        "color-contrast",
-        "color-contrast-enhanced",
-        "interactive-name",
-        "text_contrast_sufficient",
-        "label",
-    }
-
-    debug_rows = []
-    for r in rows:
-        # Patch missing page identifiers for debugging
-        if not r.get("page"):
-            path = r.get("path") or r.get("source_file") or "Unknown"
-            r["page"] = Path(path).stem
-            
-        canonical_rule_id = r.get("canonical_rule_id") or r.get("ruleId")
-        if canonical_rule_id not in watch:
-            continue
-
-        debug_rows.append({
-            "page": r.get("page"),
-            "page_display": r.get("page_display") or humanize_page_key(r.get("page")),
-            "source": r.get("source"),
-            "sources": r.get("sources", []),
-            "ruleId": r.get("ruleId"),
-            "canonical_rule_id": r.get("canonical_rule_id"),
-            "canonical_problem_type": r.get("canonical_problem_type"),
-            "normalized_target_key": r.get("normalized_target_key"),
-            "component": r.get("component"),
-            "component_group": r.get("component_group"),
-            "fingerprint": r.get("fingerprint"),
-            "selector": r.get("selector"),
-            "dom_path": r.get("dom_path"),
-            "message": r.get("message"),
-            "tool_count": r.get("tool_count"),
-            "tool_family_count": r.get("tool_family_count"),
-            "tool_families": r.get("tool_families", []),
-            "consensus": r.get("consensus"),
-            "confidence": r.get("confidence"),
-        })
-
-    return debug_rows[:300]
-
-
-# -------------------------
 # 🚀 MAIN PIPELINE ORCHESTRATOR
 # -------------------------
 
@@ -161,23 +106,8 @@ def build_analysis_outputs(reports_dir: Path, output_dir: Path) -> dict:
                 r["files"] = [page]
     
     # --- 2. Build Clusters & Calculate Metrics ---
+    # The cluster engine handles all fuzzy-matching and assigns unique page counts internally
     clusters = build_clusters(rows)
-    
-    # Recalculate unique page counts for each cluster based on the processed rows
-    for cluster in clusters:
-        pattern = cluster.get("pattern")
-        matching_rows = [r for r in rows if r.get("pattern") == pattern]
-        
-        unique_files = set()
-        for r in matching_rows:
-            if "files" in r and isinstance(r["files"], list):
-                unique_files.update(r["files"])
-            elif r.get("page"):
-                unique_files.add(r.get("page"))
-        
-        cluster["affected_pages_count"] = len(unique_files)
-        cluster["files"] = list(unique_files)
-    
     metrics = calculate_metrics(rows, clusters)
 
     # --- 3. Construct Final Data Payload ---
@@ -198,11 +128,15 @@ def build_analysis_outputs(reports_dir: Path, output_dir: Path) -> dict:
                 "source": r.get("source") or "-",
                 "ruleId": r.get("ruleId") or r.get("wcag"),
                 "message": r.get("message"),
-                "dom_path": r.get("dom_path") or r.get("dom"),
+                
+                # Expose the cleaned architectural fields directly to the UI
+                "pattern": r.get("pattern"),
+                "selector": r.get("selector"),
+                "dom": r.get("dom"), 
+                
                 "fingerprint": r.get("fingerprint"),
                 "files": r.get("files") if isinstance(r.get("files"), list) else [r.get("page") or "Unknown"],
                 "wcag": r.get("wcag") or r.get("ruleId"), 
-                "dom": r.get("dom") 
             } for r in rows 
         ],
     }

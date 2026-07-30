@@ -18,10 +18,6 @@ const palette = ["#4e79a7", "#f28e2b", "#e15759", "#76b7b2", "#59a14f"];
 // 🗺️ ROUTING & STATIC MODE
 // -------------------------
 
-/**
- * Determines if the dashboard is being served as a static HTML file 
- * (e.g., via Netlify or GitHub Pages) or from a live local FastAPI server.
- */
 function getJobBasePath() {
     const match = window.location.pathname.match(/^\/jobs\/([^/]+)/);
     return match ? `/jobs/${match[1]}` : "";
@@ -47,7 +43,8 @@ const TOOL_LEVELS = {
     "pa11y-htmlcs": "AAA",
     "uuv": "AAA",
     "axe-core": "AAA",
-    "speca11y": "AAA"
+    "speca11y": "AAA",
+    "avalpdf": "AA"
 };
 
 const ENGINE_META = {
@@ -71,7 +68,8 @@ const ENGINE_META = {
     "nu-html-checker": { label: "Validator", badge: "⚖️", className: "engine-validator" },
     "contrast-checker": { label: "Visual", badge: "👁️", className: "engine-visual" },
     "tab-map": { label: "Keyboard", badge: "⌨️", className: "engine-keyboard" },
-    "virtual-screenreader": { label: "AT", badge: "🗣️", className: "engine-at" }
+    "virtual-screenreader": { label: "AT", badge: "🗣️", className: "engine-at" },
+    "avalpdf": { label: "PDF", badge: "📄", className: "engine-pdf" }
 };
 
 // -------------------------
@@ -651,6 +649,7 @@ let DRILLDOWN_FILTERED_ITEMS = [];
 let DRILLDOWN_TITLE = "";
 let DRILLDOWN_PAGE = 1;
 let DRILLDOWN_PAGE_SIZE = 25;
+let searchTimeout;
 
 function showDrilldown(title, items) {
     DRILLDOWN_TITLE = title || "Details";
@@ -671,6 +670,12 @@ function showDrilldown(title, items) {
 function getDrilldownSearchValue() {
     const input = document.getElementById("drilldown-search");
     return input ? String(input.value || "").trim().toLowerCase() : "";
+}
+
+// Debounce the search input to prevent UI freezing on massive audits
+function debounceSearch() {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(applyDrilldownFilters, 250);
 }
 
 function applyDrilldownFilters() {
@@ -734,7 +739,7 @@ function renderDrilldownPage() {
                     type="text"
                     placeholder="Filter current results"
                     value="${escapeHtml(getDrilldownSearchValue())}"
-                    oninput="applyDrilldownFilters()"
+                    oninput="debounceSearch()"
                     style="padding:8px 10px;min-width:260px;border:1px solid #d0d7de;border-radius:8px;"
                 >
             </div>
@@ -764,8 +769,8 @@ function renderDrilldownPage() {
             (Array.isArray(i.files) && i.files.length > 0 ? i.files[0] : "Unknown page")
         );
 
-        const domPathLabel = escapeHtml(i.dom_path || "");
         const patternLabel = escapeHtml(i.display_pattern || i.pattern || "");
+        const rawHtmlLabel = i.dom ? escapeHtml(i.dom) : "";
         const sourceLabel = escapeHtml(sourceRaw);
         
         const sourceHtml = sourceRaw && sourceRaw !== "-"
@@ -783,12 +788,17 @@ function renderDrilldownPage() {
                 <b>${ruleLabel}</b><br>
                 <strong>Page:</strong> ${pageLabel}<br>
                 <strong>Component:</strong> ${componentLabel}<br>
-                ${patternLabel ? `<strong>Pattern:</strong> ${patternLabel}<br>` : ""}
+                ${patternLabel ? `<strong>Pattern:</strong> <span style="font-family:monospace; font-size:12px;">${patternLabel}</span><br>` : ""}
                 <strong>Source:</strong> ${sourceHtml}<br>
-                ${domPathLabel ? `<strong>DOM Path:</strong> <span style="font-family:monospace; font-size:12px;">${domPathLabel}</span><br>` : ""}
                 ${fingerprintLabel ? `<strong>Fingerprint:</strong> <span style="font-family:monospace; font-size:12px;">${fingerprintLabel}</span>` : ""}
                 ${frameWarning}
                 ${messageLabel ? `<div style="margin-top:6px;color:#666;font-size:12px; white-space: pre-wrap;">${messageLabel}</div>` : ""}
+                
+                ${rawHtmlLabel ? `
+                <div style="margin-top:8px;">
+                    <strong>Failing HTML:</strong>
+                    <pre style="background:#f1f5f9; padding:8px; border-radius:6px; font-size:11px; overflow-x:auto;"><code>${rawHtmlLabel}</code></pre>
+                </div>` : ""}
             </div>
         `;
     });
@@ -1123,6 +1133,7 @@ function ensureEngineBadgeStyles() {
         .engine-visual { background: #fee2e2; color: #991b1b; }
         .engine-keyboard { background: #f1f5f9; color: #334155; }
         .engine-at { background: #ecfccb; color: #3f6212; }
+        .engine-pdf { background: #fce7f3; color: #be185d; }
         .engine-other { background: #e5e7eb; color: #374151; }
 
         .wcag-support-note {

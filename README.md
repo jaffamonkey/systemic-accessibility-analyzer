@@ -83,6 +83,42 @@ Once both servers are running, follow this happy-path workflow:
 
 ---
 
+## 🛠️ Running Batch Jobs in Parallel
+
+If you need to process multiple digital estates simultaneously rather than manually submitting them one by one through the web UI, you can run the automated parallel batch script (run_jobs_api.py).  
+
+### Prepare Your Batch Configuration File
+
+Create or reference a JSON file (e.g., job_batch.json) containing an array of target job configurations:  
+```bash
+[
+  {
+    "job_name": "Example Site",
+    "target_urls": [
+      "[https://example.com](https://example.com)",
+      "[https://example.com/about](https://example.com/about)"
+    ]
+  }
+]
+```
+
+### Configure the File Path in the Script
+
+Open `run_jobs_api.py` and verify that `CONFIG_FILE_PATH` points directly to your JSON batch dataset:  `CONFIG_FILE_PATH = "./job_batch.json"`
+
+### Execute the Batch Script
+
+Make sure your Auth & Scan Service is actively running on Port 8001, then execute the script in your terminal:
+```bash
+python3 run_jobs_api.py
+```
+
+### Concurrency Control
+
+The script uses a ThreadPoolExecutor to handle multiple jobs concurrently (defaulting to 4 simultaneous workers via MAX_CONCURRENT_JOBS).  Active Polling: It automatically tracks each dispatched job ID via status polling until completion or timeout.  
+
+---
+
 ## 🛠️ Supported Tools & WCAG Mapping
 
 The platform automatically detects report formats, normalizes them into a canonical violation model, and maps them to WCAG 2.2 Success Criteria.

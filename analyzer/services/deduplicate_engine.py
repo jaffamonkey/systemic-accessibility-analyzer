@@ -79,72 +79,6 @@ def is_proximity_match(row: dict, cluster: dict) -> bool:
 
 
 # -------------------------
-# 🛠️ HELPER FUNCTIONS
-# -------------------------
-
-def normalize_page(r: dict) -> str:
-    """Strips file extensions and tool-specific suffixes from page URLs/names."""
-    raw = (
-        r.get("page")
-        or r.get("url")
-        or r.get("file")
-        or r.get("document")
-        or "unknown"
-    )
-    p = str(raw).lower().strip()
-    p = re.sub(r"\.json$", "", p)
-    p = re.sub(r"_(axe|lighthouse|htmlcs|ibm|wave|pa11y)$", "", p)
-    return p
-
-def _coerce_selector_value(value) -> str:
-    """Safely extracts a flat string representation of a DOM selector from mixed types."""
-    if value is None:
-        return ""
-    if isinstance(value, str):
-        return value.strip()
-
-    if isinstance(value, (list, tuple, set)):
-        parts = []
-        for item in value:
-            if item is None:
-                continue
-            if isinstance(item, dict):
-                extracted = ""
-                for key in ("xpath", "selector", "target", "css", "path", "html", "dom"):
-                    candidate = item.get(key)
-                    if candidate:
-                        extracted = str(candidate)
-                        break
-                if not extracted:
-                    extracted = str(item)
-                parts.append(extracted)
-            else:
-                parts.append(str(item))
-        return " ".join(p for p in parts if p).strip()
-
-    if isinstance(value, dict):
-        for key in ("xpath", "selector", "target", "css", "path", "html", "dom"):
-            candidate = value.get(key)
-            if candidate:
-                return str(candidate).strip()
-        return str(value).strip()
-
-    return str(value).strip()
-
-
-def normalize_selector(selector: str) -> str:
-    """Strips highly fragile positional pseudo-classes from selectors."""
-    selector = _coerce_selector_value(selector)
-    if not selector:
-        return ""
-    s = selector.lower()
-    s = re.sub(r":nth-child\(\d+\)", "", s)
-    s = re.sub(r":nth-of-type\(\d+\)", "", s)
-    s = re.sub(r"\[\d+\]", "", s)
-    s = " ".join(s.split())
-    return s
-
-# -------------------------
 # 🚀 CORE CLUSTERING ENGINE
 # -------------------------
 def deduplicate_rows(rows: list) -> list:
@@ -200,6 +134,7 @@ def deduplicate_rows(rows: list) -> list:
                 # Keep the longest (most descriptive) pattern/dom available
                 if len(selector) > len(cluster.get("pattern") or ""):
                     cluster["pattern"] = selector
+                    cluster["selector"] = selector
                 if len(dom) > len(cluster.get("dom") or ""):
                     cluster["dom"] = dom
 
@@ -219,6 +154,8 @@ def deduplicate_rows(rows: list) -> list:
                 "wcag_url": r.get("wcag_url"),
                 "message": r.get("message"),
                 "dom": dom,
+                "selector": selector,
+                "pattern": selector,
                 "dom_path": selector or dom,
                 "fingerprint": fingerprint,
                 "normalized_target_key": r.get("normalized_target_key"),
@@ -228,7 +165,6 @@ def deduplicate_rows(rows: list) -> list:
                 "count": 1,
                 "files": set(),
                 "page_displays": set(),
-                "pattern": selector,
                 "component_group": r.get("component_group") or component,
                 "tool_count": 0,
                 "tool_family_count": 0,
@@ -273,7 +209,10 @@ def deduplicate_rows(rows: list) -> list:
         c["wcag_level_sort"] = wcag_level_sort_value(c.get("wcag_level"))
         c["component_display"] = humanize_slug(c.get("component"))
         c["component_group_display"] = humanize_slug(c.get("component_group"))
-        c["display_pattern"] = humanize_slug(c.get("pattern") or c.get("component"))
+        
+        # UI Fallback ensures the exact CSS pattern is displayed, not the abstract component name
+        c["display_pattern"] = c.get("pattern") or humanize_slug(c.get("component"))
+        
         c["owner_team"] = infer_owner_team(c.get("component_group"), c.get("component"))
         c["design_system_issue"] = bool(c.get("root_cause") or c.get("systemic"))
         c["issue_scope"] = infer_issue_scope(

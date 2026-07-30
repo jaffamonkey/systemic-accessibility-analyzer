@@ -1,7 +1,0 @@
-UUV running without storage state for public job
-....
-
-1 scenario (1 passed)
-2 steps (2 passed)
-0m22.397s (executing steps: 0m22.146s)
-`publishQuiet` option is no longer needed, you can remove it from your configuration; see https://github.com/cucumber/cucumber-js/blob/main/docs/deprecations.md

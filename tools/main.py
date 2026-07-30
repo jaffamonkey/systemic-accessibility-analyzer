@@ -3,7 +3,6 @@ from __future__ import annotations
 import secrets
 from datetime import datetime, UTC
 from pathlib import Path
-import sqlite3
 
 from fastapi import BackgroundTasks, FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
@@ -614,12 +613,13 @@ def submit_job(request: SubmitJobRequest, background_tasks: BackgroundTasks):
 
     try:
         db_create_job(record)
-    except sqlite3.IntegrityError:
+    except Exception as e:
+        # Catch database integrity / duplicate key errors cleanly across Postgres
         raise HTTPException(
             status_code=409,
-            detail=f"Job ID '{job_id}' already exists. Please try again."
+            detail=f"Job ID '{job_id}' already exists or a database conflict occurred: {e}"
         )
-
+  
     background_tasks.add_task(
         run_job_in_background,
         job_id=job_id,

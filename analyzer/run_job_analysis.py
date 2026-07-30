@@ -1,3 +1,11 @@
+"""
+Job Analysis CLI Wrapper
+
+A command-line utility used to trigger the Analysis Service. It infers 
+the job hierarchy from the provided reports directory and kicks off the 
+ETL pipeline to generate the final dashboard and data artifacts.
+"""
+
 from __future__ import annotations
 from pathlib import Path
 import argparse
@@ -22,17 +30,15 @@ def main() -> None:
     reports_dir = Path(args.reports_dir).resolve()
     job_id = _infer_job_id(reports_dir)
     
-    # Dynamically set output_dir to the path the server expects: /jobs/<job_id>/dashboard
+    # Dynamically set output_dir to the path the server expects: /jobs/<job_id>/analysis
     # We navigate up from the reports dir (assumed to be in .../jobs/<job_id>/reports)
-    base_dir = reports_dir.parent.parent # Points to .../jobs/<job_id>/
+    base_dir = reports_dir.parent.parent 
     output_dir = base_dir / job_id / "analysis"
 
     print(f"Building analysis for {job_id} into: {output_dir}")
 
     # Call the runner with the correctly inferred paths
     build_analysis_outputs(reports_dir, output_dir)
-    # build_analysis_outputs(reports_dir, output_dir)
-
     
     print(f"Analysis successfully built for {job_id}")
 

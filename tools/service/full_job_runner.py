@@ -13,6 +13,7 @@ import json
 import subprocess
 import sys
 from pathlib import Path
+import concurrent.futures
 
 from service.prepare_public_job import prepare_public_job
 
@@ -78,18 +79,76 @@ PUBLIC_TOOL_MODULES = {
     "speca11y": "service.run_speca11y",
 }
 
-
-def _run_command(cmd: list[str], *, cwd: Path | None = None) -> subprocess.CompletedProcess:
-    """Helper to safely execute external shell commands."""
-    return subprocess.run(cmd, cwd=str(cwd) if cwd else None, check=False)
-
+def _run_command(cmd: list[str], *, cwd: Path | None = None, timeout: int | None = None) -> subprocess.CompletedProcess:
+    """Helper to safely execute external shell commands with an optional timeout."""
+    return subprocess.run(cmd, cwd=str(cwd) if cwd else None, check=False, timeout=timeout)
 
 def _load_status(path: Path) -> dict:
     if not path.exists():
         return {}
     return json.loads(path.read_text(encoding="utf-8"))
 
+def _execute_single_tool(tool: str, module: str, job_id: str, auth_service_dir: Path, reports_dir: Path) -> dict:
+    """
+    Worker function to execute a single accessibility tool in an isolated subprocess.
+    Designed to be run concurrently with a strict timeout.
+    """
+    tool_reports_dir = reports_dir / tool
+    skip_marker = tool_reports_dir / "SKIPPED"
+    
+    print(f"🔄 Launching {tool}...")
+    
+    try:
+        # 🔥 The 600 second (10 minute) timeout prevents infinite hangs
+        result = _run_command(
+            [sys.executable, "-m", module, f"jobs/{job_id}"],
+            cwd=auth_service_dir,
+            timeout=600
+        )
+    except subprocess.TimeoutExpired:
+        print(f"⏱️ ❌ {tool} timed out after 10 minutes and was forcefully terminated!")
+        return {
+            "status": "error",
+            "returncode": -1,
+            "report_count": 0,
+            "reports_dir": str(tool_reports_dir),
+            "message": "Tool execution timed out and was killed by the orchestrator."
+        }
 
+    if skip_marker.exists():
+        print(f"⏭️  {tool} skipped (via SKIPPED marker)")
+        return {
+            "status": "skipped",
+            "message": skip_marker.read_text(encoding="utf-8").strip(),
+            "reports_dir": str(tool_reports_dir),
+        }
+
+    report_count = len(list(tool_reports_dir.glob("*.json"))) if tool_reports_dir.exists() else 0
+
+    if result.returncode == 0:
+        print(f"✅ {tool} completed successfully ({report_count} reports)")
+        return {
+            "status": "ok",
+            "report_count": report_count,
+            "reports_dir": str(tool_reports_dir),
+        }
+    elif report_count > 0:
+        print(f"⚠️  {tool} finished with warnings ({report_count} reports generated)")
+        return {
+            "status": "partial",
+            "returncode": result.returncode,
+            "report_count": report_count,
+            "reports_dir": str(tool_reports_dir),
+            "message": "Tool returned non-zero but produced report files",
+        }
+    else:
+        print(f"❌ {tool} failed (Code: {result.returncode})")
+        return {
+            "status": "error",
+            "returncode": result.returncode,
+            "report_count": 0,
+            "reports_dir": str(tool_reports_dir),
+        }
 def run_full_job(
     *,
     job_id: str,
@@ -102,7 +161,7 @@ def run_full_job(
     """
     Executes the complete analysis lifecycle:
     1. Triggers authentication (if required).
-    2. Runs all requested scraping/scanning tools.
+    2. Runs all requested scraping/scanning tools in parallel.
     3. Triggers the final analysis/dashboard generation.
     """
     tools = list(tools or DEFAULT_TOOLS)
@@ -156,6 +215,7 @@ def run_full_job(
 
     # --- 1. AUTHENTICATION PHASE ---
     if requires_auth:
+        print(f"\n🔐 Executing Authentication for Job {job_id}...")
         prepare_cmd = [
             sys.executable,
             "run_job.py",
@@ -167,6 +227,7 @@ def run_full_job(
         job_status = _load_status(status_path)
 
         if prepare_result.returncode != 0:
+            print("❌ Authentication script failed.")
             summary["auth"] = {
                 "status": "error",
                 "returncode": prepare_result.returncode,
@@ -176,6 +237,7 @@ def run_full_job(
             return summary
 
         if not job_status.get("auth_success"):
+            print("❌ Authentication failed (Invalid Credentials/Timeout).")
             summary["auth"] = {
                 "status": "error",
                 "message": job_status.get("message", "Authentication failed"),
@@ -183,70 +245,68 @@ def run_full_job(
             _write_summary(job_dir, summary)
             return summary
 
+        print("✅ Authentication successful.")
         summary["auth"] = {
             "status": "ok",
             "message": job_status.get("message", "Authentication succeeded"),
             "final_url": job_status.get("final_url"),
         }
     else:
+        print(f"\n🌐 Executing Public Job {job_id} (No Auth required)")
         job_status = prepare_public_job(job_dir, job_config)
         summary["auth"] = {
             "status": "skipped",
             "message": job_status.get("message", "Authentication not required"),
         }
 
-    # --- 2. TOOL EXECUTION PHASE ---
-    for tool in tools:
-        module = tool_modules.get(tool)
-        tool_reports_dir = reports_dir / tool
-        skip_marker = tool_reports_dir / "SKIPPED"
+    # --- 2. TOOL EXECUTION PHASE (PARALLEL) ---
+    print(f"\n⚡ Spawning {len(tools)} analysis tools concurrently...")
+    
+    # Setup the execution pool. max_workers defines how many tools run at exactly the same time.
+    # We default to half of the CPU cores to prevent local machines from freezing, but ensure 
+    # at least 4 concurrent workers if the machine has fewer cores.
+    import multiprocessing
+    max_workers = max(4, multiprocessing.cpu_count() // 2)
 
-        if not module:
-            summary["tools"][tool] = {
-                "status": "error",
-                "message": f"Unknown tool: {tool}",
-            }
-            continue
+    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+        # Create a dictionary of futures to keep track of which tool is running
+        future_to_tool = {}
+        for tool in tools:
+            module = tool_modules.get(tool)
+            if not module:
+                summary["tools"][tool] = {
+                    "status": "error",
+                    "message": f"Unknown tool: {tool}",
+                }
+                continue
+            
+            # Submit the isolated task to the worker pool
+            future = executor.submit(
+                _execute_single_tool, 
+                tool, 
+                module, 
+                job_id, 
+                auth_service_dir, 
+                reports_dir
+            )
+            future_to_tool[future] = tool
 
-        result = _run_command(
-            [sys.executable, "-m", module, f"jobs/{job_id}"],
-            cwd=auth_service_dir,
-        )
-
-        if skip_marker.exists():
-            summary["tools"][tool] = {
-                "status": "skipped",
-                "message": skip_marker.read_text(encoding="utf-8").strip(),
-                "reports_dir": str(tool_reports_dir),
-            }
-            continue
-
-        report_count = len(list(tool_reports_dir.glob("*.json"))) if tool_reports_dir.exists() else 0
-
-        if result.returncode == 0:
-            summary["tools"][tool] = {
-                "status": "ok",
-                "report_count": report_count,
-                "reports_dir": str(tool_reports_dir),
-            }
-        elif report_count > 0:
-            summary["tools"][tool] = {
-                "status": "partial",
-                "returncode": result.returncode,
-                "report_count": report_count,
-                "reports_dir": str(tool_reports_dir),
-                "message": "Tool returned non-zero but produced report files",
-            }
-        else:
-            summary["tools"][tool] = {
-                "status": "error",
-                "returncode": result.returncode,
-                "report_count": 0,
-                "reports_dir": str(tool_reports_dir),
-            }
+        # Wait for all tools to finish and collect their results
+        for future in concurrent.futures.as_completed(future_to_tool):
+            tool = future_to_tool[future]
+            try:
+                tool_summary = future.result()
+                summary["tools"][tool] = tool_summary
+            except Exception as exc:
+                print(f"❌ {tool} generated an unhandled exception: {exc}")
+                summary["tools"][tool] = {
+                    "status": "error",
+                    "message": str(exc)
+                }
 
     # --- 3. ANALYSIS PHASE ---
     if not skip_analysis:
+        print("\n📈 Building Systemic Dashboard and Analytics...")
         analysis_cmd = [
             sys.executable,
             "run_job_analysis.py",
@@ -258,6 +318,7 @@ def run_full_job(
         analysis_result = _run_command(analysis_cmd, cwd=analysis_repo_dir)
 
         if analysis_result.returncode == 0:
+            print("✅ Dashboard built successfully!")
             summary["analysis"] = {
                 "status": "ok",
                 "output_dir": str(analysis_dir),
@@ -265,6 +326,7 @@ def run_full_job(
                 "workbook": str(analysis_dir / "accessibility_analysis.xlsx"),
             }
         else:
+            print("❌ Dashboard generation failed.")
             summary["analysis"] = {
                 "status": "error",
                 "returncode": analysis_result.returncode,

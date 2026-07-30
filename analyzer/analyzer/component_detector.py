@@ -8,11 +8,9 @@ historical learned patterns, and finally keyword matching.
 """
 
 import re
-from collections import defaultdict
-
 from analyzer.utils import clean_dynamic_selectors, simplify_pattern
 from analyzer.component_config import COMPONENT_PATTERNS
-from analyzer.component_learning import auto_guess, load_learning, LEARNING
+from analyzer.component_learning import load_learning, LEARNING
 
 DESIGN_SYSTEM_PATTERNS = {
     "landmarks": ["header", "nav", "main", "footer", "aside", "section", "article"],
@@ -24,15 +22,11 @@ DESIGN_SYSTEM_PATTERNS = {
 
 
 def get_emerging_patterns() -> list:
-    """
-    Scans the local learning file for high-frequency, unclassified DOM patterns 
-    so they can be surfaced on the dashboard for manual mapping.
-    """
+    """Surfaces high-frequency, unclassified DOM patterns for the dashboard."""
     learning = load_learning()
     results = []
 
     for pattern, data in learning.items():
-        # Only surface patterns that appear frequently across the estate
         if data.get("count", 0) < 5:
             continue
 
@@ -55,10 +49,8 @@ def detect_design_system(pattern: str) -> str | None:
 
     for group, keywords in DESIGN_SYSTEM_PATTERNS.items():
         for k in keywords:
-            # Prefix match (e.g., 'mt-' matches 'mt-5')
             if k.endswith('-') or k.endswith('_'):
                 regex = rf'\b{re.escape(k)}'
-            # Exact word boundary match (e.g., 'grid' matches 'main-grid' but not 'gridlock')
             else:
                 regex = rf'\b{re.escape(k)}\b'
             
@@ -69,10 +61,21 @@ def detect_design_system(pattern: str) -> str | None:
 
 
 def parse_pattern(pattern: str) -> list:
-    """Breaks a CSS pattern into hierarchy parts (e.g. 'nav-ul-li-a' → ['nav','ul','li','a'])."""
+    """
+    Breaks a standard CSS selector into hierarchy parts.
+    Example: 'nav > ul > li.menu-item > a' -> ['nav', 'ul', 'li.menu-item', 'a']
+    """
     if not pattern:
         return []
-    return pattern.split("-")
+    # Split by CSS combinators (space, >, +, ~)
+    parts = re.split(r'\s*(?:>|\+|~|\s)\s*', pattern.strip())
+    return [p for p in parts if p and p not in {'>', '+', '~'}]
+
+
+def _get_base_tag(element_selector: str) -> str:
+    """Extracts the base HTML tag from a complex element selector (e.g., 'a.btn#id' -> 'a')."""
+    match = re.match(r'^([a-zA-Z0-9]+)', element_selector)
+    return match.group(1) if match else ""
 
 
 def detect_component(dom: str, selector: str = None) -> str:
@@ -80,14 +83,11 @@ def detect_component(dom: str, selector: str = None) -> str:
     The primary waterfall pipeline for identifying a UI component.
     Evaluates in order: Exclusions -> Explicit Target -> Hierarchy -> Machine Learning -> Keywords.
     """
-    # 1. SCRUB THE RAW INPUTS
     dom = clean_dynamic_selectors(dom)
     selector = clean_dynamic_selectors(selector)
 
-    # 2. COMBINE THEM
     text = f"{dom or ''} {selector or ''}".lower().strip()
 
-    # 3. THE BOUNCER: Catch opaque hashes and tracking scripts early
     if "alfa-opaque-node-hash" in text:
         return "third_party"
 
@@ -97,33 +97,35 @@ def detect_component(dom: str, selector: str = None) -> str:
     if not parts:
         return "other"
 
-    # 4. PRIORITY: LAST ELEMENT (The actual target node)
-    last = parts[-1]
+    # Isolate the exact element targeted by the rule
+    last_element = parts[-1]
+    base_tag = _get_base_tag(last_element)
 
-    if last == "a": return "link"
-    if last in ["button"]: return "button"
-    if last in ["input", "textarea", "select"]: return "form"
-    if last in ["img", "svg"]: return "image"
-    if last in ["li"]: return "list"
-    if "frame" in pattern: return "frame"
+    # 1. PRIORITY: HTML Base Tag
+    if base_tag == "a": return "link"
+    if base_tag == "button": return "button"
+    if base_tag in ["input", "textarea", "select", "fieldset", "legend"]: return "form"
+    if base_tag in ["img", "svg"]: return "image"
+    if base_tag in ["li"]: return "list"
+    if base_tag in ["iframe"]: return "frame"
 
-    # 5. CONTEXT-AWARE BOOST (Looking up the DOM tree)
+    # 2. CONTEXT-AWARE BOOST (Looking up the parsed DOM tree)
     if "nav" in parts: return "navigation"
     if "ul" in parts or "ol" in parts: return "list"
     if "table" in parts: return "table"
     if "form" in parts: return "form"
 
-    # 6. MACHINE LEARNING OVERRIDE
+    # 3. MACHINE LEARNING OVERRIDE
     if pattern in LEARNING and LEARNING[pattern].get("component"):
         return LEARNING[pattern]["component"]
 
-    # 7. KEYWORD MATCH (Catches customized class names like '.primary-cta')
+    # 4. KEYWORD MATCH (Catches customized class names like '.primary-cta')
     for comp, keywords in COMPONENT_PATTERNS.items():
         if any(k in pattern for k in keywords):
             return comp
 
-    # 8. FALLBACK
-    if len(parts) == 1 and parts[0] in ["div", "section", "container"]:
+    # 5. FALLBACK
+    if len(parts) == 1 and base_tag in ["div", "section", "container", "header", "main", "footer"]:
         return "layout"
 
     return "other"
