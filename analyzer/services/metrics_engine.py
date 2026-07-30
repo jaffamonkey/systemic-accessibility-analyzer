@@ -644,8 +644,134 @@ def get_suggested_components():
 
     return results
 
+def _build_next_best_fixes(clusters, rows=None):
+    pattern_rollup = {}
 
-def _build_next_best_fixes(clusters):
+    # Build a quick lookup from pattern/rule to its page files using raw rows
+    pattern_to_pages = {}
+    if rows:
+        for r in rows:
+            pats = [r.get("pattern"), r.get("ruleId"), r.get("rule_id")]
+            file_list = r.get("files") or ([r.get("page")] if r.get("page") else [])
+            for p in pats:
+                if p:
+                    pattern_to_pages.setdefault(p, set()).update(file_list)
+
+    for c in clusters:
+        pattern = c.get("pattern")
+        rule_id = c.get("canonical_rule_id") or c.get("ruleId")
+        component = c.get("component")
+
+        weak_values = {"", "unknown", "unknown-pattern", "other", None}
+
+        if pattern in weak_values:
+            if rule_id and str(rule_id).strip().lower() not in weak_values:
+                pattern = rule_id
+            elif component and str(component).strip().lower() not in weak_values:
+                pattern = component
+            else:
+                continue
+
+        stats = pattern_rollup.setdefault(pattern, {
+            "pattern": pattern,
+            "display_pattern": c.get("display_pattern") or pattern,
+            "component": c.get("component") or "other",
+            "component_display": c.get("component_display") or (c.get("component") or "other").replace("_", " ").title(),
+            "severity": c.get("severity") or "unknown",
+            "severity_display": str(c.get("severity") or "unknown").title(),
+            "severity_sort": c.get("severity_sort") or 99,
+            "findings_count": 0,
+            "pages": set(),
+            "is_systemic": False,
+            "issue_scope": c.get("issue_scope") or "Unknown",
+            "issue_scope_sort": c.get("issue_scope_sort") or 99,
+            "owner_team": c.get("owner_team") or "Frontend Platform",
+            "priority_score": 0,
+            "root_cause": c.get("root_cause") or "",
+        })
+
+        stats["findings_count"] += c.get("count", 0)
+        
+        # Safely pull pages from cluster files, instances, or fallback to raw rows lookup
+        cluster_files = c.get("files") or []
+        if isinstance(cluster_files, list):
+            stats["pages"].update(cluster_files)
+            
+        if c.get("instances"):
+            for inst in c.get("instances"):
+                if isinstance(inst, dict):
+                    f = inst.get("files") or inst.get("page") or inst.get("file")
+                    if isinstance(f, list):
+                        stats["pages"].update(f)
+                    elif f:
+                        stats["pages"].add(f)
+
+        if not stats["pages"] and rows:
+            if pattern in pattern_to_pages:
+                stats["pages"].update(pattern_to_pages[pattern])
+            if rule_id and rule_id in pattern_to_pages:
+                stats["pages"].update(pattern_to_pages[rule_id])
+
+        stats["is_systemic"] = stats["is_systemic"] or bool(c.get("systemic"))
+        stats["priority_score"] = max(stats["priority_score"], c.get("issue_rank_score", 0))
+        if (c.get("issue_scope_sort") or 99) < (stats.get("issue_scope_sort") or 99):
+            stats["issue_scope"] = c.get("issue_scope") or stats.get("issue_scope")
+            stats["issue_scope_sort"] = c.get("issue_scope_sort") or stats.get("issue_scope_sort")
+
+        current_sort = c.get("severity_sort") or 99
+        if current_sort < stats["severity_sort"]:
+            stats["severity_sort"] = current_sort
+            stats["severity"] = c.get("severity") or "unknown"
+            stats["severity_display"] = str(c.get("severity") or "unknown").title()
+
+        if c.get("root_cause") and not stats["root_cause"]:
+            stats["root_cause"] = c.get("root_cause")
+
+    ranked = []
+    for stats in pattern_rollup.values():
+        stats["affected_pages_count"] = len(stats["pages"])
+        stats["top_fix_candidate"] = (
+            stats["affected_pages_count"] >= 2
+            or stats["is_systemic"]
+            or stats["findings_count"] >= 3
+        )
+        ranked.append(stats)
+
+    ranked.sort(
+        key=lambda item: (
+            item["priority_score"],
+            item["affected_pages_count"],
+            item["findings_count"],
+            -item["severity_sort"],
+        ),
+        reverse=True,
+    )
+
+    for idx, item in enumerate(ranked, start=1):
+        item["top_fix_rank"] = idx
+        item["systemic_label"] = "Yes" if item["is_systemic"] else "No"
+        item["pages"] = sorted(item["pages"])
+
+    top_fixes = ranked[:10]
+    top5_pages = sorted({page for item in top_fixes[:5] for page in item["pages"]})
+
+    owner_counts = {}
+    for item in top_fixes:
+        owner = item.get("owner_team") or "Frontend Platform"
+        owner_counts[owner] = owner_counts.get(owner, 0) + item.get("findings_count", 0)
+
+    top_owner_team = None
+    if owner_counts:
+        top_owner_team = max(owner_counts.items(), key=lambda pair: pair[1])[0]
+
+    summary = {
+        "systemic_fixes": sum(1 for item in top_fixes if item.get("is_systemic")),
+        "pages_impacted_top5": len(top5_pages),
+        "top_owner_team": top_owner_team or "-",
+        "top5_pages": top5_pages,
+    }
+
+    return top_fixes, summary
     pattern_rollup = {}
 
     for c in clusters:
@@ -760,31 +886,24 @@ def calculate_metrics(rows, clusters):
     violations = len(rows)
     unique_pages = set()
     for r in rows:
-        # Check 'files' first, as that contains your page list
         page_list = r.get("files")
         if page_list and isinstance(page_list, list):
             unique_pages.update(page_list)
-        elif r.get("page"): # Fallback to existing logic
+        elif r.get("page"):
             unique_pages.add(r.get("page"))
-            
-    # 2. Adjusted Impact Score (Accounts for single-page sites!)
-    total_findings = sum(c.get("count", 1) for c in clusters)
-    
-    # # If it's cross-page OR it repeats 4+ times on a single page, it's a shared pattern!
-    # systemic_findings = sum(
-    #     c.get("count", 1) for c in clusters 
-    #     if c.get("systemic") or c.get("count", 1) >= 4
-    # )
 
-    # Update the logic to be more inclusive of cross-page findings
-    systemic_findings = sum(
-        c.get("count", 1) for c in clusters 
-        if c.get("systemic") 
-        or c.get("count", 1) >= 4 
-        or (c.get("affected_pages_count", 0) > 1)  # <--- NEW: Any finding on 2+ pages is shared!
+    # Count how many findings share the same rule/pattern across multiple pages or instances
+    pattern_counts = {}
+    for r in rows:
+        key = r.get("pattern") or r.get("ruleId") or r.get("rule_id") or "unknown"
+        pattern_counts[key] = pattern_counts.get(key, 0) + 1
+
+    # Any finding belonging to a pattern that appears more than once is "shared"
+    shared_findings = sum(
+        count for key, count in pattern_counts.items() if count > 1
     )
-
-    shared_pattern_impact = round((systemic_findings / total_findings) * 100) if total_findings else 0
+    
+    shared_pattern_impact = round((shared_findings / violations) * 100) if violations else 0
 
     source_counts = {}
 
@@ -900,7 +1019,8 @@ def calculate_metrics(rows, clusters):
         )
     }
 
-    next_best_fixes, next_best_fixes_summary = _build_next_best_fixes(clusters)
+    # Pass 'rows' into the builder so it can accurately map pages
+    next_best_fixes, next_best_fixes_summary = _build_next_best_fixes(clusters, rows)
 
     wcag_levels = {}
     for r in rows:
