@@ -99,11 +99,11 @@ def _execute_single_tool(tool: str, module: str, job_id: str, auth_service_dir: 
     print(f"🔄 Launching {tool}...")
     
     try:
-        # 🔥 The 600 second (10 minute) timeout prevents infinite hangs
+        # 🔥 The 3600 second (30 minute) timeout prevents infinite hangs on longer runs
         result = _run_command(
             [sys.executable, "-m", module, f"jobs/{job_id}"],
             cwd=auth_service_dir,
-            timeout=600
+            timeout=3600
         )
     except subprocess.TimeoutExpired:
         print(f"⏱️ ❌ {tool} timed out after 10 minutes and was forcefully terminated!")

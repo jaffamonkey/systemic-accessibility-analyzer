@@ -1,8 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { chromium } from "playwright";
-import { check, buildSarifReport } from "@speca11y/core";
-
+import { check } from "@speca11y/core";
 
 const JOB_DIR = process.argv[2];
 
@@ -24,25 +23,12 @@ const browser = await chromium.launch({
   headless: true
 });
 
-const allReports = [];
-
-async function autoScroll(page) {
-  await page.evaluate(async () => {
-    await new Promise(resolve => {
-      let total = 0;
-      const distance = 500;
-      const timer = setInterval(() => {
-        window.scrollBy(0, distance);
-        total += distance;
-
-        if (total >= document.body.scrollHeight) {
-          clearInterval(timer);
-          window.scrollTo(0, 0);
-          resolve();
-        }
-      }, 100);
-    });
-  });
+function safeName(input) {
+  return String(input || "")
+    .replace(/^https?:\/\//i, "")
+    .replace(/[^a-zA-Z0-9._-]+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
 }
 
 async function withTimeout(promise, ms, label) {
@@ -58,32 +44,47 @@ async function withTimeout(promise, ms, label) {
   }
 }
 
-function safeName(input) {
-  return String(input || "")
-    .replace(/^https?:\/\//i, "")
-    .replace(/[^a-zA-Z0-9._-]+/g, "-")
-    .replace(/-+/g, "-")
-    .replace(/^-|-$/g, "");
+async function autoScroll(page, maxScrolls = 15) {
+  await page.evaluate(async (max) => {
+    await new Promise(resolve => {
+      let total = 0;
+      let scrolls = 0;
+      const distance = 500;
+      const timer = setInterval(() => {
+        window.scrollBy(0, distance);
+        total += distance;
+        scrolls++;
+
+        if (total >= document.body.scrollHeight || scrolls >= max) {
+          clearInterval(timer);
+          window.scrollTo(0, 0);
+          resolve();
+        }
+      }, 100);
+    });
+  }, maxScrolls);
 }
 
-for (const url of urls) {
-  const page = await browser.newPage({
+async function processUrl(url) {
+  const context = await browser.newContext({
     viewport: { width: 1366, height: 900 },
     reducedMotion: "reduce"
   });
+
+  const page = await context.newPage();
+  const name = safeName(url);
+  const jsonPath = path.join(OUT_DIR, `${name}.json`);
 
   console.log(`Checking: ${url}`);
 
   try {
     await page.goto(url, {
       waitUntil: "domcontentloaded",
-      timeout: 120000
+      timeout: 60000
     });
 
-    await page.waitForTimeout(2000);
-
-    // Helps expose lazy-loaded content before the accessibility run.
-    await autoScroll(page);
+    await page.waitForTimeout(1000);
+    await withTimeout(autoScroll(page), 10000, `autoScroll for ${url}`);
 
     const report = await withTimeout(
       check(page, {
@@ -92,50 +93,32 @@ for (const url of urls) {
         ruleTimeout: 10000,
         versions: ["2.0", "2.1", "2.2"]
       }),
-      90000,
+      60000,
       `SpecA11y check for ${url}`
     );
 
-    const name = safeName(url);
-    const jsonPath = path.join(OUT_DIR, `${name}.json`);
-    const sarifPath = path.join(OUT_DIR, `${name}.sarif`);
-
     await fs.writeFile(jsonPath, JSON.stringify(report, null, 2));
-    await fs.writeFile(
-      sarifPath,
-      JSON.stringify(buildSarifReport(report), null, 2)
-    );
-
-    allReports.push({
-      url,
-      ok: true,
-      violations: report.summary?.counts?.violations ?? 0,
-      warnings: report.summary?.counts?.warnings ?? 0,
-      json: jsonPath,
-      sarif: sarifPath
-    });
-
-    console.log(
-      `  Violations: ${report.summary?.counts?.violations ?? 0}, warnings: ${report.summary?.counts?.warnings ?? 0}`
-    );
+    console.log(`  Saved: ${name}.json`);
   } catch (error) {
-    allReports.push({
-      url,
-      ok: false,
-      error: error.message
-    });
-
-    console.error(`  Failed: ${error.message}`);
+    console.error(`  Failed: ${url} - ${error.message}`);
+    
+    // Write fallback error JSON so analyzer tracks the failed run explicitly
+    await fs.writeFile(
+      jsonPath,
+      JSON.stringify({ analyzer_error: true, message: error.message, url }, null, 2)
+    );
   } finally {
     await page.close();
+    await context.close();
   }
 }
 
+// Process 4 URLs concurrently in chunks
+const CONCURRENCY = 4;
+for (let i = 0; i < urls.length; i += CONCURRENCY) {
+  const chunk = urls.slice(i, i + CONCURRENCY);
+  await Promise.all(chunk.map(url => processUrl(url)));
+}
+
 await browser.close();
-
-await fs.writeFile(
-  path.join(OUT_DIR, "summary.json"),
-  JSON.stringify(allReports, null, 2)
-);
-
 console.log(`Done. Reports written to ${OUT_DIR}`);

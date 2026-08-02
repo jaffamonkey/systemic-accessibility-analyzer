@@ -8,6 +8,7 @@ import json
 import re
 from collections import defaultdict
 from pathlib import Path
+from urllib.parse import urlparse
 
 INPUT_FILE = "axe-results.csv"
 REPORT_DIR = Path("reports")
@@ -15,31 +16,29 @@ REPORT_DIR.mkdir(exist_ok=True)
 
 def make_slug(raw_url):
     if not raw_url:
-        raw_url = "__missing_url__"
+        return "__missing_url__"
 
-    slug = raw_url.strip()
+    raw_url = raw_url.strip()
 
-    slug = re.sub(r"^https?://", "", slug, flags=re.I)
-    slug = re.sub(r"\?.*$", "", slug)
+    # Ensure protocol is present so urlparse extracts netloc/path correctly
+    target_url = raw_url if re.match(r"^https?://", raw_url, re.I) else f"https://{raw_url}"
+    parsed = urlparse(target_url)
 
-    # Split fragment off so we can simplify it
-    base, frag = (slug.split("#", 1) + [""])[:2]
+    netloc = parsed.netloc
+    path = re.sub(r"/index\.(html?|php|asp|aspx)$", "", parsed.path, flags=re.I)
+    query = parsed.query
+    frag = parsed.fragment
 
-    base = re.sub(r"/index\.(html?|php|asp|aspx)$", "", base, flags=re.I)
-    base = re.sub(r"/$", "", base)
-
+    # Optional custom fragment tidy-up
     if frag:
         frag = re.sub(r"^intid=", "", frag, flags=re.I)
-
-        # Optional tidy-up for M&S nav fragments
         frag = re.sub(r"^gnav_LEVEL1_COMPONENT_", "", frag, flags=re.I)
 
-        slug = f"{base}-{frag}"
-    else:
-        slug = base
+    # Combine all parts (netloc, path, query, fragment)
+    full_str = f"{netloc}{path}{query}{frag}"
 
-    slug = slug.replace("/", "-")
-    slug = re.sub(r"[^a-zA-Z0-9._-]", "-", slug)
+    # Standardize: replace special characters with dashes, collapse consecutive dashes, and trim ends
+    slug = re.sub(r"[^a-zA-Z0-9._-]+", "-", full_str)
     slug = re.sub(r"-+", "-", slug)
     slug = slug.strip("-")
 
@@ -56,7 +55,6 @@ with open(INPUT_FILE, newline="", encoding="utf-8-sig") as f:
 
         slug = make_slug(raw_url)
         grouped[slug].append(row)
-
 
 for slug, rows in grouped.items():
     output_file = REPORT_DIR / f"{slug}.json"

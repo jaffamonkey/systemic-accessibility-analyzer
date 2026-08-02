@@ -126,12 +126,15 @@ async function runOneUrl(url, reportsDir, storageState) {
     fs.writeFileSync(reportPath, result.report, 'utf8');
     console.log(`Saved Lighthouse report: ${reportPath}`);
     return null;
+    // INSIDE runOneUrl: Update the catch block to use standard naming
   } catch (error) {
-    const errorPath = path.join(reportsDir, `${base}-error.json`);
+    // FIX 1: Remove '-error' so the analyzer maps it correctly
+    const errorPath = path.join(reportsDir, `${base}.json`);
     fs.writeFileSync(
       errorPath,
       JSON.stringify(
         {
+          analyzer_error: true,
           tool: 'lighthouse',
           url,
           error: error instanceof Error ? error.message : String(error),
@@ -151,7 +154,7 @@ async function runOneUrl(url, reportsDir, storageState) {
     };
   } finally {
     if (context) {
-      await context.close().catch(() => {});
+      await context.close().catch(() => { });
     }
     fs.rmSync(userDataDir, { recursive: true, force: true });
   }
@@ -176,12 +179,24 @@ async function main() {
     console.log('Lighthouse running without storage state for public job');
   }
 
+  // INSIDE main(): Replace the sequential for-loop with chunked concurrency
   const failures = [];
 
-  for (const url of urls) {
-    console.log(`Auditing Lighthouse accessibility: ${url}`);
-    const failure = await runOneUrl(url, reportsDir, storageState);
-    if (failure) failures.push(failure);
+  // FIX 2: Process URLs concurrently. 
+  // WARNING: Lighthouse is CPU-heavy. Keep this to 3 or 4 max!
+  const CONCURRENCY = 3;
+
+  for (let i = 0; i < urls.length; i += CONCURRENCY) {
+    const chunk = urls.slice(i, i + CONCURRENCY);
+    console.log(`Processing batch ${i / CONCURRENCY + 1} (${chunk.length} URLs)...`);
+
+    const results = await Promise.all(
+      chunk.map(url => runOneUrl(url, reportsDir, storageState))
+    );
+
+    results.forEach(failure => {
+      if (failure) failures.push(failure);
+    });
   }
 
   if (failures.length) {

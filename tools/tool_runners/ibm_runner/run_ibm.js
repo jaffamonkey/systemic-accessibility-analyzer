@@ -144,7 +144,7 @@ ${bodyHtml}
     const report = await Promise.race([
       aChecker.getCompliance(html, base),
       new Promise((_, reject) =>
-        setTimeout(() => reject(new Error('IBM scan timed out after 120000ms')), 120000)
+        setTimeout(() => reject(new Error('IBM scan timed out after 180000ms')), 180000)
       ),
     ]);
 

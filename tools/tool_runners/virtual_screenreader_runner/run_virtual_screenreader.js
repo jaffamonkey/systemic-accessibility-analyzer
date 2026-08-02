@@ -46,7 +46,12 @@ async function getVirtualScreenReaderLinesFromHtml(html) {
   global.Node = dom.window.Node;
   global.HTMLElement = dom.window.HTMLElement;
   global.navigator = dom.window.navigator;
-  global.CSS = dom.window.CSS || { escape: (value) => String(value) };
+  global.CSS = dom.window.CSS || {
+    escape: (value) => {
+      // Escapes special characters so invalid IDs don't trigger fatal SyntaxErrors
+      return String(value).replace(/[!"#$%&'()*+,.\/:;<=>?@[\\\]^`{|}~]/g, '\\$&');
+    }
+  };
   global.getComputedStyle = dom.window.getComputedStyle.bind(dom.window);
   global.MutationObserver = dom.window.MutationObserver;
 
@@ -225,7 +230,7 @@ async function getVirtualScreenReaderLinesFromHtml(html) {
     if (browser) {
       try {
         await browser.close();
-      } catch (_) {}
+      } catch (_) { }
     }
   }
 })();
