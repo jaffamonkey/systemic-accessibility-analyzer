@@ -119,167 +119,103 @@ function tryParseJsonString(text) {
   }
 }
 
-(function main() {
-  const jobDir = process.argv[2] || process.cwd();
+async function main() {
+  const jobDir = process.argv[2];
+  if (!jobDir) {
+    throw new Error('Usage: node run_contrast_checker.js <job_dir>');
+  }
 
-  const resolvedJobDir = path.resolve(jobDir);
-  const urlsFile = path.join(resolvedJobDir, "input", "urls.txt");
-  const contrastDir = path.join(resolvedJobDir, "reports", "contrast-checker");
-  const manifestPath = path.join(contrastDir, "manifest.json");
-
-  const maxAttempts = Number(process.env.CONTRAST_RETRIES || 2);
-  const retryDelayMs = Number(process.env.CONTRAST_RETRY_DELAY_MS || 3000);
+  const inputDir = path.join(jobDir, 'input');
+  const urlsFile = path.join(inputDir, 'urls.txt');
+  const reportsDir = path.join(jobDir, 'reports', 'contrast-checker');
+  const manifestPath = path.join(reportsDir, 'manifest.json');
 
   if (!fs.existsSync(urlsFile)) {
     throw new Error(`urls.txt not found: ${urlsFile}`);
   }
 
-  ensureDir(contrastDir);
+  ensureDir(reportsDir);
 
   const urls = readUrls(urlsFile);
   const manifest = [];
 
   for (const url of urls) {
     const slug = safeSlug(url);
-    const jsonFile = `${slug}.json`;
-    const jsonPath = path.join(contrastDir, jsonFile);
-    const errorPath = path.join(contrastDir, `${slug}-error.json`);
-    const logPath = path.join(contrastDir, `${slug}-runlog.txt`);
+    const jsonPath = path.join(reportsDir, `${slug}.json`);
+    const logPath = path.join(reportsDir, `${slug}-runlog.txt`);
 
-    if (fs.existsSync(logPath)) {
-      fs.unlinkSync(logPath);
-    }
+    console.log(`Checking contrast for: ${url}`);
 
-    if (fs.existsSync(errorPath)) {
-      fs.unlinkSync(errorPath);
-    }
+    // Clear old log if it exists and start a new one
+    fs.writeFileSync(logPath, `Starting contrast check for ${url}\n`, "utf8");
 
-    let success = false;
-    let lastFailure = null;
+    const { command, args } = buildToolCommand({ url, outputPath: jsonPath });
 
-    for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-      try {
-        appendLog(logPath, `\n=== Attempt ${attempt} of ${maxAttempts} ===\n`);
-        appendLog(logPath, `Started: ${new Date().toISOString()}\n`);
-        appendLog(logPath, `URL: ${url}\n`);
+    try {
+      // Execute the local binary synchronously
+      const result = runCommand(command, args, process.cwd());
 
-        const toolCmd = buildToolCommand({
-          url,
-          outputPath: jsonPath,
-        });
+      appendLog(logPath, `\n--- STDOUT ---\n${result.stdout}\n`);
 
-        appendLog(logPath, `Command: ${toolCmd.command} ${toolCmd.args.join(" ")}\n`);
-        console.log(`Running contrast check: ${url} (attempt ${attempt}/${maxAttempts})`);
-
-        const result = runCommand(toolCmd.command, toolCmd.args, resolvedJobDir);
-
-        if (result.error) {
-          throw result.error;
-        }
-
-        appendLog(logPath, `Exit code: ${result.status}\n`);
-        appendLog(logPath, `\n--- STDOUT ---\n${result.stdout}\n`);
+      if (result.stderr) {
         appendLog(logPath, `\n--- STDERR ---\n${result.stderr}\n`);
+      }
 
-        let reportJson = null;
-        let sourceType = null;
+      const parsedJson = tryParseJsonString(result.stdout);
 
-        if (fs.existsSync(jsonPath)) {
-          try {
-            reportJson = readJson(jsonPath);
-            sourceType = "file";
-            appendLog(logPath, `Parsed JSON from file: ${jsonPath}\n`);
-          } catch (error) {
-            appendLog(logPath, `Failed to parse JSON file: ${error.message}\n`);
-            reportJson = null;
-          }
-        }
+      if (parsedJson) {
+        writeJson(jsonPath, parsedJson);
 
-        if (!reportJson) {
-          const stdoutJson = tryParseJsonString(result.stdout);
-          if (stdoutJson) {
-            reportJson = stdoutJson;
-            sourceType = "stdout";
-            writeJson(jsonPath, reportJson);
-            appendLog(logPath, `Parsed JSON from stdout and wrote file: ${jsonPath}\n`);
-          } else {
-            appendLog(logPath, "No usable JSON found in stdout\n");
-          }
-        }
-        if (!reportJson) {
-          lastFailure = {
-            tool: "contrast-checker",
-            url,
-            error: "No usable JSON report found in output file or stdout",
-            exit_code: result.status,
-            stdout: result.stdout,
-            stderr: result.stderr,
-            attempt,
-            scanned_at: new Date().toISOString(),
-          };
-
-          appendLog(logPath, `Attempt ${attempt} failed: no usable JSON\n`);
-
-          if (attempt < maxAttempts) {
-            appendLog(logPath, `Retrying after ${retryDelayMs}ms\n`);
-            sleep(retryDelayMs);
-            continue;
-          }
-
-          writeJson(errorPath, lastFailure);
-          console.error(`Contrast failed for ${url}: no usable JSON report`);
-          break;
-        }
-
-        const meta = getTopLevelMeta(reportJson, url);
+        // FIX 1: Extract the metadata using your helper function
+        const meta = getTopLevelMeta(parsedJson, url);
 
         manifest.push({
           page: slug,
-          title: meta.title || slug,
-          url: meta.url || url,
-          file: jsonFile,
-          status: result.status === 0 ? "ok" : "partial",
-          source: sourceType,
+          url: meta.url,
+          title: meta.title,
+          // FIX 2: Provide both keys so the UI guarantees a match
+          json: `${slug}.json`,
+          report: `${slug}.json`,
+          ok: true
         });
-
-        appendLog(
-          logPath,
-          `Success: saved ${jsonPath} (${sourceType}${result.status !== 0 ? ", non-zero exit" : ""})\n`
-        );
-
-        console.log(
-          `Saved contrast JSON: ${jsonPath} (${sourceType}${result.status !== 0 ? ", non-zero exit" : ""})`
-        );
-
-        success = true;
-        break;
-      } catch (error) {
-        lastFailure = {
-          tool: "contrast-checker",
-          url,
-          error: error.message,
-          attempt,
-          scanned_at: new Date().toISOString(),
-        };
-
-        appendLog(logPath, `Attempt ${attempt} threw error: ${error.message}\n`);
-
-        if (attempt < maxAttempts) {
-          appendLog(logPath, `Retrying after ${retryDelayMs}ms\n`);
-          sleep(retryDelayMs);
-          continue;
-        }
-
-        writeJson(errorPath, lastFailure);
-        console.error(`Contrast failed for ${url}: ${error.message}`);
+        console.log(`  Saved: ${slug}.json`);
+      } else {
+        throw new Error(`Failed to extract valid JSON from contrast tool stdout. Exit status: ${result.status}`);
       }
+    } catch (error) {
+      console.error(`  Failed: ${error.message}`);
+      appendLog(logPath, `\n--- ERROR ---\n${error.message}\n`);
+
+      writeJson(jsonPath, {
+        analyzer_error: true,
+        tool: "contrast-checker",
+        url,
+        error: error.message
+      });
+
+      manifest.push({
+        page: slug,
+        url,
+        title: slug,
+        json: `${slug}.json`,
+        report: `${slug}.json`,
+        ok: false,
+        error: error.message
+      });
     }
 
-    if (!success && lastFailure && !fs.existsSync(errorPath)) {
-      writeJson(errorPath, lastFailure);
-    }
+    // Incrementally save the manifest!
+    writeJson(manifestPath, manifest);
+
+    // Optional: Add a tiny sleep to let the OS breathe between heavy binary executions
+    sleep(1000);
   }
 
-  writeJson(manifestPath, manifest);
-  console.log(`Saved manifest: ${manifestPath}`);
-})();
+  console.log(`Done. Saved manifest to ${manifestPath}`);
+}
+
+// THIS is the line that was missing! It actually runs the script.
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

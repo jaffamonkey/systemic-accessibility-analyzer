@@ -54,6 +54,7 @@ async function dismissCookieBanner(page) {
     ".accept-cookies",
     "button[aria-label='Accept cookies']",
     "button[aria-label='Accept all']",
+    "button.agree-button"
   ];
 
   for (const selector of selectors) {
@@ -67,7 +68,7 @@ async function dismissCookieBanner(page) {
     } catch {}
   }
 
-  const texts = ["Accept", "Accept All", "Accept all", "Allow all", "Consent", "I agree", "Agree", "OK", "Got it", "Continue"];
+  const texts = ["Accept", "Accept All", "Accept all", "Allow all", "Consent", "I agree", "Agree", "OK", "Got it", "Continue", "I'm OK with analytics cookies"];
 
   for (const text of texts) {
     try {
@@ -98,6 +99,7 @@ async function dismissCookieBanner(page) {
     "#cookie-accept",
     ".cookie-accept",
     ".accept-cookies",
+    ".eu-cookie-compliance-secondary-button",
 
     "button[aria-label='Accept cookies']",
     "button[aria-label='Accept all']",
@@ -108,6 +110,7 @@ async function dismissCookieBanner(page) {
     'input[type="submit"][value*="OK" i]',
     'input[type="submit"][value*="Got it" i]',
     'input[type="submit"][value*="Sounds good" i]',
+    'button.agree-button'
   ];
 
   for (const selector of selectors) {

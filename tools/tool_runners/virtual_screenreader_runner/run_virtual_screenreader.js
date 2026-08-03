@@ -3,7 +3,7 @@ const path = require('node:path');
 const { chromium } = require('playwright');
 const { JSDOM } = require('jsdom');
 const { virtual } = require('@guidepup/virtual-screen-reader');
-
+const { dismissCookieBanner } = require('../common/job_utils.cjs');
 function readUrls(filePath) {
   return fs
     .readFileSync(filePath, 'utf8')
@@ -169,6 +169,8 @@ async function getVirtualScreenReaderLinesFromHtml(html) {
 
         await page.waitForTimeout(1200);
 
+        dismissCookieBanner(page)
+
         const title = await page.title();
         const html = await page.content();
         const lines = await getVirtualScreenReaderLinesFromHtml(html);
@@ -218,9 +220,11 @@ async function getVirtualScreenReaderLinesFromHtml(html) {
 
         console.error(`Virtual screenreader failed for ${url}: ${error.message || String(error)}`);
       }
+
+      // FIX: The manifest is now incrementally saved after every URL
+      fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2), 'utf8');
     }
 
-    fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2), 'utf8');
     await context.close();
     process.exit(0);
   } catch (error) {

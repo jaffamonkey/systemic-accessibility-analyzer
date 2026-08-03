@@ -41,7 +41,7 @@ async function clickLocator(locator, label) {
       await first.page?.().waitForTimeout?.(500);
       return { clicked: true, label };
     }
-  } catch {}
+  } catch { }
 
   return { clicked: false, label };
 }
@@ -74,7 +74,7 @@ async function dismissCookieBannerInFrame(frame) {
         await control.click({ timeout: 2000 });
         return { action: 'clicked', detail: selector };
       }
-    } catch {}
+    } catch { }
   }
 
   const texts = [
@@ -102,7 +102,7 @@ async function dismissCookieBannerInFrame(frame) {
         await button.click({ timeout: 2000 });
         return { action: 'clicked', detail: text };
       }
-    } catch {}
+    } catch { }
   }
 
   return { action: 'none', detail: '' };
@@ -162,14 +162,14 @@ async function dismissCookieBanner(page) {
 }
 
 async function waitForPageToSettle(page) {
-  await page.waitForLoadState('domcontentloaded', { timeout: 15000 }).catch(() => {});
-  await page.waitForLoadState('networkidle', { timeout: 20000 }).catch(() => {});
+  await page.waitForLoadState('domcontentloaded', { timeout: 15000 }).catch(() => { });
+  await page.waitForLoadState('networkidle', { timeout: 20000 }).catch(() => { });
 
   await page.evaluate(async () => {
     if (document.fonts && document.fonts.ready) {
-      await document.fonts.ready.catch(() => {});
+      await document.fonts.ready.catch(() => { });
     }
-  }).catch(() => {});
+  }).catch(() => { });
 
   const selectors = [
     '[aria-busy="true"]',
@@ -183,7 +183,7 @@ async function waitForPageToSettle(page) {
     await page.locator(selector).first().waitFor({
       state: 'hidden',
       timeout: 3000,
-    }).catch(() => {});
+    }).catch(() => { });
   }
 
   await page.waitForTimeout(1500);
@@ -380,124 +380,137 @@ async function main() {
   const manifest = [];
   const browser = await chromium.launch({ headless: true });
 
-  try {
-    for (const url of urls) {
-      const contextOptions = {
-        ignoreHTTPSErrors: true,
-        viewport: { width: 1440, height: 1200 },
-      };
+  // Helper function to process a single URL
+  async function processUrl(url) {
+    const contextOptions = {
+      ignoreHTTPSErrors: true,
+      viewport: { width: 1440, height: 1200 },
+    };
 
-      if (hasStorageState) {
-        contextOptions.storageState = storageStatePath;
-      }
-
-      const context = await browser.newContext(contextOptions);
-      const page = await context.newPage();
-
-      try {
-        console.log(`Generating visual preview and tab map: ${url}`);
-
-        await page.goto(url, {
-          waitUntil: 'domcontentloaded',
-          timeout: 180000,
-        });
-
-        console.log(`Landed on: ${page.url()}`);
-
-        const consentActions = [];
-        for (let i = 0; i < 3; i += 1) {
-          const result = await dismissCookieBanner(page).catch(() => ({ action: 'none', detail: '' }));
-          if (result.action !== 'none') {
-            consentActions.push(result);
-          }
-          await page.waitForTimeout(700);
-        }
-
-        await waitForPageToSettle(page);
-
-        const tabData = await collectTabMapData(page);
-
-        const screenshotBuffer = await page.screenshot({
-          fullPage: true,
-          type: 'png',
-        });
-
-        const overlaySvg = buildOverlaySvg(
-          tabData.pageWidth,
-          tabData.pageHeight,
-          tabData.focusable
-        );
-
-        const finalPngBuffer = await sharp(screenshotBuffer)
-          .composite([
-            {
-              input: Buffer.from(overlaySvg),
-              top: 0,
-              left: 0,
-            },
-          ])
-          .png()
-          .toBuffer();
-
-        const base = safeSlug(url);
-        const capturedAt = new Date().toISOString();
-        const previewPath = path.join(visualPreviewDir, `${base}.png`);
-        const pngPath = path.join(reportsDir, `${base}.png`);
-        const jsonPath = path.join(reportsDir, `${base}.json`);
-
-        fs.writeFileSync(previewPath, screenshotBuffer);
-        fs.writeFileSync(pngPath, finalPngBuffer);
-
-        const payload = {
-          tool: 'tab-map',
-          url,
-          landed_url: page.url(),
-          title: tabData.title,
-          page: base,
-          captured_at: capturedAt,
-          focusable_count: tabData.focusableCount,
-          frame_count: tabData.frameCount ?? 0,
-          same_origin_frame_count: tabData.sameOriginFrameCount ?? 0,
-          cross_origin_frame_count: tabData.crossOriginFrameCount ?? 0,
-          image: path.basename(pngPath),
-          preview_image: path.basename(previewPath),
-          preview_dir: 'visual-preview',
-          json: path.basename(jsonPath),
-          consent_actions: consentActions,
-        };
-
-        fs.writeFileSync(jsonPath, JSON.stringify(payload, null, 2), 'utf8');
-        manifest.push(payload);
-
-        console.log(`Saved visual preview: ${previewPath}`);
-        console.log(`Saved tab map: ${pngPath}`);
-      } catch (error) {
-        const base = safeSlug(url);
-        const capturedAt = new Date().toISOString();
-        const errorPath = path.join(reportsDir, `${base}-error.json`);
-
-        const errorPayload = {
-          tool: 'tab-map',
-          url,
-          page: base,
-          captured_at: capturedAt,
-          error: error instanceof Error ? error.message : String(error),
-          error_type: error instanceof Error ? error.name : 'Error',
-        };
-
-        fs.writeFileSync(errorPath, JSON.stringify(errorPayload, null, 2), 'utf8');
-        manifest.push(errorPayload);
-
-        console.error(`Failed visual/tab map for ${url}: ${error.message || String(error)}`);
-      } finally {
-        await page.close().catch(() => {});
-        await context.close().catch(() => {});
-      }
+    if (hasStorageState) {
+      contextOptions.storageState = storageStatePath;
     }
 
-    const manifestPath = path.join(reportsDir, 'manifest.json');
-    fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2), 'utf8');
-    console.log(`Saved tab map manifest: ${manifestPath}`);
+    const context = await browser.newContext(contextOptions);
+    const page = await context.newPage();
+    const base = safeSlug(url);
+    const capturedAt = new Date().toISOString();
+
+    try {
+      console.log(`Generating visual preview and tab map: ${url}`);
+
+      await page.goto(url, {
+        waitUntil: 'domcontentloaded',
+        timeout: 120000, // Reduced from 180000 to fail faster on dead pages
+      });
+
+      console.log(`Landed on: ${page.url()}`);
+
+      const consentActions = [];
+      for (let i = 0; i < 3; i += 1) {
+        const result = await dismissCookieBanner(page).catch(() => ({ action: 'none', detail: '' }));
+        if (result.action !== 'none') {
+          consentActions.push(result);
+        }
+        await page.waitForTimeout(700);
+      }
+
+      await waitForPageToSettle(page);
+
+      const tabData = await collectTabMapData(page);
+
+      const screenshotBuffer = await page.screenshot({
+        fullPage: true,
+        type: 'png',
+      });
+
+      const overlaySvg = buildOverlaySvg(
+        tabData.pageWidth,
+        tabData.pageHeight,
+        tabData.focusable
+      );
+
+      const finalPngBuffer = await sharp(screenshotBuffer)
+        .composite([
+          {
+            input: Buffer.from(overlaySvg),
+            top: 0,
+            left: 0,
+          },
+        ])
+        .png()
+        .toBuffer();
+
+      const previewPath = path.join(visualPreviewDir, `${base}.png`);
+      const pngPath = path.join(reportsDir, `${base}.png`);
+      const jsonPath = path.join(reportsDir, `${base}.json`);
+
+      fs.writeFileSync(previewPath, screenshotBuffer);
+      fs.writeFileSync(pngPath, finalPngBuffer);
+
+      const payload = {
+        tool: 'tab-map',
+        url,
+        landed_url: page.url(),
+        title: tabData.title,
+        page: base,
+        captured_at: capturedAt,
+        focusable_count: tabData.focusableCount,
+        frame_count: tabData.frameCount ?? 0,
+        same_origin_frame_count: tabData.sameOriginFrameCount ?? 0,
+        cross_origin_frame_count: tabData.crossOriginFrameCount ?? 0,
+        image: path.basename(pngPath),
+        preview_image: path.basename(previewPath),
+        preview_dir: 'visual-preview',
+        json: path.basename(jsonPath),
+        consent_actions: consentActions,
+      };
+
+      fs.writeFileSync(jsonPath, JSON.stringify(payload, null, 2), 'utf8');
+      manifest.push(payload);
+
+      console.log(`Saved visual preview: ${previewPath}`);
+      console.log(`Saved tab map: ${pngPath}`);
+    } catch (error) {
+      // FIX 1: Removed '-error' from the filename so the analyzer maps it correctly
+      const errorPath = path.join(reportsDir, `${base}.json`);
+
+      const errorPayload = {
+        analyzer_error: true,
+        tool: 'tab-map',
+        url,
+        page: base,
+        captured_at: capturedAt,
+        error: error instanceof Error ? error.message : String(error),
+        error_type: error instanceof Error ? error.name : 'Error',
+      };
+
+      fs.writeFileSync(errorPath, JSON.stringify(errorPayload, null, 2), 'utf8');
+      manifest.push(errorPayload);
+
+      console.error(`Failed visual/tab map for ${url}: ${error.message || String(error)}`);
+    } finally {
+      await page.close().catch(() => { });
+      await context.close().catch(() => { });
+    }
+  }
+
+  try {
+    // FIX: Reduced to 2 because sharp image manipulation is highly memory-intensive
+    const CONCURRENCY = 2;
+    for (let i = 0; i < urls.length; i += CONCURRENCY) {
+      const chunk = urls.slice(i, i + CONCURRENCY);
+      console.log(`Processing batch ${Math.floor(i / CONCURRENCY) + 1} (${chunk.length} URLs)...`);
+
+      await Promise.all(chunk.map(url => processUrl(url)));
+
+      // FIX: Moved inside the loop! 
+      // Incrementally write the manifest after every chunk.
+      const manifestPath = path.join(reportsDir, 'manifest.json');
+      fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2), 'utf8');
+    }
+
+    console.log(`Saved final tab map manifest: ${path.join(reportsDir, 'manifest.json')}`);
   } finally {
     await browser.close();
   }
