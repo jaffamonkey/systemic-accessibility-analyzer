@@ -11,6 +11,7 @@ saving the final session state to a storage file.
 from __future__ import annotations
 
 import re
+import time
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -29,6 +30,19 @@ from authentication.login_selectors import (
     PASSWORD_STAGE_SELECTORS, 
     SUBMIT_STAGE_SELECTORS
 )
+
+
+def _login_ui_or_username_stage_is_visible(page: Page) -> bool:
+    if _login_ui_is_visible(page):
+        return True
+    username_stage, username_submit = _find_username_stage(page)
+    return bool(username_stage and username_submit)
+
+
+def _login_ui_is_visible(page: Page) -> bool:
+    """Return True only for a clear, complete login form."""
+    username, password, submit = detect_login_form(page)
+    return bool(username and password and submit)
 
 def _write_log(path: Path, lines: list[str]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -65,11 +79,6 @@ def _first_visible(page: Page, selectors: list[str], *, timeout: int = 500) -> L
 
 
 def _nearest_scope(page: Page, field: Locator) -> Locator:
-    """
-    Prefer the nearest actual form.
-    Some React/Vue login components do not use a <form>, so fall back
-    to a nearby dialog, modal-style container or the page body.
-    """
     scope_selectors = [
         "xpath=ancestor::form[1]",
         "xpath=ancestor::*[@role='dialog'][1]",
@@ -114,11 +123,6 @@ def _find_submit_for_field(page: Page, field: Locator) -> Locator | None:
 
 
 def _find_username_stage(page: Page) -> tuple[Locator | None, Locator | None]:
-    """
-    Detect a username/email-only first stage.
-    This covers modern login flows (like Google/Microsoft) that initially show 
-    an email address field and a Next/Continue button, then reveal the password field.
-    """
     username_input = _first_visible(page, USERNAME_STAGE_SELECTORS, timeout=500)
     if not username_input:
         return None, None
@@ -137,10 +141,6 @@ def _find_password_stage(page: Page) -> tuple[Locator | None, Locator | None]:
 
 
 def _has_captcha(page: Page) -> bool:
-    """
-    Detect common CAPTCHA implementations and obvious human-verification text.
-    The script deliberately does not attempt to bypass CAPTCHA, deferring to manual mode.
-    """
     for selector in CAPTCHA_SELECTORS:
         try:
             if _is_visible(page.locator(selector).first, timeout=500):
@@ -184,11 +184,6 @@ def _has_login_error(page: Page) -> bool:
 
 
 def _has_active_account_menu(page: Page) -> bool:
-    """
-    Verify login through the account-menu state.
-    Some sites do not display a simple logged-in message after authentication.
-    Instead, the header account button becomes active and exposes account-only actions.
-    """
     for selector in ACCOUNT_MENU_BUTTON_SELECTORS:
         try:
             account_button = page.locator(selector).first
@@ -212,8 +207,6 @@ def _has_active_account_menu(page: Page) -> bool:
             if visibly_active:
                 return True
 
-            # The menu may be available but collapsed after navigation.
-            # Open it and look for a visible logged-in-only menu action.
             try:
                 account_button.click()
                 page.wait_for_timeout(300)
@@ -233,10 +226,6 @@ def _has_active_account_menu(page: Page) -> bool:
 
 
 def _sign_in_link_has_disappeared(page: Page) -> bool:
-    """
-    Verifies state by confirming the 'Sign In' link was completely removed 
-    from the DOM post-authentication.
-    """
     selectors = [
         "a[href*='MSResLogin']",
         "a[href*='header_sign-in_sign-in']",
@@ -253,11 +242,6 @@ def _sign_in_link_has_disappeared(page: Page) -> bool:
 
 
 def _is_transient_auth_page(page: Page) -> bool:
-    """
-    Return True while authentication is still in progress.
-    Redirect screens, identity-provider pages (Auth0/Okta), and anti-bot interstitials 
-    commonly remove the form before the user actually reaches the signed-in application.
-    """
     current_url = page.url.lower()
 
     transient_url_fragments = [
@@ -295,10 +279,6 @@ def _is_transient_auth_page(page: Page) -> bool:
 
 
 def _is_application_page(page: Page, config: JobConfig) -> bool:
-    """
-    Confirm that the browser has returned to the configured application host, 
-    proving we are no longer stuck on an SSO or anti-bot subdomain.
-    """
     current_host = (urlparse(page.url).hostname or "").lower()
     expected_host = (urlparse(config.login_entry_url).hostname or "").lower()
 
@@ -310,9 +290,6 @@ def _is_application_page(page: Page, config: JobConfig) -> bool:
 
 
 def _verify_authenticated_target(page: Page, config: JobConfig, *, log_lines: list[str]) -> bool:
-    """
-    Verify that the saved browser context can actually reach a protected application page.
-    """
     verification_url = (
         config.target_urls[0]
         if config.target_urls
@@ -345,7 +322,6 @@ def _verify_authenticated_target(page: Page, config: JobConfig, *, log_lines: li
 
 
 def _is_successful(page: Page, config: JobConfig, *, log_lines: list[str] | None = None) -> bool:
-    """Runs a battery of checks to ensure the login was actually successful."""
     if _has_captcha(page) or _is_transient_auth_page(page) or not _is_application_page(page, config) or _has_login_error(page):
         return False
 
@@ -399,13 +375,6 @@ def _wait_for_login_completion(
     timeout_ms: int = 45000,
     progress_screenshot_path: Path | None = None,
 ) -> bool:
-    """
-    Wait for login redirects to complete without hanging indefinitely.
-    If an anti-bot processing page does not clear within the timeout,
-    returns False so the caller can fail cleanly.
-    """
-    import time
-
     started_at = time.monotonic()
     deadline = started_at + (timeout_ms / 1000)
     next_heartbeat = started_at
@@ -469,11 +438,12 @@ def _wait_for_login_completion(
 
 
 def _find_login_triggers(page: Page) -> list[Locator]:
+    # FIX: Adding >> visible=true to let the browser engine do the filtering natively
     selectors = [
-        "a[href*='login' i]", "a[href*='signin' i]", "a[href*='sign-in' i]",
-        "button", "a", "[role='button']",
-        "[aria-label*='login' i]", "[aria-label*='sign in' i]",
-        "[data-testid*='login' i]", "[data-test*='login' i]",
+        "a[href*='login' i] >> visible=true", "a[href*='signin' i] >> visible=true", "a[href*='sign-in' i] >> visible=true",
+        "button >> visible=true", "a >> visible=true", "[role='button'] >> visible=true",
+        "[aria-label*='login' i] >> visible=true", "[aria-label*='sign in' i] >> visible=true",
+        "[data-testid*='login' i] >> visible=true", "[data-test*='login' i] >> visible=true",
     ]
 
     matches: list[tuple[int, Locator]] = []
@@ -486,7 +456,13 @@ def _find_login_triggers(page: Page) -> list[Locator]:
 
             for i in range(count):
                 item = locators.nth(i)
-                if not _is_visible(item, timeout=300): continue
+                
+                # FIX: Instantaneous check without a timeout argument
+                try:
+                    if not item.is_visible(): 
+                        continue
+                except Exception:
+                    continue
 
                 text = (item.text_content() or "").strip().lower()
                 aria = (item.get_attribute("aria-label") or "").strip().lower()
@@ -521,19 +497,6 @@ def _find_login_triggers(page: Page) -> list[Locator]:
     return [item for _, item in matches[:5]]
 
 
-def _login_ui_or_username_stage_is_visible(page: Page) -> bool:
-    if _login_ui_is_visible(page):
-        return True
-    username_stage, username_submit = _find_username_stage(page)
-    return bool(username_stage and username_submit)
-
-
-def _login_ui_is_visible(page: Page) -> bool:
-    """Return True only for a clear, complete login form."""
-    username, password, submit = detect_login_form(page)
-    return bool(username and password and submit)
-
-
 def _cookie_contexts(page: Page):
     contexts = [page]
     try:
@@ -544,12 +507,8 @@ def _cookie_contexts(page: Page):
 
 
 def _dismiss_cookie_banner(page: Page, *, log_lines: list[str]) -> None:
-    """
-    Dismiss common cookie-consent overlays.
-    These overlays can block otherwise valid login-link and submit-button clicks.
-    Failure to dismiss is logged but does not stop the login flow.
-    """
-    selectors = [
+    # FIX: Consolidate CSS selectors and text selectors for a single bulk query
+    css_selectors = [
         "#onetrust-reject-all-handler", "#onetrust-accept-btn-handler",
         "#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll",
         "#didomi-notice-agree-button", "#truste-consent-button",
@@ -566,21 +525,25 @@ def _dismiss_cookie_banner(page: Page, *, log_lines: list[str]) -> None:
         "input[type='submit'][value*='Agree' i]", "input[type='submit'][value*='OK' i]",
         "input[type='submit'][value*='Got it' i]", "input[type='submit'][value*='Sounds good' i]",
     ]
+    
+    combined_selector = ", ".join(css_selectors)
 
     for attempt in range(3):
         for context in _cookie_contexts(page):
             context_url = getattr(context, "url", "")
-            for selector in selectors:
-                try:
-                    button = context.locator(selector).first
-                    if not _is_visible(button, timeout=500): continue
+            
+            # Fire one massive query for all explicit CSS checks
+            try:
+                button = context.locator(combined_selector).first
+                if button.is_visible(timeout=500):
                     button.click(timeout=3000)
                     page.wait_for_timeout(700)
-                    log_lines.append(f"Dismissed cookie banner using selector: {selector}{f' in frame: {context_url}' if context is not page else ''}")
+                    log_lines.append(f"Dismissed cookie banner using combined CSS selectors{f' in frame: {context_url}' if context is not page else ''}")
                     return
-                except Exception:
-                    continue
+            except Exception:
+                pass
 
+            # Fallback regex patterns
             role_patterns = [
                 r"accept\s+all", r"accept", r"confirm\s+choices", r"agree",
                 r"ok", r"got\s+it", r"continue", r"sounds\s+good",
@@ -589,18 +552,17 @@ def _dismiss_cookie_banner(page: Page, *, log_lines: list[str]) -> None:
             for pattern in role_patterns:
                 try:
                     button = context.get_by_role("button", name=re.compile(pattern, re.IGNORECASE)).first
-                    if not _is_visible(button, timeout=500): continue
-                    button.click(timeout=3000)
-                    page.wait_for_timeout(700)
-                    log_lines.append(f"Dismissed cookie banner using button text pattern: {pattern}{f' in frame: {context_url}' if context is not page else ''}")
-                    return
+                    if button.is_visible(timeout=500): 
+                        button.click(timeout=3000)
+                        page.wait_for_timeout(700)
+                        log_lines.append(f"Dismissed cookie banner using button text pattern: {pattern}{f' in frame: {context_url}' if context is not page else ''}")
+                        return
                 except Exception:
                     continue
 
         if attempt < 2:
             page.wait_for_timeout(700)
 
-    # Fallback: forcefully remove overlays via injected JS if standard clicking fails
     try:
         removed = page.evaluate(
             """
@@ -643,10 +605,12 @@ def _dismiss_cookie_banner(page: Page, *, log_lines: list[str]) -> None:
 
 
 def _wait_for_login_ui(page: Page, *, timeout_ms: int = 8000, log_lines: list[str] | None = None) -> bool:
-    elapsed = 0
+    # FIX: Replaced the artificial loop counter with a real-time system clock monitor
+    start_time = time.monotonic()
+    deadline = start_time + (timeout_ms / 1000.0)
     poll_ms = 250
 
-    while elapsed < timeout_ms:
+    while time.monotonic() < deadline:
         if _login_ui_is_visible(page):
             if log_lines is not None: log_lines.append(f"Detected complete login form at: {page.url}")
             return True
@@ -657,7 +621,6 @@ def _wait_for_login_ui(page: Page, *, timeout_ms: int = 8000, log_lines: list[st
             return True
 
         page.wait_for_timeout(poll_ms)
-        elapsed += poll_ms
 
     if log_lines is not None:
         log_lines.append(f"Timed out waiting for login form at: {page.url}")
@@ -666,7 +629,6 @@ def _wait_for_login_ui(page: Page, *, timeout_ms: int = 8000, log_lines: list[st
 
 
 def _open_login_ui(page: Page, *, trigger_selector: str | None, log_lines: list[str]) -> str:
-    """Clicks the login button/link on the landing page to reveal the form modal/page."""
     if _login_ui_is_visible(page):
         log_lines.append("Login form already visible on landing page")
         return "direct_form"
@@ -695,7 +657,6 @@ def _open_login_ui(page: Page, *, trigger_selector: str | None, log_lines: list[
         except Exception as exc:
             log_lines.append(f"Configured login trigger failed: {exc}")
 
-    # Fallback to heuristics
     try:
         trigger = detect_login_trigger(page)
         if trigger:
@@ -719,7 +680,6 @@ def _open_login_ui(page: Page, *, trigger_selector: str | None, log_lines: list[
     except Exception as exc:
         log_lines.append(f"Heuristic trigger click failed: {exc}")
 
-    # Final deep scan
     for idx, trigger in enumerate(_find_login_triggers(page), start=1):
         try:
             before_url = page.url
@@ -777,11 +737,6 @@ def _fill_and_submit_login(
     password: str,
     log_lines: list[str],
 ) -> None:
-    """
-    Fills and submits either:
-    1. A normal 1-step username + password form.
-    2. A multi-step 2-stage (Username -> Next -> Password) form.
-    """
     username_input.fill(username)
     log_lines.append("Filled username/email field")
 
@@ -824,10 +779,6 @@ def _fill_and_submit_login(
 # -------------------------
 
 def run_shared_login(config: JobConfig, job_dir: Path) -> AuthResult:
-    """
-    Kicks off the Playwright instance to automate the login flow.
-    If successful, saves the authenticated browser context to `storage_state.json`.
-    """
     auth_dir = job_dir / "auth"
     auth_dir.mkdir(parents=True, exist_ok=True)
 
@@ -840,11 +791,9 @@ def run_shared_login(config: JobConfig, job_dir: Path) -> AuthResult:
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=config.headless)
-        # context = browser.new_context()
         context = browser.new_context(
             timezone_id="Europe/London",
             locale="en-GB",
-            # Emulating a standard viewport also helps reduce bot scoring
             viewport={"width": 1280, "height": 720} 
         )
         page = context.new_page()
@@ -860,7 +809,6 @@ def run_shared_login(config: JobConfig, job_dir: Path) -> AuthResult:
             if _has_captcha(page):
                 raise RuntimeError("CAPTCHA detected before login. Automated login cannot continue.")
 
-            # Resolve triggers (Configured overrides > Hardcoded Site Hints > Heuristics)
             username_selector = config.selectors.username or getattr(hint, "username", None)
             password_selector = config.selectors.password or getattr(hint, "password", None)
             submit_selector = config.selectors.submit or getattr(hint, "submit", None)
@@ -943,7 +891,6 @@ def run_shared_login(config: JobConfig, job_dir: Path) -> AuthResult:
             if not _verify_authenticated_target(page, config, log_lines=log_lines):
                 raise RuntimeError("Credentials were submitted, but the authenticated application page could not be verified")
                 
-            # If everything passed, save the authenticated context cookies/tokens!
             context.storage_state(path=str(storage_state_path))
             page.screenshot(path=str(screenshot_path), full_page=True)
 

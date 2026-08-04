@@ -4,7 +4,7 @@ import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # Path to the JSON file containing your single list of configs
-CONFIG_FILE_PATH = "./job_batch.json"
+CONFIG_FILE_PATH = "/Users/user/code/systemic-accessibility-analyzer/incoming_batches/incoming_10.json"
 
 # The full tool suite to enforce
 full_tool_suite = [

@@ -57,14 +57,21 @@ def _safe_attr(locator: Locator, name: str) -> str:
 
 def _safe_text(locator: Locator) -> str:
     try:
-        return locator.text_content(timeout=500) or ""
+        # FIX: Instantly check if the element exists to avoid the 30-second default wait trap
+        if locator.count() == 0:
+            return ""
+        # Provide a microscopic 50ms timeout just in case it detaches mid-check
+        return locator.text_content(timeout=50) or ""
     except Exception:
         return ""
 
 
 def _visible_enabled(locator: Locator) -> bool:
     try:
-        return locator.is_visible(timeout=500) and locator.is_enabled(timeout=500)
+        if locator.count() == 0:
+            return False
+        # is_visible is naturally instant, but is_enabled needs a tiny timeout constraint
+        return locator.is_visible() and locator.is_enabled(timeout=50)
     except Exception:
         return False
 

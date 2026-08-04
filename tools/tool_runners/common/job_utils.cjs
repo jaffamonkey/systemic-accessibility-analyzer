@@ -53,7 +53,7 @@ async function dismissCookieBanner(page) {
     ".cookie-accept",
     ".accept-cookies",
     "button[aria-label='Accept cookies']",
-    "button[aria-label='Accept all']",
+    "button[aria-label='Close']",
     "button.agree-button"
   ];
 
