@@ -167,9 +167,14 @@ async function getVirtualScreenReaderLinesFromHtml(html) {
           timeout: 120000,
         });
 
-        await page.waitForTimeout(1200);
+        // 1. Give the external cookie scripts a moment to download and inject the banner on a cold cache
+        await page.waitForTimeout(2500);
 
-        dismissCookieBanner(page)
+        // 2. Search for and click the accept button
+        await dismissCookieBanner(page);
+
+        // 3. Give the banner's fade-out animation time to actually remove the HTML nodes before capturing
+        await page.waitForTimeout(1500);
 
         const title = await page.title();
         const html = await page.content();
