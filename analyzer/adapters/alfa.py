@@ -8,11 +8,65 @@ ALFA_RULE_MAP = {
         "rule_name": "Image has accessible name",
         "component_hint": "image",
     },
+    "sia-r41": {
+        "wcag": "2.4.4",
+        "wcag_level": "A",
+        "rule_name": "Links with identical accessible names have equivalent purpose",
+        "component_hint": "link",
+    },
+    "sia-r65": {
+        "wcag": "2.4.7",
+        "wcag_level": "AA",
+        "rule_name": "Element in sequential focus order has visible focus",
+        "component_hint": "keyboard",
+    },
     "sia-r66": {
         "wcag": "1.4.3",
         "wcag_level": "AA",
         "rule_name": "Text contrast",
         "component_hint": "text",
+    },
+    "sia-r69": {
+        "wcag": "1.4.3",
+        "wcag_level": "AA",
+        "rule_name": "Text has minimum contrast",
+        "component_hint": "text",
+    },
+    "sia-r71": {
+        "wcag": "1.4.8",
+        "wcag_level": "AAA",
+        "rule_name": "Paragraphs of text are not justified",
+        "component_hint": "typography",
+    },
+    "sia-r73": {
+        "wcag": "1.4.8",
+        "wcag_level": "AAA",
+        "rule_name": "Paragraphs of text have sufficient line height",
+        "component_hint": "typography",
+    },
+    "sia-r74": {
+        "wcag": "1.4.8",
+        "wcag_level": "AAA",
+        "rule_name": "Paragraphs of text do not have font sizes defined in absolute units",
+        "component_hint": "typography",
+    },
+    "sia-r80": {
+        "wcag": "1.4.8",
+        "wcag_level": "AAA",
+        "rule_name": "Paragraphs of text do not have line heights defined in absolute units",
+        "component_hint": "typography",
+    },
+    "sia-r81": {
+        "wcag": "2.4.4",
+        "wcag_level": "A",
+        "rule_name": "Links with identical accessible names and context serve equivalent purpose",
+        "component_hint": "link",
+    },
+    "sia-r87": {
+        "wcag": "2.4.1",
+        "wcag_level": "A",
+        "rule_name": "First focusable element is link to main content",
+        "component_hint": "navigation",
     },
     "sia-r90": {
         "wcag": None,
@@ -20,8 +74,13 @@ ALFA_RULE_MAP = {
         "rule_name": "Tabbable descendants",
         "component_hint": "keyboard",
     },
+    "sia-r111": {
+        "wcag": "2.5.8",
+        "wcag_level": "AAA",
+        "rule_name": "Target Size (enhanced)",
+        "component_hint": "interactive",
+    },
 }
-
 
 def detect_alfa(data):
     return (

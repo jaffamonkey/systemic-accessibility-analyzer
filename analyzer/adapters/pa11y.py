@@ -8,6 +8,11 @@ def detect_pa11y(data):
 
 AXE_RULE_WCAG_MAP = {
     "area-alt": (["1.1.1"], "A"),
+    
+    # Newly mapped rules to resolve blank WCAG reporting gaps
+    "aria-allowed-attr": (["4.1.2"], "A"),
+    "aria-prohibited-attr": (["4.1.2"], "A"),
+    
     "button-name": (["4.1.2"], "A"),
     "bypass": (["2.4.1"], "A"),
     "html-has-lang": (["3.1.1"], "A"),

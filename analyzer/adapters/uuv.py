@@ -31,6 +31,10 @@ RULE_WCAG_MAP = {
     "image-alt": (["1.1.1"], "A"),
     "label": (["3.3.2", "4.1.2"], "A"),
     "landmark-one-main": (["1.3.1"], "A"),
+    
+    # Newly mapped rules to resolve blank WCAG reporting gaps
+    "hidden-content": (["Best Practice"], None),
+    "http-error-status": (["Best Practice"], None),
 }
 
 IGNORED_SUMMARY_CODES = {"failed-requests", "console-noise", "axe-violations"}

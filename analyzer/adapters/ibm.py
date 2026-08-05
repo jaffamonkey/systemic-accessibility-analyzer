@@ -27,6 +27,15 @@ IBM_RULE_WCAG_MAP = {
     "aria_descendant_valid": (["1.3.1"], "A"),
     "style_focus_visible": (["2.4.7"], "AA"),
     "text_sensory_misuse": (["1.3.3"], "A"),
+    "element_tabbable_unobscured": (["2.4.11"], "AA"),
+    "element_tabbable_role_valid": (["4.1.2"], "A"),
+    "element_id_unique": (["4.1.1"], "A"),
+    "aria_form_label_unique": (["1.3.1"], "A"),
+    "aria_role_valid": (["4.1.2"], "A"),
+    "aria_parent_required": (["1.3.1"], "A"),
+    "input_label_exists": (["3.3.2", "4.1.2"], "A"),
+    "widget_tabbable_exists": (["2.1.1"], "A"),
+    "blockquote_cite_exists": (["Best Practice"], None)
 }
 
 
