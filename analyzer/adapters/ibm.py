@@ -35,7 +35,14 @@ IBM_RULE_WCAG_MAP = {
     "aria_parent_required": (["1.3.1"], "A"),
     "input_label_exists": (["3.3.2", "4.1.2"], "A"),
     "widget_tabbable_exists": (["2.1.1"], "A"),
-    "blockquote_cite_exists": (["Best Practice"], None)
+    "blockquote_cite_exists": (["Best Practice"], None),
+    "aria_attribute_valid": (["4.1.2"], "A"),
+    "aria_hidden_nontabbable": (["4.1.2"], "A"),
+    "aria_id_unique": (["4.1.1"], "A"),
+    "aria_keyboard_handler_exists": (["2.1.1"], "A"),
+    "aria_widget_labelled": (["4.1.2"], "A"),
+    "form_submit_button_exists": (["3.2.2"], "A"),
+    "list_markup_review": (["1.3.1"], "A"),
 }
 
 

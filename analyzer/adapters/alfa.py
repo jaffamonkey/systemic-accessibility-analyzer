@@ -80,6 +80,18 @@ ALFA_RULE_MAP = {
         "rule_name": "Target Size (enhanced)",
         "component_hint": "interactive",
     },
+    "sia-r113": {
+        "wcag": "2.5.8",
+        "wcag_level": "AA",
+        "rule_name": "Target Size (Minimum)",
+        "component_hint": "interactive",
+    },
+    "sia-r17": {
+        "wcag": "4.1.2",
+        "wcag_level": "A",
+        "rule_name": "Elements with aria-hidden must not be focusable",
+        "component_hint": "keyboard",
+    },
 }
 
 def detect_alfa(data):
@@ -230,3 +242,4 @@ def adapt_alfa(file, data):
 
 
 register_adapter(detect_alfa, adapt_alfa)
+
