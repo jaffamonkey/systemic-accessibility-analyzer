@@ -184,7 +184,7 @@ async function main() {
 
   // FIX 2: Process URLs concurrently. 
   // WARNING: Lighthouse is CPU-heavy. Keep this to 3 or 4 max!
-  const CONCURRENCY = 3;
+  const CONCURRENCY = 1;
 
   for (let i = 0; i < urls.length; i += CONCURRENCY) {
     const chunk = urls.slice(i, i + CONCURRENCY);

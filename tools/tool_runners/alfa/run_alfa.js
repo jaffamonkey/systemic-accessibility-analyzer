@@ -23,18 +23,29 @@ function buildContextOptions(storageStatePath) {
 
 function toPlain(value, depth = 0) {
   if (depth > 8) return String(value);
+
   if (value == null) return value;
+
   if (Array.isArray(value)) {
     return value.map((item) => toPlain(item, depth + 1));
   }
-  if (typeof value !== "object") return value;
-  if (typeof value.toJSON === "function") {
-    try { return toPlain(value.toJSON(), depth + 1); } catch {}
+
+  if (typeof value !== "object") {
+    return value;
   }
+
+  if (typeof value.toJSON === "function") {
+    try {
+      return toPlain(value.toJSON(), depth + 1);
+    } catch {}
+  }
+
   if (typeof value.toString === "function" && value.constructor?.name !== "Object") {
     try {
       const text = value.toString();
-      if (text && text !== "[object Object]") return text;
+      if (text && text !== "[object Object]") {
+        return text;
+      }
     } catch {}
   }
 
@@ -53,17 +64,12 @@ async function runAlfaForUrl(context, url, reportsDir) {
   const page = await context.newPage();
   const outPath = path.join(reportsDir, `${safeSlug(url)}.json`);
 
-  // Declare heavy objects outside the try block so we can explicitly nullify them
-  let documentHandle = null;
-  let alfaPage = null;
-  let alfaResult = null;
-
   try {
     await preparePage(page, url);
 
-    documentHandle = await page.evaluateHandle(() => window.document);
-    alfaPage = await Playwright.toPage(documentHandle);
-    alfaResult = await Audit.run(alfaPage);
+    const documentHandle = await page.evaluateHandle(() => window.document);
+    const alfaPage = await Playwright.toPage(documentHandle);
+    const alfaResult = await Audit.run(alfaPage);
 
     writeJson(outPath, {
       tool: "alfa",
@@ -80,11 +86,6 @@ async function runAlfaForUrl(context, url, reportsDir) {
       stack: err?.stack || null
     });
   } finally {
-    // Explicitly release large objects for aggressive garbage collection
-    if (documentHandle) await documentHandle.dispose().catch(() => {});
-    alfaPage = null;
-    alfaResult = null;
-    
     await page.close();
   }
 }
@@ -96,21 +97,15 @@ async function main() {
   const { urls, storageStatePath, reportsDir } = ensureJob(jobDir, "alfa");
 
   const browser = await chromium.launch({ headless: true });
+  const context = await browser.newContext(buildContextOptions(storageStatePath));
 
   try {
     for (const url of urls) {
       console.log(`Alfa scanning ${url}`);
-      
-      // FIX: Create and destroy the context per URL to flush memory caches completely
-      const context = await browser.newContext(buildContextOptions(storageStatePath));
-      
-      try {
-        await runAlfaForUrl(context, url, reportsDir);
-      } finally {
-        await context.close();
-      }
+      await runAlfaForUrl(context, url, reportsDir);
     }
   } finally {
+    await context.close();
     await browser.close();
   }
 }
