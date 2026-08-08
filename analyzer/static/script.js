@@ -59,6 +59,7 @@ const ENGINE_META = {
     "ibm-equal-access": { label: "IBM", badge: "🏢", className: "engine-ibm" },
     "ibm accessibility checker": { label: "IBM", badge: "🏢", className: "engine-ibm" },
     "lighthouse": { label: "Browser", badge: "💡", className: "engine-browser" },
+    "a11yhawk": { label: "A11yHawk", badge: "🦅", className: "engine-browser" }, // 👈 Added
     "uuv": { label: "UUV", badge: "🧪", className: "engine-uuv" },
     "oobee": { label: "Oobee", badge: "🧩", className: "engine-oobee" },
     "speca11y": { label: "Validator", badge: "⚖️", className: "engine-speca11y" },
@@ -389,6 +390,7 @@ function renderWcagSupportPanel() {
         ["Axe-scan", "A/AA/some AAA", "A/AA/some AAA", "A/AA", "—", "axe-scan"],
         ["UUV", "A/AA", "A/AA", "A/AA", "—", "uuv"],
         ["Lighthouse", "A/AA", "A/AA", "A/AA", "—", "lighthouse"],
+        ["a11yhawk", "A/AA/AAA", "A/AA/AAA", "A/AA/AAA", "—", "a11yhawk"], // 👈 Fixed comma & key
         ["IBM Accessibility Checker", "A/AA", "A/AA", "A/AA", "—", "ibm"],
         ["Oobee", "A/AA/some AAA", "A/AA/some AAA", "Limited", "—", "oobee"],
         ["Pa11y Axe", "A/AA/AAA", "A/AA/AAA", "A/AA", "—", "pa11y-axe"],

@@ -30,6 +30,7 @@ DEFAULT_TOOLS = [
     "editoria11y",
     "nu-html-checker",
     "speca11y",
+    "a11yhawk"
     "pa11y-axe",
     "pa11y-htmlcs",
     "virtual-screenreader",
@@ -49,6 +50,7 @@ AUTH_TOOL_MODULES = {
     "editoria11y": "service.run_authenticated_editoria11y",
     "nu-html-checker": "service.run_authenticated_nu_html_checker",
     "speca11y": "service.run_authenticated_speca11y",
+    "a11yhawk": "service.run_authenticated_a11yhawk",
     "qualweb": "service.run_authenticated_qualweb",
     "pa11y-htmlcs": "service.run_authenticated_pa11y_htmlcs",
     "pa11y-axe": "service.run_authenticated_pa11y_axe",
@@ -77,6 +79,7 @@ PUBLIC_TOOL_MODULES = {
     "tab-map": "service.run_tab_map",
     "contrast-checker": "service.run_contrast_checker",
     "speca11y": "service.run_speca11y",
+    "a11yhawk": "service.run_a11yhawk",
 }
 
 def _run_command(cmd: list[str], *, cwd: Path | None = None, timeout: int | None = None) -> subprocess.CompletedProcess:
